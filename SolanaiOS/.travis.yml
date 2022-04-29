@@ -1,0 +1,6 @@
+os: osx
+osx_image: xcode12.5
+language: swift
+script: 
+   - xcodebuild clean build test -project SolanaPackage/SolanaPackage.xcodeproj -scheme "CI_macOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk macosx -destination "platform=macOS" ONLY_ACTIVE_ARCH=YES
+   - xcodebuild clean build test -project SolanaPackage/SolanaPackage.xcodeproj -scheme "CI_iOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator -destination "platform=iOS Simulator,OS=14.5,name=iPhone 12 Pro Max" ONLY_ACTIVE_ARCH=YES
