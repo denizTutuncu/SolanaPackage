@@ -1,0 +1,357 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2E0CBFBE27F27845006E6892 /* SolPrototypeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0CBFBD27F27845006E6892 /* SolPrototypeApp.swift */; };
+		2E0CBFC027F27845006E6892 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0CBFBF27F27845006E6892 /* ContentView.swift */; };
+		2E0CBFC227F27847006E6892 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E0CBFC127F27847006E6892 /* Assets.xcassets */; };
+		2E0CBFC527F27847006E6892 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E0CBFC427F27847006E6892 /* Preview Assets.xcassets */; };
+		2E0CBFCD27F2788F006E6892 /* UIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0CBFCC27F2788F006E6892 /* UIModel.swift */; };
+		2E0CBFCF27F278E9006E6892 /* UIModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0CBFCE27F278E9006E6892 /* UIModelController.swift */; };
+		2E37321C281B9156004FDE93 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E37321B281B9155004FDE93 /* BalanceView.swift */; };
+		2E37321E281B9C63004FDE93 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E37321D281B9C63004FDE93 /* QRCodeView.swift */; };
+		2E373220281B9DD8004FDE93 /* SendSOLTokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E37321F281B9DD8004FDE93 /* SendSOLTokenView.swift */; };
+		2E373222281BADC0004FDE93 /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E373221281BADC0004FDE93 /* TransactionListView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2E0CBFBA27F27845006E6892 /* SolPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SolPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E0CBFBD27F27845006E6892 /* SolPrototypeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolPrototypeApp.swift; sourceTree = "<group>"; };
+		2E0CBFBF27F27845006E6892 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2E0CBFC127F27847006E6892 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2E0CBFC427F27847006E6892 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2E0CBFC627F27847006E6892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E0CBFCC27F2788F006E6892 /* UIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIModel.swift; sourceTree = "<group>"; };
+		2E0CBFCE27F278E9006E6892 /* UIModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIModelController.swift; sourceTree = "<group>"; };
+		2E37321B281B9155004FDE93 /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
+		2E37321D281B9C63004FDE93 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		2E37321F281B9DD8004FDE93 /* SendSOLTokenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendSOLTokenView.swift; sourceTree = "<group>"; };
+		2E373221281BADC0004FDE93 /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2E0CBFB727F27845006E6892 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2E0CBFB127F27845006E6892 = {
+			isa = PBXGroup;
+			children = (
+				2E0CBFBC27F27845006E6892 /* SolPrototype */,
+				2E0CBFBB27F27845006E6892 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2E0CBFBB27F27845006E6892 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2E0CBFBA27F27845006E6892 /* SolPrototype.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2E0CBFBC27F27845006E6892 /* SolPrototype */ = {
+			isa = PBXGroup;
+			children = (
+				2E0CBFBD27F27845006E6892 /* SolPrototypeApp.swift */,
+				2E0CBFBF27F27845006E6892 /* ContentView.swift */,
+				2E37321B281B9155004FDE93 /* BalanceView.swift */,
+				2E37321D281B9C63004FDE93 /* QRCodeView.swift */,
+				2E37321F281B9DD8004FDE93 /* SendSOLTokenView.swift */,
+				2E373221281BADC0004FDE93 /* TransactionListView.swift */,
+				2E0CBFC127F27847006E6892 /* Assets.xcassets */,
+				2E0CBFC627F27847006E6892 /* Info.plist */,
+				2E0CBFC327F27847006E6892 /* Preview Content */,
+				2E0CBFCC27F2788F006E6892 /* UIModel.swift */,
+				2E0CBFCE27F278E9006E6892 /* UIModelController.swift */,
+			);
+			path = SolPrototype;
+			sourceTree = "<group>";
+		};
+		2E0CBFC327F27847006E6892 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2E0CBFC427F27847006E6892 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2E0CBFB927F27845006E6892 /* SolPrototype */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E0CBFC927F27847006E6892 /* Build configuration list for PBXNativeTarget "SolPrototype" */;
+			buildPhases = (
+				2E0CBFB627F27845006E6892 /* Sources */,
+				2E0CBFB727F27845006E6892 /* Frameworks */,
+				2E0CBFB827F27845006E6892 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SolPrototype;
+			productName = SolPrototype;
+			productReference = 2E0CBFBA27F27845006E6892 /* SolPrototype.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2E0CBFB227F27845006E6892 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					2E0CBFB927F27845006E6892 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = 2E0CBFB527F27845006E6892 /* Build configuration list for PBXProject "SolPrototype" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2E0CBFB127F27845006E6892;
+			productRefGroup = 2E0CBFBB27F27845006E6892 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2E0CBFB927F27845006E6892 /* SolPrototype */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2E0CBFB827F27845006E6892 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E0CBFC527F27847006E6892 /* Preview Assets.xcassets in Resources */,
+				2E0CBFC227F27847006E6892 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2E0CBFB627F27845006E6892 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E373220281B9DD8004FDE93 /* SendSOLTokenView.swift in Sources */,
+				2E373222281BADC0004FDE93 /* TransactionListView.swift in Sources */,
+				2E37321E281B9C63004FDE93 /* QRCodeView.swift in Sources */,
+				2E0CBFCD27F2788F006E6892 /* UIModel.swift in Sources */,
+				2E37321C281B9156004FDE93 /* BalanceView.swift in Sources */,
+				2E0CBFCF27F278E9006E6892 /* UIModelController.swift in Sources */,
+				2E0CBFC027F27845006E6892 /* ContentView.swift in Sources */,
+				2E0CBFBE27F27845006E6892 /* SolPrototypeApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2E0CBFC727F27847006E6892 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2E0CBFC827F27847006E6892 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2E0CBFCA27F27847006E6892 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SolPrototype/Preview Content\"";
+				DEVELOPMENT_TEAM = 9DGMQB3935;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = SolPrototype/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.deniztutuncu.SolPrototype;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2E0CBFCB27F27847006E6892 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SolPrototype/Preview Content\"";
+				DEVELOPMENT_TEAM = 9DGMQB3935;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = SolPrototype/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.deniztutuncu.SolPrototype;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2E0CBFB527F27845006E6892 /* Build configuration list for PBXProject "SolPrototype" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E0CBFC727F27847006E6892 /* Debug */,
+				2E0CBFC827F27847006E6892 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E0CBFC927F27847006E6892 /* Build configuration list for PBXNativeTarget "SolPrototype" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E0CBFCA27F27847006E6892 /* Debug */,
+				2E0CBFCB27F27847006E6892 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2E0CBFB227F27845006E6892 /* Project object */;
+}
