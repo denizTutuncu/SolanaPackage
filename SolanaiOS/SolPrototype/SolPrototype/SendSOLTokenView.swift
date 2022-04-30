@@ -32,7 +32,7 @@ struct SendSOLTokenView: View {
                 }.padding()
                 
                 VStack {
-                    TextField("0 SOL", text: $amountTextField)
+                    TextField("0 SOL", text: $amountTextField).keyboardType(.numbersAndPunctuation)
                 }.padding()
                 
                 VStack {
