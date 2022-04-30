@@ -19,6 +19,7 @@ struct SendSOLTokenView: View {
                 HStack {
                     Text("to:").font(.headline)
                     Spacer()
+                    Image("ScanIcon").resizable().frame(width: 29, height: 29, alignment: .center)
                 }.padding()
                 
                 VStack {
