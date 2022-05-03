@@ -7,6 +7,8 @@
 4- Send Sol
 ```
 
+![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/SOLiOSSDK.jpg?raw=true)
+
 ## BDD Specs
 
 ### Receive Sol / Fetch Balance
