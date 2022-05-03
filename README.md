@@ -1,7 +1,15 @@
 # SolanaPackage
 
+```
+1- Create Wallet
+2- Receive Sol (in progress)
+3- Display past transactions
+4- Send Sol
+```
+
 ## BDD Specs
 
+### Receive Sol / Fetch Balance
 ### Story: Customer requests to see their balance
 
 ### Narrative #1
