@@ -26,11 +26,9 @@ class BalanceAPIEndToEndTests: XCTestCase {
     
     //MARK:- Helpers
     private func getBalance(file: StaticString = #file, line: UInt = #line) -> Swift.Result<BalanceResponse, Error>?  {
-//        let request = makeGetSolAccInfoRequest()
-//        let requestMaker = GetBalanceURLRequestMaker(rpcEndpoint: SolanaClusterRPCEndpoints.devNet)
         let devNetURL = URL(string: SolanaClusterRPCEndpoints.devNet.rawValue)
-        let loader = RemoteLoader(url: devNetURL, client: ephemeralClient(), mapper: BalanceResponseMapper.map)
-//        client: ephemeralClient(), urlMaker: requestMaker, mapper: )
+        let publicKey = createPublicKey()
+        let loader = RemoteLoader(url: devNetURL, publicKey: publicKey, client: ephemeralClient(), urlRequestMapper: BalanceURLRequestMapper.map, mapper: BalanceResponseMapper.map)
         
         trackForMemoryLeaks(loader, file: file, line: line)
         
@@ -55,14 +53,7 @@ class BalanceAPIEndToEndTests: XCTestCase {
     private func createPublicKey() -> String {
         return "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi"
     }
-    
-    private func makeGetSolAccInfoRequest() -> GetBalanceRequest {
-        let publicKey = createPublicKey()
-        let request = GetBalanceRequest(params: [publicKey])
-     
-        return request
-    }
-    
+        
     private func createExpectedResponse() -> BalanceResponse {
         return BalanceResponse(jsonrpc: "2.0", result: BalanceResult(context: BalanceContext(slot: 123838291), value: 25000000000), id: 1)
     }
