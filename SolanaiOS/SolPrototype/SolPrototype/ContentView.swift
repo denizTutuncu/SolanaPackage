@@ -12,21 +12,32 @@ struct ContentView: View {
     @State private var isWalletCreated = false
     var body: some View {
         let screenSize = UIScreen.main.bounds.size
-            VStack {
-                Spacer()
-                Button("Create a new wallet") {
+        VStack {
+            Spacer()
+            HStack {
+                Image("Solana")
+                    .resizable()
+                    .frame(width: screenSize.height / 12, height: screenSize.height / 12, alignment: .center)
+                
+                Button {
                     self.isWalletCreated.toggle()
-                }.fixedSize(horizontal: true, vertical: false).padding()
-                .background(Color.purple)
-                .foregroundColor(Color.white)
-                .font(.headline)
+                } label: {
+                    Text("Create a new wallet")
+                        .font(.title2)
+                        .bold()
+                }
+                .fixedSize(horizontal: true, vertical: false)
+                .padding()
+                .background(Color.black)
+                .foregroundColor(Color.mint)
                 .cornerRadius(8.0)
-                .shadow(color: Color.gray, radius: 5, x: 0, y:-2)
-                .frame(width: screenSize.width / 1.5, height: screenSize.height / 10, alignment: .center)
-            }.padding()
-        .fullScreenCover(isPresented: $isWalletCreated, content: {
-            BalanceView()
-        })
+                .shadow(color: Color.gray, radius: 1, x: 5, y:5)                
+            }
+            
+        }.padding()
+            .fullScreenCover(isPresented: $isWalletCreated, content: {
+                BalanceView()
+            })
     }
 }
 
