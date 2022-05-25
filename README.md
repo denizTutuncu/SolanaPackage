@@ -12,6 +12,8 @@
 
 ![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/SOLiOSSDK.jpg?raw=true)
 
+----------------
+
 ## Create Wallet BDD Specs (in the future)
 
 ### Create Wallet
@@ -39,7 +41,8 @@ And create a solana wallet from that seed phrase
 Given the customer doesn't have a seed phrase
    Then the app should display an error message
 Given the customer have a seed phrase
-    And the seed phrase 
+    And the seed phrase is valid
+        Then the app should create a valid Solana account
 ```
 
 ## Model Specs
