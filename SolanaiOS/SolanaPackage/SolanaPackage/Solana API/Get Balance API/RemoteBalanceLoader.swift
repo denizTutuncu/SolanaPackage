@@ -12,8 +12,8 @@ extension RemoteLoader: BalanceLoader where Resource == BalanceResponse {}
 public typealias RemoteBalanceLoader = RemoteLoader<BalanceResponse>
 
 public extension RemoteBalanceLoader {
-    convenience init(url: URL?, client: HTTPClient) {
-        self.init(url: url, client: client, mapper: BalanceResponseMapper.map)
+    convenience init(url: URL?, publicKey: String, client: HTTPClient) {
+        self.init(url: url, publicKey: publicKey, client: client, urlRequestMapper: BalanceURLRequestMapper.map, mapper: BalanceResponseMapper.map)
     }
 }
 

@@ -17,7 +17,7 @@ class RemoteLoaderTests: XCTestCase {
     }
     
     func test_load_requestsDataFromURL() {
-        let url = URL(string: "https://a-given-url.com")!
+        let url = anyURL()
         let (sut, client) = makeSUT(url: url)
         
         sut.load { _ in }
@@ -26,7 +26,7 @@ class RemoteLoaderTests: XCTestCase {
     }
     
     func test_loadTwice_requestsDataFromURLTwice() {
-        let url = URL(string: "https://a-given-url.com")!
+        let url = anyURL()
         let (sut, client) = makeSUT(url: url)
         
         sut.load { _ in }
@@ -66,9 +66,13 @@ class RemoteLoaderTests: XCTestCase {
     }
     
     func test_load_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
-        let url = URL(string: "http://any-url.com")!
+        let url = anyURL()
         let client = HTTPClientSpy()
-        var sut: RemoteLoader<String>? = RemoteLoader<String>(url: url, client: client, mapper: { _, _ in "any" })
+        let publicKey = createPublicKey()
+        var sut: RemoteLoader<String>? = RemoteLoader<String>(url: url, publicKey: publicKey,
+                                                              client: client,
+                                                              urlRequestMapper: { _,_ in testURLRequest() },
+                                                              mapper: { _, _ in "any" })
         
         var capturedResults = [RemoteLoader<String>.Result]()
         sut?.load { capturedResults.append($0) }
@@ -81,13 +85,19 @@ class RemoteLoaderTests: XCTestCase {
     
     
     private func makeSUT(
-        url: URL = URL(string: "https://a-url.com")!,
+        url: URL = anyURL(),
         mapper: @escaping RemoteLoader<String>.Mapper = { _, _ in "any" },
+        urlRequestMapper: @escaping RemoteLoader<String>.URLRequestMapper = { _,_ in testURLRequest() },
         file: StaticString = #file,
         line: UInt = #line
     ) -> (sut: RemoteLoader<String>, client: HTTPClientSpy) {
         let client = HTTPClientSpy()
-        let sut = RemoteLoader<String>(url: url, client: client, mapper: mapper)
+        let publicKey = createPublicKey()
+        let sut = RemoteLoader<String>(url: url, publicKey: publicKey,
+                                       client: client,
+                                       urlRequestMapper: urlRequestMapper,
+                                       mapper: mapper)
+        
         trackForMemoryLeaks(sut, file: file, line: line)
         trackForMemoryLeaks(client, file: file, line: line)
         return (sut, client)
@@ -95,6 +105,15 @@ class RemoteLoaderTests: XCTestCase {
     
     private func failure(_ error: RemoteLoader<String>.Error) -> RemoteLoader<String>.Result {
         return .failure(error)
+    }
+    
+    private func aGivenURL() -> URL {
+        URL(string: "https://a-given-url.com")!
+    }
+    
+    private func createPublicKey() -> String {
+        let pubKey = "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi"
+        return pubKey
     }
     
     private func makeResponseItem() -> (model: BalanceResponse, json: [String:Any]) {
