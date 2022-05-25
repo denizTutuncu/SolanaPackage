@@ -8,11 +8,11 @@
 import XCTest
 import SolanaPackage
 
-class GetBalanceAPIEndToEndTests: XCTestCase {
+class BalanceAPIEndToEndTests: XCTestCase {
     
     func test_endToEndTestServerGETBalanceResult_matchesFixedTestAccountData() {
         let expectedResponse = createExpectedResponse()
-        switch getBalanceResponse() {
+        switch getBalance() {
         case let .success(remoteResponse)?:
             XCTAssertNotEqual(remoteResponse, nil, "Expected non-empty response.")
             XCTAssertEqual(remoteResponse.result.value, expectedResponse.result.value, "Expected response doesn't match with remote response. Please first thing compare the RCP endpoints. Your balance may exist in a different Network.")
@@ -25,17 +25,19 @@ class GetBalanceAPIEndToEndTests: XCTestCase {
     }
     
     //MARK:- Helpers
-    private func getBalanceResponse(file: StaticString = #file, line: UInt = #line) -> RemoteGetBalanceLoader.Result? {
-        let request = makeGetSolAccInfoRequest()
-        let requestMaker = GetBalanceURLRequestMaker(rpcEndpoint: SolanaClusterRPCEndpoints.devNet)
-        let loader = RemoteGetBalanceLoader(client: ephemeralClient(), urlMaker: requestMaker)
+    private func getBalance(file: StaticString = #file, line: UInt = #line) -> Swift.Result<BalanceResponse, Error>?  {
+//        let request = makeGetSolAccInfoRequest()
+//        let requestMaker = GetBalanceURLRequestMaker(rpcEndpoint: SolanaClusterRPCEndpoints.devNet)
+        let devNetURL = URL(string: SolanaClusterRPCEndpoints.devNet.rawValue)
+        let loader = RemoteLoader(url: devNetURL, client: ephemeralClient(), mapper: BalanceResponseMapper.map)
+//        client: ephemeralClient(), urlMaker: requestMaker, mapper: )
         
         trackForMemoryLeaks(loader, file: file, line: line)
         
         let exp = expectation(description: "Wait For Completion")
         
-        var receivedResult: RemoteGetBalanceLoader.Result?
-        loader.perform(pubKey: request.params.first!) { result in
+        var receivedResult: RemoteBalanceLoader.Result?
+        loader.load { result in
             receivedResult = result
             exp.fulfill()
         }
@@ -61,8 +63,8 @@ class GetBalanceAPIEndToEndTests: XCTestCase {
         return request
     }
     
-    private func createExpectedResponse() -> GetBalanceResponse {
-        return GetBalanceResponse(jsonrpc: "2.0", result: GetBalanceResult(context: GetBalanceContext(slot: 123838291), value: 25000000000), id: 1)
+    private func createExpectedResponse() -> BalanceResponse {
+        return BalanceResponse(jsonrpc: "2.0", result: BalanceResult(context: BalanceContext(slot: 123838291), value: 25000000000), id: 1)
     }
     
 }

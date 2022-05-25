@@ -8,26 +8,6 @@
 import Foundation
 import SolanaPackage
 
-//class GetBalanceRequestMakerSpy: GetBalanceRequestMaker, SolServiceRequest {
-//    var jsonrpc: String = "2.0"
-//    var id: Int = 1
-//    var method: String = "getBalance"
-//
-//    private var messages = [(GetBalanceRequestMaker.Result) -> Void]()
-//
-//    func getURLRequest(completion: @escaping (GetBalanceRequestMaker.Result) -> Void) {
-//        messages.append(completion)
-//    }
-//
-//    func complete(with error: Error, at index: Int = 0) {
-//        messages[index](.failure(error))
-//    }
-//
-//    func complete(request: URLRequest, at index: Int = 0) {
-//        messages[index](.success(request))
-//    }
-//}
-
 class GetBalanceRequestMakerSpy: GetBalanceRequestMaker {
     let jsonrpc: String = "2.0"
     let id: Int = 1
