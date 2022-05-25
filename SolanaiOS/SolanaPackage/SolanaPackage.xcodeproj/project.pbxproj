@@ -205,14 +205,14 @@
 			path = "Get Balance Models";
 			sourceTree = "<group>";
 		};
-		2EC5033027F19C310031F3B0 /* Get Balance Loader */ = {
+		2EC5033027F19C310031F3B0 /* Balance Loader */ = {
 			isa = PBXGroup;
 			children = (
 				2EC5032E27F19BCE0031F3B0 /* GetBalanceRequestMaker.swift */,
 				2ED6163227E5B5E500920274 /* BalanceLoader.swift */,
 				2E70FCC627F02C7D00DD2072 /* Get Balance Models */,
 			);
-			path = "Get Balance Loader";
+			path = "Balance Loader";
 			sourceTree = "<group>";
 		};
 		2ED615FA27E5AD3F00920274 = {
@@ -294,7 +294,7 @@
 		2ED6163127E5B5CA00920274 /* Solana Loaders */ = {
 			isa = PBXGroup;
 			children = (
-				2EC5033027F19C310031F3B0 /* Get Balance Loader */,
+				2EC5033027F19C310031F3B0 /* Balance Loader */,
 			);
 			path = "Solana Loaders";
 			sourceTree = "<group>";
