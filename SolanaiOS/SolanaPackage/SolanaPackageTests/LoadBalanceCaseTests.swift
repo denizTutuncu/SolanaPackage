@@ -8,7 +8,7 @@
 import XCTest
 import SolanaPackage
 
-class GetBalanceCaseTests: XCTestCase {
+class LoadBalanceCaseTests: XCTestCase {
     
     func test_load_deliversErrorOnNon2xxHTTPResponse() {
         let (sut, client) = makeSUT()
