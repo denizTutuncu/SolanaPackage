@@ -22,7 +22,7 @@ struct ContentView: View {
                 Button {
                     self.isWalletCreated.toggle()
                 } label: {
-                    Text("Create a new wallet")
+                    Text("Create Solana wallet")
                         .font(.title2)
                         .bold()
                 }
@@ -31,7 +31,7 @@ struct ContentView: View {
                 .background(Color.black)
                 .foregroundColor(Color.mint)
                 .cornerRadius(8.0)
-                .shadow(color: Color.gray, radius: 1, x: 5, y:5)                
+                .shadow(color: Color.gray, radius: 5, x: 5, y:5)
             }
             
         }.padding()
