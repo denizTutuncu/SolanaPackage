@@ -5,7 +5,7 @@
 
 ```
 1- Create Wallet (in the future)
-2- Receive Sol (in progress)
+2- Display balance / Receive Sol (in progress)
 3- Display past transactions (in the future)
 4- Send Sol (in the future)
 ```
