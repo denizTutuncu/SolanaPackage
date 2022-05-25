@@ -36,9 +36,18 @@ struct SendSOLTokenView: View {
                 }.padding()
                 
                 VStack {
-                    Button("Send") {
-                        
-                    }.font(.headline).padding()
+                    Button {
+                        //Do something
+                    } label: {
+                        Text("Send")
+                            .font(.title2)
+                            .bold()
+                    }
+                    .padding()
+                    .background(Color.black)
+                    .foregroundColor(Color.mint)
+                    .cornerRadius(8.0)
+                    .shadow(color: Color.gray, radius: 5, x: 5, y:5)
                 }
                 Spacer()
             }
