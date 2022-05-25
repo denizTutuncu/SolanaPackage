@@ -8,7 +8,7 @@
 import XCTest
 import SolanaPackage
 
-class GetBalanceResponseMapperTests: XCTestCase {
+class LoadBalanceResponseMapperTests: XCTestCase {
     
     func test_map_throwsErrorOnNon200HTTPResponse() throws {
         let validResponse = makeResponseItem(jsonrpc: "2.0", slot: 124067037, value: 25000000000, id: 1)
