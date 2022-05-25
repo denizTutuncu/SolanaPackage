@@ -21,16 +21,16 @@ class URLSessionHTTPClientTests: XCTestCase {
     }
     
     func test_postFromURL_performsPOSTRequestWithURLRequest() {
-        let testRequest = testURLRequest()
+        let anyURL = anyURL()
         
         let exp = expectation(description: "Wait for test request")
         URLProtocolStub.observeRequests { urlRequest in
-            XCTAssertEqual(urlRequest.url, testRequest.url)
-            XCTAssertEqual(urlRequest.httpMethod, testRequest.httpMethod)
+            XCTAssertEqual(urlRequest.url, anyURL)
+//            XCTAssertEqual(urlRequest.httpMethod, anyURL.httpMethod)
             exp.fulfill()
         }
         
-        makeSUT().send(testRequest) { _ in }
+        makeSUT().get(from: anyURL) { _ in }
         
         wait(for: [exp], timeout: 1.0)
     }
@@ -74,7 +74,11 @@ class URLSessionHTTPClientTests: XCTestCase {
     
     //MARK:- helpers
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> HTTPClient {
-        let sut = URLSessionHTTPClient()
+        let configuration = URLSessionConfiguration.ephemeral
+        configuration.protocolClasses = [URLProtocolStub.self]
+        let session = URLSession(configuration: configuration)
+        
+        let sut = URLSessionHTTPClient(session: session)
         trackForMemoryLeaks(sut, file: file, line: line)
         return sut
     }
@@ -105,13 +109,13 @@ class URLSessionHTTPClientTests: XCTestCase {
     private func resultFor(data: Data?, response: URLResponse?, error: Error?, file: StaticString = #file, line: UInt = #line) -> HTTPClient.Result {
         URLProtocolStub.stub(data: data, response: response, error: error)
         let sut = makeSUT(file: file, line: line)
-        let testURLRequest = testURLRequest()
+        let anyURL = anyURL()
         
         let exp = expectation(description: "Wait for completion")
         
         var receivedResult: HTTPClient.Result!
         
-        sut.send(testURLRequest) { result in
+        sut.get(from: anyURL) { result in
             receivedResult = result
             exp.fulfill()
         }

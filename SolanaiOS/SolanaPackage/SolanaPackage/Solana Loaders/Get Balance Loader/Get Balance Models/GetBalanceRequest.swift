@@ -6,14 +6,14 @@
 //
 
 import Foundation
-
-public struct GetBalanceRequest: Encodable {
-    public let jsonrpc: String = "2.0"
-    public let id: Int = 1
-    public let method: String = "getBalance"
-    public let params: [String] //publicKey
-    
-    public init(params: [String]) {
-        self.params = params
-    }
-}
+//
+//public struct GetBalanceRequest: Encodable {
+//    public let jsonrpc: String = "2.0"
+//    public let id: Int = 1
+//    public let method: String = "getBalance"
+//    public let params: [String] //publicKey
+//    
+//    public init(params: [String]) {
+//        self.params = params
+//    }
+//}
