@@ -1,5 +1,8 @@
 # SolanaPackage
 
+## User Flow
+![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/UserFlow?raw=true)
+
 ```
 1- Create Wallet
 2- Receive Sol (in progress)
@@ -9,9 +12,50 @@
 
 ![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/SOLiOSSDK.jpg?raw=true)
 
-## BDD Specs
+## Create Wallet BDD Specs
 
-### Receive Sol / Fetch Balance
+### Create Wallet
+### Story: Customer requests to create a solana wallet
+
+### Narrative #1
+```
+As a customer
+I want the app to create a solana wallet
+So I can connect to Solana Blockchain
+```
+
+#### Scenarios (Acceptance criteria)
+
+```
+Given the customer has seed phrase
+When the customer requests to create a solana wallet
+Then the app should display the seed phrase
+And create a solana wallet from that seed phrase
+```
+
+#### Scenarios (Acceptance criteria)
+
+```
+Given the customer doesn't have a seed phrase
+   Then the app should display an error message
+Given the customer have a seed phrase
+    And the seed phrase 
+```
+
+## Model Specs
+
+### Seed
+
+| Property      | Type                |
+|---------------|---------------------|
+| `seed`        | `[String]`          |
+
+
+----------------
+
+## Get Balance BDD Specs
+
+### Get Balance / Receive Sol
 ### Story: Customer requests to see their balance
 
 ### Narrative #1
@@ -56,6 +100,28 @@ Given the customer doesn't have connectivity
  Then the app should display an error message
 ```
 
-## Use Cases
+## Model Specs
 
-### Load Balance From Remote Use Case
+### Balance Response
+
+| Property      | Type                |
+|---------------|---------------------|
+| `jsonrpc`     | `String`            |
+| `result`      | `BalanceResult`     |
+| `id`          | `String`            |
+
+### Balance Result
+| Property      | Type                |
+|---------------|---------------------|
+| `context`     | `BalanceContext`    |
+| `value`       | `Int`               |
+| `id`          | `String`            |
+
+### Balance Context
+| Property      | Type                |
+|---------------|---------------------|
+| `slot`        | `Int`               |
+
+-----------------
+
+Still working on the specs. Thank you for your understanding and please feel free to conncet with me and/or contribute to the project.
