@@ -12,7 +12,7 @@
 
 ![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/SOLiOSSDK.jpg?raw=true)
 
-## Create Wallet BDD Specs
+## Create Wallet BDD Specs (in the future)
 
 ### Create Wallet
 ### Story: Customer requests to create a solana wallet
@@ -53,7 +53,7 @@ Given the customer have a seed phrase
 
 ----------------
 
-## Get Balance BDD Specs
+## Get Balance BDD Specs (in progress)
 
 ### Get Balance / Receive Sol
 ### Story: Customer requests to see their balance
