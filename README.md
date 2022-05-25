@@ -1,7 +1,7 @@
 # SolanaPackage
 
 ## User Flow
-![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/UserFlow?raw=true)
+![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/UserFlow.jpg?raw=true)
 
 ```
 1- Create Wallet
