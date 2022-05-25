@@ -4,10 +4,10 @@
 ![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/UserFlow.jpg?raw=true)
 
 ```
-1- Create Wallet
+1- Create Wallet (in the future)
 2- Receive Sol (in progress)
-3- Display past transactions
-4- Send Sol
+3- Display past transactions (in the future)
+4- Send Sol (in the future)
 ```
 
 ![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/SOLiOSSDK.jpg?raw=true)
