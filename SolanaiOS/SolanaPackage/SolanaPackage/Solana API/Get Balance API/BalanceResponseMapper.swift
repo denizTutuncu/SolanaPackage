@@ -1,5 +1,5 @@
 //
-//  GetSolAccInfoResponseMapper.swift
+//  BalanceResponseMapper.swift
 //  SolanaPackage
 //
 //  Created by Deniz Tutuncu on 3/19/22.

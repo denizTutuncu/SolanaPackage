@@ -1,5 +1,5 @@
 //
-//  GetAccSolInfoCaseTests.swift
+//  LoadBalanceCaseTests.swift
 //  SolanaPackageTests
 //
 //  Created by Deniz Tutuncu on 3/19/22.

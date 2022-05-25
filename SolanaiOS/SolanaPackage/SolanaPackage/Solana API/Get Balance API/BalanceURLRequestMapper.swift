@@ -1,5 +1,5 @@
 //
-//  GetSolAccountInfoRequestLoader.swift
+//  BalanceURLRequestMapper.swift
 //  SolanaPackage
 //
 //  Created by Deniz Tutuncu on 3/26/22.

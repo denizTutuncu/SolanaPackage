@@ -1,5 +1,5 @@
 //
-//  SolanaPackageAPIEndToEndTests.swift
+//  BalanceAPIEndToEndTests.swift
 //  SolanaPackageAPIEndToEndTests
 //
 //  Created by Deniz Tutuncu on 3/20/22.
