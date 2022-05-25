@@ -10,8 +10,6 @@
 4- Send Sol (in the future)
 ```
 
-![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/SolanaPrototypeVideo_AdobeCreativeCloudExpress.gif)
-
 ----------------
 
 ![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/SOLiOSSDK.jpg?raw=true)
