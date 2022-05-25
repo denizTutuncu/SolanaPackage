@@ -1,5 +1,5 @@
 //
-//  RemoteGetSolAccountInfoLoader.swift
+//  RemoteBalanceLoader.swift
 //  SolanaPackage
 //
 //  Created by Deniz Tutuncu on 3/19/22.

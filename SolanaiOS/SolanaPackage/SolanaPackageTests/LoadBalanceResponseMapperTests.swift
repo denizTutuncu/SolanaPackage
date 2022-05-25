@@ -1,5 +1,5 @@
 //
-//  GetBalanceResponseMapperTests.swift
+//  LoadBalanceResponseMapperTests.swift
 //  SolanaPackageTests
 //
 //  Created by Deniz Tutuncu on 5/24/22.
