@@ -24,32 +24,33 @@ class LoadBalanceCaseTests: XCTestCase {
     }
     
     func test_load_deliversErrorOn2xxHTTPResponseWithInvalidJSON() {
-           let (sut, client) = makeSUT()
-           
-           let samples = [200, 201, 250, 280, 299]
-           samples.enumerated().forEach { index, code in
-               expect(sut, toCompleteWith: failure(.invalidData), when: {
-                   let invalidJSON = Data("invalid json".utf8)
-                   client.complete(withStatusCode: code, data: invalidJSON, at: index)
-               })
-           }
-       }
+        let (sut, client) = makeSUT()
+        
+        let samples = [200, 201, 250, 280, 299]
+        samples.enumerated().forEach { index, code in
+            expect(sut, toCompleteWith: failure(.invalidData), when: {
+                let invalidJSON = Data("invalid json".utf8)
+                client.complete(withStatusCode: code, data: invalidJSON, at: index)
+            })
+        }
+    }
     
     func test_load_deliversErrorOn2xxHTTPResponseWithEmptyJSON() {
-          let (sut, client) = makeSUT()
-          let samples = [200, 201, 250, 280, 299]
-          samples.enumerated().forEach { index, code in
-              expect(sut, toCompleteWith: failure(.invalidData), when: {
-                  let emptyData = makeItemJSON([:])
-                  client.complete(withStatusCode: code, data: emptyData, at: index)
-              })
-          }
-      }
+        let (sut, client) = makeSUT()
+        let samples = [200, 201, 250, 280, 299]
+        samples.enumerated().forEach { index, code in
+            expect(sut, toCompleteWith: failure(.invalidData), when: {
+                let emptyData = makeItemJSON([:])
+                client.complete(withStatusCode: code, data: emptyData, at: index)
+            })
+        }
+    }
     
     //MARK:- helpers
     private func makeSUT(url: URL = URL(string: "https://a-url.com")!, file: StaticString = #file, line: UInt = #line) -> (sut: RemoteBalanceLoader, client: HTTPClientSpy) {
         let client = HTTPClientSpy()
-        let sut = RemoteBalanceLoader(url: url, client: client)
+        let publicKey = createPublicKey()
+        let sut = RemoteBalanceLoader(url: url, publicKey: publicKey, client: client)
         trackForMemoryLeaks(sut, file: file, line: line)
         return (sut, client)
     }
@@ -61,10 +62,10 @@ class LoadBalanceCaseTests: XCTestCase {
     //        return request
     //    }
     //
-    //    private func createPublicKey() -> String {
-    //        let pubKey = "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi"
-    //        return pubKey
-    //    }
+    private func createPublicKey() -> String {
+        let pubKey = "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi"
+        return pubKey
+    }
     
     private func makeResponseItem() -> (model: BalanceResponse, json: [String:Any]) {
         let model = BalanceResponse(jsonrpc: "2.0", result: BalanceResult(context: BalanceContext(slot: 124067037), value: 25000000000), id: 1)
