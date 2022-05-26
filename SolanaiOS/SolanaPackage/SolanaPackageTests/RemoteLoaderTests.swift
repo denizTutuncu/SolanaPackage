@@ -86,7 +86,7 @@ class RemoteLoaderTests: XCTestCase {
     
     private func makeSUT(
         url: URL = anyURL(),
-        mapper: @escaping RemoteLoader<String>.Mapper = { _, _ in "any" },
+        mapper: @escaping RemoteLoader<String>.ResponseMapper = { _, _ in "any" },
         urlRequestMapper: @escaping RemoteLoader<String>.URLRequestMapper = { _,_ in testURLRequest() },
         file: StaticString = #file,
         line: UInt = #line
