@@ -28,7 +28,8 @@ class BalanceAPIEndToEndTests: XCTestCase {
     private func getBalance(file: StaticString = #file, line: UInt = #line) -> Swift.Result<BalanceResponse, Error>?  {
         let devNetURL = URL(string: SolanaClusterRPCEndpoints.devNet.rawValue)
         let publicKey = createPublicKey()
-        let loader = RemoteLoader(url: devNetURL, publicKey: publicKey, client: ephemeralClient(), urlRequestMapper: BalanceURLRequestMapper.map, mapper: BalanceResponseMapper.map)
+        let methodName = "getBalance"
+        let loader = RemoteLoader(url: devNetURL, methodName: methodName, publicKey: publicKey, client: ephemeralClient(), urlRequestMapper: BalanceURLRequestMapper.map, mapper: BalanceResponseMapper.map)
         
         trackForMemoryLeaks(loader, file: file, line: line)
         
