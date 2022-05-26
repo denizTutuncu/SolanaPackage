@@ -69,9 +69,12 @@ class RemoteLoaderTests: XCTestCase {
         let url = anyURL()
         let client = HTTPClientSpy()
         let publicKey = createPublicKey()
-        var sut: RemoteLoader<String>? = RemoteLoader<String>(url: url, publicKey: publicKey,
+        let methodName = "getBalance"
+        var sut: RemoteLoader<String>? = RemoteLoader<String>(url: url,
+                                                              methodName: methodName,
+                                                              publicKey: publicKey,
                                                               client: client,
-                                                              urlRequestMapper: { _,_ in testURLRequest() },
+                                                              urlRequestMapper: { _,_,_  in testURLRequest() },
                                                               mapper: { _, _ in "any" })
         
         var capturedResults = [RemoteLoader<String>.Result]()
@@ -87,13 +90,16 @@ class RemoteLoaderTests: XCTestCase {
     private func makeSUT(
         url: URL = anyURL(),
         mapper: @escaping RemoteLoader<String>.ResponseMapper = { _, _ in "any" },
-        urlRequestMapper: @escaping RemoteLoader<String>.URLRequestMapper = { _,_ in testURLRequest() },
+        urlRequestMapper: @escaping RemoteLoader<String>.URLRequestMapper = { _,_,_  in testURLRequest() },
         file: StaticString = #file,
         line: UInt = #line
     ) -> (sut: RemoteLoader<String>, client: HTTPClientSpy) {
         let client = HTTPClientSpy()
         let publicKey = createPublicKey()
-        let sut = RemoteLoader<String>(url: url, publicKey: publicKey,
+        let methodName = "getBalance"
+        let sut = RemoteLoader<String>(url: url,
+                                       methodName: methodName,
+                                       publicKey: publicKey,
                                        client: client,
                                        urlRequestMapper: urlRequestMapper,
                                        mapper: mapper)

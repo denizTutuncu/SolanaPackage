@@ -50,7 +50,7 @@ class LoadBalanceCaseTests: XCTestCase {
     private func makeSUT(url: URL = URL(string: "https://a-url.com")!, file: StaticString = #file, line: UInt = #line) -> (sut: RemoteBalanceLoader, client: HTTPClientSpy) {
         let client = HTTPClientSpy()
         let publicKey = createPublicKey()
-        let sut = RemoteBalanceLoader(url: url, publicKey: publicKey, client: client)
+        let sut = RemoteBalanceLoader(url: url, methodName: "getBalance", publicKey: publicKey, client: client)
         trackForMemoryLeaks(sut, file: file, line: line)
         return (sut, client)
     }

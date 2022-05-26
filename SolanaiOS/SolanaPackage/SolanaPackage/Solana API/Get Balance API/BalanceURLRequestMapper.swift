@@ -12,31 +12,35 @@ public final class BalanceURLRequestMapper {
     private struct GetBalanceRequest: Encodable {
         private let jsonrpc: String = "2.0"
         private let id: Int = 1
-        private let method: String = "getBalance"
+        private let method: String //= "getBalance"
         private let params: [String] //publicKey
     
-        init(params: [String]) {
+        init(method: String, params: [String]) {
+            self.method = method
             self.params = params
         }
     }
     
     private enum Error: Swift.Error {
         case publicKey
+        case methodName
         case url
         case encoder
     }
     
-    public static func map(_ url: URL?, _ publicKey: String?) throws -> URLRequest {
+    public static func map(_ url: URL?, _ methodName: String?, _ publicKey: String?) throws -> URLRequest {
         guard let publicKey = publicKey, !publicKey.isEmpty else {
             throw Error.publicKey
         }
+        
+        guard let methodName = methodName else { throw Error.methodName }
         
         guard let baseURL = url else { throw Error.url }
         
         var urlRequest = URLRequest(url: baseURL)
         urlRequest.httpMethod = "POST"
         
-        let requestBody = GetBalanceRequest(params: [publicKey])
+        let requestBody = GetBalanceRequest(method: methodName, params: [publicKey])
         
         do {
             let jsonData = try JSONEncoder().encode(requestBody)
