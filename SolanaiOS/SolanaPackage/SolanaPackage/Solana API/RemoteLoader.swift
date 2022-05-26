@@ -12,7 +12,7 @@ public final class RemoteLoader<Resource> {
     private let publicKey: String
     private let client: HTTPClient
     private let urlRequestMapper: URLRequestMapper
-    private let mapper: Mapper
+    private let responseMapper: ResponseMapper
     
     public enum Error: Swift.Error {
         case badURL
@@ -25,14 +25,14 @@ public final class RemoteLoader<Resource> {
     public typealias URLRequestMapper = (URL?, String?) throws -> URLRequest
     
     public typealias Result = Swift.Result<Resource, Swift.Error>
-    public typealias Mapper = (Data, HTTPURLResponse) throws -> Resource
+    public typealias ResponseMapper = (Data, HTTPURLResponse) throws -> Resource
   
-    public init(url: URL?, publicKey: String, client: HTTPClient, urlRequestMapper: @escaping URLRequestMapper, mapper: @escaping Mapper) {
+    public init(url: URL?, publicKey: String, client: HTTPClient, urlRequestMapper: @escaping URLRequestMapper, mapper: @escaping ResponseMapper) {
         self.url = url
         self.publicKey = publicKey
         self.client = client
         self.urlRequestMapper = urlRequestMapper
-        self.mapper = mapper
+        self.responseMapper = mapper
     }
         
     public func load(completion: @escaping (Result) -> Void) {
@@ -57,7 +57,7 @@ public final class RemoteLoader<Resource> {
     
     private func map(_ data: Data, from response: HTTPURLResponse) -> Result {
         do {
-            return .success(try mapper(data, response))
+            return .success(try responseMapper(data, response))
         } catch {
             return .failure(Error.invalidData)
         }
