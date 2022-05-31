@@ -37,6 +37,7 @@
 		2EE0896F2846D9FD007AFC0F /* BalanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0896E2846D9FD007AFC0F /* BalanceViewModel.swift */; };
 		2EE089712846DA6E007AFC0F /* BalanceLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE089702846DA6E007AFC0F /* BalanceLoadingViewModel.swift */; };
 		2EE089732846DAA2007AFC0F /* BalanceErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE089722846DAA2007AFC0F /* BalanceErrorViewModel.swift */; };
+		2EE089752846DDBA007AFC0F /* Balance.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2EE089742846DDBA007AFC0F /* Balance.strings */; };
 		2EFFADC32818B3460015B44D /* UIUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFFADC22818B3460015B44D /* UIUserModel.swift */; };
 		2EFFADC52818B3580015B44D /* GetBalanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFFADC42818B3580015B44D /* GetBalanceViewModel.swift */; };
 		2EFFADC82818B38C0015B44D /* GetBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFFADC72818B38C0015B44D /* GetBalanceView.swift */; };
@@ -121,6 +122,7 @@
 		2EE0896E2846D9FD007AFC0F /* BalanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewModel.swift; sourceTree = "<group>"; };
 		2EE089702846DA6E007AFC0F /* BalanceLoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceLoadingViewModel.swift; sourceTree = "<group>"; };
 		2EE089722846DAA2007AFC0F /* BalanceErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceErrorViewModel.swift; sourceTree = "<group>"; };
+		2EE089742846DDBA007AFC0F /* Balance.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Balance.strings; sourceTree = "<group>"; };
 		2EFFADC22818B3460015B44D /* UIUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUserModel.swift; sourceTree = "<group>"; };
 		2EFFADC42818B3580015B44D /* GetBalanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBalanceViewModel.swift; sourceTree = "<group>"; };
 		2EFFADC72818B38C0015B44D /* GetBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBalanceView.swift; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 				2EE0896E2846D9FD007AFC0F /* BalanceViewModel.swift */,
 				2EE089702846DA6E007AFC0F /* BalanceLoadingViewModel.swift */,
 				2EE089722846DAA2007AFC0F /* BalanceErrorViewModel.swift */,
+				2EE089742846DDBA007AFC0F /* Balance.strings */,
 			);
 			path = "Balance Presentation";
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EE089752846DDBA007AFC0F /* Balance.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
