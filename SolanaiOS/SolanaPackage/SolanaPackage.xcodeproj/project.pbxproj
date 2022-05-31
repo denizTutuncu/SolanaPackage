@@ -34,6 +34,7 @@
 		2ED6165227E7472800920274 /* BalanceAPIEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6165127E7472800920274 /* BalanceAPIEndToEndTests.swift */; };
 		2ED6165427E7472800920274 /* SolanaPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED6160427E5AD3F00920274 /* SolanaPackage.framework */; };
 		2ED6165A27E747CF00920274 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6163F27E5C33D00920274 /* XCTestCase+MemoryLeakTracking.swift */; };
+		2EE0896F2846D9FD007AFC0F /* BalanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0896E2846D9FD007AFC0F /* BalanceViewModel.swift */; };
 		2EFFADC32818B3460015B44D /* UIUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFFADC22818B3460015B44D /* UIUserModel.swift */; };
 		2EFFADC52818B3580015B44D /* GetBalanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFFADC42818B3580015B44D /* GetBalanceViewModel.swift */; };
 		2EFFADC82818B38C0015B44D /* GetBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFFADC72818B38C0015B44D /* GetBalanceView.swift */; };
@@ -115,6 +116,7 @@
 		2ED6164F27E7472800920274 /* SolanaPackageAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SolanaPackageAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED6165127E7472800920274 /* BalanceAPIEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceAPIEndToEndTests.swift; sourceTree = "<group>"; };
 		2ED6165327E7472800920274 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EE0896E2846D9FD007AFC0F /* BalanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewModel.swift; sourceTree = "<group>"; };
 		2EFFADC22818B3460015B44D /* UIUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUserModel.swift; sourceTree = "<group>"; };
 		2EFFADC42818B3580015B44D /* GetBalanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBalanceViewModel.swift; sourceTree = "<group>"; };
 		2EFFADC72818B38C0015B44D /* GetBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBalanceView.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 		2ED6160627E5AD3F00920274 /* SolanaPackage */ = {
 			isa = PBXGroup;
 			children = (
+				2EE0896D2846D9E0007AFC0F /* Solana Presantation */,
 				2ED6160827E5AD3F00920274 /* Info.plist */,
 				2ED6162027E5AE7200920274 /* SolCore */,
 				2ED6163127E5B5CA00920274 /* Solana Loaders */,
@@ -320,6 +323,22 @@
 				2ED6165327E7472800920274 /* Info.plist */,
 			);
 			path = SolanaPackageAPIEndToEndTests;
+			sourceTree = "<group>";
+		};
+		2EE0896C2846D975007AFC0F /* Balance Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2EE0896E2846D9FD007AFC0F /* BalanceViewModel.swift */,
+			);
+			path = "Balance Presentation";
+			sourceTree = "<group>";
+		};
+		2EE0896D2846D9E0007AFC0F /* Solana Presantation */ = {
+			isa = PBXGroup;
+			children = (
+				2EE0896C2846D975007AFC0F /* Balance Presentation */,
+			);
+			path = "Solana Presantation";
 			sourceTree = "<group>";
 		};
 		2EFFADC02818B3280015B44D /* UIModels */ = {
@@ -578,6 +597,7 @@
 				2ED6163327E5B5E500920274 /* BalanceLoader.swift in Sources */,
 				2E70FCC527F02C6800DD2072 /* BalanceResponse.swift in Sources */,
 				2ED6162627E5AECE00920274 /* HTTPClient.swift in Sources */,
+				2EE0896F2846D9FD007AFC0F /* BalanceViewModel.swift in Sources */,
 				2E3951DE283DA3C40079852F /* RemoteLoader.swift in Sources */,
 				2E70FCC827F0327200DD2072 /* BalanceURLRequestMapper.swift in Sources */,
 				2E0CBFAC27F1A8C0006E6892 /* SolanaClusterRPCEndpoints.swift in Sources */,
