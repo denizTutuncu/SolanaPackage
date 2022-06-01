@@ -8,7 +8,7 @@
 import Foundation
 
 public struct BalanceErrorViewModel {
-    public let error: String?
+    public let message: String?
     
     static var noError: BalanceErrorViewModel {
         return BalanceErrorViewModel(error: .none)
