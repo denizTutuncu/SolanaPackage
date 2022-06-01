@@ -26,7 +26,7 @@ public final class BalancePresenter {
     
     private var balancceLoadError: String {
         return NSLocalizedString("GENERIC_CONNECTION_ERROR",
-                                 tableName: "Balance",
+                                 tableName: "Shared",
                                  bundle: Bundle(for: BalancePresenter.self),
                                  comment: "Error message displayed when we can't load the image feed from the server")
     }

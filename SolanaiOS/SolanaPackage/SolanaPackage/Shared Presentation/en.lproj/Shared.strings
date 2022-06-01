@@ -1,0 +1,8 @@
+/* 
+  Shared.strings
+  SolanaPackage
+
+  Created by Deniz Tutuncu on 6/1/22.
+  
+*/
+"GENERIC_CONNECTION_ERROR" = "Couldn't connect to server";
