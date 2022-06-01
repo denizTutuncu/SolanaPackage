@@ -20,7 +20,7 @@ public protocol HTTPClient {
     func get(from urlRequest: URLRequest, completion: @escaping (Result) -> Void) -> HTTPClientTask
 }
 
-//Move to iOS App module
+//Move to iOS App module when you create iOS App module
 import Combine
 public extension HTTPClient {
     typealias Publisher = AnyPublisher<(Data, HTTPURLResponse), Error>
