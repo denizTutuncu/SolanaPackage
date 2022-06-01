@@ -38,6 +38,7 @@
 		2EE089712846DA6E007AFC0F /* BalanceLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE089702846DA6E007AFC0F /* BalanceLoadingViewModel.swift */; };
 		2EE089732846DAA2007AFC0F /* BalanceErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE089722846DAA2007AFC0F /* BalanceErrorViewModel.swift */; };
 		2EE089762846DF76007AFC0F /* Balance.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2EE089782846DF76007AFC0F /* Balance.strings */; };
+		2EE0897D2846E223007AFC0F /* BalancePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0897C2846E223007AFC0F /* BalancePresenter.swift */; };
 		2EFFADC32818B3460015B44D /* UIUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFFADC22818B3460015B44D /* UIUserModel.swift */; };
 		2EFFADC52818B3580015B44D /* GetBalanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFFADC42818B3580015B44D /* GetBalanceViewModel.swift */; };
 		2EFFADC82818B38C0015B44D /* GetBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFFADC72818B38C0015B44D /* GetBalanceView.swift */; };
@@ -126,6 +127,7 @@
 		2EE089792846E03E007AFC0F /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Balance.strings; sourceTree = "<group>"; };
 		2EE0897A2846E090007AFC0F /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Balance.strings"; sourceTree = "<group>"; };
 		2EE0897B2846E143007AFC0F /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Balance.strings; sourceTree = "<group>"; };
+		2EE0897C2846E223007AFC0F /* BalancePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancePresenter.swift; sourceTree = "<group>"; };
 		2EFFADC22818B3460015B44D /* UIUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUserModel.swift; sourceTree = "<group>"; };
 		2EFFADC42818B3580015B44D /* GetBalanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBalanceViewModel.swift; sourceTree = "<group>"; };
 		2EFFADC72818B38C0015B44D /* GetBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBalanceView.swift; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 				2EE089702846DA6E007AFC0F /* BalanceLoadingViewModel.swift */,
 				2EE089722846DAA2007AFC0F /* BalanceErrorViewModel.swift */,
 				2EE089782846DF76007AFC0F /* Balance.strings */,
+				2EE0897C2846E223007AFC0F /* BalancePresenter.swift */,
 			);
 			path = "Balance Presentation";
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2ED6163527E5B95B00920274 /* RemoteBalanceLoader.swift in Sources */,
+				2EE0897D2846E223007AFC0F /* BalancePresenter.swift in Sources */,
 				2ED6163A27E5BE4400920274 /* BalanceResponseMapper.swift in Sources */,
 				2ED6162427E5AEAB00920274 /* HTTPURLResponse+StatusCode.swift in Sources */,
 				2ED6163327E5B5E500920274 /* BalanceLoader.swift in Sources */,
