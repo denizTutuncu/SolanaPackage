@@ -49,7 +49,7 @@ class BalancePresenterTests: XCTestCase {
         sut.didFinishLoadingBalance(with: anyNSError())
         
         XCTAssertEqual(view.messages, [
-            .display(errorMessage: localized("GENERIC_CONNECTION_ERROR")),
+            .display(errorMessage: localized("GENERIC_CONNECTION_ERROR", table: "Shared")),
             .display(isLoading: false)
         ])
     }
@@ -64,8 +64,7 @@ class BalancePresenterTests: XCTestCase {
         return (sut, view)
     }
     
-    private func localized(_ key: String, file: StaticString = #file, line: UInt = #line) -> String {
-        let table = "Balance"
+    private func localized(_ key: String, table: String = "Balance", file: StaticString = #file, line: UInt = #line) -> String {
         let bundle = Bundle(for: BalancePresenter.self)
         let value = bundle.localizedString(forKey: key, value: nil, table: table)
         if value == key {
