@@ -39,6 +39,7 @@
 		2EE089732846DAA2007AFC0F /* BalanceErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE089722846DAA2007AFC0F /* BalanceErrorViewModel.swift */; };
 		2EE089762846DF76007AFC0F /* Balance.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2EE089782846DF76007AFC0F /* Balance.strings */; };
 		2EE0897D2846E223007AFC0F /* BalancePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0897C2846E223007AFC0F /* BalancePresenter.swift */; };
+		2EE0898028473BAF007AFC0F /* BalanceLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0897F28473BAF007AFC0F /* BalanceLocalizationTests.swift */; };
 		2EFFADC32818B3460015B44D /* UIUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFFADC22818B3460015B44D /* UIUserModel.swift */; };
 		2EFFADC52818B3580015B44D /* GetBalanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFFADC42818B3580015B44D /* GetBalanceViewModel.swift */; };
 		2EFFADC82818B38C0015B44D /* GetBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFFADC72818B38C0015B44D /* GetBalanceView.swift */; };
@@ -128,6 +129,7 @@
 		2EE0897A2846E090007AFC0F /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Balance.strings"; sourceTree = "<group>"; };
 		2EE0897B2846E143007AFC0F /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Balance.strings; sourceTree = "<group>"; };
 		2EE0897C2846E223007AFC0F /* BalancePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancePresenter.swift; sourceTree = "<group>"; };
+		2EE0897F28473BAF007AFC0F /* BalanceLocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceLocalizationTests.swift; sourceTree = "<group>"; };
 		2EFFADC22818B3460015B44D /* UIUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUserModel.swift; sourceTree = "<group>"; };
 		2EFFADC42818B3580015B44D /* GetBalanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBalanceViewModel.swift; sourceTree = "<group>"; };
 		2EFFADC72818B38C0015B44D /* GetBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBalanceView.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 		2ED6161127E5AD4000920274 /* SolanaPackageTests */ = {
 			isa = PBXGroup;
 			children = (
+				2EE0897E28473B99007AFC0F /* Balance Presentation */,
 				2ED6164527E5C3B800920274 /* URLSessionHTTPClientTests.swift */,
 				2ED6164927E5C42600920274 /* LoadBalanceCaseTests.swift */,
 				2E3951DF283DB1630079852F /* RemoteLoaderTests.swift */,
@@ -354,6 +357,14 @@
 				2EE0896C2846D975007AFC0F /* Balance Presentation */,
 			);
 			path = "Solana Presantation";
+			sourceTree = "<group>";
+		};
+		2EE0897E28473B99007AFC0F /* Balance Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2EE0897F28473BAF007AFC0F /* BalanceLocalizationTests.swift */,
+			);
+			path = "Balance Presentation";
 			sourceTree = "<group>";
 		};
 		2EFFADC02818B3280015B44D /* UIModels */ = {
@@ -636,6 +647,7 @@
 				2ED6164427E5C37400920274 /* HTTPClientSpy.swift in Sources */,
 				2EB6F55027E821A500CA7BED /* SharedTestHelpers.swift in Sources */,
 				2ED6164227E5C35400920274 /* URLProtocolStub.swift in Sources */,
+				2EE0898028473BAF007AFC0F /* BalanceLocalizationTests.swift in Sources */,
 				2E3951E2283DF5120079852F /* LoadBalanceResponseMapperTests.swift in Sources */,
 				2ED6164627E5C3B800920274 /* URLSessionHTTPClientTests.swift in Sources */,
 				2ED6164A27E5C42600920274 /* LoadBalanceCaseTests.swift in Sources */,
