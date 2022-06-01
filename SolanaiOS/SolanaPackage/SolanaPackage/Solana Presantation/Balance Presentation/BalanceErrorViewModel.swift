@@ -11,10 +11,10 @@ public struct BalanceErrorViewModel {
     public let message: String?
     
     static var noError: BalanceErrorViewModel {
-        return BalanceErrorViewModel(error: .none)
+        return BalanceErrorViewModel(message: .none)
     }
     
     static func error(message: String) -> BalanceErrorViewModel {
-        return BalanceErrorViewModel(error: message)
+        return BalanceErrorViewModel(message: message)
     }
 }
