@@ -25,10 +25,6 @@ public final class LoadResourcePresenter {
         self.errorView = errorView
     }
     
-    public static var title: String {
-        return NSLocalizedString("BALANCE_VIEW_TITLE", tableName: "Balance", bundle: Bundle(for: BalancePresenter.self), comment: "Title for the balance view")
-    }
-    
     public func didStartLoadingBalance() {
         errorView.display(.noError)
         loadingView.display(BalanceLoadingViewModel(isLoading: true))
