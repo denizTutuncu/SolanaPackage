@@ -21,7 +21,7 @@ public final class LoadResourcePresenter<Resource, View: ResourceView> {
     private let mapper: Mapper
     
     private var balancceLoadError: String {
-        return NSLocalizedString("BALANCE_VIEW_CONNECTION_ERROR",
+        return NSLocalizedString("GENERIC_CONNECTION_ERROR",
                                  tableName: "Balance",
                                  bundle: Bundle(for: BalancePresenter.self),
                                  comment: "Error message displayed when we can't load the image feed from the server")
@@ -44,7 +44,7 @@ public final class LoadResourcePresenter<Resource, View: ResourceView> {
         loadingView.display(BalanceLoadingViewModel(isLoading: false))
     }
     
-    public func didFinishLoadingBalance(with error: Error) {
+    public func didFinishLoading(with error: Error) {
         errorView.display(.error(message: balancceLoadError))
         loadingView.display(BalanceLoadingViewModel(isLoading: false))
     }

@@ -49,7 +49,7 @@ class BalancePresenterTests: XCTestCase {
         sut.didFinishLoadingBalance(with: anyNSError())
         
         XCTAssertEqual(view.messages, [
-            .display(errorMessage: localized("BALANCE_VIEW_CONNECTION_ERROR")),
+            .display(errorMessage: localized("GENERIC_CONNECTION_ERROR")),
             .display(isLoading: false)
         ])
     }

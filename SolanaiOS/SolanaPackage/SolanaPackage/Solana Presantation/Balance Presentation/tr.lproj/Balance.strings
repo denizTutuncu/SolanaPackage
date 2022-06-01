@@ -6,4 +6,4 @@
   
 */
 "BALANCE_VIEW_TITLE" = "Sol Cüzdan";
-"BALANCE_VIEW_CONNECTION_ERROR" = "Sunucuya bağlanılamadı";
+"GENERIC_CONNECTION_ERROR" = "Sunucuya bağlanılamadı";
