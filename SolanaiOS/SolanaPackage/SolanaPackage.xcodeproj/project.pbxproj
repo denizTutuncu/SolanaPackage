@@ -254,8 +254,8 @@
 		2ED6160627E5AD3F00920274 /* SolanaPackage */ = {
 			isa = PBXGroup;
 			children = (
-				2EE0896D2846D9E0007AFC0F /* Solana Presantation */,
 				2ED6160827E5AD3F00920274 /* Info.plist */,
+				2EE0896D2846D9E0007AFC0F /* Solana Presantation */,
 				2ED6162027E5AE7200920274 /* SolCore */,
 				2ED6163127E5B5CA00920274 /* Solana Loaders */,
 				2ED6162127E5AE7F00920274 /* Solana API */,
