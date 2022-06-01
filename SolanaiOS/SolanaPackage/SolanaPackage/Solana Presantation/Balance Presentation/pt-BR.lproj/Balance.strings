@@ -6,4 +6,4 @@
   
 */
 "BALANCE_VIEW_TITLE" = "Sol Carteira";
-"BALANCE_VIEW_CONNECTION_ERROR" = "Não foi possível conectar com o servidor";
+"GENERIC_CONNECTION_ERROR" = "Não foi possível conectar com o servidor";

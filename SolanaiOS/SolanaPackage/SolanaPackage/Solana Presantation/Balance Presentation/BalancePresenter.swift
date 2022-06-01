@@ -25,7 +25,7 @@ public final class BalancePresenter {
     private let errorView: BalanceErrorView
     
     private var balancceLoadError: String {
-        return NSLocalizedString("BALANCE_VIEW_CONNECTION_ERROR",
+        return NSLocalizedString("GENERIC_CONNECTION_ERROR",
                                  tableName: "Balance",
                                  bundle: Bundle(for: BalancePresenter.self),
                                  comment: "Error message displayed when we can't load the image feed from the server")

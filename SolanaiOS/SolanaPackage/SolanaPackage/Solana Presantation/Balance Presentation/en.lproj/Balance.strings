@@ -6,4 +6,4 @@
   
 */
 "BALANCE_VIEW_TITLE" = "Sol Wallet";
-"BALANCE_VIEW_CONNECTION_ERROR" = "Couldn't connect to server";
+"GENERIC_CONNECTION_ERROR" = "Couldn't connect to server";
