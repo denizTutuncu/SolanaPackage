@@ -25,7 +25,7 @@ public final class LoadResourcePresenter {
         self.errorView = errorView
     }
     
-    public func didStartLoadingBalance() {
+    public func didStartLoading() {
         errorView.display(.noError)
         loadingView.display(BalanceLoadingViewModel(isLoading: true))
     }
