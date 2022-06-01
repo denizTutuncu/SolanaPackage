@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct BalanceResponse: Equatable {
+public struct BalanceResponse: Equatable, Hashable {
     public let jsonrpc: String
     public let result: BalanceResult
     public let id: Int
@@ -18,7 +18,7 @@ public struct BalanceResponse: Equatable {
     }
 }
 
-public struct BalanceResult: Equatable {
+public struct BalanceResult: Equatable, Hashable {
     public let context: BalanceContext
     public let value: Int
     public init(context: BalanceContext, value: Int) {
@@ -27,7 +27,7 @@ public struct BalanceResult: Equatable {
     }
 }
 
-public struct BalanceContext: Equatable {
+public struct BalanceContext: Equatable, Hashable {
     public let slot: Int
     public init(slot: Int) {
         self.slot = slot
