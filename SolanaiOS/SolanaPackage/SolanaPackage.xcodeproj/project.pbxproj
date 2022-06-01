@@ -43,6 +43,7 @@
 		2EE0898228473C07007AFC0F /* BalancePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0898128473C07007AFC0F /* BalancePresenterTests.swift */; };
 		2EE0898428473D0C007AFC0F /* BalancePresantation+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0898328473D0C007AFC0F /* BalancePresantation+Helpers.swift */; };
 		2EE0898828474322007AFC0F /* LoadResourcePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0898728474322007AFC0F /* LoadResourcePresenterTests.swift */; };
+		2EE0898B284744E6007AFC0F /* LoadResourcePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0898A284744E6007AFC0F /* LoadResourcePresenter.swift */; };
 		2EFFADC32818B3460015B44D /* UIUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFFADC22818B3460015B44D /* UIUserModel.swift */; };
 		2EFFADC52818B3580015B44D /* GetBalanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFFADC42818B3580015B44D /* GetBalanceViewModel.swift */; };
 		2EFFADC82818B38C0015B44D /* GetBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFFADC72818B38C0015B44D /* GetBalanceView.swift */; };
@@ -136,6 +137,7 @@
 		2EE0898128473C07007AFC0F /* BalancePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancePresenterTests.swift; sourceTree = "<group>"; };
 		2EE0898328473D0C007AFC0F /* BalancePresantation+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BalancePresantation+Helpers.swift"; sourceTree = "<group>"; };
 		2EE0898728474322007AFC0F /* LoadResourcePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadResourcePresenterTests.swift; sourceTree = "<group>"; };
+		2EE0898A284744E6007AFC0F /* LoadResourcePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadResourcePresenter.swift; sourceTree = "<group>"; };
 		2EFFADC22818B3460015B44D /* UIUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUserModel.swift; sourceTree = "<group>"; };
 		2EFFADC42818B3580015B44D /* GetBalanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBalanceViewModel.swift; sourceTree = "<group>"; };
 		2EFFADC72818B38C0015B44D /* GetBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBalanceView.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 		2ED6160627E5AD3F00920274 /* SolanaPackage */ = {
 			isa = PBXGroup;
 			children = (
+				2EE08989284744CC007AFC0F /* Shared Presentation */,
 				2ED6160827E5AD3F00920274 /* Info.plist */,
 				2EE0896D2846D9E0007AFC0F /* Solana Presantation */,
 				2ED6162027E5AE7200920274 /* SolCore */,
@@ -382,6 +385,14 @@
 				2EE0898328473D0C007AFC0F /* BalancePresantation+Helpers.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		2EE08989284744CC007AFC0F /* Shared Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2EE0898A284744E6007AFC0F /* LoadResourcePresenter.swift */,
+			);
+			path = "Shared Presentation";
 			sourceTree = "<group>";
 		};
 		2EFFADC02818B3280015B44D /* UIModels */ = {
@@ -644,6 +655,7 @@
 				2ED6162427E5AEAB00920274 /* HTTPURLResponse+StatusCode.swift in Sources */,
 				2ED6163327E5B5E500920274 /* BalanceLoader.swift in Sources */,
 				2EE089712846DA6E007AFC0F /* BalanceLoadingViewModel.swift in Sources */,
+				2EE0898B284744E6007AFC0F /* LoadResourcePresenter.swift in Sources */,
 				2E70FCC527F02C6800DD2072 /* BalanceResponse.swift in Sources */,
 				2ED6162627E5AECE00920274 /* HTTPClient.swift in Sources */,
 				2EE0896F2846D9FD007AFC0F /* BalanceViewModel.swift in Sources */,
