@@ -27,14 +27,15 @@ class LoadResourcePresenterTests: XCTestCase {
         ])
     }
     
-    func test_didFinishLoadingFeed_displaysFeedAndStopsLoading() {
-        let (sut, view) = makeSUT()
-        let balance = uniqueBalance()
-        
-        sut.didFinishLoadingBalance(with: balance)
+    func test_didFinishLoadingResource_displaysResourceAndStopsLoading() {
+        let (sut, view) = makeSUT(mapper: { resource in
+            resource + " view model"
+        })
+    
+        sut.didFinishLoading(with: "resource")
         
         XCTAssertEqual(view.messages, [
-            .display(balance: balance),
+            .display(resourceViewModel: "resource view model"),
             .display(isLoading: false)
         ])
     }
@@ -52,9 +53,11 @@ class LoadResourcePresenterTests: XCTestCase {
     
     // MARK: - Helpers
     
-    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: LoadResourcePresenter, view: ViewSpy) {
+    private func makeSUT(mapper: @escaping LoadResourcePresenter.Mapper = { _ in "any" } ,
+                         file: StaticString = #file,
+                         line: UInt = #line) -> (sut: LoadResourcePresenter, view: ViewSpy) {
         let view = ViewSpy()
-        let sut = LoadResourcePresenter(balanceView: view, loadingView: view, errorView: view)
+        let sut = LoadResourcePresenter(resourceView: view, loadingView: view, errorView: view, mapper: mapper)
         trackForMemoryLeaks(view, file: file, line: line)
         trackForMemoryLeaks(sut, file: file, line: line)
         return (sut, view)
@@ -70,12 +73,12 @@ class LoadResourcePresenterTests: XCTestCase {
         return value
     }
     
-    private class ViewSpy: BalanceView, BalanceLoadingView, BalanceErrorView {
+    private class ViewSpy: ResourceView, BalanceLoadingView, BalanceErrorView {
         
         enum Message: Hashable {
             case display(errorMessage: String?)
             case display(isLoading: Bool)
-            case display(balance: BalanceResponse)
+            case display(resourceViewModel: String)
         }
         
         private(set) var messages = Set<Message>()
@@ -88,8 +91,8 @@ class LoadResourcePresenterTests: XCTestCase {
             messages.insert(.display(isLoading: viewModel.isLoading))
         }
         
-        func display(_ viewModel: BalanceViewModel) {
-            messages.insert(.display(balance: viewModel.balance))
+        func display(_ viewModel: String) {
+            messages.insert(.display(resourceViewModel: viewModel))
         }
     }
   
