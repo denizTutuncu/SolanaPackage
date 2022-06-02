@@ -1,13 +1,13 @@
 //
-//  SolanaAppUITestsLaunchTests.swift
-//  SolanaAppUITests
+//  MySolWalletUITestsLaunchTests.swift
+//  MySolWalletUITests
 //
 //  Created by Deniz Tutuncu on 6/1/22.
 //
 
 import XCTest
 
-class SolanaAppUITestsLaunchTests: XCTestCase {
+class MySolWalletUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

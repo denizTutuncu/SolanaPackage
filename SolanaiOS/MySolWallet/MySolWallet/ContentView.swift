@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  SolanaApp
+//  MySolWallet
 //
 //  Created by Deniz Tutuncu on 6/1/22.
 //

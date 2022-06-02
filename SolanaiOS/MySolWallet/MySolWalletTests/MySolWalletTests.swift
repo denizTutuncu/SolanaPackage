@@ -1,14 +1,14 @@
 //
-//  SolanaAppTests.swift
-//  SolanaAppTests
+//  MySolWalletTests.swift
+//  MySolWalletTests
 //
 //  Created by Deniz Tutuncu on 6/1/22.
 //
 
 import XCTest
-@testable import SolanaApp
+@testable import MySolWallet
 
-class SolanaAppTests: XCTestCase {
+class MySolWalletTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
