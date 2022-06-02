@@ -14,6 +14,12 @@ class BalancePresenterTests: XCTestCase {
         XCTAssertEqual(BalancePresenter.title, localized("BALANCE_VIEW_TITLE"))
     }
     
+    func test_map_dcreatesViewModel() {
+        let balance = uniqueBalance()
+        let viewModel = BalancePresenter.map(balance)
+        XCTAssertEqual(viewModel.balance, balance)
+    }
+    
     func test_init_doesNotSendMessagesToView() {
         let (_, view) = makeSUT()
         

@@ -47,12 +47,16 @@ public final class BalancePresenter {
     }
     
     public func didFinishLoadingBalance(with balance: BalanceResponse) {
-        balanceView.display(BalanceViewModel(balance: balance))
+        balanceView.display(Self.map(balance))
         loadingView.display(BalanceLoadingViewModel(isLoading: false))
     }
     
     public func didFinishLoadingBalance(with error: Error) {
         errorView.display(.error(message: balancceLoadError))
         loadingView.display(BalanceLoadingViewModel(isLoading: false))
+    }
+    
+    public static func map(_ balance: BalanceResponse) -> BalanceViewModel {
+        BalanceViewModel(balance: balance)
     }
 }
