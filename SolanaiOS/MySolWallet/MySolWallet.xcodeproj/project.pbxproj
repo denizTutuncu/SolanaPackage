@@ -7,61 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E9B099528483A2200F450C8 /* SolanaAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9B099428483A2200F450C8 /* SolanaAppApp.swift */; };
-		2E9B099728483A2200F450C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9B099628483A2200F450C8 /* ContentView.swift */; };
-		2E9B099928483A2300F450C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E9B099828483A2300F450C8 /* Assets.xcassets */; };
-		2E9B099C28483A2300F450C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E9B099B28483A2300F450C8 /* Preview Assets.xcassets */; };
-		2E9B09A628483A2400F450C8 /* SolanaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9B09A528483A2400F450C8 /* SolanaAppTests.swift */; };
-		2E9B09B028483A2400F450C8 /* SolanaAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9B09AF28483A2400F450C8 /* SolanaAppUITests.swift */; };
-		2E9B09B228483A2400F450C8 /* SolanaAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9B09B128483A2400F450C8 /* SolanaAppUITestsLaunchTests.swift */; };
+		2E42948228483FDD00817480 /* MySolWalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42948128483FDD00817480 /* MySolWalletApp.swift */; };
+		2E42948428483FDD00817480 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42948328483FDD00817480 /* ContentView.swift */; };
+		2E42948628483FDF00817480 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E42948528483FDE00817480 /* Assets.xcassets */; };
+		2E42948928483FDF00817480 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E42948828483FDF00817480 /* Preview Assets.xcassets */; };
+		2E42949328483FDF00817480 /* MySolWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42949228483FDF00817480 /* MySolWalletTests.swift */; };
+		2E42949D28483FDF00817480 /* MySolWalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42949C28483FDF00817480 /* MySolWalletUITests.swift */; };
+		2E42949F28483FDF00817480 /* MySolWalletUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42949E28483FDF00817480 /* MySolWalletUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2E9B09A228483A2400F450C8 /* PBXContainerItemProxy */ = {
+		2E42948F28483FDF00817480 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2E9B098928483A2200F450C8 /* Project object */;
+			containerPortal = 2E42947628483FDD00817480 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 2E9B099028483A2200F450C8;
-			remoteInfo = SolanaApp;
+			remoteGlobalIDString = 2E42947D28483FDD00817480;
+			remoteInfo = MySolWallet;
 		};
-		2E9B09AC28483A2400F450C8 /* PBXContainerItemProxy */ = {
+		2E42949928483FDF00817480 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2E9B098928483A2200F450C8 /* Project object */;
+			containerPortal = 2E42947628483FDD00817480 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 2E9B099028483A2200F450C8;
-			remoteInfo = SolanaApp;
+			remoteGlobalIDString = 2E42947D28483FDD00817480;
+			remoteInfo = MySolWallet;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2E9B099128483A2200F450C8 /* SolanaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SolanaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E9B099428483A2200F450C8 /* SolanaAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolanaAppApp.swift; sourceTree = "<group>"; };
-		2E9B099628483A2200F450C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		2E9B099828483A2300F450C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2E9B099B28483A2300F450C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2E9B09A128483A2400F450C8 /* SolanaAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SolanaAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E9B09A528483A2400F450C8 /* SolanaAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolanaAppTests.swift; sourceTree = "<group>"; };
-		2E9B09AB28483A2400F450C8 /* SolanaAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SolanaAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E9B09AF28483A2400F450C8 /* SolanaAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolanaAppUITests.swift; sourceTree = "<group>"; };
-		2E9B09B128483A2400F450C8 /* SolanaAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolanaAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2E42947E28483FDD00817480 /* MySolWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySolWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E42948128483FDD00817480 /* MySolWalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySolWalletApp.swift; sourceTree = "<group>"; };
+		2E42948328483FDD00817480 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2E42948528483FDE00817480 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2E42948828483FDF00817480 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2E42948E28483FDF00817480 /* MySolWalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySolWalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E42949228483FDF00817480 /* MySolWalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySolWalletTests.swift; sourceTree = "<group>"; };
+		2E42949828483FDF00817480 /* MySolWalletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySolWalletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E42949C28483FDF00817480 /* MySolWalletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySolWalletUITests.swift; sourceTree = "<group>"; };
+		2E42949E28483FDF00817480 /* MySolWalletUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySolWalletUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2E9B098E28483A2200F450C8 /* Frameworks */ = {
+		2E42947B28483FDD00817480 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2E9B099E28483A2400F450C8 /* Frameworks */ = {
+		2E42948B28483FDF00817480 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2E9B09A828483A2400F450C8 /* Frameworks */ = {
+		2E42949528483FDF00817480 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -71,142 +71,142 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2E9B098828483A2200F450C8 = {
+		2E42947528483FDD00817480 = {
 			isa = PBXGroup;
 			children = (
-				2E9B099328483A2200F450C8 /* SolanaApp */,
-				2E9B09A428483A2400F450C8 /* SolanaAppTests */,
-				2E9B09AE28483A2400F450C8 /* SolanaAppUITests */,
-				2E9B099228483A2200F450C8 /* Products */,
+				2E42948028483FDD00817480 /* MySolWallet */,
+				2E42949128483FDF00817480 /* MySolWalletTests */,
+				2E42949B28483FDF00817480 /* MySolWalletUITests */,
+				2E42947F28483FDD00817480 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		2E9B099228483A2200F450C8 /* Products */ = {
+		2E42947F28483FDD00817480 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2E9B099128483A2200F450C8 /* SolanaApp.app */,
-				2E9B09A128483A2400F450C8 /* SolanaAppTests.xctest */,
-				2E9B09AB28483A2400F450C8 /* SolanaAppUITests.xctest */,
+				2E42947E28483FDD00817480 /* MySolWallet.app */,
+				2E42948E28483FDF00817480 /* MySolWalletTests.xctest */,
+				2E42949828483FDF00817480 /* MySolWalletUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2E9B099328483A2200F450C8 /* SolanaApp */ = {
+		2E42948028483FDD00817480 /* MySolWallet */ = {
 			isa = PBXGroup;
 			children = (
-				2E9B099428483A2200F450C8 /* SolanaAppApp.swift */,
-				2E9B099628483A2200F450C8 /* ContentView.swift */,
-				2E9B099828483A2300F450C8 /* Assets.xcassets */,
-				2E9B099A28483A2300F450C8 /* Preview Content */,
+				2E42948128483FDD00817480 /* MySolWalletApp.swift */,
+				2E42948328483FDD00817480 /* ContentView.swift */,
+				2E42948528483FDE00817480 /* Assets.xcassets */,
+				2E42948728483FDF00817480 /* Preview Content */,
 			);
-			path = SolanaApp;
+			path = MySolWallet;
 			sourceTree = "<group>";
 		};
-		2E9B099A28483A2300F450C8 /* Preview Content */ = {
+		2E42948728483FDF00817480 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				2E9B099B28483A2300F450C8 /* Preview Assets.xcassets */,
+				2E42948828483FDF00817480 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		2E9B09A428483A2400F450C8 /* SolanaAppTests */ = {
+		2E42949128483FDF00817480 /* MySolWalletTests */ = {
 			isa = PBXGroup;
 			children = (
-				2E9B09A528483A2400F450C8 /* SolanaAppTests.swift */,
+				2E42949228483FDF00817480 /* MySolWalletTests.swift */,
 			);
-			path = SolanaAppTests;
+			path = MySolWalletTests;
 			sourceTree = "<group>";
 		};
-		2E9B09AE28483A2400F450C8 /* SolanaAppUITests */ = {
+		2E42949B28483FDF00817480 /* MySolWalletUITests */ = {
 			isa = PBXGroup;
 			children = (
-				2E9B09AF28483A2400F450C8 /* SolanaAppUITests.swift */,
-				2E9B09B128483A2400F450C8 /* SolanaAppUITestsLaunchTests.swift */,
+				2E42949C28483FDF00817480 /* MySolWalletUITests.swift */,
+				2E42949E28483FDF00817480 /* MySolWalletUITestsLaunchTests.swift */,
 			);
-			path = SolanaAppUITests;
+			path = MySolWalletUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2E9B099028483A2200F450C8 /* SolanaApp */ = {
+		2E42947D28483FDD00817480 /* MySolWallet */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2E9B09B528483A2400F450C8 /* Build configuration list for PBXNativeTarget "SolanaApp" */;
+			buildConfigurationList = 2E4294A228483FDF00817480 /* Build configuration list for PBXNativeTarget "MySolWallet" */;
 			buildPhases = (
-				2E9B098D28483A2200F450C8 /* Sources */,
-				2E9B098E28483A2200F450C8 /* Frameworks */,
-				2E9B098F28483A2200F450C8 /* Resources */,
+				2E42947A28483FDD00817480 /* Sources */,
+				2E42947B28483FDD00817480 /* Frameworks */,
+				2E42947C28483FDD00817480 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SolanaApp;
-			productName = SolanaApp;
-			productReference = 2E9B099128483A2200F450C8 /* SolanaApp.app */;
+			name = MySolWallet;
+			productName = MySolWallet;
+			productReference = 2E42947E28483FDD00817480 /* MySolWallet.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2E9B09A028483A2400F450C8 /* SolanaAppTests */ = {
+		2E42948D28483FDF00817480 /* MySolWalletTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2E9B09B828483A2400F450C8 /* Build configuration list for PBXNativeTarget "SolanaAppTests" */;
+			buildConfigurationList = 2E4294A528483FDF00817480 /* Build configuration list for PBXNativeTarget "MySolWalletTests" */;
 			buildPhases = (
-				2E9B099D28483A2400F450C8 /* Sources */,
-				2E9B099E28483A2400F450C8 /* Frameworks */,
-				2E9B099F28483A2400F450C8 /* Resources */,
+				2E42948A28483FDF00817480 /* Sources */,
+				2E42948B28483FDF00817480 /* Frameworks */,
+				2E42948C28483FDF00817480 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2E9B09A328483A2400F450C8 /* PBXTargetDependency */,
+				2E42949028483FDF00817480 /* PBXTargetDependency */,
 			);
-			name = SolanaAppTests;
-			productName = SolanaAppTests;
-			productReference = 2E9B09A128483A2400F450C8 /* SolanaAppTests.xctest */;
+			name = MySolWalletTests;
+			productName = MySolWalletTests;
+			productReference = 2E42948E28483FDF00817480 /* MySolWalletTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2E9B09AA28483A2400F450C8 /* SolanaAppUITests */ = {
+		2E42949728483FDF00817480 /* MySolWalletUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2E9B09BB28483A2400F450C8 /* Build configuration list for PBXNativeTarget "SolanaAppUITests" */;
+			buildConfigurationList = 2E4294A828483FDF00817480 /* Build configuration list for PBXNativeTarget "MySolWalletUITests" */;
 			buildPhases = (
-				2E9B09A728483A2400F450C8 /* Sources */,
-				2E9B09A828483A2400F450C8 /* Frameworks */,
-				2E9B09A928483A2400F450C8 /* Resources */,
+				2E42949428483FDF00817480 /* Sources */,
+				2E42949528483FDF00817480 /* Frameworks */,
+				2E42949628483FDF00817480 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2E9B09AD28483A2400F450C8 /* PBXTargetDependency */,
+				2E42949A28483FDF00817480 /* PBXTargetDependency */,
 			);
-			name = SolanaAppUITests;
-			productName = SolanaAppUITests;
-			productReference = 2E9B09AB28483A2400F450C8 /* SolanaAppUITests.xctest */;
+			name = MySolWalletUITests;
+			productName = MySolWalletUITests;
+			productReference = 2E42949828483FDF00817480 /* MySolWalletUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		2E9B098928483A2200F450C8 /* Project object */ = {
+		2E42947628483FDD00817480 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
-					2E9B099028483A2200F450C8 = {
+					2E42947D28483FDD00817480 = {
 						CreatedOnToolsVersion = 13.4;
 					};
-					2E9B09A028483A2400F450C8 = {
+					2E42948D28483FDF00817480 = {
 						CreatedOnToolsVersion = 13.4;
-						TestTargetID = 2E9B099028483A2200F450C8;
+						TestTargetID = 2E42947D28483FDD00817480;
 					};
-					2E9B09AA28483A2400F450C8 = {
+					2E42949728483FDF00817480 = {
 						CreatedOnToolsVersion = 13.4;
-						TestTargetID = 2E9B099028483A2200F450C8;
+						TestTargetID = 2E42947D28483FDD00817480;
 					};
 				};
 			};
-			buildConfigurationList = 2E9B098C28483A2200F450C8 /* Build configuration list for PBXProject "SolanaApp" */;
+			buildConfigurationList = 2E42947928483FDD00817480 /* Build configuration list for PBXProject "MySolWallet" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -214,36 +214,36 @@
 				en,
 				Base,
 			);
-			mainGroup = 2E9B098828483A2200F450C8;
-			productRefGroup = 2E9B099228483A2200F450C8 /* Products */;
+			mainGroup = 2E42947528483FDD00817480;
+			productRefGroup = 2E42947F28483FDD00817480 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2E9B099028483A2200F450C8 /* SolanaApp */,
-				2E9B09A028483A2400F450C8 /* SolanaAppTests */,
-				2E9B09AA28483A2400F450C8 /* SolanaAppUITests */,
+				2E42947D28483FDD00817480 /* MySolWallet */,
+				2E42948D28483FDF00817480 /* MySolWalletTests */,
+				2E42949728483FDF00817480 /* MySolWalletUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2E9B098F28483A2200F450C8 /* Resources */ = {
+		2E42947C28483FDD00817480 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E9B099C28483A2300F450C8 /* Preview Assets.xcassets in Resources */,
-				2E9B099928483A2300F450C8 /* Assets.xcassets in Resources */,
+				2E42948928483FDF00817480 /* Preview Assets.xcassets in Resources */,
+				2E42948628483FDF00817480 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2E9B099F28483A2400F450C8 /* Resources */ = {
+		2E42948C28483FDF00817480 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2E9B09A928483A2400F450C8 /* Resources */ = {
+		2E42949628483FDF00817480 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -253,49 +253,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2E9B098D28483A2200F450C8 /* Sources */ = {
+		2E42947A28483FDD00817480 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E9B099728483A2200F450C8 /* ContentView.swift in Sources */,
-				2E9B099528483A2200F450C8 /* SolanaAppApp.swift in Sources */,
+				2E42948428483FDD00817480 /* ContentView.swift in Sources */,
+				2E42948228483FDD00817480 /* MySolWalletApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2E9B099D28483A2400F450C8 /* Sources */ = {
+		2E42948A28483FDF00817480 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E9B09A628483A2400F450C8 /* SolanaAppTests.swift in Sources */,
+				2E42949328483FDF00817480 /* MySolWalletTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2E9B09A728483A2400F450C8 /* Sources */ = {
+		2E42949428483FDF00817480 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E9B09B228483A2400F450C8 /* SolanaAppUITestsLaunchTests.swift in Sources */,
-				2E9B09B028483A2400F450C8 /* SolanaAppUITests.swift in Sources */,
+				2E42949F28483FDF00817480 /* MySolWalletUITestsLaunchTests.swift in Sources */,
+				2E42949D28483FDF00817480 /* MySolWalletUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2E9B09A328483A2400F450C8 /* PBXTargetDependency */ = {
+		2E42949028483FDF00817480 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2E9B099028483A2200F450C8 /* SolanaApp */;
-			targetProxy = 2E9B09A228483A2400F450C8 /* PBXContainerItemProxy */;
+			target = 2E42947D28483FDD00817480 /* MySolWallet */;
+			targetProxy = 2E42948F28483FDF00817480 /* PBXContainerItemProxy */;
 		};
-		2E9B09AD28483A2400F450C8 /* PBXTargetDependency */ = {
+		2E42949A28483FDF00817480 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2E9B099028483A2200F450C8 /* SolanaApp */;
-			targetProxy = 2E9B09AC28483A2400F450C8 /* PBXContainerItemProxy */;
+			target = 2E42947D28483FDD00817480 /* MySolWallet */;
+			targetProxy = 2E42949928483FDF00817480 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2E9B09B328483A2400F450C8 /* Debug */ = {
+		2E4294A028483FDF00817480 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -355,7 +355,7 @@
 			};
 			name = Debug;
 		};
-		2E9B09B428483A2400F450C8 /* Release */ = {
+		2E4294A128483FDF00817480 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -409,14 +409,14 @@
 			};
 			name = Release;
 		};
-		2E9B09B628483A2400F450C8 /* Debug */ = {
+		2E4294A328483FDF00817480 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SolanaApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MySolWallet/Preview Content\"";
 				DEVELOPMENT_TEAM = 9DGMQB3935;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -430,22 +430,22 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.deniztutuncu.SolanaApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deniztutuncu.MySolWallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
-		2E9B09B728483A2400F450C8 /* Release */ = {
+		2E4294A428483FDF00817480 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SolanaApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"MySolWallet/Preview Content\"";
 				DEVELOPMENT_TEAM = 9DGMQB3935;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -459,15 +459,15 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.deniztutuncu.SolanaApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deniztutuncu.MySolWallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
-		2E9B09B928483A2400F450C8 /* Debug */ = {
+		2E4294A628483FDF00817480 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -478,16 +478,16 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.deniztutuncu.SolanaAppTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deniztutuncu.MySolWalletTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SolanaApp.app/SolanaApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MySolWallet.app/MySolWallet";
 			};
 			name = Debug;
 		};
-		2E9B09BA28483A2400F450C8 /* Release */ = {
+		2E4294A728483FDF00817480 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -498,16 +498,16 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.deniztutuncu.SolanaAppTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deniztutuncu.MySolWalletTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SolanaApp.app/SolanaApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MySolWallet.app/MySolWallet";
 			};
 			name = Release;
 		};
-		2E9B09BC28483A2400F450C8 /* Debug */ = {
+		2E4294A928483FDF00817480 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -516,16 +516,16 @@
 				DEVELOPMENT_TEAM = 9DGMQB3935;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.deniztutuncu.SolanaAppUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deniztutuncu.MySolWalletUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SolanaApp;
+				TEST_TARGET_NAME = MySolWallet;
 			};
 			name = Debug;
 		};
-		2E9B09BD28483A2400F450C8 /* Release */ = {
+		2E4294AA28483FDF00817480 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -534,55 +534,55 @@
 				DEVELOPMENT_TEAM = 9DGMQB3935;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.deniztutuncu.SolanaAppUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deniztutuncu.MySolWalletUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = SolanaApp;
+				TEST_TARGET_NAME = MySolWallet;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2E9B098C28483A2200F450C8 /* Build configuration list for PBXProject "SolanaApp" */ = {
+		2E42947928483FDD00817480 /* Build configuration list for PBXProject "MySolWallet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2E9B09B328483A2400F450C8 /* Debug */,
-				2E9B09B428483A2400F450C8 /* Release */,
+				2E4294A028483FDF00817480 /* Debug */,
+				2E4294A128483FDF00817480 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2E9B09B528483A2400F450C8 /* Build configuration list for PBXNativeTarget "SolanaApp" */ = {
+		2E4294A228483FDF00817480 /* Build configuration list for PBXNativeTarget "MySolWallet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2E9B09B628483A2400F450C8 /* Debug */,
-				2E9B09B728483A2400F450C8 /* Release */,
+				2E4294A328483FDF00817480 /* Debug */,
+				2E4294A428483FDF00817480 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2E9B09B828483A2400F450C8 /* Build configuration list for PBXNativeTarget "SolanaAppTests" */ = {
+		2E4294A528483FDF00817480 /* Build configuration list for PBXNativeTarget "MySolWalletTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2E9B09B928483A2400F450C8 /* Debug */,
-				2E9B09BA28483A2400F450C8 /* Release */,
+				2E4294A628483FDF00817480 /* Debug */,
+				2E4294A728483FDF00817480 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2E9B09BB28483A2400F450C8 /* Build configuration list for PBXNativeTarget "SolanaAppUITests" */ = {
+		2E4294A828483FDF00817480 /* Build configuration list for PBXNativeTarget "MySolWalletUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2E9B09BC28483A2400F450C8 /* Debug */,
-				2E9B09BD28483A2400F450C8 /* Release */,
+				2E4294A928483FDF00817480 /* Debug */,
+				2E4294AA28483FDF00817480 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 2E9B098928483A2200F450C8 /* Project object */;
+	rootObject = 2E42947628483FDD00817480 /* Project object */;
 }
