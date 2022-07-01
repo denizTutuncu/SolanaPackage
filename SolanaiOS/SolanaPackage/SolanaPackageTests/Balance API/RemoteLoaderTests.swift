@@ -123,7 +123,7 @@ class RemoteLoaderTests: XCTestCase {
     }
     
     private func makeResponseItem() -> (model: Balance, json: [String:Any]) {
-        let fakeResponse = Balance(value: 25000000000)
+        let fakeResponse = Balance(lamports: 25000000000)
         let json: [String:Any] = [
             "jsonrpc": "2.0",
             "result": [
