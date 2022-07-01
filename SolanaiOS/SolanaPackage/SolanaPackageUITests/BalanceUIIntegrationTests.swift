@@ -10,16 +10,21 @@ import SolanaPackage
 import SolanaPackageUI
 
 class BalanceUIIntegrationTests: XCTestCase {
-
-    func test_init() {
-      let sut = makeSUT()
-        
+    
+    func test_SUTNotNil() {
+        let sut = makeSUT()
+        XCTAssertNotNil(sut)
     }
     
     private func makeSUT() -> BalanceComposerView {
-        let balance = Balance(value: <#T##Int#>)
-        let viewModel = BalanceViewModel(balance: <#T##Balance#>)
-        let balanceView = BalanceView(balance: <#T##BalanceViewModel#>)
-        let sut = BalanceComposerView(balanceView: <#T##BalanceView#>, errorView: <#T##BalanceErrorView#>, loadingView: <#T##BalanceLoadingView#>)
+        let balance = Balance(lamports: 25000000000)
+        let viewModel = BalanceViewModel(balance: balance)
+        let balanceView = BalanceView(balance: viewModel)
+        let errorMessage = "Any error message"
+        let errorView = BalanceErrorView(errorMessage: errorMessage)
+        let loadingViewTitle = "Loading..."
+        let loadingView = BalanceLoadingView(title: loadingViewTitle)
+        let sut = BalanceComposerView(balanceView: balanceView, errorView: errorView, loadingView: loadingView)
+        return sut
     }
 }
