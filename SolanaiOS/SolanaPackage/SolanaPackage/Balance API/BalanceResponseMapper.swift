@@ -22,9 +22,9 @@ public final class BalanceResponseMapper {
         private struct RemoteBalanceContext: Decodable {
             let slot: Int
         }
-        
-        var response: BalanceResponse {
-            BalanceResponse(jsonrpc: jsonrpc, result: BalanceResult(context: BalanceContext(slot: result.context.slot), value: result.value), id: id)
+    
+        var response: Balance {
+            Balance(value: result.value)
         }
     }
     
@@ -32,7 +32,7 @@ public final class BalanceResponseMapper {
         case invalidData
     }
     
-    public static func map(_ data: Data, from response: HTTPURLResponse) throws -> BalanceResponse {
+    public static func map(_ data: Data, from response: HTTPURLResponse) throws -> Balance {
         guard isOK(response),
               let root = try? JSONDecoder().decode(Root.self, from: data) else {
             throw Error.invalidData

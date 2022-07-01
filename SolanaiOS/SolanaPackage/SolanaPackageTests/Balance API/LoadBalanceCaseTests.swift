@@ -55,20 +55,13 @@ class LoadBalanceCaseTests: XCTestCase {
         return (sut, client)
     }
     
-    //    private func getBalanceRequest() -> GetBalanceRequest {
-    //        let publicKey = createPublicKey()
-    //        let request = GetBalanceRequest(params: [publicKey])
-    //
-    //        return request
-    //    }
-    //
     private func createPublicKey() -> String {
         let pubKey = "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi"
         return pubKey
     }
     
-    private func makeResponseItem() -> (model: BalanceResponse, json: [String:Any]) {
-        let model = BalanceResponse(jsonrpc: "2.0", result: BalanceResult(context: BalanceContext(slot: 124067037), value: 25000000000), id: 1)
+    private func makeResponseItem() -> (model: Balance, json: [String:Any]) {
+        let model = Balance(value: 25000000000)
         let json: [String:Any] = [
             "jsonrpc": "2.0",
             "result": [

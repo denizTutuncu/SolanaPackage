@@ -7,9 +7,7 @@
 
 import Foundation
 
-extension RemoteLoader: BalanceLoader where Resource == BalanceResponse {}
-
-public typealias RemoteBalanceLoader = RemoteLoader<BalanceResponse>
+public typealias RemoteBalanceLoader = RemoteLoader<Balance>
 
 public extension RemoteBalanceLoader {
     convenience init(url: URL?, methodName: String, publicKey: String, client: HTTPClient) {

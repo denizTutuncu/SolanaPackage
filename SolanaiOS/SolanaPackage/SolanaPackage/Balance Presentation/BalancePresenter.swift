@@ -24,7 +24,7 @@ public final class BalancePresenter {
     private let loadingView: BalanceLoadingView
     private let errorView: BalanceErrorView
     
-    private var balancceLoadError: String {
+    private var balanceLoadError: String {
         return NSLocalizedString("GENERIC_CONNECTION_ERROR",
                                  tableName: "Shared",
                                  bundle: Bundle(for: BalancePresenter.self),
@@ -46,17 +46,17 @@ public final class BalancePresenter {
         loadingView.display(BalanceLoadingViewModel(isLoading: true))
     }
     
-    public func didFinishLoadingBalance(with balance: BalanceResponse) {
+    public func didFinishLoadingBalance(with balance: Balance) {
         balanceView.display(Self.map(balance))
         loadingView.display(BalanceLoadingViewModel(isLoading: false))
     }
     
     public func didFinishLoadingBalance(with error: Error) {
-        errorView.display(.error(message: balancceLoadError))
+        errorView.display(.error(message: balanceLoadError))
         loadingView.display(BalanceLoadingViewModel(isLoading: false))
     }
     
-    public static func map(_ balance: BalanceResponse) -> BalanceViewModel {
+    public static func map(_ balance: Balance) -> BalanceViewModel {
         BalanceViewModel(balance: balance)
     }
 }

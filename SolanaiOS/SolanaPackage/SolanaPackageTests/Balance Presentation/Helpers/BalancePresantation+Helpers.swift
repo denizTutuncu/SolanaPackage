@@ -7,6 +7,6 @@
 
 import SolanaPackage
 
-func uniqueBalance() -> BalanceResponse {
-    return BalanceResponse(jsonrpc: "2.0", result: BalanceResult(context: BalanceContext(slot: 124067037), value: 25000000000), id: 1)
+func uniqueBalance() -> Balance {
+    Balance(value: 25000000000)
 }

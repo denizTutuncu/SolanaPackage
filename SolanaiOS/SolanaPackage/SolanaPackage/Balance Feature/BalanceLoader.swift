@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol BalanceLoader {
-    typealias Result = Swift.Result<BalanceResponse, Error>
-    func load(completion: @escaping (Result) -> Void)
-}
+//public protocol BalanceLoader {
+//    typealias Result = Swift.Result<Balance, Error>
+//    func load(completion: @escaping (Result) -> Void)
+//}

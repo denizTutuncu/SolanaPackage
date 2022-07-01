@@ -8,5 +8,9 @@
 import Foundation
 
 public struct BalanceViewModel {
-    public let balance: BalanceResponse
+    public let balance: Balance
+
+    public init(balance: Balance) {
+        self.balance = balance
+    }
 }
