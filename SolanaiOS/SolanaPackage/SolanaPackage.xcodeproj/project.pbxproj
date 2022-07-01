@@ -48,7 +48,6 @@
 		2EE0898B284744E6007AFC0F /* LoadResourcePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0898A284744E6007AFC0F /* LoadResourcePresenter.swift */; };
 		2EE0898F28475D67007AFC0F /* SharedLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0898E28475D67007AFC0F /* SharedLocalization.swift */; };
 		2EE0899028475E84007AFC0F /* Shared.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2EE0899228475E84007AFC0F /* Shared.strings */; };
-		2EE0899728476534007AFC0F /* BalanceUIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0899628476534007AFC0F /* BalanceUIIntegrationTests.swift */; };
 		2EE0899B28476AC6007AFC0F /* SharedLocalizationTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0899A28476AC6007AFC0F /* SharedLocalizationTestHelpers.swift */; };
 /* End PBXBuildFile section */
 
@@ -148,7 +147,6 @@
 		2EE0899328475E8F007AFC0F /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Shared.strings; sourceTree = "<group>"; };
 		2EE0899428475E91007AFC0F /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Shared.strings"; sourceTree = "<group>"; };
 		2EE0899528475E91007AFC0F /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Shared.strings; sourceTree = "<group>"; };
-		2EE0899628476534007AFC0F /* BalanceUIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceUIIntegrationTests.swift; sourceTree = "<group>"; };
 		2EE0899A28476AC6007AFC0F /* SharedLocalizationTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLocalizationTestHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -367,7 +365,6 @@
 		2EE0897E28473B99007AFC0F /* Balance Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				2EE0899628476534007AFC0F /* BalanceUIIntegrationTests.swift */,
 				2EE0898E28475D67007AFC0F /* SharedLocalization.swift */,
 				2EE0898728474322007AFC0F /* LoadResourcePresenterTests.swift */,
 				2EE0898128473C07007AFC0F /* BalancePresenterTests.swift */,
@@ -673,7 +670,6 @@
 				2E3951E0283DB1630079852F /* RemoteLoaderTests.swift in Sources */,
 				2ED6164027E5C33D00920274 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				2ED6164427E5C37400920274 /* HTTPClientSpy.swift in Sources */,
-				2EE0899728476534007AFC0F /* BalanceUIIntegrationTests.swift in Sources */,
 				2EB6F55027E821A500CA7BED /* SharedTestHelpers.swift in Sources */,
 				2ED6164227E5C35400920274 /* URLProtocolStub.swift in Sources */,
 				2EE0898028473BAF007AFC0F /* BalanceLocalizationTests.swift in Sources */,
