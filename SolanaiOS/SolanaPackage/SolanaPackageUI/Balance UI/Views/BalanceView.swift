@@ -8,32 +8,28 @@
 import SolanaPackage
 import SwiftUI
 
-struct SolBalanceView: View, ResourceView {
+struct BalanceView: View {
+    
     @State private var balance: BalanceViewModel
     
     init(balance: BalanceViewModel) {
         self.balance = balance
     }
     
-    func display(_ viewModel: BalanceViewModel) {
-        self.balance = viewModel
-    }
-    
     var body: some View {
         let screenSize = UIScreen.main.bounds.size
         VStack {
             Text("Solana")
+                .font(Font.largeTitle)
                 .bold()
                 .padding()
             
-            Text("\(self.balance.balance.value / 1000000000) Sol")
-                .bold()
+            Text("\(self.balance.balance.value / 1000000000) SOL")
+                .font(Font.title)
                 .italic()
                 .padding()
-        }.onAppear(perform: {
-            self.display(self.balance)
-        })
-        .frame(width: screenSize.width / 1.1, alignment: .center)
+        }
+        .frame(width: screenSize.width / 1.5, alignment: .center)
         .background(.purple)
         .foregroundColor(.white)
         .cornerRadius(8)
@@ -42,6 +38,6 @@ struct SolBalanceView: View, ResourceView {
 
 struct SolBalanceView_Previews: PreviewProvider {
     static var previews: some View {
-        SolBalanceView(balance: BalanceViewModel(balance: Balance(value: 25000000000)))
+        BalanceView(balance: BalanceViewModel(balance: Balance(value: 25000000000)))
     }
 }

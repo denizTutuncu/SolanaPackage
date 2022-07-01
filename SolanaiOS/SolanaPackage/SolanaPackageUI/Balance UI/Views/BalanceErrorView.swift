@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SolBalanceErrorView: View {
+struct BalanceErrorView: View {
     private let errorMessage: String
     init(errorMessage: String) {
         self.errorMessage = errorMessage
@@ -19,6 +19,6 @@ struct SolBalanceErrorView: View {
 
 struct BalanceErrorView_Previews: PreviewProvider {
     static var previews: some View {
-        SolBalanceErrorView(errorMessage: "ANY ERROR MESSAGE HERE")
+        BalanceErrorView(errorMessage: "ANY ERROR MESSAGE HERE")
     }
 }
