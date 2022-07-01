@@ -57,7 +57,6 @@ class BalanceAPIEndToEndTests: XCTestCase {
         
     private func createExpectedResponse() -> Balance {
         return Balance(value: 25000000000)
-//        return BalanceResponse(jsonrpc: "2.0", result: BalanceResult(context: BalanceContext(slot: 123838291), value: 25000000000), id: 1)
     }
     
 }
