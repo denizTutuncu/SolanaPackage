@@ -122,8 +122,8 @@ class RemoteLoaderTests: XCTestCase {
         return pubKey
     }
     
-    private func makeResponseItem() -> (model: BalanceResponse, json: [String:Any]) {
-        let fakeResponse = BalanceResponse(jsonrpc: "2.0", result: BalanceResult(context: BalanceContext(slot: 124067037), value: 25000000000), id: 1)
+    private func makeResponseItem() -> (model: Balance, json: [String:Any]) {
+        let fakeResponse = Balance(value: 25000000000)
         let json: [String:Any] = [
             "jsonrpc": "2.0",
             "result": [

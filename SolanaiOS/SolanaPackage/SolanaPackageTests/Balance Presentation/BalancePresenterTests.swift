@@ -84,7 +84,7 @@ class BalancePresenterTests: XCTestCase {
         enum Message: Hashable {
             case display(errorMessage: String?)
             case display(isLoading: Bool)
-            case display(balance: BalanceResponse)
+            case display(balance: Balance)
         }
         
         private(set) var messages = Set<Message>()

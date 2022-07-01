@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import SolanaPackage
+import SolanaPackageUI
 
 @main
 struct MySolWalletApp: App {
