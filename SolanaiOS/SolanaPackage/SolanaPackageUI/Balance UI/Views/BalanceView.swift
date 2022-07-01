@@ -38,6 +38,6 @@ struct BalanceView: View {
 
 struct SolBalanceView_Previews: PreviewProvider {
     static var previews: some View {
-        BalanceView(balance: BalanceViewModel(balance: Balance(value: 25000000000)))
+        BalanceView(balance: BalanceViewModel(balance: Balance(lamports: 25000000000)))
     }
 }
