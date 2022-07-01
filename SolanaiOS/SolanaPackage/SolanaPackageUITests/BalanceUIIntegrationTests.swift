@@ -16,6 +16,11 @@ class BalanceUIIntegrationTests: XCTestCase {
         XCTAssertNotNil(sut)
     }
     
+    func test_SUTBodyNotNil() {
+        let sut = makeSUT()
+        XCTAssertNotNil(sut.body)
+    }
+    
     private func makeSUT() -> BalanceComposerView {
         let balance = Balance(lamports: 25000000000)
         let viewModel = BalanceViewModel(balance: balance)

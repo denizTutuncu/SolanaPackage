@@ -18,6 +18,7 @@ public struct BalanceComposerView: View {
         self.errorView = errorView
         self.loadingView = loadingView
     }
+    
     public var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
