@@ -24,7 +24,7 @@ public final class BalanceResponseMapper {
         }
     
         var response: Balance {
-            Balance(value: result.value)
+            Balance(lamports: result.value)
         }
     }
     

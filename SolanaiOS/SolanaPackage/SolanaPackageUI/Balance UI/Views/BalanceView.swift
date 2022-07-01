@@ -24,7 +24,7 @@ struct BalanceView: View {
                 .bold()
                 .padding()
             
-            Text("\(self.balance.balance.value / 1000000000) SOL")
+            Text("\(self.balance.balance.lamports / 1000000000) SOL")
                 .font(Font.title)
                 .italic()
                 .padding()

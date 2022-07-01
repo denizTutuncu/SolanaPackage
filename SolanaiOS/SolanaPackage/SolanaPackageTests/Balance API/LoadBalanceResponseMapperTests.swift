@@ -50,7 +50,7 @@ class LoadBalanceResponseMapperTests: XCTestCase {
     
     
     private func makeResponseItem(jsonrpc: String, slot: Int, value: Int, id: Int) -> (model: Balance, json: [String:Any]) {
-        let model = Balance(value: value)
+        let model = Balance(lamports: value)
         let json: [String:Any] = [
             "jsonrpc": jsonrpc,
             "result": [

@@ -8,8 +8,8 @@
 import Foundation
 
 public struct Balance: Equatable, Hashable {
-    public let value: Int
-    public init(value: Int) {
-        self.value = value
+    public let lamports: Int
+    public init(lamports: Int) {
+        self.lamports = lamports
     }
 }
