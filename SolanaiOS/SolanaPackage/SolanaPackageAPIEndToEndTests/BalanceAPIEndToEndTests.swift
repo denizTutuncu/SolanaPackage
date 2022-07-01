@@ -15,7 +15,7 @@ class BalanceAPIEndToEndTests: XCTestCase {
         switch getBalance() {
         case let .success(remoteResponse)?:
             XCTAssertNotEqual(remoteResponse, nil, "Expected non-empty response.")
-            XCTAssertEqual(remoteResponse.result.value, expectedResponse.result.value, "Expected response doesn't match with remote response. Please first thing compare the RCP endpoints. Your balance may exist in a different Network.")
+            XCTAssertEqual(remoteResponse.value, expectedResponse.value, "Expected response doesn't match with remote response. Please first thing compare the RCP endpoints. Your balance may exist in a different Network.")
             
         case let .failure(error):
             XCTFail("Expected successful getBalanceResponse, got \(error) instead.")
@@ -25,7 +25,7 @@ class BalanceAPIEndToEndTests: XCTestCase {
     }
     
     //MARK:- Helpers
-    private func getBalance(file: StaticString = #file, line: UInt = #line) -> Swift.Result<BalanceResponse, Error>?  {
+    private func getBalance(file: StaticString = #file, line: UInt = #line) -> Swift.Result<Balance, Error>?  {
         let devNetURL = URL(string: SolanaClusterRPCEndpoints.devNet.rawValue)
         let publicKey = createPublicKey()
         let methodName = "getBalance"
@@ -55,8 +55,9 @@ class BalanceAPIEndToEndTests: XCTestCase {
         return "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi"
     }
         
-    private func createExpectedResponse() -> BalanceResponse {
-        return BalanceResponse(jsonrpc: "2.0", result: BalanceResult(context: BalanceContext(slot: 123838291), value: 25000000000), id: 1)
+    private func createExpectedResponse() -> Balance {
+        return Balance(value: 25000000000)
+//        return BalanceResponse(jsonrpc: "2.0", result: BalanceResult(context: BalanceContext(slot: 123838291), value: 25000000000), id: 1)
     }
     
 }
