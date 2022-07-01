@@ -18,7 +18,6 @@
 		2E5186D727F28C75001AB355 /* SolanaPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED6160427E5AD3F00920274 /* SolanaPackage.framework */; };
 		2E5186D827F28C75001AB355 /* SolanaPackage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED6160427E5AD3F00920274 /* SolanaPackage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2E5186DC27F28DA0001AB355 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6163F27E5C33D00920274 /* XCTestCase+MemoryLeakTracking.swift */; };
-		2E70FCC527F02C6800DD2072 /* BalanceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E70FCC427F02C6800DD2072 /* BalanceResponse.swift */; };
 		2E70FCC827F0327200DD2072 /* BalanceURLRequestMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E70FCC727F0327200DD2072 /* BalanceURLRequestMapper.swift */; };
 		2E954BA028487C02002D2FF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E954B9F28487C02002D2FF3 /* Assets.xcassets */; };
 		2E954BA22848852F002D2FF3 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E954BA12848852F002D2FF3 /* Balance.swift */; };
@@ -109,7 +108,6 @@
 		2E4294B6284847C800817480 /* SolBalanceErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolBalanceErrorView.swift; sourceTree = "<group>"; };
 		2E4294B82848484900817480 /* SolBalanceLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolBalanceLoadingView.swift; sourceTree = "<group>"; };
 		2E4294BA28484BC000817480 /* SolBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolBalanceView.swift; sourceTree = "<group>"; };
-		2E70FCC427F02C6800DD2072 /* BalanceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceResponse.swift; sourceTree = "<group>"; };
 		2E70FCC727F0327200DD2072 /* BalanceURLRequestMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceURLRequestMapper.swift; sourceTree = "<group>"; };
 		2E954B9F28487C02002D2FF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E954BA12848852F002D2FF3 /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
@@ -259,7 +257,6 @@
 			isa = PBXGroup;
 			children = (
 				2E954BA12848852F002D2FF3 /* Balance.swift */,
-				2E70FCC427F02C6800DD2072 /* BalanceResponse.swift */,
 			);
 			path = "Balance Feature";
 			sourceTree = "<group>";
@@ -652,7 +649,6 @@
 				2ED6163A27E5BE4400920274 /* BalanceResponseMapper.swift in Sources */,
 				2EE089712846DA6E007AFC0F /* BalanceLoadingViewModel.swift in Sources */,
 				2EE0898B284744E6007AFC0F /* LoadResourcePresenter.swift in Sources */,
-				2E70FCC527F02C6800DD2072 /* BalanceResponse.swift in Sources */,
 				2ED6162627E5AECE00920274 /* HTTPClient.swift in Sources */,
 				2EE0896F2846D9FD007AFC0F /* BalanceViewModel.swift in Sources */,
 				2E3951DE283DA3C40079852F /* RemoteLoader.swift in Sources */,
