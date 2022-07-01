@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct BalanceErrorView: View {
+public struct BalanceErrorView: View {
     private let errorMessage: String
-    init(errorMessage: String) {
+    public init(errorMessage: String) {
         self.errorMessage = errorMessage
     }
-    var body: some View {
+    public var body: some View {
         Text(self.errorMessage)
     }
 }

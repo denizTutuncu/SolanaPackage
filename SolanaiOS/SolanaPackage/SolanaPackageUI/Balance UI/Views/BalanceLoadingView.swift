@@ -8,10 +8,10 @@
 import SwiftUI
 import SolanaPackage
 
-struct BalanceLoadingView: View {
+public struct BalanceLoadingView: View {
     private let title: String
-    init(title: String) { self.title = title }
-    var body: some View {
+    public init(title: String) { self.title = title }
+    public var body: some View {
         VStack {
             ProgressView(self.title)
         }
