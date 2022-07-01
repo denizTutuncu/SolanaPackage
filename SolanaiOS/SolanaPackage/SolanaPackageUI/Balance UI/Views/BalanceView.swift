@@ -8,15 +8,15 @@
 import SolanaPackage
 import SwiftUI
 
-struct BalanceView: View {
+public struct BalanceView: View {
     
     @State private var balance: BalanceViewModel
     
-    init(balance: BalanceViewModel) {
+    public init(balance: BalanceViewModel) {
         self.balance = balance
     }
     
-    var body: some View {
+    public var body: some View {
         let screenSize = UIScreen.main.bounds.size
         VStack {
             Text("Solana")
