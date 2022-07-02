@@ -5,4 +5,5 @@
   Created by Deniz Tutuncu on 5/31/22.
   
 */
-"BALANCE_VIEW_TITLE" = "SOL Carteira";
+"BALANCE_VIEW_TITLE" = "Solana Carteira";
+"BALANCE_VIEW_CONNECTION_ERROR" = "Couldn't connect to server";
