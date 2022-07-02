@@ -23,17 +23,13 @@ class BalanceUIIntegrationTests: XCTestCase {
     }
     
     private func makeSUT() -> BalanceComposerView {
-        let viewModel = BalanceViewModel(remoteBalanceLoader: RemoteBalanceLoader(url: anyURL(), methodName: anyMethod(), publicKey: anyKey(), client: URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))))
+        let viewModel = BalanceViewModel(remoteBalanceLoader: RemoteBalanceLoader(url: anyURL(), publicKey: anyKey(), client: URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))))
         let sut = BalanceComposerView(viewModel: viewModel)
         return sut
     }
     
     private func anyURL() -> URL {
         return URL(string: "https://anyURL.com")!
-    }
-    
-    private func anyMethod() -> String {
-        "any method name"
     }
     
     private func anyKey() -> String {
