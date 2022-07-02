@@ -5,5 +5,6 @@
   Created by Deniz Tutuncu on 5/31/22.
   
 */
-"BALANCE_VIEW_TITLE" = "Solana Carteira";
+"BALANCE_LABEL_TITLE" = "Soldo";
+"BALANCE_LOADING_TITLE" = "Carregando saldo...";
 "BALANCE_VIEW_CONNECTION_ERROR" = "Couldn't connect to server";
