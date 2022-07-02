@@ -41,18 +41,18 @@ public class BalanceViewModel: ObservableObject {
     }
     
     public func loadBalance() {        
-        remoteBalanceLoader.load { result in
+        remoteBalanceLoader.load { [weak self] result in
             switch result {
             case let .success(balance):
                 let balanceViewModel = BalanceUIModel(balance: balance, error: nil, isLoading: false)
                 DispatchQueue.main.async {
-                    self.uiModel = balanceViewModel
+                    self?.uiModel = balanceViewModel
                 }
                
             case let .failure(error):
                 let balanceViewModel = BalanceUIModel(balance: nil, error: error, isLoading: false)
                 DispatchQueue.main.async {
-                    self.uiModel = balanceViewModel
+                    self?.uiModel = balanceViewModel
                 }
             }
           
