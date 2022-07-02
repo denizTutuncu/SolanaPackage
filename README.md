@@ -8,9 +8,9 @@
 ![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/UserFlow.jpg?raw=true)
 
 ```
-1- Create Wallet (in the future)
-2- Display balance / Receive Sol (in progress)
-3- Display past transactions (in the future)
+1- Create Wallet / Receive Sol (in the future)
+2- Display balance (in progress)
+3- Display past transactions (in progress)
 4- Send Sol (in the future)
 ```
 
@@ -65,7 +65,7 @@ Given the customer have a seed phrase
 
 ----------------
 
-## Get Balance BDD Specs (in progress)
+## Get Balance BDD Specs (in progress, component is ready to review on `MySolWallet` iOS app)
 
 ### Get Balance / Receive Sol
 ### Story: Customer requests to see their balance
@@ -80,9 +80,10 @@ So I can see my balance
 
 ```
 Given the customer has connectivity
-When the customer requests to see their balance
-Then the app should display the latest balance from remote
-And replace the cache with the balance
+  And a valid public Solana address
+  When the customer requests to see their balance
+  Then the app should display the latest balance from remote
+  And replace the cache with the balance
 ```
 
 ### Narrative #2
@@ -99,40 +100,81 @@ So I can always see my balance
 Given the customer doesn't have connectivity
   And there’s a cached version of the balance
   And the cache is less than seven days old
- When the customer requests to see the balance
- Then the app should display the latest balance saved
+  When the customer requests to see the balance
+  Then the app should display the latest balance saved
 Given the customer doesn't have connectivity
   And there’s a cached version of the feed
   And the cache is seven days old or more
- When the customer requests to see the balance
- Then the app should display an error message
+  When the customer requests to see the balance
+  Then the app should display an error message
 Given the customer doesn't have connectivity
   And the cache is empty
- When the customer requests to see the balance
- Then the app should display an error message
+  When the customer requests to see the balance
+  Then the app should display an error message
+Given the customer doesn't a valid public Solana address
+  Then the app should display an error message
 ```
 
 ## Model Specs
 
-### Balance Response
+### API Response
+#### Root
+| Property      | Type                  |
+|---------------|-----------------------|
+| `jsonrpc`     | `String`              |
+| `result`      | `RemoteBalanceResult` |
+| `id`          | `String`              |
 
-| Property      | Type                |
-|---------------|---------------------|
-| `jsonrpc`     | `String`            |
-| `result`      | `BalanceResult`     |
-| `id`          | `String`            |
+#### Remote Balance Result
+| Property      | Type                  |
+|---------------|-----------------------|
+| `context`     | `RemoteBalanceContext`|
+| `value`       | `Int`                 |
+| `id`          | `String`              |
 
-### Balance Result
-| Property      | Type                |
-|---------------|---------------------|
-| `context`     | `BalanceContext`    |
-| `value`       | `Int`               |
-| `id`          | `String`            |
+#### Remote Balance Context
+| Property      | Type                  |
+|---------------|-----------------------|
+| `slot`        | `Int`                 |
 
-### Balance Context
-| Property      | Type                |
-|---------------|---------------------|
-| `slot`        | `Int`               |
+
+### Core Model
+#### Balance
+| Property      | Type                  |
+|---------------|-----------------------|
+| `lamports`        | `Int`             |
+
+### UI Model
+#### Balance UI Model
+| Property      | Type                  |
+|---------------|-----------------------|
+| `balance`        | `Balance`          |
+| `error`          | `Error`            |
+| `isLoading`      | `Bool`             |
+
+
+
+## Display Past Transactions BDD Specs (in progress)
+
+### Display Past Transactions
+### Story: Customer requests to review their past transacations
+
+### Narrative #1
+```
+As a customer
+I want the app to show my past transactions
+So I can review them
+```
+
+#### Scenarios (Acceptance criteria)
+
+```
+Given the customer has connectivity
+  And a valid public Solana address 
+  When the customer requests to see their past transactions
+  Then the app should display past transactions from remote
+  And replace the cache with the past transactions
+```
 
 -----------------
 
