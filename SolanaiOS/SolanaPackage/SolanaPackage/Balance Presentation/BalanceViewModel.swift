@@ -24,6 +24,17 @@ public class BalanceViewModel: ObservableObject {
     
     @Published public var uiModel: BalanceUIModel = BalanceUIModel(balance: nil, error: nil, isLoading: true)
     
+    private var balanceLoadError: String {
+        return NSLocalizedString("BALANCE_VIEW_CONNECTION_ERROR",
+                                 tableName: "Balance",
+                                 bundle: Bundle(for: BalanceViewModel.self),
+                                 comment: "Error message displayed when we can't load the balance from the server")
+    }
+    
+    public static var title: String {
+        return NSLocalizedString("BALANCE_VIEW_TITLE", tableName: "Balance", bundle: Bundle(for: BalanceViewModel.self), comment: "Title for the balance view")
+    }
+    
     private let remoteBalanceLoader: RemoteBalanceLoader
     public init(remoteBalanceLoader: RemoteBalanceLoader) {
         self.remoteBalanceLoader = remoteBalanceLoader
