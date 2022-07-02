@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2E42948228483FDD00817480 /* MySolWalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42948128483FDD00817480 /* MySolWalletApp.swift */; };
-		2E42948428483FDD00817480 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42948328483FDD00817480 /* ContentView.swift */; };
 		2E42948628483FDF00817480 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E42948528483FDE00817480 /* Assets.xcassets */; };
 		2E42948928483FDF00817480 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E42948828483FDF00817480 /* Preview Assets.xcassets */; };
 		2E42949328483FDF00817480 /* MySolWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42949228483FDF00817480 /* MySolWalletTests.swift */; };
@@ -55,7 +54,6 @@
 /* Begin PBXFileReference section */
 		2E42947E28483FDD00817480 /* MySolWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySolWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E42948128483FDD00817480 /* MySolWalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySolWalletApp.swift; sourceTree = "<group>"; };
-		2E42948328483FDD00817480 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2E42948528483FDE00817480 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E42948828483FDF00817480 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2E42948E28483FDF00817480 /* MySolWalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySolWalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,7 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				2E42948128483FDD00817480 /* MySolWalletApp.swift */,
-				2E42948328483FDD00817480 /* ContentView.swift */,
 				2E42948528483FDE00817480 /* Assets.xcassets */,
 				2E42948728483FDF00817480 /* Preview Content */,
 			);
@@ -291,7 +288,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E42948428483FDD00817480 /* ContentView.swift in Sources */,
 				2E42948228483FDD00817480 /* MySolWalletApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,7 +375,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -433,7 +429,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -459,7 +455,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -489,7 +485,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

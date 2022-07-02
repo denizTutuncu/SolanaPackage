@@ -359,8 +359,8 @@
 		2EE0896C2846D975007AFC0F /* Balance Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				2EE0897C2846E223007AFC0F /* BalancePresenter.swift */,
 				2EE0896E2846D9FD007AFC0F /* BalanceViewModel.swift */,
+				2EE0897C2846E223007AFC0F /* BalancePresenter.swift */,
 				2EE089702846DA6E007AFC0F /* BalanceLoadingViewModel.swift */,
 				2EE089722846DAA2007AFC0F /* BalanceErrorViewModel.swift */,
 				2EE089782846DF76007AFC0F /* Balance.strings */,

@@ -19,20 +19,22 @@ public struct BalanceUIView: View {
     
     public var body: some View {
         let screenSize = UIScreen.main.bounds.size
-        VStack {
-            Text("Solana")
-                .font(Font.largeTitle)
+        HStack {
+            Text("Balance")
+                .font(Font.headline)
                 .bold()
                 .padding()
             Text("\((viewModel.uiModel.balance?.lamports ?? 0) / 1000000000) SOL")
                 .font(Font.title)
                 .italic()
                 .padding()
+                .shadow(color: .white, radius: 5)
         }
         .frame(width: screenSize.width / 1.5, alignment: .center)
         .background(.purple)
         .foregroundColor(.white)
         .cornerRadius(8)
+        .shadow(color: .purple, radius: 5)
     }
 }
 
