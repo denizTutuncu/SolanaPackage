@@ -21,9 +21,10 @@ public struct BalanceUIView: View {
             Text("\((viewModel.uiModel.balance?.lamports ?? 0) / 1000000000) SOL")
                 .font(Font.title)
                 .italic()
-                .shadow(color: .white, radius: 5)
+                .shadow(color: Color(#colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)), radius: 3)
         }
-        .foregroundColor(.white)
+        .foregroundColor(Color(#colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)))
+        
         .fixedSize()
         .padding()
     }
