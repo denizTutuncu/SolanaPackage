@@ -9,7 +9,7 @@
 
 ```
 1- Create Wallet / Receive Sol (in the future)
-2- Display balance (in progress)
+2- Display balance (in progress, component is ready to review)
 3- Display past transactions (in progress)
 4- Send Sol (in the future)
 ```
@@ -65,7 +65,7 @@ Given the customer have a seed phrase
 
 ----------------
 
-## Get Balance BDD Specs (in progress, component is ready to review on `MySolWallet` iOS app)
+## Get Balance BDD Specs (in progress, ready to review on MySolWallet iOS app)
 
 ### Get Balance / Receive Sol
 ### Story: Customer requests to see their balance
