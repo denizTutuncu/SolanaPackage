@@ -26,10 +26,12 @@ public struct BalanceComposerView: View {
     public var body: some View {
         let screenSize = UIScreen.main.bounds.size
         HStack(alignment: .center, spacing: 0) {
+            
             Text("\(viewModel.labelTitle)")
                 .font(Font.headline)
                 .bold()
                 .padding()
+                .foregroundColor(Color(#colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)))
                 
             viewModel.uiModel.isLoading ? AnyView(self.loadingView) : (viewModel.uiModel.error != nil) ? AnyView(self.errorView) : AnyView(self.balanceView)
         }
@@ -37,10 +39,8 @@ public struct BalanceComposerView: View {
             self.viewModel.loadBalance()
         })
         .frame(width: screenSize.width / 1.2, height: screenSize.height / 10, alignment: .center)
-        .background(.purple)
-        .foregroundColor(.white)
+        .background(Color(#colorLiteral(red: 0.5818830132, green: 0.2156915367, blue: 1, alpha: 1)))
         .cornerRadius(8)
-        .shadow(color: .purple, radius: 5)
     }
 }
 

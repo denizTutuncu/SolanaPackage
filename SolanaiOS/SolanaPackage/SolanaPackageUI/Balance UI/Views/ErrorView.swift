@@ -16,7 +16,7 @@ public struct ErrorView: View {
     public var body: some View {
         VStack {
             Text(self.error?.localizedDescription ?? "Connection error")
-                .foregroundColor(.white)
+                .foregroundColor(Color(#colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)))
         }
     }
 }
