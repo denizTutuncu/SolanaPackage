@@ -1,10 +1,10 @@
-////
-////  BalancePresenter.swift
-////  SolanaPackage
-////
-////  Created by Deniz Tutuncu on 5/31/22.
-////
 //
+//  BalancePresenter.swift
+//  SolanaPackage
+//
+//  Created by Deniz Tutuncu on 5/31/22.
+//
+
 //import Foundation
 //
 //public protocol BalanceView {
