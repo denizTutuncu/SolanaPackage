@@ -7,6 +7,6 @@
 
 import Foundation
 
-public struct BalanceLoadingViewModel {
-    public let isLoading: Bool
-}
+//public struct BalanceLoadingViewModel {
+//    public let isLoading: Bool
+//}

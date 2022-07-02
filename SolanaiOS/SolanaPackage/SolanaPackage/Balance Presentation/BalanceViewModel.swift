@@ -6,11 +6,49 @@
 //
 
 import Foundation
+import Combine
+import SwiftUI
 
-public struct BalanceViewModel {
-    public let balance: Balance
+public class BalanceViewModel: ObservableObject {
+    
+    public struct BalanceUIModel {
+        public let balance: Balance?
+        public let error: Error?
+        public var isLoading: Bool
+        init(balance: Balance?, error: Error?, isLoading: Bool = true) {
+            self.balance = balance
+            self.error = error
+            self.isLoading = isLoading
+        }
+    }
+    
+    @Published public var uiModel: BalanceUIModel = BalanceUIModel(balance: nil, error: nil, isLoading: true)
+    
+    private let remoteBalanceLoader: RemoteBalanceLoader
+    public init(remoteBalanceLoader: RemoteBalanceLoader) {
+        self.remoteBalanceLoader = remoteBalanceLoader
+    }
+    
+    public func loadBalance() {        
+        remoteBalanceLoader.load { result in
+            switch result {
+            case let .success(balance):
+                print(balance.lamports)
+                let balanceViewModel = BalanceUIModel(balance: balance, error: nil, isLoading: false)
 
-    public init(balance: Balance) {
-        self.balance = balance
+                DispatchQueue.main.async {
+                    self.uiModel = balanceViewModel
+                }
+               
+            case let .failure(error):
+                print(error)
+                let balanceViewModel = BalanceUIModel(balance: nil, error: error, isLoading: false)
+               
+                DispatchQueue.main.async {
+                    self.uiModel = balanceViewModel
+                }
+            }
+          
+        }
     }
 }
