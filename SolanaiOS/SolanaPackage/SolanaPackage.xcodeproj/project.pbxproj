@@ -11,7 +11,6 @@
 		2E0CBFDE27F282DD006E6892 /* SolanaPackageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E0CBFD527F282DC006E6892 /* SolanaPackageUI.framework */; };
 		2E0FCF94286EFF1700179087 /* BalanceUIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0FCF93286EFF1700179087 /* BalanceUIIntegrationTests.swift */; };
 		2E0FCF98286F9DB000179087 /* BalanceComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0FCF97286F9DB000179087 /* BalanceComposerView.swift */; };
-		2E0FCF9A286FA76000179087 /* BalanceViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0FCF99286FA76000179087 /* BalanceViewUITests.swift */; };
 		2E3951DE283DA3C40079852F /* RemoteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3951DD283DA3C40079852F /* RemoteLoader.swift */; };
 		2E3951E0283DB1630079852F /* RemoteLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3951DF283DB1630079852F /* RemoteLoaderTests.swift */; };
 		2E3951E2283DF5120079852F /* LoadBalanceResponseMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3951E1283DF5120079852F /* LoadBalanceResponseMapperTests.swift */; };
@@ -99,7 +98,6 @@
 		2E0CBFE427F282DD006E6892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E0FCF93286EFF1700179087 /* BalanceUIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceUIIntegrationTests.swift; sourceTree = "<group>"; };
 		2E0FCF97286F9DB000179087 /* BalanceComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceComposerView.swift; sourceTree = "<group>"; };
-		2E0FCF99286FA76000179087 /* BalanceViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewUITests.swift; sourceTree = "<group>"; };
 		2E3951DD283DA3C40079852F /* RemoteLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLoader.swift; sourceTree = "<group>"; };
 		2E3951DF283DB1630079852F /* RemoteLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLoaderTests.swift; sourceTree = "<group>"; };
 		2E3951E1283DF5120079852F /* LoadBalanceResponseMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadBalanceResponseMapperTests.swift; sourceTree = "<group>"; };
@@ -194,7 +192,6 @@
 			children = (
 				2E0CBFE427F282DD006E6892 /* Info.plist */,
 				2E0FCF93286EFF1700179087 /* BalanceUIIntegrationTests.swift */,
-				2E0FCF99286FA76000179087 /* BalanceViewUITests.swift */,
 			);
 			path = SolanaPackageUITests;
 			sourceTree = "<group>";
@@ -610,7 +607,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E0FCF94286EFF1700179087 /* BalanceUIIntegrationTests.swift in Sources */,
-				2E0FCF9A286FA76000179087 /* BalanceViewUITests.swift in Sources */,
 				2E5186DC27F28DA0001AB355 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
