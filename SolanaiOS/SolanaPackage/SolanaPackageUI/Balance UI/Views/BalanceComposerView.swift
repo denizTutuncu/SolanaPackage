@@ -19,7 +19,7 @@ public struct BalanceComposerView: View {
     public init(viewModel: BalanceViewModel) {
         self.viewModel = viewModel
         self.balanceView = BalanceUIView(viewModel: viewModel)
-        self.errorView = BalanceUIErrorView(errorMessage: "Any Error")
+        self.errorView = BalanceUIErrorView(error: viewModel.uiModel.error)
         self.loadingView = BalanceUILoadingView(title: "Loading Balance...")
     }
     
