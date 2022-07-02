@@ -22,8 +22,6 @@ public class BalanceViewModel: ObservableObject {
         }
     }
     
-    @Published public var uiModel: BalanceUIModel = BalanceUIModel(balance: nil, error: nil, isLoading: true)
-    
     public var labelTitle: String {
         return NSLocalizedString("BALANCE_LABEL_TITLE",
                                  tableName: "Balance",
@@ -38,7 +36,9 @@ public class BalanceViewModel: ObservableObject {
                                  comment: "Title for Loading View")
     }
     
+    @Published public var uiModel: BalanceUIModel = BalanceUIModel(balance: nil, error: nil, isLoading: true)
     private let remoteBalanceLoader: RemoteBalanceLoader
+    
     public init(remoteBalanceLoader: RemoteBalanceLoader) {
         self.remoteBalanceLoader = remoteBalanceLoader
     }
