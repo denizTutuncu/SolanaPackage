@@ -33,17 +33,13 @@ public class BalanceViewModel: ObservableObject {
         remoteBalanceLoader.load { result in
             switch result {
             case let .success(balance):
-                print(balance.lamports)
                 let balanceViewModel = BalanceUIModel(balance: balance, error: nil, isLoading: false)
-
                 DispatchQueue.main.async {
                     self.uiModel = balanceViewModel
                 }
                
             case let .failure(error):
-                print(error)
                 let balanceViewModel = BalanceUIModel(balance: nil, error: error, isLoading: false)
-               
                 DispatchQueue.main.async {
                     self.uiModel = balanceViewModel
                 }
