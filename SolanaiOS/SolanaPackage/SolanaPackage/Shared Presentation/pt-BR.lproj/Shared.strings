@@ -1,8 +1,0 @@
-/* 
-  Shared.strings
-  SolanaPackage
-
-  Created by Deniz Tutuncu on 6/1/22.
-  
-*/
-"GENERIC_CONNECTION_ERROR" = "Não foi possível conectar com o servidor";
