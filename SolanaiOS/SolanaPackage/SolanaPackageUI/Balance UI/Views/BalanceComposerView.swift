@@ -13,29 +13,39 @@ public struct BalanceComposerView: View {
     @ObservedObject private var viewModel: BalanceViewModel
     
     private let balanceView: BalanceUIView
-    private let errorView: BalanceUIErrorView
-    private let loadingView: BalanceUILoadingView
+    private let errorView: ErrorView
+    private let loadingView: LoadingView
     
     public init(viewModel: BalanceViewModel) {
         self.viewModel = viewModel
         self.balanceView = BalanceUIView(viewModel: viewModel)
-        self.errorView = BalanceUIErrorView(error: viewModel.uiModel.error)
-        self.loadingView = BalanceUILoadingView(title: "Loading Balance...")
+        self.errorView = ErrorView(error: viewModel.uiModel.error)
+        self.loadingView = LoadingView(title: viewModel.loadingTitle)
     }
     
     public var body: some View {
-        VStack {
+        let screenSize = UIScreen.main.bounds.size
+        HStack(alignment: .center, spacing: 0) {
+            Text("\(viewModel.labelTitle)")
+                .font(Font.headline)
+                .bold()
+                .padding()
+                
             viewModel.uiModel.isLoading ? AnyView(self.loadingView) : (viewModel.uiModel.error != nil) ? AnyView(self.errorView) : AnyView(self.balanceView)
-          
         }
         .onAppear(perform: {
             self.viewModel.loadBalance()
         })
+        .frame(width: screenSize.width / 1.2, height: screenSize.height / 10, alignment: .center)
+        .background(.purple)
+        .foregroundColor(.white)
+        .cornerRadius(8)
+        .shadow(color: .purple, radius: 5)
     }
 }
 
 struct BalanceComposerView_Previews: PreviewProvider {
     static var previews: some View {
-        BalanceComposerView(viewModel:  BalanceViewModel(remoteBalanceLoader: RemoteBalanceLoader(url: URL(string: SolanaClusterRPCEndpoints.devNet.rawValue), methodName: "getBalance", publicKey: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi", client: URLSessionHTTPClient(session: URLSession(configuration: .ephemeral)))))
+        BalanceComposerView(viewModel:  BalanceViewModel(remoteBalanceLoader: RemoteBalanceLoader(url: URL(string: SolanaClusterRPCEndpoints.devNet.rawValue), publicKey: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi", client: URLSessionHTTPClient(session: URLSession(configuration: .ephemeral)))))
     }
 }

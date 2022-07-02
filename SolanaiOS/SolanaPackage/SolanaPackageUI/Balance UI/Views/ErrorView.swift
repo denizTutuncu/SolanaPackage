@@ -7,21 +7,25 @@
 
 import SwiftUI
 
-public struct BalanceUIErrorView: View {
+public struct ErrorView: View {
     private let error: Error?
+    
     public init(error: Error?) {
         self.error = error
     }
     public var body: some View {
-        Text(self.error?.localizedDescription ?? "Connection error")
+        VStack {
+            Text(self.error?.localizedDescription ?? "Connection error")
+                .foregroundColor(.white)
+        }
     }
 }
 
 struct BalanceErrorView_Previews: PreviewProvider {
-     enum Error: Swift.Error {
+    enum Error: Swift.Error {
         case fakeError
     }
     static var previews: some View {
-        BalanceUIErrorView(error: Error.fakeError)
+        ErrorView(error: Error.fakeError)
     }
 }

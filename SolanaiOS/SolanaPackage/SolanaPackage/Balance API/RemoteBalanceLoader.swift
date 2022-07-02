@@ -10,8 +10,8 @@ import Foundation
 public typealias RemoteBalanceLoader = RemoteLoader<Balance>
 
 public extension RemoteBalanceLoader {
-    convenience init(url: URL?, methodName: String, publicKey: String, client: HTTPClient) {
-        self.init(url: url, methodName: methodName, publicKey: publicKey, client: client, urlRequestMapper: BalanceURLRequestMapper.map, mapper: BalanceResponseMapper.map)
+    convenience init(url: URL?, publicKey: String, client: HTTPClient) {
+        self.init(url: url, publicAddress: publicKey, client: client, urlRequestMapper: BalanceURLRequestMapper.map, mapper: BalanceResponseMapper.map)
     }
 }
 

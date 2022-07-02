@@ -24,15 +24,18 @@ public class BalanceViewModel: ObservableObject {
     
     @Published public var uiModel: BalanceUIModel = BalanceUIModel(balance: nil, error: nil, isLoading: true)
     
-    private var balanceLoadError: String {
-        return NSLocalizedString("BALANCE_VIEW_CONNECTION_ERROR",
+    public var labelTitle: String {
+        return NSLocalizedString("BALANCE_LABEL_TITLE",
                                  tableName: "Balance",
                                  bundle: Bundle(for: BalanceViewModel.self),
-                                 comment: "Error message displayed when we can't load the balance from the server")
+                                 comment: "Title for Label")
     }
-    
-    public static var title: String {
-        return NSLocalizedString("BALANCE_VIEW_TITLE", tableName: "Balance", bundle: Bundle(for: BalanceViewModel.self), comment: "Title for the balance view")
+
+    public var loadingTitle: String {
+        return NSLocalizedString("BALANCE_LOADING_TITLE",
+                                 tableName: "Balance",
+                                 bundle: Bundle(for: BalanceViewModel.self),
+                                 comment: "Title for Loading View")
     }
     
     private let remoteBalanceLoader: RemoteBalanceLoader
@@ -50,6 +53,7 @@ public class BalanceViewModel: ObservableObject {
                 }
                
             case let .failure(error):
+                print(error.localizedDescription)
                 let balanceViewModel = BalanceUIModel(balance: nil, error: error, isLoading: false)
                 DispatchQueue.main.async {
                     self?.uiModel = balanceViewModel

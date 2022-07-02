@@ -8,18 +8,19 @@
 import SwiftUI
 import SolanaPackage
 
-public struct BalanceUILoadingView: View {
-    private let title: String
-    public init(title: String) { self.title = title }
+public struct LoadingView: View {
+    private let title: String?
+    public init(title: String?) { self.title = title }
     public var body: some View {
         VStack {
-            ProgressView(self.title)
+            ProgressView(self.title ?? "Loading...")
         }
+        .foregroundColor(.white)
     }
 }
 
 struct BalanceLoadingView_Previews: PreviewProvider {
     static var previews: some View {
-        BalanceUILoadingView(title: "Loading Balance...")
+        LoadingView(title: "Loading Balance...")
     }
 }
