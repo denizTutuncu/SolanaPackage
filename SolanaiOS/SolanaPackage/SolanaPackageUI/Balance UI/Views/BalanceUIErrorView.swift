@@ -8,17 +8,20 @@
 import SwiftUI
 
 public struct BalanceUIErrorView: View {
-    private let errorMessage: String
-    public init(errorMessage: String) {
-        self.errorMessage = errorMessage
+    private let error: Error?
+    public init(error: Error?) {
+        self.error = error
     }
     public var body: some View {
-        Text(self.errorMessage)
+        Text(self.error?.localizedDescription ?? "Connection error")
     }
 }
 
 struct BalanceErrorView_Previews: PreviewProvider {
+     enum Error: Swift.Error {
+        case fakeError
+    }
     static var previews: some View {
-        BalanceUIErrorView(errorMessage: "ANY ERROR MESSAGE HERE")
+        BalanceUIErrorView(error: Error.fakeError)
     }
 }
