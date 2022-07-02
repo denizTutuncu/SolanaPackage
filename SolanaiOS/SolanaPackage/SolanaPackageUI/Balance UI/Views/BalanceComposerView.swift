@@ -5,21 +5,37 @@
 //  Created by Deniz Tutuncu on 7/1/22.
 //
 
+import SolanaPackage
 import SwiftUI
 
 public struct BalanceComposerView: View {
     
-    private let balanceView: BalanceView
-    private let errorView: BalanceErrorView
-    private let loadingView: BalanceLoadingView
+    @ObservedObject private var viewModel: BalanceViewModel
     
-    public init(balanceView: BalanceView, errorView: BalanceErrorView, loadingView: BalanceLoadingView) {
-        self.balanceView = balanceView
-        self.errorView = errorView
-        self.loadingView = loadingView
+    private let balanceView: BalanceUIView
+    private let errorView: BalanceUIErrorView
+    private let loadingView: BalanceUILoadingView
+    
+    public init(viewModel: BalanceViewModel) {
+        self.viewModel = viewModel
+        self.balanceView = BalanceUIView(viewModel: viewModel)
+        self.errorView = BalanceUIErrorView(errorMessage: "Any Error")
+        self.loadingView = BalanceUILoadingView(title: "Loading Balance...")
     }
     
     public var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            viewModel.uiModel.isLoading ? AnyView(self.loadingView) : (viewModel.uiModel.error != nil) ? AnyView(self.errorView) : AnyView(self.balanceView)
+          
+        }
+        .onAppear(perform: {
+            self.viewModel.loadBalance()
+        })
+    }
+}
+
+struct BalanceComposerView_Previews: PreviewProvider {
+    static var previews: some View {
+        BalanceComposerView(viewModel:  BalanceViewModel(remoteBalanceLoader: RemoteBalanceLoader(url: URL(string: SolanaClusterRPCEndpoints.devNet.rawValue), methodName: "getBalance", publicKey: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi", client: URLSessionHTTPClient(session: URLSession(configuration: .ephemeral)))))
     }
 }

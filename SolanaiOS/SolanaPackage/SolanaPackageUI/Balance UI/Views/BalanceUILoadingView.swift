@@ -8,7 +8,7 @@
 import SwiftUI
 import SolanaPackage
 
-public struct BalanceLoadingView: View {
+public struct BalanceUILoadingView: View {
     private let title: String
     public init(title: String) { self.title = title }
     public var body: some View {
@@ -20,6 +20,6 @@ public struct BalanceLoadingView: View {
 
 struct BalanceLoadingView_Previews: PreviewProvider {
     static var previews: some View {
-        BalanceLoadingView(title: "Loading...")
+        BalanceUILoadingView(title: "Loading Balance...")
     }
 }

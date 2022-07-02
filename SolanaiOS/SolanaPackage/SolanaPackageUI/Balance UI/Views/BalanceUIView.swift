@@ -7,13 +7,14 @@
 
 import SolanaPackage
 import SwiftUI
+import Combine
 
-public struct BalanceView: View {
+public struct BalanceUIView: View {
+
+    @State private var viewModel: BalanceViewModel
     
-    @State private var balance: BalanceViewModel
-    
-    public init(balance: BalanceViewModel) {
-        self.balance = balance
+    public init(viewModel: BalanceViewModel) {
+        self.viewModel = viewModel
     }
     
     public var body: some View {
@@ -23,8 +24,7 @@ public struct BalanceView: View {
                 .font(Font.largeTitle)
                 .bold()
                 .padding()
-            
-            Text("\(self.balance.balance.lamports / 1000000000) SOL")
+            Text("\((viewModel.uiModel.balance?.lamports ?? 0) / 1000000000) SOL")
                 .font(Font.title)
                 .italic()
                 .padding()
@@ -38,6 +38,6 @@ public struct BalanceView: View {
 
 struct SolBalanceView_Previews: PreviewProvider {
     static var previews: some View {
-        BalanceView(balance: BalanceViewModel(balance: Balance(lamports: 25000000000)))
+        BalanceUIView(viewModel: BalanceViewModel(remoteBalanceLoader: RemoteBalanceLoader(url: URL(string: SolanaClusterRPCEndpoints.devNet.rawValue), methodName: "getBalance", publicKey: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi", client: URLSessionHTTPClient(session: URLSession(configuration: .ephemeral)))))
     }
 }
