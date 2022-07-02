@@ -25,7 +25,7 @@
 
 ## Create Wallet BDD Specs (in the future)
 
-### Create Wallet
+### Create Wallet / Receive Sol
 ### Story: Customer requests to create a solana wallet
 
 ### Narrative #1
@@ -67,7 +67,7 @@ Given the customer have a seed phrase
 
 ## Get Balance BDD Specs (in progress, ready to review on MySolWallet iOS app)
 
-### Get Balance / Receive Sol
+### Get Balance
 ### Story: Customer requests to see their balance
 
 ### Narrative #1
