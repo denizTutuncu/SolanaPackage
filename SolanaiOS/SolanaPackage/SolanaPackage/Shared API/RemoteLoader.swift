@@ -63,9 +63,9 @@ public final class RemoteLoader<Resource> {
         }
     }
     
-    private func mapURLRequest(_ url: URL?, _ publicKey: String?) -> RequestResult {
+    private func mapURLRequest(_ url: URL?, _ publicAddress: String?) -> RequestResult {
         do {
-            return .success(try urlRequestMapper(url, publicKey))
+            return .success(try urlRequestMapper(url, publicAddress))
         } catch {
             return .failure(Error.badURLRequest)
         }
