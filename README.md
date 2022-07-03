@@ -67,6 +67,8 @@ Given the customer have a seed phrase
 
 ## Get Balance BDD Specs (in progress, ready to review on MySolWallet iOS app)
 
+![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/BalanceAPI.gif)
+
 ### Get Balance
 ### Story: Customer requests to see their balance
 
