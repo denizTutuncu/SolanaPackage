@@ -20,10 +20,21 @@ public final class BalanceURLRequestMapper {
         }
     }
     
-    private enum Error: Swift.Error {
+    private enum Error: Swift.Error, LocalizedError {
         case publicKey
         case url
         case encoder
+        
+        public var errorDescription: String? {
+            switch self {
+            case .publicKey:
+                return "There is no public address to connect."
+            case .url:
+                return "There is no URL to connect. We are unable to connect and we are working on it!"
+            case .encoder:
+                return "There is a problem with URL request body. We are unable to connect and we are working on it!"
+            }
+        }
     }
     
     public static func map(_ url: URL?, _ publicKey: String?) throws -> URLRequest {

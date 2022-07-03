@@ -12,14 +12,14 @@ public struct BalanceComposerView: View {
     
     @ObservedObject private var viewModel: BalanceViewModel
     
-    private let balanceView: BalanceUIView
-    private let errorView: ErrorView
+    private let balanceView: BalanceView
+    private let errorView: BalanceErrorView
     private let loadingView: LoadingView
     
     public init(viewModel: BalanceViewModel) {
         self.viewModel = viewModel
-        self.balanceView = BalanceUIView(viewModel: viewModel)
-        self.errorView = ErrorView(error: viewModel.uiModel.error)
+        self.balanceView = BalanceView(viewModel: viewModel)
+        self.errorView = BalanceErrorView(viewModel: viewModel)
         self.loadingView = LoadingView(title: viewModel.loadingTitle)
     }
     
