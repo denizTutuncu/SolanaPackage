@@ -1,8 +1,8 @@
-# SolanaPackage
+# Solana Apple Stack SDK / Solana Package 
 
-#### Solana Package connects OS platforms to Solana Blockchain.
-#### The package provides a software to any OS developers. It can be used to create a valid Solana wallet on any OS applications - macOS, iOS, watchOS, etc.
-#### This gives the ability to interact with Solana Blockchain and receive/send Sol. 
+#### Solana Package connects Apple platforms (iOS, iPadOS, macOS, watchOS, and tvOS) to Solana Blockchain.
+#### The package provides several APIs as a software to any Apple developers.
+#### SDK gives the ability to interact with Solana Blockchain, receive/send Sol and more. 
  
 ## User Flow
 ![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/UserFlow.jpg?raw=true)
