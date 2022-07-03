@@ -14,11 +14,21 @@ public final class RemoteLoader<Resource> {
     private let urlRequestMapper: URLRequestMapper
     private let responseMapper: ResponseMapper
     
-    public enum Error: Swift.Error {
+    public enum Error: Swift.Error, LocalizedError {
+        case emptyURL
         case badURL
-        case badURLRequest
-        case connectivity
         case invalidData
+        
+        public var errorDescription: String? {
+            switch self {
+            case .emptyURL:
+                return "The URL we use to connect with Solana blockchain is empty. We are unable to connect and we are working on it!"
+            case .badURL:
+                return "The URL we use to connect with Solana blockchain is unexpected. We are unable to connect and we are working on it!"
+            case .invalidData:
+                return "Solana blockchain sent us an unexpected data structure.  We are unable to parse the data and we are working on it!"
+            }
+        }
     }
     
     public typealias RequestResult = Swift.Result<URLRequest, Swift.Error>
@@ -36,7 +46,7 @@ public final class RemoteLoader<Resource> {
     }
         
     public func load(completion: @escaping (Result) -> Void) {
-        guard let url = url, !url.absoluteString.isEmpty else { completion(.failure(Error.badURL)); return }
+        guard let url = url, !url.absoluteString.isEmpty else { completion(.failure(Error.emptyURL)); return }
         
         switch self.mapURLRequest(url, publicAddress) {
         case let .success(urlRequest):
@@ -47,7 +57,7 @@ public final class RemoteLoader<Resource> {
                 case let .success((data, response)):
                     completion(self.map(data, from: response))
                 case .failure:
-                    completion(.failure(Error.connectivity))
+                    completion(.failure(Error.badURL))
                 }
             }
         case let .failure(error):
@@ -66,8 +76,8 @@ public final class RemoteLoader<Resource> {
     private func mapURLRequest(_ url: URL?, _ publicAddress: String?) -> RequestResult {
         do {
             return .success(try urlRequestMapper(url, publicAddress))
-        } catch {
-            return .failure(Error.badURLRequest)
+        } catch let (error) {
+            return .failure(error)
         }
     }
 }
