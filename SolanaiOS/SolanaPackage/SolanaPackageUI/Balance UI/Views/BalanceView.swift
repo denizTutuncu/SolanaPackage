@@ -25,7 +25,6 @@ public struct BalanceView: View {
         }
         .foregroundColor(Color(#colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)))
         
-        .fixedSize()
         .padding()
     }
 }
