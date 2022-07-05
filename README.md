@@ -66,6 +66,14 @@ Given the customer have a seed phrase
 ----------------
 
 ## Get Balance BDD Specs (in progress, ready to review on MySolWallet iOS app)
+To show a valid public Solana address balance, first you need to create a `RemoteBalanceLoader` with a network setting, chosen valid public address and a client. Then pass it to create `BalanceComposerView`. That's it!
+
+```
+let remoteBalanceLoader = RemoteBalanceLoader(url: URL(string: SolanaClusterRPCEndpoints.devNet.rawValue),
+                                                  publicAddress: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                                                  client: URLSessionHTTPClient(session: URLSession(configuration: .ephemeral)))
+BalanceComposerView(viewModel:  BalanceViewModel(remoteBalanceLoader: remoteBalanceLoader))
+```
 
 ![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/BalanceAPI.gif)
 
