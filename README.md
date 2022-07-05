@@ -19,7 +19,7 @@
 
 ----------------
 
-![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/SOLiOSSDK.jpg?raw=true)
+![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/SolanaiOSSDK.jpg?raw=true)
 
 ----------------
 
