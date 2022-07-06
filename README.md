@@ -8,7 +8,7 @@
 ![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/UserFlow.jpg?raw=true)
 
 ```
-1- Create Wallet / Receive Sol (in the future)
+1- Create Wallet & Receive Sol (in the future)
 2- Display balance (in progress, component is ready to review)
 3- Display past transactions (in progress)
 4- Send Sol (in the future)
