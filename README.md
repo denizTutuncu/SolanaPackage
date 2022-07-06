@@ -75,7 +75,7 @@ let remoteBalanceLoader = RemoteBalanceLoader(url: URL(string: SolanaClusterRPCE
 BalanceComposerView(viewModel:  BalanceViewModel(remoteBalanceLoader: remoteBalanceLoader))
 ```
 
-![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/BalanceAPI.gif)
+![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/PROTOTYPEIOS_AdobeCreativeCloudExpress.gif)
 
 ### Get Balance
 ### Story: Customer requests to see their balance
