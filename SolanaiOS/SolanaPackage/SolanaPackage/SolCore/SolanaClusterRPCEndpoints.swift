@@ -11,3 +11,5 @@ public enum SolanaClusterRPCEndpoints: String {
     case testNet = "https://api.testnet.solana.com"
     case mainBetaNet = "https://api.mainnet-beta.solana.com"
 }
+
+
