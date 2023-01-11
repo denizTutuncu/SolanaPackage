@@ -201,9 +201,18 @@
 		2E2CC5AB296EBCE00063C23C /* Shared API Infra */ = {
 			isa = PBXGroup;
 			children = (
+				2E2CC5AC296EBD2F0063C23C /* Helpers */,
 				2ED6164527E5C3B800920274 /* URLSessionHTTPClientTests.swift */,
 			);
 			path = "Shared API Infra";
+			sourceTree = "<group>";
+		};
+		2E2CC5AC296EBD2F0063C23C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2ED6164127E5C35400920274 /* URLProtocolStub.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		2E4294B32848463700817480 /* Balance UI */ = {
@@ -389,7 +398,6 @@
 			isa = PBXGroup;
 			children = (
 				2ED6164327E5C37400920274 /* HTTPClientSpy.swift */,
-				2ED6164127E5C35400920274 /* URLProtocolStub.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
