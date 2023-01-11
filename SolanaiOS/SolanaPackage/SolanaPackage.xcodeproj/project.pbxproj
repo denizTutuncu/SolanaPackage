@@ -35,7 +35,7 @@
 		2ED6160E27E5AD4000920274 /* SolanaPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED6160427E5AD3F00920274 /* SolanaPackage.framework */; };
 		2ED6162627E5AECE00920274 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6162527E5AECE00920274 /* HTTPClient.swift */; };
 		2ED6162827E5AEEF00920274 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6162727E5AEEF00920274 /* URLSessionHTTPClient.swift */; };
-		2ED6163A27E5BE4400920274 /* BalanceResponseMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6163927E5BE4400920274 /* BalanceResponseMapper.swift */; };
+		2ED6163A27E5BE4400920274 /* BalanceItemMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6163927E5BE4400920274 /* BalanceItemMapper.swift */; };
 		2ED6164027E5C33D00920274 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6163F27E5C33D00920274 /* XCTestCase+MemoryLeakTracking.swift */; };
 		2ED6164227E5C35400920274 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6164127E5C35400920274 /* URLProtocolStub.swift */; };
 		2ED6164427E5C37400920274 /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6164327E5C37400920274 /* HTTPClientSpy.swift */; };
@@ -131,7 +131,7 @@
 		2ED6161427E5AD4000920274 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2ED6162527E5AECE00920274 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		2ED6162727E5AEEF00920274 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
-		2ED6163927E5BE4400920274 /* BalanceResponseMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceResponseMapper.swift; sourceTree = "<group>"; };
+		2ED6163927E5BE4400920274 /* BalanceItemMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceItemMapper.swift; sourceTree = "<group>"; };
 		2ED6163F27E5C33D00920274 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		2ED6164127E5C35400920274 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
 		2ED6164327E5C37400920274 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
@@ -357,7 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				2E0CBFAB27F1A8C0006E6892 /* BalanceEndpoint.swift */,
-				2ED6163927E5BE4400920274 /* BalanceResponseMapper.swift */,
+				2ED6163927E5BE4400920274 /* BalanceItemMapper.swift */,
 			);
 			path = "Balance API";
 			sourceTree = "<group>";
@@ -412,10 +412,10 @@
 		2EE08998284769D5007AFC0F /* Balance API */ = {
 			isa = PBXGroup;
 			children = (
+				2E2CC5AF296EC0FD0063C23C /* BalanceItemMapperTests.swift */,
 				2E2CC5A9296EB9680063C23C /* BalanceEndpointTests.swift */,
 				2E3951E1283DF5120079852F /* LoadBalanceResponseMapperTests.swift */,
 				2EE08999284769E8007AFC0F /* Helpers */,
-				2E2CC5AF296EC0FD0063C23C /* BalanceItemMapperTests.swift */,
 			);
 			path = "Balance API";
 			sourceTree = "<group>";
@@ -662,7 +662,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E954BA22848852F002D2FF3 /* Balance.swift in Sources */,
-				2ED6163A27E5BE4400920274 /* BalanceResponseMapper.swift in Sources */,
+				2ED6163A27E5BE4400920274 /* BalanceItemMapper.swift in Sources */,
 				2ED6162627E5AECE00920274 /* HTTPClient.swift in Sources */,
 				2E2CC5B7296EC1F80063C23C /* ResourceLoadingViewModel.swift in Sources */,
 				2E2CC5BB296EC2150063C23C /* ResourceErrorViewModel.swift in Sources */,
