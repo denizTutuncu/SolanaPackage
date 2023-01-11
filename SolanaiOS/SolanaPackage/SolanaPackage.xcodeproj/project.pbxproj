@@ -20,6 +20,7 @@
 		2E2CC5BB296EC2150063C23C /* ResourceErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5BA296EC2150063C23C /* ResourceErrorViewModel.swift */; };
 		2E2CC5BE296EC2460063C23C /* Shared.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E2CC5C0296EC2460063C23C /* Shared.strings */; };
 		2E2CC5C5296EC3060063C23C /* LoadResourcePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5C4296EC3060063C23C /* LoadResourcePresenterTests.swift */; };
+		2E2CC5C7296EC45C0063C23C /* BalancePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5C6296EC45C0063C23C /* BalancePresenter.swift */; };
 		2E3951E2283DF5120079852F /* LoadBalanceResponseMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3951E1283DF5120079852F /* LoadBalanceResponseMapperTests.swift */; };
 		2E4294B7284847C800817480 /* BalanceErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4294B6284847C800817480 /* BalanceErrorView.swift */; };
 		2E4294B92848484900817480 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4294B82848484900817480 /* LoadingView.swift */; };
@@ -114,6 +115,7 @@
 		2E2CC5C2296EC2500063C23C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Shared.strings"; sourceTree = "<group>"; };
 		2E2CC5C3296EC2500063C23C /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Shared.strings; sourceTree = "<group>"; };
 		2E2CC5C4296EC3060063C23C /* LoadResourcePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadResourcePresenterTests.swift; sourceTree = "<group>"; };
+		2E2CC5C6296EC45C0063C23C /* BalancePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancePresenter.swift; sourceTree = "<group>"; };
 		2E3951E1283DF5120079852F /* LoadBalanceResponseMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadBalanceResponseMapperTests.swift; sourceTree = "<group>"; };
 		2E4294B6284847C800817480 /* BalanceErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceErrorView.swift; sourceTree = "<group>"; };
 		2E4294B82848484900817480 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 		2EE0896C2846D975007AFC0F /* Balance Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				2E2CC5C6296EC45C0063C23C /* BalancePresenter.swift */,
 				2EE0896E2846D9FD007AFC0F /* BalanceViewModel.swift */,
 				2EE089782846DF76007AFC0F /* Balance.strings */,
 			);
@@ -662,6 +665,7 @@
 				2E2CC5BB296EC2150063C23C /* ResourceErrorViewModel.swift in Sources */,
 				2EE0896F2846D9FD007AFC0F /* BalanceViewModel.swift in Sources */,
 				2E2CC5B9296EC2050063C23C /* ResourceErrorView.swift in Sources */,
+				2E2CC5C7296EC45C0063C23C /* BalancePresenter.swift in Sources */,
 				2E2CC5B3296EC1D00063C23C /* LoadResourcePresenter.swift in Sources */,
 				2E2CC5B5296EC1EB0063C23C /* ResourceLoadingView.swift in Sources */,
 				2E0CBFAC27F1A8C0006E6892 /* BalanceEndpoint.swift in Sources */,
