@@ -21,6 +21,7 @@
 		2E2CC5BE296EC2460063C23C /* Shared.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E2CC5C0296EC2460063C23C /* Shared.strings */; };
 		2E2CC5C5296EC3060063C23C /* LoadResourcePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5C4296EC3060063C23C /* LoadResourcePresenterTests.swift */; };
 		2E2CC5C7296EC45C0063C23C /* BalancePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5C6296EC45C0063C23C /* BalancePresenter.swift */; };
+		2E2CC5C9296EC4D90063C23C /* BalancePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5C8296EC4D90063C23C /* BalancePresenterTests.swift */; };
 		2E3951E2283DF5120079852F /* LoadBalanceResponseMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3951E1283DF5120079852F /* LoadBalanceResponseMapperTests.swift */; };
 		2E4294B7284847C800817480 /* BalanceErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4294B6284847C800817480 /* BalanceErrorView.swift */; };
 		2E4294B92848484900817480 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4294B82848484900817480 /* LoadingView.swift */; };
@@ -116,6 +117,7 @@
 		2E2CC5C3296EC2500063C23C /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Shared.strings; sourceTree = "<group>"; };
 		2E2CC5C4296EC3060063C23C /* LoadResourcePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadResourcePresenterTests.swift; sourceTree = "<group>"; };
 		2E2CC5C6296EC45C0063C23C /* BalancePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancePresenter.swift; sourceTree = "<group>"; };
+		2E2CC5C8296EC4D90063C23C /* BalancePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancePresenterTests.swift; sourceTree = "<group>"; };
 		2E3951E1283DF5120079852F /* LoadBalanceResponseMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadBalanceResponseMapperTests.swift; sourceTree = "<group>"; };
 		2E4294B6284847C800817480 /* BalanceErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceErrorView.swift; sourceTree = "<group>"; };
 		2E4294B82848484900817480 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 			isa = PBXGroup;
 			children = (
 				2EE0897F28473BAF007AFC0F /* BalanceLocalizationTests.swift */,
+				2E2CC5C8296EC4D90063C23C /* BalancePresenterTests.swift */,
 				2EE0898528473F64007AFC0F /* Helpers */,
 			);
 			path = "Balance Presentation";
@@ -684,6 +687,7 @@
 				2E2CC5B0296EC0FD0063C23C /* BalanceItemMapperTests.swift in Sources */,
 				2ED6164427E5C37400920274 /* HTTPClientSpy.swift in Sources */,
 				2EB6F55027E821A500CA7BED /* SharedTestHelpers.swift in Sources */,
+				2E2CC5C9296EC4D90063C23C /* BalancePresenterTests.swift in Sources */,
 				2ED6164227E5C35400920274 /* URLProtocolStub.swift in Sources */,
 				2EE0898028473BAF007AFC0F /* BalanceLocalizationTests.swift in Sources */,
 				2E2CC5C5296EC3060063C23C /* LoadResourcePresenterTests.swift in Sources */,
