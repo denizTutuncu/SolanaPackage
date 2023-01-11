@@ -26,7 +26,7 @@ class BalanceAPIEndToEndTests: XCTestCase {
     
     //MARK:- Helpers
     private func getBalance(file: StaticString = #file, line: UInt = #line) -> Swift.Result<Balance, Error>?  {
-        let devNetURL = URL(string: SolanaClusterRPCEndpoints.devNet.rawValue)
+        let devNetURL = URL(string: BalanceEndpoints.devNet.rawValue)
         let publicKey = createPublicKey()
         let methodName = "getBalance"
         let loader = RemoteLoader(url: devNetURL, methodName: methodName, publicKey: publicKey, client: ephemeralClient(), urlRequestMapper: BalanceURLRequestMapper.map, mapper: BalanceResponseMapper.map)

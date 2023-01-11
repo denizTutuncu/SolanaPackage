@@ -11,7 +11,7 @@ import SolanaPackageUI
 
 @main
 struct MySolWalletApp: App {
-    let remoteBalanceLoader = RemoteBalanceLoader(url: URL(string: SolanaClusterRPCEndpoints.devNet.rawValue),
+    let remoteBalanceLoader = RemoteBalanceLoader(url: URL(string: BalanceEndpoints.devNet.rawValue),
                                                   publicAddress: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
                                                   client: URLSessionHTTPClient(session: URLSession(configuration: .ephemeral)))
     var body: some Scene {
