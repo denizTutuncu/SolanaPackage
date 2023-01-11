@@ -5,6 +5,4 @@
   Created by Deniz Tutuncu on 5/31/22.
   
 */
-"BALANCE_LABEL_TITLE" = "Balance";
-"BALANCE_LOADING_TITLE" = "Loading Balance...";
-"BALANCE_VIEW_CONNECTION_ERROR" = "Couldn't connect to server";
+"BALANCE_VIEW_TITLE" = "Balance";
