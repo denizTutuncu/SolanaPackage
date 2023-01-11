@@ -5,6 +5,4 @@
   Created by Deniz Tutuncu on 5/31/22.
   
 */
-"BALANCE_LABEL_TITLE" = "Bakiye";
-"BALANCE_LOADING_TITLE" = "Bakiye yükleniyor...";
-"BALANCE_VIEW_CONNECTION_ERROR" = "Server baglantı hatası";
+"BALANCE_VIEW_TITLE" = "Bakiye";

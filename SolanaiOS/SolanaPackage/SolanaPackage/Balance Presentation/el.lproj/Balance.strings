@@ -5,6 +5,4 @@
   Created by Deniz Tutuncu on 5/31/22.
   
 */
-"BALANCE_LABEL_TITLE" = "ισορροπία";
-"BALANCE_LOADING_TITLE" = "Υπόλοιπο φόρτωσης...";
-"BALANCE_VIEW_CONNECTION_ERROR" = "Não foi possível conectar com o servidor";
+"BALANCE_VIEW_TITLE" = "ισορροπία";
