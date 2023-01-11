@@ -25,7 +25,7 @@ public enum BalanceEndpoint {
                 private let id: Int = 1
                 private let method: String = "getBalance"
                 private let params: [String] //publicKey
-            
+                
                 init(params: [String]) {
                     self.params = params
                 }
@@ -65,9 +65,3 @@ public enum BalanceEndpoint {
         }
     }
 }
-
-//public enum SolanaClusterRPCEndpoints: String {
-//    case devNet = "https://api.devnet.solana.com"
-//    case testNet = "https://api.testnet.solana.com"
-//    case mainBetaNet = "https://api.mainnet-beta.solana.com"
-//}
