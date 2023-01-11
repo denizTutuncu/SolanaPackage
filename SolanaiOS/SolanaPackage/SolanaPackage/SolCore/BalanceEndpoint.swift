@@ -6,13 +6,8 @@
 //
 
 import Foundation
-//public enum SolanaClusterRPCEndpoints: String {
-//    case devNet = "https://api.devnet.solana.com"
-//    case testNet = "https://api.testnet.solana.com"
-//    case mainBetaNet = "https://api.mainnet-beta.solana.com"
-//}
 
-public enum BalanceEndpoints {
+public enum BalanceEndpoint {
     case get(walletAddress: String)
     
     public func url(baseURL: URL) throws -> URLRequest {
@@ -70,3 +65,9 @@ public enum BalanceEndpoints {
         }
     }
 }
+
+//public enum SolanaClusterRPCEndpoints: String {
+//    case devNet = "https://api.devnet.solana.com"
+//    case testNet = "https://api.testnet.solana.com"
+//    case mainBetaNet = "https://api.mainnet-beta.solana.com"
+//}
