@@ -12,7 +12,6 @@
 		2E0FCF94286EFF1700179087 /* BalanceUIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0FCF93286EFF1700179087 /* BalanceUIIntegrationTests.swift */; };
 		2E0FCF98286F9DB000179087 /* BalanceComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0FCF97286F9DB000179087 /* BalanceComposerView.swift */; };
 		2E2CC5AA296EB9680063C23C /* BalanceEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5A9296EB9680063C23C /* BalanceEndpointTests.swift */; };
-		2E2CC5B0296EC0FD0063C23C /* BalanceItemMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5AF296EC0FD0063C23C /* BalanceItemMapperTests.swift */; };
 		2E2CC5B3296EC1D00063C23C /* LoadResourcePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5B2296EC1D00063C23C /* LoadResourcePresenter.swift */; };
 		2E2CC5B5296EC1EB0063C23C /* ResourceLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5B4296EC1EB0063C23C /* ResourceLoadingView.swift */; };
 		2E2CC5B7296EC1F80063C23C /* ResourceLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5B6296EC1F80063C23C /* ResourceLoadingViewModel.swift */; };
@@ -22,7 +21,7 @@
 		2E2CC5C5296EC3060063C23C /* LoadResourcePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5C4296EC3060063C23C /* LoadResourcePresenterTests.swift */; };
 		2E2CC5C7296EC45C0063C23C /* BalancePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5C6296EC45C0063C23C /* BalancePresenter.swift */; };
 		2E2CC5C9296EC4D90063C23C /* BalancePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5C8296EC4D90063C23C /* BalancePresenterTests.swift */; };
-		2E3951E2283DF5120079852F /* LoadBalanceResponseMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3951E1283DF5120079852F /* LoadBalanceResponseMapperTests.swift */; };
+		2E3951E2283DF5120079852F /* BalanceItemMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3951E1283DF5120079852F /* BalanceItemMapperTests.swift */; };
 		2E4294B7284847C800817480 /* BalanceErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4294B6284847C800817480 /* BalanceErrorView.swift */; };
 		2E4294B92848484900817480 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4294B82848484900817480 /* LoadingView.swift */; };
 		2E4294BB28484BC000817480 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4294BA28484BC000817480 /* BalanceView.swift */; };
@@ -105,7 +104,6 @@
 		2E0FCF93286EFF1700179087 /* BalanceUIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceUIIntegrationTests.swift; sourceTree = "<group>"; };
 		2E0FCF97286F9DB000179087 /* BalanceComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceComposerView.swift; sourceTree = "<group>"; };
 		2E2CC5A9296EB9680063C23C /* BalanceEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceEndpointTests.swift; sourceTree = "<group>"; };
-		2E2CC5AF296EC0FD0063C23C /* BalanceItemMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceItemMapperTests.swift; sourceTree = "<group>"; };
 		2E2CC5B2296EC1D00063C23C /* LoadResourcePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadResourcePresenter.swift; sourceTree = "<group>"; };
 		2E2CC5B4296EC1EB0063C23C /* ResourceLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingView.swift; sourceTree = "<group>"; };
 		2E2CC5B6296EC1F80063C23C /* ResourceLoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingViewModel.swift; sourceTree = "<group>"; };
@@ -118,7 +116,7 @@
 		2E2CC5C4296EC3060063C23C /* LoadResourcePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadResourcePresenterTests.swift; sourceTree = "<group>"; };
 		2E2CC5C6296EC45C0063C23C /* BalancePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancePresenter.swift; sourceTree = "<group>"; };
 		2E2CC5C8296EC4D90063C23C /* BalancePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancePresenterTests.swift; sourceTree = "<group>"; };
-		2E3951E1283DF5120079852F /* LoadBalanceResponseMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadBalanceResponseMapperTests.swift; sourceTree = "<group>"; };
+		2E3951E1283DF5120079852F /* BalanceItemMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceItemMapperTests.swift; sourceTree = "<group>"; };
 		2E4294B6284847C800817480 /* BalanceErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceErrorView.swift; sourceTree = "<group>"; };
 		2E4294B82848484900817480 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		2E4294BA28484BC000817480 /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
@@ -412,9 +410,8 @@
 		2EE08998284769D5007AFC0F /* Balance API */ = {
 			isa = PBXGroup;
 			children = (
-				2E2CC5AF296EC0FD0063C23C /* BalanceItemMapperTests.swift */,
 				2E2CC5A9296EB9680063C23C /* BalanceEndpointTests.swift */,
-				2E3951E1283DF5120079852F /* LoadBalanceResponseMapperTests.swift */,
+				2E3951E1283DF5120079852F /* BalanceItemMapperTests.swift */,
 				2EE08999284769E8007AFC0F /* Helpers */,
 			);
 			path = "Balance API";
@@ -684,14 +681,13 @@
 				2EE0898F28475D67007AFC0F /* SharedLocalization.swift in Sources */,
 				2ED6164027E5C33D00920274 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				2E2CC5AA296EB9680063C23C /* BalanceEndpointTests.swift in Sources */,
-				2E2CC5B0296EC0FD0063C23C /* BalanceItemMapperTests.swift in Sources */,
 				2ED6164427E5C37400920274 /* HTTPClientSpy.swift in Sources */,
 				2EB6F55027E821A500CA7BED /* SharedTestHelpers.swift in Sources */,
 				2E2CC5C9296EC4D90063C23C /* BalancePresenterTests.swift in Sources */,
 				2ED6164227E5C35400920274 /* URLProtocolStub.swift in Sources */,
 				2EE0898028473BAF007AFC0F /* BalanceLocalizationTests.swift in Sources */,
 				2E2CC5C5296EC3060063C23C /* LoadResourcePresenterTests.swift in Sources */,
-				2E3951E2283DF5120079852F /* LoadBalanceResponseMapperTests.swift in Sources */,
+				2E3951E2283DF5120079852F /* BalanceItemMapperTests.swift in Sources */,
 				2EE0898428473D0C007AFC0F /* BalancePresantation+Helpers.swift in Sources */,
 				2ED6164627E5C3B800920274 /* URLSessionHTTPClientTests.swift in Sources */,
 			);

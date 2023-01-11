@@ -19,7 +19,21 @@ func anyData() -> Data {
     return Data("Any data".utf8)
 }
 
+func testURLRequest() -> URLRequest {
+    var urlRequest = URLRequest(url: anyURL())
+    urlRequest.httpMethod = "POST"
+    urlRequest.httpBody = anyData()
+    urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    return urlRequest
+}
+
 func makeItemsJSON(_ items: [[String: Any]]) -> Data {
     let json = ["items": items]
     return try! JSONSerialization.data(withJSONObject: json)
+}
+
+extension HTTPURLResponse {
+    convenience init(statusCode: Int) {
+        self.init(url: anyURL(), statusCode: statusCode, httpVersion: nil, headerFields: nil)!
+    }
 }
