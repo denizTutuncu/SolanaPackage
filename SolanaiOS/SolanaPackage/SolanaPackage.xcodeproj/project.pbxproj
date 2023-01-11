@@ -247,6 +247,7 @@
 		2E9B094F2848332D00F450C8 /* Shared API */ = {
 			isa = PBXGroup;
 			children = (
+				2ED6162527E5AECE00920274 /* HTTPClient.swift */,
 			);
 			path = "Shared API";
 			sourceTree = "<group>";
@@ -254,7 +255,6 @@
 		2E9B09502848338300F450C8 /* Shared API Infra */ = {
 			isa = PBXGroup;
 			children = (
-				2ED6162527E5AECE00920274 /* HTTPClient.swift */,
 				2ED6162727E5AEEF00920274 /* URLSessionHTTPClient.swift */,
 			);
 			path = "Shared API Infra";
