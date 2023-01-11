@@ -297,7 +297,6 @@
 			isa = PBXGroup;
 			children = (
 				2ED6160827E5AD3F00920274 /* Info.plist */,
-				2ED6162027E5AE7200920274 /* SolCore */,
 				2E9B09502848338300F450C8 /* Shared API Infra */,
 				2E9B094F2848332D00F450C8 /* Shared API */,
 				2EE0896C2846D975007AFC0F /* Balance Presentation */,
@@ -320,17 +319,10 @@
 			path = SolanaPackageTests;
 			sourceTree = "<group>";
 		};
-		2ED6162027E5AE7200920274 /* SolCore */ = {
-			isa = PBXGroup;
-			children = (
-				2E0CBFAB27F1A8C0006E6892 /* BalanceEndpoint.swift */,
-			);
-			path = SolCore;
-			sourceTree = "<group>";
-		};
 		2ED6162127E5AE7F00920274 /* Balance API */ = {
 			isa = PBXGroup;
 			children = (
+				2E0CBFAB27F1A8C0006E6892 /* BalanceEndpoint.swift */,
 				2ED6163427E5B95B00920274 /* RemoteBalanceLoader.swift */,
 				2E70FCC727F0327200DD2072 /* BalanceURLRequestMapper.swift */,
 				2ED6163927E5BE4400920274 /* BalanceResponseMapper.swift */,
