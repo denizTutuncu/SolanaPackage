@@ -309,6 +309,7 @@
 		2ED6161127E5AD4000920274 /* SolanaPackageTests */ = {
 			isa = PBXGroup;
 			children = (
+				2E2CC5AB296EBCE00063C23C /* Shared API Infra */,
 				2EE08998284769D5007AFC0F /* Balance API */,
 				2EE0897E28473B99007AFC0F /* Balance Presentation */,
 				2ED6163E27E5C33400920274 /* Helpers */,
@@ -384,7 +385,6 @@
 		2EE08998284769D5007AFC0F /* Balance API */ = {
 			isa = PBXGroup;
 			children = (
-				2E2CC5AB296EBCE00063C23C /* Shared API Infra */,
 				2E2CC5A9296EB9680063C23C /* BalanceEndpointTests.swift */,
 				2E3951DF283DB1630079852F /* RemoteLoaderTests.swift */,
 				2ED6164927E5C42600920274 /* LoadBalanceCaseTests.swift */,
