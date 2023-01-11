@@ -198,6 +198,14 @@
 			path = SolanaPackageUITests;
 			sourceTree = "<group>";
 		};
+		2E2CC5AB296EBCE00063C23C /* Shared API Infra */ = {
+			isa = PBXGroup;
+			children = (
+				2ED6164527E5C3B800920274 /* URLSessionHTTPClientTests.swift */,
+			);
+			path = "Shared API Infra";
+			sourceTree = "<group>";
+		};
 		2E4294B32848463700817480 /* Balance UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -367,10 +375,10 @@
 		2EE08998284769D5007AFC0F /* Balance API */ = {
 			isa = PBXGroup;
 			children = (
+				2E2CC5AB296EBCE00063C23C /* Shared API Infra */,
 				2E2CC5A9296EB9680063C23C /* BalanceEndpointTests.swift */,
 				2E3951DF283DB1630079852F /* RemoteLoaderTests.swift */,
 				2ED6164927E5C42600920274 /* LoadBalanceCaseTests.swift */,
-				2ED6164527E5C3B800920274 /* URLSessionHTTPClientTests.swift */,
 				2E3951E1283DF5120079852F /* LoadBalanceResponseMapperTests.swift */,
 				2EE08999284769E8007AFC0F /* Helpers */,
 			);
