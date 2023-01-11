@@ -18,7 +18,7 @@ class LoadBalanceResponseMapperTests: XCTestCase {
         
         try samples.forEach { code in
             XCTAssertThrowsError(
-                try BalanceResponseMapper.map(data, from: HTTPURLResponse(statusCode: code))
+                try BalanceItemMapper.map(data, from: HTTPURLResponse(statusCode: code))
             )
         }
     }
@@ -27,14 +27,14 @@ class LoadBalanceResponseMapperTests: XCTestCase {
         let invalidJSON = Data("invalid json".utf8)
         
         XCTAssertThrowsError(
-            try BalanceResponseMapper.map(invalidJSON, from: HTTPURLResponse(statusCode: 200))
+            try BalanceItemMapper.map(invalidJSON, from: HTTPURLResponse(statusCode: 200))
         )
     }
     
     func test_map_throwsErrorOn200HTTPResponseWithEmptyJSON() throws {
         let emptyData = makeJSONData([:])
         XCTAssertThrowsError(
-            try BalanceResponseMapper.map(emptyData, from: HTTPURLResponse(statusCode: 200))
+            try BalanceItemMapper.map(emptyData, from: HTTPURLResponse(statusCode: 200))
         )
     }
     
@@ -43,7 +43,7 @@ class LoadBalanceResponseMapperTests: XCTestCase {
         let json = validResponse.json
         let data = makeJSONData(json)
         
-        let result = try BalanceResponseMapper.map(data, from: HTTPURLResponse(statusCode: 200))
+        let result = try BalanceItemMapper.map(data, from: HTTPURLResponse(statusCode: 200))
         
         XCTAssertEqual(result, validResponse.model)
     }

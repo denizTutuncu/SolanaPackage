@@ -7,7 +7,7 @@
 
 import Foundation
 
-public final class BalanceResponseMapper {
+public final class BalanceItemMapper {
     
     private struct Root: Decodable {
         private let jsonrpc: String

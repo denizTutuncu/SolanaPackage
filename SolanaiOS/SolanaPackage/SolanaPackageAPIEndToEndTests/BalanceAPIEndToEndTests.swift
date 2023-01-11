@@ -29,7 +29,7 @@ class BalanceAPIEndToEndTests: XCTestCase {
         let devNetURL = URL(string: BalanceEndpoint.devNet.rawValue)
         let publicKey = createPublicKey()
         let methodName = "getBalance"
-        let loader = RemoteLoader(url: devNetURL, methodName: methodName, publicKey: publicKey, client: ephemeralClient(), urlRequestMapper: BalanceURLRequestMapper.map, mapper: BalanceResponseMapper.map)
+        let loader = RemoteLoader(url: devNetURL, methodName: methodName, publicKey: publicKey, client: ephemeralClient(), urlRequestMapper: BalanceURLRequestMapper.map, mapper: BalanceItemMapper.map)
         
         trackForMemoryLeaks(loader, file: file, line: line)
         
