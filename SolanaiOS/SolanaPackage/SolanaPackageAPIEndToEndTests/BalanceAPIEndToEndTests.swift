@@ -10,53 +10,56 @@ import SolanaPackage
 
 class BalanceAPIEndToEndTests: XCTestCase {
     
-    func test_endToEndTestServerGETBalanceResult_matchesFixedTestAccountData() {
-        let expectedResponse = createExpectedResponse()
-        switch getBalance() {
-        case let .success(remoteResponse)?:
-            XCTAssertNotEqual(remoteResponse, nil, "Expected non-empty response.")
-            XCTAssertEqual(remoteResponse.value, expectedResponse.value, "Expected response doesn't match with remote response. Please first thing compare the RCP endpoints. Your balance may exist in a different Network.")
+    func test_endToEndTestServerGETFeedResult_matchesFixedTestAccountData() {
+        switch getBalanceResult() {
+        case let .success(balance)?:
+            XCTAssertEqual(balance.lamports, createBalance(), "Expected balance in the test account balance")
             
-        case let .failure(error):
-            XCTFail("Expected successful getBalanceResponse, got \(error) instead.")
+        case let .failure(error)?:
+            XCTFail("Expected successful balance result, got \(error) instead")
+            
         default:
-            XCTFail("Expected successful getBalanceResponse, got no result instead.")
+            XCTFail("Expected successful balance result, got no result instead")
         }
     }
     
-    //MARK:- Helpers
-    private func getBalance(file: StaticString = #file, line: UInt = #line) -> Swift.Result<Balance, Error>?  {
-        let devNetURL = URL(string: BalanceEndpoint.devNet.rawValue)
-        let publicKey = createPublicKey()
-        let methodName = "getBalance"
-        let loader = RemoteLoader(url: devNetURL, methodName: methodName, publicKey: publicKey, client: ephemeralClient(), urlRequestMapper: BalanceURLRequestMapper.map, mapper: BalanceItemMapper.map)
+    // MARK: - Helpers
+    private func getBalanceResult(file: StaticString = #filePath, line: UInt = #line) -> Swift.Result<Balance, Error>? {
+        let client = ephemeralClient()
+        let exp = expectation(description: "Wait for load completion")
         
-        trackForMemoryLeaks(loader, file: file, line: line)
-        
-        let exp = expectation(description: "Wait For Completion")
-        
-        var receivedResult: RemoteBalanceLoader.Result?
-        loader.load { result in
-            receivedResult = result
+        var receivedResult: Swift.Result<Balance, Error>?
+        client.get(from: balanceTestServerURL) { result in
+            receivedResult = result.flatMap { (data, response) in
+                do {
+                    return .success(try BalanceItemMapper.map(data, from: response))
+                } catch {
+                    return .failure(error)
+                }
+            }
             exp.fulfill()
         }
+        wait(for: [exp], timeout: 5.0)
         
-        wait(for: [exp], timeout: 10.0)
         return receivedResult
     }
+        
+    private var balanceTestServerURL: URLRequest {
+        return URLRequest(url: URL(string: "https://api.devnet.solana.com")!)
+    }
     
-    private func ephemeralClient(file: StaticString = #file, line: UInt = #line) -> HTTPClient {
+    private func ephemeralClient(file: StaticString = #filePath, line: UInt = #line) -> HTTPClient {
         let client = URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
         trackForMemoryLeaks(client, file: file, line: line)
         return client
     }
     
-    private func createPublicKey() -> String {
-        return "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi"
+    private func expectedBalance(at index: Int) -> Balance {
+        return Balance(lamports: createBalance())
     }
-        
-    private func createExpectedResponse() -> Balance {
-        return Balance(value: 25000000000)
+    
+    private func createBalance() -> Int {
+        return 8473919000
     }
     
 }
