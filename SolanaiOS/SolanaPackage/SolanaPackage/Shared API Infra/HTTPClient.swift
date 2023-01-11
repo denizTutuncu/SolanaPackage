@@ -20,20 +20,4 @@ public protocol HTTPClient {
     func get(from urlRequest: URLRequest, completion: @escaping (Result) -> Void) -> HTTPClientTask
 }
 
-//Move to iOS App module when you create iOS App module
-import Combine
-public extension HTTPClient {
-    typealias Publisher = AnyPublisher<(Data, HTTPURLResponse), Error>
-    
-    func getPublisher(urlRequest: URLRequest) -> Publisher {
-        var task: HTTPClientTask?
-        
-        return Deferred {
-            Future { completion in
-                task = self.get(from: urlRequest, completion: completion)
-            }
-        }
-        .handleEvents(receiveCancel: { task?.cancel() })
-        .eraseToAnyPublisher()
-    }
-}
+
