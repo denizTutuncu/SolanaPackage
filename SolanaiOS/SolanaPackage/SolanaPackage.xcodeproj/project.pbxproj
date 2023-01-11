@@ -12,8 +12,6 @@
 		2E0FCF94286EFF1700179087 /* BalanceUIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0FCF93286EFF1700179087 /* BalanceUIIntegrationTests.swift */; };
 		2E0FCF98286F9DB000179087 /* BalanceComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0FCF97286F9DB000179087 /* BalanceComposerView.swift */; };
 		2E2CC5AA296EB9680063C23C /* BalanceEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5A9296EB9680063C23C /* BalanceEndpointTests.swift */; };
-		2E3951DE283DA3C40079852F /* RemoteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3951DD283DA3C40079852F /* RemoteLoader.swift */; };
-		2E3951E0283DB1630079852F /* RemoteLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3951DF283DB1630079852F /* RemoteLoaderTests.swift */; };
 		2E3951E2283DF5120079852F /* LoadBalanceResponseMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3951E1283DF5120079852F /* LoadBalanceResponseMapperTests.swift */; };
 		2E4294B7284847C800817480 /* BalanceErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4294B6284847C800817480 /* BalanceErrorView.swift */; };
 		2E4294B92848484900817480 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4294B82848484900817480 /* LoadingView.swift */; };
@@ -34,7 +32,6 @@
 		2ED6164227E5C35400920274 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6164127E5C35400920274 /* URLProtocolStub.swift */; };
 		2ED6164427E5C37400920274 /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6164327E5C37400920274 /* HTTPClientSpy.swift */; };
 		2ED6164627E5C3B800920274 /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6164527E5C3B800920274 /* URLSessionHTTPClientTests.swift */; };
-		2ED6164A27E5C42600920274 /* LoadBalanceCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6164927E5C42600920274 /* LoadBalanceCaseTests.swift */; };
 		2ED6165227E7472800920274 /* BalanceAPIEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6165127E7472800920274 /* BalanceAPIEndToEndTests.swift */; };
 		2ED6165427E7472800920274 /* SolanaPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED6160427E5AD3F00920274 /* SolanaPackage.framework */; };
 		2ED6165A27E747CF00920274 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6163F27E5C33D00920274 /* XCTestCase+MemoryLeakTracking.swift */; };
@@ -100,8 +97,6 @@
 		2E0FCF93286EFF1700179087 /* BalanceUIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceUIIntegrationTests.swift; sourceTree = "<group>"; };
 		2E0FCF97286F9DB000179087 /* BalanceComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceComposerView.swift; sourceTree = "<group>"; };
 		2E2CC5A9296EB9680063C23C /* BalanceEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceEndpointTests.swift; sourceTree = "<group>"; };
-		2E3951DD283DA3C40079852F /* RemoteLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLoader.swift; sourceTree = "<group>"; };
-		2E3951DF283DB1630079852F /* RemoteLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLoaderTests.swift; sourceTree = "<group>"; };
 		2E3951E1283DF5120079852F /* LoadBalanceResponseMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadBalanceResponseMapperTests.swift; sourceTree = "<group>"; };
 		2E4294B6284847C800817480 /* BalanceErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceErrorView.swift; sourceTree = "<group>"; };
 		2E4294B82848484900817480 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -122,7 +117,6 @@
 		2ED6164127E5C35400920274 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
 		2ED6164327E5C37400920274 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
 		2ED6164527E5C3B800920274 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
-		2ED6164927E5C42600920274 /* LoadBalanceCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadBalanceCaseTests.swift; sourceTree = "<group>"; };
 		2ED6164F27E7472800920274 /* SolanaPackageAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SolanaPackageAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED6165127E7472800920274 /* BalanceAPIEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceAPIEndToEndTests.swift; sourceTree = "<group>"; };
 		2ED6165327E7472800920274 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -215,6 +209,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		2E2CC5AE296EBFD20063C23C /* Shared Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2EE0898E28475D67007AFC0F /* SharedLocalization.swift */,
+			);
+			path = "Shared Presentation";
+			sourceTree = "<group>";
+		};
 		2E4294B32848463700817480 /* Balance UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,7 +247,6 @@
 		2E9B094F2848332D00F450C8 /* Shared API */ = {
 			isa = PBXGroup;
 			children = (
-				2E3951DD283DA3C40079852F /* RemoteLoader.swift */,
 			);
 			path = "Shared API";
 			sourceTree = "<group>";
@@ -309,6 +310,7 @@
 		2ED6161127E5AD4000920274 /* SolanaPackageTests */ = {
 			isa = PBXGroup;
 			children = (
+				2E2CC5AE296EBFD20063C23C /* Shared Presentation */,
 				2E2CC5AB296EBCE00063C23C /* Shared API Infra */,
 				2EE08998284769D5007AFC0F /* Balance API */,
 				2EE0897E28473B99007AFC0F /* Balance Presentation */,
@@ -367,7 +369,6 @@
 		2EE0897E28473B99007AFC0F /* Balance Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				2EE0898E28475D67007AFC0F /* SharedLocalization.swift */,
 				2EE0897F28473BAF007AFC0F /* BalanceLocalizationTests.swift */,
 				2EE0898528473F64007AFC0F /* Helpers */,
 			);
@@ -386,8 +387,6 @@
 			isa = PBXGroup;
 			children = (
 				2E2CC5A9296EB9680063C23C /* BalanceEndpointTests.swift */,
-				2E3951DF283DB1630079852F /* RemoteLoaderTests.swift */,
-				2ED6164927E5C42600920274 /* LoadBalanceCaseTests.swift */,
 				2E3951E1283DF5120079852F /* LoadBalanceResponseMapperTests.swift */,
 				2EE08999284769E8007AFC0F /* Helpers */,
 			);
@@ -639,7 +638,6 @@
 				2ED6163A27E5BE4400920274 /* BalanceResponseMapper.swift in Sources */,
 				2ED6162627E5AECE00920274 /* HTTPClient.swift in Sources */,
 				2EE0896F2846D9FD007AFC0F /* BalanceViewModel.swift in Sources */,
-				2E3951DE283DA3C40079852F /* RemoteLoader.swift in Sources */,
 				2E70FCC827F0327200DD2072 /* BalanceURLRequestMapper.swift in Sources */,
 				2E0CBFAC27F1A8C0006E6892 /* BalanceEndpoint.swift in Sources */,
 				2ED6162827E5AEEF00920274 /* URLSessionHTTPClient.swift in Sources */,
@@ -652,7 +650,6 @@
 			files = (
 				2EE0899B28476AC6007AFC0F /* SharedLocalizationTestHelpers.swift in Sources */,
 				2EE0898F28475D67007AFC0F /* SharedLocalization.swift in Sources */,
-				2E3951E0283DB1630079852F /* RemoteLoaderTests.swift in Sources */,
 				2ED6164027E5C33D00920274 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				2E2CC5AA296EB9680063C23C /* BalanceEndpointTests.swift in Sources */,
 				2ED6164427E5C37400920274 /* HTTPClientSpy.swift in Sources */,
@@ -662,7 +659,6 @@
 				2E3951E2283DF5120079852F /* LoadBalanceResponseMapperTests.swift in Sources */,
 				2EE0898428473D0C007AFC0F /* BalancePresantation+Helpers.swift in Sources */,
 				2ED6164627E5C3B800920274 /* URLSessionHTTPClientTests.swift in Sources */,
-				2ED6164A27E5C42600920274 /* LoadBalanceCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
