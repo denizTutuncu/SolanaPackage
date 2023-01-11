@@ -15,7 +15,7 @@ import Foundation
 public enum BalanceEndpoints {
     case get(walletAddress: String)
     
-    public func url(baseURL: URL) -> URLRequest {
+    public func url(baseURL: URL) throws -> URLRequest {
         switch self {
         case let .get(walletAddress):
             var components = URLComponents()
