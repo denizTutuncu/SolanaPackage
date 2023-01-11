@@ -45,7 +45,7 @@ class BalanceAPIEndToEndTests: XCTestCase {
     }
         
     private var balanceTestServerURL: URLRequest {
-        return URLRequest(url: URL(string: "https://api.devnet.solana.com")!)
+        return try! BalanceEndpoint.get(walletAddress: walletAddress()).url(baseURL: baseURL())
     }
     
     private func ephemeralClient(file: StaticString = #filePath, line: UInt = #line) -> HTTPClient {
@@ -60,6 +60,13 @@ class BalanceAPIEndToEndTests: XCTestCase {
     
     private func createBalance() -> Int {
         return 8473919000
+    }
+    
+    private func baseURL() -> URL {
+        return URL(string: "https://api.devnet.solana.com")!
+    }
+    private func walletAddress() -> String {
+        return "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi"
     }
     
 }
