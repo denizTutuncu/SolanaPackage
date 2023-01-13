@@ -185,10 +185,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E0363152970EAF800CB2567 /* Shared UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Shared UI";
+			sourceTree = "<group>";
+		};
 		2E0CBFD627F282DC006E6892 /* SolanaPackageUI */ = {
 			isa = PBXGroup;
 			children = (
 				2E0CBFD827F282DC006E6892 /* Info.plist */,
+				2E0363152970EAF800CB2567 /* Shared UI */,
 				2E4294B32848463700817480 /* Balance UI */,
 			);
 			path = SolanaPackageUI;

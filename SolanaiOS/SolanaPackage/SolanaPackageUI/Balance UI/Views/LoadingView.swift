@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SolanaPackage
 
 public struct LoadingView: View {
     private let title: String?
