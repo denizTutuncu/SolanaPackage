@@ -8,5 +8,5 @@
 import SolanaPackage
 
 func uniqueBalance() -> Balance {
-    Balance(lamports: 25000000000)
+    Balance(amount: 25000000000)
 }
