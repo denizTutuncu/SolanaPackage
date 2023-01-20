@@ -24,7 +24,7 @@ public final class BalanceItemMapper {
         }
     
         var response: Balance {
-            Balance(lamports: result.value)
+            Balance(amount: result.value)
         }
     }
     

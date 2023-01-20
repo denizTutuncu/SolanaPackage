@@ -13,7 +13,7 @@ class BalanceAPIEndToEndTests: XCTestCase {
     func test_endToEndTestServerGETFeedResult_matchesFixedTestAccountData() {
         switch getBalanceResult() {
         case let .success(balance)?:
-            XCTAssertEqual(balance.lamports, createBalance(), "Expected balance in the test account balance")
+            XCTAssertEqual(balance.amount, createBalance(), "Expected balance in the test account balance")
             
         case let .failure(error)?:
             XCTFail("Expected successful balance result, got \(error) instead")
@@ -55,7 +55,7 @@ class BalanceAPIEndToEndTests: XCTestCase {
     }
     
     private func expectedBalance(at index: Int) -> Balance {
-        return Balance(lamports: createBalance())
+        return Balance(amount: createBalance())
     }
     
     private func createBalance() -> Int {
