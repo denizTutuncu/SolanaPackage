@@ -8,5 +8,5 @@
 import Foundation
 
 public struct BalanceViewModel {
-    public let balance: String?
+    public let amount: String?
 }
