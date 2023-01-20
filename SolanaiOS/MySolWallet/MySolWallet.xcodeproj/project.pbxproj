@@ -17,6 +17,8 @@
 		2E4294AF2848406B00817480 /* SolanaPackage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4294AC2848406B00817480 /* SolanaPackage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2E4294B02848406B00817480 /* SolanaPackageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4294AD2848406B00817480 /* SolanaPackageUI.framework */; };
 		2E4294B12848406B00817480 /* SolanaPackageUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4294AD2848406B00817480 /* SolanaPackageUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2EAEF0EC297A5C1C00091A49 /* CombineHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAEF0EB297A5C1C00091A49 /* CombineHelpers.swift */; };
+		2EAEF0EE297A5E8000091A49 /* BalanceUIComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAEF0ED297A5E8000091A49 /* BalanceUIComposerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		2E42949E28483FDF00817480 /* MySolWalletUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySolWalletUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2E4294AC2848406B00817480 /* SolanaPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SolanaPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E4294AD2848406B00817480 /* SolanaPackageUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SolanaPackageUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EAEF0EB297A5C1C00091A49 /* CombineHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineHelpers.swift; sourceTree = "<group>"; };
+		2EAEF0ED297A5E8000091A49 /* BalanceUIComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceUIComposerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,8 @@
 				2E42948128483FDD00817480 /* MySolWalletApp.swift */,
 				2E42948528483FDE00817480 /* Assets.xcassets */,
 				2E42948728483FDF00817480 /* Preview Content */,
+				2EAEF0EB297A5C1C00091A49 /* CombineHelpers.swift */,
+				2EAEF0ED297A5E8000091A49 /* BalanceUIComposerView.swift */,
 			);
 			path = MySolWallet;
 			sourceTree = "<group>";
@@ -289,6 +295,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E42948228483FDD00817480 /* MySolWalletApp.swift in Sources */,
+				2EAEF0EE297A5E8000091A49 /* BalanceUIComposerView.swift in Sources */,
+				2EAEF0EC297A5C1C00091A49 /* CombineHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
