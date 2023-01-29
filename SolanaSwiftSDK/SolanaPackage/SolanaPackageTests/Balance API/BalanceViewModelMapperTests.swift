@@ -26,7 +26,7 @@ class BalanceViewModelMapperTests: XCTestCase {
         XCTAssertEqual(viewModel, result.viewModel)
     }
     
-    private func makeModelandViewModel(amount: Int) -> (model: Balance, viewModel: BalanceViewModel) {
+    private func makeModelandViewModel(amount: Double) -> (model: Balance, viewModel: BalanceViewModel) {
         let model = Balance(amount: amount)
         let viewModel = BalanceViewModel(amount: "\(model.amount)")
       
