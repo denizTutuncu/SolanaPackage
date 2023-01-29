@@ -1,11 +1,25 @@
-# Solana iOS SDK / Solana Package 
+# Solana Swift SDK 
+## Solana Package Framework & Solana Package UI Framework & MySolWallet iOS App
+#### The Solana Swift SDK is a collection of Swift modules that enables developers to interact with the Solana Blockchain in their iOS, macOS, tvOS, and watchOS apps. The SDK contains two main modules:
 
-#### Solana Package connects iOS (possibly iPadOS, watchOS, and tvOS in the future) to Solana Blockchain.
-#### The package provides several APIs as a software to iOS developers.
-#### The package gives the ability to interact with Solana Blockchain, receive/send Sol and more. 
+#### Core Module:
+This module contains the core models required to interact with the Solana Blockchain. These models include Balance, Wallet, and Transaction models. The Core module provides functionalities like creating a wallet, querying balance, and sending/receiving SOL.
+
+#### UI Module: 
+This module is a platform-independent SwiftUI module that provides a set of components to build user interfaces for interacting with the Solana Blockchain. These components include views for displaying balance and transaction history, forms for sending and receiving SOL, and more. The UI module is designed to be easily integrated into existing iOS, macOS, tvOS, and watchOS apps.
+
+----------------
+
+The SDK also includes an iOS app called MySolWallet that demonstrates how to use the Core and UI modules to interact with the Solana Blockchain. The app showcases the functionalities of creating a wallet, sending/receiving SOL, viewing transaction history, and more.
+
+The SDK is written in Swift and is intended to be used in Swift apps.
+
+The SDK is open-source and hosted on Github, developers can use the SDK to build their own decentralized apps (dApps) on Solana Blockchain. Contributions are always welcome.
+
+----------------
  
-## User Flow
-![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/UserFlow.jpg?raw=true)
+## iOS App Flow
+![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/iOSAppFlow.jpg?raw=true)
 
 ```
 1- Create Wallet & Receive Sol (in the future)
@@ -14,12 +28,20 @@
 4- Send Sol (in the future)
 ```
 
+----------------
+
+### Core Modules
+![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/SolanaSwiftSDK.jpg?raw=true)
+
+----------------
+
 ### Prototype
 ![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/PROTOTYPEIOS_AdobeCreativeCloudExpress.gif)
 
 ----------------
 
-![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/SolanaiOSSDK.jpg?raw=true)
+### My Sol Wallet iOS App Design
+![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/iOSSDKDesign?raw=true)
 
 ----------------
 
@@ -65,10 +87,11 @@ Given the customer have a seed phrase
 
 ----------------
 
-## Get Balance BDD Specs (in progress, ready to review on MySolWallet iOS app)
+## Get Balance BDD Specs (Under Maintenance)
 To show a valid public Solana address balance, first you need to create a `RemoteBalanceLoader` with a network setting, chosen valid public address and a client. Then pass it to create `BalanceComposerView`. That's it!
 
 ```
+!!! Not available !!!
 let remoteBalanceLoader = RemoteBalanceLoader(url: URL(string: SolanaClusterRPCEndpoints.devNet.rawValue),
                                                   publicAddress: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                                                   client: URLSessionHTTPClient(session: URLSession(configuration: .ephemeral)))
@@ -76,7 +99,7 @@ BalanceComposerView(viewModel:  BalanceViewModel(remoteBalanceLoader: remoteBala
 ```
 
 ![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/BalanceAPI.gif)
-
+### !!! Under Maintenance !!!
 ### Get Balance
 ### Story: Customer requests to see their balance
 
@@ -127,6 +150,7 @@ Given the customer doesn't a valid public Solana address
 
 ## Model Specs
 
+
 ### API Response
 #### Root
 | Property      | Type                  |
@@ -148,19 +172,22 @@ Given the customer doesn't a valid public Solana address
 | `slot`        | `Int`                 |
 
 
+
 ### Core Model
 #### Balance
 | Property      | Type                  |
 |---------------|-----------------------|
-| `lamports`        | `Int`             |
+| `lamports`    | `Int`                 |
+
+
 
 ### UI Model
 #### Balance UI Model
 | Property      | Type                  |
 |---------------|-----------------------|
-| `balance`        | `Balance`          |
-| `error`          | `Error`            |
-| `isLoading`      | `Bool`             |
+| `balance`     | `String`              |
+| `error`       | `Error`               |
+| `isLoading`   | `Bool`                |
 
 
 
