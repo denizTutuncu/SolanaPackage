@@ -13,19 +13,6 @@ import Combine
 @main
 struct MySolWalletApp: App {
     
-    private let sceneMaker = SceneMaker()
-    
-    var body: some Scene {
-        WindowGroup {
-            VStack {
-                sceneMaker.makeScene()
-            }
-        }
-    }
-}
-
-public class SceneMaker {
-    
     private lazy var httpClient: HTTPClient = {
         URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
     }()
@@ -34,13 +21,19 @@ public class SceneMaker {
         let request = try? BalanceEndpoint.get(walletAddress: address).url(baseURL: baseURL)
         return httpClient.getPublisher(urlRequest: request!).tryMap(BalanceItemMapper.map).eraseToAnyPublisher()
     }
-  
     
-    
-    public func makeScene() -> AnyView {
+    private func makeScene() -> AnyView {
         let balancePublisher = makeRemoteBalanceLoader(address: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi", baseURL: URL(string: "https://api.devnet.solana.com")!)
         let walletViewModel = WalletViewModel()
         return AnyView(MainView(walletViewModel: walletViewModel))
+    }
+    
+    var body: some Scene {
+        WindowGroup {
+            VStack {
+                makeScene()
+            }
+        }
     }
 }
 
