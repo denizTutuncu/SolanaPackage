@@ -19,7 +19,7 @@ The SDK is open-source and hosted on Github, developers can use the SDK to build
 ----------------
  
 ## iOS App Flow
-![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/iOSAppFlow.jpg?raw=true)
+![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Diagrams/iOSAppFlow.jpg?raw=true)
 
 ```
 1- Create Wallet & Receive Sol (in the future)
@@ -31,17 +31,17 @@ The SDK is open-source and hosted on Github, developers can use the SDK to build
 ----------------
 
 ### Core Modules
-![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/SolanaSwiftSDK.jpg?raw=true)
+![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Diagrams/SolanaSwiftSDK.jpg?raw=true)
 
 ----------------
 
 ### Prototype
-![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/PROTOTYPEIOS_AdobeCreativeCloudExpress.gif)
+![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Diagrams/PROTOTYPEIOS_AdobeCreativeCloudExpress.gif)
 
 ----------------
 
 ### My Sol Wallet iOS App Design
-![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/iOSSDKDesign?raw=true)
+![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Diagrams/iOSSDKDesign?raw=true)
 
 ----------------
 
