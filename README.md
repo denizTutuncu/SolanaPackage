@@ -99,7 +99,6 @@ BalanceComposerView(viewModel:  BalanceViewModel(remoteBalanceLoader: remoteBala
 ```
 
 ![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/BalanceAPI.gif)
-### !!! Under Maintenance !!!
 ### Get Balance
 ### Story: Customer requests to see their balance
 
