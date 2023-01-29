@@ -97,8 +97,8 @@ let remoteBalanceLoader = RemoteBalanceLoader(url: URL(string: SolanaClusterRPCE
                                                   client: URLSessionHTTPClient(session: URLSession(configuration: .ephemeral)))
 BalanceComposerView(viewModel:  BalanceViewModel(remoteBalanceLoader: remoteBalanceLoader))
 ```
+![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Diagrams/BalanceAPI.gif)
 
-![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaiOS/Diagrams/BalanceAPI.gif)
 ### Get Balance
 ### Story: Customer requests to see their balance
 
