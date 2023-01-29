@@ -49,7 +49,7 @@ class BalanceItemMapperTests: XCTestCase {
     }
     
     
-    private func makeResponseItem(jsonrpc: String, slot: Int, value: Int, id: Int) -> (model: Balance, json: [String:Any]) {
+    private func makeResponseItem(jsonrpc: String, slot: Int, value: Double, id: Int) -> (model: Balance, json: [String:Any]) {
         let model = Balance(amount: value)
         let json: [String:Any] = [
             "jsonrpc": jsonrpc,
