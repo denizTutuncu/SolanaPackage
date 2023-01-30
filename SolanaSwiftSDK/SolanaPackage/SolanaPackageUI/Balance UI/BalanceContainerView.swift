@@ -8,35 +8,60 @@
 import SwiftUI
 
 public struct BalanceContainerView: View {
-    @State private var errorMessage: String
-    @State private var progress: CGFloat
+    public typealias Result = Swift.Result<String, Error>
+    @State private var result: Result?
+    
     @State private var title: String
-    @State private var amount: String
     @State private var currencyName: String
+    
     private let onHide: (() -> Void)?
     
-    public init(errorMessage: String = "", progress: CGFloat = 0.0, title: String = "Balance", amount: String, currencyName: String, onHide: (() -> Void)?) {
-        self.errorMessage = errorMessage
-        self.progress = progress
+    public init(result: Result? = nil,
+                title: String,
+                currencyName: String,
+                onHide: (() -> Void)?)
+    {
+        self.result = result
         self.title = title
-        self.amount = amount
         self.currencyName = currencyName
         self.onHide = onHide
     }
     
     public var body: some View {
         ZStack {
-            ErrorView(message: errorMessage, onHide: onHide)
-            LoadingView(progress: progress)
-            BalanceView(title: title, amount: amount, currencyName: currencyName)
+    
+            switch self.result {
+            case let .success(balance):
+                BalanceView(title: title, amount: balance, currencyName: currencyName)
+            case let .failure(error):
+                ErrorView(message: error.localizedDescription, onHide: onHide)
+            case .none:
+                LoadingView(title: title, progress: 0.1)
+                
+            }
         }
     }
 }
 
 struct BalanceContainerView_Previews: PreviewProvider {
+    
+    enum MockBalanceError: Error {
+        case mockError
+    }
+    
     static var previews: some View {
-        BalanceContainerView(amount: "100000000", currencyName: "lamports", onHide: { print("Trying again.") })
-            .previewLayout(.sizeThatFits)
-            .previewDisplayName("Balance Container View")
+        Group {
+            BalanceContainerView(result: nil, title: "Balance", currencyName: "lamports", onHide: {})
+                .previewLayout(.sizeThatFits)
+                .previewDisplayName("Loading Container View")
+            
+            BalanceContainerView(result: .success("100000000"), title: "Balance", currencyName: "lamports", onHide: {})
+                .previewLayout(.sizeThatFits)
+                .previewDisplayName("Succesful Balance Container View")
+            
+            BalanceContainerView(result: .failure(MockBalanceError.mockError), title: "Bakiye", currencyName: "lamports", onHide: {})
+                .previewLayout(.sizeThatFits)
+                .previewDisplayName("Error Container View")
+        }
     }
 }
