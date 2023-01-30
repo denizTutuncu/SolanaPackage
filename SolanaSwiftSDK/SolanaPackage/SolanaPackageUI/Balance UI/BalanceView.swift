@@ -21,13 +21,11 @@ struct BalanceView: View {
     var body: some View {
         HStack {
             Text(title)
-                .italic()
                 .shadow(color: Color(#colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)), radius: 3)
                 .padding()
                 .foregroundColor(Color.blue)
             
             Text("\(amount) \(currencyName)")
-                .italic()
                 .lineLimit(1)
                 .shadow(color: Color(#colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)), radius: 3)
                 .padding()
@@ -41,7 +39,7 @@ struct BalanceView: View {
 struct BalanceView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            BalanceView(title: "Bakiye:", amount: "100000000", currencyName: "lamports")
+            BalanceView(title: "Balance", amount: "100000000", currencyName: "lamports")
                 .previewLayout(.sizeThatFits)
                 .previewDisplayName("Balance View")
         }
