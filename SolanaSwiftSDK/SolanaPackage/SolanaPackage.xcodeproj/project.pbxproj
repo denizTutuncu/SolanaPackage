@@ -27,7 +27,6 @@
 		2E3951E2283DF5120079852F /* BalanceItemMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3951E1283DF5120079852F /* BalanceItemMapperTests.swift */; };
 		2E4294B92848484900817480 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4294B82848484900817480 /* ErrorView.swift */; };
 		2E5186D727F28C75001AB355 /* SolanaPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED6160427E5AD3F00920274 /* SolanaPackage.framework */; };
-		2E5186D827F28C75001AB355 /* SolanaPackage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED6160427E5AD3F00920274 /* SolanaPackage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2E5186DC27F28DA0001AB355 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6163F27E5C33D00920274 /* XCTestCase+MemoryLeakTracking.swift */; };
 		2E954BA028487C02002D2FF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E954B9F28487C02002D2FF3 /* Assets.xcassets */; };
 		2E954BA22848852F002D2FF3 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E954BA12848852F002D2FF3 /* Balance.swift */; };
@@ -83,20 +82,6 @@
 			remoteInfo = SolanaPackage;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		2E5186DB27F28C75001AB355 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				2E5186D827F28C75001AB355 /* SolanaPackage.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2E0363162970ECCF00CB2567 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -486,7 +471,6 @@
 				2E0CBFD127F282DC006E6892 /* Sources */,
 				2E0CBFD227F282DC006E6892 /* Frameworks */,
 				2E0CBFD327F282DC006E6892 /* Resources */,
-				2E5186DB27F28C75001AB355 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
