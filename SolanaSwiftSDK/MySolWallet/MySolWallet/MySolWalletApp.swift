@@ -13,6 +13,22 @@ import Combine
 @main
 struct MySolWalletApp: App {
     
+    private let mainFlow = MainFlow()
+
+    var body: some Scene {
+        WindowGroup {
+            VStack {
+                mainFlow.makeScene()
+            }
+        }
+    }
+}
+
+public class MainFlow {
+    private lazy var baseURL: URL = {
+        URL(string: "https://api.devnet.solana.com")!
+    }()
+    
     private lazy var httpClient: HTTPClient = {
         URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
     }()
@@ -22,24 +38,9 @@ struct MySolWalletApp: App {
         return httpClient.getPublisher(urlRequest: request!).tryMap(BalanceItemMapper.map).eraseToAnyPublisher()
     }
     
-    private func makeScene() -> AnyView {
-        let balancePublisher = makeRemoteBalanceLoader(address: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi", baseURL: URL(string: "https://api.devnet.solana.com")!)
+    public func makeScene() -> AnyView {
+        let balancePublisher = makeRemoteBalanceLoader(address: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi", baseURL: baseURL)
         let walletViewModel = WalletViewModel()
         return AnyView(MainView(walletViewModel: walletViewModel))
     }
-    
-    var body: some Scene {
-        WindowGroup {
-            VStack {
-                makeScene()
-            }
-        }
-    }
 }
-
-
-//        "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi"
-//        URL(string: "https://api.devnet.solana.com")!
-//return AnyView(BalanceContainerView(amount: "10000000", currencyName: "lamports", onHide: { print("On hide pressed") }) )
-
-
