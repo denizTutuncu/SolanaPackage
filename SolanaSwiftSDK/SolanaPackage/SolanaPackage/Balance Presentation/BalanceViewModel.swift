@@ -13,3 +13,7 @@ public struct BalanceViewModel: Equatable {
         self.amount = amount
     }
 }
+
+final class BViewModel {
+    
+}
