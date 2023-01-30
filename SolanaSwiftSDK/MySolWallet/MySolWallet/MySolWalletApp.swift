@@ -13,18 +13,18 @@ import Combine
 @main
 struct MySolWalletApp: App {
     
-    private let mainFlow = MainFlow()
+    private let mainFlow = MainUIComposer()
 
     var body: some Scene {
         WindowGroup {
             VStack {
-                mainFlow.makeScene()
+                mainFlow.makeFirstPage()
             }
         }
     }
 }
 
-public class MainFlow {
+public class MainUIComposer {
     private lazy var baseURL: URL = {
         URL(string: "https://api.devnet.solana.com")!
     }()
@@ -38,9 +38,9 @@ public class MainFlow {
         return httpClient.getPublisher(urlRequest: request!).tryMap(BalanceItemMapper.map).eraseToAnyPublisher()
     }
     
-    public func makeScene() -> AnyView {
+    public func makeFirstPage() -> AnyView {
         let balancePublisher = makeRemoteBalanceLoader(address: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi", baseURL: baseURL)
-        let walletViewModel = WalletViewModel()
-        return AnyView(MainView(walletViewModel: walletViewModel))
+        
+        return AnyView(MainView(hasWallet: .constant(true)))
     }
 }
