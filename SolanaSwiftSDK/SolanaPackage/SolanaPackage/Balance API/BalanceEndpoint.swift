@@ -13,7 +13,6 @@ public enum BalanceEndpoint {
     public func url(baseURL: URL) throws -> URLRequest {
         switch self {
         case let .get(walletAddress):
-            guard !baseURL.absoluteURL.absoluteString.isEmpty else { throw Error.url }
             guard !walletAddress.isEmpty else { throw Error.publicKey }
             var components = URLComponents()
             components.scheme = baseURL.scheme
@@ -35,15 +34,12 @@ public enum BalanceEndpoint {
             
             enum Error: Swift.Error, LocalizedError {
                 case publicKey
-                case url
                 case encoder
                 
                 public var errorDescription: String? {
                     switch self {
                     case .publicKey:
                         return "There is no public address to connect."
-                    case .url:
-                        return "There is no URL to connect. We are unable to connect and we are working on it!"
                     case .encoder:
                         return "There is a problem with URL request body. We are unable to connect and we are working on it!"
                     }
