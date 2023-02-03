@@ -12,19 +12,20 @@ import Combine
 
 @main
 struct MySolWalletApp: App {
+    private let composer = MainUIComposer()
     
-    private let mainFlow = MainUIComposer()
-
     var body: some Scene {
         WindowGroup {
             VStack {
-                mainFlow.makeFirstPage()
+                composer.mainView()
             }
         }
     }
 }
 
 public class MainUIComposer {
+    private var cancellables = Set<AnyCancellable>()
+    
     private lazy var baseURL: URL = {
         URL(string: "https://api.devnet.solana.com")!
     }()
@@ -33,14 +34,37 @@ public class MainUIComposer {
         URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
     }()
     
-    private func makeRemoteBalanceLoader(address: String, baseURL: URL) -> AnyPublisher<Balance, Error> {
+    private func makeRemoteBalancePublisher(address: String, baseURL: URL) -> AnyPublisher<Balance, Error> {
         let request = try? BalanceEndpoint.get(walletAddress: address).url(baseURL: baseURL)
-        return httpClient.getPublisher(urlRequest: request!).tryMap(BalanceItemMapper.map).eraseToAnyPublisher()
+        return httpClient
+            .getPublisher(urlRequest: request!)
+            .tryMap(BalanceItemMapper.map)
+            .eraseToAnyPublisher()
     }
     
-    public func makeFirstPage() -> AnyView {
-        let balancePublisher = makeRemoteBalanceLoader(address: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi", baseURL: baseURL)
-        
-        return AnyView(MainView(hasWallet: .constant(true)))
+    private lazy var walletAccountAddress: String = {
+        "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi"
+    }()
+    
+    private lazy var balancePublisher: AnyPublisher<Balance, Error> = {
+        makeRemoteBalancePublisher(address: walletAccountAddress, baseURL: baseURL)
+    }()
+    
+    private func balanceView(balance: String = "0") -> AnyView {
+        AnyView(BalanceContainerView(result: .success(balance), title: BalancePresenter.title, currencyName: "SOL", progress: 0.7, total: 1.0, onHide: {}))
     }
+    
+    private lazy var createWalletView: AnyView = {
+        AnyView(
+            Button(action: {
+                
+            }, label: {
+                Text("Create Wallet").padding()
+            }))
+    }()
+    
+    public func mainView() -> AnyView {
+        return AnyView(Color.blue)
+    }
+    
 }
