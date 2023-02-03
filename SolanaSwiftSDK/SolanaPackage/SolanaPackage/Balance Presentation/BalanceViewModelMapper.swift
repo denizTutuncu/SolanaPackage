@@ -10,11 +10,11 @@ import Foundation
 public class BalanceViewModelMapper {
     
     public enum Error: Swift.Error {
-        case invalidData
+        case amount
     }
     
     public static func map(_ balance: Balance) throws -> BalanceViewModel {
-        guard balance.amount >= 0 else { throw Error.invalidData }
+        guard balance.amount >= 0 else { throw Error.amount }
         let amountAsString: String = "\(balance.amount)"
         return BalanceViewModel(amount: amountAsString)
     }

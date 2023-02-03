@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct ErrorView: View {
+struct ErrorView: View {
     @State private var message: String?
     private let onHide: (() -> Void)?
     
@@ -16,7 +16,7 @@ public struct ErrorView: View {
         self.onHide = onHide
     }
     
-    public var body: some View {
+    var body: some View {
         VStack(alignment: .center) {
             if message != nil {
                 Text(message!)
@@ -31,10 +31,6 @@ public struct ErrorView: View {
                 .background(Color.errorBackgroundColor)
             }
         }.padding()
-    }
-    
-    public func setMessage(_ message: String?) {
-        self.message = message
     }
     
     private func hideMessage() {
@@ -52,7 +48,7 @@ extension Color {
 struct ErrorView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ErrorView(message: "An error occurred.", onHide: { print("Error dismissed.") })
+            ErrorView(message: "Couldn't connect to server.", onHide: { print("Error dismissed.") })
                 .previewLayout(.sizeThatFits)
                 .previewDisplayName("Error View")
         }

@@ -15,13 +15,7 @@
 		2E0CBFAC27F1A8C0006E6892 /* BalanceEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0CBFAB27F1A8C0006E6892 /* BalanceEndpoint.swift */; };
 		2E0CBFDE27F282DD006E6892 /* SolanaPackageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E0CBFD527F282DC006E6892 /* SolanaPackageUI.framework */; };
 		2E2CC5AA296EB9680063C23C /* BalanceEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5A9296EB9680063C23C /* BalanceEndpointTests.swift */; };
-		2E2CC5B3296EC1D00063C23C /* LoadResourcePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5B2296EC1D00063C23C /* LoadResourcePresenter.swift */; };
-		2E2CC5B5296EC1EB0063C23C /* ResourceLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5B4296EC1EB0063C23C /* ResourceLoadingView.swift */; };
-		2E2CC5B7296EC1F80063C23C /* ResourceLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5B6296EC1F80063C23C /* ResourceLoadingViewModel.swift */; };
-		2E2CC5B9296EC2050063C23C /* ResourceErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5B8296EC2050063C23C /* ResourceErrorView.swift */; };
-		2E2CC5BB296EC2150063C23C /* ResourceErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5BA296EC2150063C23C /* ResourceErrorViewModel.swift */; };
 		2E2CC5BE296EC2460063C23C /* Shared.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E2CC5C0296EC2460063C23C /* Shared.strings */; };
-		2E2CC5C5296EC3060063C23C /* LoadResourcePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5C4296EC3060063C23C /* LoadResourcePresenterTests.swift */; };
 		2E2CC5C7296EC45C0063C23C /* BalancePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5C6296EC45C0063C23C /* BalancePresenter.swift */; };
 		2E2CC5C9296EC4D90063C23C /* BalancePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5C8296EC4D90063C23C /* BalancePresenterTests.swift */; };
 		2E3951E2283DF5120079852F /* BalanceItemMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3951E1283DF5120079852F /* BalanceItemMapperTests.swift */; };
@@ -30,8 +24,6 @@
 		2E5186DC27F28DA0001AB355 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6163F27E5C33D00920274 /* XCTestCase+MemoryLeakTracking.swift */; };
 		2E954BA028487C02002D2FF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E954B9F28487C02002D2FF3 /* Assets.xcassets */; };
 		2E954BA22848852F002D2FF3 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E954BA12848852F002D2FF3 /* Balance.swift */; };
-		2EAEF0F2297B3D4300091A49 /* BalanceViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAEF0F1297B3D4300091A49 /* BalanceViewModelMapper.swift */; };
-		2EAEF0F4297B3DC000091A49 /* BalanceViewModelMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAEF0F3297B3DC000091A49 /* BalanceViewModelMapperTests.swift */; };
 		2EAEF0F6297B475900091A49 /* BalanceContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAEF0F5297B475900091A49 /* BalanceContainerView.swift */; };
 		2EB6F55027E821A500CA7BED /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB6F54F27E821A500CA7BED /* SharedTestHelpers.swift */; };
 		2ED6160E27E5AD4000920274 /* SolanaPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED6160427E5AD3F00920274 /* SolanaPackage.framework */; };
@@ -40,15 +32,17 @@
 		2ED6163A27E5BE4400920274 /* BalanceItemMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6163927E5BE4400920274 /* BalanceItemMapper.swift */; };
 		2ED6164027E5C33D00920274 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6163F27E5C33D00920274 /* XCTestCase+MemoryLeakTracking.swift */; };
 		2ED6164227E5C35400920274 /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6164127E5C35400920274 /* URLProtocolStub.swift */; };
-		2ED6164427E5C37400920274 /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6164327E5C37400920274 /* HTTPClientSpy.swift */; };
 		2ED6164627E5C3B800920274 /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6164527E5C3B800920274 /* URLSessionHTTPClientTests.swift */; };
 		2ED6165227E7472800920274 /* BalanceAPIEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6165127E7472800920274 /* BalanceAPIEndToEndTests.swift */; };
 		2ED6165427E7472800920274 /* SolanaPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED6160427E5AD3F00920274 /* SolanaPackage.framework */; };
 		2ED6165A27E747CF00920274 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6163F27E5C33D00920274 /* XCTestCase+MemoryLeakTracking.swift */; };
-		2EE0896F2846D9FD007AFC0F /* BalanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0896E2846D9FD007AFC0F /* BalanceViewModel.swift */; };
+		2EDA9D1E29893FBF004793D3 /* BalanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA9D1D29893FBF004793D3 /* BalanceViewModel.swift */; };
+		2EDA9D2029893FF7004793D3 /* BalanceViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA9D1F29893FF7004793D3 /* BalanceViewModelMapper.swift */; };
+		2EDA9D2229894012004793D3 /* BalanceViewModelMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA9D2129894012004793D3 /* BalanceViewModelMapperTests.swift */; };
+		2EDA9D242989D7E5004793D3 /* PublisherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA9D232989D7E5004793D3 /* PublisherViewModel.swift */; };
+		2EDA9D26298DBB4F004793D3 /* PublisherViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA9D25298DBB4F004793D3 /* PublisherViewModelTests.swift */; };
 		2EE089762846DF76007AFC0F /* Balance.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2EE089782846DF76007AFC0F /* Balance.strings */; };
 		2EE0898028473BAF007AFC0F /* BalanceLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0897F28473BAF007AFC0F /* BalanceLocalizationTests.swift */; };
-		2EE0898F28475D67007AFC0F /* SharedLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0898E28475D67007AFC0F /* SharedLocalization.swift */; };
 		2EE0899B28476AC6007AFC0F /* SharedLocalizationTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0899A28476AC6007AFC0F /* SharedLocalizationTestHelpers.swift */; };
 /* End PBXBuildFile section */
 
@@ -95,24 +89,16 @@
 		2E0CBFDD27F282DD006E6892 /* SolanaPackageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SolanaPackageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E0CBFE427F282DD006E6892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E2CC5A9296EB9680063C23C /* BalanceEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceEndpointTests.swift; sourceTree = "<group>"; };
-		2E2CC5B2296EC1D00063C23C /* LoadResourcePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadResourcePresenter.swift; sourceTree = "<group>"; };
-		2E2CC5B4296EC1EB0063C23C /* ResourceLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingView.swift; sourceTree = "<group>"; };
-		2E2CC5B6296EC1F80063C23C /* ResourceLoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceLoadingViewModel.swift; sourceTree = "<group>"; };
-		2E2CC5B8296EC2050063C23C /* ResourceErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceErrorView.swift; sourceTree = "<group>"; };
-		2E2CC5BA296EC2150063C23C /* ResourceErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceErrorViewModel.swift; sourceTree = "<group>"; };
 		2E2CC5BF296EC2460063C23C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Shared.strings; sourceTree = "<group>"; };
 		2E2CC5C1296EC24E0063C23C /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Shared.strings; sourceTree = "<group>"; };
 		2E2CC5C2296EC2500063C23C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Shared.strings"; sourceTree = "<group>"; };
 		2E2CC5C3296EC2500063C23C /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Shared.strings; sourceTree = "<group>"; };
-		2E2CC5C4296EC3060063C23C /* LoadResourcePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadResourcePresenterTests.swift; sourceTree = "<group>"; };
 		2E2CC5C6296EC45C0063C23C /* BalancePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancePresenter.swift; sourceTree = "<group>"; };
 		2E2CC5C8296EC4D90063C23C /* BalancePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancePresenterTests.swift; sourceTree = "<group>"; };
 		2E3951E1283DF5120079852F /* BalanceItemMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceItemMapperTests.swift; sourceTree = "<group>"; };
 		2E4294B82848484900817480 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		2E954B9F28487C02002D2FF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E954BA12848852F002D2FF3 /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
-		2EAEF0F1297B3D4300091A49 /* BalanceViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewModelMapper.swift; sourceTree = "<group>"; };
-		2EAEF0F3297B3DC000091A49 /* BalanceViewModelMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewModelMapperTests.swift; sourceTree = "<group>"; };
 		2EAEF0F5297B475900091A49 /* BalanceContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceContainerView.swift; sourceTree = "<group>"; };
 		2EB6F54F27E821A500CA7BED /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 		2ED6160427E5AD3F00920274 /* SolanaPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SolanaPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,18 +110,20 @@
 		2ED6163927E5BE4400920274 /* BalanceItemMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceItemMapper.swift; sourceTree = "<group>"; };
 		2ED6163F27E5C33D00920274 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		2ED6164127E5C35400920274 /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
-		2ED6164327E5C37400920274 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
 		2ED6164527E5C3B800920274 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 		2ED6164F27E7472800920274 /* SolanaPackageAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SolanaPackageAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED6165127E7472800920274 /* BalanceAPIEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceAPIEndToEndTests.swift; sourceTree = "<group>"; };
 		2ED6165327E7472800920274 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2EE0896E2846D9FD007AFC0F /* BalanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewModel.swift; sourceTree = "<group>"; };
+		2EDA9D1D29893FBF004793D3 /* BalanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewModel.swift; sourceTree = "<group>"; };
+		2EDA9D1F29893FF7004793D3 /* BalanceViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewModelMapper.swift; sourceTree = "<group>"; };
+		2EDA9D2129894012004793D3 /* BalanceViewModelMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewModelMapperTests.swift; sourceTree = "<group>"; };
+		2EDA9D232989D7E5004793D3 /* PublisherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherViewModel.swift; sourceTree = "<group>"; };
+		2EDA9D25298DBB4F004793D3 /* PublisherViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherViewModelTests.swift; sourceTree = "<group>"; };
 		2EE089772846DF76007AFC0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Balance.strings; sourceTree = "<group>"; };
 		2EE089792846E03E007AFC0F /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Balance.strings; sourceTree = "<group>"; };
 		2EE0897A2846E090007AFC0F /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Balance.strings"; sourceTree = "<group>"; };
 		2EE0897B2846E143007AFC0F /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Balance.strings; sourceTree = "<group>"; };
 		2EE0897F28473BAF007AFC0F /* BalanceLocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceLocalizationTests.swift; sourceTree = "<group>"; };
-		2EE0898E28475D67007AFC0F /* SharedLocalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLocalization.swift; sourceTree = "<group>"; };
 		2EE0899A28476AC6007AFC0F /* SharedLocalizationTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedLocalizationTestHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -252,26 +240,13 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		2E2CC5AE296EBFD20063C23C /* Shared Presentation */ = {
+		2E2CC5B1296EC1B00063C23C /* Publishers */ = {
 			isa = PBXGroup;
 			children = (
-				2EE0898E28475D67007AFC0F /* SharedLocalization.swift */,
-				2E2CC5C4296EC3060063C23C /* LoadResourcePresenterTests.swift */,
-			);
-			path = "Shared Presentation";
-			sourceTree = "<group>";
-		};
-		2E2CC5B1296EC1B00063C23C /* Shared Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				2E2CC5B2296EC1D00063C23C /* LoadResourcePresenter.swift */,
-				2E2CC5B4296EC1EB0063C23C /* ResourceLoadingView.swift */,
-				2E2CC5B6296EC1F80063C23C /* ResourceLoadingViewModel.swift */,
-				2E2CC5B8296EC2050063C23C /* ResourceErrorView.swift */,
-				2E2CC5BA296EC2150063C23C /* ResourceErrorViewModel.swift */,
 				2E2CC5C0296EC2460063C23C /* Shared.strings */,
+				2EDA9D232989D7E5004793D3 /* PublisherViewModel.swift */,
 			);
-			path = "Shared Presentation";
+			path = Publishers;
 			sourceTree = "<group>";
 		};
 		2E4294B32848463700817480 /* Balance UI */ = {
@@ -353,7 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				2ED6160827E5AD3F00920274 /* Info.plist */,
-				2E2CC5B1296EC1B00063C23C /* Shared Presentation */,
+				2E2CC5B1296EC1B00063C23C /* Publishers */,
 				2E9B09502848338300F450C8 /* Shared API Infra */,
 				2E9B094F2848332D00F450C8 /* Shared API */,
 				2EE0896C2846D975007AFC0F /* Balance Presentation */,
@@ -366,7 +341,6 @@
 		2ED6161127E5AD4000920274 /* SolanaPackageTests */ = {
 			isa = PBXGroup;
 			children = (
-				2E2CC5AE296EBFD20063C23C /* Shared Presentation */,
 				2E2CC5AB296EBCE00063C23C /* Shared API Infra */,
 				2EE08998284769D5007AFC0F /* Balance API */,
 				2EE0897E28473B99007AFC0F /* Balance Presentation */,
@@ -408,9 +382,9 @@
 			isa = PBXGroup;
 			children = (
 				2E2CC5C6296EC45C0063C23C /* BalancePresenter.swift */,
-				2EE0896E2846D9FD007AFC0F /* BalanceViewModel.swift */,
-				2EAEF0F1297B3D4300091A49 /* BalanceViewModelMapper.swift */,
 				2EE089782846DF76007AFC0F /* Balance.strings */,
+				2EDA9D1D29893FBF004793D3 /* BalanceViewModel.swift */,
+				2EDA9D1F29893FF7004793D3 /* BalanceViewModelMapper.swift */,
 			);
 			path = "Balance Presentation";
 			sourceTree = "<group>";
@@ -420,6 +394,7 @@
 			children = (
 				2EE0897F28473BAF007AFC0F /* BalanceLocalizationTests.swift */,
 				2E2CC5C8296EC4D90063C23C /* BalancePresenterTests.swift */,
+				2EDA9D25298DBB4F004793D3 /* PublisherViewModelTests.swift */,
 			);
 			path = "Balance Presentation";
 			sourceTree = "<group>";
@@ -429,18 +404,9 @@
 			children = (
 				2E2CC5A9296EB9680063C23C /* BalanceEndpointTests.swift */,
 				2E3951E1283DF5120079852F /* BalanceItemMapperTests.swift */,
-				2EAEF0F3297B3DC000091A49 /* BalanceViewModelMapperTests.swift */,
-				2EE08999284769E8007AFC0F /* Helpers */,
+				2EDA9D2129894012004793D3 /* BalanceViewModelMapperTests.swift */,
 			);
 			path = "Balance API";
-			sourceTree = "<group>";
-		};
-		2EE08999284769E8007AFC0F /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				2ED6164327E5C37400920274 /* HTTPClientSpy.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -680,14 +646,10 @@
 				2E954BA22848852F002D2FF3 /* Balance.swift in Sources */,
 				2ED6163A27E5BE4400920274 /* BalanceItemMapper.swift in Sources */,
 				2ED6162627E5AECE00920274 /* HTTPClient.swift in Sources */,
-				2E2CC5B7296EC1F80063C23C /* ResourceLoadingViewModel.swift in Sources */,
-				2E2CC5BB296EC2150063C23C /* ResourceErrorViewModel.swift in Sources */,
-				2EAEF0F2297B3D4300091A49 /* BalanceViewModelMapper.swift in Sources */,
-				2EE0896F2846D9FD007AFC0F /* BalanceViewModel.swift in Sources */,
-				2E2CC5B9296EC2050063C23C /* ResourceErrorView.swift in Sources */,
+				2EDA9D242989D7E5004793D3 /* PublisherViewModel.swift in Sources */,
+				2EDA9D2029893FF7004793D3 /* BalanceViewModelMapper.swift in Sources */,
 				2E2CC5C7296EC45C0063C23C /* BalancePresenter.swift in Sources */,
-				2E2CC5B3296EC1D00063C23C /* LoadResourcePresenter.swift in Sources */,
-				2E2CC5B5296EC1EB0063C23C /* ResourceLoadingView.swift in Sources */,
+				2EDA9D1E29893FBF004793D3 /* BalanceViewModel.swift in Sources */,
 				2E0CBFAC27F1A8C0006E6892 /* BalanceEndpoint.swift in Sources */,
 				2ED6162827E5AEEF00920274 /* URLSessionHTTPClient.swift in Sources */,
 			);
@@ -698,16 +660,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EE0899B28476AC6007AFC0F /* SharedLocalizationTestHelpers.swift in Sources */,
-				2EE0898F28475D67007AFC0F /* SharedLocalization.swift in Sources */,
 				2ED6164027E5C33D00920274 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				2E2CC5AA296EB9680063C23C /* BalanceEndpointTests.swift in Sources */,
-				2EAEF0F4297B3DC000091A49 /* BalanceViewModelMapperTests.swift in Sources */,
-				2ED6164427E5C37400920274 /* HTTPClientSpy.swift in Sources */,
+				2EDA9D2229894012004793D3 /* BalanceViewModelMapperTests.swift in Sources */,
 				2EB6F55027E821A500CA7BED /* SharedTestHelpers.swift in Sources */,
 				2E2CC5C9296EC4D90063C23C /* BalancePresenterTests.swift in Sources */,
 				2ED6164227E5C35400920274 /* URLProtocolStub.swift in Sources */,
 				2EE0898028473BAF007AFC0F /* BalanceLocalizationTests.swift in Sources */,
-				2E2CC5C5296EC3060063C23C /* LoadResourcePresenterTests.swift in Sources */,
+				2EDA9D26298DBB4F004793D3 /* PublisherViewModelTests.swift in Sources */,
 				2E3951E2283DF5120079852F /* BalanceItemMapperTests.swift in Sources */,
 				2ED6164627E5C3B800920274 /* URLSessionHTTPClientTests.swift in Sources */,
 			);

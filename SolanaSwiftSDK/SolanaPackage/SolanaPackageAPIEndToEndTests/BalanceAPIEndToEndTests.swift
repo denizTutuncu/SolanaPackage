@@ -58,7 +58,7 @@ class BalanceAPIEndToEndTests: XCTestCase {
         return Balance(amount: createBalance())
     }
     
-    private func createBalance() -> Int {
+    private func createBalance() -> Double {
         return 8473919000
     }
     

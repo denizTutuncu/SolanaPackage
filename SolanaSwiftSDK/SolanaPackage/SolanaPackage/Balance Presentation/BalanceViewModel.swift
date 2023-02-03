@@ -7,9 +7,15 @@
 
 import Foundation
 
-public struct BalanceViewModel: Equatable {
-    public let amount: String?
+public class BalanceViewModel {
+    public var amount: String?
     public init(amount: String? = nil) {
         self.amount = amount
+    }
+}
+
+extension BalanceViewModel: Equatable {
+    public static func == (lhs: BalanceViewModel, rhs: BalanceViewModel) -> Bool {
+        lhs.amount == rhs.amount
     }
 }

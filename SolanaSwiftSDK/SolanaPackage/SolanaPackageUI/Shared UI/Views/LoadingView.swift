@@ -7,21 +7,23 @@
 
 import SwiftUI
 
-public struct LoadingView: View {
+struct LoadingView: View {
     @State private var title: String
-    @State private var progress: CGFloat
-    
-    init(title: String, progress: CGFloat) {
+    @Binding private var progress: CGFloat
+    @Binding private var total: CGFloat
+    init(title: String, progress: Binding<CGFloat>, total: Binding<CGFloat>) {
         self.title = title
-        self.progress = progress
+        self._progress = progress
+        self._total = total
     }
     
-    public var body: some View {
+    var body: some View {
         VStack {
-            ProgressView(title, value: progress, total: 1)
+            ProgressView(title, value: progress, total: total)
                 .padding()
-                .progressViewStyle(LinearProgressViewStyle(tint: Color.blue))
-                .foregroundColor(Color.blue)
+                .progressViewStyle(LinearProgressViewStyle(tint: Color.primary))
+                .foregroundColor(Color.primary)
+                .shadow(color: .primary, radius: 0.5)
         }
     }
 }
@@ -29,7 +31,7 @@ public struct LoadingView: View {
 struct LoadingView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            LoadingView(title: "Downloading ...", progress: 0.5)
+            LoadingView(title: "Downloading ...", progress: .constant(0.5), total: .constant(1.0))
                 .previewLayout(.sizeThatFits)
                 .previewDisplayName("Loading View")
         }
