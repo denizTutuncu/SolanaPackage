@@ -51,7 +51,8 @@ public class MainUIComposer {
     }()
     
     private func balanceView(balance: String = "0") -> AnyView {
-        AnyView(BalanceContainerView(result: .success(balance), title: BalancePresenter.title, currencyName: "SOL", progress: 0.7, total: 1.0, onHide: {}))
+        AnyView(Color.blue)
+//        AnyView(BalanceContainerView(result: .success(balance), title: BalancePresenter.title, currencyName: "SOL", progress: 0.7, total: 1.0, onHide: {}))
     }
     
     private lazy var createWalletView: AnyView = {
@@ -64,7 +65,16 @@ public class MainUIComposer {
     }()
     
     public func mainView() -> AnyView {
-        return AnyView(Color.blue)
+        var newPublisher: PublisherViewModel<Balance, BalanceViewModel>?
+        balancePublisher.sink { _ in } receiveValue: { balance in
+            print("Balance is \(balance). Total lamports are \(balance.amount)")
+            let publisher = PublisherViewModel(resource: balance, mapper: BalanceViewModelMapper.map)
+            publisher.loadResource()
+            newPublisher = publisher
+        }
+        .store(in: &cancellables)
+        
+        return AnyView(MainView(hasWallet: .constant(true), mainContainer: { self.balanceView(balance: newPublisher?.onResourceLoad?.amount ?? "0") }, createWalletContainer: { self.createWalletView } ))
     }
     
 }

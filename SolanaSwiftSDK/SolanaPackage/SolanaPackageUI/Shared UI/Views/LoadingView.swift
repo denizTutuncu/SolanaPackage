@@ -7,10 +7,14 @@
 
 import SwiftUI
 
-struct LoadingView: View {
-    @State private var title: String
-    @Binding private var progress: CGFloat
-    @Binding private var total: CGFloat
+public protocol LoadingViewProtocol: View {
+    var title: String { get }
+}
+
+struct LoadingView: View, LoadingViewProtocol {
+    @State internal var title: String
+    @Binding internal var progress: CGFloat
+    @Binding internal var total: CGFloat
     init(title: String, progress: Binding<CGFloat>, total: Binding<CGFloat>) {
         self.title = title
         self._progress = progress

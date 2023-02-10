@@ -24,7 +24,6 @@
 		2E5186DC27F28DA0001AB355 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6163F27E5C33D00920274 /* XCTestCase+MemoryLeakTracking.swift */; };
 		2E954BA028487C02002D2FF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E954B9F28487C02002D2FF3 /* Assets.xcassets */; };
 		2E954BA22848852F002D2FF3 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E954BA12848852F002D2FF3 /* Balance.swift */; };
-		2EAEF0F6297B475900091A49 /* BalanceContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAEF0F5297B475900091A49 /* BalanceContainerView.swift */; };
 		2EB6F55027E821A500CA7BED /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB6F54F27E821A500CA7BED /* SharedTestHelpers.swift */; };
 		2ED6160E27E5AD4000920274 /* SolanaPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED6160427E5AD3F00920274 /* SolanaPackage.framework */; };
 		2ED6162627E5AECE00920274 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6162527E5AECE00920274 /* HTTPClient.swift */; };
@@ -41,6 +40,8 @@
 		2EDA9D2229894012004793D3 /* BalanceViewModelMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA9D2129894012004793D3 /* BalanceViewModelMapperTests.swift */; };
 		2EDA9D242989D7E5004793D3 /* PublisherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA9D232989D7E5004793D3 /* PublisherViewModel.swift */; };
 		2EDA9D26298DBB4F004793D3 /* PublisherViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA9D25298DBB4F004793D3 /* PublisherViewModelTests.swift */; };
+		2EDA9D28298DCB41004793D3 /* Displayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA9D27298DCB41004793D3 /* Displayable.swift */; };
+		2EDA9D2A298DDDDE004793D3 /* ResultDisplayableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA9D29298DDDDE004793D3 /* ResultDisplayableView.swift */; };
 		2EE089762846DF76007AFC0F /* Balance.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2EE089782846DF76007AFC0F /* Balance.strings */; };
 		2EE0898028473BAF007AFC0F /* BalanceLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0897F28473BAF007AFC0F /* BalanceLocalizationTests.swift */; };
 		2EE0899B28476AC6007AFC0F /* SharedLocalizationTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0899A28476AC6007AFC0F /* SharedLocalizationTestHelpers.swift */; };
@@ -99,7 +100,6 @@
 		2E4294B82848484900817480 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		2E954B9F28487C02002D2FF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E954BA12848852F002D2FF3 /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
-		2EAEF0F5297B475900091A49 /* BalanceContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceContainerView.swift; sourceTree = "<group>"; };
 		2EB6F54F27E821A500CA7BED /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 		2ED6160427E5AD3F00920274 /* SolanaPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SolanaPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED6160827E5AD3F00920274 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -119,6 +119,8 @@
 		2EDA9D2129894012004793D3 /* BalanceViewModelMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewModelMapperTests.swift; sourceTree = "<group>"; };
 		2EDA9D232989D7E5004793D3 /* PublisherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherViewModel.swift; sourceTree = "<group>"; };
 		2EDA9D25298DBB4F004793D3 /* PublisherViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherViewModelTests.swift; sourceTree = "<group>"; };
+		2EDA9D27298DCB41004793D3 /* Displayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Displayable.swift; sourceTree = "<group>"; };
+		2EDA9D29298DDDDE004793D3 /* ResultDisplayableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDisplayableView.swift; sourceTree = "<group>"; };
 		2EE089772846DF76007AFC0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Balance.strings; sourceTree = "<group>"; };
 		2EE089792846E03E007AFC0F /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Balance.strings; sourceTree = "<group>"; };
 		2EE0897A2846E090007AFC0F /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Balance.strings"; sourceTree = "<group>"; };
@@ -173,6 +175,8 @@
 		2E0363152970EAF800CB2567 /* Shared UI */ = {
 			isa = PBXGroup;
 			children = (
+				2EDA9D29298DDDDE004793D3 /* ResultDisplayableView.swift */,
+				2EDA9D27298DCB41004793D3 /* Displayable.swift */,
 				2E4294B52848479000817480 /* Views */,
 			);
 			path = "Shared UI";
@@ -254,7 +258,6 @@
 			children = (
 				2E954B9F28487C02002D2FF3 /* Assets.xcassets */,
 				2E03632129710EE900CB2567 /* BalanceView.swift */,
-				2EAEF0F5297B475900091A49 /* BalanceContainerView.swift */,
 			);
 			path = "Balance UI";
 			sourceTree = "<group>";
@@ -381,8 +384,8 @@
 		2EE0896C2846D975007AFC0F /* Balance Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				2E2CC5C6296EC45C0063C23C /* BalancePresenter.swift */,
 				2EE089782846DF76007AFC0F /* Balance.strings */,
+				2E2CC5C6296EC45C0063C23C /* BalancePresenter.swift */,
 				2EDA9D1D29893FBF004793D3 /* BalanceViewModel.swift */,
 				2EDA9D1F29893FF7004793D3 /* BalanceViewModelMapper.swift */,
 			);
@@ -622,8 +625,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E03632229710EE900CB2567 /* BalanceView.swift in Sources */,
-				2EAEF0F6297B475900091A49 /* BalanceContainerView.swift in Sources */,
+				2EDA9D2A298DDDDE004793D3 /* ResultDisplayableView.swift in Sources */,
 				2E4294B92848484900817480 /* ErrorView.swift in Sources */,
+				2EDA9D28298DCB41004793D3 /* Displayable.swift in Sources */,
 				2E0363172970ECCF00CB2567 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
