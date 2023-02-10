@@ -4,7 +4,6 @@
 //
 //  Created by Deniz Tutuncu on 1/12/23.
 //
-
 import SwiftUI
 
 struct BalanceView: View {

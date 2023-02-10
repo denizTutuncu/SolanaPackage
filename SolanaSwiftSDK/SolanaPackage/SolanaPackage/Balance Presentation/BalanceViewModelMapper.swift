@@ -9,7 +9,7 @@ import Foundation
 
 public class BalanceViewModelMapper {
     
-    public enum Error: Swift.Error {
+    private enum Error: Swift.Error {
         case amount
     }
     
