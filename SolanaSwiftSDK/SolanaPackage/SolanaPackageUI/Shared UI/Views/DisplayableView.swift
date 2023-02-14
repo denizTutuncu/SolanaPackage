@@ -13,7 +13,7 @@ public struct DisplayableView<ContentView: DisplayableProtocol>: View {
     @State private var viewModel: ViewModel
     private let contentView: (ViewModel?) -> ContentView
     
-    public init(viewModel: ViewModel, content: @escaping (ViewModel) -> ContentView) {
+    public init(viewModel: ViewModel, content: @escaping (ViewModel?) -> ContentView) {
         self.viewModel = viewModel
         self.contentView = content
     }
@@ -28,18 +28,21 @@ struct ResultDisplayableView_Previews: PreviewProvider {
         
         struct SuccessView: DisplayableProtocol {
             typealias ViewModel = String
-            var viewModel: ViewModel
+            var viewModel: ViewModel?
             
             var body: some View {
-                AnyView(Text("Success: \(viewModel)"))
+                if let viewModel = viewModel {
+                    AnyView(Text("Success: \(viewModel)"))
+                } else {
+                    AnyView(EmptyView())
+                }
+              
             }
         }
-        
-        let successView = SuccessView(viewModel: "View Model")
-        
+                
         return  Group {
             DisplayableView(viewModel: "View Model") { viewModel in
-                successView
+                SuccessView(viewModel: viewModel)
             }
         }
     }

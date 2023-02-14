@@ -179,8 +179,6 @@
 		2E0363152970EAF800CB2567 /* Shared UI */ = {
 			isa = PBXGroup;
 			children = (
-				2EDA9D29298DDDDE004793D3 /* DisplayableView.swift */,
-				2EDA9D27298DCB41004793D3 /* DisplayableProtocol.swift */,
 				2E4294B52848479000817480 /* Views */,
 			);
 			path = "Shared UI";
@@ -269,6 +267,7 @@
 		2E4294B52848479000817480 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2EDA9D29298DDDDE004793D3 /* DisplayableView.swift */,
 				2E4294B82848484900817480 /* ErrorView.swift */,
 				2E0363162970ECCF00CB2567 /* LoadingView.swift */,
 				2E89AEDD299B12F10078E2C3 /* View Protocols */,
@@ -286,6 +285,7 @@
 		2E89AEDD299B12F10078E2C3 /* View Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				2EDA9D27298DCB41004793D3 /* DisplayableProtocol.swift */,
 				2E89AEDE299B13060078E2C3 /* ErrorViewProtocol.swift */,
 				2E89AEE0299B131E0078E2C3 /* LoadingViewProtocol.swift */,
 			);
