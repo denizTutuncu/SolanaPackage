@@ -10,11 +10,10 @@ import SwiftUI
 public struct DisplayableView<ContentView: DisplayableProtocol>: View {
     public typealias ViewModel = ContentView.ViewModel
     
-    @State private var viewModel: ViewModel
+    @State private var viewModel: ViewModel? = nil
     private let contentView: (ViewModel?) -> ContentView
     
-    public init(viewModel: ViewModel, content: @escaping (ViewModel?) -> ContentView) {
-        self.viewModel = viewModel
+    public init(content: @escaping (ViewModel?) -> ContentView) {
         self.contentView = content
     }
     
@@ -41,7 +40,7 @@ struct ResultDisplayableView_Previews: PreviewProvider {
         }
                 
         return  Group {
-            DisplayableView(viewModel: "View Model") { viewModel in
+            DisplayableView() { viewModel in
                 SuccessView(viewModel: viewModel)
             }
         }
