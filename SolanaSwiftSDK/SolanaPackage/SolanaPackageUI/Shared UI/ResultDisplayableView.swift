@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct ResultDisplayableView<ContentView: Displayable>: View {
+public struct ResultDisplayableView<ContentView: DisplayableProtocol>: View {
     public typealias ViewModel = ContentView.ViewModel
     
     @State private var viewModel: ViewModel
@@ -26,7 +26,7 @@ public struct ResultDisplayableView<ContentView: Displayable>: View {
 struct ResultDisplayableView_Previews: PreviewProvider {
     static var previews: some View {
         
-        struct SuccessView: Displayable {
+        struct SuccessView: DisplayableProtocol {
             typealias ViewModel = String
             var viewModel: ViewModel
             
