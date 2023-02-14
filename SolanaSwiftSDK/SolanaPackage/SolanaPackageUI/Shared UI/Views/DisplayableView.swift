@@ -13,8 +13,9 @@ public struct DisplayableView<ContentView: DisplayableProtocol>: View {
     @State private var viewModel: ViewModel? = nil
     private let contentView: (ViewModel?) -> ContentView
     
-    public init(content: @escaping (ViewModel?) -> ContentView) {
+    public init(content: @escaping (ViewModel?) -> ContentView, viewModel: ViewModel? = nil) {
         self.contentView = content
+        self.viewModel = viewModel
     }
     
     public var body: some View {
@@ -35,14 +36,16 @@ struct ResultDisplayableView_Previews: PreviewProvider {
                 } else {
                     AnyView(EmptyView())
                 }
-              
+                
             }
         }
-                
+        
         return  Group {
             DisplayableView() { viewModel in
-                SuccessView(viewModel: viewModel)
+                SuccessView(viewModel: "String View Model")
             }
+            .previewLayout(.sizeThatFits)
+            .previewDisplayName("Displayable View")
         }
     }
 }
