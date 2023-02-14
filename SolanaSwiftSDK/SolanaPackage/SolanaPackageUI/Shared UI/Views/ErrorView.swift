@@ -1,5 +1,5 @@
 //
-//  BalanceLoadingView.swift
+//  ErrorView.swift
 //  SolanaPackageUI
 //
 //  Created by Deniz Tutuncu on 6/1/22.
