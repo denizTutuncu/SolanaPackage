@@ -1,5 +1,5 @@
 //
-//  ResultDisplayable.swift
+//  DisplayableProtocol.swift
 //  SolanaPackageUI
 //
 //  Created by Deniz Tutuncu on 2/3/23.
