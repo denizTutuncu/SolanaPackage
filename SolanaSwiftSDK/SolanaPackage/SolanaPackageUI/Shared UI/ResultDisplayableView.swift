@@ -7,22 +7,19 @@
 
 import SwiftUI
 
-public struct ResultDisplayableView<ContentView: Displayable, ErrorView: ErrorViewProtocol>: View {
+public struct ResultDisplayableView<ContentView: Displayable>: View {
     public typealias ViewModel = ContentView.ViewModel
-    @State private var viewModel: ViewModel?
     
-    private let content: (ViewModel) -> ContentView
-    private let errorView: () -> ErrorView
+    @State private var viewModel: ViewModel
+    private let contentView: (ViewModel?) -> ContentView
     
-    public init(viewModel: ViewModel? = nil, content: @escaping (ViewModel) -> ContentView, errorView: @escaping () -> ErrorView) {
+    public init(viewModel: ViewModel, content: @escaping (ViewModel) -> ContentView) {
         self.viewModel = viewModel
-        self.content = content
-        self.errorView = errorView
+        self.contentView = content
     }
     
     public var body: some View {
-        guard let viewModel = viewModel else { return AnyView(errorView()) }
-        return AnyView(content(viewModel))
+        AnyView(contentView(viewModel))
     }
 }
 
@@ -31,29 +28,19 @@ struct ResultDisplayableView_Previews: PreviewProvider {
         
         struct SuccessView: Displayable {
             typealias ViewModel = String
-            var viewModel: ViewModel?
+            var viewModel: ViewModel
             
             var body: some View {
-                if let viewModel = viewModel {
-                    return Text("Success: \(viewModel)")
-                }
+                AnyView(Text("Success: \(viewModel)"))
             }
         }
         
-        struct ErrorView: ErrorViewProtocol {
-            var message: String?
-            
-            var onHide: (() -> Void)?
-            
-            var body: some View {
-                message != nil ? AnyView(Text("Error")) : AnyView(EmptyView())
-            }
-        }
+        let successView = SuccessView(viewModel: "View Model")
         
-        return ResultDisplayableView(viewModel: "View Model") { viewModel in
-            SuccessView(viewModel: viewModel)
-        } errorView: {
-            ErrorView()
+        return  Group {
+            ResultDisplayableView(viewModel: "View Model") { viewModel in
+                successView
+            }
         }
     }
 }

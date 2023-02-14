@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-public protocol LoadingViewProtocol: View {
-    var title: String { get }
-}
-
 struct LoadingView: View, LoadingViewProtocol {
     @State internal var title: String
     @Binding internal var progress: CGFloat

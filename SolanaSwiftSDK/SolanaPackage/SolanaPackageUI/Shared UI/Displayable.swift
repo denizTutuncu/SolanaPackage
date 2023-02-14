@@ -9,5 +9,5 @@ import SwiftUI
 
 public protocol Displayable: View {
     associatedtype ViewModel
-    var viewModel: ViewModel? { get }
+    var viewModel: ViewModel { get }
 }
