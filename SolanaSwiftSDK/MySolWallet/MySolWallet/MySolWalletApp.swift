@@ -23,7 +23,7 @@ struct MySolWalletApp: App {
     }
 }
 
-public class MainView {
+public class FlowView {
     private var cancellables = Set<AnyCancellable>()
     
     private lazy var baseURL: URL = {
