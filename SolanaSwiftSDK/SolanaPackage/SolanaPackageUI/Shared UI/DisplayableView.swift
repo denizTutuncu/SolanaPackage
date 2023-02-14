@@ -1,5 +1,5 @@
 //
-//  ResultDisplayableView.swift
+//  DisplayableView.swift
 //  SolanaPackageUI
 //
 //  Created by Deniz Tutuncu on 2/3/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct ResultDisplayableView<ContentView: DisplayableProtocol>: View {
+public struct DisplayableView<ContentView: DisplayableProtocol>: View {
     public typealias ViewModel = ContentView.ViewModel
     
     @State private var viewModel: ViewModel
@@ -38,7 +38,7 @@ struct ResultDisplayableView_Previews: PreviewProvider {
         let successView = SuccessView(viewModel: "View Model")
         
         return  Group {
-            ResultDisplayableView(viewModel: "View Model") { viewModel in
+            DisplayableView(viewModel: "View Model") { viewModel in
                 successView
             }
         }
