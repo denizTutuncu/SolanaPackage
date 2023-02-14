@@ -12,7 +12,7 @@ import Combine
 
 @main
 struct MySolWalletApp: App {
-    private let composer = MainUIComposer()
+    private let composer = MainView()
     
     var body: some Scene {
         WindowGroup {
@@ -23,7 +23,7 @@ struct MySolWalletApp: App {
     }
 }
 
-public class MainUIComposer {
+public class MainView {
     private var cancellables = Set<AnyCancellable>()
     
     private lazy var baseURL: URL = {
