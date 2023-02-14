@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-public protocol ErrorViewProtocol: View {
-    var message: String? { get }
-    var onHide: (() -> Void)? { get }
-}
-
 struct ErrorView: View, ErrorViewProtocol {
     @State internal var message: String?
     internal let onHide: (() -> Void)?
