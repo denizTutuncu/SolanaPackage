@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public protocol Displayable: View {
+public protocol DisplayableProtocol: View {
     associatedtype ViewModel
     var viewModel: ViewModel { get }
 }
