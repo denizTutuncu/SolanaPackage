@@ -358,6 +358,7 @@
 		2ED6161127E5AD4000920274 /* SolanaPackageTests */ = {
 			isa = PBXGroup;
 			children = (
+				2EF79042299DB887002658E4 /* Publisher API */,
 				2E2CC5AB296EBCE00063C23C /* Shared API Infra */,
 				2EE08998284769D5007AFC0F /* Balance API */,
 				2EE0897E28473B99007AFC0F /* Balance Presentation */,
@@ -411,7 +412,6 @@
 			children = (
 				2EE0897F28473BAF007AFC0F /* BalanceLocalizationTests.swift */,
 				2E2CC5C8296EC4D90063C23C /* BalancePresenterTests.swift */,
-				2EDA9D25298DBB4F004793D3 /* PublisherViewModelTests.swift */,
 			);
 			path = "Balance Presentation";
 			sourceTree = "<group>";
@@ -424,6 +424,14 @@
 				2EDA9D2129894012004793D3 /* BalanceViewModelMapperTests.swift */,
 			);
 			path = "Balance API";
+			sourceTree = "<group>";
+		};
+		2EF79042299DB887002658E4 /* Publisher API */ = {
+			isa = PBXGroup;
+			children = (
+				2EDA9D25298DBB4F004793D3 /* PublisherViewModelTests.swift */,
+			);
+			path = "Publisher API";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
