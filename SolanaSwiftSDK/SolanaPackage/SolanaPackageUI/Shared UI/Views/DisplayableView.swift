@@ -10,9 +10,9 @@ import SwiftUI
 public struct DisplayableView<ContentView: DisplayableProtocol>: View {
     public typealias ViewModel = ContentView.ViewModel
     
-    @State private var viewModel: ViewModel? = nil
+    @State private var viewModel: ViewModel?
     private let contentView: (ViewModel?) -> ContentView
-    
+  
     public init(content: @escaping (ViewModel?) -> ContentView, viewModel: ViewModel? = nil) {
         self.contentView = content
         self.viewModel = viewModel
