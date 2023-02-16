@@ -8,8 +8,8 @@
 import Foundation
 
 public class BalanceViewModel {
-    public var amount: String?
-    public init(amount: String? = nil) {
+    public var amount: String
+    public init(amount: String = "0") {
         self.amount = amount
     }
 }
