@@ -120,11 +120,11 @@
 		2E42948028483FDD00817480 /* MySolWallet */ = {
 			isa = PBXGroup;
 			children = (
+				2EF7903E299DB5B1002658E4 /* Helpers */,
 				2E42948128483FDD00817480 /* MySolWalletApp.swift */,
 				2EAEF0FE2985E6FB00091A49 /* MainView.swift */,
 				2E42948528483FDE00817480 /* Assets.xcassets */,
 				2E42948728483FDF00817480 /* Preview Content */,
-				2EAEF0EB297A5C1C00091A49 /* CombineHelpers.swift */,
 			);
 			path = MySolWallet;
 			sourceTree = "<group>";
@@ -161,6 +161,14 @@
 				2E4294AD2848406B00817480 /* SolanaPackageUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2EF7903E299DB5B1002658E4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2EAEF0EB297A5C1C00091A49 /* CombineHelpers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
