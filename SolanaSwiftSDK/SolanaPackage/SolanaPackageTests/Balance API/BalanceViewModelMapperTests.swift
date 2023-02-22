@@ -28,8 +28,7 @@ class BalanceViewModelMapperTests: XCTestCase {
     
     private func makeModelandViewModel(amount: Double) -> (model: Balance, viewModel: BalanceViewModel) {
         let model = Balance(amount: amount)
-        let viewModel = BalanceViewModel(amount: "\(model.amount)")
-      
+        let viewModel = BalanceViewModel(amount: amount)
         return (model, viewModel)
     }
 }

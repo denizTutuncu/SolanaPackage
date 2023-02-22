@@ -1,0 +1,8 @@
+/* 
+  CurrencyName.strings
+  SolanaPackage
+
+  Created by Deniz Tutuncu on 2/22/23.
+  
+*/
+"CURRENCY_NAME" = "lamports";
