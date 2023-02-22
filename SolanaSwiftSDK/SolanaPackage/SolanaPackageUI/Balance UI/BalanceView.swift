@@ -6,19 +6,20 @@
 //
 import SwiftUI
 
-struct BalanceView: View {
+public struct BalanceView: View {
     @State private var title: String
     @State private var amount: String
     @State private var currencyName: String
     
-    init(title: String, amount: String, currencyName: String) {
+    public init(title: String, amount: String, currencyName: String) {
         self.title = title
         self.amount = amount
         self.currencyName = currencyName
     }
     
-    var body: some View {
+    public var body: some View {
         HStack {
+            Text("Trkigwe87343hqhdfhuqw812332rb213gasdsa")
             Text(title)
                 .lineLimit(1)
                 .shadow(color: .primary, radius: 0.5)

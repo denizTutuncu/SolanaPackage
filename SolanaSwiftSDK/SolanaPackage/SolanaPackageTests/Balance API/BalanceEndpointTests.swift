@@ -10,21 +10,20 @@ import SolanaPackage
 
 class BalanceEndpointTests: XCTestCase {
 
-    func test_balance_endpointURLThrowsAfterGivenEmptyWalletAddress() {
+    func test_balance_endpointURLThrowsAfterGivenInvalidWalletAddress() {
         let baseURL = URL(string: "http://base-url.com")!
-        let walletAddress = ""
+        let invalidWallet = Wallet(id: UUID(), publicKey: "", balance: 1.0)
                 
         XCTAssertThrowsError(
-            try BalanceEndpoint.get(walletAddress: walletAddress).url(baseURL: baseURL)
+            try BalanceEndpoint.get(walletAddress: invalidWallet.publicKey).url(baseURL: baseURL)
         )
         
     }
     
     func test_balance_endpointURLAfterGivenWalletAddress() {
         let baseURL = URL(string: "https://base-url.com")!
-        let walletAddress = "AWalletAddressAsString"
-        
-        let received = try? BalanceEndpoint.get(walletAddress: walletAddress).url(baseURL: baseURL)
+        let wallet = uniqueWallet()
+        let received = try? BalanceEndpoint.get(walletAddress: wallet.publicKey).url(baseURL: baseURL)
         
         XCTAssertEqual(received?.url?.scheme, "https", "scheme")
         XCTAssertEqual(received?.url?.host, "base-url.com", "host")
