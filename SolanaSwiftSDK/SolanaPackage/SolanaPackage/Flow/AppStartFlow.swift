@@ -8,18 +8,14 @@
 import Foundation
 
 final class AppStartFlow<Delegate: WalletDelegate>{
+    typealias Wallet = Delegate.Wallet
+    
     private let delegate: Delegate
-    private let walletLoader: LocalWalletLoader
+    private var wallets: [Wallet]
     
-    private let wallets: [String]
-    private var publicKeys: [String] = []
-    private var seeds: [String] = []
-    
-    init(wallets: [String], walletLoader: LocalWalletLoader, seeds: [String], delegate: Delegate) {
-        self.wallets = wallets
-        self.walletLoader = walletLoader
-        self.seeds = seeds
+    init(delegate: Delegate, wallets: [Wallet]) {
         self.delegate = delegate
+        self.wallets = wallets
     }
     
     func start() {
@@ -28,35 +24,11 @@ final class AppStartFlow<Delegate: WalletDelegate>{
     
     private func delegateWalletHandling(at index: Int) {
         if wallets.count == 0 {
-            delegate.navigateToWalletCreation(from: seeds, completion: publicKey(at: index))
-            
+            delegate.navigateToWalletCreation()
         } else {
-            let wallets = try! walletLoader.load()
-//            delegate.loadWallet
-                
-        }
-    }
-    
-    private func publicKey(at index: Int) -> (String) -> Void {
-        return { [weak self] publicKey in
-            self?.publicKeys.replaceOrInsert(publicKey, at: index)
-            self?.delegateWalletHandling(after: index)
-        }
-    }
-    
-
-    private func delegateWalletHandling(after index: Int) {
-        delegateWalletHandling(at: wallets.index(after: index))
-    }
-}
-
-private extension Array {
-    mutating func replaceOrInsert(_ element: Element? = nil, at index: Index) {
-        if index < count {
-            remove(at: index)
-        }
-        if let element = element {
-            insert(element, at: index)
+            if let fWallet = wallets.first {
+                delegate.navigateToWallet(from: [fWallet])
+            }
         }
     }
 }
