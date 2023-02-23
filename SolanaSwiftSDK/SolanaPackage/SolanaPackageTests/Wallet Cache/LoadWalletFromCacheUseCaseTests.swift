@@ -138,7 +138,7 @@ class LoadWalletFromCacheUseCaseTests: XCTestCase {
         return (sut, store)
     }
     
-    private func expect(_ sut: LocalWalletLoader, toCompleteWith expectedResult: Result<[Wallet], Error>, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
+    private func expect(_ sut: LocalWalletLoader, toCompleteWith expectedResult: Result<[DomainWallet], Error>, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
         action()
 
         let receivedResult = Result { try sut.load() }

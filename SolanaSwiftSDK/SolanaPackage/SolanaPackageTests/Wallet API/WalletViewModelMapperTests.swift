@@ -28,10 +28,10 @@ class WalletViewModelMapperTests: XCTestCase {
     
     //MARK: - Helpers
     
-    private func makeModelandViewModel(balance: Double) -> (model: Wallet, viewModel: WalletViewModel) {
+    private func makeModelandViewModel(balance: Double) -> (model: DomainWallet, viewModel: WalletViewModel) {
         let id = UUID()
         let publicKey = "Unique Public Key"
-        let model = Wallet(id: id, publicKey: publicKey, balance: balance)
+        let model = DomainWallet(id: id, publicKey: publicKey, balance: balance)
         let viewModel = WalletViewModel(publicKey: publicKey, balance: balance)
       
         return (model, viewModel)
