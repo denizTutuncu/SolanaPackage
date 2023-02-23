@@ -14,8 +14,8 @@ public final class Bank {
         self.flow = flow
     }
     
-    public static func start<Delegate: WalletDelegate>(wallets: [String], walletLoader: LocalWalletLoader, delegate: Delegate, seeds: [String]) -> Bank {
-        let flow = AppStartFlow(wallets: wallets, walletLoader: walletLoader, seeds: seeds, delegate: delegate)
+    public static func start<Delegate: WalletDelegate>(delegate: Delegate, wallets: [String]) -> Bank {
+        let flow = AppStartFlow(delegate: delegate, wallets: wallets)
         flow.start()
         return Bank(flow: flow)
     }
