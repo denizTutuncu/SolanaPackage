@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Wallet: Hashable {
+public struct DomainWallet: Hashable {
     public let id: UUID
     public let publicKey: String
     public let balance: Double
