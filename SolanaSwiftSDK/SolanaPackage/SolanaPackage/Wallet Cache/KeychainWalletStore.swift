@@ -96,6 +96,8 @@ extension KeychainWalletStore: WalletStore {
             throw Error.invalidData
         }
         
+        guard !data.isEmpty else { return nil }
+        
         do {
             let wallet = try JSONDecoder().decode(CodableWallet.self, from: data)
             let localWallet = try KeychainWalletStore.map(wallet)
