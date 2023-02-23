@@ -14,7 +14,6 @@ import Combine
 class BankAppStore {
     var bank: Bank?
     
-    
     private lazy var baseURL: URL = {
         URL(string: "https://api.devnet.solana.com")!
     }()
@@ -44,8 +43,6 @@ class BankAppStore {
             .tryMap(BalanceItemMapper.map)
             .eraseToAnyPublisher()
     }
-    
-    
     
 }
 
