@@ -48,7 +48,7 @@ struct WalletListView_Previews: PreviewProvider {
                     selection: { selection = $0 }
                 )
                 
-                Text("Last selection: " + selection)
+                Text("Last selection: " + selection).padding()
             }
         }
     }
