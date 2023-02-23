@@ -19,7 +19,7 @@ struct SingleWalletSelectionCell: View {
                     .frame(width: 29.0, height: 29.0)
                 
                 Text(publicKey)
-                    .font(.system(size: 16, weight: .bold))
+                    .font(.system(size: 21, weight: .bold))
                     .minimumScaleFactor(0.5)
                     .lineLimit(1)
                     .foregroundColor(Color.primary)
