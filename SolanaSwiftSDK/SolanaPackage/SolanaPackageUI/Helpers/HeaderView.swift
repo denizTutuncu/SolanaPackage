@@ -16,7 +16,7 @@ struct HeaderView: View {
             VStack(alignment: .leading, spacing: 16.0) {
                 Text(title)
                     .font(.headline)
-                    .fontWeight(.medium)
+                    .fontWeight(.bold)
                     .foregroundColor(Color.blue)
                     .padding(.top)
                 
