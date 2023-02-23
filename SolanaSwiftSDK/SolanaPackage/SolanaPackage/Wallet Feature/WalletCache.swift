@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol WalletCache {
-    func save(_ wallet: [Wallet], privateKey: String) throws
+    func save(_ wallet: [DomainWallet], privateKey: String) throws
 }
