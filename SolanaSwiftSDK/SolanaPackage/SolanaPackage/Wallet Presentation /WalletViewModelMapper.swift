@@ -13,7 +13,7 @@ public class WalletViewModelMapper {
         case invalidBalance
     }
     
-    public static func map(_ wallet: Wallet) throws -> WalletViewModel {
+    public static func map(_ wallet: DomainWallet) throws -> WalletViewModel {
         guard wallet.balance >= 0.0 else { throw Error.invalidBalance }
         return  WalletViewModel(publicKey: wallet.publicKey, balance: wallet.balance)
     }

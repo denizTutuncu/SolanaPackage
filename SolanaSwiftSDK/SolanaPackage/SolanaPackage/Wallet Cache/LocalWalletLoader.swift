@@ -18,14 +18,14 @@ public final class LocalWalletLoader {
 }
 
 extension LocalWalletLoader: WalletCache {
-    public func save(_ wallet: [Wallet], privateKey: String) throws {
+    public func save(_ wallet: [DomainWallet], privateKey: String) throws {
         try store.deleteCachedWallet()
         try store.insert(wallet.toLocal(privateKey: privateKey), timestamp: currentDate())
     }
 }
 
 extension LocalWalletLoader {
-    public func load() throws -> [Wallet] {
+    public func load() throws -> [DomainWallet] {
         if let cache = try store.retrieve(), WalletCachePolicy.validate(cache.timestamp, against: currentDate()) {
             return cache.wallet.toModels()
         }
@@ -47,14 +47,14 @@ extension LocalWalletLoader {
     }
 }
 
-private extension Array where Element == Wallet {
+private extension Array where Element == DomainWallet {
     func toLocal(privateKey: String) -> [LocalWallet] {
         return map { LocalWallet(id: $0.id, publicKey: $0.publicKey, privateKey: privateKey, balance: $0.balance) }
     }
 }
 
 private extension Array where Element == LocalWallet {
-    func toModels() -> [Wallet] {
-        return map { Wallet(id: $0.id, publicKey: $0.publicKey, balance: $0.balance) }
+    func toModels() -> [DomainWallet] {
+        return map { DomainWallet(id: $0.id, publicKey: $0.publicKey, balance: $0.balance) }
     }
 }
