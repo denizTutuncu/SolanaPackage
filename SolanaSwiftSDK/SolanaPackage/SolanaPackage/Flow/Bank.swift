@@ -14,7 +14,7 @@ public final class Bank {
         self.flow = flow
     }
     
-    public static func start<Delegate: WalletDelegate>(delegate: Delegate, wallets: [Delegate.Wallet]) -> Bank {
+    public static func start<Delegate: WalletDelegate>(delegate: Delegate, wallets: [Delegate.Wallet]) -> Bank where Delegate.Wallet: Equatable{
         let flow = AppStartFlow(delegate: delegate, wallets: wallets)
         flow.start()
         return Bank(flow: flow)

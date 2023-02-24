@@ -8,6 +8,6 @@
 import Foundation
 
 public protocol SeedLoaderProtocol {
-    associatedtype Wallet: WalletProtocol
+    associatedtype Wallet
     func load(completion: @escaping (Wallet) -> Void)
 }

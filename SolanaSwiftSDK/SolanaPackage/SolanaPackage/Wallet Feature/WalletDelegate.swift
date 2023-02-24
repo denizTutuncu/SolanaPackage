@@ -8,7 +8,6 @@
 import Foundation
 
 public protocol WalletDelegate {
-    associatedtype Wallet: WalletProtocol
-    func navigateToWalletCreation()
-    func navigateToWallet(from wallets: [Wallet])
+    associatedtype Wallet
+    func navigate(from: Wallet, completion: @escaping (Wallet) -> Void)
 }

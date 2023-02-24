@@ -16,11 +16,11 @@ struct SingleWalletSelectionCell: View {
             HStack {
                 Circle()
                     .stroke(Color.secondary, lineWidth: 2.5)
-                    .frame(width: 29.0, height: 29.0)
+                    .frame(width: 21.0, height: 21.0)
                 
                 Text(publicKey)
-                    .font(.system(size: 21, weight: .bold))
-                    .minimumScaleFactor(0.5)
+                    .font(.system(size: 19, weight: .black, design: .monospaced))
+                    .minimumScaleFactor(0.4)
                     .lineLimit(1)
                     .foregroundColor(Color.primary)
                 
