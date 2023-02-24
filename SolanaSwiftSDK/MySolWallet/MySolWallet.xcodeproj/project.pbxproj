@@ -17,8 +17,10 @@
 		2E4294AF2848406B00817480 /* SolanaPackage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4294AC2848406B00817480 /* SolanaPackage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2E4294B02848406B00817480 /* SolanaPackageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4294AD2848406B00817480 /* SolanaPackageUI.framework */; };
 		2E4294B12848406B00817480 /* SolanaPackageUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4294AD2848406B00817480 /* SolanaPackageUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2E80F38B29A200DC00A4053C /* BankNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F38A29A200DC00A4053C /* BankNavigationView.swift */; };
+		2E80F3DF29A6400300A4053C /* NullStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3DE29A6400300A4053C /* NullStore.swift */; };
 		2EAEF0EC297A5C1C00091A49 /* CombineHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAEF0EB297A5C1C00091A49 /* CombineHelpers.swift */; };
-		2EAEF0FF2985E6FB00091A49 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAEF0FE2985E6FB00091A49 /* MainView.swift */; };
+		2EF68C8D299F5CB100969DE5 /* iOSSwiftUINavigationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF68C8C299F5CB100969DE5 /* iOSSwiftUINavigationAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +67,10 @@
 		2E42949E28483FDF00817480 /* MySolWalletUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySolWalletUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2E4294AC2848406B00817480 /* SolanaPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SolanaPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E4294AD2848406B00817480 /* SolanaPackageUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SolanaPackageUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E80F38A29A200DC00A4053C /* BankNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankNavigationView.swift; sourceTree = "<group>"; };
+		2E80F3DE29A6400300A4053C /* NullStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullStore.swift; sourceTree = "<group>"; };
 		2EAEF0EB297A5C1C00091A49 /* CombineHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineHelpers.swift; sourceTree = "<group>"; };
-		2EAEF0FE2985E6FB00091A49 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		2EF68C8C299F5CB100969DE5 /* iOSSwiftUINavigationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSwiftUINavigationAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,11 +124,11 @@
 		2E42948028483FDD00817480 /* MySolWallet */ = {
 			isa = PBXGroup;
 			children = (
-				2E42948128483FDD00817480 /* MySolWalletApp.swift */,
-				2EAEF0FE2985E6FB00091A49 /* MainView.swift */,
+				2EF68C89299F5A6200969DE5 /* Main */,
+				2EF68C84299F595E00969DE5 /* UI */,
+				2EF7903E299DB5B1002658E4 /* Helpers */,
 				2E42948528483FDE00817480 /* Assets.xcassets */,
 				2E42948728483FDF00817480 /* Preview Content */,
-				2EAEF0EB297A5C1C00091A49 /* CombineHelpers.swift */,
 			);
 			path = MySolWallet;
 			sourceTree = "<group>";
@@ -161,6 +165,40 @@
 				2E4294AD2848406B00817480 /* SolanaPackageUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2EF68C84299F595E00969DE5 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2EF68C85299F597200969DE5 /* Helpers */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		2EF68C85299F597200969DE5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2E80F38A29A200DC00A4053C /* BankNavigationView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		2EF68C89299F5A6200969DE5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				2E42948128483FDD00817480 /* MySolWalletApp.swift */,
+				2EF68C8C299F5CB100969DE5 /* iOSSwiftUINavigationAdapter.swift */,
+				2E80F3DE29A6400300A4053C /* NullStore.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		2EF7903E299DB5B1002658E4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2EAEF0EB297A5C1C00091A49 /* CombineHelpers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,7 +333,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E42948228483FDD00817480 /* MySolWalletApp.swift in Sources */,
-				2EAEF0FF2985E6FB00091A49 /* MainView.swift in Sources */,
+				2EF68C8D299F5CB100969DE5 /* iOSSwiftUINavigationAdapter.swift in Sources */,
+				2E80F3DF29A6400300A4053C /* NullStore.swift in Sources */,
+				2E80F38B29A200DC00A4053C /* BankNavigationView.swift in Sources */,
 				2EAEF0EC297A5C1C00091A49 /* CombineHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

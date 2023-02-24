@@ -6,42 +6,46 @@
 //
 import SwiftUI
 
-struct BalanceView: View {
-    @State private var title: String
-    @State private var amount: String
-    @State private var currencyName: String
+public struct BalanceView: View {
+    private let title: String
+    private let amount: String
+    private let currencyName: String
     
-    init(title: String, amount: String, currencyName: String) {
+    public init(title: String, amount: String, currencyName: String) {
         self.title = title
         self.amount = amount
         self.currencyName = currencyName
     }
     
-    var body: some View {
-        HStack {
-            Text(title)
-                .lineLimit(1)
-                .shadow(color: .primary, radius: 0.5)
-                .padding()
-                .foregroundColor(Color.primary)
-            
-            Text("\(amount) \(currencyName)")
-                .lineLimit(1)
-                .shadow(color: .primary, radius: 0.5)
-                .padding()
-                .foregroundColor(Color.primary)
-            
-            Spacer()
-        }
+    public var body: some View {
+            HStack(alignment: .bottom, spacing: 8.0) {
+                Text(title)
+                    .font(.headline)
+                    .minimumScaleFactor(0.5)
+                    .lineLimit(1)
+                    .foregroundColor(Color.primary)
+                    .shadow(color: .primary, radius: 0.5)
+                   
+                
+                Text("\(amount) \(currencyName)")
+                    .font(.largeTitle)
+                    .minimumScaleFactor(0.5)
+                    .lineLimit(1)
+                    .foregroundColor(Color.primary)
+                    .shadow(color: .primary, radius: 0.5)
+                   
+                Spacer()
+            }.padding()
     }
 }
 
-struct BalanceView_Previews: PreviewProvider {
+
+struct BalanceTestView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            BalanceView(title: "Balance", amount: "10000000000", currencyName: "lamports")
+            BalanceView(title: "Balance", amount: "\(10000000000.0)", currencyName: "lamports")
                 .previewLayout(.sizeThatFits)
-                .previewDisplayName("Balance View")
+                .previewDisplayName("Balance Test View")
         }
     }
 }
