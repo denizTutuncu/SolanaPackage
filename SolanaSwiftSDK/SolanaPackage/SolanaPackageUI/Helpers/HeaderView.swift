@@ -14,15 +14,18 @@ struct HeaderView: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 16.0) {
-                Text(title)
+                Text(subtitle)
                     .font(.headline)
                     .fontWeight(.bold)
                     .foregroundColor(Color.blue)
                     .padding(.top)
+                    .minimumScaleFactor(0.5)
                 
-                Text(subtitle)
+                Text(title)
                     .font(.largeTitle)
                     .fontWeight(.medium)
+                    .minimumScaleFactor(0.5)
+                    .foregroundColor(.primary)
             }
             
             Spacer()

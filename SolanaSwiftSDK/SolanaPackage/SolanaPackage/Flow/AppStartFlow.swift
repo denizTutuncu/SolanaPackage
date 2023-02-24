@@ -23,12 +23,29 @@ final class AppStartFlow<Delegate: WalletDelegate>{
     }
     
     private func delegateWalletHandling(at index: Int) {
-        if wallets.count == 0 {
-            delegate.navigateToWalletCreation()
-        } else {
-            if let fWallet = wallets.first {
-                delegate.navigateToWallet(from: [fWallet])
-            }
+        if index < wallets.endIndex {
+            let wallet = wallets[index]
+            delegate.navigate(from: wallet, completion: perform(wallet, at: index))
         }
+    }
+    
+    private func perform( _ from: Wallet, at index: Int) -> (Wallet) -> Void {
+        return { [weak self] wallet in
+            self?.wallets.replaceOrInsert(wallet, at: index)
+            self?.delegateWalletHandling(after: index)
+        }
+    }
+    
+    private func delegateWalletHandling(after index: Int) {
+        delegateWalletHandling(at: wallets.index(after: index))
+    }
+}
+
+private extension Array {
+    mutating func replaceOrInsert(_ element: Element, at index: Index) {
+        if index < count {
+            remove(at: index)
+        }
+        insert(element, at: index)
     }
 }

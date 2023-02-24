@@ -18,10 +18,9 @@ public struct BalanceView: View {
     }
     
     public var body: some View {
-        VStack {
-            HStack {
+            HStack(alignment: .bottom, spacing: 8.0) {
                 Text(title)
-                    .font(.system(size: 28, weight: .thin))
+                    .font(.headline)
                     .minimumScaleFactor(0.5)
                     .lineLimit(1)
                     .foregroundColor(Color.primary)
@@ -29,15 +28,14 @@ public struct BalanceView: View {
                    
                 
                 Text("\(amount) \(currencyName)")
-                    .font(.system(size: 24, weight: .light))
+                    .font(.largeTitle)
                     .minimumScaleFactor(0.5)
                     .lineLimit(1)
                     .foregroundColor(Color.primary)
                     .shadow(color: .primary, radius: 0.5)
                    
                 Spacer()
-            } .padding()
-        }
+            }.padding()
     }
 }
 
