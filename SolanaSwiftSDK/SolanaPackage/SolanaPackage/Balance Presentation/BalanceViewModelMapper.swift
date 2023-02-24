@@ -15,7 +15,6 @@ public class BalanceViewModelMapper {
     
     public static func map(_ balance: Balance) throws -> BalanceViewModel {
         guard balance.amount >= 0 else { throw Error.amount }
-        let amountAsString: String = "\(balance.amount)"
-        return BalanceViewModel(amount: amountAsString)
+        return BalanceViewModel(amount: balance.amount)
     }
 }

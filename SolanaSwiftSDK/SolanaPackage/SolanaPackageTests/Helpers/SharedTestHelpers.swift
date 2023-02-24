@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SolanaPackage
 
 func anyNSError() -> NSError {
     return NSError(domain: "any error", code: 0)
@@ -36,4 +37,32 @@ extension HTTPURLResponse {
     convenience init(statusCode: Int) {
         self.init(url: anyURL(), statusCode: statusCode, httpVersion: nil, headerFields: nil)!
     }
+}
+
+extension Date {
+    func adding(seconds: TimeInterval) -> Date {
+        return self + seconds
+    }
+    
+    func adding(minutes: Int, calendar: Calendar = Calendar(identifier: .gregorian)) -> Date {
+        return calendar.date(byAdding: .minute, value: minutes, to: self)!
+    }
+    
+    func adding(days: Int, calendar: Calendar = Calendar(identifier: .gregorian)) -> Date {
+        return calendar.date(byAdding: .day, value: days, to: self)!
+    }
+}
+
+func uniqueWallet() -> DomainWallet {
+    return DomainWallet(id: UUID(), publicKey: "Unique Public Key", balance: 1.0)
+}
+
+func uniquePrivateKey() -> String {
+    return "Unique Private Key"
+}
+
+func uniqueWalletFeed() -> (models: [DomainWallet], local: [LocalWallet]) {
+    let models = [uniqueWallet(), uniqueWallet()]
+    let local = models.map { LocalWallet(id:$0.id, publicKey: $0.publicKey, privateKey: uniquePrivateKey(), balance: $0.balance) }
+    return (models, local)
 }
