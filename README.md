@@ -1,4 +1,7 @@
 # Solana Swift SDK 
+
+[![CI](https://github.com/denizTutuncu/SolanaPackage/actions/workflows/CI.yml/badge.svg)](https://github.com/denizTutuncu/SolanaPackage/actions/workflows/CI.yml)
+
 ## Solana Package Framework & Solana Package UI Framework & MySolWallet iOS App
 #### The Solana Swift SDK is a collection of Swift modules that enables developers to interact with the Solana Blockchain in their iOS, macOS, tvOS, and watchOS apps. The SDK contains two main modules:
 
@@ -45,7 +48,7 @@ The SDK is open-source and hosted on Github, developers can use the SDK to build
 
 ----------------
 
-## Create Wallet BDD Specs (in the future)
+## Create Wallet BDD Specs (in progress)
 
 ![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/SeedListScreen.jpg?raw=true)
 
@@ -267,3 +270,11 @@ Given the customer has connectivity
 | `isLoading`   | `Bool`                |
 
 -----------------
+
+## Contribution
+
+GitHub Actions script is set up to automate the build and testing process of a project when changes are made to specific branches. The script specifies that the build-and-test job should run when a push event occurs on the "development" branch, or when a pull request is made on the "main" branch.
+
+Developers should first clone the project and then create a new development branch to make changes. Pushing changes to the development branch will trigger the GitHub Action defined in this script.
+
+The script runs two separate Xcode commands to build and test the project on macOS and iOS. The steps include checking out the code, selecting the appropriate version of Xcode, and specifying the build and test settings for each platform. The code is built using the "CI_macOS" and "CI_iOS" schemes, and tests are run with specific destination settings.
