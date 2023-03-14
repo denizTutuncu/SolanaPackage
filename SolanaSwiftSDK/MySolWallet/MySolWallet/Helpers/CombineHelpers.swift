@@ -25,3 +25,15 @@ public extension HTTPClient {
     }
 }
 
+public extension LocalCredentialsLoader {
+    typealias Publisher = AnyPublisher<String, Error>
+    
+    func loadPrivateKeyPublisher(_ publicKey: PublicKey) -> Publisher {
+        Deferred {
+            Future { completion in
+                completion(Result{ try self.privateKey(for: publicKey) })
+            }
+        }
+        .eraseToAnyPublisher()
+    }
+}

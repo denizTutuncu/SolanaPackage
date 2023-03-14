@@ -1,0 +1,9 @@
+/* 
+  Transaction.strings
+  SolanaPackage
+
+  Created by Deniz Tutuncu on 2/27/23.
+  
+*/
+"LIST_TITLE" = "Λίστα συναλλαγών";
+"LIST_SUBTITLE" = "Οι προηγούμενες συναλλαγές αποθηκεύονται εδώ.";

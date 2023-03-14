@@ -1,14 +1,19 @@
 # Solana Swift SDK 
+
+[![CI](https://github.com/denizTutuncu/SolanaPackage/actions/workflows/CI.yml/badge.svg?branch=development)](https://github.com/denizTutuncu/SolanaPackage/actions/workflows/CI.yml)
+
 ## Solana Package Framework & Solana Package UI Framework & MySolWallet iOS App
 #### The Solana Swift SDK is a collection of Swift modules that enables developers to interact with the Solana Blockchain in their iOS, macOS, tvOS, and watchOS apps. The SDK contains two main modules:
 
 #### Core Module:
-This module contains the core models required to interact with the Solana Blockchain. These models include Balance, Wallet, and Transaction models. The Core module provides functionalities like creating a wallet, querying balance, and sending/receiving SOL.
+This module contains the core models required to interact with the Solana Blockchain, with a networking layer that communicates with the blockchain and a data persistent layer that uses Core Data for domain models and Keychain for critical information such as private key and wallet details. These models include Wallet, Balance and Transaction models. The Core module provides functionalities like creating a wallet, querying balance, and sending/receiving SOL via the networking layer, while utilizing Core Data to persist domain models and Keychain to securely store critical information.
+
+Additionally, Presentation modules support localization for four different languages: English, Portuguese, Greek, and Turkish. However, these modules are designed to be easily extensible, allowing new languages to be added with ease. This enables a wider range of users to interact with the Solana Blockchain using this module in their preferred language.
 
 #### UI Module: 
 This module is an iOS SwiftUI module that provides a set of components to build user interfaces for interacting with the Solana Blockchain. These components include views for displaying wallet details such as balance and transaction history, forms for sending and receiving SOL, and more. The UI module is designed to be easily integrated into existing iOS apps. Furthermore, this module can also be moved into a macOS framework, which can be easily integrated into existing iOS, macOS, tvOS, and watchOS apps.
 
-----------------
+#### App:
 
 The SDK also includes an iOS app called MySolWallet that demonstrates how to use the Core and UI modules to interact with the Solana Blockchain. The app showcases the functionalities of creating a wallet, sending/receiving SOL, viewing transaction history, and more.
 
@@ -19,6 +24,7 @@ The SDK is open-source and hosted on Github, developers can use the SDK to build
 ----------------
  
 ## iOS App Flow
+
 ![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Diagrams/iOSAppFlow.jpg?raw=true)
 
 ```
@@ -30,24 +36,25 @@ The SDK is open-source and hosted on Github, developers can use the SDK to build
 
 ----------------
 
-### Core Modules
-![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Diagrams/SolanaSwiftSDK.jpg?raw=true)
-
-----------------
-
 ### Prototype
+
 ![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/PROTOTYPEIOS_AdobeCreativeCloudExpress.gif)
 
 ----------------
 
+### Architecture
+
+![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Diagrams/architecture.drawio.png?raw=true)
+
+----------------
+
 ### My Sol Wallet iOS App Design
+
 ![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Diagrams/iOSSDKDesign.jpg?raw=true)
 
 ----------------
 
-## Create Wallet BDD Specs (in the future)
-
-![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/SeedListScreen.jpg?raw=true)
+## Create Wallet BDD Specs (in progress)
 
 ### Create Wallet / Receive Sol
 ### Story: Customer requests to create a solana wallet
@@ -107,13 +114,29 @@ Then the app should create a valid Solana account
 | `error`       | `Error`               |
 | `isLoading`   | `Bool`                |
 
+![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/SeedListGIF_AdobeExpress.gif)
+
+![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/SeedListScreen.jpg?raw=true)
+
+----------------
+
+![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/WalletViewGIF_AdobeExpress.gif)
+
+![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/WalletScreen.jpg?raw=true)
+
+----------------
+
+![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/WalletListGIF_AdobeExpress.gif)
+
 ![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/WalletListScreen.jpg?raw=true)
 
 ----------------
 
 ## Get Balance BDD Specs (Under Maintenance)
 
-![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/WalletScreen.jpg?raw=true)
+![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/WalletBalanceView.jpg?raw=true)
+
+![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/BalanceView.jpg?raw=true)
 
 To show a valid public Solana address balance, first you need to create a `RemoteBalanceLoader` with a network setting, chosen valid public address and a client. Then pass it to create `BalanceComposerView`. That's it!
 
@@ -124,8 +147,6 @@ let remoteBalanceLoader = RemoteBalanceLoader(url: URL(string: SolanaClusterRPCE
                                                   client: URLSessionHTTPClient(session: URLSession(configuration: .ephemeral)))
 BalanceComposerView(viewModel:  BalanceViewModel(remoteBalanceLoader: remoteBalanceLoader))
 ```
-
-![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/BalanceAPI.jpg?raw=true)
 
 ### Get Balance
 ### Story: Customer requests to see their balance
@@ -218,6 +239,8 @@ Given the customer doesn't a valid public Solana address
 
 ## Display Past Transactions BDD Specs (in progress)
 
+![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/TransactionListGIF_AdobeExpress.gif)
+
 ![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/TXAPI.jpg?raw=true)
 
 ![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/TXsScreen.jpg?raw=true)
@@ -267,3 +290,13 @@ Given the customer has connectivity
 | `isLoading`   | `Bool`                |
 
 -----------------
+
+## Contribution
+
+Contributions are always welcome.
+
+GitHub Actions script is set up to automate the build and testing process of the project when changes are made to specific branches. The script specifies that the build-and-test job should run when a push event occurs on the "development" branch, or when a pull request is made on the "main" branch.
+
+Developers should first clone the project and then create a new development branch, called `development`, to make changes. Pushing changes to the development branch will trigger GitHub Actions.
+
+The script runs two separate Xcode commands to build and test the project on macOS and iOS. The steps include checking out the code, selecting the appropriate version of Xcode, and specifying the build and test settings for each platform. The code is built using the "CI_macOS" and "CI_iOS" schemes, and tests are run with specific destination settings.
