@@ -24,8 +24,9 @@ public final class WalletUIComposer {
         network: String,
         selection: @escaping (String) -> Void = { _ in }
     ) -> WalletView {
-        let walletPublisher = WalletStorePublisher(mapper: WalletStoreMapper.map)
-        let transactionPublisher = TransactionStorePublisher(mapper: TransactionStoreMapper.map)
+        let walletPublisher = WalletStorePublisher(resource: <#[DomainWallet]?#>, mapper: WalletStoreMapper.map)
+        let transactionPublisher = TransactionStorePublisher(resource: <#[DomainTransaction]?#>, mapper: TransactionStoreMapper.map)
+        
         let walletView = makeWalletView(balanceTitle: balanceTitle,
                                         currencyName: currencyName,
                                         transactionListTitle: transactionListTitle,
