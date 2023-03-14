@@ -10,16 +10,26 @@ import SolanaPackage
 
 class WalletDelegateSpy: WalletDelegate {
     typealias Wallet = String
-    
+    typealias Seed = [String]
+
     var passedWallets: [Wallet] = []
-    var walletCompletions: [(Wallet) -> Void] = []
+    var walletCompletions: [([Wallet]) -> Void] = []
     var completedWallets: [[(Wallet, Wallet)]] = []
-    
-    func navigateToWalletCreation() {}
-    
-    func navigate(from: Wallet, completion: @escaping (Wallet) -> Void) {
-        passedWallets.append(from)
-        walletCompletions.append(completion)
-        completedWallets.append([(from, from)])
+    var seed: Seed = []
+        
+    func didComplete(with: [Wallet]) {
+        for w in with {
+            passedWallets.append(w)
+            completedWallets.append([(w, w)])
+        }
     }
+    
+    func didComplete(with: Seed, completion: @escaping ([Wallet]) -> Void) {
+        for inComingSeed in with {
+            seed.append(inComingSeed)
+        }
+        walletCompletions.append(completion)
+      
+    }
+    
 }

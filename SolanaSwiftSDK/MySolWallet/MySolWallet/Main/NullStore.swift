@@ -10,11 +10,9 @@ import SolanaPackage
 
 class NullStore {}
 
-extension NullStore: WalletStore {    
-    func deleteCachedWallet() throws {}
-    
-    func insert(_ feed: [LocalWallet], timestamp: Date) throws {}
-    
-    func retrieve() throws -> CachedWallet? { .none }
+extension NullStore: CredentialsStore {
+    func insert(publicKey: PublicKey, privateKey: PrivateKey) throws {}
+    func privateKey(for publicKey: PublicKey) throws -> PrivateKey {""}
+    func deletePrivateKey(for publicKey: PublicKey) throws {}
 }
 

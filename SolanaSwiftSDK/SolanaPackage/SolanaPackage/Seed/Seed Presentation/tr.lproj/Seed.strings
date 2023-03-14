@@ -1,0 +1,9 @@
+/* 
+  Seed.strings
+  SolanaPackage
+
+  Created by Deniz Tutuncu on 2/27/23.
+  
+*/
+"SEED_LIST_TITLE" = "Tohum Cümlesi";
+"SEED_LIST_SUBTITLE" = "Tohum cümlesi asla cihazda saklanmaz. Onu sadece bir kez göreceksin ve sadece bu an için. Oluşturulan cüzdana başka bir cihazdan erişebilmek için bu tohum cümlesini güvende tutmalısınız.";

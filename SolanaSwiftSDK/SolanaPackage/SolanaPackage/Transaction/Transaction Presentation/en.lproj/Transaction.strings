@@ -1,0 +1,9 @@
+/* 
+  Transaction.strings
+  SolanaPackage
+
+  Created by Deniz Tutuncu on 2/27/23.
+  
+*/
+"LIST_TITLE" = "Transaction List";
+"LIST_SUBTITLE" = "Past transactions are stored here.";

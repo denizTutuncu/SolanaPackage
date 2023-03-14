@@ -1,0 +1,8 @@
+/* 
+  NetworkName.strings
+  SolanaPackage
+
+  Created by Deniz Tutuncu on 3/7/23.
+  
+*/
+"NETWORK_NAME" = "Solana";

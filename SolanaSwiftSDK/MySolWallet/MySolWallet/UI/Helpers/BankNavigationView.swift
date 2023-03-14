@@ -10,16 +10,16 @@ import SolanaPackageUI
 
 class BankNavigationStore: ObservableObject {
     enum CurrentView {
-        case balance(BalanceView)
-        case createWallet(CreateWalletButton)
+        case wallet(WalletView)
+        case seed(SeedListView)
     }
     
     @Published var currentView: CurrentView?
     
     var view: AnyView {
         switch currentView {
-        case let .balance(view): return AnyView(view)
-        case let .createWallet(view): return AnyView(view)
+        case let .wallet(view): return AnyView(view)
+        case let .seed(view): return AnyView(view)
         case .none: return AnyView(EmptyView())
         }
     }
