@@ -6,26 +6,29 @@
 //
 
 import Foundation
-struct TransactionStore {
-    var txs: [Transaction]
-    
-    private let handler: ([String]) -> Void
-    
-    init(txs: [Transaction], handler: @escaping ([String]) -> Void) {
-        self.txs = txs.map { Transaction(date: $0.date, from: $0.from, to: $0.to, amount: $0.amount, currencyName: $0.currencyName, transactionSignature: $0.transactionSignature) }
-        self.handler = handler
-    }
-    
-    func submit() {
-        handler(txs.map{$0.transactionSignature})
+
+public struct TransactionStore {
+    public var transactions: [TransactionUI]
+        
+    public init(transactions: [TransactionUI]?) {
+        self.transactions = transactions ?? []
     }
 }
 
-struct Transaction {
-    let date: String
-    let from: String
-    let to: String
-    let amount: String
-    let currencyName: String
-    let transactionSignature: String
+public struct TransactionUI {
+    public let date: String
+    public let from: String
+    public let to: String
+    public let amount: String
+    public let currencyName: String
+    public let transactionSignature: String
+    
+    public init(date: String, from: String, to: String, amount: String, currencyName: String, transactionSignature: String) {
+        self.date = date
+        self.from = from
+        self.to = to
+        self.amount = amount
+        self.currencyName = currencyName
+        self.transactionSignature = transactionSignature
+    }
 }

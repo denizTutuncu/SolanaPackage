@@ -7,38 +7,46 @@
 
 import Foundation
 
-final class AppStartFlow<Delegate: WalletDelegate>{
-    typealias Wallet = Delegate.Wallet
+public final class AppStartFlow<Delegate: WalletDelegate>{
+    public typealias Wallet = Delegate.Wallet
+    public typealias Seed = Delegate.Seed
     
-    private let delegate: Delegate
     private var wallets: [Wallet]
-    
-    init(delegate: Delegate, wallets: [Wallet]) {
-        self.delegate = delegate
+    private let seed: Seed
+    private let delegate: Delegate
+  
+    public init(wallets: [Wallet], seeds: Seed, delegate: Delegate) {
         self.wallets = wallets
+        self.seed = seeds
+        self.delegate = delegate
     }
     
-    func start() {
-        delegateWalletHandling(at: wallets.startIndex)
+    public func start() {
+        delegateHandlingWallets(at: wallets.startIndex)
     }
     
-    private func delegateWalletHandling(at index: Int) {
+    private func delegateHandlingWallets(at index: Int) {
         if index < wallets.endIndex {
-            let wallet = wallets[index]
-            delegate.navigate(from: wallet, completion: perform(wallet, at: index))
+            delegate.didComplete(with: wallets)
+        } else {
+            delegate.didComplete(with: seed, completion: wallets(at: index))
         }
     }
     
-    private func perform( _ from: Wallet, at index: Int) -> (Wallet) -> Void {
-        return { [weak self] wallet in
-            self?.wallets.replaceOrInsert(wallet, at: index)
-            self?.delegateWalletHandling(after: index)
-        }
+    
+    private func delegateExistingWalletHandling(after index: Int) {
+        delegateHandlingWallets(at: wallets.index(after: index))
     }
     
-    private func delegateWalletHandling(after index: Int) {
-        delegateWalletHandling(at: wallets.index(after: index))
+    private func wallets(at index: Int) -> ([Wallet]) -> Void {
+        return { [weak self] wallets in
+            for (index,wallet) in wallets.enumerated() {
+                self?.wallets.replaceOrInsert(wallet, at: index)
+            }
+            self?.delegateExistingWalletHandling(after: index)
+        }
     }
+ 
 }
 
 private extension Array {

@@ -26,16 +26,16 @@ class PublisherViewModelTests: XCTestCase {
     func test_SUTLoadingFalseWhenSUTReturns() {
         let sut = sut()
         
-        sut.loadResource()
+        sut.load()
         XCTAssertFalse(sut.onLoadingState)
         XCTAssertEqual(sut.onResourceLoad, 13)
     }
     
-    private func sut() -> PublisherViewModel<String, Int> {
+    private func sut() -> ViewModelPublisher<String, Int> {
         let resource = "Test Resource"
         let mapper: (String) throws -> Int = { string in
             return string.count
         }
-        return PublisherViewModel(resource: resource, mapper: mapper)
+        return ViewModelPublisher(resource: resource, mapper: mapper)
     }
 }
