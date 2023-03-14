@@ -29,20 +29,20 @@ final class iOSSwiftUINavigationAdapter: WalletDelegate {
     
     func didComplete(with: [Wallet]) {
         let balanceTitle = BalancePresenter.title
-        let currencyName = WalletPresenter.currency
-    
+        let currency = WalletPresenter.currency
+        let network = WalletPresenter.network
         let transactionListTitle = TransactionPresenter.listTitle
         let transactionListSubtitle = TransactionPresenter.listSubtitle
-        let networkName = WalletPresenter.network
+        
         
         withAnimation {
             navigation.currentView = .wallet(
-                //MARK: - To Do // Gotta to call the Composer.
                 WalletUIComposer.walletComposedWith(balanceTitle: balanceTitle,
-                                                    currencyName: currencyName,
+                                                    currency: currency,
+                                                    network: network,
                                                     transactionListTitle: transactionListTitle,
-                                                    transactionListSubtitle: transactionListSubtitle,
-                                                    network: networkName)
+                                                    transactionListSubtitle: transactionListSubtitle
+                                                   )
                 
             )
         }
@@ -67,5 +67,5 @@ final class iOSSwiftUINavigationAdapter: WalletDelegate {
             )
         }
     }
-        
+    
 }

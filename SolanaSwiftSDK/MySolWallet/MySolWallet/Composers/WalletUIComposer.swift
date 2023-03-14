@@ -18,10 +18,10 @@ public final class WalletUIComposer {
     
     public static func walletComposedWith(
         balanceTitle: String,
-        currencyName: String,
+        currency: String,
+        network: String,
         transactionListTitle: String,
         transactionListSubtitle: String,
-        network: String,
         selection: @escaping (String) -> Void = { _ in }
     ) -> WalletView {
         let walletPublisher = WalletStorePublisher(resource: <#[DomainWallet]?#>, mapper: WalletStoreMapper.map)
