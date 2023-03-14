@@ -1,0 +1,9 @@
+/* 
+  Transaction.strings
+  SolanaPackage
+
+  Created by Deniz Tutuncu on 2/27/23.
+  
+*/
+"LIST_TITLE" = "İşlem Listesi";
+"LIST_SUBTITLE" = "Geçmiş işlemler burada saklanır.";

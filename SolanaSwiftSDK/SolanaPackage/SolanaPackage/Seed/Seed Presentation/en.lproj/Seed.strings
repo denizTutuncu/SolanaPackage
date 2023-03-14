@@ -1,0 +1,9 @@
+/* 
+  Seed.strings
+  SolanaPackage
+
+  Created by Deniz Tutuncu on 2/27/23.
+  
+*/
+"SEED_LIST_TITLE" = "Seed Phrase";
+"SEED_LIST_SUBTITLE" = "The seed phrase is never stored on the device. You will only see it once, and it's only for that moment. You must keep this phrase safe to be able to access the created wallet from another device.";

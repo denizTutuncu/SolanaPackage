@@ -54,15 +54,9 @@ extension Date {
 }
 
 func uniqueWallet() -> DomainWallet {
-    return DomainWallet(id: UUID(), publicKey: "Unique Public Key", balance: 1.0)
+    return DomainWallet(id: UUID(), publicKey: "Unique Public Key")
 }
 
 func uniquePrivateKey() -> String {
     return "Unique Private Key"
-}
-
-func uniqueWalletFeed() -> (models: [DomainWallet], local: [LocalWallet]) {
-    let models = [uniqueWallet(), uniqueWallet()]
-    let local = models.map { LocalWallet(id:$0.id, publicKey: $0.publicKey, privateKey: uniquePrivateKey(), balance: $0.balance) }
-    return (models, local)
 }
