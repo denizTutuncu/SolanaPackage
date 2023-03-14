@@ -2,7 +2,7 @@ name: CI-iOS
 
 on:
     push:
-        branches: [ "development" ]
+        branches: [ "main" ]
     pull_request:
         branches: [ "main" ]
 
