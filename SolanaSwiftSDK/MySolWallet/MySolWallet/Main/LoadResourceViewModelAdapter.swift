@@ -8,19 +8,6 @@
 import Foundation
 import Combine
 
-final public class LoadResourceViewModelAdapter<Resource> {
-    private let loader: () -> AnyPublisher<Resource, Error>
-    private var cancellable: Cancellable?
-    
-    init(loader: @escaping () -> AnyPublisher<Resource, Error>) {
-        self.loader = loader
-    }
-    
-    func loadResource() {
-        
-    }
-}
-
 extension Publisher {
     func dispatchOnMainQueue() -> AnyPublisher<Output, Failure> {
         receive(on: DispatchQueue.immediateWhenOnMainQueueScheduler).eraseToAnyPublisher()
