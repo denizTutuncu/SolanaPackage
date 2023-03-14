@@ -21,11 +21,10 @@ public final class SeedUIComposer {
         toogleOFFTitle: String,
         toogleisONTitle: String,
         buttonTitle: String,
-        seedPublisher: @escaping () -> AnyPublisher<DomainSeed, Error>,
         action: @escaping () -> Void = {}
     ) -> SeedListView {
+        let seedPublisher = SeedStorePublisher(resource: <#DomainSeed?#>, mapper: SeedStoreMapper.map)
         
-        let seedPublisher = SeedStorePublisher(resource: seedPublisher.getResult(), mapper: SeedStoreMapper.map)
         let seedView = makeSeedListView(listTitle: listTitle,
                                         listSubtitle: listSubtitle,
                                         toogleOFFTitle: toogleOFFTitle,
