@@ -34,8 +34,6 @@ final class iOSSwiftUINavigationAdapter: WalletDelegate {
         let transactionListTitle = TransactionPresenter.listTitle
         let transactionListSubtitle = TransactionPresenter.listSubtitle
         let networkName = WalletPresenter.network
-        let walletPublisher = ViewModelPublisher<[Wallet], [WalletUI]>(mapper: WalletStoreMapper.map)
-        let transactionPublisher = ViewModelPublisher<[Transaction], [TransactionUI]>(mapper: TransactionStoreMapper.map)
         
         withAnimation {
             navigation.currentView = .wallet(
@@ -57,7 +55,6 @@ final class iOSSwiftUINavigationAdapter: WalletDelegate {
         let toogleOFFTitle = "My phrase is not safe yet."
         let toogleisONTitle = "My phrase is safe now."
         let buttonTitle = "Create wallet"
-        let seedPublisher = ViewModelPublisher<DomainSeed, [SeedUI]>(mapper: SeedStoreMapper.map).load()
         
         withAnimation {
             navigation.currentView = .seed(
@@ -65,8 +62,7 @@ final class iOSSwiftUINavigationAdapter: WalletDelegate {
                                                 listSubtitle: subtitle,
                                                 toogleOFFTitle: toogleOFFTitle,
                                                 toogleisONTitle: toogleisONTitle,
-                                                buttonTitle: buttonTitle,
-                                                seedPublisher: seedPublisher)
+                                                buttonTitle: buttonTitle)
                 
             )
         }
