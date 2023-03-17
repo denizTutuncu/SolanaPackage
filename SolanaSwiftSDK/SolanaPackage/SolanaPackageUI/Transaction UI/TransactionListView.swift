@@ -10,7 +10,7 @@ import SwiftUI
 struct TransactionListView: View {
     let title: String
     let subtitle: String
-    @State var store: TransactionStore
+    @State var store: TransactionViewModel
     let selection: (TransactionUI) -> Void
     
     var body: some View {

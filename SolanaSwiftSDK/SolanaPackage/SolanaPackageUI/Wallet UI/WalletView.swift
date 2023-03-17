@@ -15,8 +15,8 @@ public struct WalletView: View {
     public let network: String
     public let selection: (String) -> Void
     
-    @State var walletStore: WalletStore
-    @State var transactionStore: TransactionStore
+    @State var walletViewModel: WalletViewModel
+    @State var transactionViewModel: TransactionViewModel
     
     public init(balanceLabelTitle: String,
                 currencyName: String,
@@ -24,8 +24,8 @@ public struct WalletView: View {
                 transactionListSubtitle: String,
                 network: String,
                 selection: @escaping (String) -> Void,
-                walletStore: WalletStore,
-                transactionStore: TransactionStore)
+                walletStore: WalletViewModel,
+                transactionStore: TransactionViewModel)
     {
         self.balanceLabelTitle = balanceLabelTitle
         self.currencyName = currencyName
@@ -33,20 +33,20 @@ public struct WalletView: View {
         self.transactionListSubtitle = transactionListSubtitle
         self.network = network
         self.selection = selection
-        self.walletStore = walletStore
-        self.transactionStore = transactionStore
+        self.walletViewModel = walletStore
+        self.transactionViewModel = transactionStore
     }
     
     public var body: some View {
         VStack(alignment: .leading, spacing: 0.0) {
-            HeaderView(title: walletStore.wallet?.publicKey,
+            HeaderView(title: walletViewModel.wallet?.publicKey,
                        subtitle: network)
             BalanceView(title: balanceLabelTitle,
                         currencyName: currencyName,
-                        wallet: $walletStore.wallet)
+                        wallet: $walletViewModel.wallet)
             TransactionListView(title: transactionListTitle,
                                 subtitle: transactionListSubtitle,
-                                store: transactionStore,
+                                store: transactionViewModel,
                                 selection: { transaction in
                 selection(transaction.transactionSignature)
             })
