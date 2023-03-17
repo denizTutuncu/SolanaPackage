@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct WalletStore {
+public struct WalletViewModel {
     public var wallets: [WalletUI]
     
     public var wallet: WalletUI? {

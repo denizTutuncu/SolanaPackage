@@ -15,25 +15,25 @@ public struct SeedListView: View {
     let buttonTitle: String
     let action: () -> Void
     
-    @State var store: SeedStore
+    @State var viewModel: SeedViewModel
     @State private var isPhraseSafe = false
     
-    public init(title: String, subtitle: String, toogleOFFTitle: String, toogleisONTitle: String, buttonTitle: String, action: @escaping () -> Void, store: SeedStore) {
+    public init(title: String, subtitle: String, toogleOFFTitle: String, toogleisONTitle: String, buttonTitle: String, action: @escaping () -> Void, viewModel: SeedViewModel) {
         self.headerTitle = title
         self.headerSubtitle = subtitle
         self.toogleOFFTitle = toogleOFFTitle
         self.toogleisONTitle = toogleisONTitle
         self.buttonTitle = buttonTitle
         self.action = action
-        self.store = store
+        self.viewModel = viewModel
     }
   
     public var body: some View {
         VStack {
             HeaderView(title: headerTitle, subtitle: headerSubtitle)
             List {
-                ForEach(store.seed.indices, id: \.self) { index in
-                    SingleSeedCellView(index: (index + 1), seed: $store.seed[index])
+                ForEach(viewModel.seed.indices, id: \.self) { index in
+                    SingleSeedCellView(index: (index + 1), seed: $viewModel.seed[index])
                 }
                 
                 ToogleView(isOFFTitle: toogleOFFTitle, isONTitle: toogleisONTitle, isOn: $isPhraseSafe)
@@ -68,7 +68,7 @@ struct SeedListView_Previews: PreviewProvider {
                              toogleisONTitle: "My seed phrase is safe now.",
                              buttonTitle: "Create wallet",
                              action: { tapped.toggle() },
-                             store: .init(seed: [
+                             viewModel: .init(seed: [
                                 SeedUI(value: "private"),
                                 SeedUI(value: "digital"),
                                 SeedUI(value: "coin"),

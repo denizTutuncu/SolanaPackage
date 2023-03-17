@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct SeedStore {
+public struct SeedViewModel {
     public var seed: [SeedUI]
         
     public init(seed: [SeedUI]?) {

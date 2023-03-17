@@ -10,7 +10,7 @@ import SwiftUI
 struct WalletListView: View {
     let title: String
     let subtitle: String
-    @State var store: WalletStore
+    @State var store: WalletViewModel
     
     let selection: (WalletUI) -> Void
     

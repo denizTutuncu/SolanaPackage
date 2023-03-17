@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct TransactionStore {
+public struct TransactionViewModel {
     public var transactions: [TransactionUI]
         
     public init(transactions: [TransactionUI]?) {
