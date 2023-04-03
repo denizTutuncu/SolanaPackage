@@ -22,7 +22,7 @@ public struct WalletViewModel {
             
             // Select the new wallet
             if let newWallet = newValue {
-                if let index = wallets.firstIndex(where: { $0.id == newWallet.id && $0.publicKey == newValue?.publicKey && $0.balance == newValue?.balance }) {
+                if let index = wallets.firstIndex(where: { $0.id == newWallet.id && $0.id == newValue?.id && $0.balance == newValue?.balance }) {
                     wallets[index].isSelected = true
                 }
             }
@@ -48,13 +48,11 @@ public struct WalletViewModel {
 }
 
 public struct WalletUI: Hashable {
-    let id: UUID
-    let publicKey: String
+    let id: String
     let balance: String
     
-    public init(id: UUID, publicKey: String, balance: String) {
+    public init(id: String, balance: String) {
         self.id = id
-        self.publicKey = publicKey
         self.balance = balance
     }
     

@@ -46,17 +46,14 @@ struct WalletListView_Previews: PreviewProvider {
                     title: "Wallets",
                     subtitle: "Keychain is a secure storage area on your device that uses encryption to keep your passwords and other sensitive information safe. It's an important tool for protecting your personal data from unauthorized access.",
                     store: .init(wallets: [
-                        WalletUI(id: UUID(),
-                                 publicKey: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
+                        WalletUI(id: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
                                  balance: "1.0"),
-                        WalletUI(id: UUID(),
-                                 publicKey: "3xcawfQtZVjRLLcxgcxT7yYUuynPlasdyqw640276bAD",
+                        WalletUI(id: "3xcawfQtZVjRLLcxgcxT7yYUuynPlasdyqw640276bAD",
                                  balance: "1.0"),
-                        WalletUI(id: UUID(),
-                                 publicKey: "POhasdyasd454cxgcxT7yYUuyn6UgMJddBHKl21bhduA",
+                        WalletUI(id: "POhasdyasd454cxgcxT7yYUuyn6UgMJddBHKl21bhduA",
                                  balance: "1.0")
-                    ], handler: { selection = $0.publicKey }),
-                    selection: { selection = $0.publicKey })
+                    ], handler: { selection = $0.id }),
+                    selection: { selection = $0.id })
                 
                 Text("Last selection: " + selection).padding()
             }

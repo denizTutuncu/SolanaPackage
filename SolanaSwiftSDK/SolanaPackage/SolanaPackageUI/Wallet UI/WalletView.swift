@@ -39,7 +39,7 @@ public struct WalletView: View {
     
     public var body: some View {
         VStack(alignment: .leading, spacing: 0.0) {
-            HeaderView(title: walletViewModel.wallet?.publicKey,
+            HeaderView(title: walletViewModel.wallet?.id,
                        subtitle: network)
             BalanceView(title: balanceLabelTitle,
                         currencyName: currencyName,
@@ -75,9 +75,9 @@ struct WalletTestView: View {
                        transactionListSubtitle: "Past transactions are stored here.",
                        network: "Solana",
                        transactionSelection: { selection = $0 },
-                       walletViewModel: .init(wallets: [WalletUI(id: UUID(), publicKey: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
+                       walletViewModel: .init(wallets: [WalletUI(id: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
                                                              balance: "1000000000.0")],
-                                          handler: { selection = $0.publicKey }),
+                                          handler: { selection = $0.id }),
                        transactionViewModel: .init(transactions: [
                         TransactionUI(date: "Feb 23, 2023",
                                                                             from: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",

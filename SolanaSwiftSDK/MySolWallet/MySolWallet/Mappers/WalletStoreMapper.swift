@@ -13,6 +13,6 @@ public class WalletStoreMapper {
     
     public static func map(_ domainWallets: [DomainWallet]) -> [WalletUI] {
         guard !domainWallets.isEmpty else { return [] }
-        return domainWallets.map { WalletUI(id: $0.id, publicKey: $0.publicKey, balance: "0") }
+        return domainWallets.map { WalletUI(id: $0.id, balance: "0") }
     }
 }
