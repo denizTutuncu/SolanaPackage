@@ -81,6 +81,6 @@ struct MySolWalletApp: App {
                                                   loadAgain: startBank)
         
         
-        appStore.bank = Bank.start(delegate: adapter, wallets: [], seed: seed)
+        appStore.bank = Bank.start(walletDelegate: adapter, wallets: [], seedDelegate: adapter, seed: seed)
     }
 }

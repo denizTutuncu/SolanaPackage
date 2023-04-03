@@ -10,7 +10,7 @@ import Combine
 import SolanaPackage
 import SolanaPackageUI
 
-final class iOSSwiftUINavigationAdapter: WalletDelegate {
+final class iOSSwiftUINavigationAdapter: WalletDelegate, SeedDelegate {
     typealias Wallet = DomainWallet
     typealias Seed  = DomainSeed
     typealias Transaction = DomainTransaction
@@ -27,7 +27,7 @@ final class iOSSwiftUINavigationAdapter: WalletDelegate {
         self.loadAgain = loadAgain
     }
     
-    func didComplete(with: [Wallet]) {
+    func didComplete(completion: @escaping ([Wallet]) -> Void) {
         let balanceTitle = BalancePresenter.title
         let currency = WalletPresenter.currency
         let network = WalletPresenter.network
@@ -46,10 +46,9 @@ final class iOSSwiftUINavigationAdapter: WalletDelegate {
                 
             )
         }
-        
     }
     
-    func didComplete(with: [Seed], completion: @escaping ([Wallet]) -> Void) {
+    func didComplete(completion: [Seed]) {
         let title = SeedPresenter.title
         let subtitle = SeedPresenter.subtitle
         let toogleOFFTitle = "My phrase is not safe yet."
@@ -63,8 +62,7 @@ final class iOSSwiftUINavigationAdapter: WalletDelegate {
                                                 toogleOFFTitle: toogleOFFTitle,
                                                 toogleisONTitle: toogleisONTitle,
                                                 buttonTitle: buttonTitle,
-                                                resource: with)
-                
+                                                resource: completion)
             )
         }
     }
