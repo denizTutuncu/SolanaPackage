@@ -24,7 +24,7 @@ struct SingleWalletSelectionCellView: View {
                         )
                         .frame(width: 13.0, height: 13.0)
                     
-                        Text(wallet.publicKey)
+                        Text(wallet.id)
                             .font(.system(size: 36, weight: .black, design: .monospaced))
                             .lineLimit(1)
                             .minimumScaleFactor(0.2)
@@ -39,8 +39,7 @@ struct SingleWalletSelectionCell_Previews: PreviewProvider {
     @State var selection: String = "none"
     
     static var previews: some View {
-        SingleWalletSelectionCellView(wallet: .constant(WalletUI(id: UUID(),
-                                                                 publicKey: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
+        SingleWalletSelectionCellView(wallet: .constant(WalletUI(id: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
                                                                  balance: "100.0")),
                                       selection: { })
         .previewLayout(.sizeThatFits)

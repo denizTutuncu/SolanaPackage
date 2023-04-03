@@ -47,8 +47,7 @@ struct BalanceTestView_Previews: PreviewProvider {
         Group {
             BalanceView(title: "Balance",
                         currencyName: "lamports",
-                        wallet: .constant(WalletUI(id: UUID(),
-                                                   publicKey: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
+                        wallet: .constant(WalletUI(id: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
                                                    balance: "1000.0")))
                 .previewLayout(.sizeThatFits)
                 .previewDisplayName("Balance Test View")
