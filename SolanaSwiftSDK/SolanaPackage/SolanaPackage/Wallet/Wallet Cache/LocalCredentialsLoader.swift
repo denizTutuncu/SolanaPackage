@@ -20,7 +20,7 @@ public final class LocalCredentialsLoader {
 
 extension LocalCredentialsLoader: WalletCache {
     public func save(_ wallet: DomainWallet, privateKey: PrivateKey) throws {
-        try store.insert(publicKey: wallet.publicKey, privateKey: privateKey)
+        try store.insert(publicKey: wallet.id, privateKey: privateKey)
     }
 }
 

@@ -7,9 +7,9 @@
 
 import XCTest
 import SolanaPackage
-//
+
 //class KeychainPrivateKeyStoreTests: XCTestCase, PrivateKeyStoreSpecs {
-// 
+//
 //    func test_retrieve_failsOnEmptyCache() {
 //        let sut = makeSUT()
 //
@@ -18,7 +18,7 @@ import SolanaPackage
 //
 //    func test_retrieve_hasNoSideEffectsOnEmptyCache() {
 //        let sut = makeSUT()
-//        
+//
 //        assertThatRetrieveHasNoSideEffectsOnEmptyCache(on: sut)
 //    }
 //
@@ -33,27 +33,27 @@ import SolanaPackage
 //
 //        assertThatRetrieveHasNoSideEffectsOnNonEmptyCache(on: sut)
 //    }
-//    
+//
 //    func test_insert_deliversNoError() {
 //        let sut = makeSUT()
-//        
+//
 //        assertThatInsertDeliversNoErrorOnEmptyCache(on: sut)
 //    }
-//    
-//    
+//
+//
 //    func test_insert_doesNotOverridesPreviouslyInsertedCacheValue() {
 //        let sut = makeSUT()
-//        
+//
 //        assertThatInsertDoesNotOverridePreviouslyInsertedCacheValue(on: sut)
 //    }
 //
 //    func test_insert_doesNotOverridesPreviouslyInsertedCacheValues() {
 //        let sut = makeSUT()
-//        
+//
 //        assertThatInsertDoesNotOverridePreviouslyInsertedCacheValues(on: sut)
 //    }
 //
-//    
+//
 //    func test_delete_deliversNoErrorOnEmptyCache() {
 //        let sut = makeSUT()
 //

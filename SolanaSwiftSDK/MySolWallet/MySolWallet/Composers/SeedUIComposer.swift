@@ -13,7 +13,7 @@ import SolanaPackageUI
 public final class SeedUIComposer {
     private init() {}
     
-    private typealias SeedStorePublisher = ViewModelPublisher<DomainSeed, [SeedUI]>
+    private typealias SeedStorePublisher = ViewModelPublisher<[DomainSeed], [SeedUI]>
     
     public static func seedComposedWith(
         listTitle: String,
@@ -21,9 +21,10 @@ public final class SeedUIComposer {
         toogleOFFTitle: String,
         toogleisONTitle: String,
         buttonTitle: String,
-        action: @escaping () -> Void = {}
+        action: @escaping () -> Void = {},
+        resource: [DomainSeed]
     ) -> SeedListView {
-        let seedPublisher = SeedStorePublisher(resource: <#DomainSeed?#>, mapper: SeedStoreMapper.map)
+        let seedPublisher = SeedStorePublisher(resource: resource, mapper: SeedStoreMapper.map)
         
         let seedView = makeSeedListView(listTitle: listTitle,
                                         listSubtitle: listSubtitle,
@@ -31,7 +32,7 @@ public final class SeedUIComposer {
                                         toogleisONTitle: toogleisONTitle,
                                         buttonTitle: buttonTitle,
                                         action: action,
-                                        store: .init(seed: seedPublisher.onResourceLoad))
+                                        viewModel: .init(seed: seedPublisher.onResourceLoad))
         return seedView
     }
     
@@ -41,7 +42,7 @@ public final class SeedUIComposer {
                                          toogleisONTitle: String,
                                          buttonTitle: String,
                                          action: @escaping () -> Void = {},
-                                         store: SeedStore
+                                         viewModel: SeedViewModel
     ) -> SeedListView {
         let seedView = SeedListView(title: listTitle,
                                     subtitle: listSubtitle,
@@ -49,7 +50,7 @@ public final class SeedUIComposer {
                                     toogleisONTitle: toogleisONTitle,
                                     buttonTitle: buttonTitle,
                                     action: action,
-                                    store: store)
+                                    viewModel: viewModel)
         return seedView
     }
 }

@@ -12,12 +12,34 @@ import SolanaPackageUI
 import Combine
 
 class BankAppStore {
-    typealias KCWalletStore = SolanaPackage.CredentialsStore
+    typealias CredentialsStore = SolanaPackage.CredentialsStore
     typealias Seed = SolanaPackage.DomainSeed
+    typealias SeedStore = SolanaPackage.SeedBankStore
     
     var bank: Bank?
     
-    private lazy var baseURL: URL = {
+    //MARK: - Seed & Seed Store & Local Seed Loader
+    private let seed = BankOfSeed.seed
+    
+    private lazy var seedStore: SeedStore = {
+        return HardcodedSeedStore(seed: seed)
+    }()
+    
+    public lazy var localSeedLoader: LocalSeedLoader = {
+        LocalSeedLoader(store: seedStore)
+    }()
+    
+    //MARK: - Credentials Store & Local Credentials Loader
+    private lazy var credentialsStore: CredentialsStore = {
+        return KeychainPrivateKeyStore(network: "com.deniztutuncu.MySolWallet")
+    }()
+    
+    private lazy var localCredentialsLoader: LocalCredentialsLoader = {
+        LocalCredentialsLoader(store: credentialsStore)
+    }()
+    
+    //MARK: - Network URL & Http Client & Balance Loader & Balance Publisher
+    private lazy var networkURL: URL = {
         URL(string: "https://api.devnet.solana.com")!
     }()
     
@@ -25,44 +47,6 @@ class BankAppStore {
         URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
     }()
     
-    private lazy var logger = Logger(subsystem: "com.deniztutuncu.MySolWallet", category: "main")
-    
-    //MARK: - Keychain Wallet Store & Local Wallet Loader
-    public lazy var kcStore: KCWalletStore = {
-        return KeychainPrivateKeyStore(network: "com.deniztutuncu.MySolWallet")
-    }()
-    
-    private lazy var keychainWalletLoader: LocalCredentialsLoader = {
-        LocalCredentialsLoader(store: kcStore)
-    }()
-    
-    //MARK: - Seed Store & Local Seed Loader
-//    private lazy var seedStore: LocalSeedStore {
-//        do {
-//            return try CoreDataWalletStore(
-//                storeURL: NSPersistentContainer
-//                    .defaultDirectoryURL()
-//                    .appendingPathComponent("seed-store.sqlite"))
-//        } catch {
-//            assertionFailure("Failed to instantiate CoreData store with error: \(error.localizedDescription)")
-//            logger.fault("Failed to instantiate CoreData store with error: \(error.localizedDescription)")
-//            return NullStore()
-//        }
-//    }()
-    
-//    private lazy var seedLoader: SeedLoader = {
-//        SeedLoader(store: seedStore, currentDate: Date.init)
-//    }()
-    
-    public lazy var duumySeed: Seed = {
-        return Seed(id: UUID(), seed: [
-            "private","digital","coin","seed","key","has","very","long",
-            "secret","pass","phrase","that","will","prevent","animal","weasel",
-            "brain","person","like","you","obtain","any","large","wealth",
-           ])
-    }()
-    
-    //MARK: - Balance Publisher
     private func makeRemoteBalancePublisher(address: String, baseURL: URL) -> AnyPublisher<Balance, Error> {
         let request = try? BalanceEndpoint.get(walletAddress: address).url(baseURL: baseURL)
         return httpClient
@@ -71,16 +55,14 @@ class BankAppStore {
             .eraseToAnyPublisher()
     }
     
-//    private func makePrivateKeyPublisher() -> AnyPublisher<DomainWallet, Error> {
-//        return keychainWalletLoader
-//            .load(for: <#T##KeychainWallet?#>)
-//    }
-    
+    //MARK: - Logger
+    private lazy var logger = Logger(subsystem: "com.deniztutuncu.MySolWallet", category: "main")
 }
 
 @main
 struct MySolWalletApp: App {
     let appStore = BankAppStore()
+
     @StateObject var navigationStore = BankNavigationStore()
     
     var body: some Scene {
@@ -91,12 +73,14 @@ struct MySolWalletApp: App {
     }
     
     private func startBank() {
+        let seed = try! appStore.localSeedLoader.load()
+        print("\(seed) from BankAppStore")
         let adapter = iOSSwiftUINavigationAdapter(navigation: navigationStore,
                                                   wallets: [],
-                                                  seed: appStore.duumySeed,
+                                                  seed: seed,
                                                   loadAgain: startBank)
         
         
-        appStore.bank = Bank.start(delegate: adapter, wallets: [], seed: appStore.duumySeed)
+        appStore.bank = Bank.start(delegate: adapter, wallets: [], seed: seed)
     }
 }

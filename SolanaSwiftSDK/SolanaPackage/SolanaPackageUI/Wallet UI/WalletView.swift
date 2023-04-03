@@ -13,7 +13,7 @@ public struct WalletView: View {
     public let transactionListTitle: String
     public let transactionListSubtitle: String
     public let network: String
-    public let selection: (String) -> Void
+    public let transactionSelection: (String) -> Void
     
     @State var walletViewModel: WalletViewModel
     @State var transactionViewModel: TransactionViewModel
@@ -23,18 +23,18 @@ public struct WalletView: View {
                 transactionListTitle: String,
                 transactionListSubtitle: String,
                 network: String,
-                selection: @escaping (String) -> Void,
-                walletStore: WalletViewModel,
-                transactionStore: TransactionViewModel)
+                transactionSelection: @escaping (String) -> Void,
+                walletViewModel: WalletViewModel,
+                transactionViewModel: TransactionViewModel)
     {
         self.balanceLabelTitle = balanceLabelTitle
         self.currencyName = currencyName
         self.transactionListTitle = transactionListTitle
         self.transactionListSubtitle = transactionListSubtitle
         self.network = network
-        self.selection = selection
-        self.walletViewModel = walletStore
-        self.transactionViewModel = transactionStore
+        self.transactionSelection = transactionSelection
+        self.walletViewModel = walletViewModel
+        self.transactionViewModel = transactionViewModel
     }
     
     public var body: some View {
@@ -48,7 +48,7 @@ public struct WalletView: View {
                                 subtitle: transactionListSubtitle,
                                 store: transactionViewModel,
                                 selection: { transaction in
-                selection(transaction.transactionSignature)
+                transactionSelection(transaction.transactionSignature)
             })
         }
     }
@@ -74,11 +74,11 @@ struct WalletTestView: View {
                        transactionListTitle: "Transaction List",
                        transactionListSubtitle: "Past transactions are stored here.",
                        network: "Solana",
-                       selection: { selection = $0 },
-                       walletStore: .init(wallets: [WalletUI(id: UUID(), publicKey: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
+                       transactionSelection: { selection = $0 },
+                       walletViewModel: .init(wallets: [WalletUI(id: UUID(), publicKey: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
                                                              balance: "1000000000.0")],
                                           handler: { selection = $0.publicKey }),
-                       transactionStore: .init(transactions: [
+                       transactionViewModel: .init(transactions: [
                         TransactionUI(date: "Feb 23, 2023",
                                                                             from: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
                                                                             to: "3xcawfQtZVjRLLcxgcxT7yYUuynPlasdyqw640276bAD",

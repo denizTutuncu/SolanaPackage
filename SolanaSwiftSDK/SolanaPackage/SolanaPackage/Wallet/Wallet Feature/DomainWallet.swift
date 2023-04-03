@@ -8,11 +8,9 @@
 import Foundation
 
 public struct DomainWallet: Hashable {
-    public let id: UUID
-    public let publicKey: String
+    public let id: String
 
-    public init(id: UUID = UUID(), publicKey: String) {
+    public init(id: String) {
         self.id = id
-        self.publicKey = publicKey
     }
 }
