@@ -7,18 +7,20 @@
 
 import Foundation
 
-public final class AppStartFlow<Delegate: WalletDelegate>{
-    public typealias Wallet = Delegate.Wallet
-    public typealias Seed = Delegate.Seed
+public final class AppStartFlow<WD: WalletDelegate, SD: SeedDelegate>{
+    public typealias Wallet = WD.Wallet
+    public typealias Seed = SD.Seed
     
     private var wallets: [Wallet]
-    private let seed: Seed
-    private let delegate: Delegate
-  
-    public init(wallets: [Wallet], seeds: Seed, delegate: Delegate) {
+    private let seed: [Seed]
+    private let walletDelegate: WD
+    private let seedDelegate: SD
+    
+    public init(wallets: [Wallet], seed: [Seed], walletDelegate: WD, seedDelegate: SD) {
         self.wallets = wallets
-        self.seed = seeds
-        self.delegate = delegate
+        self.seed = seed
+        self.walletDelegate = walletDelegate
+        self.seedDelegate = seedDelegate
     }
     
     public func start() {
@@ -27,12 +29,11 @@ public final class AppStartFlow<Delegate: WalletDelegate>{
     
     private func delegateHandlingWallets(at index: Int) {
         if index < wallets.endIndex {
-            delegate.didComplete(with: wallets)
+            walletDelegate.didComplete(completion: wallets(at: index))
         } else {
-            delegate.didComplete(with: seed, completion: wallets(at: index))
+            seedDelegate.didComplete(completion: seed)
         }
     }
-    
     
     private func delegateExistingWalletHandling(after index: Int) {
         delegateHandlingWallets(at: wallets.index(after: index))

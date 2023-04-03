@@ -10,7 +10,7 @@ import SolanaPackage
 
 extension FailableInsertPrivateKeyStoreSpecs where Self: XCTestCase {
     func assertThatInsertDeliversErrorOnInsertionError(on sut: KeychainPrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
-        let publicKey = uniqueWallet().publicKey
+        let publicKey = uniqueWallet().id
         let privateKey = uniquePrivateKey()
         let insertionError = insert(publicKey, privateKey, to: sut)
         
@@ -18,7 +18,7 @@ extension FailableInsertPrivateKeyStoreSpecs where Self: XCTestCase {
     }
     
     func assertThatInsertHasNoSideEffectsOnInsertionError(on sut: KeychainPrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
-        let publicKey = uniqueWallet().publicKey
+        let publicKey = uniqueWallet().id
         let privateKey = uniquePrivateKey()
         insert(publicKey, privateKey, to: sut)
         

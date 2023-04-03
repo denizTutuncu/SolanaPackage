@@ -8,11 +8,9 @@
 import Foundation
 
 public struct DomainSeed: Hashable {
-    public let id: UUID
-    public let seed: [String]
+    public let id: String
 
-    public init(id: UUID, seed: [String]) {
+    public init(id: String) {
         self.id = id
-        self.seed = seed
     }
 }

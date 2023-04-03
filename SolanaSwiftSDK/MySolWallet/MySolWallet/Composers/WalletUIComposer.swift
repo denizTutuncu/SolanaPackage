@@ -22,32 +22,34 @@ public final class WalletUIComposer {
         network: String,
         transactionListTitle: String,
         transactionListSubtitle: String,
-        selection: @escaping (String) -> Void = { _ in }
+        selection: @escaping (String) -> Void = { _ in },
+        wallets: [DomainWallet] = [],
+        transactions: [DomainTransaction] = []
     ) -> WalletView {
-        let walletPublisher = WalletStorePublisher(resource: <#[DomainWallet]?#>, mapper: WalletStoreMapper.map)
-        let transactionPublisher = TransactionStorePublisher(resource: <#[DomainTransaction]?#>, mapper: TransactionStoreMapper.map)
+        let walletPublisher = WalletStorePublisher(resource: wallets, mapper: WalletStoreMapper.map)
+        let transactionPublisher = TransactionStorePublisher(resource: transactions, mapper: TransactionStoreMapper.map)
         
         let walletView = makeWalletView(balanceTitle: balanceTitle,
-                                        currencyName: currencyName,
+                                        currencyName: currency,
+                                        network: network,
                                         transactionListTitle: transactionListTitle,
                                         transactionListSubtitle: transactionListSubtitle,
-                                        network: network,
                                         selection: selection,
-                                        walletStore: .init(wallets: walletPublisher.onResourceLoad,
+                                        walletViewModel: .init(wallets: walletPublisher.onResourceLoad,
                                                            handler: { wallet in }),
-                                        transactionStore: .init(transactions: transactionPublisher.onResourceLoad))
+                                        transactionViewModel: .init(transactions: transactionPublisher.onResourceLoad))
                                       
         return walletView
     }
     
     private static func makeWalletView(balanceTitle: String,
                                        currencyName: String,
+                                       network: String,
                                        transactionListTitle: String,
                                        transactionListSubtitle: String,
-                                       network: String,
                                        selection: @escaping (String) -> Void = { _ in },
-                                       walletStore: WalletStore,
-                                       transactionStore: TransactionStore)
+                                       walletViewModel: WalletViewModel,
+                                       transactionViewModel: TransactionViewModel)
     -> WalletView {
         
         let balanceTitle = BalancePresenter.title
@@ -62,9 +64,9 @@ public final class WalletUIComposer {
                                   transactionListTitle: transactionListTitle,
                                   transactionListSubtitle: transactionListSubtitle,
                                   network: networkName,
-                                  selection: selection,
-                                  walletStore: walletStore,
-                                  transactionStore: transactionStore)
+                                  transactionSelection: selection,
+                                  walletViewModel: walletViewModel,
+                                  transactionViewModel: transactionViewModel)
         return walletView
     }
 }

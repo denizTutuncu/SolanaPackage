@@ -17,10 +17,10 @@ final class iOSSwiftUINavigationAdapter: WalletDelegate {
     
     private let navigation: BankNavigationStore
     private let wallets: [Wallet]
-    private let seed: Seed
+    private let seed: [Seed]
     private let loadAgain: () -> Void
     
-    init(navigation: BankNavigationStore, wallets: [Wallet], seed: Seed, loadAgain: @escaping () -> Void) {
+    init(navigation: BankNavigationStore, wallets: [Wallet], seed: [Seed], loadAgain: @escaping () -> Void) {
         self.navigation = navigation
         self.wallets = wallets
         self.seed = seed
@@ -49,7 +49,7 @@ final class iOSSwiftUINavigationAdapter: WalletDelegate {
         
     }
     
-    func didComplete(with: Seed, completion: @escaping ([Wallet]) -> Void) {
+    func didComplete(with: [Seed], completion: @escaping ([Wallet]) -> Void) {
         let title = SeedPresenter.title
         let subtitle = SeedPresenter.subtitle
         let toogleOFFTitle = "My phrase is not safe yet."
@@ -62,7 +62,8 @@ final class iOSSwiftUINavigationAdapter: WalletDelegate {
                                                 listSubtitle: subtitle,
                                                 toogleOFFTitle: toogleOFFTitle,
                                                 toogleisONTitle: toogleisONTitle,
-                                                buttonTitle: buttonTitle)
+                                                buttonTitle: buttonTitle,
+                                                resource: with)
                 
             )
         }

@@ -8,8 +8,6 @@
 import Foundation
 
 public protocol WalletDelegate {
-    associatedtype Seed
     associatedtype Wallet
-    func didComplete(with: [Wallet])
-    func didComplete(with: Seed, completion: @escaping ([Wallet]) -> Void)
+    func didComplete(completion: @escaping ([Wallet]) -> Void)
 }

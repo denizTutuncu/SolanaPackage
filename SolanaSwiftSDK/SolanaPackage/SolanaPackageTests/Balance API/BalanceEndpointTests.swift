@@ -12,17 +12,17 @@ class BalanceEndpointTests: XCTestCase {
 
     func test_balance_endpointURLThrowsAfterGivenInvalidWalletAddress() {
         let baseURL = URL(string: "http://base-url.com")!
-        let invalidWallet = DomainWallet(id: UUID(), publicKey: "")
+        let invalidWallet = DomainWallet(id: "")
                 
         XCTAssertThrowsError(
-            try BalanceEndpoint.get(walletAddress: invalidWallet.publicKey).url(baseURL: baseURL)
+            try BalanceEndpoint.get(walletAddress: invalidWallet.id).url(baseURL: baseURL)
         )
         
     }
     
     func test_balance_endpointURLAfterGivenWalletAddress() {
         let baseURL = URL(string: "https://base-url.com")!
-        let publicKey = uniqueWallet().publicKey
+        let publicKey = uniqueWallet().id
         let received = try? BalanceEndpoint.get(walletAddress: publicKey).url(baseURL: baseURL)
         
         XCTAssertEqual(received?.url?.scheme, "https", "scheme")

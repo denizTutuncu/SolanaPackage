@@ -24,7 +24,7 @@ class CacheKeychainPrivateKeyUseCaseTests: XCTestCase {
         
         try? sut.save(wallet, privateKey: uniquePrivateKey())
         
-        XCTAssertEqual(store.receivedMessages, [.insert(wallet.publicKey, uniquePrivateKey())])
+        XCTAssertEqual(store.receivedMessages, [.insert(wallet.id, uniquePrivateKey())])
     }
     
     func test_save_failsOnDeletionError() {

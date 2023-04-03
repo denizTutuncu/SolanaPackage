@@ -27,6 +27,7 @@
 		2E80F3DF29A6400300A4053C /* NullStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3DE29A6400300A4053C /* NullStore.swift */; };
 		2EAEF0EC297A5C1C00091A49 /* CombineHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAEF0EB297A5C1C00091A49 /* CombineHelpers.swift */; };
 		2EF68C8D299F5CB100969DE5 /* iOSSwiftUINavigationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF68C8C299F5CB100969DE5 /* iOSSwiftUINavigationAdapter.swift */; };
+		2EF75C2129CBC89D001E3DA7 /* SeedBankHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF75C2029CBC89D001E3DA7 /* SeedBankHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		2E80F3DE29A6400300A4053C /* NullStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullStore.swift; sourceTree = "<group>"; };
 		2EAEF0EB297A5C1C00091A49 /* CombineHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineHelpers.swift; sourceTree = "<group>"; };
 		2EF68C8C299F5CB100969DE5 /* iOSSwiftUINavigationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSwiftUINavigationAdapter.swift; sourceTree = "<group>"; };
+		2EF75C2029CBC89D001E3DA7 /* SeedBankHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedBankHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				2EAEF0EB297A5C1C00091A49 /* CombineHelpers.swift */,
+				2EF75C2029CBC89D001E3DA7 /* SeedBankHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				2E0900F729ADAE1F00865E30 /* WalletStoreMapper.swift in Sources */,
 				2EF68C8D299F5CB100969DE5 /* iOSSwiftUINavigationAdapter.swift in Sources */,
 				2E0900F529ADA75700865E30 /* SeedStoreMapper.swift in Sources */,
+				2EF75C2129CBC89D001E3DA7 /* SeedBankHelpers.swift in Sources */,
 				2E80F3DF29A6400300A4053C /* NullStore.swift in Sources */,
 				2E80F38B29A200DC00A4053C /* BankNavigationView.swift in Sources */,
 				2E09010D29B3104500865E30 /* WalletUIComposer.swift in Sources */,

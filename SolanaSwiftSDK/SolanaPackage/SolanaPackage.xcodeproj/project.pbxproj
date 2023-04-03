@@ -35,6 +35,9 @@
 		2E2CC5C9296EC4D90063C23C /* BalancePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5C8296EC4D90063C23C /* BalancePresenterTests.swift */; };
 		2E3951E2283DF5120079852F /* BalanceItemMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3951E1283DF5120079852F /* BalanceItemMapperTests.swift */; };
 		2E4294B92848484900817480 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4294B82848484900817480 /* ErrorView.swift */; };
+		2E43DA2F29CEA632001E0550 /* SeedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E43DA2E29CEA632001E0550 /* SeedDelegate.swift */; };
+		2E43DA3129DAB4FF001E0550 /* XCTestCase+FailableRetrieveSeedBankStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E43DA3029DAB4FF001E0550 /* XCTestCase+FailableRetrieveSeedBankStoreSpecs.swift */; };
+		2E43DA3329DABC98001E0550 /* SeedCahcePolicyUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E43DA3229DABC98001E0550 /* SeedCahcePolicyUseCaseTests.swift */; };
 		2E5186D727F28C75001AB355 /* SolanaPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED6160427E5AD3F00920274 /* SolanaPackage.framework */; };
 		2E5186DC27F28DA0001AB355 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6163F27E5C33D00920274 /* XCTestCase+MemoryLeakTracking.swift */; };
 		2E80F38529A1A6B000A4053C /* WalletDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F38429A1A6B000A4053C /* WalletDelegate.swift */; };
@@ -179,6 +182,9 @@
 		2E2CC5C8296EC4D90063C23C /* BalancePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancePresenterTests.swift; sourceTree = "<group>"; };
 		2E3951E1283DF5120079852F /* BalanceItemMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceItemMapperTests.swift; sourceTree = "<group>"; };
 		2E4294B82848484900817480 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		2E43DA2E29CEA632001E0550 /* SeedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedDelegate.swift; sourceTree = "<group>"; };
+		2E43DA3029DAB4FF001E0550 /* XCTestCase+FailableRetrieveSeedBankStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FailableRetrieveSeedBankStoreSpecs.swift"; sourceTree = "<group>"; };
+		2E43DA3229DABC98001E0550 /* SeedCahcePolicyUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedCahcePolicyUseCaseTests.swift; sourceTree = "<group>"; };
 		2E80F38429A1A6B000A4053C /* WalletDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDelegate.swift; sourceTree = "<group>"; };
 		2E80F38629A1A70300A4053C /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
 		2E80F38829A1A75900A4053C /* AppStartFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStartFlow.swift; sourceTree = "<group>"; };
@@ -737,10 +743,11 @@
 		2ED7BA5329C13BED0037B5B7 /* Seed Cache */ = {
 			isa = PBXGroup;
 			children = (
-				2EF75C1D29C3CDD3001E3DA7 /* SeedBankStoreSpecs */,
-				2ED7BA5629C13D030037B5B7 /* Helpers */,
 				2ED7BA5429C13CCC0037B5B7 /* LoadSeedBankUseCaseTests.swift */,
 				2EF75C1929C3BEFA001E3DA7 /* HardcodedSeedStoreTests.swift */,
+				2E43DA3229DABC98001E0550 /* SeedCahcePolicyUseCaseTests.swift */,
+				2EF75C1D29C3CDD3001E3DA7 /* SeedBankStoreSpecs */,
+				2ED7BA5629C13D030037B5B7 /* Helpers */,
 			);
 			path = "Seed Cache";
 			sourceTree = "<group>";
@@ -795,6 +802,7 @@
 			children = (
 				2EF75C1B29C3CD4C001E3DA7 /* SeedBankStoreSpecs.swift */,
 				2EF75C1E29C3CE00001E3DA7 /* XCTestCase+SeedBankStoreSpecs.swift */,
+				2E43DA3029DAB4FF001E0550 /* XCTestCase+FailableRetrieveSeedBankStoreSpecs.swift */,
 			);
 			path = SeedBankStoreSpecs;
 			sourceTree = "<group>";
@@ -810,6 +818,7 @@
 		2EFADE7F29A774C3009BDC11 /* Seed Feature */ = {
 			isa = PBXGroup;
 			children = (
+				2E43DA2E29CEA632001E0550 /* SeedDelegate.swift */,
 				2EF75C0F29C2F9B3001E3DA7 /* SeedPhraseLoader.swift */,
 				2E0900F129ADA62200865E30 /* DomainSeed.swift */,
 			);
@@ -1130,6 +1139,7 @@
 				2ED7BA4A29C0850B0037B5B7 /* SeedBankStore.swift in Sources */,
 				2E0900D929AD9E4100865E30 /* SeedPresenter.swift in Sources */,
 				2ED6162827E5AEEF00920274 /* URLSessionHTTPClient.swift in Sources */,
+				2E43DA2F29CEA632001E0550 /* SeedDelegate.swift in Sources */,
 				2E80F39629A5889800A4053C /* CredentialsStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1148,6 +1158,7 @@
 				2EFADE8729A77BAF009BDC11 /* WalletDelegateSpy.swift in Sources */,
 				2E80F3AF29A5A1A700A4053C /* XCTestCase+FailableRetrievePrivateKeyStoreSpecs.swift in Sources */,
 				2E80F3E529A6462700A4053C /* KeychainPrivateKeyStoreTests.swift in Sources */,
+				2E43DA3129DAB4FF001E0550 /* XCTestCase+FailableRetrieveSeedBankStoreSpecs.swift in Sources */,
 				2EF75C1F29C3CE00001E3DA7 /* XCTestCase+SeedBankStoreSpecs.swift in Sources */,
 				2ED6164027E5C33D00920274 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				2E2CC5AA296EB9680063C23C /* BalanceEndpointTests.swift in Sources */,
@@ -1164,6 +1175,7 @@
 				2E0900EC29ADA45A00865E30 /* SeedPresenterTests.swift in Sources */,
 				2EFADE8929A7935F009BDC11 /* Assertions.swift in Sources */,
 				2E2CC5C9296EC4D90063C23C /* BalancePresenterTests.swift in Sources */,
+				2E43DA3329DABC98001E0550 /* SeedCahcePolicyUseCaseTests.swift in Sources */,
 				2ED7BA5829C13D1B0037B5B7 /* SeedBankStoreSpy.swift in Sources */,
 				2ED6164227E5C35400920274 /* URLProtocolStub.swift in Sources */,
 				2EE0898028473BAF007AFC0F /* BalanceLocalizationTests.swift in Sources */,

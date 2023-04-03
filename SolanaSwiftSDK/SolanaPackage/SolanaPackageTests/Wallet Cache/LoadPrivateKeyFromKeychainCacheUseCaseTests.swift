@@ -18,7 +18,7 @@ class LoadPrivateKeyFromKeychainCacheUseCaseTests: XCTestCase {
     
     func test_loadPrivateKey_requestsCachePrivateKey() {
         let (sut, store) = makeSUT()
-        let publicKey = uniqueWallet().publicKey
+        let publicKey = uniqueWallet().id
         
         _ = try? sut.privateKey(for: publicKey)
         
@@ -27,7 +27,7 @@ class LoadPrivateKeyFromKeychainCacheUseCaseTests: XCTestCase {
     
     func test_loadPrivateKey_failsOnRetrievalError() {
         let (sut, store) = makeSUT()
-        let publicKey = uniqueWallet().publicKey
+        let publicKey = uniqueWallet().id
         let retrievalError = anyNSError()
         
         expect(sut, toCompleteWith: .failure(retrievalError), for: publicKey, when: {
@@ -37,7 +37,7 @@ class LoadPrivateKeyFromKeychainCacheUseCaseTests: XCTestCase {
     
     func test_loadPrivateKey_failsOnEmptyCache() {
         let (sut, store) = makeSUT()
-        let publicKey = uniqueWallet().publicKey
+        let publicKey = uniqueWallet().id
         let emptyCacheError = anyNSError()
         
         expect(sut, toCompleteWith: .failure(emptyCacheError), for: publicKey, when: {
@@ -46,7 +46,7 @@ class LoadPrivateKeyFromKeychainCacheUseCaseTests: XCTestCase {
     }
     
     func test_loadPrivateKey_deliversCachedPrivateKeyOnNonEmptyCache() {
-        let publicKey = uniqueWallet().publicKey
+        let publicKey = uniqueWallet().id
         let privateKey = uniquePrivateKey()
         let (sut, store) = makeSUT()
 
@@ -56,7 +56,7 @@ class LoadPrivateKeyFromKeychainCacheUseCaseTests: XCTestCase {
     }
 
     func test_loadPrivateKey_hasNoSideEffectsOnPrivateKeyError() {
-        let publicKey = uniqueWallet().publicKey
+        let publicKey = uniqueWallet().id
         let (sut, store) = makeSUT()
         store.complete(with: anyNSError())
 
@@ -66,7 +66,7 @@ class LoadPrivateKeyFromKeychainCacheUseCaseTests: XCTestCase {
     }
 
     func test_loadPrivateKey_hasNoSideEffectsOnEmptyCache() {
-        let publicKey = uniqueWallet().publicKey
+        let publicKey = uniqueWallet().id
         let (sut, store) = makeSUT()
         
         let emptyCacheError = anyNSError()
