@@ -38,7 +38,7 @@
 		2E43DA2F29CEA632001E0550 /* SeedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E43DA2E29CEA632001E0550 /* SeedDelegate.swift */; };
 		2E43DA3129DAB4FF001E0550 /* XCTestCase+FailableRetrieveSeedBankStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E43DA3029DAB4FF001E0550 /* XCTestCase+FailableRetrieveSeedBankStoreSpecs.swift */; };
 		2E43DA3329DABC98001E0550 /* SeedCahcePolicyUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E43DA3229DABC98001E0550 /* SeedCahcePolicyUseCaseTests.swift */; };
-		2E43DA3829DD5222001E0550 /* WalletStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E43DA3729DD5222001E0550 /* WalletStore.swift */; };
+		2E43DA3829DD5222001E0550 /* PublicKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E43DA3729DD5222001E0550 /* PublicKeyStore.swift */; };
 		2E43DA4129DD58DA001E0550 /* SolanaPackageCacheIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E43DA4029DD58DA001E0550 /* SolanaPackageCacheIntegrationTests.swift */; };
 		2E43DA4229DD58DA001E0550 /* SolanaPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED6160427E5AD3F00920274 /* SolanaPackage.framework */; };
 		2E43DA4829DD5A43001E0550 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6163F27E5C33D00920274 /* XCTestCase+MemoryLeakTracking.swift */; };
@@ -196,7 +196,7 @@
 		2E43DA2E29CEA632001E0550 /* SeedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedDelegate.swift; sourceTree = "<group>"; };
 		2E43DA3029DAB4FF001E0550 /* XCTestCase+FailableRetrieveSeedBankStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FailableRetrieveSeedBankStoreSpecs.swift"; sourceTree = "<group>"; };
 		2E43DA3229DABC98001E0550 /* SeedCahcePolicyUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedCahcePolicyUseCaseTests.swift; sourceTree = "<group>"; };
-		2E43DA3729DD5222001E0550 /* WalletStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletStore.swift; sourceTree = "<group>"; };
+		2E43DA3729DD5222001E0550 /* PublicKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicKeyStore.swift; sourceTree = "<group>"; };
 		2E43DA3E29DD58DA001E0550 /* SolanaPackageCacheIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SolanaPackageCacheIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E43DA4029DD58DA001E0550 /* SolanaPackageCacheIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolanaPackageCacheIntegrationTests.swift; sourceTree = "<group>"; };
 		2E80F38429A1A6B000A4053C /* WalletDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDelegate.swift; sourceTree = "<group>"; };
@@ -531,7 +531,7 @@
 			isa = PBXGroup;
 			children = (
 				2E43DA3929DD56EE001E0550 /* CoreData */,
-				2E43DA3729DD5222001E0550 /* WalletStore.swift */,
+				2E43DA3729DD5222001E0550 /* PublicKeyStore.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -1223,7 +1223,7 @@
 				2ED7BA4329C080210037B5B7 /* LocalSeedLoader.swift in Sources */,
 				2E80F39A29A58FCA00A4053C /* LocalCredentialsLoader.swift in Sources */,
 				2E0CBFAC27F1A8C0006E6892 /* BalanceEndpoint.swift in Sources */,
-				2E43DA3829DD5222001E0550 /* WalletStore.swift in Sources */,
+				2E43DA3829DD5222001E0550 /* PublicKeyStore.swift in Sources */,
 				2ED7BA4A29C0850B0037B5B7 /* SeedBankStore.swift in Sources */,
 				2E0900D929AD9E4100865E30 /* SeedPresenter.swift in Sources */,
 				2ED6162827E5AEEF00920274 /* URLSessionHTTPClient.swift in Sources */,
