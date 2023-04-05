@@ -455,6 +455,7 @@
 		2E0900FE29AFEE9A00865E30 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				2E43DA4929DE287A001E0550 /* Core Data */,
 				2E0900FF29AFEEA100865E30 /* Keychain */,
 			);
 			path = Infrastructure;
@@ -532,6 +533,13 @@
 				2E43DA4029DD58DA001E0550 /* SolanaPackageCacheIntegrationTests.swift */,
 			);
 			path = SolanaPackageCacheIntegrationTests;
+			sourceTree = "<group>";
+		};
+		2E43DA4929DE287A001E0550 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Core Data";
 			sourceTree = "<group>";
 		};
 		2E5186D627F28C75001AB355 /* Frameworks */ = {
