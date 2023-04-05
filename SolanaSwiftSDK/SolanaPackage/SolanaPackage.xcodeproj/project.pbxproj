@@ -41,6 +41,7 @@
 		2E43DA3829DD5222001E0550 /* WalletStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E43DA3729DD5222001E0550 /* WalletStore.swift */; };
 		2E43DA4129DD58DA001E0550 /* SolanaPackageCacheIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E43DA4029DD58DA001E0550 /* SolanaPackageCacheIntegrationTests.swift */; };
 		2E43DA4229DD58DA001E0550 /* SolanaPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED6160427E5AD3F00920274 /* SolanaPackage.framework */; };
+		2E43DA4829DD5A43001E0550 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6163F27E5C33D00920274 /* XCTestCase+MemoryLeakTracking.swift */; };
 		2E5186D727F28C75001AB355 /* SolanaPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED6160427E5AD3F00920274 /* SolanaPackage.framework */; };
 		2E5186DC27F28DA0001AB355 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6163F27E5C33D00920274 /* XCTestCase+MemoryLeakTracking.swift */; };
 		2E80F38529A1A6B000A4053C /* WalletDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F38429A1A6B000A4053C /* WalletDelegate.swift */; };
@@ -1192,6 +1193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E43DA4129DD58DA001E0550 /* SolanaPackageCacheIntegrationTests.swift in Sources */,
+				2E43DA4829DD5A43001E0550 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
