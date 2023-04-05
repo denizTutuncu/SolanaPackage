@@ -38,6 +38,9 @@
 		2E43DA2F29CEA632001E0550 /* SeedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E43DA2E29CEA632001E0550 /* SeedDelegate.swift */; };
 		2E43DA3129DAB4FF001E0550 /* XCTestCase+FailableRetrieveSeedBankStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E43DA3029DAB4FF001E0550 /* XCTestCase+FailableRetrieveSeedBankStoreSpecs.swift */; };
 		2E43DA3329DABC98001E0550 /* SeedCahcePolicyUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E43DA3229DABC98001E0550 /* SeedCahcePolicyUseCaseTests.swift */; };
+		2E43DA3829DD5222001E0550 /* WalletStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E43DA3729DD5222001E0550 /* WalletStore.swift */; };
+		2E43DA4129DD58DA001E0550 /* SolanaPackageCacheIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E43DA4029DD58DA001E0550 /* SolanaPackageCacheIntegrationTests.swift */; };
+		2E43DA4229DD58DA001E0550 /* SolanaPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED6160427E5AD3F00920274 /* SolanaPackage.framework */; };
 		2E5186D727F28C75001AB355 /* SolanaPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED6160427E5AD3F00920274 /* SolanaPackage.framework */; };
 		2E5186DC27F28DA0001AB355 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6163F27E5C33D00920274 /* XCTestCase+MemoryLeakTracking.swift */; };
 		2E80F38529A1A6B000A4053C /* WalletDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F38429A1A6B000A4053C /* WalletDelegate.swift */; };
@@ -115,6 +118,13 @@
 			remoteGlobalIDString = 2E0CBFD427F282DC006E6892;
 			remoteInfo = SolanaPackageUI;
 		};
+		2E43DA4329DD58DA001E0550 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2ED615FB27E5AD3F00920274 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2ED6160327E5AD3F00920274;
+			remoteInfo = SolanaPackage;
+		};
 		2E5186D927F28C75001AB355 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2ED615FB27E5AD3F00920274 /* Project object */;
@@ -185,6 +195,9 @@
 		2E43DA2E29CEA632001E0550 /* SeedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedDelegate.swift; sourceTree = "<group>"; };
 		2E43DA3029DAB4FF001E0550 /* XCTestCase+FailableRetrieveSeedBankStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FailableRetrieveSeedBankStoreSpecs.swift"; sourceTree = "<group>"; };
 		2E43DA3229DABC98001E0550 /* SeedCahcePolicyUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedCahcePolicyUseCaseTests.swift; sourceTree = "<group>"; };
+		2E43DA3729DD5222001E0550 /* WalletStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletStore.swift; sourceTree = "<group>"; };
+		2E43DA3E29DD58DA001E0550 /* SolanaPackageCacheIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SolanaPackageCacheIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E43DA4029DD58DA001E0550 /* SolanaPackageCacheIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolanaPackageCacheIntegrationTests.swift; sourceTree = "<group>"; };
 		2E80F38429A1A6B000A4053C /* WalletDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDelegate.swift; sourceTree = "<group>"; };
 		2E80F38629A1A70300A4053C /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
 		2E80F38829A1A75900A4053C /* AppStartFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStartFlow.swift; sourceTree = "<group>"; };
@@ -278,6 +291,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E0CBFDE27F282DD006E6892 /* SolanaPackageUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E43DA3B29DD58DA001E0550 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E43DA4229DD58DA001E0550 /* SolanaPackage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +417,7 @@
 		2E0900E029AD9F8800865E30 /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
+				2E43DA3429DD5192001E0550 /* Infrastructure */,
 				2EF68C9129A0763600969DE5 /* Wallet Feature */,
 				2E80F39429A5888900A4053C /* Wallet Cache */,
 				2E80F3B429A61E4F00A4053C /* Wallet Presentation  */,
@@ -502,6 +524,30 @@
 				2E03632129710EE900CB2567 /* BalanceView.swift */,
 			);
 			path = "Balance UI";
+			sourceTree = "<group>";
+		};
+		2E43DA3429DD5192001E0550 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				2E43DA3929DD56EE001E0550 /* CoreData */,
+				2E43DA3729DD5222001E0550 /* WalletStore.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		2E43DA3929DD56EE001E0550 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		2E43DA3F29DD58DA001E0550 /* SolanaPackageCacheIntegrationTests */ = {
+			isa = PBXGroup;
+			children = (
+				2E43DA4029DD58DA001E0550 /* SolanaPackageCacheIntegrationTests.swift */,
+			);
+			path = SolanaPackageCacheIntegrationTests;
 			sourceTree = "<group>";
 		};
 		2E5186D627F28C75001AB355 /* Frameworks */ = {
@@ -643,6 +689,7 @@
 				2ED6165027E7472800920274 /* SolanaPackageAPIEndToEndTests */,
 				2E0CBFD627F282DC006E6892 /* SolanaPackageUI */,
 				2E0CBFE127F282DD006E6892 /* SolanaPackageUITests */,
+				2E43DA3F29DD58DA001E0550 /* SolanaPackageCacheIntegrationTests */,
 				2ED6160527E5AD3F00920274 /* Products */,
 				2E5186D627F28C75001AB355 /* Frameworks */,
 			);
@@ -656,6 +703,7 @@
 				2ED6164F27E7472800920274 /* SolanaPackageAPIEndToEndTests.xctest */,
 				2E0CBFD527F282DC006E6892 /* SolanaPackageUI.framework */,
 				2E0CBFDD27F282DD006E6892 /* SolanaPackageUITests.xctest */,
+				2E43DA3E29DD58DA001E0550 /* SolanaPackageCacheIntegrationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -920,6 +968,24 @@
 			productReference = 2E0CBFDD27F282DD006E6892 /* SolanaPackageUITests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		2E43DA3D29DD58DA001E0550 /* SolanaPackageCacheIntegrationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E43DA4529DD58DA001E0550 /* Build configuration list for PBXNativeTarget "SolanaPackageCacheIntegrationTests" */;
+			buildPhases = (
+				2E43DA3A29DD58DA001E0550 /* Sources */,
+				2E43DA3B29DD58DA001E0550 /* Frameworks */,
+				2E43DA3C29DD58DA001E0550 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2E43DA4429DD58DA001E0550 /* PBXTargetDependency */,
+			);
+			name = SolanaPackageCacheIntegrationTests;
+			productName = SolanaPackageCacheIntegrationTests;
+			productReference = 2E43DA3E29DD58DA001E0550 /* SolanaPackageCacheIntegrationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		2ED6160327E5AD3F00920274 /* SolanaPackage */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2ED6161827E5AD4000920274 /* Build configuration list for PBXNativeTarget "SolanaPackage" */;
@@ -980,7 +1046,7 @@
 		2ED615FB27E5AD3F00920274 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					2E0CBFD427F282DC006E6892 = {
@@ -990,6 +1056,9 @@
 					2E0CBFDC27F282DD006E6892 = {
 						CreatedOnToolsVersion = 12.5.1;
 						LastSwiftMigration = 1250;
+					};
+					2E43DA3D29DD58DA001E0550 = {
+						CreatedOnToolsVersion = 14.2;
 					};
 					2ED6160327E5AD3F00920274 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -1025,6 +1094,7 @@
 				2ED6164E27E7472800920274 /* SolanaPackageAPIEndToEndTests */,
 				2E0CBFD427F282DC006E6892 /* SolanaPackageUI */,
 				2E0CBFDC27F282DD006E6892 /* SolanaPackageUITests */,
+				2E43DA3D29DD58DA001E0550 /* SolanaPackageCacheIntegrationTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1039,6 +1109,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2E0CBFDB27F282DD006E6892 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E43DA3C29DD58DA001E0550 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1110,6 +1187,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2E43DA3A29DD58DA001E0550 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E43DA4129DD58DA001E0550 /* SolanaPackageCacheIntegrationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2ED6160027E5AD3F00920274 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1136,6 +1221,7 @@
 				2ED7BA4329C080210037B5B7 /* LocalSeedLoader.swift in Sources */,
 				2E80F39A29A58FCA00A4053C /* LocalCredentialsLoader.swift in Sources */,
 				2E0CBFAC27F1A8C0006E6892 /* BalanceEndpoint.swift in Sources */,
+				2E43DA3829DD5222001E0550 /* WalletStore.swift in Sources */,
 				2ED7BA4A29C0850B0037B5B7 /* SeedBankStore.swift in Sources */,
 				2E0900D929AD9E4100865E30 /* SeedPresenter.swift in Sources */,
 				2ED6162827E5AEEF00920274 /* URLSessionHTTPClient.swift in Sources */,
@@ -1204,6 +1290,11 @@
 			isa = PBXTargetDependency;
 			target = 2E0CBFD427F282DC006E6892 /* SolanaPackageUI */;
 			targetProxy = 2E0CBFDF27F282DD006E6892 /* PBXContainerItemProxy */;
+		};
+		2E43DA4429DD58DA001E0550 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2ED6160327E5AD3F00920274 /* SolanaPackage */;
+			targetProxy = 2E43DA4329DD58DA001E0550 /* PBXContainerItemProxy */;
 		};
 		2E5186DA27F28C75001AB355 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1408,6 +1499,40 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2E43DA4629DD58DA001E0550 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9DGMQB3935;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deniztutuncu.SolanaPackageCacheIntegrationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		2E43DA4729DD58DA001E0550 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9DGMQB3935;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deniztutuncu.SolanaPackageCacheIntegrationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1695,6 +1820,15 @@
 			buildConfigurations = (
 				2E0CBFEA27F282DD006E6892 /* Debug */,
 				2E0CBFEB27F282DD006E6892 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E43DA4529DD58DA001E0550 /* Build configuration list for PBXNativeTarget "SolanaPackageCacheIntegrationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E43DA4629DD58DA001E0550 /* Debug */,
+				2E43DA4729DD58DA001E0550 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
