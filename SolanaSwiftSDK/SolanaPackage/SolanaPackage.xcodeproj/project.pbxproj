@@ -592,7 +592,7 @@
 		2E80F39F29A5932C00A4053C /* Wallet Cache */ = {
 			isa = PBXGroup;
 			children = (
-				2E80F3A929A59FCA00A4053C /* WalletStoreSpecs */,
+				2E80F3A929A59FCA00A4053C /* PrivateKeyStoreSpecs */,
 				2E80F3A229A5937200A4053C /* Helpers */,
 				2E80F3A029A5934200A4053C /* CacheKeychainPrivateKeyUseCaseTests.swift */,
 				2E80F3A729A5957800A4053C /* LoadPrivateKeyFromKeychainCacheUseCaseTests.swift */,
@@ -610,7 +610,7 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		2E80F3A929A59FCA00A4053C /* WalletStoreSpecs */ = {
+		2E80F3A929A59FCA00A4053C /* PrivateKeyStoreSpecs */ = {
 			isa = PBXGroup;
 			children = (
 				2E80F3AA29A59FF100A4053C /* PrivateKeyStoreSpecs.swift */,
@@ -619,7 +619,7 @@
 				2E80F3B029A5A20800A4053C /* XCTestCase+FailableInsertPrivateKeyStoreSpecs.swift */,
 				2E80F3B229A5A24F00A4053C /* XCTestCase+FailableDeletePrivateKeyStoreSpecs.swift */,
 			);
-			path = WalletStoreSpecs;
+			path = PrivateKeyStoreSpecs;
 			sourceTree = "<group>";
 		};
 		2E80F3B429A61E4F00A4053C /* Wallet Presentation  */ = {
