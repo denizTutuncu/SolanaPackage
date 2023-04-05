@@ -108,6 +108,17 @@
                ReferencedContainer = "container:SolanaPackage.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            testExecutionOrdering = "random">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2E43DA3D29DD58DA001E0550"
+               BuildableName = "SolanaPackageCacheIntegrationTests.xctest"
+               BlueprintName = "SolanaPackageCacheIntegrationTests"
+               ReferencedContainer = "container:SolanaPackage.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

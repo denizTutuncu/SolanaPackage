@@ -62,7 +62,7 @@ class BankAppStore {
 @main
 struct MySolWalletApp: App {
     let appStore = BankAppStore()
-
+    
     @StateObject var navigationStore = BankNavigationStore()
     
     var body: some Scene {
@@ -74,7 +74,9 @@ struct MySolWalletApp: App {
     
     private func startBank() {
         let seed = try! appStore.localSeedLoader.load()
-        print("\(seed) from BankAppStore")
+        //        let wallets = try! appStore.localWalletLoader.load()
+        
+        print("\(seed) from MySolWalletApp")
         let adapter = iOSSwiftUINavigationAdapter(navigation: navigationStore,
                                                   wallets: [],
                                                   seed: seed,
@@ -83,4 +85,4 @@ struct MySolWalletApp: App {
         
         appStore.bank = Bank.start(walletDelegate: adapter, wallets: [], seedDelegate: adapter, seed: seed)
     }
-}
+}   
