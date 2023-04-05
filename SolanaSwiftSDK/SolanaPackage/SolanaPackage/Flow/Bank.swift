@@ -14,7 +14,7 @@ public final class Bank {
         self.flow = flow
     }
     
-    public static func start<WDelegate: WalletDelegate, SDelegate: SeedDelegate>
+    public static func start<WDelegate: PublicKeyDelegate, SDelegate: SeedDelegate>
     (
         walletDelegate: WDelegate,
         wallets: [WDelegate.Wallet],

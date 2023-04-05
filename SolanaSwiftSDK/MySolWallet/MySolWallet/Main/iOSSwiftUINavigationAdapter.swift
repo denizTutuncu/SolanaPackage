@@ -10,7 +10,7 @@ import Combine
 import SolanaPackage
 import SolanaPackageUI
 
-final class iOSSwiftUINavigationAdapter: WalletDelegate, SeedDelegate {
+final class iOSSwiftUINavigationAdapter: PublicKeyDelegate, SeedDelegate {
     typealias Wallet = DomainWallet
     typealias Seed  = DomainSeed
     typealias Transaction = DomainTransaction

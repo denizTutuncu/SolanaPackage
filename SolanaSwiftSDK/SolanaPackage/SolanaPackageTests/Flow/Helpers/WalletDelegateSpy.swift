@@ -8,7 +8,7 @@
 import Foundation
 import SolanaPackage
 
-class WalletDelegateSpy: WalletDelegate {
+class WalletDelegateSpy: PublicKeyDelegate {
     var walletCompletions: [([String]) -> Void] = []
     var passedWallets: [String] = []
     
