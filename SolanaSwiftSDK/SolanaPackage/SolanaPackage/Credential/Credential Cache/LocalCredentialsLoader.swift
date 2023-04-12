@@ -27,16 +27,17 @@ extension LocalCredentialsLoader: WalletCache {
 extension LocalCredentialsLoader {
     private struct InvalidPublicKey: Error {}
     
-    public func privateKey(for publicKey: PublicKey) throws -> PrivateKey {
+    public func privateKey(for publicKey: PublicKey) throws -> PrivateKey? {
         guard KeychainWalletCachePolicy.validate(publicKey: publicKey) else {
             throw InvalidPublicKey()
         }
         
         let cache = try store.privateKey(for: publicKey)
+        
         if KeychainWalletCachePolicy.validate(privateKey: cache) {
             return cache
         }
-        return ""
+        return nil
     }
 }
 

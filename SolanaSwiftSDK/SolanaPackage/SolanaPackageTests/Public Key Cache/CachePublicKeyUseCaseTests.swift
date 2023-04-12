@@ -1,14 +1,14 @@
 //
-//  CacheWalletUseCaseTests.swift
+//  CachePublicKeyUseCaseTests.swift
 //  SolanaPackageTests
 //
-//  Created by Deniz Tutuncu on 2/21/23.
+//  Created by Deniz Tutuncu on 4/5/23.
 //
 
 import XCTest
 import SolanaPackage
 
-class CacheKeychainPrivateKeyUseCaseTests: XCTestCase {
+class CachePublicKeyUseCaseTests: XCTestCase {
     
     func test_init_doesNotMessageStoreUponCreation() {
         let (_, store) = makeSUT()
@@ -16,15 +16,27 @@ class CacheKeychainPrivateKeyUseCaseTests: XCTestCase {
         XCTAssertEqual(store.receivedMessages, [])
     }
     
-    func test_save_requestCacheInsertion() {
-        let wallet = uniqueWallet()
+    func test_save_doesNotRequestCacheInsertionOnDeletionError() {
+        let publicKeys = uniquePublicKeys()
+        let timestamp = Date()
         let (sut, store) = makeSUT()
         let deletionError = anyNSError()
         store.completeDeletion(with: deletionError)
         
-        try? sut.save(wallet, privateKey: uniquePrivateKey())
+        try? sut.save(publicKeys)
         
-        XCTAssertEqual(store.receivedMessages, [.insert(wallet.id, uniquePrivateKey())])
+        XCTAssertEqual(store.receivedMessages, [.deleteCachedPublicKey(publicKeys)])
+    }
+    
+    func test_save_requestsNewCacheInsertionWithTimestampOnSuccessfulDeletion() {
+        let timestamp = Date()
+        let publicKeys = uniquePublicKeys()
+        let (sut, store) = makeSUT(currentDate: { timestamp })
+        store.completeDeletionSuccessfully()
+        
+        try? sut.save(publicKeys)
+        
+        XCTAssertEqual(store.receivedMessages, [.deleteCachedPublicKey(publicKeys), .insert(publicKeys, timestamp)])
     }
     
     func test_save_failsOnDeletionError() {
@@ -57,23 +69,23 @@ class CacheKeychainPrivateKeyUseCaseTests: XCTestCase {
     
     // MARK: - Helpers
     
-    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (sut: LocalCredentialsLoader, store: CredentialsStoreSpy) {
-        let store = CredentialsStoreSpy()
-        let sut = LocalCredentialsLoader(store: store)
+    private func makeSUT(currentDate: @escaping () -> Date = Date.init, file: StaticString = #filePath, line: UInt = #line) -> (sut: LocalPublicKeyLoader, store: PublicKeyStoreSpy) {
+        let store = PublicKeyStoreSpy()
+        let sut = LocalPublicKeyLoader(store: store, currentDate: currentDate)
         trackForMemoryLeaks(store, file: file, line: line)
         trackForMemoryLeaks(sut, file: file, line: line)
         return (sut, store)
     }
     
-
-    private func expect(_ sut: LocalCredentialsLoader, toCompleteWithError expectedError: NSError?, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
+    private func expect(_ sut: LocalPublicKeyLoader, toCompleteWithError expectedError: NSError?, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
         action()
         
         do {
-            try sut.save(uniqueWallet(), privateKey: uniquePrivateKey())
+            try sut.save(uniquePublicKeys())
         } catch {
             XCTAssertEqual(error as NSError?, expectedError, file: file, line: line)
         }
     }
     
 }
+

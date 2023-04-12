@@ -10,8 +10,8 @@ import Foundation
 final class KeychainWalletCachePolicy {
     private init() {}
     
-    static func validate(privateKey: String) -> Bool {
-        guard !privateKey.isEmpty else {
+    static func validate(privateKey: String?) -> Bool {
+        guard let privateKey = privateKey, !privateKey.isEmpty else {
             return false
         }
         return true

@@ -48,7 +48,7 @@ The SDK is open-source and hosted on Github, developers can use the SDK to build
 
 ### My Sol Wallet iOS App Design
 
-![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Diagrams/iOSSDKDesign.jpg?raw=true)
+![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Diagrams/iOSSDKDesign.drawio.png?raw=true)
 
 ----------------
 

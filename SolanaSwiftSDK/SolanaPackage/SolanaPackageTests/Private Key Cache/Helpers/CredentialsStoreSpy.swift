@@ -20,7 +20,7 @@ class CredentialsStoreSpy: CredentialsStore {
     
     private var deletionResult: Result<Void, Error>?
     private var insertionResult: Result<Void, Error>?
-    private var privateKeyResult: Result<String, Error> = .success("Test Private Key")
+    private var privateKeyResult: Result<String?, Error>?
 
     func deletePrivateKey(for publicKey: PublicKey) throws {
         receivedMessages.append(.deleteCached(publicKey))
@@ -48,9 +48,9 @@ class CredentialsStoreSpy: CredentialsStore {
         insertionResult = .success(())
     }
     
-    func privateKey(for publicKey: PublicKey) throws -> PrivateKey {
+    func privateKey(for publicKey: PublicKey) throws -> PrivateKey? {
         receivedMessages.append(.privateKey(publicKey))
-        return try privateKeyResult.get()
+        return try privateKeyResult?.get()
     }
     
     func complete(with error: Error) {
@@ -66,4 +66,3 @@ class CredentialsStoreSpy: CredentialsStore {
     }
 
 }
-

@@ -87,7 +87,7 @@ class LoadPrivateKeyFromKeychainCacheUseCaseTests: XCTestCase {
         return (sut, store)
     }
     
-    private func expect(_ sut: LocalCredentialsLoader, toCompleteWith expectedResult: Result<PrivateKey, Error>, for publicKey: PublicKey, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
+    private func expect(_ sut: LocalCredentialsLoader, toCompleteWith expectedResult: Result<String, Error>, for publicKey: String, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
         action()
         
         let receivedResult = Result { try sut.privateKey(for: publicKey) }

@@ -7,10 +7,10 @@
 
 import Foundation
 
-public typealias CachePublicKey = (publicKeys: [String], timestamp: Date)
+public typealias CachedPublicKey = (publicKeys: [String], timestamp: Date)
 
 public protocol PublicKeyStore {
-    func deleteCached(_ publicKey: [String]) throws
+    func deleteCached(_ publicKeys: [String]) throws
     func insert(_ publicKeys: [String], timestamp: Date) throws
-    func retrieve() throws -> CachePublicKey?
+    func retrieve() throws -> CachedPublicKey?
 }

@@ -12,6 +12,6 @@ public protocol CredentialsStore {
     typealias PrivateKey = String
 
     func insert(publicKey: PublicKey, privateKey: PrivateKey) throws
-    func privateKey(for publicKey: PublicKey) throws -> PrivateKey
+    func privateKey(for publicKey: PublicKey) throws -> PrivateKey?
     func deletePrivateKey(for publicKey: PublicKey) throws
 }
