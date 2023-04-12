@@ -26,7 +26,7 @@ public extension HTTPClient {
 }
 
 public extension LocalPrivateKeyLoader {
-    typealias Publisher = AnyPublisher<String, Error>
+    typealias Publisher = AnyPublisher<String?, Error>
     
     func loadPrivateKeyPublisher(_ publicKey: PublicKey) -> Publisher {
         Deferred {
