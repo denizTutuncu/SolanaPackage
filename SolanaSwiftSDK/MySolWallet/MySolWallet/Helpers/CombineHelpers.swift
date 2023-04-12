@@ -25,7 +25,7 @@ public extension HTTPClient {
     }
 }
 
-public extension LocalCredentialsLoader {
+public extension LocalPrivateKeyLoader {
     typealias Publisher = AnyPublisher<String, Error>
     
     func loadPrivateKeyPublisher(_ publicKey: PublicKey) -> Publisher {

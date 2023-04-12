@@ -9,7 +9,6 @@ public final class KeychainPrivateKeyStore {
     
     enum StoreError: Swift.Error {
         case insertFailed
-//        case privateKeyNotExist
         case errSecSuccess(String)
         case unexpectedPrivateKeyData
         case publicKeyIsAlreadyExist
@@ -18,7 +17,7 @@ public final class KeychainPrivateKeyStore {
     private let network: String
 }
 
-extension KeychainPrivateKeyStore: CredentialsStore {
+extension KeychainPrivateKeyStore: PrivateKeyStore {
     public func deletePrivateKey(for publicKey: PublicKey) throws {
         let deleteQuery : [String: Any] = [
             kSecClass as String: kSecClassInternetPassword,
@@ -53,7 +52,6 @@ extension KeychainPrivateKeyStore: CredentialsStore {
         }
     }
     
-    
     public func privateKey(for publicKey: PublicKey) throws -> PrivateKey? {
         let searchQuery: [String: Any] = [kSecClass as String: kSecClassInternetPassword,
                                           kSecAttrServer as String: network,
@@ -65,9 +63,7 @@ extension KeychainPrivateKeyStore: CredentialsStore {
         var item: CFTypeRef?
         let status = SecItemCopyMatching(searchQuery as CFDictionary, &item)
         
-        guard status != errSecItemNotFound else { return nil }
-//        guard status != errSecItemNotFound else { throw StoreError.privateKeyNotExist }
-        
+        guard status != errSecItemNotFound else { return nil }        
         guard status == errSecSuccess else { throw StoreError.errSecSuccess(status.description) }
         
         

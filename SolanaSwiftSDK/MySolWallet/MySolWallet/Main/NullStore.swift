@@ -10,7 +10,7 @@ import SolanaPackage
 
 class NullStore {}
 
-extension NullStore: CredentialsStore {
+extension NullStore: PrivateKeyStore {
     func insert(publicKey: PublicKey, privateKey: PrivateKey) throws {}
     func privateKey(for publicKey: PublicKey) throws -> PrivateKey {""}
     func deletePrivateKey(for publicKey: PublicKey) throws {}

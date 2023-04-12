@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol CredentialsStore {
+public protocol PrivateKeyStore {
     typealias PublicKey = String
     typealias PrivateKey = String
 

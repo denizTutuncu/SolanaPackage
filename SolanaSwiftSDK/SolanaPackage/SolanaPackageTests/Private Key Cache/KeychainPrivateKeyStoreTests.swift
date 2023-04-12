@@ -84,7 +84,7 @@ class KeychainPrivateKeyStoreTests: XCTestCase, PrivateKeyStoreSpecs {
 
     // - MARK: Helpers
 
-    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> CredentialsStore {
+    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> PrivateKeyStore {
         let service = "Keychain.Solana.Test.Store"
         let sut = KeychainPrivateKeyStore(network: service)
         trackForMemoryLeaks(sut, file: file, line: line)

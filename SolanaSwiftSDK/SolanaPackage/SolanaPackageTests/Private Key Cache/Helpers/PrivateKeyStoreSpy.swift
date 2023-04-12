@@ -1,5 +1,5 @@
 //
-//  WalletStoreSpy.swift
+//  PrivateKeyStoreSpy.swift
 //  SolanaPackageTests
 //
 //  Created by Deniz Tutuncu on 2/21/23.
@@ -8,7 +8,7 @@
 import Foundation
 import SolanaPackage
 
-class CredentialsStoreSpy: CredentialsStore {
+class PrivateKeyStoreSpy: PrivateKeyStore {
    
     enum ReceivedMessage: Equatable {
         case deleteCached(String)

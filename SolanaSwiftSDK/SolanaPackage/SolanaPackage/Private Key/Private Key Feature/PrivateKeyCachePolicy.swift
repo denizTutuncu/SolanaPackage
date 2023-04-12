@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class KeychainWalletCachePolicy {
+final class PrivateKeyCachePolicy {
     private init() {}
     
     static func validate(privateKey: String?) -> Bool {
