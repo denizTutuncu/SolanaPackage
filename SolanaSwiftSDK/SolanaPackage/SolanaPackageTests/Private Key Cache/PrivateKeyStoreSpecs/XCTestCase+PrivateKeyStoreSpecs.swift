@@ -64,14 +64,14 @@ extension PrivateKeyStoreSpecs where Self: XCTestCase {
     func assertThatInsertDoesNotOverridePreviouslyInsertedCacheValue(on sut: CredentialsStore, file: StaticString = #filePath, line: UInt = #line) {
         let publicKey = uniqueWallet().id
         let privateKey = uniquePrivateKey()
-        
+
         let firstInsertionError = insert(publicKey, privateKey, to: sut)
         XCTAssertNil(firstInsertionError, "Expected to insert cache successfully", file: file, line: line)
-        
+
         let anotherPrivateKey = "Another Private Key"
         let secondInsertionError = insert(publicKey, anotherPrivateKey, to: sut)
-        
-        XCTAssertNotNil(secondInsertionError, "Expected to insert cache successfully", file: file, line: line)
+
+        XCTAssertNotNil(secondInsertionError, "Expected to get cache error", file: file, line: line)
     }
     
     func assertThatInsertDoesNotOverridePreviouslyInsertedCacheValues(on sut: CredentialsStore, file: StaticString = #filePath, line: UInt = #line) {
