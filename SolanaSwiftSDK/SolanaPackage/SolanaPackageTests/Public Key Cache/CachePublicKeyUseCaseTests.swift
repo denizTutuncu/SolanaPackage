@@ -18,7 +18,6 @@ class CachePublicKeyUseCaseTests: XCTestCase {
     
     func test_save_doesNotRequestCacheInsertionOnDeletionError() {
         let publicKeys = uniquePublicKeys()
-        let timestamp = Date()
         let (sut, store) = makeSUT()
         let deletionError = anyNSError()
         store.completeDeletion(with: deletionError)
