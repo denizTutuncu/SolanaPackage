@@ -10,19 +10,19 @@ import SolanaPackage
 
 extension PrivateKeyStoreSpecs where Self: XCTestCase {
     
-    func assertThatRetrieveDeliversNilsOnEmptyCache(on sut: CredentialsStore, file: StaticString = #filePath, line: UInt = #line) {
+    func assertThatRetrieveDeliversNilsOnEmptyCache(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
         let publicKey = "Non-exist Public Key"
         
         expect(publicKey, sut, toRetrieve: .success(.none), file: file, line: line)
     }
     
-    func assertThatRetrieveHasNoSideEffectsOnEmptyCache(on sut: CredentialsStore, file: StaticString = #filePath, line: UInt = #line) {
+    func assertThatRetrieveHasNoSideEffectsOnEmptyCache(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
         let publicKey = "Non-exist Public Key"
         
         expect(publicKey, sut, toRetrieveTwice: .success(.none), file: file, line: line)
     }
     
-    func assertThatRetrieveDeliversFoundValuesOnNonEmptyCache(on sut: CredentialsStore, file: StaticString = #filePath, line: UInt = #line) {
+    func assertThatRetrieveDeliversFoundValuesOnNonEmptyCache(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
         let publicKey = uniqueWallet().id
         let privateKey = uniquePrivateKey()
         
@@ -32,7 +32,7 @@ extension PrivateKeyStoreSpecs where Self: XCTestCase {
         expect(publicKey, sut, toRetrieve: .success(privateKey), file: file, line: line)
     }
     
-    func assertThatRetrieveHasNoSideEffectsOnNonEmptyCache(on sut: CredentialsStore, file: StaticString = #filePath, line: UInt = #line) {
+    func assertThatRetrieveHasNoSideEffectsOnNonEmptyCache(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
         let publicKey = uniqueWallet().id
         let privateKey = uniquePrivateKey()
         insert(publicKey, privateKey, to: sut)
@@ -41,7 +41,7 @@ extension PrivateKeyStoreSpecs where Self: XCTestCase {
         expect(publicKey, sut, toRetrieveTwice: .success(privateKey), file: file, line: line)
     }
     
-    func assertThatInsertDeliversNoErrorOnEmptyCache(on sut: CredentialsStore, file: StaticString = #filePath, line: UInt = #line) {
+    func assertThatInsertDeliversNoErrorOnEmptyCache(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
         let publicKey = uniqueWallet().id
         let privateKey = uniquePrivateKey()
         let insertionError = insert(publicKey, privateKey, to: sut)
@@ -49,7 +49,7 @@ extension PrivateKeyStoreSpecs where Self: XCTestCase {
         XCTAssertNil(insertionError, "Expected to insert cache successfully", file: file, line: line)
     }
     
-    func assertThatInsertDeliversNoErrorOnNonEmptyCache(on sut: CredentialsStore, file: StaticString = #filePath, line: UInt = #line) {
+    func assertThatInsertDeliversNoErrorOnNonEmptyCache(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
         let publicKey = uniqueWallet().id
         let privateKey = uniquePrivateKey()
         insert(publicKey, privateKey, to: sut)
@@ -61,7 +61,7 @@ extension PrivateKeyStoreSpecs where Self: XCTestCase {
         XCTAssertNil(insertionError, "Expected to override cache successfully", file: file, line: line)
     }
     
-    func assertThatInsertDoesNotOverridePreviouslyInsertedCacheValue(on sut: CredentialsStore, file: StaticString = #filePath, line: UInt = #line) {
+    func assertThatInsertDoesNotOverridePreviouslyInsertedCacheValue(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
         let publicKey = uniqueWallet().id
         let privateKey = uniquePrivateKey()
 
@@ -74,7 +74,7 @@ extension PrivateKeyStoreSpecs where Self: XCTestCase {
         XCTAssertNotNil(secondInsertionError, "Expected to get cache error", file: file, line: line)
     }
     
-    func assertThatInsertDoesNotOverridePreviouslyInsertedCacheValues(on sut: CredentialsStore, file: StaticString = #filePath, line: UInt = #line) {
+    func assertThatInsertDoesNotOverridePreviouslyInsertedCacheValues(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
         let publicKey = uniqueWallet().id
         let privateKey = uniquePrivateKey()
         insert(publicKey, privateKey, to: sut)
@@ -90,21 +90,21 @@ extension PrivateKeyStoreSpecs where Self: XCTestCase {
         expect(publicKey, sut, toRetrieve: .success(privateKey), file: file, line: line)
     }
     
-    func assertThatDeleteDeliversNoErrorOnEmptyCache(on sut: CredentialsStore, file: StaticString = #filePath, line: UInt = #line) {
+    func assertThatDeleteDeliversNoErrorOnEmptyCache(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
         let publicKey = uniqueWallet().id
         let deletionError = deleteCache(publicKey, from: sut)
         
         XCTAssertNil(deletionError, "Expected empty cache deletion to succeed", file: file, line: line)
     }
     
-    func assertThatDeleteHasNoSideEffectsOnEmptyCache(on sut: CredentialsStore, file: StaticString = #filePath, line: UInt = #line) {
+    func assertThatDeleteHasNoSideEffectsOnEmptyCache(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
         let publicKey = uniqueWallet().id
         deleteCache(publicKey, from: sut)
         
         expect(publicKey, sut, toRetrieveTwice: .success(.none), file: file, line: line)
     }
     
-    func assertThatDeleteDeliversNoErrorOnNonEmptyCache(on sut: CredentialsStore, file: StaticString = #filePath, line: UInt = #line) {
+    func assertThatDeleteDeliversNoErrorOnNonEmptyCache(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
         let publicKey = uniqueWallet().id
         let privateKey = uniquePrivateKey()
         insert(publicKey, privateKey, to: sut)
@@ -114,7 +114,7 @@ extension PrivateKeyStoreSpecs where Self: XCTestCase {
         XCTAssertNil(deletionError, "Expected non-empty cache deletion to succeed", file: file, line: line)
     }
     
-    func assertThatDeleteEmptiesInsertedPrivateKey(on sut: CredentialsStore, file: StaticString = #filePath, line: UInt = #line) {
+    func assertThatDeleteEmptiesInsertedPrivateKey(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
         let publicKey = uniqueWallet().id
         let privateKey = uniquePrivateKey()
         insert(publicKey, privateKey, to: sut)
@@ -128,7 +128,7 @@ extension PrivateKeyStoreSpecs where Self: XCTestCase {
 
 extension PrivateKeyStoreSpecs where Self: XCTestCase {
     @discardableResult
-    func insert(_ publicKey: String, _ privateKey: String, to sut: CredentialsStore) -> Error? {
+    func insert(_ publicKey: String, _ privateKey: String, to sut: PrivateKeyStore) -> Error? {
         do {
             try sut.insert(publicKey: publicKey, privateKey: privateKey)
             return nil
@@ -138,7 +138,7 @@ extension PrivateKeyStoreSpecs where Self: XCTestCase {
     }
     
     @discardableResult
-    func deleteCache(_ publicKey: String, from sut: CredentialsStore) -> Error? {
+    func deleteCache(_ publicKey: String, from sut: PrivateKeyStore) -> Error? {
         do {
             try sut.deletePrivateKey(for: publicKey)
             return nil
@@ -148,7 +148,7 @@ extension PrivateKeyStoreSpecs where Self: XCTestCase {
     }
     
     @discardableResult
-    func getPrivateKey(_ publicKey: String, from sut: CredentialsStore) -> Error? {
+    func getPrivateKey(_ publicKey: String, from sut: PrivateKeyStore) -> Error? {
         do {
             let _ = try sut.privateKey(for: publicKey)
             return nil
@@ -159,13 +159,13 @@ extension PrivateKeyStoreSpecs where Self: XCTestCase {
     
     
     //MARK: - Private Key
-    func expect(_ publicKey: String, _ sut: CredentialsStore, toRetrieveTwice expectedResult: Result<String?, Error>, file: StaticString = #filePath, line: UInt = #line) {
+    func expect(_ publicKey: String, _ sut: PrivateKeyStore, toRetrieveTwice expectedResult: Result<String?, Error>, file: StaticString = #filePath, line: UInt = #line) {
         expect(publicKey, sut, toRetrieve: expectedResult, file: file, line: line)
         expect(publicKey, sut, toRetrieve: expectedResult, file: file, line: line)
     }
     
     func expect(_ publicKey: String,
-                _ sut: CredentialsStore,
+                _ sut: PrivateKeyStore,
                 toRetrieve expectedResult: Result<String?, Error>,
                 file: StaticString = #filePath, line: UInt = #line)
     {

@@ -79,15 +79,15 @@ class LoadPrivateKeyFromKeychainCacheUseCaseTests: XCTestCase {
 
     // MARK: - Helpers
     
-    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (sut: LocalCredentialsLoader, store: CredentialsStoreSpy) {
-        let store = CredentialsStoreSpy()
-        let sut = LocalCredentialsLoader(store: store)
+    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (sut: LocalPrivateKeyLoader, store: PrivateKeyStoreSpy) {
+        let store = PrivateKeyStoreSpy()
+        let sut = LocalPrivateKeyLoader(store: store)
         trackForMemoryLeaks(store, file: file, line: line)
         trackForMemoryLeaks(sut, file: file, line: line)
         return (sut, store)
     }
     
-    private func expect(_ sut: LocalCredentialsLoader, toCompleteWith expectedResult: Result<String, Error>, for publicKey: String, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
+    private func expect(_ sut: LocalPrivateKeyLoader, toCompleteWith expectedResult: Result<String, Error>, for publicKey: String, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
         action()
         
         let receivedResult = Result { try sut.privateKey(for: publicKey) }

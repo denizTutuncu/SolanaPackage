@@ -15,6 +15,7 @@ protocol PrivateKeyStoreSpecs {
     
     func test_insert_deliversNoErrorOnEmptyCache()
     func test_insert_deliversNoErrorOnNonEmptyCache()
+    func test_insert_deliversErrorOnPreviouslyInsertedCacheValueUpdate()
     func test_insert_doesNotOverridesPreviouslyInsertedCacheValues()
     
     func test_delete_deliversNoErrorOnEmptyCache()

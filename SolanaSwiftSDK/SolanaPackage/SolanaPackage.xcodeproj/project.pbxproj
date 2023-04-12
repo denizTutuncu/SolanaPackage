@@ -61,12 +61,12 @@
 		2E80F38E29A579D900A4053C /* SingleWalletSelectionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F38D29A579D900A4053C /* SingleWalletSelectionCellView.swift */; };
 		2E80F39029A5805E00A4053C /* WalletListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F38F29A5805D00A4053C /* WalletListView.swift */; };
 		2E80F39329A5815B00A4053C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F39229A5815B00A4053C /* HeaderView.swift */; };
-		2E80F39629A5889800A4053C /* CredentialsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F39529A5889800A4053C /* CredentialsStore.swift */; };
-		2E80F39A29A58FCA00A4053C /* LocalCredentialsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F39929A58FCA00A4053C /* LocalCredentialsLoader.swift */; };
-		2E80F39C29A590C200A4053C /* KeychainWalletCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F39B29A590C200A4053C /* KeychainWalletCachePolicy.swift */; };
+		2E80F39629A5889800A4053C /* PrivateKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F39529A5889800A4053C /* PrivateKeyStore.swift */; };
+		2E80F39A29A58FCA00A4053C /* LocalPrivateKeyLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F39929A58FCA00A4053C /* LocalPrivateKeyLoader.swift */; };
+		2E80F39C29A590C200A4053C /* PrivateKeyCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F39B29A590C200A4053C /* PrivateKeyCachePolicy.swift */; };
 		2E80F39E29A5920300A4053C /* WalletCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F39D29A5920300A4053C /* WalletCache.swift */; };
 		2E80F3A129A5934200A4053C /* CachePrivateKeyUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3A029A5934200A4053C /* CachePrivateKeyUseCaseTests.swift */; };
-		2E80F3A429A5938200A4053C /* CredentialsStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3A329A5938200A4053C /* CredentialsStoreSpy.swift */; };
+		2E80F3A429A5938200A4053C /* PrivateKeyStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3A329A5938200A4053C /* PrivateKeyStoreSpy.swift */; };
 		2E80F3A829A5957800A4053C /* LoadPrivateKeyFromKeychainCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3A729A5957800A4053C /* LoadPrivateKeyFromKeychainCacheUseCaseTests.swift */; };
 		2E80F3AB29A59FF100A4053C /* PrivateKeyStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3AA29A59FF100A4053C /* PrivateKeyStoreSpecs.swift */; };
 		2E80F3AD29A5A06000A4053C /* XCTestCase+PrivateKeyStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3AC29A5A06000A4053C /* XCTestCase+PrivateKeyStoreSpecs.swift */; };
@@ -79,7 +79,7 @@
 		2E80F3D029A6283A00A4053C /* Wallet.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E80F3D229A6283A00A4053C /* Wallet.strings */; };
 		2E80F3DD29A6302300A4053C /* BankTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3DC29A6302300A4053C /* BankTest.swift */; };
 		2E80F3E529A6462700A4053C /* KeychainPrivateKeyStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3E429A6462700A4053C /* KeychainPrivateKeyStoreTests.swift */; };
-		2E80F3E729A64DCF00A4053C /* KeychainWalletStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3E629A64DCF00A4053C /* KeychainWalletStore.swift */; };
+		2E80F3E729A64DCF00A4053C /* KeychainPrivateKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3E629A64DCF00A4053C /* KeychainPrivateKeyStore.swift */; };
 		2E80F3EB29A66E2400A4053C /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3EA29A66E2400A4053C /* WalletView.swift */; };
 		2E954BA22848852F002D2FF3 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E954BA12848852F002D2FF3 /* Balance.swift */; };
 		2EB6F55027E821A500CA7BED /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB6F54F27E821A500CA7BED /* SharedTestHelpers.swift */; };
@@ -226,12 +226,12 @@
 		2E80F38D29A579D900A4053C /* SingleWalletSelectionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleWalletSelectionCellView.swift; sourceTree = "<group>"; };
 		2E80F38F29A5805D00A4053C /* WalletListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletListView.swift; sourceTree = "<group>"; };
 		2E80F39229A5815B00A4053C /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		2E80F39529A5889800A4053C /* CredentialsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsStore.swift; sourceTree = "<group>"; };
-		2E80F39929A58FCA00A4053C /* LocalCredentialsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCredentialsLoader.swift; sourceTree = "<group>"; };
-		2E80F39B29A590C200A4053C /* KeychainWalletCachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWalletCachePolicy.swift; sourceTree = "<group>"; };
+		2E80F39529A5889800A4053C /* PrivateKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateKeyStore.swift; sourceTree = "<group>"; };
+		2E80F39929A58FCA00A4053C /* LocalPrivateKeyLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPrivateKeyLoader.swift; sourceTree = "<group>"; };
+		2E80F39B29A590C200A4053C /* PrivateKeyCachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateKeyCachePolicy.swift; sourceTree = "<group>"; };
 		2E80F39D29A5920300A4053C /* WalletCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCache.swift; sourceTree = "<group>"; };
 		2E80F3A029A5934200A4053C /* CachePrivateKeyUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachePrivateKeyUseCaseTests.swift; sourceTree = "<group>"; };
-		2E80F3A329A5938200A4053C /* CredentialsStoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsStoreSpy.swift; sourceTree = "<group>"; };
+		2E80F3A329A5938200A4053C /* PrivateKeyStoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateKeyStoreSpy.swift; sourceTree = "<group>"; };
 		2E80F3A729A5957800A4053C /* LoadPrivateKeyFromKeychainCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPrivateKeyFromKeychainCacheUseCaseTests.swift; sourceTree = "<group>"; };
 		2E80F3AA29A59FF100A4053C /* PrivateKeyStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateKeyStoreSpecs.swift; sourceTree = "<group>"; };
 		2E80F3AC29A5A06000A4053C /* XCTestCase+PrivateKeyStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+PrivateKeyStoreSpecs.swift"; sourceTree = "<group>"; };
@@ -250,7 +250,7 @@
 		2E80F3D529A6287E00A4053C /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Wallet.strings; sourceTree = "<group>"; };
 		2E80F3DC29A6302300A4053C /* BankTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankTest.swift; sourceTree = "<group>"; };
 		2E80F3E429A6462700A4053C /* KeychainPrivateKeyStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPrivateKeyStoreTests.swift; sourceTree = "<group>"; };
-		2E80F3E629A64DCF00A4053C /* KeychainWalletStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWalletStore.swift; sourceTree = "<group>"; };
+		2E80F3E629A64DCF00A4053C /* KeychainPrivateKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPrivateKeyStore.swift; sourceTree = "<group>"; };
 		2E80F3EA29A66E2400A4053C /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
 		2E954B9F28487C02002D2FF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E954BA12848852F002D2FF3 /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
@@ -474,7 +474,7 @@
 		2E0900FF29AFEEA100865E30 /* Keychain */ = {
 			isa = PBXGroup;
 			children = (
-				2E80F3E629A64DCF00A4053C /* KeychainWalletStore.swift */,
+				2E80F3E629A64DCF00A4053C /* KeychainPrivateKeyStore.swift */,
 			);
 			path = Keychain;
 			sourceTree = "<group>";
@@ -578,23 +578,23 @@
 			path = "Public Key Cache";
 			sourceTree = "<group>";
 		};
-		2E43DA5129DE2A8F001E0550 /* Credential */ = {
+		2E43DA5129DE2A8F001E0550 /* Private Key */ = {
 			isa = PBXGroup;
 			children = (
-				2E43DA5429DE2AE4001E0550 /* Credential Feature */,
-				2E43DA5229DE2ABF001E0550 /* Credential Cache */,
+				2E43DA5429DE2AE4001E0550 /* Private Key Feature */,
+				2E43DA5229DE2ABF001E0550 /* Private Key Cache */,
 			);
-			path = Credential;
+			path = "Private Key";
 			sourceTree = "<group>";
 		};
-		2E43DA5229DE2ABF001E0550 /* Credential Cache */ = {
+		2E43DA5229DE2ABF001E0550 /* Private Key Cache */ = {
 			isa = PBXGroup;
 			children = (
 				2E43DA5529DE2B22001E0550 /* Infrastructure */,
-				2E80F39529A5889800A4053C /* CredentialsStore.swift */,
-				2E80F39929A58FCA00A4053C /* LocalCredentialsLoader.swift */,
+				2E80F39529A5889800A4053C /* PrivateKeyStore.swift */,
+				2E80F39929A58FCA00A4053C /* LocalPrivateKeyLoader.swift */,
 			);
-			path = "Credential Cache";
+			path = "Private Key Cache";
 			sourceTree = "<group>";
 		};
 		2E43DA5329DE2ACD001E0550 /* Infrastructure */ = {
@@ -607,12 +607,12 @@
 			path = Infrastructure;
 			sourceTree = "<group>";
 		};
-		2E43DA5429DE2AE4001E0550 /* Credential Feature */ = {
+		2E43DA5429DE2AE4001E0550 /* Private Key Feature */ = {
 			isa = PBXGroup;
 			children = (
-				2E80F39B29A590C200A4053C /* KeychainWalletCachePolicy.swift */,
+				2E80F39B29A590C200A4053C /* PrivateKeyCachePolicy.swift */,
 			);
-			path = "Credential Feature";
+			path = "Private Key Feature";
 			sourceTree = "<group>";
 		};
 		2E43DA5529DE2B22001E0550 /* Infrastructure */ = {
@@ -785,12 +785,12 @@
 			isa = PBXGroup;
 			children = (
 				2ED6160827E5AD3F00920274 /* Info.plist */,
-				2E43DA5129DE2A8F001E0550 /* Credential */,
+				2E0900DE29AD9F6800865E30 /* Seed */,
+				2E43DA5129DE2A8F001E0550 /* Private Key */,
 				2E43DA4E29DE2A2A001E0550 /* Public Key */,
 				2E0900E229AD9FC400865E30 /* Balance */,
 				2E0900E129AD9FA000865E30 /* Transaction */,
 				2E0900E029AD9F8800865E30 /* Wallet */,
-				2E0900DE29AD9F6800865E30 /* Seed */,
 				2E80F38329A1A6A800A4053C /* Flow */,
 				2E2CC5B1296EC1B00063C23C /* Publishers */,
 				2E9B09502848338300F450C8 /* Shared API Infra */,
@@ -867,11 +867,11 @@
 		2ED7BA5329C13BED0037B5B7 /* Seed Cache */ = {
 			isa = PBXGroup;
 			children = (
+				2ED7BA5629C13D030037B5B7 /* Helpers */,
+				2EF75C1D29C3CDD3001E3DA7 /* SeedBankStoreSpecs */,
 				2ED7BA5429C13CCC0037B5B7 /* LoadSeedBankUseCaseTests.swift */,
 				2EF75C1929C3BEFA001E3DA7 /* HardcodedSeedStoreTests.swift */,
 				2E43DA3229DABC98001E0550 /* SeedCahcePolicyUseCaseTests.swift */,
-				2EF75C1D29C3CDD3001E3DA7 /* SeedBankStoreSpecs */,
-				2ED7BA5629C13D030037B5B7 /* Helpers */,
 			);
 			path = "Seed Cache";
 			sourceTree = "<group>";
@@ -899,7 +899,7 @@
 		2EDD970529E5CE0F00BC9373 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				2E80F3A329A5938200A4053C /* CredentialsStoreSpy.swift */,
+				2E80F3A329A5938200A4053C /* PrivateKeyStoreSpy.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1304,7 +1304,7 @@
 				2E954BA22848852F002D2FF3 /* Balance.swift in Sources */,
 				2E80F38929A1A75900A4053C /* AppStartFlow.swift in Sources */,
 				2ED6163A27E5BE4400920274 /* BalanceItemMapper.swift in Sources */,
-				2E80F39C29A590C200A4053C /* KeychainWalletCachePolicy.swift in Sources */,
+				2E80F39C29A590C200A4053C /* PrivateKeyCachePolicy.swift in Sources */,
 				2ED6162627E5AECE00920274 /* HTTPClient.swift in Sources */,
 				2ED7BA5029C089890037B5B7 /* SeedCachePolicy.swift in Sources */,
 				2E0900C229AD6A3E00865E30 /* TransactionPresenter.swift in Sources */,
@@ -1313,19 +1313,19 @@
 				2EF68C9529A0785500969DE5 /* WalletPresenter.swift in Sources */,
 				2E80F38729A1A70300A4053C /* Bank.swift in Sources */,
 				2E43DA4D29DE29A7001E0550 /* PublicKeyCache.swift in Sources */,
-				2E80F3E729A64DCF00A4053C /* KeychainWalletStore.swift in Sources */,
+				2E80F3E729A64DCF00A4053C /* KeychainPrivateKeyStore.swift in Sources */,
 				2E80F39E29A5920300A4053C /* WalletCache.swift in Sources */,
 				2E2CC5C7296EC45C0063C23C /* BalancePresenter.swift in Sources */,
 				2E80F38529A1A6B000A4053C /* PublicKeyDelegate.swift in Sources */,
 				2ED7BA4329C080210037B5B7 /* LocalSeedLoader.swift in Sources */,
-				2E80F39A29A58FCA00A4053C /* LocalCredentialsLoader.swift in Sources */,
+				2E80F39A29A58FCA00A4053C /* LocalPrivateKeyLoader.swift in Sources */,
 				2E0CBFAC27F1A8C0006E6892 /* BalanceEndpoint.swift in Sources */,
 				2E43DA3829DD5222001E0550 /* PublicKeyStore.swift in Sources */,
 				2ED7BA4A29C0850B0037B5B7 /* SeedBankStore.swift in Sources */,
 				2E0900D929AD9E4100865E30 /* SeedPresenter.swift in Sources */,
 				2ED6162827E5AEEF00920274 /* URLSessionHTTPClient.swift in Sources */,
 				2E43DA2F29CEA632001E0550 /* SeedDelegate.swift in Sources */,
-				2E80F39629A5889800A4053C /* CredentialsStore.swift in Sources */,
+				2E80F39629A5889800A4053C /* PrivateKeyStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1374,7 +1374,7 @@
 				2EE0898028473BAF007AFC0F /* BalanceLocalizationTests.swift in Sources */,
 				2EDA9D26298DBB4F004793D3 /* PublisherViewModelTests.swift in Sources */,
 				2E3951E2283DF5120079852F /* BalanceItemMapperTests.swift in Sources */,
-				2E80F3A429A5938200A4053C /* CredentialsStoreSpy.swift in Sources */,
+				2E80F3A429A5938200A4053C /* PrivateKeyStoreSpy.swift in Sources */,
 				2ED6164627E5C3B800920274 /* URLSessionHTTPClientTests.swift in Sources */,
 				2E80F3B329A5A24F00A4053C /* XCTestCase+FailableDeletePrivateKeyStoreSpecs.swift in Sources */,
 				2E80F3DD29A6302300A4053C /* BankTest.swift in Sources */,

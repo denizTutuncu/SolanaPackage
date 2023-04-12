@@ -7,41 +7,41 @@
 
 import Foundation
 
-public final class LocalCredentialsLoader {
-    public init(store: CredentialsStore) {
+public final class LocalPrivateKeyLoader {
+    public init(store: PrivateKeyStore) {
         self.store = store
     }
     
     public typealias PublicKey = String
     public typealias PrivateKey = String
     
-    private let store: CredentialsStore
+    private let store: PrivateKeyStore
 }
 
-extension LocalCredentialsLoader: WalletCache {
+extension LocalPrivateKeyLoader: WalletCache {
     public func save(_ wallet: DomainWallet, privateKey: PrivateKey) throws {
         try store.insert(publicKey: wallet.id, privateKey: privateKey)
     }
 }
 
-extension LocalCredentialsLoader {
+extension LocalPrivateKeyLoader {
     private struct InvalidPublicKey: Error {}
     
     public func privateKey(for publicKey: PublicKey) throws -> PrivateKey? {
-        guard KeychainWalletCachePolicy.validate(publicKey: publicKey) else {
+        guard PrivateKeyCachePolicy.validate(publicKey: publicKey) else {
             throw InvalidPublicKey()
         }
         
         let cache = try store.privateKey(for: publicKey)
         
-        if KeychainWalletCachePolicy.validate(privateKey: cache) {
+        if PrivateKeyCachePolicy.validate(privateKey: cache) {
             return cache
         }
         return nil
     }
 }
 
-extension LocalCredentialsLoader {
+extension LocalPrivateKeyLoader {
     public func deletePrivateKey(for publicKey: PublicKey?) throws {
         guard let publicKey = publicKey else {
             return

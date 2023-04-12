@@ -12,7 +12,7 @@ import SolanaPackageUI
 import Combine
 
 class BankAppStore {
-    typealias CredentialsStore = SolanaPackage.CredentialsStore
+    typealias CredentialsStore = SolanaPackage.PrivateKeyStore
     typealias Seed = SolanaPackage.DomainSeed
     typealias SeedStore = SolanaPackage.SeedBankStore
     
@@ -34,8 +34,8 @@ class BankAppStore {
         return KeychainPrivateKeyStore(network: "com.deniztutuncu.MySolWallet")
     }()
     
-    private lazy var localCredentialsLoader: LocalCredentialsLoader = {
-        LocalCredentialsLoader(store: credentialsStore)
+    private lazy var localCredentialsLoader: LocalPrivateKeyLoader = {
+        LocalPrivateKeyLoader(store: credentialsStore)
     }()
     
     //MARK: - Network URL & Http Client & Balance Loader & Balance Publisher
