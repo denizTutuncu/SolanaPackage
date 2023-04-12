@@ -54,7 +54,7 @@ extension Date {
 }
 
 func uniqueWallet() -> DomainWallet {
-    return DomainWallet(id: "Unique Public Key")
+    return DomainWallet(id: UUID().uuidString)
 }
 
 func uniquePrivateKey() -> String {

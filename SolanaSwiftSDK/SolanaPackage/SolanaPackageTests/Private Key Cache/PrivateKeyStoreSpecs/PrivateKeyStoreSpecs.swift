@@ -8,13 +8,13 @@
 import Foundation
 
 protocol PrivateKeyStoreSpecs {
-    func test_retrieve_failsOnEmptyCache()
+    func test_retrieve_deliversNilOnEmptyCache()
     func test_retrieve_hasNoSideEffectsOnEmptyCache()
     func test_retrieve_deliversFoundValuesOnNonEmptyCache()
     func test_retrieve_hasNoSideEffectsOnNonEmptyCache()
     
-    func test_insert_deliversNoError()
-    func test_insert_doesNotOverridesPreviouslyInsertedCacheValue()
+    func test_insert_deliversNoErrorOnEmptyCache()
+    func test_insert_deliversNoErrorOnNonEmptyCache()
     func test_insert_doesNotOverridesPreviouslyInsertedCacheValues()
     
     func test_delete_deliversNoErrorOnEmptyCache()
