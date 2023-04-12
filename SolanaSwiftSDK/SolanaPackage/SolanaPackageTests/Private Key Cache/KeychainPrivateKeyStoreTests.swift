@@ -46,6 +46,12 @@ class KeychainPrivateKeyStoreTests: XCTestCase, PrivateKeyStoreSpecs {
         assertThatInsertDeliversNoErrorOnNonEmptyCache(on: sut)
     }
     
+    func test_insert_deliversErrorOnPreviouslyInsertedCacheValueUpdate() {
+        let sut = makeSUT()
+        
+        assertThatInsertDoesNotOverridePreviouslyInsertedCacheValue(on: sut)
+    }
+    
     func test_insert_doesNotOverridesPreviouslyInsertedCacheValues() {
         let sut = makeSUT()
 
