@@ -110,7 +110,7 @@
 		2EF75C1C29C3CD4C001E3DA7 /* SeedBankStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF75C1B29C3CD4C001E3DA7 /* SeedBankStoreSpecs.swift */; };
 		2EF75C1F29C3CE00001E3DA7 /* XCTestCase+SeedBankStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF75C1E29C3CE00001E3DA7 /* XCTestCase+SeedBankStoreSpecs.swift */; };
 		2EFADE8429A77AA5009BDC11 /* AppStartFlowTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFADE8329A77AA5009BDC11 /* AppStartFlowTest.swift */; };
-		2EFADE8729A77BAF009BDC11 /* WalletDelegateSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFADE8629A77BAF009BDC11 /* WalletDelegateSpy.swift */; };
+		2EFADE8729A77BAF009BDC11 /* PublicKeyDelegateSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFADE8629A77BAF009BDC11 /* PublicKeyDelegateSpy.swift */; };
 		2EFADE8929A7935F009BDC11 /* Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFADE8829A7935F009BDC11 /* Assertions.swift */; };
 		2EFADE8C29A847AD009BDC11 /* SingleSeedCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFADE8B29A847AD009BDC11 /* SingleSeedCellView.swift */; };
 		2EFADE8E29A84953009BDC11 /* SeedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFADE8D29A84953009BDC11 /* SeedListView.swift */; };
@@ -287,7 +287,7 @@
 		2EF75C1B29C3CD4C001E3DA7 /* SeedBankStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedBankStoreSpecs.swift; sourceTree = "<group>"; };
 		2EF75C1E29C3CE00001E3DA7 /* XCTestCase+SeedBankStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+SeedBankStoreSpecs.swift"; sourceTree = "<group>"; };
 		2EFADE8329A77AA5009BDC11 /* AppStartFlowTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStartFlowTest.swift; sourceTree = "<group>"; };
-		2EFADE8629A77BAF009BDC11 /* WalletDelegateSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDelegateSpy.swift; sourceTree = "<group>"; };
+		2EFADE8629A77BAF009BDC11 /* PublicKeyDelegateSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicKeyDelegateSpy.swift; sourceTree = "<group>"; };
 		2EFADE8829A7935F009BDC11 /* Assertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assertions.swift; sourceTree = "<group>"; };
 		2EFADE8B29A847AD009BDC11 /* SingleSeedCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSeedCellView.swift; sourceTree = "<group>"; };
 		2EFADE8D29A84953009BDC11 /* SeedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedListView.swift; sourceTree = "<group>"; };
@@ -969,7 +969,7 @@
 		2EFADE8529A77B99009BDC11 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				2EFADE8629A77BAF009BDC11 /* WalletDelegateSpy.swift */,
+				2EFADE8629A77BAF009BDC11 /* PublicKeyDelegateSpy.swift */,
 				2EFADE8829A7935F009BDC11 /* Assertions.swift */,
 			);
 			path = Helpers;
@@ -1334,7 +1334,7 @@
 				2E80F3A129A5934200A4053C /* CachePrivateKeyUseCaseTests.swift in Sources */,
 				2E43DA6429DE340A001E0550 /* XCTestCase+FailableInsertPublicKeyStoreSpecs.swift in Sources */,
 				2E43DA6629DE3457001E0550 /* XCTestCase+FailableDeletePublicKeyStoreSpecs.swift in Sources */,
-				2EFADE8729A77BAF009BDC11 /* WalletDelegateSpy.swift in Sources */,
+				2EFADE8729A77BAF009BDC11 /* PublicKeyDelegateSpy.swift in Sources */,
 				2E80F3AF29A5A1A700A4053C /* XCTestCase+FailableRetrievePrivateKeyStoreSpecs.swift in Sources */,
 				2E80F3E529A6462700A4053C /* KeychainPrivateKeyStoreTests.swift in Sources */,
 				2E43DA3129DAB4FF001E0550 /* XCTestCase+FailableRetrieveSeedBankStoreSpecs.swift in Sources */,
