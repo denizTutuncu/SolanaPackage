@@ -78,7 +78,7 @@ struct MySolWalletApp: App {
         
         print("\(seed) from MySolWalletApp")
         let adapter = iOSSwiftUINavigationAdapter(navigation: navigationStore,
-                                                  wallets: [],
+                                                  publicKeys: [],
                                                   seed: seed,
                                                   loadAgain: startBank)
         
