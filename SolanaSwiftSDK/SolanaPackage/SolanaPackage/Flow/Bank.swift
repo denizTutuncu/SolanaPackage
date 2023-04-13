@@ -17,11 +17,11 @@ public final class Bank {
     public static func start<WDelegate: PublicKeyDelegate, SDelegate: SeedDelegate>
     (
         walletDelegate: WDelegate,
-        wallets: [WDelegate.Wallet],
+        wallets: [WDelegate.PublicKey],
         seedDelegate: SDelegate,
         seed: [SDelegate.Seed]
         
-    ) -> Bank where WDelegate.Wallet: Equatable, SDelegate.Seed: Equatable {
+    ) -> Bank where WDelegate.PublicKey: Equatable, SDelegate.Seed: Equatable {
         
         let flow = AppStartFlow(wallets: wallets, seed: seed, walletDelegate: walletDelegate, seedDelegate: seedDelegate)
         flow.start()

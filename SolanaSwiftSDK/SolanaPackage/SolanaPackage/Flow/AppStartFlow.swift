@@ -8,7 +8,7 @@
 import Foundation
 
 public final class AppStartFlow<WD: PublicKeyDelegate, SD: SeedDelegate>{
-    public typealias Wallet = WD.Wallet
+    public typealias Wallet = WD.PublicKey
     public typealias Seed = SD.Seed
     
     private var wallets: [Wallet]
