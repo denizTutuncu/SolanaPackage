@@ -77,7 +77,6 @@
 		2E80F3C029A6221500A4053C /* CurrencyName.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E80F3C229A6221500A4053C /* CurrencyName.strings */; };
 		2E80F3CD29A626D100A4053C /* WalletLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3CC29A626D100A4053C /* WalletLocalizationTests.swift */; };
 		2E80F3D029A6283A00A4053C /* Wallet.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E80F3D229A6283A00A4053C /* Wallet.strings */; };
-		2E80F3DD29A6302300A4053C /* BankTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3DC29A6302300A4053C /* BankTest.swift */; };
 		2E80F3E529A6462700A4053C /* KeychainPrivateKeyStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3E429A6462700A4053C /* KeychainPrivateKeyStoreTests.swift */; };
 		2E80F3E729A64DCF00A4053C /* KeychainPrivateKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3E629A64DCF00A4053C /* KeychainPrivateKeyStore.swift */; };
 		2E80F3EB29A66E2400A4053C /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3EA29A66E2400A4053C /* WalletView.swift */; };
@@ -248,7 +247,6 @@
 		2E80F3D329A6284000A4053C /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Wallet.strings; sourceTree = "<group>"; };
 		2E80F3D429A6285100A4053C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Wallet.strings"; sourceTree = "<group>"; };
 		2E80F3D529A6287E00A4053C /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Wallet.strings; sourceTree = "<group>"; };
-		2E80F3DC29A6302300A4053C /* BankTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankTest.swift; sourceTree = "<group>"; };
 		2E80F3E429A6462700A4053C /* KeychainPrivateKeyStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPrivateKeyStoreTests.swift; sourceTree = "<group>"; };
 		2E80F3E629A64DCF00A4053C /* KeychainPrivateKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPrivateKeyStore.swift; sourceTree = "<group>"; };
 		2E80F3EA29A66E2400A4053C /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
@@ -722,14 +720,6 @@
 			path = "Wallet Presentation";
 			sourceTree = "<group>";
 		};
-		2E80F3DB29A6301800A4053C /* Bank */ = {
-			isa = PBXGroup;
-			children = (
-				2E80F3DC29A6302300A4053C /* BankTest.swift */,
-			);
-			path = Bank;
-			sourceTree = "<group>";
-		};
 		2E9B094F2848332D00F450C8 /* Shared API */ = {
 			isa = PBXGroup;
 			children = (
@@ -807,7 +797,6 @@
 				2E43DA5A29DE2F4C001E0550 /* Public Key Cache */,
 				2E0900DB29AD9ECC00865E30 /* Presentations */,
 				2EFADE8229A77A94009BDC11 /* Flow */,
-				2E80F3DB29A6301800A4053C /* Bank */,
 				2EF79042299DB887002658E4 /* Publisher API */,
 				2E2CC5AB296EBCE00063C23C /* Shared API Infra */,
 				2EE08998284769D5007AFC0F /* Balance API */,
@@ -1377,7 +1366,6 @@
 				2E80F3A429A5938200A4053C /* PrivateKeyStoreSpy.swift in Sources */,
 				2ED6164627E5C3B800920274 /* URLSessionHTTPClientTests.swift in Sources */,
 				2E80F3B329A5A24F00A4053C /* XCTestCase+FailableDeletePrivateKeyStoreSpecs.swift in Sources */,
-				2E80F3DD29A6302300A4053C /* BankTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
