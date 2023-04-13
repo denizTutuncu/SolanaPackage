@@ -8,12 +8,12 @@
 import Foundation
 import SolanaPackage
 
-class WalletDelegateSpy: PublicKeyDelegate {
-    var walletCompletions: [([String]) -> Void] = []
-    var passedWallets: [String] = []
+class PublicKeyDelegateSpy: PublicKeyDelegate {
+    var publicKeyCompletions: [([String]) -> Void] = []
+    var passedPublicKeys: [String] = []
     
     func didComplete(completion: @escaping ([String]) -> Void) {
-        walletCompletions.append(completion)
+        publicKeyCompletions.append(completion)
     }
     
 }
