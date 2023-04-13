@@ -8,27 +8,27 @@
 import Foundation
 
 public final class AppStartFlow<WD: PublicKeyDelegate, SD: SeedDelegate>{
-    public typealias Wallet = WD.PublicKey
+    public typealias PublicKey = WD.PublicKey
     public typealias Seed = SD.Seed
     
-    private var wallets: [Wallet]
+    private var publicKeys: [PublicKey]
     private let seed: [Seed]
     private let walletDelegate: WD
     private let seedDelegate: SD
     
-    public init(wallets: [Wallet], seed: [Seed], walletDelegate: WD, seedDelegate: SD) {
-        self.wallets = wallets
+    public init(publicKeys: [PublicKey], seed: [Seed], walletDelegate: WD, seedDelegate: SD) {
+        self.publicKeys = publicKeys
         self.seed = seed
         self.walletDelegate = walletDelegate
         self.seedDelegate = seedDelegate
     }
     
     public func start() {
-        delegateHandlingWallets(at: wallets.startIndex)
+        delegateHandlingWallets(at: publicKeys.startIndex)
     }
     
     private func delegateHandlingWallets(at index: Int) {
-        if index < wallets.endIndex {
+        if index < publicKeys.endIndex {
             walletDelegate.didComplete(completion: wallets(at: index))
         } else {
             seedDelegate.didComplete(completion: seed)
@@ -36,13 +36,13 @@ public final class AppStartFlow<WD: PublicKeyDelegate, SD: SeedDelegate>{
     }
     
     private func delegateExistingWalletHandling(after index: Int) {
-        delegateHandlingWallets(at: wallets.index(after: index))
+        delegateHandlingWallets(at: publicKeys.index(after: index))
     }
     
-    private func wallets(at index: Int) -> ([Wallet]) -> Void {
+    private func wallets(at index: Int) -> ([PublicKey]) -> Void {
         return { [weak self] wallets in
             for (index,wallet) in wallets.enumerated() {
-                self?.wallets.replaceOrInsert(wallet, at: index)
+                self?.publicKeys.replaceOrInsert(wallet, at: index)
             }
             self?.delegateExistingWalletHandling(after: index)
         }
