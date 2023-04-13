@@ -67,7 +67,7 @@
 		2E80F39E29A5920300A4053C /* WalletCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F39D29A5920300A4053C /* WalletCache.swift */; };
 		2E80F3A129A5934200A4053C /* CachePrivateKeyUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3A029A5934200A4053C /* CachePrivateKeyUseCaseTests.swift */; };
 		2E80F3A429A5938200A4053C /* PrivateKeyStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3A329A5938200A4053C /* PrivateKeyStoreSpy.swift */; };
-		2E80F3A829A5957800A4053C /* LoadPrivateKeyFromKeychainCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3A729A5957800A4053C /* LoadPrivateKeyFromKeychainCacheUseCaseTests.swift */; };
+		2E80F3A829A5957800A4053C /* LoadPrivateKeyFromCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3A729A5957800A4053C /* LoadPrivateKeyFromCacheUseCaseTests.swift */; };
 		2E80F3AB29A59FF100A4053C /* PrivateKeyStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3AA29A59FF100A4053C /* PrivateKeyStoreSpecs.swift */; };
 		2E80F3AD29A5A06000A4053C /* XCTestCase+PrivateKeyStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3AC29A5A06000A4053C /* XCTestCase+PrivateKeyStoreSpecs.swift */; };
 		2E80F3AF29A5A1A700A4053C /* XCTestCase+FailableRetrievePrivateKeyStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3AE29A5A1A700A4053C /* XCTestCase+FailableRetrievePrivateKeyStoreSpecs.swift */; };
@@ -232,7 +232,7 @@
 		2E80F39D29A5920300A4053C /* WalletCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCache.swift; sourceTree = "<group>"; };
 		2E80F3A029A5934200A4053C /* CachePrivateKeyUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachePrivateKeyUseCaseTests.swift; sourceTree = "<group>"; };
 		2E80F3A329A5938200A4053C /* PrivateKeyStoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateKeyStoreSpy.swift; sourceTree = "<group>"; };
-		2E80F3A729A5957800A4053C /* LoadPrivateKeyFromKeychainCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPrivateKeyFromKeychainCacheUseCaseTests.swift; sourceTree = "<group>"; };
+		2E80F3A729A5957800A4053C /* LoadPrivateKeyFromCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPrivateKeyFromCacheUseCaseTests.swift; sourceTree = "<group>"; };
 		2E80F3AA29A59FF100A4053C /* PrivateKeyStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateKeyStoreSpecs.swift; sourceTree = "<group>"; };
 		2E80F3AC29A5A06000A4053C /* XCTestCase+PrivateKeyStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+PrivateKeyStoreSpecs.swift"; sourceTree = "<group>"; };
 		2E80F3AE29A5A1A700A4053C /* XCTestCase+FailableRetrievePrivateKeyStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FailableRetrievePrivateKeyStoreSpecs.swift"; sourceTree = "<group>"; };
@@ -890,7 +890,7 @@
 				2EDD970529E5CE0F00BC9373 /* Helpers */,
 				2E80F3A929A59FCA00A4053C /* PrivateKeyStoreSpecs */,
 				2E80F3A029A5934200A4053C /* CachePrivateKeyUseCaseTests.swift */,
-				2E80F3A729A5957800A4053C /* LoadPrivateKeyFromKeychainCacheUseCaseTests.swift */,
+				2E80F3A729A5957800A4053C /* LoadPrivateKeyFromCacheUseCaseTests.swift */,
 				2E80F3E429A6462700A4053C /* KeychainPrivateKeyStoreTests.swift */,
 			);
 			path = "Private Key Cache";
@@ -1340,7 +1340,7 @@
 				2E80F3BB29A6215000A4053C /* WalletPresenterTests.swift in Sources */,
 				2EF75C1A29C3BEFA001E3DA7 /* HardcodedSeedStoreTests.swift in Sources */,
 				2EE0899B28476AC6007AFC0F /* SharedLocalizationTestHelpers.swift in Sources */,
-				2E80F3A829A5957800A4053C /* LoadPrivateKeyFromKeychainCacheUseCaseTests.swift in Sources */,
+				2E80F3A829A5957800A4053C /* LoadPrivateKeyFromCacheUseCaseTests.swift in Sources */,
 				2E80F3AD29A5A06000A4053C /* XCTestCase+PrivateKeyStoreSpecs.swift in Sources */,
 				2E80F3A129A5934200A4053C /* CachePrivateKeyUseCaseTests.swift in Sources */,
 				2E43DA6429DE340A001E0550 /* XCTestCase+FailableInsertPublicKeyStoreSpecs.swift in Sources */,

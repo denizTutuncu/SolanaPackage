@@ -8,7 +8,7 @@
 import XCTest
 import SolanaPackage
 
-class LoadPrivateKeyFromKeychainCacheUseCaseTests: XCTestCase {
+class LoadPrivateKeyFromCacheUseCaseTests: XCTestCase {
     
     func test_init_doesNotMessageStoreUponCreation() {
         let (_, store) = makeSUT()
