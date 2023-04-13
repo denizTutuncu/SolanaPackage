@@ -97,7 +97,7 @@
 		2ED7BA4A29C0850B0037B5B7 /* SeedBankStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7BA4929C0850B0037B5B7 /* SeedBankStore.swift */; };
 		2ED7BA5029C089890037B5B7 /* SeedCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7BA4F29C089890037B5B7 /* SeedCachePolicy.swift */; };
 		2ED7BA5229C0E3AB0037B5B7 /* HardcodedSeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7BA5129C0E3AB0037B5B7 /* HardcodedSeedStore.swift */; };
-		2ED7BA5529C13CCC0037B5B7 /* LoadSeedBankUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7BA5429C13CCC0037B5B7 /* LoadSeedBankUseCaseTests.swift */; };
+		2ED7BA5529C13CCC0037B5B7 /* LoadSeedBankFromCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7BA5429C13CCC0037B5B7 /* LoadSeedBankFromCacheUseCaseTests.swift */; };
 		2ED7BA5829C13D1B0037B5B7 /* SeedBankStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7BA5729C13D1B0037B5B7 /* SeedBankStoreSpy.swift */; };
 		2EDA9D242989D7E5004793D3 /* ViewModelPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA9D232989D7E5004793D3 /* ViewModelPublisher.swift */; };
 		2EDA9D26298DBB4F004793D3 /* PublisherViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDA9D25298DBB4F004793D3 /* PublisherViewModelTests.swift */; };
@@ -272,7 +272,7 @@
 		2ED7BA4929C0850B0037B5B7 /* SeedBankStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedBankStore.swift; sourceTree = "<group>"; };
 		2ED7BA4F29C089890037B5B7 /* SeedCachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedCachePolicy.swift; sourceTree = "<group>"; };
 		2ED7BA5129C0E3AB0037B5B7 /* HardcodedSeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardcodedSeedStore.swift; sourceTree = "<group>"; };
-		2ED7BA5429C13CCC0037B5B7 /* LoadSeedBankUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadSeedBankUseCaseTests.swift; sourceTree = "<group>"; };
+		2ED7BA5429C13CCC0037B5B7 /* LoadSeedBankFromCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadSeedBankFromCacheUseCaseTests.swift; sourceTree = "<group>"; };
 		2ED7BA5729C13D1B0037B5B7 /* SeedBankStoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedBankStoreSpy.swift; sourceTree = "<group>"; };
 		2EDA9D232989D7E5004793D3 /* ViewModelPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelPublisher.swift; sourceTree = "<group>"; };
 		2EDA9D25298DBB4F004793D3 /* PublisherViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherViewModelTests.swift; sourceTree = "<group>"; };
@@ -802,9 +802,9 @@
 		2ED6161127E5AD4000920274 /* SolanaPackageTests */ = {
 			isa = PBXGroup;
 			children = (
+				2ED7BA5329C13BED0037B5B7 /* Seed Cache */,
 				2EDD970429E5CDC200BC9373 /* Private Key Cache */,
 				2E43DA5A29DE2F4C001E0550 /* Public Key Cache */,
-				2ED7BA5329C13BED0037B5B7 /* Seed Cache */,
 				2E0900DB29AD9ECC00865E30 /* Presentations */,
 				2EFADE8229A77A94009BDC11 /* Flow */,
 				2E80F3DB29A6301800A4053C /* Bank */,
@@ -848,10 +848,10 @@
 		2ED7BA4429C083CC0037B5B7 /* Seed Cache */ = {
 			isa = PBXGroup;
 			children = (
+				2ED7BA4529C083DD0037B5B7 /* Infrastructure */,
 				2ED7BA4929C0850B0037B5B7 /* SeedBankStore.swift */,
 				2ED7BA4229C080210037B5B7 /* LocalSeedLoader.swift */,
 				2ED7BA4F29C089890037B5B7 /* SeedCachePolicy.swift */,
-				2ED7BA4529C083DD0037B5B7 /* Infrastructure */,
 			);
 			path = "Seed Cache";
 			sourceTree = "<group>";
@@ -869,7 +869,7 @@
 			children = (
 				2ED7BA5629C13D030037B5B7 /* Helpers */,
 				2EF75C1D29C3CDD3001E3DA7 /* SeedBankStoreSpecs */,
-				2ED7BA5429C13CCC0037B5B7 /* LoadSeedBankUseCaseTests.swift */,
+				2ED7BA5429C13CCC0037B5B7 /* LoadSeedBankFromCacheUseCaseTests.swift */,
 				2EF75C1929C3BEFA001E3DA7 /* HardcodedSeedStoreTests.swift */,
 				2E43DA3229DABC98001E0550 /* SeedCahcePolicyUseCaseTests.swift */,
 			);
@@ -1354,7 +1354,7 @@
 				2E43DA6C29DE3941001E0550 /* LoadPublicKeyFromCacheUseCaseTests.swift in Sources */,
 				2ED6164027E5C33D00920274 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				2E2CC5AA296EB9680063C23C /* BalanceEndpointTests.swift in Sources */,
-				2ED7BA5529C13CCC0037B5B7 /* LoadSeedBankUseCaseTests.swift in Sources */,
+				2ED7BA5529C13CCC0037B5B7 /* LoadSeedBankFromCacheUseCaseTests.swift in Sources */,
 				2EF75C1C29C3CD4C001E3DA7 /* SeedBankStoreSpecs.swift in Sources */,
 				2E80F3AB29A59FF100A4053C /* PrivateKeyStoreSpecs.swift in Sources */,
 				2E0900CF29AD898F00865E30 /* TransactionLocalizationTests.swift in Sources */,

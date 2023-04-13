@@ -9,7 +9,7 @@
 import XCTest
 import SolanaPackage
 
-class LoadSeedBankUseCaseTests: XCTestCase {
+class LoadSeedBankFromCacheUseCaseTests: XCTestCase {
     
     func test_init_doesNotMessageStoreUponCreation() {
         let (_, store) = makeSUT()
