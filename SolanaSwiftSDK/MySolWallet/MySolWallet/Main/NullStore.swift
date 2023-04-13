@@ -12,7 +12,7 @@ class NullStore {}
 
 extension NullStore: PrivateKeyStore {
     func insert(publicKey: PublicKey, privateKey: PrivateKey) throws {}
-    func privateKey(for publicKey: PublicKey) throws -> PrivateKey {""}
+    func privateKey(for publicKey: PublicKey) throws -> PrivateKey? {return nil}
     func deletePrivateKey(for publicKey: PublicKey) throws {}
 }
 
