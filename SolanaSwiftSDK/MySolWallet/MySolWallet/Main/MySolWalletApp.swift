@@ -74,7 +74,7 @@ struct MySolWalletApp: App {
     
     private func startBank() {
         let seed = try! appStore.localSeedLoader.load()
-        //        let wallets = try! appStore.localWalletLoader.load()
+        //        let publicKeys = try! appStore.localPublicKeyLoader.load()
         
         print("\(seed) from MySolWalletApp")
         let adapter = iOSSwiftUINavigationAdapter(navigation: navigationStore,
