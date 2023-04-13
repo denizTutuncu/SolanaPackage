@@ -23,7 +23,7 @@ public final class Bank {
         
     ) -> Bank where WDelegate.PublicKey: Equatable, SDelegate.Seed: Equatable {
         
-        let flow = AppStartFlow(publicKeys:         publicKeys, seed: seed, walletDelegate:         publicKeysDelegate, seedDelegate: seedDelegate)
+        let flow = AppStartFlow(publicKeys:         publicKeys, seed: seed, publicKeyDelegate:         publicKeysDelegate, seedDelegate: seedDelegate)
         flow.start()
         return Bank(flow: flow)
     }
