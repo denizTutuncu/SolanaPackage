@@ -14,16 +14,16 @@ public final class Bank {
         self.flow = flow
     }
     
-    public static func start<WDelegate: PublicKeyDelegate, SDelegate: SeedDelegate>
+    public static func start<PubKeyDelegate: PublicKeyDelegate, SDelegate: SeedDelegate>
     (
-        publicKeysDelegate: WDelegate,
-        publicKeys: [WDelegate.PublicKey],
+        publicKeysDelegate: PubKeyDelegate,
+        publicKeys: [PubKeyDelegate.PublicKey],
         seedDelegate: SDelegate,
         seed: [SDelegate.Seed]
         
-    ) -> Bank where WDelegate.PublicKey: Equatable, SDelegate.Seed: Equatable {
+    ) -> Bank where PubKeyDelegate.PublicKey: Equatable, SDelegate.Seed: Equatable {
         
-        let flow = AppStartFlow(publicKeys:         publicKeys, seed: seed, publicKeyDelegate:         publicKeysDelegate, seedDelegate: seedDelegate)
+        let flow = AppStartFlow(publicKeys: publicKeys, seed: seed, publicKeyDelegate: publicKeysDelegate, seedDelegate: seedDelegate)
         flow.start()
         return Bank(flow: flow)
     }
