@@ -8,7 +8,7 @@
 import Foundation
 import SolanaPackage
 
-class SeedBankStoreSpy: SeedBankStore {
+class SeedBankStoreSpy: SeedStore {
  
     enum ReceivedMessage: Equatable {
         case retrieve

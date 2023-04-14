@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension HardcodedSeedStore: SeedBankStore {
+extension HardcodedSeedStore: SeedStore {
     public func loadBank() throws -> [String] {
         return seed
     }
