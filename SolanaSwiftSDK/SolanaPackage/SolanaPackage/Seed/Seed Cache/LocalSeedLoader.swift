@@ -8,13 +8,13 @@
 import Foundation
 
 public final class LocalSeedLoader {
-    public init(store: SeedBankStore) {
+    public init(store: SeedStore) {
         self.store = store
     }
     
     public typealias Seed = [DomainSeed]
     
-    private let store: SeedBankStore
+    private let store: SeedStore
 }
 
 extension LocalSeedLoader: SeedPhraseLoader {

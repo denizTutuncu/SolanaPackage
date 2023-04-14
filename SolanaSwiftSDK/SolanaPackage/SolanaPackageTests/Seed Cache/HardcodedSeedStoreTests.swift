@@ -35,7 +35,7 @@ class HardcodedSeedStoreTests: XCTestCase, SeedBankStoreSpecs {
         
     // MARK: - Helpers
     
-    private func makeSUT(with seed: [String] = [], file: StaticString = #filePath, line: UInt = #line) -> SeedBankStore {
+    private func makeSUT(with seed: [String] = [], file: StaticString = #filePath, line: UInt = #line) -> SeedStore {
         let sut = HardcodedSeedStore(seed: seed)
         trackForMemoryLeaks(sut, file: file, line: line)
         return (sut)

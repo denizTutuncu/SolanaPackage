@@ -9,11 +9,11 @@ import XCTest
 import SolanaPackage
 
 extension FailableRetrieveSeedBankStoreSpecs where Self: XCTestCase {
-    func assertThatRetrieveDeliversFailureOnRetrievalError(on sut: SeedBankStore, file: StaticString = #filePath, line: UInt = #line) {
+    func assertThatRetrieveDeliversFailureOnRetrievalError(on sut: SeedStore, file: StaticString = #filePath, line: UInt = #line) {
         expect(sut, toRetrieve: .failure(anyNSError()), file: file, line: line)
     }
     
-    func assertThatRetrieveHasNoSideEffectsOnFailure(on sut: SeedBankStore, file: StaticString = #filePath, line: UInt = #line) {
+    func assertThatRetrieveHasNoSideEffectsOnFailure(on sut: SeedStore, file: StaticString = #filePath, line: UInt = #line) {
         expect(sut, toRetrieveTwice: .failure(anyNSError()), file: file, line: line)
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol SeedBankStore {
+public protocol SeedStore {
     func loadBank() throws -> [String]
 }
 

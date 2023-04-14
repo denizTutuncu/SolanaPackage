@@ -14,7 +14,7 @@ import Combine
 class BankAppStore {
     typealias CredentialsStore = SolanaPackage.PrivateKeyStore
     typealias Seed = SolanaPackage.DomainSeed
-    typealias SeedStore = SolanaPackage.SeedBankStore
+    typealias SeedStore = SolanaPackage.SeedStore
     
     var bank: Bank?
     
@@ -82,7 +82,6 @@ struct MySolWalletApp: App {
                                                   seed: seed,
                                                   loadAgain: startBank)
         
-        
-        appStore.bank = Bank.start(        publicKeysDelegate: adapter,         publicKeys: [], seedDelegate: adapter, seed: seed)
+        appStore.bank = Bank.start(publicKeysDelegate: adapter, publicKeys: [], seedDelegate: adapter, seed: seed)
     }
 }   
