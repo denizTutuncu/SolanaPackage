@@ -44,7 +44,7 @@ extension SeedBankStoreSpecs where Self: XCTestCase {
     @discardableResult
     func load(to sut: SeedStore) -> Error? {
         do {
-            let _ = try sut.loadBank()
+            let _ = try sut.loadSeed()
             return nil
         } catch {
             return error
@@ -57,7 +57,7 @@ extension SeedBankStoreSpecs where Self: XCTestCase {
     }
     
     func expect(_ sut: SeedStore, toRetrieve expectedResult: Result<[String], Error>, file: StaticString = #filePath, line: UInt = #line) {
-        let retrievedResult = Result { try sut.loadBank() }
+        let retrievedResult = Result { try sut.loadSeed() }
         
         switch (expectedResult, retrievedResult) {
         case (.success([]), .success([])),

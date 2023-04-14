@@ -18,7 +18,7 @@ class SeedBankStoreSpy: SeedStore {
     
     private var retrieveResult: Result<[String], Error>?
     
-    func loadBank() throws -> [String] {
+    func loadSeed() throws -> [String] {
         receivedMessages.append(.retrieve)
         return try retrieveResult?.get() ?? []
     }

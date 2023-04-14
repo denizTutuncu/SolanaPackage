@@ -8,6 +8,6 @@
 import Foundation
 
 public protocol SeedStore {
-    func loadBank() throws -> [String]
+    func loadSeed() throws -> [String]
 }
 
