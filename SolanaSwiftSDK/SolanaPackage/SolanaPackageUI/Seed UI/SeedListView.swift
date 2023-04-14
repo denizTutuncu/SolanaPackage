@@ -43,12 +43,14 @@ public struct SeedListView: View {
                     SingleSeedCellView(index: (index + 1), seed: $viewModel.seed[index])
                 }
                 
-                ToogleView(isOFFTitle: toogleOFFTitle, isONTitle: toogleisONTitle, isOn: $isPhraseSafe)
+                ToogleView(isOFFTitle: toogleOFFTitle,
+                           isONTitle: toogleisONTitle,
+                           isOn: $isPhraseSafe)
             }
             
             RoundedButton(
                 title: buttonTitle,
-                isEnabled: isPhraseSafe,
+                isEnabled: isPhraseSafe && !viewModel.seed.isEmpty,
                 action: action
             ).padding()
         }.padding(.top)
