@@ -18,7 +18,14 @@ public struct SeedListView: View {
     @State var viewModel: SeedViewModel
     @State private var isPhraseSafe = false
     
-    public init(title: String, subtitle: String, toogleOFFTitle: String, toogleisONTitle: String, buttonTitle: String, action: @escaping () -> Void, viewModel: SeedViewModel) {
+    public init(title: String,
+                subtitle: String,
+                toogleOFFTitle: String,
+                toogleisONTitle: String,
+                buttonTitle: String,
+                action: @escaping () -> Void,
+                viewModel: SeedViewModel)
+    {
         self.headerTitle = title
         self.headerSubtitle = subtitle
         self.toogleOFFTitle = toogleOFFTitle
