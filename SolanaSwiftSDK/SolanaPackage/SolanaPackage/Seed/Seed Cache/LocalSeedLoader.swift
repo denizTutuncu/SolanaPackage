@@ -19,7 +19,7 @@ public final class LocalSeedLoader {
 
 extension LocalSeedLoader: SeedPhraseLoader {
     public func load() throws -> Seed {
-        let bank = try store.loadBank()
+        let bank = try store.loadSeed()
         
         if SeedCachePolicy.validateBank(seedBank: bank) {
             let seedPhrase = SeedCachePolicy.getRandomSeedPhrase(from: bank)
