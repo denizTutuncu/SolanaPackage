@@ -571,6 +571,7 @@
 		2E43DA5029DE2A63001E0550 /* Public Key Cache */ = {
 			isa = PBXGroup;
 			children = (
+				2E43DA4929DE287A001E0550 /* Core Data */,
 				2E43DA5329DE2ACD001E0550 /* Infrastructure */,
 			);
 			path = "Public Key Cache";
@@ -598,7 +599,6 @@
 		2E43DA5329DE2ACD001E0550 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				2E43DA4929DE287A001E0550 /* Core Data */,
 				2E43DA3729DD5222001E0550 /* PublicKeyStore.swift */,
 				2E43DA5629DE2C2E001E0550 /* LocalPublicKeyLoader.swift */,
 			);
