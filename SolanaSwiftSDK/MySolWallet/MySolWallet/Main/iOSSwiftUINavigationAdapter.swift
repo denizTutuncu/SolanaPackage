@@ -11,58 +11,73 @@ import SolanaPackage
 import SolanaPackageUI
 
 final class iOSSwiftUINavigationAdapter: PublicKeyDelegate, SeedDelegate {
-    typealias PublicKey = DomainWallet
-    typealias Seed  = DomainSeed
-    typealias Transaction = DomainTransaction
+    
+    typealias PublicKey = String
+    typealias Seed  = String
     
     private let navigation: BankNavigationStore
-    private let publicKeys: [PublicKey]
-    private let seed: [Seed]
-    private let loadAgain: () -> Void
+    private let publicKeyPublisher: AnyPublisher<[PublicKey], Error>
+    private let seedPublisher: AnyPublisher<[Seed], Error>
+    private let createWallet: ([Seed]) -> Void
+    private let selectPublicKey: (PublicKey) -> Void
     
-    init(navigation: BankNavigationStore, publicKeys: [PublicKey], seed: [Seed], loadAgain: @escaping () -> Void) {
+    init(navigation: BankNavigationStore,
+         publicKeyPublisher: AnyPublisher<[PublicKey], Error>,
+         seedPublisher: AnyPublisher<[Seed], Error>,
+         createWallet: @escaping ([Seed]) -> Void,
+         selectPublicKey: @escaping (PublicKey) -> Void)
+    {
         self.navigation = navigation
-        self.publicKeys = publicKeys
-        self.seed = seed
-        self.loadAgain = loadAgain
+        self.publicKeyPublisher = publicKeyPublisher
+        self.seedPublisher = seedPublisher
+        self.createWallet = createWallet
+        self.selectPublicKey = selectPublicKey
     }
     
     func didComplete(completion: @escaping ([PublicKey]) -> Void) {
-        let balanceTitle = BalancePresenter.title
-        let currency = WalletPresenter.currency
-        let network = WalletPresenter.network
-        let transactionListTitle = TransactionPresenter.listTitle
-        let transactionListSubtitle = TransactionPresenter.listSubtitle
+        let headerTitle = "Wallets"
+        let headerSubtitle = "Keychain is a secure storage area on your device that uses encryption to keep your passwords and other sensitive information safe. It's an important tool for protecting your personal data from unauthorized access."
+        let loadingTitle = "Downloading wallets"
         
+        let publisher = PublicKeyUIAdapter.publicKeyComposedWith(publicKeyPublisher: publicKeyPublisher)
         
         withAnimation {
             navigation.currentView = .wallet(
-                WalletUIComposer.walletComposedWith(balanceTitle: balanceTitle,
-                                                    currency: currency,
-                                                    network: network,
-                                                    transactionListTitle: transactionListTitle,
-                                                    transactionListSubtitle: transactionListSubtitle
-                                                   )
-                
+                WalletListUIComposerView(headerTitle: headerTitle,
+                                         headerSubtitle: headerSubtitle,
+                                         loadingTitle: loadingTitle,
+                                         viewModel: .init(publicKeys: publisher.onResourceLoad ?? [],
+                                                          handler: { [weak self] in self?.selectPublicKey($0.id) }),
+                                         selection: { [weak self] in self?.selectPublicKey($0.id) })
             )
+            
         }
     }
     
     func didComplete(completion: [Seed]) {
-        let title = SeedPresenter.title
-        let subtitle = SeedPresenter.subtitle
-        let toogleOFFTitle = "My phrase is not safe yet."
-        let toogleisONTitle = "My phrase is safe now."
+        let headerTitle = SeedPresenter.title
+        let headerSubtitle = SeedPresenter.subtitle
+        let toogleOFFTitle = "Seed phrase is not safe yet."
+        let toogleisONTitle = "Seed phrase is safe now."
         let buttonTitle = "Create wallet"
+        let errorMessage = "Cannot connect to network."
+        let downloadingTitle = "Downloading seed phrase."
+        
+        let publisher = SeedUIAdapter.seedComposedWith(seedPublisher: seedPublisher)
         
         withAnimation {
             navigation.currentView = .seed(
-                SeedUIComposer.seedComposedWith(listTitle: title,
-                                                listSubtitle: subtitle,
-                                                toogleOFFTitle: toogleOFFTitle,
-                                                toogleisONTitle: toogleisONTitle,
-                                                buttonTitle: buttonTitle,
-                                                resource: completion)
+                WalletCreationComposerView(headerTitle: headerTitle,
+                                           headerSubtitle: headerSubtitle,
+                                           toogleOFFTitle: toogleOFFTitle,
+                                           toogleisONTitle: toogleisONTitle,
+                                           buttonTitle: buttonTitle,
+                                           errorMessage: errorMessage,
+                                           downloadingTitle: downloadingTitle,
+                                           action: { },
+                                           handler: { [weak self] in self?.createWallet($0.map{ $0.value })},
+                                           viewModel: .init(seed: publisher.onResourceLoad ?? [],
+                                                            handler: { [weak self] in self?.createWallet($0.map{ $0.value }) }))
             )
         }
     }

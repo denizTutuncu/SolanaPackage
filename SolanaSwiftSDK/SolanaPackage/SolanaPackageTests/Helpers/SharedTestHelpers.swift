@@ -53,22 +53,41 @@ extension Date {
     }
 }
 
-func uniqueWallet() -> DomainWallet {
-    return DomainWallet(id: UUID().uuidString)
+func uniquePublicKey() -> String {
+    return "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi"
 }
 
 func uniquePrivateKey() -> String {
-    return "Unique Private Key"
+    return "aBcDeFgHiJkLmNoPqRsTuVwXyZ0123456789AbCdEfGhIjKlMnOpQrStUvWxYzDs"
 }
 
-func seedPhrase() -> (local: [String], model:[DomainSeed]) {
+func anotherUniquePublicKey() -> String {
+    return "3xcawfQtZVjRLLcxgcxT7yYUuynPlasdyqw640276bAD"
+}
+
+func anotherUniquePrivateKey() -> String {
+    "cVcEeGgLpOkLmNoPqRsTuVwXyZ0123456789AbCdEfGhIjKlMnOpQrSgUpQpLvOq"
+}
+
+func uniquePublicKeys() -> [String] {
+    return ["4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
+            "3xcawfQtZVjRLLcxgcxT7yYUuynPlasdyqw640276bAD",
+            "POhasdyasd454cxgcxT7yYUuyn6UgMJddBHKl21bhduA"
+    ]
+}
+
+func invalidPublicKeys() -> [String] {
+    return ["Less Then 44 Characters Long Public Key"]
+}
+
+
+func seedPhrase() -> [String] {
     let local = [
         "access", "account", "agent", "blue", "brain", "citizen", "code", "coin",
         "craft", "diamond", "eight", "energy", "farm", "flower", "fly", "galaxy",
         "genius", "hotel", "object", "ocean", "push", "rose", "tornado", "zone",
     ]
-    let seed = local.map { DomainSeed(id: $0) }
-    return (local, seed)
+    return local
 }
 
 func seedBank() -> [String] {

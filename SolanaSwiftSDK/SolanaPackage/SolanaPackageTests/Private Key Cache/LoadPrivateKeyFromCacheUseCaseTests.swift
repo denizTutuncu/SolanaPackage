@@ -18,7 +18,7 @@ class LoadPrivateKeyFromCacheUseCaseTests: XCTestCase {
     
     func test_loadPrivateKey_requestsCachePrivateKey() {
         let (sut, store) = makeSUT()
-        let publicKey = uniqueWallet().id
+        let publicKey = uniquePublicKey()
         
         _ = try? sut.privateKey(for: publicKey)
         
@@ -27,7 +27,7 @@ class LoadPrivateKeyFromCacheUseCaseTests: XCTestCase {
     
     func test_loadPrivateKey_failsOnRetrievalError() {
         let (sut, store) = makeSUT()
-        let publicKey = uniqueWallet().id
+        let publicKey = uniquePublicKey()
         let retrievalError = anyNSError()
         
         expect(sut, toCompleteWith: .failure(retrievalError), for: publicKey, when: {
@@ -37,7 +37,7 @@ class LoadPrivateKeyFromCacheUseCaseTests: XCTestCase {
     
     func test_loadPrivateKey_failsOnEmptyCache() {
         let (sut, store) = makeSUT()
-        let publicKey = uniqueWallet().id
+        let publicKey = uniquePublicKey()
         let emptyCacheError = anyNSError()
         
         expect(sut, toCompleteWith: .failure(emptyCacheError), for: publicKey, when: {
@@ -46,7 +46,7 @@ class LoadPrivateKeyFromCacheUseCaseTests: XCTestCase {
     }
     
     func test_loadPrivateKey_deliversCachedPrivateKeyOnNonEmptyCache() {
-        let publicKey = uniqueWallet().id
+        let publicKey = uniquePublicKey()
         let privateKey = uniquePrivateKey()
         let (sut, store) = makeSUT()
 
@@ -56,7 +56,7 @@ class LoadPrivateKeyFromCacheUseCaseTests: XCTestCase {
     }
 
     func test_loadPrivateKey_hasNoSideEffectsOnPrivateKeyError() {
-        let publicKey = uniqueWallet().id
+        let publicKey = uniquePublicKey()
         let (sut, store) = makeSUT()
         store.complete(with: anyNSError())
 
@@ -66,7 +66,7 @@ class LoadPrivateKeyFromCacheUseCaseTests: XCTestCase {
     }
 
     func test_loadPrivateKey_hasNoSideEffectsOnEmptyCache() {
-        let publicKey = uniqueWallet().id
+        let publicKey = uniquePublicKey()
         let (sut, store) = makeSUT()
         
         let emptyCacheError = anyNSError()

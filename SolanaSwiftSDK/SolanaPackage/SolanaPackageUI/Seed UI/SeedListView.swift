@@ -2,58 +2,24 @@
 //  SeedListView.swift
 //  SolanaPackageUI
 //
-//  Created by Deniz Tutuncu on 2/23/23.
+//  Created by Deniz Tutuncu on 4/18/23.
 //
 
 import SwiftUI
 
-public struct SeedListView: View {
-    let headerTitle: String
-    let headerSubtitle: String
-    let toogleOFFTitle: String
-    let toogleisONTitle: String
-    let buttonTitle: String
-    let action: () -> Void
+struct SeedListView: View {
+    @Binding var seed: [PresentableSeed]
     
-    @State var viewModel: SeedViewModel
-    @State private var isPhraseSafe = false
-    
-    public init(title: String,
-                subtitle: String,
-                toogleOFFTitle: String,
-                toogleisONTitle: String,
-                buttonTitle: String,
-                action: @escaping () -> Void,
-                viewModel: SeedViewModel)
-    {
-        self.headerTitle = title
-        self.headerSubtitle = subtitle
-        self.toogleOFFTitle = toogleOFFTitle
-        self.toogleisONTitle = toogleisONTitle
-        self.buttonTitle = buttonTitle
-        self.action = action
-        self.viewModel = viewModel
-    }
-  
-    public var body: some View {
+    var body: some View {
         VStack {
-            HeaderView(title: headerTitle, subtitle: headerSubtitle)
             List {
-                ForEach(viewModel.seed.indices, id: \.self) { index in
-                    SingleSeedCellView(index: (index + 1), seed: $viewModel.seed[index])
+                ForEach(seed.indices, id: \.self) { index in
+                    SingleSeedCellView(index: (index + 1),
+                                       seed: $seed[index])
                 }
                 
-                ToogleView(isOFFTitle: toogleOFFTitle,
-                           isONTitle: toogleisONTitle,
-                           isOn: $isPhraseSafe)
             }
-            
-            RoundedButton(
-                title: buttonTitle,
-                isEnabled: isPhraseSafe && !viewModel.seed.isEmpty,
-                action: action
-            ).padding()
-        }.padding(.top)
+        }
     }
 }
 
@@ -65,46 +31,40 @@ struct SeedListView_Previews: PreviewProvider {
                 .previewDisplayName("Seed List Test View")
         }
     }
+}
+
+struct SeedListTestView: View {
+    @State var selection: [String] = []
     
-    struct SeedListTestView: View {
-        @State var tapped = false
-        
-        var body: some View {
-            VStack {
-                SeedListView(title: "Seed Phrase",
-                             subtitle: "The seed phrase is never stored on the device. You will only see it once, and it's only for this time. Please keep it securely.",
-                             toogleOFFTitle: "My seed phrase is not safe yet.",
-                             toogleisONTitle: "My seed phrase is safe now.",
-                             buttonTitle: "Create wallet",
-                             action: { tapped.toggle() },
-                             viewModel: .init(seed: [
-                                SeedUI(value: "private"),
-                                SeedUI(value: "digital"),
-                                SeedUI(value: "coin"),
-                                SeedUI(value: "seed"),
-                                SeedUI(value: "key"),
-                                SeedUI(value: "has"),
-                                SeedUI(value: "very"),
-                                SeedUI(value: "long"),
-                                SeedUI(value: "secret"),
-                                SeedUI(value: "pass"),
-                                SeedUI(value: "phrase"),
-                                SeedUI(value: "that"),
-                                SeedUI(value: "will"),
-                                SeedUI(value: "prevent"),
-                                SeedUI(value: "animal"),
-                                SeedUI(value: "weasel"),
-                                SeedUI(value: "brain"),
-                                SeedUI(value: "person"),
-                                SeedUI(value: "like"),
-                                SeedUI(value: "you"),
-                                SeedUI(value: "obtain"),
-                                SeedUI(value: "any"),
-                                SeedUI(value: "large"),
-                                SeedUI(value: "wealth")]))
-                
-                Text("Create wallet tapped: \(tapped.description)")
-            }
+    var body: some View {
+        VStack {
+            
+            SeedListView(seed: .constant([
+                PresentableSeed(value: "private"),
+                PresentableSeed(value: "digital"),
+                PresentableSeed(value: "coin"),
+                PresentableSeed(value: "seed"),
+                PresentableSeed(value: "key"),
+                PresentableSeed(value: "has"),
+                PresentableSeed(value: "very"),
+                PresentableSeed(value: "long"),
+                PresentableSeed(value: "secret"),
+                PresentableSeed(value: "pass"),
+                PresentableSeed(value: "phrase"),
+                PresentableSeed(value: "that"),
+                PresentableSeed(value: "will"),
+                PresentableSeed(value: "prevent"),
+                PresentableSeed(value: "animal"),
+                PresentableSeed(value: "weasel"),
+                PresentableSeed(value: "brain"),
+                PresentableSeed(value: "person"),
+                PresentableSeed(value: "like"),
+                PresentableSeed(value: "you"),
+                PresentableSeed(value: "obtain"),
+                PresentableSeed(value: "any"),
+                PresentableSeed(value: "large"),
+                PresentableSeed(value: "wealth")]))
+            
         }
     }
 }

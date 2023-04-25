@@ -12,7 +12,7 @@ public final class LocalSeedLoader {
         self.store = store
     }
     
-    public typealias Seed = [DomainSeed]
+    public typealias Seed = [String]
     
     private let store: SeedStore
 }
@@ -34,7 +34,7 @@ extension LocalSeedLoader: SeedPhraseLoader {
 }
 
 private extension Array where Element == String {
-    func toModels() -> [DomainSeed] {
-        return map { DomainSeed(id: $0) }
+    func toModels() -> [String] {
+        return map { $0 }
     }
 }

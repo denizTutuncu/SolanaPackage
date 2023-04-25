@@ -6,4 +6,4 @@
   
 */
 "SEED_LIST_TITLE" = "Frase Semente";
-"SEED_LIST_SUBTITLE" = "A frase inicial nunca é armazenada no dispositivo. Você só vai ver uma vez, e é só naquele momento. Você deve manter esta frase segura para poder acessar a carteira criada de outro dispositivo.";
+"SEED_LIST_SUBTITLE" = "A frase inicial nunca é armazenada no dispositivo. Você o verá apenas uma vez e será exibido apenas durante a configuração. A ordem da frase inicial é crucial, portanto, certifique-se de alternar cada botão correspondente a cada frase para manter a ordem correta. Certifique-se de manter sua frase-semente fisicamente segura.";

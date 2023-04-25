@@ -46,7 +46,7 @@ class SeedCahcePolicyUseCaseTests: XCTestCase {
     }
     
     func test_SeedCachePolicy_validateSeedPhrase_ReturnsTrue_WithValidSeedPhrase() {
-        let result = SeedCachePolicy.validateSeedPhrase(seed: seedPhrase().local)
+        let result = SeedCachePolicy.validateSeedPhrase(seed: seedPhrase())
         XCTAssertEqual(result, true, "Expected result True, got \(result) instead")
     }
         
@@ -59,7 +59,7 @@ class SeedCahcePolicyUseCaseTests: XCTestCase {
     }
     
     func test_SeedCachePolicy_hasUniqueItems_ReturnsTrue_WithValidSeedPhrase() {
-        let result = SeedCachePolicy.hasUniqueItems(seedPhrase().local)
+        let result = SeedCachePolicy.hasUniqueItems(seedPhrase())
         XCTAssertEqual(result, true, "Expected result True, got \(result) instead")
     }
         
@@ -72,7 +72,7 @@ class SeedCahcePolicyUseCaseTests: XCTestCase {
     }
     
     func test_SeedCachePolicy_singleSeedCount_ReturnsTrue_WithValidSeedPhrase() {
-        let result = SeedCachePolicy.singleSeedCount(in: seedPhrase().local)
+        let result = SeedCachePolicy.singleSeedCount(in: seedPhrase())
         XCTAssertEqual(result, true, "Expected result True, got \(result) instead")
     }
     

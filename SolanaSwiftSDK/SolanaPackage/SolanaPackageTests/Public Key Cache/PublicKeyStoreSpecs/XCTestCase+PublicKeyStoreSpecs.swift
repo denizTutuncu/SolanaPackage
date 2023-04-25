@@ -51,7 +51,8 @@ extension PublicKeyStoreSpecs where Self: XCTestCase {
     }
     
     func assertThatInsertOverridesPreviouslyInsertedCacheValues(on sut: PublicKeyStore, file: StaticString = #filePath, line: UInt = #line) {
-        insert((uniquePublicKeys(), Date()), to: sut)
+        let publicKey = uniquePublicKeys()
+        insert((publicKey, Date()), to: sut)
         
         let latestPublicKeys = uniquePublicKeys() + ["Fourth unique public Key"]
         let latestTimestamp = Date()

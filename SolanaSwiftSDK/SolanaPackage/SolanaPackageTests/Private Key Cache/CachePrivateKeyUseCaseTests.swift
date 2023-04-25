@@ -17,14 +17,14 @@ class CachePrivateKeyUseCaseTests: XCTestCase {
     }
     
     func test_save_requestCacheInsertion() {
-        let wallet = uniqueWallet()
+        let publicKey = uniquePublicKey()
         let (sut, store) = makeSUT()    
         let deletionError = anyNSError()
         store.completeDeletion(with: deletionError)
         
-        try? sut.save(wallet, privateKey: uniquePrivateKey())
+        try? sut.save(publicKey, privateKey: uniquePrivateKey())
         
-        XCTAssertEqual(store.receivedMessages, [.insert(wallet.id, uniquePrivateKey())])
+        XCTAssertEqual(store.receivedMessages, [.insert(publicKey, uniquePrivateKey())])
     }
     
     func test_save_failsOnDeletionError() {
@@ -70,7 +70,7 @@ class CachePrivateKeyUseCaseTests: XCTestCase {
         action()
         
         do {
-            try sut.save(uniqueWallet(), privateKey: uniquePrivateKey())
+            try sut.save(uniquePublicKey(), privateKey: uniquePrivateKey())
         } catch {
             XCTAssertEqual(error as NSError?, expectedError, file: file, line: line)
         }

@@ -19,7 +19,7 @@ class AppStartFlowTest: XCTestCase {
     }
     
     func test_start_withSeed_AndNoWallets_delegatesCorrectSeedHandling() {
-        let localSeedPhrase = seedPhrase().local
+        let localSeedPhrase = seedPhrase()
         makeSUT(publicKeys: [], seed: localSeedPhrase).start()
         
         XCTAssertTrue(publicKeyDelegate.publicKeyCompletions.isEmpty)
@@ -44,7 +44,7 @@ class AppStartFlowTest: XCTestCase {
     }
     
     func test_startTwice_withTwoWallets_delegatesFirstWalletHandlingTwice() {
-        let sut = makeSUT(publicKeys: ["First Wallet", "Second Wallet"], seed:  seedPhrase().local)
+        let sut = makeSUT(publicKeys: ["First Wallet", "Second Wallet"], seed:  seedPhrase())
         
         sut.start()
         XCTAssertEqual(publicKeyDelegate.publicKeyCompletions.count, 1)

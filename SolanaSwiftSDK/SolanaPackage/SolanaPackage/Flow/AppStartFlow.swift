@@ -8,8 +8,8 @@
 import Foundation
 
 public final class AppStartFlow<PubKeyDelgt: PublicKeyDelegate, SeedDelgt: SeedDelegate>{
-    public typealias PublicKey = PubKeyDelgt.PublicKey
-    public typealias Seed = SeedDelgt.Seed
+    public typealias PublicKey = String
+    public typealias Seed = String
     
     private var publicKeys: [PublicKey]
     private let seed: [Seed]
