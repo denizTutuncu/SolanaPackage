@@ -48,7 +48,6 @@ class BalanceItemMapperTests: XCTestCase {
         XCTAssertEqual(result, validResponse.model)
     }
     
-    
     private func makeResponseItem(jsonrpc: String, slot: Int, value: Double, id: Int) -> (model: Balance, json: [String:Any]) {
         let model = Balance(amount: value)
         let json: [String:Any] = [
@@ -58,9 +57,9 @@ class BalanceItemMapperTests: XCTestCase {
                     "slot": slot
                 ],
                 "value": value
-            ],
+            ] as [String : Any],
             "id": id
-        ].compactMapValues { $0 }
+        ]as [String:Any]
         
         return (model, json)
     }
@@ -70,5 +69,3 @@ class BalanceItemMapperTests: XCTestCase {
     }
     
 }
-
-

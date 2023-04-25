@@ -25,7 +25,7 @@ struct ToogleView: View {
                 .minimumScaleFactor(0.5)
                 .lineLimit(1)
                 .foregroundColor(isOn ? .green : .red)
-            
+                .contrast(100.0)
         }.padding()
     }
 }
@@ -41,16 +41,16 @@ struct ToogleView_Previews: PreviewProvider {
 }
 
 struct ToogleTestView: View {
-    @State var isON: Bool = false
+    @State var isSafe: Bool = false
     
     var body: some View {
         VStack {
             
-            ToogleView(isOFFTitle: "My seed phrase is not safe yet.",
-                       isONTitle: "My seed phrase is safe now.",
-                       isOn: $isON)
+            ToogleView(isOFFTitle: "Seed phrase is not safe yet.",
+                       isONTitle: "Seed phrase is safe now.",
+                       isOn: $isSafe)
             
-            Text("Last selection: " + "\(isON.description)").padding()
+            Text("isSafe: " + "\(isSafe.description)").padding()
         }
     }
 }

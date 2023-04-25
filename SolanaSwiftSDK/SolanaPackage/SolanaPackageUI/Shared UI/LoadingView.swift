@@ -25,6 +25,7 @@ struct LoadingView: View {
                 .progressViewStyle(LinearProgressViewStyle(tint: Color.primary))
                 .foregroundColor(Color.primary)
                 .shadow(color: .primary, radius: 0.5)
+            Spacer()
         }
         .onAppear {
             isAnimating = true

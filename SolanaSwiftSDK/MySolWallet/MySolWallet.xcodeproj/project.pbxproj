@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2E0900F529ADA75700865E30 /* SeedStoreMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0900F429ADA75700865E30 /* SeedStoreMapper.swift */; };
-		2E0900F729ADAE1F00865E30 /* WalletStoreMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0900F629ADAE1F00865E30 /* WalletStoreMapper.swift */; };
+		2E0900F729ADAE1F00865E30 /* PublicKeyStoreMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0900F629ADAE1F00865E30 /* PublicKeyStoreMapper.swift */; };
 		2E0900FC29ADB16D00865E30 /* TransactionStoreMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0900FB29ADB16D00865E30 /* TransactionStoreMapper.swift */; };
-		2E09010329B00AED00865E30 /* SeedUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09010229B00AED00865E30 /* SeedUIComposer.swift */; };
-		2E09010D29B3104500865E30 /* WalletUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09010C29B3104500865E30 /* WalletUIComposer.swift */; };
+		2E09010329B00AED00865E30 /* SeedUIAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09010229B00AED00865E30 /* SeedUIAdapter.swift */; };
+		2E09010D29B3104500865E30 /* PublicKeyUIAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09010C29B3104500865E30 /* PublicKeyUIAdapter.swift */; };
 		2E09010F29B5F84000865E30 /* LoadResourceViewModelAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09010E29B5F84000865E30 /* LoadResourceViewModelAdapter.swift */; };
 		2E42948228483FDD00817480 /* MySolWalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42948128483FDD00817480 /* MySolWalletApp.swift */; };
 		2E42948628483FDF00817480 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E42948528483FDE00817480 /* Assets.xcassets */; };
@@ -23,10 +23,12 @@
 		2E4294AF2848406B00817480 /* SolanaPackage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4294AC2848406B00817480 /* SolanaPackage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2E4294B02848406B00817480 /* SolanaPackageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4294AD2848406B00817480 /* SolanaPackageUI.framework */; };
 		2E4294B12848406B00817480 /* SolanaPackageUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4294AD2848406B00817480 /* SolanaPackageUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2E4899B329F4A738004734B9 /* NullStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4899B229F4A738004734B9 /* NullStore.swift */; };
 		2E80F38B29A200DC00A4053C /* BankNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F38A29A200DC00A4053C /* BankNavigationView.swift */; };
-		2E80F3DF29A6400300A4053C /* NullStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3DE29A6400300A4053C /* NullStore.swift */; };
+		2E917D1429EFD93200B578FA /* TransactionUIAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E917D1329EFD93200B578FA /* TransactionUIAdapter.swift */; };
 		2EAEF0EC297A5C1C00091A49 /* CombineHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAEF0EB297A5C1C00091A49 /* CombineHelpers.swift */; };
 		2EF68C8D299F5CB100969DE5 /* iOSSwiftUINavigationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF68C8C299F5CB100969DE5 /* iOSSwiftUINavigationAdapter.swift */; };
+		2EF75C2129CBC89D001E3DA7 /* SeedBankHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF75C2029CBC89D001E3DA7 /* SeedBankHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,10 +65,10 @@
 
 /* Begin PBXFileReference section */
 		2E0900F429ADA75700865E30 /* SeedStoreMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedStoreMapper.swift; sourceTree = "<group>"; };
-		2E0900F629ADAE1F00865E30 /* WalletStoreMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletStoreMapper.swift; sourceTree = "<group>"; };
+		2E0900F629ADAE1F00865E30 /* PublicKeyStoreMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicKeyStoreMapper.swift; sourceTree = "<group>"; };
 		2E0900FB29ADB16D00865E30 /* TransactionStoreMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionStoreMapper.swift; sourceTree = "<group>"; };
-		2E09010229B00AED00865E30 /* SeedUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedUIComposer.swift; sourceTree = "<group>"; };
-		2E09010C29B3104500865E30 /* WalletUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletUIComposer.swift; sourceTree = "<group>"; };
+		2E09010229B00AED00865E30 /* SeedUIAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedUIAdapter.swift; sourceTree = "<group>"; };
+		2E09010C29B3104500865E30 /* PublicKeyUIAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicKeyUIAdapter.swift; sourceTree = "<group>"; };
 		2E09010E29B5F84000865E30 /* LoadResourceViewModelAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadResourceViewModelAdapter.swift; sourceTree = "<group>"; };
 		2E42947E28483FDD00817480 /* MySolWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySolWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E42948128483FDD00817480 /* MySolWalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySolWalletApp.swift; sourceTree = "<group>"; };
@@ -79,10 +81,12 @@
 		2E42949E28483FDF00817480 /* MySolWalletUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySolWalletUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2E4294AC2848406B00817480 /* SolanaPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SolanaPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E4294AD2848406B00817480 /* SolanaPackageUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SolanaPackageUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E4899B229F4A738004734B9 /* NullStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullStore.swift; sourceTree = "<group>"; };
 		2E80F38A29A200DC00A4053C /* BankNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankNavigationView.swift; sourceTree = "<group>"; };
-		2E80F3DE29A6400300A4053C /* NullStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullStore.swift; sourceTree = "<group>"; };
+		2E917D1329EFD93200B578FA /* TransactionUIAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionUIAdapter.swift; sourceTree = "<group>"; };
 		2EAEF0EB297A5C1C00091A49 /* CombineHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineHelpers.swift; sourceTree = "<group>"; };
 		2EF68C8C299F5CB100969DE5 /* iOSSwiftUINavigationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSwiftUINavigationAdapter.swift; sourceTree = "<group>"; };
+		2EF75C2029CBC89D001E3DA7 /* SeedBankHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedBankHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				2E0900F429ADA75700865E30 /* SeedStoreMapper.swift */,
-				2E0900F629ADAE1F00865E30 /* WalletStoreMapper.swift */,
+				2E0900F629ADAE1F00865E30 /* PublicKeyStoreMapper.swift */,
 				2E0900FB29ADB16D00865E30 /* TransactionStoreMapper.swift */,
 			);
 			path = Mappers;
@@ -125,8 +129,9 @@
 		2E09010129B00AD800865E30 /* Composers */ = {
 			isa = PBXGroup;
 			children = (
-				2E09010229B00AED00865E30 /* SeedUIComposer.swift */,
-				2E09010C29B3104500865E30 /* WalletUIComposer.swift */,
+				2E09010229B00AED00865E30 /* SeedUIAdapter.swift */,
+				2E09010C29B3104500865E30 /* PublicKeyUIAdapter.swift */,
+				2E917D1329EFD93200B578FA /* TransactionUIAdapter.swift */,
 			);
 			path = Composers;
 			sourceTree = "<group>";
@@ -219,9 +224,9 @@
 		2EF68C89299F5A6200969DE5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				2E4899B229F4A738004734B9 /* NullStore.swift */,
 				2E42948128483FDD00817480 /* MySolWalletApp.swift */,
 				2EF68C8C299F5CB100969DE5 /* iOSSwiftUINavigationAdapter.swift */,
-				2E80F3DE29A6400300A4053C /* NullStore.swift */,
 				2E09010E29B5F84000865E30 /* LoadResourceViewModelAdapter.swift */,
 			);
 			path = Main;
@@ -231,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				2EAEF0EB297A5C1C00091A49 /* CombineHelpers.swift */,
+				2EF75C2029CBC89D001E3DA7 /* SeedBankHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -366,17 +372,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E917D1429EFD93200B578FA /* TransactionUIAdapter.swift in Sources */,
 				2E42948228483FDD00817480 /* MySolWalletApp.swift in Sources */,
-				2E0900F729ADAE1F00865E30 /* WalletStoreMapper.swift in Sources */,
+				2E0900F729ADAE1F00865E30 /* PublicKeyStoreMapper.swift in Sources */,
 				2EF68C8D299F5CB100969DE5 /* iOSSwiftUINavigationAdapter.swift in Sources */,
 				2E0900F529ADA75700865E30 /* SeedStoreMapper.swift in Sources */,
-				2E80F3DF29A6400300A4053C /* NullStore.swift in Sources */,
+				2EF75C2129CBC89D001E3DA7 /* SeedBankHelpers.swift in Sources */,
 				2E80F38B29A200DC00A4053C /* BankNavigationView.swift in Sources */,
-				2E09010D29B3104500865E30 /* WalletUIComposer.swift in Sources */,
+				2E09010D29B3104500865E30 /* PublicKeyUIAdapter.swift in Sources */,
 				2E09010F29B5F84000865E30 /* LoadResourceViewModelAdapter.swift in Sources */,
 				2EAEF0EC297A5C1C00091A49 /* CombineHelpers.swift in Sources */,
-				2E09010329B00AED00865E30 /* SeedUIComposer.swift in Sources */,
+				2E09010329B00AED00865E30 /* SeedUIAdapter.swift in Sources */,
 				2E0900FC29ADB16D00865E30 /* TransactionStoreMapper.swift in Sources */,
+				2E4899B329F4A738004734B9 /* NullStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +546,7 @@
 				DEVELOPMENT_TEAM = 9DGMQB3935;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = SunGate;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -568,6 +577,7 @@
 				DEVELOPMENT_TEAM = 9DGMQB3935;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = SunGate;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -16,7 +16,6 @@ final public class ViewModelPublisher<Resource, ResourceViewModel>: ObservableOb
     
     private let resource: Resource?
     private let mapper: Mapper
-    private var cancellables = Set<AnyCancellable>()
     
     public init(resource: Resource?, mapper: @escaping Mapper) {
         self.resource = resource
