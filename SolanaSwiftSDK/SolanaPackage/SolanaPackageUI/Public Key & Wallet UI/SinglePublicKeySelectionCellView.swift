@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct SingleWalletSelectionCellView: View {
-    @Binding var wallet: WalletUI
+struct SinglePublicKeySelectionCellView: View {
+    @Binding var wallet: PresentablePublicKey
     let selection: () -> Void
     
     var body: some View {
@@ -30,7 +30,7 @@ struct SingleWalletSelectionCellView: View {
                     .minimumScaleFactor(0.2)
                     .foregroundColor(Color.primary)
             }
-        }).padding()
+        })
         
     }
 }
@@ -39,9 +39,8 @@ struct SingleWalletSelectionCell_Previews: PreviewProvider {
     @State var selection: String = "none"
     
     static var previews: some View {
-        SingleWalletSelectionCellView(wallet: .constant(WalletUI(
-            id: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
-            balance: "100.0")),
+        SinglePublicKeySelectionCellView(wallet: .constant(PresentablePublicKey(
+            id: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi")),
             selection: { })
         .previewLayout(.sizeThatFits)
         .previewDisplayName("Single Wallet Selection Cell Test View")

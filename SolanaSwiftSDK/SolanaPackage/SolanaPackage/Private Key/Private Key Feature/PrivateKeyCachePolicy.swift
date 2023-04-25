@@ -7,20 +7,16 @@
 
 import Foundation
 
-final class PrivateKeyCachePolicy {
+public final class PrivateKeyCachePolicy {
     private init() {}
+    static private let privateKeyCount = 64
+    static private let publicKeyCount = 44
     
-    static func validate(privateKey: String?) -> Bool {
-        guard let privateKey = privateKey, !privateKey.isEmpty else {
-            return false
-        }
-        return true
+    public static func validate(privateKey: String) -> Bool {
+        privateKey.count == PrivateKeyCachePolicy.privateKeyCount ? true : false
     }
     
-    static func validate(publicKey: String) -> Bool {
-        guard !publicKey.isEmpty else {
-            return false
-        }
-        return true
+    public static func validate(publicKey: String) -> Bool {
+        publicKey.count == PrivateKeyCachePolicy.publicKeyCount ? true : false
     }
 }

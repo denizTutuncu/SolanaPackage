@@ -18,25 +18,34 @@ public final class LocalPrivateKeyLoader {
     private let store: PrivateKeyStore
 }
 
-extension LocalPrivateKeyLoader: WalletCache {
-    public func save(_ wallet: DomainWallet, privateKey: PrivateKey) throws {
-        try store.insert(publicKey: wallet.id, privateKey: privateKey)
+extension LocalPrivateKeyLoader: PrivateKeyCache {
+    private struct InvalidPrivateKey: Error{}
+    private struct InvalidPublicKey: Error{}
+    
+    public func save(_ publicKey: PublicKey, privateKey: PrivateKey) throws {
+        
+        guard PrivateKeyCachePolicy.validate(publicKey: publicKey) else {
+            throw InvalidPublicKey()
+        }
+        
+        guard PrivateKeyCachePolicy.validate(privateKey: privateKey) else {
+            throw InvalidPrivateKey()
+        }
+        
+        try store.insert(publicKey: publicKey, privateKey: privateKey)
     }
 }
 
 extension LocalPrivateKeyLoader {
-    private struct InvalidPublicKey: Error {}
-    
     public func privateKey(for publicKey: PublicKey) throws -> PrivateKey? {
         guard PrivateKeyCachePolicy.validate(publicKey: publicKey) else {
             throw InvalidPublicKey()
         }
         
-        let cache = try store.privateKey(for: publicKey)
-        
-        if PrivateKeyCachePolicy.validate(privateKey: cache) {
+        if let cache = try store.privateKey(for: publicKey),  PrivateKeyCachePolicy.validate(privateKey: cache) {
             return cache
         }
+        
         return nil
     }
 }

@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol SeedPhraseLoader {
-    func load() throws -> [DomainSeed]
+    func load() throws -> [String]
 }

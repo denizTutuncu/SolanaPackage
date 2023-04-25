@@ -15,8 +15,8 @@ public class SeedStoreMapper {
         case invalidSeed
     }
     
-    public static func map(_ domainSeed: [DomainSeed]) throws -> [SeedUI] {
+    public static func map(_ domainSeed: [String]) throws -> [PresentableSeed] {
         guard !domainSeed.isEmpty else { throw SeedStoreError.invalidSeed }
-        return domainSeed.map { SeedUI(value: $0.id)}
+        return domainSeed.map { PresentableSeed(value: $0)}
     }
 }

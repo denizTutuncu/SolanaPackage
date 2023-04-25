@@ -12,8 +12,8 @@ import SolanaPackageUI
 import Combine
 
 class BankAppStore {
-    typealias CredentialsStore = SolanaPackage.PrivateKeyStore
-    typealias Seed = SolanaPackage.DomainSeed
+    typealias PublicKeyStore = SolanaPackage.PublicKeyStore
+    typealias PrivateKeyStore = SolanaPackage.PrivateKeyStore
     typealias SeedStore = SolanaPackage.SeedStore
     
     var bank: Bank?
@@ -22,6 +22,7 @@ class BankAppStore {
     private let seed = BankOfSeed.seed
     
     private lazy var seedStore: SeedStore = {
+        
         return HardcodedSeedStore(seed: seed)
     }()
     
@@ -29,13 +30,38 @@ class BankAppStore {
         LocalSeedLoader(store: seedStore)
     }()
     
-    //MARK: - Credentials Store & Local Credentials Loader
-    private lazy var credentialsStore: CredentialsStore = {
+    
+    public func makeLocalSeedPublisher() ->  AnyPublisher<[String], Error> {
+        return localSeedLoader.getPublisher()
+    }
+    
+    //MARK: - Public Key Store & Local Public Key Loader
+    private lazy var publicKeyStore: PublicKeyStore = {
+        do {
+            return try CodablePublicKeyStore(storeURL: URL(string:  "com.deniztutuncu.MySolWallet")!)
+        } catch {
+            assertionFailure("Failed to instantiate CoreData store with error: \(error.localizedDescription)")
+            logger.fault("Failed to instantiate CoreData store with error: \(error.localizedDescription)")
+            return NullStore()
+        }
+        
+    }()
+    
+    private lazy var localPublicKeyLoader: LocalPublicKeyLoader = {
+        LocalPublicKeyLoader(store: publicKeyStore, currentDate: Date.init)
+    }()
+    
+    public func makeLocalPublicKeyPublisher() ->  AnyPublisher<[String], Error> {
+        return localPublicKeyLoader.getPublisher()
+    }
+    
+    //MARK: - Private Key Store & Local Private Key Loader
+    private lazy var privateKeyStore: PrivateKeyStore = {
         return KeychainPrivateKeyStore(network: "com.deniztutuncu.MySolWallet")
     }()
     
-    private lazy var localCredentialsLoader: LocalPrivateKeyLoader = {
-        LocalPrivateKeyLoader(store: credentialsStore)
+    private lazy var localPrivateKeyLoader: LocalPrivateKeyLoader = {
+        LocalPrivateKeyLoader(store: privateKeyStore)
     }()
     
     //MARK: - Network URL & Http Client & Balance Loader & Balance Publisher
@@ -47,7 +73,7 @@ class BankAppStore {
         URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
     }()
     
-    private func makeRemoteBalancePublisher(address: String, baseURL: URL) -> AnyPublisher<Balance, Error> {
+    public func makeRemoteBalancePublisher(address: String, baseURL: URL) -> AnyPublisher<Balance, Error> {
         let request = try? BalanceEndpoint.get(walletAddress: address).url(baseURL: baseURL)
         return httpClient
             .getPublisher(urlRequest: request!)
@@ -73,15 +99,15 @@ struct MySolWalletApp: App {
     }
     
     private func startBank() {
-        let seed = try! appStore.localSeedLoader.load()
-        //        let publicKeys = try! appStore.localPublicKeyLoader.load()
-        
-        print("\(seed) from MySolWalletApp")
         let adapter = iOSSwiftUINavigationAdapter(navigation: navigationStore,
-                                                  publicKeys: [],
-                                                  seed: seed,
-                                                  loadAgain: startBank)
+                                                  publicKeyPublisher:  appStore.makeLocalPublicKeyPublisher(),
+                                                  seedPublisher: appStore.makeLocalSeedPublisher(),
+                                                  createWallet: { seed in },
+                                                  selectPublicKey: { keys in })
         
-        appStore.bank = Bank.start(publicKeysDelegate: adapter, publicKeys: [], seedDelegate: adapter, seed: seed)
+        appStore.bank = Bank.start(publicKeysDelegate: adapter,
+                                   publicKeys: [],
+                                   seedDelegate: adapter,
+                                   seed: [])
     }
 }   

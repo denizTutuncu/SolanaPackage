@@ -17,11 +17,10 @@ public final class Bank {
     public static func start<PubKeyDelegate: PublicKeyDelegate, SDelegate: SeedDelegate>
     (
         publicKeysDelegate: PubKeyDelegate,
-        publicKeys: [PubKeyDelegate.PublicKey],
+        publicKeys: [String],
         seedDelegate: SDelegate,
-        seed: [SDelegate.Seed]
-        
-    ) -> Bank where PubKeyDelegate.PublicKey: Equatable, SDelegate.Seed: Equatable {
+        seed: [String]
+    ) -> Bank {
         
         let flow = AppStartFlow(publicKeys: publicKeys, seed: seed, publicKeyDelegate: publicKeysDelegate, seedDelegate: seedDelegate)
         flow.start()

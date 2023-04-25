@@ -8,6 +8,6 @@
 import Foundation
 
 public protocol SeedDelegate {
-    associatedtype Seed
-    func didComplete(completion: [Seed])
+//    associatedtype Seed
+    func didComplete(completion: [String])
 }

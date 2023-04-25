@@ -117,7 +117,7 @@ class LoadSeedBankFromCacheUseCaseTests: XCTestCase {
         return (sut, store)
     }
     
-    private func expect(_ sut: LocalSeedLoader, toCompleteWith expectedResult: Result<[DomainSeed], Error>, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
+    private func expect(_ sut: LocalSeedLoader, toCompleteWith expectedResult: Result<[String], Error>, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
         action()
         
         let receivedResult = Result { try sut.load() }

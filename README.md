@@ -1,6 +1,6 @@
 # Solana Swift SDK 
 
-## Solana Package Framework & Solana Package UI Framework & MySolWallet iOS App
+## Solana Package Framework & Solana Package UI Framework & SunGate iOS App
 #### The Solana Swift SDK is a collection of Swift modules that enables developers to interact with the Solana Blockchain in their iOS, macOS, tvOS, and watchOS apps. The SDK contains two main modules:
 
 #### Core Module:
@@ -13,7 +13,7 @@ This module is an iOS SwiftUI module that provides a set of components to build 
 
 #### App:
 
-The SDK also includes an iOS app called MySolWallet that demonstrates how to use the Core and UI modules to interact with the Solana Blockchain. The app showcases the functionalities of creating a wallet, sending/receiving SOL, viewing transaction history, and more.
+The SDK also includes an iOS app called SunGate that demonstrates how to use the Core and UI modules to interact with the Solana Blockchain. The app showcases the functionalities of creating a wallet, sending/receiving SOL, viewing transaction history, and more.
 
 The SDK is written in Swift and is intended to be used in Swift apps.
 
@@ -46,7 +46,7 @@ The SDK is open-source and hosted on Github, developers can use the SDK to build
 
 ----------------
 
-### My Sol Wallet iOS App Design
+### SunGate iOS App Design
 
 ![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Diagrams/iOSSDKDesign.drawio.png?raw=true)
 

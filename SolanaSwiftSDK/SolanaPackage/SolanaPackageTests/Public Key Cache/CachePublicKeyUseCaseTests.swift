@@ -16,26 +16,53 @@ class CachePublicKeyUseCaseTests: XCTestCase {
         XCTAssertEqual(store.receivedMessages, [])
     }
     
-    func test_save_doesNotRequestCacheInsertionOnDeletionError() {
+    func test_save_doesRequestCacheInsertion() {
+        let timestamp = Date()
         let publicKeys = uniquePublicKeys()
-        let (sut, store) = makeSUT()
+        let (sut, store) = makeSUT(currentDate: { timestamp })
+            
+        try? sut.save(publicKeys)
+        
+        XCTAssertEqual(store.receivedMessages, [.insert(publicKeys, timestamp)])
+    }
+    
+    func test_save_doesRequestCacheInsertionOnDeletionError() {
+        let timestamp = Date()
+        let publicKeys = uniquePublicKeys()
+        let (sut, store) = makeSUT(currentDate: { timestamp })
+        
+        
         let deletionError = anyNSError()
         store.completeDeletion(with: deletionError)
         
         try? sut.save(publicKeys)
-        
-        XCTAssertEqual(store.receivedMessages, [.deleteCachedPublicKey(publicKeys)])
+        XCTAssertEqual(store.receivedMessages, [.insert(publicKeys, timestamp)])
     }
     
-    func test_save_requestsNewCacheInsertionWithTimestampOnSuccessfulDeletion() {
+    func test_save_doesNotMessageCacheInsertionOnInvalidKeys() {
+            let timestamp = Date()
+            let invalidPublicKeys = invalidPublicKeys()
+            let (sut, store) = makeSUT(currentDate: { timestamp })
+            
+            try? sut.save(invalidPublicKeys)
+            
+        XCTAssertEqual(store.receivedMessages, [])
+    }
+    
+
+    func test_save_requestsNewCacheInsertionWithTimestamp() {
         let timestamp = Date()
-        let publicKeys = uniquePublicKeys()
+        
+        let validPublicKeys = uniquePublicKeys()
+        let invalidPublicKeys = invalidPublicKeys()
+        let allKeys = validPublicKeys + invalidPublicKeys
+        
         let (sut, store) = makeSUT(currentDate: { timestamp })
         store.completeDeletionSuccessfully()
         
-        try? sut.save(publicKeys)
+        try? sut.save(allKeys)
         
-        XCTAssertEqual(store.receivedMessages, [.deleteCachedPublicKey(publicKeys), .insert(publicKeys, timestamp)])
+        XCTAssertEqual(store.receivedMessages, [.insert(validPublicKeys, timestamp)])
     }
     
     func test_save_failsOnDeletionError() {

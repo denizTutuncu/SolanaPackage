@@ -8,21 +8,23 @@
 import Foundation
 
 public struct SeedViewModel {
-    public var seed: [SeedUI]
+    
+    public init(seed: [PresentableSeed], handler: @escaping ([PresentableSeed]) -> Void) {
+        self.seed = seed
+        self.handler = handler
+    }
+    
+    public var seed: [PresentableSeed]
+    
+    public var canSubmit: Bool {
+        seed.map { $0.isSafe }.allSatisfy { $0 == true }
+    }
         
-    public init(seed: [SeedUI]?) {
-        self.seed = seed ?? []
+    private let handler: ([PresentableSeed]) -> Void
+    
+    public func submit() {
+        guard canSubmit else { return }
+        return handler(seed)
     }
     
 }
-
-public struct SeedUI {
-    public let id: UUID
-    public let value: String
-    
-    public init(id: UUID = UUID(), value: String) {
-        self.id = id
-        self.value = value
-    }
-}
-

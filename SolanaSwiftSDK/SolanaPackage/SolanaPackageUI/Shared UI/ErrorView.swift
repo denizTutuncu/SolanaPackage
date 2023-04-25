@@ -39,7 +39,7 @@ struct ErrorView: View {
     }
 }
 
-extension Color {
+private extension Color {
     static var errorBackgroundColor: Color {
         Color(red: 0.99951404330000004, green: 0.41759261489999999, blue: 0.4154433012)
     }

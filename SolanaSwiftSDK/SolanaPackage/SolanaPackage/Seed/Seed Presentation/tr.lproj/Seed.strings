@@ -6,4 +6,4 @@
   
 */
 "SEED_LIST_TITLE" = "Tohum Cümlesi";
-"SEED_LIST_SUBTITLE" = "Tohum cümlesi asla cihazda saklanmaz. Onu sadece bir kez göreceksin ve sadece bu an için. Oluşturulan cüzdana başka bir cihazdan erişebilmek için bu tohum cümlesini güvende tutmalısınız.";
+"SEED_LIST_SUBTITLE" = "Tohum cümlesi asla cihazda saklanmaz. Yalnızca bir kez görürsünüz ve yalnızca kurulum sırasında gösterilir. Tohum cümlesinin sırası çok önemlidir, bu nedenle doğru sırayı korumak için her bir düğmeyi her bir tümceye karşılık gelen geçiş yaptığınızdan emin olun. Lütfen tohum cümlesini fiziksel olarak güvende tuttuğunuzdan emin olun.";

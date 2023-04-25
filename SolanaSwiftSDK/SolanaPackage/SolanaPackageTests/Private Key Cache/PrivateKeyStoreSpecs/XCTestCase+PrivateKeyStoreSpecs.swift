@@ -11,102 +11,105 @@ import SolanaPackage
 extension PrivateKeyStoreSpecs where Self: XCTestCase {
     
     func assertThatRetrieveDeliversNilsOnEmptyCache(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
-        let publicKey = "Non-exist Public Key"
+        let nonExistPublicKey = uniquePublicKey()
         
-        expect(publicKey, sut, toRetrieve: .success(.none), file: file, line: line)
+        expect(nonExistPublicKey, sut, toRetrieve: .success(.none), file: file, line: line)
     }
     
     func assertThatRetrieveHasNoSideEffectsOnEmptyCache(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
-        let publicKey = "Non-exist Public Key"
+        let nonExistPublicKey = uniquePublicKey()
         
-        expect(publicKey, sut, toRetrieveTwice: .success(.none), file: file, line: line)
+        expect(nonExistPublicKey, sut, toRetrieveTwice: .success(.none), file: file, line: line)
     }
     
     func assertThatRetrieveDeliversFoundValuesOnNonEmptyCache(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
-        let publicKey = uniqueWallet().id
+        let publicKey = uniquePublicKey()
         let privateKey = uniquePrivateKey()
         
         insert(publicKey, privateKey, to: sut)
-        let _ = getPrivateKey(publicKey, from: sut)
-        
+                
         expect(publicKey, sut, toRetrieve: .success(privateKey), file: file, line: line)
     }
     
     func assertThatRetrieveHasNoSideEffectsOnNonEmptyCache(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
-        let publicKey = uniqueWallet().id
+        let publicKey = uniquePublicKey()
         let privateKey = uniquePrivateKey()
-        insert(publicKey, privateKey, to: sut)
-        let _ = getPrivateKey(publicKey, from: sut)
         
+        insert(publicKey, privateKey, to: sut)
+                
         expect(publicKey, sut, toRetrieveTwice: .success(privateKey), file: file, line: line)
     }
     
     func assertThatInsertDeliversNoErrorOnEmptyCache(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
-        let publicKey = uniqueWallet().id
+        let publicKey = uniquePublicKey()
         let privateKey = uniquePrivateKey()
-        let insertionError = insert(publicKey, privateKey, to: sut)
         
+        let insertionError = insert(publicKey, privateKey, to: sut)
         XCTAssertNil(insertionError, "Expected to insert cache successfully", file: file, line: line)
     }
     
     func assertThatInsertDeliversNoErrorOnNonEmptyCache(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
-        let publicKey = uniqueWallet().id
+        let publicKey = uniquePublicKey()
         let privateKey = uniquePrivateKey()
-        insert(publicKey, privateKey, to: sut)
         
-        let anotherPublicKey = uniqueWallet().id
-        let anotherPrivateKey = "Another Unique Private Key Key"
-        let insertionError = insert(anotherPublicKey, anotherPrivateKey, to: sut)
+        insert(publicKey, privateKey, to: sut)
 
-        XCTAssertNil(insertionError, "Expected to override cache successfully", file: file, line: line)
+        let anotherPublicKey = anotherUniquePublicKey()
+        let anotherPrivateKey = anotherUniquePrivateKey()
+        
+        let secondInsertionError = insert(anotherPublicKey, anotherPrivateKey, to: sut)
+        XCTAssertNil(secondInsertionError, "Expected to insert another cache successfully", file: file, line: line)
     }
     
-    func assertThatInsertDoesNotOverridePreviouslyInsertedCacheValue(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
-        let publicKey = uniqueWallet().id
+    func assertThatInsertDeliversErrorOnPreviouslyInsertedCacheValueUpdate(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
+        let publicKey = uniquePublicKey()
         let privateKey = uniquePrivateKey()
 
         let firstInsertionError = insert(publicKey, privateKey, to: sut)
         XCTAssertNil(firstInsertionError, "Expected to insert cache successfully", file: file, line: line)
 
-        let anotherPrivateKey = "Another Private Key"
+        let anotherPrivateKey = anotherUniquePrivateKey()
+        
         let secondInsertionError = insert(publicKey, anotherPrivateKey, to: sut)
-
         XCTAssertNotNil(secondInsertionError, "Expected to get cache error", file: file, line: line)
     }
     
     func assertThatInsertDoesNotOverridePreviouslyInsertedCacheValues(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
-        let publicKey = uniqueWallet().id
+        let publicKey = uniquePublicKey()
         let privateKey = uniquePrivateKey()
+        
         insert(publicKey, privateKey, to: sut)
         
-        let latestPublicKey =  uniqueWallet().id
-        let latestPrivateKey = "Another Unique Private Key"
+        let latestPublicKey =  anotherUniquePublicKey()
+        let latestPrivateKey = anotherUniquePrivateKey()
+        
         insert(latestPublicKey, latestPrivateKey, to: sut)
-        
-        getPrivateKey(latestPublicKey, from: sut)
+                
         expect(latestPublicKey, sut, toRetrieve: .success(latestPrivateKey), file: file, line: line)
-        
-        getPrivateKey(publicKey, from: sut)
+                
         expect(publicKey, sut, toRetrieve: .success(privateKey), file: file, line: line)
     }
     
     func assertThatDeleteDeliversNoErrorOnEmptyCache(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
-        let publicKey = uniqueWallet().id
+        let publicKey = uniquePublicKey()
+        
         let deletionError = deleteCache(publicKey, from: sut)
         
         XCTAssertNil(deletionError, "Expected empty cache deletion to succeed", file: file, line: line)
     }
     
     func assertThatDeleteHasNoSideEffectsOnEmptyCache(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
-        let publicKey = uniqueWallet().id
+        let publicKey = uniquePublicKey()
+        
         deleteCache(publicKey, from: sut)
         
         expect(publicKey, sut, toRetrieveTwice: .success(.none), file: file, line: line)
     }
     
     func assertThatDeleteDeliversNoErrorOnNonEmptyCache(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
-        let publicKey = uniqueWallet().id
+        let publicKey = uniquePublicKey()
         let privateKey = uniquePrivateKey()
+        
         insert(publicKey, privateKey, to: sut)
         
         let deletionError = deleteCache(publicKey, from: sut)
@@ -115,8 +118,9 @@ extension PrivateKeyStoreSpecs where Self: XCTestCase {
     }
     
     func assertThatDeleteEmptiesInsertedPrivateKey(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
-        let publicKey = uniqueWallet().id
+        let publicKey = uniquePublicKey()
         let privateKey = uniquePrivateKey()
+        
         insert(publicKey, privateKey, to: sut)
         
         deleteCache(publicKey, from: sut)

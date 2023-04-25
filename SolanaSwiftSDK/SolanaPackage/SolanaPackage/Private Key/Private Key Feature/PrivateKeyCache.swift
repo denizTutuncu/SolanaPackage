@@ -7,6 +7,6 @@
 
 import Foundation
 
-public protocol WalletCache {
-    func save(_ wallet: DomainWallet, privateKey: String) throws
+public protocol PrivateKeyCache {
+    func save(_ publicKey: String, privateKey: String) throws
 }
