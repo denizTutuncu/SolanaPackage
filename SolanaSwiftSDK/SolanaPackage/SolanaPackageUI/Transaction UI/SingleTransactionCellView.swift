@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SingleTransactionCellView: View {
-    @Binding var tx: TransactionUI
+    @Binding var tx: PresentableTransaction
     let selection: () -> Void
     
     var body: some View {
@@ -101,7 +101,7 @@ struct SingleTransactionCellView: View {
     
     struct SingleTransactionCellView_Previews: PreviewProvider {
         static var previews: some View {
-            SingleTransactionCellView(tx: .constant(TransactionUI(date: "Feb 23, 2023",
+            SingleTransactionCellView(tx: .constant(PresentableTransaction(date: "Feb 23, 2023",
                                                                 from: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
                                                                 to: "3xcawfQtZVjRLLcxgcxT7yYUuynPlasdyqw640276bAD",
                                                                 amount: "10000000000.00",

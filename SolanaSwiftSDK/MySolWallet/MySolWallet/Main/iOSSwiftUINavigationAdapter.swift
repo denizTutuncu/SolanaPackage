@@ -10,66 +10,76 @@ import Combine
 import SolanaPackage
 import SolanaPackageUI
 
-final class iOSSwiftUINavigationAdapter: WalletDelegate {
-    typealias Wallet = DomainWallet
-    typealias Seed  = DomainSeed
-    typealias Transaction = DomainTransaction
+final class iOSSwiftUINavigationAdapter: PublicKeyDelegate, SeedDelegate {
+    
+    typealias PublicKey = String
+    typealias Seed  = String
     
     private let navigation: BankNavigationStore
-    private let wallets: [Wallet]
-    private let seed: Seed
-    private let loadAgain: () -> Void
+    private let publicKeyPublisher: AnyPublisher<[PublicKey], Error>
+    private let seedPublisher: AnyPublisher<[Seed], Error>
+    private let createWallet: ([Seed]) -> Void
+    private let selectPublicKey: (PublicKey) -> Void
     
-    init(navigation: BankNavigationStore, wallets: [Wallet], seed: Seed, loadAgain: @escaping () -> Void) {
+    init(navigation: BankNavigationStore,
+         publicKeyPublisher: AnyPublisher<[PublicKey], Error>,
+         seedPublisher: AnyPublisher<[Seed], Error>,
+         createWallet: @escaping ([Seed]) -> Void,
+         selectPublicKey: @escaping (PublicKey) -> Void)
+    {
         self.navigation = navigation
-        self.wallets = wallets
-        self.seed = seed
-        self.loadAgain = loadAgain
+        self.publicKeyPublisher = publicKeyPublisher
+        self.seedPublisher = seedPublisher
+        self.createWallet = createWallet
+        self.selectPublicKey = selectPublicKey
     }
     
-    func didComplete(with: [Wallet]) {
-        let balanceTitle = BalancePresenter.title
-        let currencyName = WalletPresenter.currency
-    
-        let transactionListTitle = TransactionPresenter.listTitle
-        let transactionListSubtitle = TransactionPresenter.listSubtitle
-        let networkName = WalletPresenter.network
-        let walletPublisher = ViewModelPublisher<[Wallet], [WalletUI]>(mapper: WalletStoreMapper.map)
-        let transactionPublisher = ViewModelPublisher<[Transaction], [TransactionUI]>(mapper: TransactionStoreMapper.map)
+    func didComplete(completion: @escaping ([PublicKey]) -> Void) {
+        let headerTitle = "Wallets"
+        let headerSubtitle = "Keychain is a secure storage area on your device that uses encryption to keep your passwords and other sensitive information safe. It's an important tool for protecting your personal data from unauthorized access."
+        let loadingTitle = "Downloading wallets"
+        
+        let publisher = PublicKeyUIAdapter.publicKeyComposedWith(publicKeyPublisher: publicKeyPublisher)
         
         withAnimation {
             navigation.currentView = .wallet(
-                //MARK: - To Do // Gotta to call the Composer.
-                WalletUIComposer.walletComposedWith(balanceTitle: balanceTitle,
-                                                    currencyName: currencyName,
-                                                    transactionListTitle: transactionListTitle,
-                                                    transactionListSubtitle: transactionListSubtitle,
-                                                    network: networkName)
-                
+                WalletListUIComposerView(headerTitle: headerTitle,
+                                         headerSubtitle: headerSubtitle,
+                                         loadingTitle: loadingTitle,
+                                         viewModel: .init(publicKeys: publisher.onResourceLoad ?? [],
+                                                          handler: { [weak self] in self?.selectPublicKey($0.id) }),
+                                         selection: { [weak self] in self?.selectPublicKey($0.id) })
             )
+            
         }
-        
     }
     
-    func didComplete(with: Seed, completion: @escaping ([Wallet]) -> Void) {
-        let title = SeedPresenter.title
-        let subtitle = SeedPresenter.subtitle
-        let toogleOFFTitle = "My phrase is not safe yet."
-        let toogleisONTitle = "My phrase is safe now."
+    func didComplete(completion: [Seed]) {
+        let headerTitle = SeedPresenter.title
+        let headerSubtitle = SeedPresenter.subtitle
+        let toogleOFFTitle = "Seed phrase is not safe yet."
+        let toogleisONTitle = "Seed phrase is safe now."
         let buttonTitle = "Create wallet"
-        let seedPublisher = ViewModelPublisher<DomainSeed, [SeedUI]>(mapper: SeedStoreMapper.map).load()
+        let errorMessage = "Cannot connect to network."
+        let downloadingTitle = "Downloading seed phrase."
+        
+        let publisher = SeedUIAdapter.seedComposedWith(seedPublisher: seedPublisher)
         
         withAnimation {
             navigation.currentView = .seed(
-                SeedUIComposer.seedComposedWith(listTitle: title,
-                                                listSubtitle: subtitle,
-                                                toogleOFFTitle: toogleOFFTitle,
-                                                toogleisONTitle: toogleisONTitle,
-                                                buttonTitle: buttonTitle,
-                                                seedPublisher: seedPublisher)
-                
+                WalletCreationComposerView(headerTitle: headerTitle,
+                                           headerSubtitle: headerSubtitle,
+                                           toogleOFFTitle: toogleOFFTitle,
+                                           toogleisONTitle: toogleisONTitle,
+                                           buttonTitle: buttonTitle,
+                                           errorMessage: errorMessage,
+                                           downloadingTitle: downloadingTitle,
+                                           action: { },
+                                           handler: { [weak self] in self?.createWallet($0.map{ $0.value })},
+                                           viewModel: .init(seed: publisher.onResourceLoad ?? [],
+                                                            handler: { [weak self] in self?.createWallet($0.map{ $0.value }) }))
             )
         }
     }
-        
+    
 }

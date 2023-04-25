@@ -7,41 +7,42 @@
 
 import Foundation
 
-public final class AppStartFlow<Delegate: WalletDelegate>{
-    public typealias Wallet = Delegate.Wallet
-    public typealias Seed = Delegate.Seed
+public final class AppStartFlow<PubKeyDelgt: PublicKeyDelegate, SeedDelgt: SeedDelegate>{
+    public typealias PublicKey = String
+    public typealias Seed = String
     
-    private var wallets: [Wallet]
-    private let seed: Seed
-    private let delegate: Delegate
-  
-    public init(wallets: [Wallet], seeds: Seed, delegate: Delegate) {
-        self.wallets = wallets
-        self.seed = seeds
-        self.delegate = delegate
+    private var publicKeys: [PublicKey]
+    private let seed: [Seed]
+    private let publicKeyDelegate: PubKeyDelgt
+    private let seedDelegate: SeedDelgt
+    
+    public init(publicKeys: [PublicKey], seed: [Seed], publicKeyDelegate: PubKeyDelgt, seedDelegate: SeedDelgt) {
+        self.publicKeys = publicKeys
+        self.seed = seed
+        self.publicKeyDelegate = publicKeyDelegate
+        self.seedDelegate = seedDelegate
     }
     
     public func start() {
-        delegateHandlingWallets(at: wallets.startIndex)
+        delegateHandlingPublicKeys(at: publicKeys.startIndex)
     }
     
-    private func delegateHandlingWallets(at index: Int) {
-        if index < wallets.endIndex {
-            delegate.didComplete(with: wallets)
+    private func delegateHandlingPublicKeys(at index: Int) {
+        if index < publicKeys.endIndex {
+            publicKeyDelegate.didComplete(completion: publicKeys(at: index))
         } else {
-            delegate.didComplete(with: seed, completion: wallets(at: index))
+            seedDelegate.didComplete(completion: seed)
         }
     }
     
-    
     private func delegateExistingWalletHandling(after index: Int) {
-        delegateHandlingWallets(at: wallets.index(after: index))
+        delegateHandlingPublicKeys(at: publicKeys.index(after: index))
     }
     
-    private func wallets(at index: Int) -> ([Wallet]) -> Void {
-        return { [weak self] wallets in
-            for (index,wallet) in wallets.enumerated() {
-                self?.wallets.replaceOrInsert(wallet, at: index)
+    private func publicKeys(at index: Int) -> ([PublicKey]) -> Void {
+        return { [weak self] publicKeys in
+            for (index,publicKey) in publicKeys.enumerated() {
+                self?.publicKeys.replaceOrInsert(publicKey, at: index)
             }
             self?.delegateExistingWalletHandling(after: index)
         }
@@ -57,3 +58,4 @@ private extension Array {
         insert(element, at: index)
     }
 }
+  

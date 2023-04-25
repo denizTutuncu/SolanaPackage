@@ -20,12 +20,12 @@ struct HeaderView: View {
                         .fontWeight(.bold)
                         .foregroundColor(Color.blue)
                         .padding(.top)
-                        .minimumScaleFactor(0.5)
+                        .minimumScaleFactor(0.8)
                     
                     Text(title!)
                         .font(.largeTitle)
                         .fontWeight(.medium)
-                        .minimumScaleFactor(0.5)
+                        .minimumScaleFactor(0.8)
                         .foregroundColor(.primary)
                 }
                 .padding(.top)

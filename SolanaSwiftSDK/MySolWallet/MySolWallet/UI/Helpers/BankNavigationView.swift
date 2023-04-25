@@ -10,8 +10,8 @@ import SolanaPackageUI
 
 class BankNavigationStore: ObservableObject {
     enum CurrentView {
-        case wallet(WalletView)
-        case seed(SeedListView)
+        case wallet(WalletListUIComposerView)
+        case seed(WalletCreationComposerView)
     }
     
     @Published var currentView: CurrentView?
