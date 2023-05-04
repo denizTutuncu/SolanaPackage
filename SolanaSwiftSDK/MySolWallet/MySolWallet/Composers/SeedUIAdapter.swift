@@ -11,14 +11,10 @@ import SolanaPackage
 import SolanaPackageUI
 
 public final class SeedUIAdapter {
-    public typealias SeedStorePublisher = ViewModelPublisher<[String], [PresentableSeed]>
-    private static var cancellable: AnyCancellable?
     
     private init() {}
-    
-    deinit {
-        SeedUIAdapter.cancellable?.cancel()
-    }
+    public typealias SeedStorePublisher = ViewModelPublisher<[String], [PresentableSeed]>
+    private static var cancellable: AnyCancellable?
     
     public static func seedComposedWith(seedPublisher: AnyPublisher<[String], Error>) -> SeedStorePublisher {
         var seedStorePublisher = SeedStorePublisher(resource: [], mapper: SeedStoreMapper.map)

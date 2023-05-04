@@ -2,7 +2,7 @@
 //  WalletListUIComposerView.swift
 //  SolanaPackageUI
 //
-//  Created by Deniz Tutuncu on 4/21/23.
+//  Created by Deniz Tutuncu on 4/29/23.
 //
 
 import SwiftUI
@@ -11,35 +11,55 @@ public struct WalletListUIComposerView: View {
     
     public init(headerTitle: String,
                 headerSubtitle: String,
+                errorMessage: String,
+                errorViewButtonTitle: String,
                 loadingTitle: String,
+                tryAgain: @escaping () -> Void,
+                selection: @escaping (String) -> Void,
                 viewModel: PublicKeyViewModel,
-                selection: @escaping (PresentablePublicKey) -> Void)
-    {
+                publickeyLoading: Bool
+    ) {
         self.headerTitle = headerTitle
         self.headerSubtitle = headerSubtitle
+        self.errorMessage = errorMessage
+        self.errorViewButtonTitle =  errorViewButtonTitle
         self.loadingTitle = loadingTitle
-        self._viewModel = State(initialValue: viewModel)
+        self.tryAgain = tryAgain
         self.selection = selection
+        self._viewModel = State(initialValue: viewModel)
+        self._publickeyLoading = State(initialValue: publickeyLoading)
     }
     
     private let headerTitle: String
     private let headerSubtitle: String
+    private let errorMessage: String
+    private let errorViewButtonTitle: String
     private let loadingTitle: String
+    private let tryAgain: () -> Void
+    
+    private let selection: (String) -> Void
     
     @State private var viewModel: PublicKeyViewModel
-    
-    private let selection: (PresentablePublicKey) -> Void
-    
+    @State private var publickeyLoading: Bool
+
     public var body: some View {
-        HeaderView(title: headerTitle, subtitle: headerSubtitle)
-        
-        if viewModel.onLoadingState {
-            LoadingView(title: loadingTitle)
-        } else {
-            WalletListView(viewModel: viewModel,
-                           selection: selection)
+        VStack {
+            HeaderView(title: headerTitle, subtitle: headerSubtitle)
+            
+            if publickeyLoading {
+                LoadingView(title: loadingTitle)
+                Spacer()
+            } else {
+                
+                if viewModel.isModelEmpty {
+                    ErrorView(message: errorMessage, buttonTitle: errorViewButtonTitle, onHide: {
+                        publickeyLoading = true ; tryAgain()
+                    })
+                } else {
+                    WalletListView(viewModel: viewModel, selection: selection)
+                }
+            }
         }
-        Spacer()
     }
 }
 
@@ -48,34 +68,53 @@ struct WalletListUIComposerView_Previews: PreviewProvider {
         Group {
             WalletListUIComposerTestView()
                 .previewLayout(.sizeThatFits)
-                .previewDisplayName("Wallet List Test View")
+                .previewDisplayName("Wallet List UI Composer Test View")
         }
     }
+}
+
+struct WalletListUIComposerTestView: View {
+    @State var selection: String = "none"
     
-    struct WalletListUIComposerTestView: View {
-        @State var selection: String = "none"
-        
-        var body: some View {
-            VStack {
-                WalletListUIComposerView(
-                    headerTitle: "Wallets",
-                    headerSubtitle: "Keychain is a secure storage area on your device that uses encryption to keep your passwords and other sensitive information safe. It's an important tool for protecting your personal data from unauthorized access.",
-                    loadingTitle: "Loading wallets",
-                    viewModel: .init(publicKeys: [], handler: { selection = $0.id }),
-                    selection: { selection = $0.id })
-                WalletListUIComposerView(
-                    headerTitle: "Wallets",
-                    headerSubtitle: "Keychain is a secure storage area on your device that uses encryption to keep your passwords and other sensitive information safe. It's an important tool for protecting your personal data from unauthorized access.",
-                    loadingTitle: "Loading wallets",
-                    viewModel: .init(publicKeys: [
-                        PresentablePublicKey(id: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi"),
-                        PresentablePublicKey(id: "3xcawfQtZVjRLLcxgcxT7yYUuynPlasdyqw640276bAD"),
-                        PresentablePublicKey(id: "POhasdyasd454cxgcxT7yYUuyn6UgMJddBHKl21bhduA")
-                    ], handler: { selection = $0.id }),
-                    selection: { selection = $0.id })
-                
-                Text("Last selection: " + selection).padding()
-            }
+    var body: some View {
+        VStack {
+            WalletListUIComposerView(headerTitle: "Wallets",
+                                     headerSubtitle: "Keychain is a secure storage area on your device that uses encryption to keep your keys and other sensitive information safe. It's an important tool for protecting your personal data from unauthorized access.",
+                                     errorMessage: "Cannot load wallets",
+                                     errorViewButtonTitle: "Try again",
+                                     loadingTitle: "Loading wallets",
+                                     tryAgain: { },
+                                     selection: { _ in },
+                                     viewModel: .init(),
+                                     publickeyLoading: true)
+            
+            WalletListUIComposerView(headerTitle: "Wallets",
+                                     headerSubtitle: "Keychain is a secure storage area on your device that uses encryption to keep your keys and other sensitive information safe. It's an important tool for protecting your personal data from unauthorized access.",
+                                     errorMessage: "Cannot load wallets",
+                                     errorViewButtonTitle: "Try again",
+                                     loadingTitle: "Loading wallets",
+                                     tryAgain: { },
+                                     selection: { _ in },
+                                     viewModel: .init(model: []),
+                                     publickeyLoading: false)
+            
+            
+            WalletListUIComposerView(headerTitle: "Wallets",
+                                     headerSubtitle: "Keychain is a secure storage area on your device that uses encryption to keep your keys and other sensitive information safe. It's an important tool for protecting your personal data from unauthorized access.",
+                                     errorMessage: "",
+                                     errorViewButtonTitle: "",
+                                     loadingTitle: "",
+                                     tryAgain: { },
+                                     selection: { selection = $0 },
+                                     viewModel: .init(model: [
+                                        "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
+                                        "3xcawfQtZVjRLLcxgcxT7yYUuynPlasdyqw640276bAD",
+                                        "POhasdyasd454cxgcxT7yYUuyn6UgMJddBHKl21bhduA"
+                                     ]),
+                                     publickeyLoading: false)
+            
+//            Text("Last selection: " + selection).padding()
+            
         }
     }
 }

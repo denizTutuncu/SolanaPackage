@@ -13,14 +13,14 @@ public struct DomainTransaction {
     public let to: String
     public let amount: String
     public let currencyName: String
-    public let transactionSignature: String
+    public let signature: String
     
-    public init(date: String, from: String, to: String, amount: String, currencyName: String, transactionSignature: String) {
+    public init(date: String, from: String, to: String, amount: String, currencyName: String, signature: String) {
         self.date = date
         self.from = from
         self.to = to
         self.amount = amount
         self.currencyName = currencyName
-        self.transactionSignature = transactionSignature
+        self.signature = signature
     }
 }

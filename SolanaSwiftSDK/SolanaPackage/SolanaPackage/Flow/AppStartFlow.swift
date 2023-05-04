@@ -7,55 +7,34 @@
 
 import Foundation
 
-public final class AppStartFlow<PubKeyDelgt: PublicKeyDelegate, SeedDelgt: SeedDelegate>{
+public final class AppStartFlow<Delegate: PublicKeyDelegate>{
+    
+    public init(publickeys: [PublicKey],
+                seed: [Seed],
+                delegate: Delegate
+    ) {
+        self.publickeys = publickeys
+        self.seed = seed
+        self.delegate = delegate
+    }
+    
     public typealias PublicKey = String
     public typealias Seed = String
     
-    private var publicKeys: [PublicKey]
+    private let publickeys: [PublicKey]
     private let seed: [Seed]
-    private let publicKeyDelegate: PubKeyDelgt
-    private let seedDelegate: SeedDelgt
-    
-    public init(publicKeys: [PublicKey], seed: [Seed], publicKeyDelegate: PubKeyDelgt, seedDelegate: SeedDelgt) {
-        self.publicKeys = publicKeys
-        self.seed = seed
-        self.publicKeyDelegate = publicKeyDelegate
-        self.seedDelegate = seedDelegate
-    }
-    
-    public func start() {
-        delegateHandlingPublicKeys(at: publicKeys.startIndex)
-    }
-    
-    private func delegateHandlingPublicKeys(at index: Int) {
-        if index < publicKeys.endIndex {
-            publicKeyDelegate.didComplete(completion: publicKeys(at: index))
-        } else {
-            seedDelegate.didComplete(completion: seed)
-        }
-    }
-    
-    private func delegateExistingWalletHandling(after index: Int) {
-        delegateHandlingPublicKeys(at: publicKeys.index(after: index))
-    }
-    
-    private func publicKeys(at index: Int) -> ([PublicKey]) -> Void {
-        return { [weak self] publicKeys in
-            for (index,publicKey) in publicKeys.enumerated() {
-                self?.publicKeys.replaceOrInsert(publicKey, at: index)
-            }
-            self?.delegateExistingWalletHandling(after: index)
-        }
-    }
- 
-}
-
-private extension Array {
-    mutating func replaceOrInsert(_ element: Element, at index: Index) {
-        if index < count {
-            remove(at: index)
-        }
-        insert(element, at: index)
-    }
-}
+    private let delegate: Delegate
   
+    public func start() {
+        delegateHandlingPublickeys(at: publickeys.startIndex)
+    }
+    
+    private func delegateHandlingPublickeys(at index: Int) {
+        if index < publickeys.endIndex {
+            delegate.didCompleteWith(keys: publickeys)
+        } else {
+            delegate.didCompleteWith(seed: seed)
+        }
+    }
+        
+}

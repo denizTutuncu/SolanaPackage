@@ -12,53 +12,51 @@ import XCTest
 class AppStartFlowTest: XCTestCase {
     
     func test_start_withNoWalletsAndNoSeed_doesNotDelegateWalletOrSeedHandling() {
-        makeSUT(publicKeys: [], seed: []).start()
+        makeSUT(publickeys: [], seed: []).start()
         
-        XCTAssertTrue(publicKeyDelegate.publicKeyCompletions.isEmpty)
-        XCTAssertTrue(seedDelegate.seed.isEmpty)
+        XCTAssertTrue(delegate.passedPublicKeys.isEmpty)
+        XCTAssertTrue(delegate.passedSeed.isEmpty)
     }
     
     func test_start_withSeed_AndNoWallets_delegatesCorrectSeedHandling() {
         let localSeedPhrase = seedPhrase()
-        makeSUT(publicKeys: [], seed: localSeedPhrase).start()
+        makeSUT(publickeys: [], seed: localSeedPhrase).start()
         
-        XCTAssertTrue(publicKeyDelegate.publicKeyCompletions.isEmpty)
-        XCTAssertEqual(seedDelegate.seed, localSeedPhrase)
+        XCTAssertEqual(delegate.passedSeed, localSeedPhrase)
         
-        XCTAssertEqual(seedDelegate.seed.count, 24, "Delegated seed phrase count must be 24.")
+        XCTAssertEqual(delegate.passedSeed.count, 24, "Delegated seed phrase count must be 24.")
     }
     
     func test_start_withAtLeastOneWalletAndNoSeed_delegatesCorrectWalletHandling() {
-        makeSUT(publicKeys: ["First Wallet"], seed: []).start()
+        makeSUT(publickeys: ["First Wallet"], seed: []).start()
         
-        XCTAssertEqual(publicKeyDelegate.publicKeyCompletions.count, 1)
-        XCTAssertTrue(seedDelegate.seed.isEmpty)
-        
+        XCTAssertEqual(delegate.passedPublicKeys, ["First Wallet"])
+        XCTAssertTrue(delegate.passedSeed.isEmpty)
     }
     
     func test_start_withTwoWallets_WITHNoSeed_delegatesWalletHandling() {
-        makeSUT(publicKeys: ["First Wallet", "Second Wallet"], seed: []).start()
+        makeSUT(publickeys: ["First Wallet", "Second Wallet"], seed: []).start()
         
-        XCTAssertEqual(publicKeyDelegate.publicKeyCompletions.count, 1)
-        XCTAssertTrue(seedDelegate.seed.isEmpty)
+        XCTAssertEqual(delegate.passedPublicKeys, ["First Wallet", "Second Wallet"])
+        XCTAssertTrue(delegate.passedSeed.isEmpty)
     }
     
     func test_startTwice_withTwoWallets_delegatesFirstWalletHandlingTwice() {
-        let sut = makeSUT(publicKeys: ["First Wallet", "Second Wallet"], seed:  seedPhrase())
+        let sut = makeSUT(publickeys: ["First Wallet", "Second Wallet"], seed:  seedPhrase())
         
         sut.start()
-        XCTAssertEqual(publicKeyDelegate.publicKeyCompletions.count, 1)
-        
+        XCTAssertEqual(delegate.passedPublicKeys, ["First Wallet", "Second Wallet"])
+        XCTAssertEqual(delegate.passedSeed, [])
+
+
         sut.start()
-        XCTAssertEqual(publicKeyDelegate.publicKeyCompletions.count, 2)
+        XCTAssertEqual(delegate.passedPublicKeys, ["First Wallet", "Second Wallet"])
+        XCTAssertEqual(delegate.passedSeed, [])
     }
     
     // MARK: Helpers
-    
-    private let publicKeyDelegate = PublicKeyDelegateSpy()
-    private let seedDelegate = SeedDelegateSpy()
-    
-    private weak var weakSUT: AppStartFlow<PublicKeyDelegateSpy, SeedDelegateSpy>?
+    private let delegate = PublicKeyDelegateSpy()
+    private weak var weakSUT: AppStartFlow<PublicKeyDelegateSpy>?
     
     override func tearDown() {
         super.tearDown()
@@ -66,8 +64,8 @@ class AppStartFlowTest: XCTestCase {
         XCTAssertNil(weakSUT, "Memory leak detected. Weak reference to the SUT instance is not nil.")
     }
     
-    private func makeSUT(publicKeys: [String], seed: [String]) -> AppStartFlow<PublicKeyDelegateSpy, SeedDelegateSpy> {
-        let sut = AppStartFlow(publicKeys: publicKeys, seed: seed, publicKeyDelegate: publicKeyDelegate, seedDelegate: seedDelegate)
+    private func makeSUT(publickeys: [String], seed: [String]) -> AppStartFlow<PublicKeyDelegateSpy> {
+        let sut = AppStartFlow(publickeys: publickeys, seed: seed, delegate: delegate)
         weakSUT = sut
         return sut
     }

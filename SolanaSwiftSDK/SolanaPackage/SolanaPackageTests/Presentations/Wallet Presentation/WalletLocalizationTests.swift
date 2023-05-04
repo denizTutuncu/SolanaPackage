@@ -10,8 +10,13 @@ import SolanaPackage
 
 final class WalletLocalizationTests: XCTestCase {
     
-    func test_localizedStrings_For_Wallet() {
+    func test_localizedStrings_For_WalletTitle() {
         let table = "Wallet"
+        localizedStrings_haveKeysAndValuesForAllSupportedLocalizations(table: table)
+    }
+    
+    func test_localizedStrings_For_WalletSubTitle() {
+        let table = "WalletListSubtitle"
         localizedStrings_haveKeysAndValuesForAllSupportedLocalizations(table: table)
     }
     

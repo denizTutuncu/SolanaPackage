@@ -9,22 +9,25 @@ import Foundation
 
 public struct SeedViewModel {
     
-    public init(seed: [PresentableSeed], handler: @escaping ([PresentableSeed]) -> Void) {
-        self.seed = seed
+    public init(model: [String] = [], handler: @escaping ([String]) -> Void) {
+        self.model = model.map { PresentableSeed(value: $0) }
         self.handler = handler
     }
     
-    public var seed: [PresentableSeed]
+    public var model: [PresentableSeed]
     
     public var canSubmit: Bool {
-        seed.map { $0.isSafe }.allSatisfy { $0 == true }
+        model.map { $0.isSafe }.allSatisfy { $0 == true }
     }
         
-    private let handler: ([PresentableSeed]) -> Void
+    private let handler: ([String]) -> Void
     
     public func submit() {
         guard canSubmit else { return }
-        return handler(seed)
+        return handler(model.map { $0.value })
     }
     
+    public var isModelEmpty: Bool {
+        return model.isEmpty
+    }
 }

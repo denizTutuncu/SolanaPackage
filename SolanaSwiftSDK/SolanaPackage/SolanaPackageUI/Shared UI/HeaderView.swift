@@ -19,7 +19,6 @@ struct HeaderView: View {
                         .font(.headline)
                         .fontWeight(.bold)
                         .foregroundColor(Color.blue)
-                        .padding(.top)
                         .minimumScaleFactor(0.8)
                     
                     Text(title!)
