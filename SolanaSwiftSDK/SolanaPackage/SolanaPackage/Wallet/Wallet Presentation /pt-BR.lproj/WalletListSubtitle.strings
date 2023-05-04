@@ -1,0 +1,8 @@
+/* 
+  WalletListSubtitle.strings
+  SolanaPackage
+
+  Created by Deniz Tutuncu on 4/25/23.
+  
+*/
+"WALLETLIST_SUBTITLE" = "O Keychain é uma área de armazenamento segura em seu dispositivo que usa criptografia para manter suas senhas e outras informações confidenciais seguras. É uma ferramenta importante para proteger seus dados pessoais contra acesso não autorizado.";

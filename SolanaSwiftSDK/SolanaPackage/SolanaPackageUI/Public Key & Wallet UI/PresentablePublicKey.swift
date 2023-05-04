@@ -8,16 +8,16 @@
 import Foundation
 
 public struct PresentablePublicKey: Hashable {
-    public let id: String
-    
-    public init(id: String) {
+    public init(id: UUID = UUID(), key: String) {
         self.id = id
+        self.key = key
     }
     
-    var isSelected = false
+    public let id: UUID
+    public let key: String
+    public var isSelected = false
     
-    public mutating func toggleSelection() -> PresentablePublicKey {
+    mutating func toggleSelection() {
         isSelected.toggle()
-        return self
     }
 }

@@ -18,7 +18,7 @@ public class TransactionStoreMapper {
                                                       to: $0.to,
                                                       amount: $0.amount,
                                                       currencyName: $0.amount,
-                                                      transactionSignature: $0.transactionSignature)
+                                                      signature: $0.signature)
             
         }
     }

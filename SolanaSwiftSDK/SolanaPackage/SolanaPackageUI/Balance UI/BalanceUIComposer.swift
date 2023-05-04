@@ -11,41 +11,43 @@ struct BalanceUIComposer: View {
     let title: String
     let currencyName: String
     let errorMessage: String
-    let downloadingTitle: String
+    let errorButtonTitle: String
+    let loadingTitle: String
     let tryAgain: () -> Void
     
-    @State var onLoadingState: Bool = true
-    @State var viewModel: String?
+    @State var viewModel: BalanceViewModel
+    @Binding var loading: Bool
     
     var body: some View {
-        if onLoadingState {
-            LoadingView(title: downloadingTitle)
+        if loading {
+            LoadingView(title: loadingTitle)
+            Spacer()
         } else {
-            HStack(alignment: .center, spacing: 8.0) {
-                Text(title)
-                    .font(.headline)
-                    .minimumScaleFactor(0.5)
-                    .lineLimit(1)
-                    .foregroundColor(Color.primary)
-                    .shadow(color: .primary, radius: 0.5)
-                
-                
-                BalanceErrorComposerView(errorMessage: errorMessage,
-                                         tryAgain: tryAgain,
-                                         balance: viewModel)
-                Text(currencyName)
-                    .font(.headline)
-                    .minimumScaleFactor(0.5)
-                    .lineLimit(1)
-                    .foregroundColor(Color.primary)
-                    .shadow(color: .primary, radius: 0.5)
-                
-            }.padding()
+            
+            if viewModel.isModelEmpty {
+                ErrorView(message: errorMessage, buttonTitle: errorButtonTitle, onHide: tryAgain)
+            } else {
+                HStack(alignment: .center, spacing: 8.0) {
+                    Text(title)
+                        .font(.headline)
+                        .minimumScaleFactor(0.5)
+                        .lineLimit(1)
+                        .foregroundColor(Color.primary)
+                        .shadow(color: .primary, radius: 0.5)
+                    
+                    BalanceView(model: viewModel.model.value)
+                    Text(currencyName)
+                        .font(.headline)
+                        .minimumScaleFactor(0.5)
+                        .lineLimit(1)
+                        .foregroundColor(Color.primary)
+                        .shadow(color: .primary, radius: 0.5)
+                    
+                }.padding()
+            }
         }
     }
 }
-
-
 
 struct BalancUIComposer_Previews: PreviewProvider {
     static var previews: some View {
@@ -58,25 +60,35 @@ struct BalancUIComposer_Previews: PreviewProvider {
 }
 
 struct BalanceUIComposerTestView: View {
-    @State var isON: Bool = false
     
     var body: some View {
         VStack {
             BalanceUIComposer(title: "",
                               currencyName: "",
                               errorMessage: "",
-                              downloadingTitle: "Downloading balance",
+                              errorButtonTitle: "",
+                              loadingTitle: "Loading balance.",
                               tryAgain: {} ,
-                              onLoadingState: true,
-                              viewModel: nil)
+                              viewModel: .init(model: PresentableBalance(value: "")),
+                              loading: .constant(true))
+            
+            BalanceUIComposer(title: "",
+                              currencyName: "",
+                              errorMessage: "Cannot load balancce",
+                              errorButtonTitle: "Try again",
+                              loadingTitle: "Loading balance.",
+                              tryAgain: {} ,
+                              viewModel: .init(model: PresentableBalance(value: "")),
+                              loading: .constant(false))
             
             BalanceUIComposer(title: "Balance:",
                               currencyName: "lamports",
                               errorMessage: "Cannot connect to network",
-                              downloadingTitle: "Downloading balance",
-                              tryAgain: {} ,
-                              onLoadingState: false,
-                              viewModel: "10000000000.0000")
+                              errorButtonTitle: "Try again",
+                              loadingTitle: "Loading balance.",
+                              tryAgain: {},
+                              viewModel: .init(model: PresentableBalance(value: "10000000000.0000")),
+                              loading: .constant(false))
             
         }
     }
