@@ -14,6 +14,10 @@ class WalletPresenterTests: XCTestCase {
         XCTAssertEqual(WalletPresenter.title, localized(table: "Wallet", key: "WALLET_TITLE"))
     }
     
+    func test_subtitle_isLocalized() {
+        XCTAssertEqual(WalletPresenter.subtitle, localized(table: "WalletListSubtitle", key:"WALLETLIST_SUBTITLE"))
+    }
+    
     func test_currencyName_isLocalized() {
         XCTAssertEqual(WalletPresenter.currency, localized(table: "CurrencyName", key:"CURRENCY_NAME"))
     }

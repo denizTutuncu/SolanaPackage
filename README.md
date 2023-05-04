@@ -1,6 +1,6 @@
 # Solana Swift SDK 
 
-## Solana Package Framework & Solana Package UI Framework & SunGate iOS App
+## Solana Package Framework & Solana Package UI Framework & TREA iOS App
 #### The Solana Swift SDK is a collection of Swift modules that enables developers to interact with the Solana Blockchain in their iOS, macOS, tvOS, and watchOS apps. The SDK contains two main modules:
 
 #### Core Module:
@@ -13,7 +13,9 @@ This module is an iOS SwiftUI module that provides a set of components to build 
 
 #### App:
 
-The SDK also includes an iOS app called SunGate that demonstrates how to use the Core and UI modules to interact with the Solana Blockchain. The app showcases the functionalities of creating a wallet, sending/receiving SOL, viewing transaction history, and more.
+The SDK also includes an iOS app called TREA that demonstrates how to use the Core and UI modules to interact with the Solana Blockchain. The app showcases the functionalities of creating a wallet, sending/receiving SOL, viewing transaction history, and more.
+
+TREA, Trusted Repository for Electronic Assets, to create your crypto wallet with top-tier security. This app is protected by industry-standard encryption, ensuring a secure connection with Solana.
 
 The SDK is written in Swift and is intended to be used in Swift apps.
 
@@ -23,7 +25,7 @@ The SDK is open-source and hosted on Github, developers can use the SDK to build
  
 ## iOS App Flow
 
-![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Diagrams/iOSAppFlow.jpg?raw=true)
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Diagrams/iOSAppFlow.jpg?raw=true)
 
 ```
 1- Create Wallet & Receive Sol (in progress)
@@ -42,13 +44,13 @@ The SDK is open-source and hosted on Github, developers can use the SDK to build
 
 ### Architecture
 
-![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Diagrams/architecture.drawio.png?raw=true)
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Diagrams/architecture.drawio.png?raw=true)
 
 ----------------
 
-### SunGate iOS App Design
+### TREA iOS App Design
 
-![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Diagrams/iOSSDKDesign.drawio.png?raw=true)
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Diagrams/iOSSDKDesign.drawio.png?raw=true)
 
 ----------------
 
@@ -112,29 +114,34 @@ Then the app should create a valid Solana account
 | `error`       | `Error`               |
 | `isLoading`   | `Bool`                |
 
+
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/CreationOptions.jpg?raw=true)
+
+----------------
+
 ![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/SeedListGIF_AdobeExpress.gif?raw=true)
 
-![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/SeedListScreen.jpg?raw=true)
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/SeedListScreen.jpg?raw=true)
 
 ----------------
 
 ![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/WalletViewGIF_AdobeExpress.gif?raw=true)
 
-![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/WalletScreen.jpg?raw=true)
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/WalletScreen.jpg?raw=true)
 
 ----------------
 
 ![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/WalletListGIF_AdobeExpress.gif?raw=true)
 
-![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/WalletListScreen.jpg?raw=true)
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/WalletListScreen.jpg?raw=true)
 
 ----------------
 
 ## Get Balance BDD Specs (Under Maintenance)
 
-![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/WalletBalanceView.jpg?raw=true)
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/WalletBalanceView.jpg?raw=true)
 
-![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/BalanceView.jpg?raw=true)
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/BalanceView.jpg?raw=true)
 
 To show a valid public Solana address balance, first you need to create a `RemoteBalanceLoader` with a network setting, chosen valid public address and a client. Then pass it to create `BalanceComposerView`. That's it!
 
@@ -239,9 +246,9 @@ Given the customer doesn't a valid public Solana address
 
 ![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/TransactionListGIF_AdobeExpress.gif?raw=true)
 
-![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/TXAPI.jpg?raw=true)
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/TXAPI.jpg?raw=true)
 
-![alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/TXsScreen.jpg?raw=true)
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/TXsScreen.jpg?raw=true)
 
 ### Display Past Transactions
 ### Story: Customer requests to review their past transacations

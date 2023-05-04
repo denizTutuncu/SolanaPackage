@@ -9,26 +9,23 @@ import SwiftUI
 import Combine
 import SolanaPackage
 import SolanaPackageUI
-
+ 
 public final class PublicKeyUIAdapter {
-    public typealias PublicKeyStorePublisher = ViewModelPublisher<[String], [PresentablePublicKey]>
-    private static var cancellable: AnyCancellable?
     
     private init() {}
-    
-    deinit {
-        PublicKeyUIAdapter.cancellable?.cancel()
-    }
-    
-    public static func publicKeyComposedWith(publicKeyPublisher: AnyPublisher<[String], Error>) -> PublicKeyStorePublisher {
-        var publicKeyStorePublisher = PublicKeyStorePublisher(resource: [], mapper: PublicKeyStoreMapper.map)
+    public typealias PublicKeyViewModelPublisher = ViewModelPublisher<[String], [String]>
+    private static var cancellable: AnyCancellable?
+
+    public static func publicKeyComposedWith(publicKeyPublisher: AnyPublisher<[String], Error>) -> PublicKeyViewModelPublisher {
+        var publicKeyStorePublisher = PublicKeyViewModelPublisher(resource: nil, mapper: PublicKeyStoreMapper.map)
         
         PublicKeyUIAdapter.cancellable = publicKeyPublisher
+            .dispatchOnMainQueue()
             .sink(receiveCompletion: { completion in
-                publicKeyStorePublisher = PublicKeyStorePublisher(resource: [], mapper: PublicKeyStoreMapper.map)
+                publicKeyStorePublisher = PublicKeyViewModelPublisher(resource: [], mapper: PublicKeyStoreMapper.map)
             },
                   receiveValue: { publicKeys in
-                publicKeyStorePublisher = PublicKeyStorePublisher(resource: publicKeys, mapper: PublicKeyStoreMapper.map)
+                publicKeyStorePublisher = PublicKeyViewModelPublisher(resource: publicKeys, mapper: PublicKeyStoreMapper.map)
             })
         
         return publicKeyStorePublisher

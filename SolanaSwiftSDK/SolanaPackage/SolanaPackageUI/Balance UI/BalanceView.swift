@@ -7,13 +7,13 @@
 import SwiftUI
 
 public struct BalanceView: View {
-    let balance: String
+    let model: String
     
     public var body: some View {
         HStack(alignment: .bottom, spacing: 8.0) {
-            Text(balance)
+            Text(model)
                 .font(.largeTitle)
-                .minimumScaleFactor(0.5)
+                .minimumScaleFactor(0.2)
                 .lineLimit(1)
                 .foregroundColor(Color.primary)
                 .shadow(color: .primary, radius: 0.5)
@@ -27,11 +27,9 @@ public struct BalanceView: View {
 
 struct BalanceTestView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            BalanceView(balance: "10000000000.0000")
+            BalanceView(model: "10000000000.0000")
             .previewLayout(.sizeThatFits)
             .previewDisplayName("Balance Test View")
-        }
     }
 }
 

@@ -9,22 +9,28 @@ import SwiftUI
 
 struct ErrorView: View {
     @State var message: String?
+    let buttonTitle: String?
     let onHide: (() -> Void)?
     
-    init(message: String?, onHide: (() -> Void)?) {
+    init(message: String?, buttonTitle: String?, onHide: (() -> Void)?) {
         self.message = message
+        self.buttonTitle = buttonTitle
         self.onHide = onHide
     }
     
     var body: some View {
         VStack(alignment: .center) {
-            if message != nil {
+            if message != nil && buttonTitle != nil {
                 Text(message!)
+                    .font(.headline)
+                    .fontWeight(.bold)
                     .foregroundColor(.white)
                     .padding(8)
                     .background(Color.errorBackgroundColor)
                 Button(action: hideMessage) {
-                    Text("Try again")
+                    Text(buttonTitle!)
+                        .font(.headline)
+                        .fontWeight(.bold)
                         .foregroundColor(.white)
                 }
                 .padding(8)
@@ -60,7 +66,9 @@ struct ErrorView_Previews: PreviewProvider {
         
         var body: some View {
             VStack {
-                ErrorView(message: "Couldn't connect to network.", onHide: { tapped.toggle() })
+                ErrorView(message: "Couldn't connect to network.",
+                          buttonTitle: "Try again",
+                          onHide: { tapped.toggle() })
                 Text("Create wallet tapped: \(tapped.description)")
             }
         }

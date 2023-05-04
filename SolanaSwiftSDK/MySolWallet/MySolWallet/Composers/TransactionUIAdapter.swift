@@ -11,19 +11,16 @@ import SolanaPackage
 import SolanaPackageUI
 
 public final class TransactionUIAdapter {
-    public typealias TransactionStorePublisher = ViewModelPublisher<[DomainTransaction], [PresentableTransaction]>
-    private static var cancellable: AnyCancellable?
     
     private init() {}
-    
-    deinit {
-        TransactionUIAdapter.cancellable?.cancel()
-    }
-    
+    public typealias TransactionStorePublisher = ViewModelPublisher<[DomainTransaction], [PresentableTransaction]>
+    private static var cancellable: AnyCancellable?
+
     public static func publicKeyComposedWith(transactionPublisher: AnyPublisher<[DomainTransaction], Error>) -> TransactionStorePublisher {
         var transactionStorePublisher = TransactionStorePublisher(resource: [], mapper: TransactionStoreMapper.map)
         
         TransactionUIAdapter.cancellable = transactionPublisher
+            .dispatchOnMainQueue()
             .sink(receiveCompletion: { completion in
                 transactionStorePublisher = TransactionStorePublisher(resource: [], mapper: TransactionStoreMapper.map)
             },

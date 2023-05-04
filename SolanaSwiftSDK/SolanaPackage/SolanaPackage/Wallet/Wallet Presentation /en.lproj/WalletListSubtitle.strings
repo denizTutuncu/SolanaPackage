@@ -1,0 +1,8 @@
+/* 
+  WalletListSubtitle.strings
+  SolanaPackage
+
+  Created by Deniz Tutuncu on 4/25/23.
+  
+*/
+"WALLETLIST_SUBTITLE" = "Keychain is a secure storage area on your device that uses encryption to keep your passwords and other sensitive information safe. It's an important tool for protecting your personal data from unauthorized access.";

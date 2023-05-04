@@ -24,7 +24,7 @@ struct ToogleView: View {
                 .font(.system(size: 21, weight: .bold))
                 .minimumScaleFactor(0.5)
                 .lineLimit(1)
-                .foregroundColor(isOn ? .green : .red)
+                .foregroundColor(isOn ? .blue : .red)
                 .contrast(100.0)
         }.padding()
     }

@@ -25,7 +25,6 @@ struct LoadingView: View {
                 .progressViewStyle(LinearProgressViewStyle(tint: Color.primary))
                 .foregroundColor(Color.primary)
                 .shadow(color: .primary, radius: 0.5)
-            Spacer()
         }
         .onAppear {
             isAnimating = true
@@ -56,7 +55,7 @@ struct LoadingView: View {
 struct LoadingView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            LoadingView(title: "Downloading ...")
+            LoadingView(title: "Loading ...")
                 .previewLayout(.sizeThatFits)
                 .previewDisplayName("Loading View")
         }

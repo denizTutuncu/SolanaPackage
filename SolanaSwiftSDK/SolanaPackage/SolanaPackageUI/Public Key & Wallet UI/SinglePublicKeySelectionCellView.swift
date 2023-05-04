@@ -8,30 +8,29 @@
 import SwiftUI
 
 struct SinglePublicKeySelectionCellView: View {
-    @Binding var wallet: PresentablePublicKey
-    let selection: () -> Void
+    @State var publicKey: PresentablePublicKey
+    let selection: (String) -> Void
     
     var body: some View {
-        Button(action: selection,
+        Button(action: { selection(publicKey.key); publicKey.toggleSelection() },
                label: {
             HStack {
                 Rectangle()
                     .stroke(Color.secondary, lineWidth: 2.5)
                     .overlay(
                         Rectangle()
-                            .fill(wallet.isSelected ? Color.blue : .clear)
+                            .fill(publicKey.isSelected ? Color.blue : .clear)
                             .frame(width: 9.0, height: 9.0)
                     )
                     .frame(width: 13.0, height: 13.0)
                 
-                Text(wallet.id)
+                Text(publicKey.key)
                     .font(.system(size: 36, weight: .black, design: .monospaced))
                     .lineLimit(1)
                     .minimumScaleFactor(0.2)
                     .foregroundColor(Color.primary)
             }
         })
-        
     }
 }
 
@@ -39,9 +38,9 @@ struct SingleWalletSelectionCell_Previews: PreviewProvider {
     @State var selection: String = "none"
     
     static var previews: some View {
-        SinglePublicKeySelectionCellView(wallet: .constant(PresentablePublicKey(
-            id: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi")),
-            selection: { })
+        SinglePublicKeySelectionCellView(publicKey: PresentablePublicKey(
+            key: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi"),
+                                         selection: { _ in })
         .previewLayout(.sizeThatFits)
         .previewDisplayName("Single Wallet Selection Cell Test View")
     }
