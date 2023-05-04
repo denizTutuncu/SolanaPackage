@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SingleTransactionCellView: View {
-    @Binding var tx: PresentableTransaction
+    @State var tx: PresentableTransaction
     let selection: () -> Void
     
     var body: some View {
@@ -87,7 +87,7 @@ struct SingleTransactionCellView: View {
                                 .foregroundColor(.primary)
                         )
             
-                    Text(tx.transactionSignature)
+                    Text(tx.signature)
                         .font(.caption)
                         .minimumScaleFactor(0.3)
                         .foregroundColor(Color.primary)
@@ -101,12 +101,13 @@ struct SingleTransactionCellView: View {
     
     struct SingleTransactionCellView_Previews: PreviewProvider {
         static var previews: some View {
-            SingleTransactionCellView(tx: .constant(PresentableTransaction(date: "Feb 23, 2023",
+            SingleTransactionCellView(tx: PresentableTransaction(date: "Feb 23, 2023",
                                                                 from: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
                                                                 to: "3xcawfQtZVjRLLcxgcxT7yYUuynPlasdyqw640276bAD",
                                                                 amount: "10000000000.00",
                                                                 currencyName: "lamports",
-                                                                transactionSignature: "5U3XaN8ab9mFWH47spgpE53jfFvCLeADBLdRDzfMt3yAsPDZBs3yWaSL58w6E83pquutbJA8CpsAGXAWmbNaCWaN")), selection: {})
+                                                                           signature: "5U3XaN8ab9mFWH47spgpE53jfFvCLeADBLdRDzfMt3yAsPDZBs3yWaSL58w6E83pquutbJA8CpsAGXAWmbNaCWaN"),
+                                      selection: { })
             .previewLayout(.sizeThatFits)
             .previewDisplayName("Single Seed Cell View")
         }

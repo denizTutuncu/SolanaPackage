@@ -9,13 +9,12 @@ import Foundation
 
 public struct BalanceViewModel {
     
-    public init(balance: PresentableBalance) {
-        self.balance = balance
+    public init(model: PresentableBalance) {
+        self.model = model
     }
+    public let model: PresentableBalance
     
-    public var onLoadingState: Bool {
-        self.balance.value.isEmpty
+    public var isModelEmpty: Bool {
+        return model.value.isEmpty
     }
-    
-    public let balance: PresentableBalance
 }

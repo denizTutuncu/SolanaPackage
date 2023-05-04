@@ -12,7 +12,14 @@ public final class WalletPresenter {
         return NSLocalizedString("WALLET_TITLE",
                                  tableName: "Wallet",
                                  bundle: Bundle(for: WalletPresenter.self),
-                                 comment: "Title for the wallet view")
+                                 comment: "Title for the wallet list view")
+    }
+    
+    public static var subtitle: String {
+        return NSLocalizedString("WALLETLIST_SUBTITLE",
+                                 tableName: "WalletListSubtitle",
+                                 bundle: Bundle(for: WalletPresenter.self),
+                                 comment: "Subtitle for the wallet list view")
     }
     
     public static var currency: String {

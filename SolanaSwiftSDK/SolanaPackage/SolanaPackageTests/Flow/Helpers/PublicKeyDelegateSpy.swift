@@ -9,22 +9,16 @@ import Foundation
 import SolanaPackage
 
 class PublicKeyDelegateSpy: PublicKeyDelegate {
-    var publicKeyCompletions: [([String]) -> Void] = []
+ 
     var passedPublicKeys: [String] = []
+    var passedSeed: [String] = []
+
+    func didCompleteWith(keys: [String]) {
+        passedPublicKeys = keys
+    }
     
-    func didComplete(completion: @escaping ([String]) -> Void) {
-        publicKeyCompletions.append(completion)
+    func didCompleteWith(seed: [String]) {
+        passedSeed = seed
     }
     
 }
-
-class SeedDelegateSpy: SeedDelegate {
-    typealias Seed = String
-    var seed: [Seed] = []
-    
-    func didComplete(completion: [Seed]) {
-        seed = completion
-    }
-        
-}
-

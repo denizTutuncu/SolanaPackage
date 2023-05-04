@@ -24,6 +24,7 @@ struct RoundedButton: View {
                 Spacer()
                 Text(title)
                     .font(.headline)
+                    .fontWeight(.bold)
                     .lineLimit(1)
                     .shadow(color: .white, radius: 0.2)
                     .padding()
@@ -33,6 +34,7 @@ struct RoundedButton: View {
             .background(Color.blue)
             .cornerRadius(25)
         })
+        .padding()
         .buttonStyle(PlainButtonStyle())
         .disabled(!isEnabled)
     }
@@ -45,7 +47,7 @@ struct RoundedButton_Previews: PreviewProvider {
                 .previewLayout(.sizeThatFits)
                 .previewDisplayName("Enabled Rounded Button")
             
-            RoundedButton(title: "Disabled", isEnabled: false, action: {})
+            RoundedButton(title: "", isEnabled: false, action: {})
                 .previewLayout(.sizeThatFits)
                 .previewDisplayName("Disabled Rounded Button")
         }

@@ -7,20 +7,19 @@
 
 import SwiftUI
 
-public struct WalletListView: View {
+struct WalletListView: View {
+    @State var viewModel: PublicKeyViewModel
+    let selection: (String) -> Void
     
-    @State public var viewModel: PublicKeyViewModel
-
-    public let selection: (PresentablePublicKey) -> Void
-    
-    public var body: some View {
+    var body: some View {
+        VStack {
             List {
-                ForEach(viewModel.publicKeys.indices, id: \.self) { i in
-                    SinglePublicKeySelectionCellView(
-                        wallet: $viewModel.publicKeys[i],
-                        selection: { selection(viewModel.publicKeys[i].toggleSelection()) })
+                ForEach(viewModel.model, id: \.id) { model in
+                    SinglePublicKeySelectionCellView(publicKey: model, selection: { selection($0) })
+                        .listRowSeparatorTint(.primary)
                 }
             }
+        }
     }
 }
 
@@ -39,12 +38,12 @@ struct WalletListView_Previews: PreviewProvider {
         var body: some View {
             VStack {
                 WalletListView(
-                    viewModel: .init(publicKeys: [
-                        PresentablePublicKey(id: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi"),
-                        PresentablePublicKey(id: "3xcawfQtZVjRLLcxgcxT7yYUuynPlasdyqw640276bAD"),
-                        PresentablePublicKey(id: "POhasdyasd454cxgcxT7yYUuyn6UgMJddBHKl21bhduA")
-                    ], handler: { selection = $0.id }),
-                    selection: { selection = $0.id })
+                    viewModel: .init(model: [
+                        "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
+                        "3xcawfQtZVjRLLcxgcxT7yYUuynPlasdyqw640276bAD",
+                        "POhasdyasd454cxgcxT7yYUuyn6UgMJddBHKl21bhduA"
+                    ]),
+                    selection: { selection = $0 })
                 
                 Text("Last selection: " + selection).padding()
             }

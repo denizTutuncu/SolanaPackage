@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct SeedListView: View {
-    @Binding var seed: [PresentableSeed]
+    @Binding var viewModel: SeedViewModel
     
     var body: some View {
         VStack {
             List {
-                ForEach(seed.indices, id: \.self) { index in
+                ForEach(viewModel.model.indices, id: \.self) { index in
                     SingleSeedCellView(index: (index + 1),
-                                       seed: $seed[index])
+                                       model: $viewModel.model[index])
+                    .listRowSeparatorTint(.primary)
                 }
-                
             }
         }
     }
@@ -39,31 +39,31 @@ struct SeedListTestView: View {
     var body: some View {
         VStack {
             
-            SeedListView(seed: .constant([
-                PresentableSeed(value: "private"),
-                PresentableSeed(value: "digital"),
-                PresentableSeed(value: "coin"),
-                PresentableSeed(value: "seed"),
-                PresentableSeed(value: "key"),
-                PresentableSeed(value: "has"),
-                PresentableSeed(value: "very"),
-                PresentableSeed(value: "long"),
-                PresentableSeed(value: "secret"),
-                PresentableSeed(value: "pass"),
-                PresentableSeed(value: "phrase"),
-                PresentableSeed(value: "that"),
-                PresentableSeed(value: "will"),
-                PresentableSeed(value: "prevent"),
-                PresentableSeed(value: "animal"),
-                PresentableSeed(value: "weasel"),
-                PresentableSeed(value: "brain"),
-                PresentableSeed(value: "person"),
-                PresentableSeed(value: "like"),
-                PresentableSeed(value: "you"),
-                PresentableSeed(value: "obtain"),
-                PresentableSeed(value: "any"),
-                PresentableSeed(value: "large"),
-                PresentableSeed(value: "wealth")]))
+            SeedListView(viewModel: .constant(.init(model: ["private",
+                                                            "digital",
+                                                            "coin",
+                                                            "seed",
+                                                            "key",
+                                                            "has",
+                                                            "very",
+                                                            "long",
+                                                            "secret",
+                                                            "pass",
+                                                            "phrase",
+                                                            "that",
+                                                            "will",
+                                                            "prevent",
+                                                            "animal",
+                                                            "weasel",
+                                                            "brain",
+                                                            "person",
+                                                            "like",
+                                                            "you",
+                                                            "obtain",
+                                                            "any",
+                                                            "large",
+                                                            "wealth"],
+                                                    handler: { _ in })))
             
         }
     }

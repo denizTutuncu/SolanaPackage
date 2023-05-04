@@ -8,13 +8,14 @@
 import Foundation
 
 public struct TransactionViewModel {
-    public var transactions: [PresentableTransaction]
-        
-    public init(transactions: [PresentableTransaction]) {
-        self.transactions = transactions
+    public init(model: [PresentableTransaction]? = nil) {
+        self.model = model
     }
     
+    public let model: [PresentableTransaction]?
+    
     public var onLoadingState: Bool {
-        self.transactions.isEmpty
+        self.model == nil
     }
+    
 }

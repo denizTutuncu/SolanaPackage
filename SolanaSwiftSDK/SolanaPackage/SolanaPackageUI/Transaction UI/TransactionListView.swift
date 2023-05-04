@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct TransactionListView: View {
-    let selection: (PresentableTransaction) -> Void
-    
     @State var viewModel: TransactionViewModel
+    let selection: (String) -> Void
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0.0) {
             List {
-                ForEach(viewModel.transactions.indices, id: \.self) { i in
-                    SingleTransactionCellView(tx: $viewModel.transactions[i], selection: { selection(viewModel.transactions[i]) })
+                ForEach(viewModel.model ?? [], id: \.id) { model in
+                    SingleTransactionCellView(tx: model,
+                                              selection: { selection(model.signature) })
                 }
             }
         }
@@ -40,21 +40,21 @@ struct TransactionListTestView: View {
     var body: some View {
         VStack {
             
-            TransactionListView(selection: { selection = $0.transactionSignature },
-                                viewModel: .init(transactions: [
-                                    PresentableTransaction(date: "Feb 23, 2023",
-                                                from: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
-                                                to: "3xcawfQtZVjRLLcxgcxT7yYUuynPlasdyqw640276bAD",
-                                                amount: "10000000000.0000",
-                                                currencyName: "lamports",
-                                                transactionSignature: "5U3XaN8ab9mFWH47spgpE53jfFvCLeADBLdRDzfMt3yAsPDZBs3yWaSL58w6E83pquutbJA8CpsAGXAWmbNaCWaN"),
-                                    PresentableTransaction(date: "Feb 24, 2023",
-                                                from: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
-                                                to: "3xcawfQtZVjRLLcxgcxT7yYUuynPlasdyqw640276bAD",
-                                                amount: "20000000000.0000",
-                                                currencyName: "lamports",
-                                                transactionSignature: "M5XeYGt6NFzD7RRKaAGbD4PCh2fdcSe246EnQURKFsntsYjCwWuD4ptwdoGo6iJ76u8PfRcevbCXegRzaahanCn")
-                                ]))
+            TransactionListView(viewModel: .init(model: [
+                PresentableTransaction(date: "Feb 23, 2023",
+                                       from: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
+                                       to: "3xcawfQtZVjRLLcxgcxT7yYUuynPlasdyqw640276bAD",
+                                       amount: "10000000000.0000",
+                                       currencyName: "lamports",
+                                       signature: "5U3XaN8ab9mFWH47spgpE53jfFvCLeADBLdRDzfMt3yAsPDZBs3yWaSL58w6E83pquutbJA8CpsAGXAWmbNaCWaN"),
+                PresentableTransaction(date: "Feb 24, 2023",
+                                       from: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
+                                       to: "3xcawfQtZVjRLLcxgcxT7yYUuynPlasdyqw640276bAD",
+                                       amount: "20000000000.0000",
+                                       currencyName: "lamports",
+                                       signature: "M5XeYGt6NFzD7RRKaAGbD4PCh2fdcSe246EnQURKFsntsYjCwWuD4ptwdoGo6iJ76u8PfRcevbCXegRzaahanCn")
+            ]),
+                                selection: { selection = $0 } )
             
             Text("Last selection: " + selection).padding()
         }

@@ -8,7 +8,6 @@
 import Foundation
 
 public protocol PublicKeyDelegate {
-    //Mark:- Maybe update Wallet with String (Will effect App module)
-//    associatedtype PublicKey
-    func didComplete(completion: @escaping ([String]) -> Void)
+    func didCompleteWith(keys: [String])
+    func didCompleteWith(seed: [String])
 }
