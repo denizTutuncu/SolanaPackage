@@ -10,7 +10,7 @@ import SolanaPackage
 
 extension PrivateKeyStoreSpecs where Self: XCTestCase {
     
-    func assertThatRetrieveDeliversNilsOnEmptyCache(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
+    func assertThatRetrieveDeliversNilOnEmptyCache(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
         let nonExistPublicKey = uniquePublicKey()
         
         expect(nonExistPublicKey, sut, toRetrieve: .success(.none), file: file, line: line)
@@ -27,7 +27,7 @@ extension PrivateKeyStoreSpecs where Self: XCTestCase {
         let privateKey = uniquePrivateKey()
         
         insert(publicKey, privateKey, to: sut)
-                
+        
         expect(publicKey, sut, toRetrieve: .success(privateKey), file: file, line: line)
     }
     
@@ -36,7 +36,7 @@ extension PrivateKeyStoreSpecs where Self: XCTestCase {
         let privateKey = uniquePrivateKey()
         
         insert(publicKey, privateKey, to: sut)
-                
+        
         expect(publicKey, sut, toRetrieveTwice: .success(privateKey), file: file, line: line)
     }
     
@@ -53,7 +53,7 @@ extension PrivateKeyStoreSpecs where Self: XCTestCase {
         let privateKey = uniquePrivateKey()
         
         insert(publicKey, privateKey, to: sut)
-
+        
         let anotherPublicKey = anotherUniquePublicKey()
         let anotherPrivateKey = anotherUniquePrivateKey()
         
@@ -64,10 +64,10 @@ extension PrivateKeyStoreSpecs where Self: XCTestCase {
     func assertThatInsertDeliversErrorOnPreviouslyInsertedCacheValueUpdate(on sut: PrivateKeyStore, file: StaticString = #filePath, line: UInt = #line) {
         let publicKey = uniquePublicKey()
         let privateKey = uniquePrivateKey()
-
+        
         let firstInsertionError = insert(publicKey, privateKey, to: sut)
         XCTAssertNil(firstInsertionError, "Expected to insert cache successfully", file: file, line: line)
-
+        
         let anotherPrivateKey = anotherUniquePrivateKey()
         
         let secondInsertionError = insert(publicKey, anotherPrivateKey, to: sut)
@@ -84,9 +84,9 @@ extension PrivateKeyStoreSpecs where Self: XCTestCase {
         let latestPrivateKey = anotherUniquePrivateKey()
         
         insert(latestPublicKey, latestPrivateKey, to: sut)
-                
+        
         expect(latestPublicKey, sut, toRetrieve: .success(latestPrivateKey), file: file, line: line)
-                
+        
         expect(publicKey, sut, toRetrieve: .success(privateKey), file: file, line: line)
     }
     
@@ -177,7 +177,7 @@ extension PrivateKeyStoreSpecs where Self: XCTestCase {
         
         switch (expectedResult, retrievedResult) {
         case (.success(.none), .success(.none)),
-             (.failure, .failure):
+            (.failure, .failure):
             break
             
         case let (.success(.some(expected)), .success(.some(retrievedPrivateKey))):
