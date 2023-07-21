@@ -19,25 +19,24 @@ final public class SeedCachePolicy {
     
     public static func getRandomSeedPhrase(from bank: [String]) -> [String] {
         guard !bank.isEmpty else { return [] }
-        var randomItems = [String]()
-        let numberOfItemsToGet = 24
         
-        var currentIndex = 0
+        var mutableBank = bank
+        var randomItems = [String]()
+        let numberOfItemsToGet = min(24, mutableBank.count)
         
         while randomItems.count < numberOfItemsToGet {
-            let randomIndex = Int.random(in: 0..<bank.count)
+            let randomIndex = Int.random(in: 0..<mutableBank.count)
+            let randomItem = mutableBank[randomIndex]
             
-            if randomIndex != currentIndex {
-                currentIndex = randomIndex
-                randomItems.append(bank[randomIndex])
-            }
+            randomItems.append(randomItem)
+            mutableBank.remove(at: randomIndex)
         }
         
         return randomItems
     }
-    
+
     public static func validateSeedPhrase(seed: [String]) -> Bool {
-        guard (seed.count == 24 ) else { return false }
+        guard (seed.count == 24) else { return false }
         return true
     }
     
