@@ -2,12 +2,12 @@ name: CI-macOS
 
 on:
   pull_request:
-    branches: [ master ]
+    branches: [ "main" ]
 
 jobs:
   build-and-test:
 
-    runs-on: macos-13
+    runs-on: macos-latest
     
     timeout-minutes: 10
 
