@@ -16,8 +16,6 @@
 		2E42948628483FDF00817480 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E42948528483FDE00817480 /* Assets.xcassets */; };
 		2E42948928483FDF00817480 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E42948828483FDF00817480 /* Preview Assets.xcassets */; };
 		2E42949328483FDF00817480 /* MySolWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42949228483FDF00817480 /* MySolWalletTests.swift */; };
-		2E42949D28483FDF00817480 /* MySolWalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42949C28483FDF00817480 /* MySolWalletUITests.swift */; };
-		2E42949F28483FDF00817480 /* MySolWalletUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42949E28483FDF00817480 /* MySolWalletUITestsLaunchTests.swift */; };
 		2E4294AE2848406B00817480 /* SolanaPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4294AC2848406B00817480 /* SolanaPackage.framework */; };
 		2E4294AF2848406B00817480 /* SolanaPackage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4294AC2848406B00817480 /* SolanaPackage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2E4294B02848406B00817480 /* SolanaPackageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4294AD2848406B00817480 /* SolanaPackageUI.framework */; };
@@ -31,6 +29,7 @@
 		2EAEF0EC297A5C1C00091A49 /* CombineHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAEF0EB297A5C1C00091A49 /* CombineHelpers.swift */; };
 		2EF68C8D299F5CB100969DE5 /* iOSSwiftUINavigationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF68C8C299F5CB100969DE5 /* iOSSwiftUINavigationAdapter.swift */; };
 		2EF75C2129CBC89D001E3DA7 /* SeedBankHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF75C2029CBC89D001E3DA7 /* SeedBankHelpers.swift */; };
+		2EFDC69A2A6B0146003DFE4E /* MySolWalletUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFDC6992A6B0146003DFE4E /* MySolWalletUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,8 +77,6 @@
 		2E42948E28483FDF00817480 /* MySolWalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySolWalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E42949228483FDF00817480 /* MySolWalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySolWalletTests.swift; sourceTree = "<group>"; };
 		2E42949828483FDF00817480 /* MySolWalletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySolWalletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E42949C28483FDF00817480 /* MySolWalletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySolWalletUITests.swift; sourceTree = "<group>"; };
-		2E42949E28483FDF00817480 /* MySolWalletUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySolWalletUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2E4294AC2848406B00817480 /* SolanaPackage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SolanaPackage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E4294AD2848406B00817480 /* SolanaPackageUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SolanaPackageUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E4899B229F4A738004734B9 /* NullStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullStore.swift; sourceTree = "<group>"; };
@@ -91,6 +88,7 @@
 		2EAEF0EB297A5C1C00091A49 /* CombineHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineHelpers.swift; sourceTree = "<group>"; };
 		2EF68C8C299F5CB100969DE5 /* iOSSwiftUINavigationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSwiftUINavigationAdapter.swift; sourceTree = "<group>"; };
 		2EF75C2029CBC89D001E3DA7 /* SeedBankHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedBankHelpers.swift; sourceTree = "<group>"; };
+		2EFDC6992A6B0146003DFE4E /* MySolWalletUITestsLaunchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySolWalletUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,8 +192,7 @@
 		2E42949B28483FDF00817480 /* MySolWalletUITests */ = {
 			isa = PBXGroup;
 			children = (
-				2E42949C28483FDF00817480 /* MySolWalletUITests.swift */,
-				2E42949E28483FDF00817480 /* MySolWalletUITestsLaunchTests.swift */,
+				2EFDC6992A6B0146003DFE4E /* MySolWalletUITestsLaunchTests.swift */,
 			);
 			path = MySolWalletUITests;
 			sourceTree = "<group>";
@@ -400,8 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E42949F28483FDF00817480 /* MySolWalletUITestsLaunchTests.swift in Sources */,
-				2E42949D28483FDF00817480 /* MySolWalletUITests.swift in Sources */,
+				2EFDC69A2A6B0146003DFE4E /* MySolWalletUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
