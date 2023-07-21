@@ -1,10 +1,8 @@
 name: CI-iOS
 
 on:
-    push:
-        branches: [ "main" ]
-    pull_request:
-        branches: [ "main" ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
   build-and-test:
@@ -23,5 +21,4 @@ jobs:
       run: /usr/bin/xcodebuild -version
       
     - name: Build and test
-      run: xcodebuild clean build test -workspace SolanaSwiftSDK/MySolWallet/MySolWallet.xcworkspace -scheme "CI_iOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator -destination "platform=iOS Simulator,OS=16.2,name=iPhone 14 Pro" ONLY_ACTIVE_ARCH=YES
-
+      run: xcodebuild clean build test -workspace SolanaSwiftSDK/MySolWallet/MySolWallet.xcworkspace -scheme "CI_iOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 14 Pro,OS=16.2" ONLY_ACTIVE_ARCH=YES

@@ -46,9 +46,7 @@ final class iOSSwiftUINavigationAdapter: PublicKeyDelegate {
                                              errorMessage: errorMessage,
                                              errorViewButtonTitle: errorViewButtonTitle,
                                              loadingTitle: loadingTitle,
-                                             tryAgain: {
-                                                 // Load list again
-                                             },
+                                             tryAgain: {  },
                                              selection: { _ in },
                                              viewModel: .init(model: keys),
                                              publickeyLoading: publisher.onLoadingState))
