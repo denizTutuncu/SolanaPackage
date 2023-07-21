@@ -114,10 +114,15 @@ Then the app should create a valid Solana account
 | `error`       | `Error`               |
 | `isLoading`   | `Bool`                |
 
+----------------
+
+#### Onboarding screen
 
 ![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/CreationOptions.jpg?raw=true)
 
 ----------------
+
+#### Seed Phrase screen
 
 ![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/SeedListGIF_AdobeExpress.gif?raw=true)
 
@@ -125,11 +130,7 @@ Then the app should create a valid Solana account
 
 ----------------
 
-![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/WalletViewGIF_AdobeExpress.gif?raw=true)
-
-![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/WalletScreen.jpg?raw=true)
-
-----------------
+#### Wallet List screen
 
 ![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/WalletListGIF_AdobeExpress.gif?raw=true)
 
@@ -137,11 +138,29 @@ Then the app should create a valid Solana account
 
 ----------------
 
+#### Wallet screen
+
+![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/WalletViewGIF_AdobeExpress.gif?raw=true)
+
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/WalletScreen.jpg?raw=true)
+
+----------------
+
+#### Transaction List screen
+
+[Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/TransactionListGIF_AdobeExpress.gif?raw=true)
+
+[Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/TXsScreen.jpg?raw=true)
+
+#### Transaction Detail screen
+
+[Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/TXAPI.jpg?raw=true)
+
 ## Get Balance BDD Specs (Under Maintenance)
 
-![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/WalletBalanceView.jpg?raw=true)
+[Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/WalletBalanceView.jpg?raw=true)
 
-![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/BalanceView.jpg?raw=true)
+[Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/BalanceView.jpg?raw=true)
 
 To show a valid public Solana address balance, first you need to create a `RemoteBalanceLoader` with a network setting, chosen valid public address and a client. Then pass it to create `BalanceComposerView`. That's it!
 
@@ -243,12 +262,6 @@ Given the customer doesn't a valid public Solana address
 
 
 ## Display Past Transactions BDD Specs (in progress)
-
-![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/TransactionListGIF_AdobeExpress.gif?raw=true)
-
-![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/TXAPI.jpg?raw=true)
-
-![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/TXsScreen.jpg?raw=true)
 
 ### Display Past Transactions
 ### Story: Customer requests to review their past transacations
