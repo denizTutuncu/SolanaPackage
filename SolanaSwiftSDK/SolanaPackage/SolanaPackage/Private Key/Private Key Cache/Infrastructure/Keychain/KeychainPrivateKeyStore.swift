@@ -9,14 +9,14 @@ public final class KeychainPrivateKeyStore {
     
     enum StoreError: Swift.Error {
         case insertFailed
-        case errSecSuccess(String)
+        case deleteStatus(String)
         case unexpectedPrivateKeyData
     }
     
     private let network: String
 }
 
-//MARK: - think about passing only data rather than String type, so we can move the conversion to somewhere else. This may make PrivateKeyStore more standalone.
+//MARK: - Passing only data rather than String type, so we can move the conversion to somewhere else. This may make PrivateKeyStore more standalone.
 extension KeychainPrivateKeyStore: PrivateKeyStore {
     public func deletePrivateKey(for publicKey: PublicKey) throws {
         let deleteQuery : [String: Any] = [
@@ -28,10 +28,10 @@ extension KeychainPrivateKeyStore: PrivateKeyStore {
         switch SecItemDelete(deleteQuery as CFDictionary) {
         case errSecItemNotFound, errSecSuccess: break
         case let status:
-            throw StoreError.errSecSuccess(status.description)
+            throw StoreError.deleteStatus(status.description)
         }
     }
-    
+    //MARK: - Passing only data rather than String type
     public func insert(publicKey: PublicKey, privateKey: PrivateKey) throws {
         let passwordData = privateKey.data(using: String.Encoding.utf8)!
         
@@ -62,7 +62,7 @@ extension KeychainPrivateKeyStore: PrivateKeyStore {
         let status = SecItemCopyMatching(searchQuery as CFDictionary, &item)
         
         guard status != errSecItemNotFound else { return nil }
-        guard status == errSecSuccess else { throw StoreError.errSecSuccess(status.description) }
+        guard status == errSecSuccess else { throw StoreError.deleteStatus(status.description) }
         
         
         guard let existingItem = item as? [String : Any],
@@ -76,3 +76,4 @@ extension KeychainPrivateKeyStore: PrivateKeyStore {
     }
     
 }
+
