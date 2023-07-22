@@ -13,13 +13,13 @@ This module is an iOS SwiftUI module that provides a set of components to build 
 
 #### App:
 
-The SDK also includes an iOS app called TREA that demonstrates how to use the Core and UI modules to interact with the Solana Blockchain. The app showcases the functionalities of creating a wallet, sending/receiving SOL, viewing transaction history, and more.
+The repo also includes an iOS app called ```TREA``` that demonstrates how to use the Core and UI modules to interact with the Solana Blockchain. The app showcases the functionalities of creating a wallet, sending/receiving SOL, viewing transaction history, and more.
 
 TREA, Trusted Repository for Electronic Assets, to create your crypto wallet with top-tier security. This app is protected by industry-standard encryption, ensuring a secure connection with Solana.
 
 The SDK is written in Swift and is intended to be used in Swift apps.
 
-The SDK is open-source and hosted on Github, developers can use the SDK to build their own decentralized apps (dApps) on Solana Blockchain. Contributions are always welcome.
+The SDK is open-source and hosted on Github, developers can use the SDK to build their own apss to connect with decentralized apps (dApps) on Solana Blockchain. Contributions are always welcome. Please find the details at the end on how to contribute.
 
 ----------------
  
@@ -148,19 +148,19 @@ Then the app should create a valid Solana account
 
 #### Transaction List screen
 
-[Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/TransactionListGIF_AdobeExpress.gif?raw=true)
+![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/TransactionListGIF_AdobeExpress.gif?raw=true)
 
-[Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/TXsScreen.jpg?raw=true)
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/TXsScreen.jpg?raw=true)
 
 #### Transaction Detail screen
 
-[Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/TXAPI.jpg?raw=true)
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/TXAPI.jpg?raw=true)
 
 ## Get Balance BDD Specs (Under Maintenance)
 
-[Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/WalletBalanceView.jpg?raw=true)
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/WalletBalanceView.jpg?raw=true)
 
-[Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/BalanceView.jpg?raw=true)
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/BalanceView.jpg?raw=true)
 
 To show a valid public Solana address balance, first you need to create a `RemoteBalanceLoader` with a network setting, chosen valid public address and a client. Then pass it to create `BalanceComposerView`. That's it!
 
