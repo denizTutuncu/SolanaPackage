@@ -61,6 +61,10 @@
 		2E603DA929ECB2F0002A7DCA /* BalanceUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E603DA829ECB2F0002A7DCA /* BalanceUIComposer.swift */; };
 		2E603DAD29ECB554002A7DCA /* PresentablePublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E603DAC29ECB554002A7DCA /* PresentablePublicKey.swift */; };
 		2E603DAF29ECB56D002A7DCA /* PresentableSeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E603DAE29ECB56D002A7DCA /* PresentableSeed.swift */; };
+		2E65AED12A7ADD1200DB28DD /* SolanaKeychainAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65AED02A7ADD1200DB28DD /* SolanaKeychainAppApp.swift */; };
+		2E65AED32A7ADD1200DB28DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65AED22A7ADD1200DB28DD /* ContentView.swift */; };
+		2E65AED52A7ADD1200DB28DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E65AED42A7ADD1200DB28DD /* Assets.xcassets */; };
+		2E65AED92A7ADD1200DB28DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E65AED82A7ADD1200DB28DD /* Preview Assets.xcassets */; };
 		2E74EF1429F0F98100C36C23 /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB6F54F27E821A500CA7BED /* SharedTestHelpers.swift */; };
 		2E74EF1629F10BF700C36C23 /* PublicKeyCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E74EF1529F10BF700C36C23 /* PublicKeyCachePolicy.swift */; };
 		2E80F38529A1A6B000A4053C /* PublicKeyDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F38429A1A6B000A4053C /* PublicKeyDelegate.swift */; };
@@ -164,6 +168,13 @@
 			remoteGlobalIDString = 2ED6160327E5AD3F00920274;
 			remoteInfo = SolanaPackage;
 		};
+		2E65AEDD2A7ADD1800DB28DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2ED615FB27E5AD3F00920274 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E65AECD2A7ADD1200DB28DD;
+			remoteInfo = SolanaKeychainApp;
+		};
 		2ED6160F27E5AD4000920274 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2ED615FB27E5AD3F00920274 /* Project object */;
@@ -247,6 +258,12 @@
 		2E603DA829ECB2F0002A7DCA /* BalanceUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceUIComposer.swift; sourceTree = "<group>"; };
 		2E603DAC29ECB554002A7DCA /* PresentablePublicKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentablePublicKey.swift; sourceTree = "<group>"; };
 		2E603DAE29ECB56D002A7DCA /* PresentableSeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableSeed.swift; sourceTree = "<group>"; };
+		2E65AECE2A7ADD1200DB28DD /* SolanaKeychainApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SolanaKeychainApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E65AED02A7ADD1200DB28DD /* SolanaKeychainAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolanaKeychainAppApp.swift; sourceTree = "<group>"; };
+		2E65AED22A7ADD1200DB28DD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2E65AED42A7ADD1200DB28DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2E65AED62A7ADD1200DB28DD /* SolanaKeychainApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SolanaKeychainApp.entitlements; sourceTree = "<group>"; };
+		2E65AED82A7ADD1200DB28DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2E74EF1529F10BF700C36C23 /* PublicKeyCachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicKeyCachePolicy.swift; sourceTree = "<group>"; };
 		2E80F38429A1A6B000A4053C /* PublicKeyDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicKeyDelegate.swift; sourceTree = "<group>"; };
 		2E80F38629A1A70300A4053C /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
@@ -364,6 +381,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E43DA4229DD58DA001E0550 /* SolanaPackage.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E65AECB2A7ADD1200DB28DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,6 +751,26 @@
 			path = "Wallet Feature";
 			sourceTree = "<group>";
 		};
+		2E65AECF2A7ADD1200DB28DD /* SolanaKeychainApp */ = {
+			isa = PBXGroup;
+			children = (
+				2E65AED02A7ADD1200DB28DD /* SolanaKeychainAppApp.swift */,
+				2E65AED22A7ADD1200DB28DD /* ContentView.swift */,
+				2E65AED42A7ADD1200DB28DD /* Assets.xcassets */,
+				2E65AED62A7ADD1200DB28DD /* SolanaKeychainApp.entitlements */,
+				2E65AED72A7ADD1200DB28DD /* Preview Content */,
+			);
+			path = SolanaKeychainApp;
+			sourceTree = "<group>";
+		};
+		2E65AED72A7ADD1200DB28DD /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2E65AED82A7ADD1200DB28DD /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		2E80F38229A1A30D00A4053C /* Snapshot Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -840,6 +884,7 @@
 				2E0CBFD627F282DC006E6892 /* SolanaPackageUI */,
 				2E0CBFE127F282DD006E6892 /* SolanaPackageUITests */,
 				2E43DA3F29DD58DA001E0550 /* SolanaPackageCacheIntegrationTests */,
+				2E65AECF2A7ADD1200DB28DD /* SolanaKeychainApp */,
 				2ED6160527E5AD3F00920274 /* Products */,
 				2E5186D627F28C75001AB355 /* Frameworks */,
 			);
@@ -854,6 +899,7 @@
 				2E0CBFD527F282DC006E6892 /* SolanaPackageUI.framework */,
 				2E0CBFDD27F282DD006E6892 /* SolanaPackageUITests.xctest */,
 				2E43DA3E29DD58DA001E0550 /* SolanaPackageCacheIntegrationTests.xctest */,
+				2E65AECE2A7ADD1200DB28DD /* SolanaKeychainApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1153,6 +1199,23 @@
 			productReference = 2E43DA3E29DD58DA001E0550 /* SolanaPackageCacheIntegrationTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		2E65AECD2A7ADD1200DB28DD /* SolanaKeychainApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E65AEDA2A7ADD1200DB28DD /* Build configuration list for PBXNativeTarget "SolanaKeychainApp" */;
+			buildPhases = (
+				2E65AECA2A7ADD1200DB28DD /* Sources */,
+				2E65AECB2A7ADD1200DB28DD /* Frameworks */,
+				2E65AECC2A7ADD1200DB28DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SolanaKeychainApp;
+			productName = SolanaKeychainApp;
+			productReference = 2E65AECE2A7ADD1200DB28DD /* SolanaKeychainApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 		2ED6160327E5AD3F00920274 /* SolanaPackage */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2ED6161827E5AD4000920274 /* Build configuration list for PBXNativeTarget "SolanaPackage" */;
@@ -1183,6 +1246,7 @@
 			);
 			dependencies = (
 				2ED6161027E5AD4000920274 /* PBXTargetDependency */,
+				2E65AEDE2A7ADD1800DB28DD /* PBXTargetDependency */,
 			);
 			name = SolanaPackageTests;
 			productName = SolanaPackageTests;
@@ -1214,7 +1278,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					2E0CBFD427F282DC006E6892 = {
@@ -1228,6 +1292,9 @@
 					2E43DA3D29DD58DA001E0550 = {
 						CreatedOnToolsVersion = 14.2;
 					};
+					2E65AECD2A7ADD1200DB28DD = {
+						CreatedOnToolsVersion = 14.3;
+					};
 					2ED6160327E5AD3F00920274 = {
 						CreatedOnToolsVersion = 12.5.1;
 						LastSwiftMigration = 1250;
@@ -1235,6 +1302,7 @@
 					2ED6160C27E5AD4000920274 = {
 						CreatedOnToolsVersion = 12.5.1;
 						LastSwiftMigration = 1250;
+						TestTargetID = 2E65AECD2A7ADD1200DB28DD;
 					};
 					2ED6164E27E7472800920274 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -1263,6 +1331,7 @@
 				2E0CBFD427F282DC006E6892 /* SolanaPackageUI */,
 				2E0CBFDC27F282DD006E6892 /* SolanaPackageUITests */,
 				2E43DA3D29DD58DA001E0550 /* SolanaPackageCacheIntegrationTests */,
+				2E65AECD2A7ADD1200DB28DD /* SolanaKeychainApp */,
 			);
 		};
 /* End PBXProject section */
@@ -1287,6 +1356,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E65AECC2A7ADD1200DB28DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E65AED92A7ADD1200DB28DD /* Preview Assets.xcassets in Resources */,
+				2E65AED52A7ADD1200DB28DD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1376,6 +1454,15 @@
 				2E43DA4129DD58DA001E0550 /* SolanaPackagePublicKeyCacheIntegrationTests.swift in Sources */,
 				2E43DA4829DD5A43001E0550 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 				2E74EF1429F0F98100C36C23 /* SharedTestHelpers.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E65AECA2A7ADD1200DB28DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E65AED32A7ADD1200DB28DD /* ContentView.swift in Sources */,
+				2E65AED12A7ADD1200DB28DD /* SolanaKeychainAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1500,6 +1587,11 @@
 			isa = PBXTargetDependency;
 			target = 2ED6160327E5AD3F00920274 /* SolanaPackage */;
 			targetProxy = 2E5186D927F28C75001AB355 /* PBXContainerItemProxy */;
+		};
+		2E65AEDE2A7ADD1800DB28DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E65AECD2A7ADD1200DB28DD /* SolanaKeychainApp */;
+			targetProxy = 2E65AEDD2A7ADD1800DB28DD /* PBXContainerItemProxy */;
 		};
 		2ED6161027E5AD4000920274 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1759,6 +1851,82 @@
 			};
 			name = Release;
 		};
+		2E65AEDB2A7ADD1200DB28DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = SolanaKeychainApp/SolanaKeychainApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SolanaKeychainApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 9DGMQB3935;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deniztutuncu.SolanaKeychainApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2E65AEDC2A7ADD1200DB28DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = SolanaKeychainApp/SolanaKeychainApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SolanaKeychainApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 9DGMQB3935;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deniztutuncu.SolanaKeychainApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		2ED6161627E5AD4000920274 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1912,9 +2080,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.deniztutuncu.SolanaPackage;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1944,8 +2115,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.deniztutuncu.SolanaPackage;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1966,9 +2140,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.deniztutuncu.SolanaPackageTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SolanaKeychainApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SolanaKeychainApp";
 			};
 			name = Debug;
 		};
@@ -1989,8 +2167,12 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.deniztutuncu.SolanaPackageTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SolanaKeychainApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SolanaKeychainApp";
 			};
 			name = Release;
 		};
@@ -2060,6 +2242,15 @@
 			buildConfigurations = (
 				2E43DA4629DD58DA001E0550 /* Debug */,
 				2E43DA4729DD58DA001E0550 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E65AEDA2A7ADD1200DB28DD /* Build configuration list for PBXNativeTarget "SolanaKeychainApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E65AEDB2A7ADD1200DB28DD /* Debug */,
+				2E65AEDC2A7ADD1200DB28DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

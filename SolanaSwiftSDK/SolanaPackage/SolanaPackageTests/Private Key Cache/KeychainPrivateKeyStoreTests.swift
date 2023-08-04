@@ -10,92 +10,92 @@ import SolanaPackage
 
 class KeychainPrivateKeyStoreTests: XCTestCase, PrivateKeyStoreSpecs {
     
-//    override func setUp() {
-//        super.setUp()
-//        setupEmptyStoreState()
-//    }
-//
-//    override func tearDown() {
-//        super.tearDown()
-//        undoStoreSideEffects()
-//    }
+    override func setUp() {
+        super.setUp()
+        setupEmptyStoreState()
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+        undoStoreSideEffects()
+    }
     
     func test_retrieve_deliversNilOnEmptyCache() {
-//        let sut = makeSUT()
+        let sut = makeSUT()
         
-//        assertThatRetrieveDeliversNilOnEmptyCache(on: sut)
+        assertThatRetrieveDeliversNilOnEmptyCache(on: sut)
     }
     
     func test_retrieve_hasNoSideEffectsOnEmptyCache() {
-//        let sut = makeSUT()
+        let sut = makeSUT()
         
-//        assertThatRetrieveHasNoSideEffectsOnEmptyCache(on: sut)
+        assertThatRetrieveHasNoSideEffectsOnEmptyCache(on: sut)
     }
     
     func test_retrieve_deliversFoundValuesOnNonEmptyCache() {
-//        let sut = makeSUT()
+        let sut = makeSUT()
         
-//        assertThatRetrieveDeliversFoundValuesOnNonEmptyCache(on: sut)
+        assertThatRetrieveDeliversFoundValuesOnNonEmptyCache(on: sut)
     }
     
     func test_retrieve_hasNoSideEffectsOnNonEmptyCache() {
-//        let sut = makeSUT()
+        let sut = makeSUT()
         
-//        assertThatRetrieveHasNoSideEffectsOnNonEmptyCache(on: sut)
+        assertThatRetrieveHasNoSideEffectsOnNonEmptyCache(on: sut)
     }
     
     func test_insert_deliversNoErrorOnEmptyCache() {
-//        let sut = makeSUT()
+        let sut = makeSUT()
         
-//        assertThatInsertDeliversNoErrorOnEmptyCache(on: sut)
+        assertThatInsertDeliversNoErrorOnEmptyCache(on: sut)
     }
     
     func test_insert_deliversNoErrorOnNonEmptyCache() {
-//        let sut = makeSUT()
+        let sut = makeSUT()
         
-//        assertThatInsertDeliversNoErrorOnNonEmptyCache(on: sut)
+        assertThatInsertDeliversNoErrorOnNonEmptyCache(on: sut)
     }
     
     func test_insert_deliversErrorOnPreviouslyInsertedCacheValueUpdate() {
-//        let sut = makeSUT()
+        let sut = makeSUT()
         
-//        assertThatInsertDeliversErrorOnPreviouslyInsertedCacheValueUpdate(on: sut)
+        assertThatInsertDeliversErrorOnPreviouslyInsertedCacheValueUpdate(on: sut)
     }
     
     func test_insert_doesNotOverridesPreviouslyInsertedCacheValues() {
-//        let sut = makeSUT()
+        let sut = makeSUT()
         
-//        assertThatInsertDoesNotOverridePreviouslyInsertedCacheValues(on: sut)
+        assertThatInsertDoesNotOverridePreviouslyInsertedCacheValues(on: sut)
     }
     
     func test_delete_deliversNoErrorOnEmptyCache() {
-//        let sut = makeSUT()
+        let sut = makeSUT()
         
-//        assertThatDeleteDeliversNoErrorOnEmptyCache(on: sut)
+        assertThatDeleteDeliversNoErrorOnEmptyCache(on: sut)
     }
     
     func test_delete_hasNoSideEffectsOnEmptyCache() {
-//        let sut = makeSUT()
+        let sut = makeSUT()
         
-//        assertThatDeleteHasNoSideEffectsOnEmptyCache(on: sut)
+        assertThatDeleteHasNoSideEffectsOnEmptyCache(on: sut)
     }
     
     func test_delete_deliversNoErrorOnNonEmptyCache() {
-//        let sut = makeSUT()
+        let sut = makeSUT()
         
-//        assertThatDeleteDeliversNoErrorOnNonEmptyCache(on: sut)
+        assertThatDeleteDeliversNoErrorOnNonEmptyCache(on: sut)
     }
     
     func test_delete_emptiesInsertedCache() {
-//        let sut = makeSUT()
+        let sut = makeSUT()
         
-//        assertThatDeleteEmptiesInsertedPrivateKey(on: sut)
+        assertThatDeleteEmptiesInsertedPrivateKey(on: sut)
     }
     
     // - MARK: Helpers
     
-    private func makeSUT(service: String? = nil, file: StaticString = #filePath, line: UInt = #line) -> PrivateKeyStore {
-        let sut = KeychainPrivateKeyStore(network: service ?? testSpecificStoreService())
+    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> PrivateKeyStore {
+        let sut = KeychainPrivateKeyStore()
         trackForMemoryLeaks(sut, file: file, line: line)
         return sut
     }
@@ -109,15 +109,9 @@ class KeychainPrivateKeyStoreTests: XCTestCase, PrivateKeyStoreSpecs {
     }
     
     private func deleteStoreArtifacts() {
-        let deleteQuery: [String: Any] = [
-            kSecClass as String: kSecClassGenericPassword,
-            kSecAttrServer as String: testSpecificStoreService(),
-            kSecMatchLimit as String: kSecMatchLimitAll,
-            kSecReturnAttributes as String: true
-        ]
-        
+        let query = [kSecClass: kSecClassGenericPassword]
         var items: CFTypeRef?
-        let searchStatus = SecItemCopyMatching(deleteQuery as CFDictionary, &items)
+        let searchStatus = SecItemCopyMatching(query as CFDictionary, &items)
         
         guard searchStatus != errSecItemNotFound else { return }
         guard searchStatus == errSecSuccess else {
@@ -125,7 +119,7 @@ class KeychainPrivateKeyStoreTests: XCTestCase, PrivateKeyStoreSpecs {
             return
         }
         
-        switch SecItemDelete(deleteQuery as CFDictionary) {
+        switch SecItemDelete(query as CFDictionary) {
         case errSecItemNotFound, errSecSuccess: break
         case errSecUserCanceled:
             XCTFail("User canceled the operation.")
@@ -136,7 +130,4 @@ class KeychainPrivateKeyStoreTests: XCTestCase, PrivateKeyStoreSpecs {
         }
     }
     
-    private func testSpecificStoreService() -> String {
-        return "Keychain.Solana.Test.Store"
-    }
 }

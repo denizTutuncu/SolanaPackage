@@ -3,45 +3,39 @@ import Security
 
 public final class KeychainPrivateKeyStore {
     
-    public init(network: String) {
-        self.network = network
-    }
+    public init() {}
     
     enum StoreError: Swift.Error {
         case insertFailed
         case deleteStatus(String)
-        case unexpectedPrivateKeyData
+        case read(String)
     }
-    
-    private let network: String
 }
 
-//MARK: - Passing only data rather than String type, so we can move the conversion to somewhere else. This may make PrivateKeyStore more standalone.
 extension KeychainPrivateKeyStore: PrivateKeyStore {
-    public func deletePrivateKey(for publicKey: PublicKey) throws {
-        let deleteQuery : [String: Any] = [
-            kSecClass as String: kSecClassInternetPassword,
-            kSecAttrServer as String: network,
-            kSecAttrAccount as String: publicKey
-        ]
-        
+    public func deleteKey(for publicKey: PublicKey) throws {
+        let deleteQuery = [
+            kSecClass: kSecClassGenericPassword,
+            kSecUseDataProtectionKeychain: true,
+            kSecAttrAccount: publicKey
+        ] as [String: Any]
         switch SecItemDelete(deleteQuery as CFDictionary) {
         case errSecItemNotFound, errSecSuccess: break
         case let status:
             throw StoreError.deleteStatus(status.description)
         }
     }
-    //MARK: - Passing only data rather than String type
-    public func insert(publicKey: PublicKey, privateKey: PrivateKey) throws {
+    
+    public func store(publicKey: PublicKey, privateKey: PrivateKey) throws {
         let passwordData = privateKey.data(using: String.Encoding.utf8)!
         
-        let queryToAdd: [String: Any] = [
-            kSecClass as String: kSecClassInternetPassword,
-            kSecAttrAccessible as String: kSecAttrAccessibleWhenUnlocked,
-            kSecAttrServer as String: network,
-            kSecAttrAccount as String: publicKey,
-            kSecValueData as String: passwordData
-        ]
+        let queryToAdd = [
+            kSecClass: kSecClassGenericPassword,
+            kSecAttrAccount: publicKey,
+            kSecAttrAccessible: kSecAttrAccessibleWhenUnlocked,
+            kSecUseDataProtectionKeychain: true,
+            kSecValueData: passwordData
+        ] as [String: Any]
         
         let status = SecItemAdd(queryToAdd as CFDictionary, nil)
         
@@ -50,30 +44,25 @@ extension KeychainPrivateKeyStore: PrivateKeyStore {
         }
     }
     
-    public func privateKey(for publicKey: PublicKey) throws -> PrivateKey? {
-        let searchQuery: [String: Any] = [kSecClass as String: kSecClassInternetPassword,
-                                          kSecAttrServer as String: network,
-                                          kSecAttrAccount as String: publicKey,
-                                          kSecMatchLimit as String: kSecMatchLimitOne,
-                                          kSecReturnAttributes as String: true,
-                                          kSecReturnData as String: true]
+    public func read(for publicKey: PublicKey) throws -> PrivateKey? {
+        let query = [
+            kSecClass: kSecClassGenericPassword,
+            kSecAttrAccount: publicKey,
+            kSecUseDataProtectionKeychain: true,
+            kSecReturnData: true
+        ] as [String: Any]
         
         var item: CFTypeRef?
-        let status = SecItemCopyMatching(searchQuery as CFDictionary, &item)
         
-        guard status != errSecItemNotFound else { return nil }
-        guard status == errSecSuccess else { throw StoreError.deleteStatus(status.description) }
-        
-        
-        guard let existingItem = item as? [String : Any],
-              let passwordData = existingItem[kSecValueData as String] as? Data,
-              let password = String(data: passwordData, encoding: String.Encoding.utf8),
-              let _ = existingItem[kSecAttrAccount as String] as? String
-        else {
-            throw StoreError.unexpectedPrivateKeyData
+        switch SecItemCopyMatching(query as CFDictionary, &item) {
+        case errSecSuccess:
+            guard let existingItem = item as? [String : Any],
+                  let passwordData = existingItem[kSecValueData as String] as? Data,
+                  let password = String(data: passwordData, encoding: String.Encoding.utf8) else { return nil }
+            return password
+        case errSecItemNotFound: return nil
+        case let status:  throw StoreError.read(status.description)
         }
-        return password
     }
     
 }
-

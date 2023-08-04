@@ -11,7 +11,7 @@ public protocol PrivateKeyStore {
     typealias PublicKey = String
     typealias PrivateKey = String
 
-    func insert(publicKey: PublicKey, privateKey: PrivateKey) throws
-    func privateKey(for publicKey: PublicKey) throws -> PrivateKey?
-    func deletePrivateKey(for publicKey: PublicKey) throws
+    func store(publicKey: PublicKey, privateKey: PrivateKey) throws
+    func read(for publicKey: PublicKey) throws -> PrivateKey?
+    func deleteKey(for publicKey: PublicKey) throws
 }
