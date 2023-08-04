@@ -109,7 +109,10 @@ class KeychainPrivateKeyStoreTests: XCTestCase, PrivateKeyStoreSpecs {
     }
     
     private func deleteStoreArtifacts() {
-        let query = [kSecClass: kSecClassGenericPassword]
+        let query = [
+            kSecClass: kSecClassGenericPassword,
+            kSecUseDataProtectionKeychain: true
+        ] as [String: Any]
         var items: CFTypeRef?
         let searchStatus = SecItemCopyMatching(query as CFDictionary, &items)
         
