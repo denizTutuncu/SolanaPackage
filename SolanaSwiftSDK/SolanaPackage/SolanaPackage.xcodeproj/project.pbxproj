@@ -56,6 +56,8 @@
 		2E43DA6A29DE3540001E0550 /* PublicKeyStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E43DA6929DE3540001E0550 /* PublicKeyStoreSpy.swift */; };
 		2E43DA6C29DE3941001E0550 /* LoadPublicKeyFromCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E43DA6B29DE3941001E0550 /* LoadPublicKeyFromCacheUseCaseTests.swift */; };
 		2E43DA6E29DE3AC2001E0550 /* PublicKeyCacheTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E43DA6D29DE3AC2001E0550 /* PublicKeyCacheTestHelpers.swift */; };
+		2E4CA2E12A7CD9CE00EE5C9A /* SolanaPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED6160427E5AD3F00920274 /* SolanaPackage.framework */; };
+		2E4CA2E22A7CD9CE00EE5C9A /* SolanaPackage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED6160427E5AD3F00920274 /* SolanaPackage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2E5186D727F28C75001AB355 /* SolanaPackage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2ED6160427E5AD3F00920274 /* SolanaPackage.framework */; };
 		2E5186DC27F28DA0001AB355 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ED6163F27E5C33D00920274 /* XCTestCase+MemoryLeakTracking.swift */; };
 		2E603DA929ECB2F0002A7DCA /* BalanceUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E603DA829ECB2F0002A7DCA /* BalanceUIComposer.swift */; };
@@ -161,6 +163,13 @@
 			remoteGlobalIDString = 2ED6160327E5AD3F00920274;
 			remoteInfo = SolanaPackage;
 		};
+		2E4CA2E32A7CD9CE00EE5C9A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2ED615FB27E5AD3F00920274 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2ED6160327E5AD3F00920274;
+			remoteInfo = SolanaPackage;
+		};
 		2E5186D927F28C75001AB355 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2ED615FB27E5AD3F00920274 /* Project object */;
@@ -190,6 +199,20 @@
 			remoteInfo = SolanaPackage;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2E4CA2E52A7CD9CE00EE5C9A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2E4CA2E22A7CD9CE00EE5C9A /* SolanaPackage.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2E0363162970ECCF00CB2567 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -388,6 +411,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E4CA2E12A7CD9CE00EE5C9A /* SolanaPackage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1206,10 +1230,12 @@
 				2E65AECA2A7ADD1200DB28DD /* Sources */,
 				2E65AECB2A7ADD1200DB28DD /* Frameworks */,
 				2E65AECC2A7ADD1200DB28DD /* Resources */,
+				2E4CA2E52A7CD9CE00EE5C9A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2E4CA2E42A7CD9CE00EE5C9A /* PBXTargetDependency */,
 			);
 			name = SolanaKeychainApp;
 			productName = SolanaKeychainApp;
@@ -1582,6 +1608,11 @@
 			isa = PBXTargetDependency;
 			target = 2ED6160327E5AD3F00920274 /* SolanaPackage */;
 			targetProxy = 2E43DA4329DD58DA001E0550 /* PBXContainerItemProxy */;
+		};
+		2E4CA2E42A7CD9CE00EE5C9A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2ED6160327E5AD3F00920274 /* SolanaPackage */;
+			targetProxy = 2E4CA2E32A7CD9CE00EE5C9A /* PBXContainerItemProxy */;
 		};
 		2E5186DA27F28C75001AB355 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
