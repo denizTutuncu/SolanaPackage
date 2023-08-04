@@ -134,7 +134,7 @@ extension PrivateKeyStoreSpecs where Self: XCTestCase {
     @discardableResult
     func insert(_ publicKey: String, _ privateKey: String, to sut: PrivateKeyStore) -> Error? {
         do {
-            try sut.insert(publicKey: publicKey, privateKey: privateKey)
+            try sut.store(publicKey: publicKey, privateKey: privateKey)
             return nil
         } catch let error {
             return error
@@ -144,7 +144,7 @@ extension PrivateKeyStoreSpecs where Self: XCTestCase {
     @discardableResult
     func deleteCache(_ publicKey: String, from sut: PrivateKeyStore) -> Error? {
         do {
-            try sut.deletePrivateKey(for: publicKey)
+            try sut.deleteKey(for: publicKey)
             return nil
         } catch {
             return error
@@ -154,7 +154,7 @@ extension PrivateKeyStoreSpecs where Self: XCTestCase {
     @discardableResult
     func getPrivateKey(_ publicKey: String, from sut: PrivateKeyStore) -> Error? {
         do {
-            let _ = try sut.privateKey(for: publicKey)
+            let _ = try sut.read(for: publicKey)
             return nil
         } catch let error {
             return error
@@ -173,7 +173,7 @@ extension PrivateKeyStoreSpecs where Self: XCTestCase {
                 toRetrieve expectedResult: Result<String?, Error>,
                 file: StaticString = #filePath, line: UInt = #line)
     {
-        let retrievedResult = Result { try sut.privateKey(for: publicKey) }
+        let retrievedResult = Result { try sut.read(for: publicKey) }
         
         switch (expectedResult, retrievedResult) {
         case (.success(.none), .success(.none)),
