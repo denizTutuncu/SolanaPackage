@@ -1,5 +1,5 @@
 //
-//  CreationOptionView.swift
+//  OnboardingView.swift
 //  SolanaPackageUI
 //
 //  Created by Deniz Tutuncu on 4/28/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct CreationOptionView: View {
+public struct OnboardingView: View {
     
     public init(headerTitle: String,
                 headerSubtitle: String,
@@ -44,21 +44,21 @@ public struct CreationOptionView: View {
     }
 }
 
-struct WalletCreationOptionView_Previews: PreviewProvider {
+struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            CreationOptionTestView()
+            OnboardingTestView()
                 .previewLayout(.sizeThatFits)
                 .previewDisplayName("Creation Option Test View")
         }
     }
     
-    struct CreationOptionTestView: View {
+    struct OnboardingTestView: View {
         @State var selection: String = "none"
         
         var body: some View {
             VStack {
-                CreationOptionView(headerTitle: "Welcome to Trea",
+                OnboardingView(headerTitle: "Welcome to Trea",
                                    headerSubtitle: "TREA, Trusted Repository for Electronic Assets, to create your crypto wallet with top-tier security. This app is protected by industry-standard encryption, ensuring a secure connection with Solana.",
                     firstButtonTitle: "Create new wallet",
                                    firstButtonAction: { selection = "Create wallet tapped" },
