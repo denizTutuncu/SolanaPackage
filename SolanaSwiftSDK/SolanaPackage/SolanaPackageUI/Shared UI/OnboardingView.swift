@@ -49,7 +49,7 @@ struct OnboardingView_Previews: PreviewProvider {
         Group {
             OnboardingTestView()
                 .previewLayout(.sizeThatFits)
-                .previewDisplayName("Creation Option Test View")
+                .previewDisplayName("Onboarding Test View")
         }
     }
     
