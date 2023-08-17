@@ -65,7 +65,7 @@ struct WalletCreationOptionView_Previews: PreviewProvider {
                                    secondButtonTitle: "Import wallet from seed",
                                    secondButtonAction: { selection = "Import wallet tapped" })
                 
-//                Text("Last selection: " + selection).padding()
+                Text("Last selection: " + selection).padding()
             }
         }
     }
