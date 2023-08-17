@@ -71,7 +71,7 @@ final class iOSSwiftUINavigationAdapter: PublicKeyDelegate {
 //        let publisher = SeedUIAdapter.seedComposedWith(seedPublisher: seedPublisher)
         
         navigation.currentView = .creation(
-            CreationOptionView(headerTitle: creationHeaderTitle,
+            OnboardingView(headerTitle: creationHeaderTitle,
                                headerSubtitle: creationHeaderSubtitle,
                                firstButtonTitle: firstCreationButtonTitle,
                                firstButtonAction: {
