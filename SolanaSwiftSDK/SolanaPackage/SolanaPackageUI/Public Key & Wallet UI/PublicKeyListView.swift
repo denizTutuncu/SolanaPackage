@@ -1,5 +1,5 @@
 //
-//  WalletListView.swift
+//  PublicKeyListView.swift
 //  SolanaPackageUI
 //
 //  Created by Deniz Tutuncu on 2/21/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WalletListView: View {
+struct PublicKeyListView: View {
     @State var viewModel: PublicKeyViewModel
     let selection: (String) -> Void
     
@@ -23,21 +23,21 @@ struct WalletListView: View {
     }
 }
 
-struct WalletListView_Previews: PreviewProvider {
+struct PublicKeyListView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            WalletListTestView()
+            PublicKeyListTestView()
                 .previewLayout(.sizeThatFits)
                 .previewDisplayName("Wallet List Test View")
         }
     }
     
-    struct WalletListTestView: View {
+    struct PublicKeyListTestView: View {
         @State var selection: String = "none"
         
         var body: some View {
             VStack {
-                WalletListView(
+                PublicKeyListView(
                     viewModel: .init(model: [
                         "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
                         "3xcawfQtZVjRLLcxgcxT7yYUuynPlasdyqw640276bAD",
