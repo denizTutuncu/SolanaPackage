@@ -16,6 +16,7 @@ extension KeychainPrivateKeyStore: PrivateKeyStore {
     public func deleteKey(for publicKey: PublicKey) throws {
         let deleteQuery = [
             kSecClass: kSecClassGenericPassword,
+            kSecAttrAccessible: kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly,
             kSecUseDataProtectionKeychain: true,
             kSecAttrAccount: publicKey
         ] as [String: Any]
@@ -27,13 +28,13 @@ extension KeychainPrivateKeyStore: PrivateKeyStore {
     }
     
     public func store(publicKey: PublicKey, privateKey: PrivateKey) throws {
-        let passwordData = privateKey.data(using: String.Encoding.utf8)!
+        let passwordData = privateKey.data(using: .utf8)!
         
         let queryToAdd = [
             kSecClass: kSecClassGenericPassword,
-            kSecAttrAccount: publicKey,
-            kSecAttrAccessible: kSecAttrAccessibleWhenUnlocked,
+            kSecAttrAccessible: kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly,
             kSecUseDataProtectionKeychain: true,
+            kSecAttrAccount: publicKey,
             kSecValueData: passwordData
         ] as [String: Any]
         
@@ -47,8 +48,10 @@ extension KeychainPrivateKeyStore: PrivateKeyStore {
     public func read(for publicKey: PublicKey) throws -> PrivateKey? {
         let query = [
             kSecClass: kSecClassGenericPassword,
-            kSecAttrAccount: publicKey,
+            kSecAttrAccessible: kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly,
             kSecUseDataProtectionKeychain: true,
+            kSecAttrAccount: publicKey,
+            kSecReturnAttributes: true,
             kSecReturnData: true
         ] as [String: Any]
         
@@ -56,13 +59,16 @@ extension KeychainPrivateKeyStore: PrivateKeyStore {
         
         switch SecItemCopyMatching(query as CFDictionary, &item) {
         case errSecSuccess:
-            guard let existingItem = item as? [String : Any],
-                  let passwordData = existingItem[kSecValueData as String] as? Data,
-                  let password = String(data: passwordData, encoding: String.Encoding.utf8) else { return nil }
-            return password
-        case errSecItemNotFound: return nil
-        case let status:  throw StoreError.read(status.description)
+            guard let existingItem = item as? [String: Any],
+                  let passwordData = existingItem[kSecValueData as String] as? Data else {
+                return nil
+            }
+            return String(data: passwordData, encoding: .utf8)
+        case errSecItemNotFound:
+            return nil
+        case let status:
+            throw StoreError.read(status.description)
         }
     }
-    
+
 }
