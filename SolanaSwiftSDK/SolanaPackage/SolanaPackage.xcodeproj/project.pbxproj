@@ -73,7 +73,7 @@
 		2E80F38729A1A70300A4053C /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F38629A1A70300A4053C /* MainApp.swift */; };
 		2E80F38929A1A75900A4053C /* AppStartFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F38829A1A75900A4053C /* AppStartFlow.swift */; };
 		2E80F38E29A579D900A4053C /* SinglePublicKeySelectionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F38D29A579D900A4053C /* SinglePublicKeySelectionCellView.swift */; };
-		2E80F39029A5805E00A4053C /* WalletListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F38F29A5805D00A4053C /* WalletListView.swift */; };
+		2E80F39029A5805E00A4053C /* PublicKeyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F38F29A5805D00A4053C /* PublicKeyListView.swift */; };
 		2E80F39329A5815B00A4053C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F39229A5815B00A4053C /* HeaderView.swift */; };
 		2E80F39629A5889800A4053C /* PrivateKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F39529A5889800A4053C /* PrivateKeyStore.swift */; };
 		2E80F39A29A58FCA00A4053C /* LocalPrivateKeyLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F39929A58FCA00A4053C /* LocalPrivateKeyLoader.swift */; };
@@ -291,7 +291,7 @@
 		2E80F38629A1A70300A4053C /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		2E80F38829A1A75900A4053C /* AppStartFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStartFlow.swift; sourceTree = "<group>"; };
 		2E80F38D29A579D900A4053C /* SinglePublicKeySelectionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePublicKeySelectionCellView.swift; sourceTree = "<group>"; };
-		2E80F38F29A5805D00A4053C /* WalletListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletListView.swift; sourceTree = "<group>"; };
+		2E80F38F29A5805D00A4053C /* PublicKeyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicKeyListView.swift; sourceTree = "<group>"; };
 		2E80F39229A5815B00A4053C /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		2E80F39529A5889800A4053C /* PrivateKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateKeyStore.swift; sourceTree = "<group>"; };
 		2E80F39929A58FCA00A4053C /* LocalPrivateKeyLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPrivateKeyLoader.swift; sourceTree = "<group>"; };
@@ -463,7 +463,7 @@
 				2E603DAC29ECB554002A7DCA /* PresentablePublicKey.swift */,
 				2E0900BE29AC9D3800865E30 /* PublicKeyViewModel.swift */,
 				2E80F38D29A579D900A4053C /* SinglePublicKeySelectionCellView.swift */,
-				2E80F38F29A5805D00A4053C /* WalletListView.swift */,
+				2E80F38F29A5805D00A4053C /* PublicKeyListView.swift */,
 				2E9FF53C29FE0ABC002989EF /* WalletListUIComposerView.swift */,
 				2E80F3EA29A66E2400A4053C /* WalletUIComposerView.swift */,
 			);
@@ -1436,7 +1436,7 @@
 				2E9FF53829FC7742002989EF /* OnboardingView.swift in Sources */,
 				2E0900B829A8E4C300865E30 /* RoundedButton.swift in Sources */,
 				2E80F38E29A579D900A4053C /* SinglePublicKeySelectionCellView.swift in Sources */,
-				2E80F39029A5805E00A4053C /* WalletListView.swift in Sources */,
+				2E80F39029A5805E00A4053C /* PublicKeyListView.swift in Sources */,
 				2E80F3EB29A66E2400A4053C /* WalletUIComposerView.swift in Sources */,
 				2E3ECB0629EE5DF500038407 /* BalanceViewModel.swift in Sources */,
 				2E0900BA29A8E60600865E30 /* SeedViewModel.swift in Sources */,
