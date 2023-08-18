@@ -61,7 +61,7 @@ class MainAppStore {
     
     //MARK: - Private Key Store & Local Private Key Loader
     private lazy var privateKeyStore: PrivateKeyStore = {
-        return KeychainPrivateKeyStore(network: "com.deniztutuncu.MySolWallet")
+        return KeychainPrivateKeyStore()
     }()
     
     private lazy var localPrivateKeyLoader: LocalPrivateKeyLoader = {
