@@ -22,6 +22,10 @@ class MainAppStore {
     //MARK: - Logger
     private lazy var logger = Logger(subsystem: "com.deniztutuncu.MySolWallet", category: "main")
     
+    private func handleError(_ error: Error) {
+          logger.fault("Failed to instantiate with error: \(error.localizedDescription)")
+      }
+    
     //MARK: - Scheduler
     private lazy var scheduler: AnyDispatchQueueScheduler = DispatchQueue(
         label: "com.denizTutuncu.infra.queue",
@@ -47,10 +51,10 @@ class MainAppStore {
     //MARK: - Wallet Creator & Local Wallet Creator
     public lazy var walletCreator: WalletCreator = {
         do {
-            return try DummyWalletCreator(seed: [])
+            return try DummyWalletCreator(seed: try localSeedLoader.load())
         } catch {
             assertionFailure("Failed to instantiate Wallet Creator with error: \(error.localizedDescription)")
-            logger.fault("Failed to instantiate  allet Creator store with error: \(error.localizedDescription)")
+            handleError(error)
             return NullCreator()
         }
     }()
@@ -91,7 +95,7 @@ class MainAppStore {
             return try CodablePublicKeyStore(storeURL: URL(string:  "com.deniztutuncu.MySolWallet")!)
         } catch {
             assertionFailure("Failed to instantiate Codable store with error: \(error.localizedDescription)")
-            logger.fault("Failed to instantiate Codable store with error: \(error.localizedDescription)")
+            handleError(error)
             return NullStore()
         }
     }()
@@ -126,7 +130,7 @@ class MainAppStore {
             .eraseToAnyPublisher()
     }
     
-    private func makeLocalPublicKeyLoader(after: PublicKey? = nil) -> AnyPublisher<[PublicKey], Error> {
+    public func makeLocalPublicKeyLoader(after: PublicKey? = nil) -> AnyPublisher<[PublicKey], Error> {
         return makeLocalPublicKeyPublisher()
             .tryMap(PublicKeyItemsMapper.map)
             .eraseToAnyPublisher()
