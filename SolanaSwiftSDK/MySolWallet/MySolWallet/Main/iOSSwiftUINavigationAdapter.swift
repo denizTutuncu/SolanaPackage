@@ -20,14 +20,14 @@ final class iOSSwiftUINavigationAdapter: PublicKeyDelegate {
         self.publicKeyPublisher = publicKeyPublisher
         self.seedPublisher = seedPublisher
     }
-
+    
     typealias PublicKey = String
     typealias Seed = String
     
     private let navigation: MainAppNavigationStore
     private let publicKeyPublisher: AnyPublisher<[PublicKey], Error>
     private let seedPublisher: AnyPublisher<[Seed], Error>
-
+    
     func didCompleteWith(keys: [PublicKey]) {
         if !keys.isEmpty {
             let walletListView = makeWalletListView()
@@ -36,10 +36,12 @@ final class iOSSwiftUINavigationAdapter: PublicKeyDelegate {
             }
         }
     }
-
+    
     func didCompleteWith(seed: [Seed]) {
         let onboardingView = makeOnboardingView(seed: seed)
-        navigation.currentView = .creation(onboardingView)
+        withAnimation {
+            navigation.currentView = .creation(onboardingView)
+        }
     }
     
     private func makeWalletListView() -> WalletListUIComposerView {
@@ -48,9 +50,9 @@ final class iOSSwiftUINavigationAdapter: PublicKeyDelegate {
         let loadingTitle = "Downloading wallets."
         let errorMessage = "Cannot load wallets"
         let errorViewButtonTitle = "Try again"
-
+        
         let publisher = PublicKeyUIAdapter.publicKeyComposedWith(publicKeyPublisher: publicKeyPublisher)
-
+        
         return WalletListUIComposerView(
             headerTitle: headerTitle,
             headerSubtitle: headerSubtitle,
@@ -63,7 +65,7 @@ final class iOSSwiftUINavigationAdapter: PublicKeyDelegate {
             publickeyLoading: publisher.onLoadingState
         )
     }
-
+    
     private func makeOnboardingView(seed: [Seed]) -> OnboardingView {
         let onboardingHeaderTitle = "Welcome to Trea"
         let onboardingHeaderSubtitle = "TREA, Trusted Repository for Electronic Assets, to create your crypto wallet with top-tier security. This app is protected by industry-standard encryption, ensuring a secure connection with Solana."
@@ -76,7 +78,7 @@ final class iOSSwiftUINavigationAdapter: PublicKeyDelegate {
         let errorMessage = "Cannot load seed phrase"
         let errorViewButtonTitle = "Try again"
         let loadingTitle = "Loading seed phrase"
-
+        
         let walletCreationView = WalletCreationComposerView(
             headerTitle: headerTitle,
             headerSubtitle: headerSubtitle,
@@ -88,7 +90,7 @@ final class iOSSwiftUINavigationAdapter: PublicKeyDelegate {
             action: {},
             viewModel: .init(model: seed, handler: { _ in })
         )
-
+        
         return OnboardingView(
             headerTitle: onboardingHeaderTitle,
             headerSubtitle: onboardingHeaderSubtitle,
