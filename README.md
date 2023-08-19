@@ -21,6 +21,8 @@ The SDK is written in Swift and is intended to be used in Swift apps.
 
 The SDK is open-source and hosted on Github, developers can use the SDK to build their own apss to connect with decentralized apps (dApps) on Solana Blockchain. Contributions are always welcome. Please find the details at the end on how to contribute.
 
+![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/TREA.gif?raw=true)
+
 ----------------
  
 ## iOS App Flow
