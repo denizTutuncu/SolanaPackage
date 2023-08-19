@@ -65,13 +65,13 @@ final class iOSSwiftUINavigationAdapter: PublicKeyDelegate {
     }
 
     private func makeOnboardingView(seed: [Seed]) -> OnboardingView {
-        let creationHeaderTitle = "Welcome to Trea"
-        let creationHeaderSubtitle = "TREA, Trusted Repository for Electronic Assets, to create your crypto wallet with top-tier security. This app is protected by industry-standard encryption, ensuring a secure connection with Solana."
-        let firstCreationButtonTitle = "Create new wallet"
-        let secondCreationButtonTitle = "Import wallet from seed"
+        let onboardingHeaderTitle = "Welcome to Trea"
+        let onboardingHeaderSubtitle = "TREA, Trusted Repository for Electronic Assets, to create your crypto wallet with top-tier security. This app is protected by industry-standard encryption, ensuring a secure connection with Solana."
+        let onboardingCreateWalletButtonTitle = "Create new wallet"
+        let onboardingImportWalletButtonTitle = "Import wallet from seed"
         
-        let headerTitle = "Seed Phrase"
-        let headerSubtitle = "The seed phrase is never stored on the device..."
+        let headerTitle = SeedPresenter.title
+        let headerSubtitle = SeedPresenter.subtitle
         let buttonTitle = "Create wallet"
         let errorMessage = "Cannot load seed phrase"
         let errorViewButtonTitle = "Try again"
@@ -90,13 +90,13 @@ final class iOSSwiftUINavigationAdapter: PublicKeyDelegate {
         )
 
         return OnboardingView(
-            headerTitle: creationHeaderTitle,
-            headerSubtitle: creationHeaderSubtitle,
-            firstButtonTitle: firstCreationButtonTitle,
+            headerTitle: onboardingHeaderTitle,
+            headerSubtitle: onboardingHeaderSubtitle,
+            firstButtonTitle: onboardingCreateWalletButtonTitle,
             firstButtonAction: {
                 self.navigation.currentView = .seed(walletCreationView)
             },
-            secondButtonTitle: secondCreationButtonTitle,
+            secondButtonTitle: onboardingImportWalletButtonTitle,
             secondButtonAction: {
                 // Push import wallet screen?
             }
