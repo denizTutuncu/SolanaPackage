@@ -29,66 +29,77 @@ final class iOSSwiftUINavigationAdapter: PublicKeyDelegate {
     private let seedPublisher: AnyPublisher<[Seed], Error>
 
     func didCompleteWith(keys: [PublicKey]) {
-        
+        if !keys.isEmpty {
+            let walletListView = makeWalletListView()
+            withAnimation {
+                navigation.currentView = .walletList(walletListView)
+            }
+        }
+    }
+
+    func didCompleteWith(seed: [Seed]) {
+        let onboardingView = makeOnboardingView(seed: seed)
+        navigation.currentView = .creation(onboardingView)
+    }
+    
+    private func makeWalletListView() -> WalletListUIComposerView {
         let headerTitle = WalletPresenter.title
         let headerSubtitle = WalletPresenter.subtitle
         let loadingTitle = "Downloading wallets."
         let errorMessage = "Cannot load wallets"
         let errorViewButtonTitle = "Try again"
-        
-        let publisher = PublicKeyUIAdapter.publicKeyComposedWith(publicKeyPublisher: publicKeyPublisher)
-        
-        withAnimation {
-            if !keys.isEmpty {
-                navigation.currentView = .walletList(
-                    WalletListUIComposerView(headerTitle: headerTitle,
-                                             headerSubtitle: headerSubtitle,
-                                             errorMessage: errorMessage,
-                                             errorViewButtonTitle: errorViewButtonTitle,
-                                             loadingTitle: loadingTitle,
-                                             tryAgain: {  },
-                                             selection: { _ in },
-                                             viewModel: .init(model: keys),
-                                             publickeyLoading: publisher.onLoadingState))
-            }
-        }
-    }
-    
-    func didCompleteWith(seed: [String]) {
-        
-        let headerTitle = "Seed Phrase"
-        let headerSubtitle = "The seed phrase is never stored on the device. You will only see it once, and it is only shown during setup. The order of the seed phrase is crucial, so ensure that you toggle each button corresponding to each phrase to maintain the correct order. Please ensure that you keep your seed phrase physically secure."
-        let buttonTitle = "Create wallet"
-        let errorMessage = "Cannot load seed phrase"
-        let errorViewButtonTitle = "Try again"
-        let loadingTitle = "Loading seed phrase"
 
+        let publisher = PublicKeyUIAdapter.publicKeyComposedWith(publicKeyPublisher: publicKeyPublisher)
+
+        return WalletListUIComposerView(
+            headerTitle: headerTitle,
+            headerSubtitle: headerSubtitle,
+            errorMessage: errorMessage,
+            errorViewButtonTitle: errorViewButtonTitle,
+            loadingTitle: loadingTitle,
+            tryAgain: {},
+            selection: { _ in },
+            viewModel: .init(model: publisher.onResourceLoad ?? []),
+            publickeyLoading: publisher.onLoadingState
+        )
+    }
+
+    private func makeOnboardingView(seed: [Seed]) -> OnboardingView {
         let creationHeaderTitle = "Welcome to Trea"
         let creationHeaderSubtitle = "TREA, Trusted Repository for Electronic Assets, to create your crypto wallet with top-tier security. This app is protected by industry-standard encryption, ensuring a secure connection with Solana."
         let firstCreationButtonTitle = "Create new wallet"
         let secondCreationButtonTitle = "Import wallet from seed"
         
-//        let publisher = SeedUIAdapter.seedComposedWith(seedPublisher: seedPublisher)
-        
-        navigation.currentView = .creation(
-            OnboardingView(headerTitle: creationHeaderTitle,
-                               headerSubtitle: creationHeaderSubtitle,
-                               firstButtonTitle: firstCreationButtonTitle,
-                               firstButtonAction: {
-                                   self.navigation.currentView = .seed(
-                                    WalletCreationComposerView(headerTitle: headerTitle,
-                                                               headerSubtitle: headerSubtitle,
-                                                               buttonTitle: buttonTitle,
-                                                               errorMessage: errorMessage,
-                                                               errorViewButtonTitle: errorViewButtonTitle,
-                                                               loadingTitle: loadingTitle,
-                                                               loadAgain: { },
-                                                               action: {  },
-                                                               viewModel: .init(model: seed, handler: { _ in })))
-                               },
-                               secondButtonTitle: secondCreationButtonTitle,
-                               secondButtonAction: {
-                                   //Push import wallet screen?
-                               }))
+        let headerTitle = "Seed Phrase"
+        let headerSubtitle = "The seed phrase is never stored on the device..."
+        let buttonTitle = "Create wallet"
+        let errorMessage = "Cannot load seed phrase"
+        let errorViewButtonTitle = "Try again"
+        let loadingTitle = "Loading seed phrase"
+
+        let walletCreationView = WalletCreationComposerView(
+            headerTitle: headerTitle,
+            headerSubtitle: headerSubtitle,
+            buttonTitle: buttonTitle,
+            errorMessage: errorMessage,
+            errorViewButtonTitle: errorViewButtonTitle,
+            loadingTitle: loadingTitle,
+            loadAgain: {},
+            action: {},
+            viewModel: .init(model: seed, handler: { _ in })
+        )
+
+        return OnboardingView(
+            headerTitle: creationHeaderTitle,
+            headerSubtitle: creationHeaderSubtitle,
+            firstButtonTitle: firstCreationButtonTitle,
+            firstButtonAction: {
+                self.navigation.currentView = .seed(walletCreationView)
+            },
+            secondButtonTitle: secondCreationButtonTitle,
+            secondButtonAction: {
+                // Push import wallet screen?
+            }
+        )
     }
 }
