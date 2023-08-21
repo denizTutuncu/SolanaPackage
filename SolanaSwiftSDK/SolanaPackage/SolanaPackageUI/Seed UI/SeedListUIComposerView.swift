@@ -52,65 +52,63 @@ struct SeedUIComposerView_Previews: PreviewProvider {
                 .previewDisplayName("Seed Loading List Composer Test View")
         }
     }
-}
-
-struct SeedUIComposerTestView: View {
     
-    var body: some View {
-        VStack {
-            SeedListUIComposerView(buttonTitle: "",
-                                   errorMessage: "",
-                                   errorViewButtonTitle: "",
-                                   loadingTitle: "Loading seed phrase",
-                                   errorAction: { },
-                                   action: { },
-                                   loading: true,
-                                   viewModel: .constant(.init(model: [],
-                                                              handler: { _ in })))
-            SeedListUIComposerView(buttonTitle: "",
-                                   errorMessage: "Cannot load seed phrase",
-                                   errorViewButtonTitle: "Try again",
-                                   loadingTitle: "Loading seed phrase",
-                                   errorAction: { },
-                                   action: { },
-                                   loading: false,
-                                   viewModel: .constant(.init(handler: { _ in })))
-            
-            SeedListUIComposerView(buttonTitle: "Create wallet",
-                                   errorMessage: "",
-                                   errorViewButtonTitle: "",
-                                   loadingTitle: "",
-                                   errorAction: { },
-                                   action: { },
-                                   loading: false,
-                                   viewModel: .constant(.init(model: ["private",
-                                                                      "digital",
-                                                                      "coin",
-                                                                      "seed",
-                                                                      "key",
-                                                                      "has",
-                                                                      "very",
-                                                                      "long",
-                                                                      "secret",
-                                                                      "phrase",
-                                                                      "that",
-                                                                      "will",
-                                                                      "prevent",
-                                                                      "animal",
-                                                                      "weasel",
-                                                                      "brain",
-                                                                      "person",
-                                                                      "like",
-                                                                      "you",
-                                                                      "obtain",
-                                                                      "any",
-                                                                      "large",
-                                                                      "wealth"
-                                                                     ],
-                                                              handler: { _ in })))
-            
+    struct SeedUIComposerTestView: View {
+        
+        var body: some View {
+            VStack {
+                SeedListUIComposerView(buttonTitle: "",
+                                       errorMessage: "",
+                                       errorViewButtonTitle: "",
+                                       loadingTitle: "Loading seed phrase",
+                                       errorAction: { },
+                                       action: { },
+                                       loading: true,
+                                       viewModel: .constant(.init(model: [],
+                                                                  handler: { _ in })))
+                SeedListUIComposerView(buttonTitle: "",
+                                       errorMessage: "Cannot load seed phrase",
+                                       errorViewButtonTitle: "Try again",
+                                       loadingTitle: "Loading seed phrase",
+                                       errorAction: { },
+                                       action: { },
+                                       loading: false,
+                                       viewModel: .constant(.init(handler: { _ in })))
+                
+                SeedListUIComposerView(buttonTitle: "Create wallet",
+                                       errorMessage: "",
+                                       errorViewButtonTitle: "",
+                                       loadingTitle: "",
+                                       errorAction: { },
+                                       action: { },
+                                       loading: false,
+                                       viewModel: .constant(.init(model: ["seed",
+                                                                          "phrase",
+                                                                          "important",
+                                                                          "who",
+                                                                          "has",
+                                                                          "seed",
+                                                                          "has",
+                                                                          "access",
+                                                                          "wallet",
+                                                                          "secure",
+                                                                          "crucial",
+                                                                          "ownership",
+                                                                          "must",
+                                                                          "keep",
+                                                                          "offline",
+                                                                          "physical",
+                                                                          "share",
+                                                                          "with",
+                                                                          "love",
+                                                                          "ones",
+                                                                          "teach",
+                                                                          "them",
+                                                                          "early",
+                                                                          "crypto"],
+                                                                  handler: { _ in })))
+                
+            }
         }
     }
 }
-
-
