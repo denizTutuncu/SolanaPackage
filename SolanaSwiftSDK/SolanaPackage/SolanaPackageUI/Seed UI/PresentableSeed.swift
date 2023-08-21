@@ -15,7 +15,7 @@ public struct PresentableSeed {
     }
     
     public let id: UUID
-    public let value: String
+    public var value: String
     
     var isSafe = false
     
