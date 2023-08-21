@@ -63,6 +63,9 @@
 		2E603DA929ECB2F0002A7DCA /* BalanceUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E603DA829ECB2F0002A7DCA /* BalanceUIComposer.swift */; };
 		2E603DAD29ECB554002A7DCA /* PresentablePublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E603DAC29ECB554002A7DCA /* PresentablePublicKey.swift */; };
 		2E603DAF29ECB56D002A7DCA /* PresentableSeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E603DAE29ECB56D002A7DCA /* PresentableSeed.swift */; };
+		2E61A0692A9170E5007E0756 /* ProvidedSeedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E61A0682A9170E5007E0756 /* ProvidedSeedListView.swift */; };
+		2E61A06D2A9172A0007E0756 /* ProvidedSingleSeedCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E61A06C2A9172A0007E0756 /* ProvidedSingleSeedCellView.swift */; };
+		2E61A06F2A91839D007E0756 /* ProvidedSeedComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E61A06E2A91839D007E0756 /* ProvidedSeedComposerView.swift */; };
 		2E65AED12A7ADD1200DB28DD /* SolanaKeychainAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65AED02A7ADD1200DB28DD /* SolanaKeychainAppApp.swift */; };
 		2E65AED32A7ADD1200DB28DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65AED22A7ADD1200DB28DD /* ContentView.swift */; };
 		2E65AED52A7ADD1200DB28DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E65AED42A7ADD1200DB28DD /* Assets.xcassets */; };
@@ -280,6 +283,9 @@
 		2E603DA829ECB2F0002A7DCA /* BalanceUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceUIComposer.swift; sourceTree = "<group>"; };
 		2E603DAC29ECB554002A7DCA /* PresentablePublicKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentablePublicKey.swift; sourceTree = "<group>"; };
 		2E603DAE29ECB56D002A7DCA /* PresentableSeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableSeed.swift; sourceTree = "<group>"; };
+		2E61A0682A9170E5007E0756 /* ProvidedSeedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvidedSeedListView.swift; sourceTree = "<group>"; };
+		2E61A06C2A9172A0007E0756 /* ProvidedSingleSeedCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvidedSingleSeedCellView.swift; sourceTree = "<group>"; };
+		2E61A06E2A91839D007E0756 /* ProvidedSeedComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvidedSeedComposerView.swift; sourceTree = "<group>"; };
 		2E65AECE2A7ADD1200DB28DD /* SolanaKeychainApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SolanaKeychainApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E65AED02A7ADD1200DB28DD /* SolanaKeychainAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolanaKeychainAppApp.swift; sourceTree = "<group>"; };
 		2E65AED22A7ADD1200DB28DD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -1120,6 +1126,9 @@
 				2E3ECB0B29EF4C0C00038407 /* SeedListView.swift */,
 				2E917D0F29EFBF0F00B578FA /* SeedListUIComposerView.swift */,
 				2EFADE8D29A84953009BDC11 /* WalletCreationComposerView.swift */,
+				2E61A06C2A9172A0007E0756 /* ProvidedSingleSeedCellView.swift */,
+				2E61A0682A9170E5007E0756 /* ProvidedSeedListView.swift */,
+				2E61A06E2A91839D007E0756 /* ProvidedSeedComposerView.swift */,
 			);
 			path = "Seed UI";
 			sourceTree = "<group>";
@@ -1425,10 +1434,13 @@
 				2EFADE8E29A84953009BDC11 /* WalletCreationComposerView.swift in Sources */,
 				2E917D1029EFBF0F00B578FA /* SeedListUIComposerView.swift in Sources */,
 				2E3ECB0C29EF4C0C00038407 /* SeedListView.swift in Sources */,
+				2E61A06D2A9172A0007E0756 /* ProvidedSingleSeedCellView.swift in Sources */,
 				2E09010B29B05AA800865E30 /* ToogleView.swift in Sources */,
 				2E917D0C29EFB2EC00B578FA /* TransactionListUIComposerView.swift in Sources */,
 				2E603DAF29ECB56D002A7DCA /* PresentableSeed.swift in Sources */,
 				2E4294B92848484900817480 /* ErrorView.swift in Sources */,
+				2E61A0692A9170E5007E0756 /* ProvidedSeedListView.swift in Sources */,
+				2E61A06F2A91839D007E0756 /* ProvidedSeedComposerView.swift in Sources */,
 				2E0363172970ECCF00CB2567 /* LoadingView.swift in Sources */,
 				2E80F39329A5815B00A4053C /* HeaderView.swift in Sources */,
 				2EFADE8C29A847AD009BDC11 /* SingleSeedCellView.swift in Sources */,
@@ -1896,7 +1908,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.deniztutuncu.SolanaKeychainApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1934,7 +1946,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.deniztutuncu.SolanaKeychainApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
