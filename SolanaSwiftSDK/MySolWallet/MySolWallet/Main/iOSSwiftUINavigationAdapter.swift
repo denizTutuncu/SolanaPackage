@@ -38,9 +38,11 @@ final class iOSSwiftUINavigationAdapter: PublicKeyDelegate {
     }
     
     func didCompleteWith(seed: [Seed]) {
-        let onboardingView = makeOnboardingView(seed: seed)
-        withAnimation {
-            navigation.currentView = .creation(onboardingView)
+        if !seed.isEmpty {
+            let onboardingView = makeOnboardingView(seed: seed)
+            withAnimation {
+                navigation.currentView = .creation(onboardingView)
+            }
         }
     }
     
@@ -52,6 +54,7 @@ final class iOSSwiftUINavigationAdapter: PublicKeyDelegate {
         let errorViewButtonTitle = "Try again"
         
         let publisher = PublicKeyUIAdapter.publicKeyComposedWith(publicKeyPublisher: publicKeyPublisher)
+        publisher.load()
         
         return WalletListUIComposerView(
             headerTitle: headerTitle,
@@ -74,10 +77,15 @@ final class iOSSwiftUINavigationAdapter: PublicKeyDelegate {
         
         let headerTitle = SeedPresenter.title
         let headerSubtitle = SeedPresenter.subtitle
+        let providedViewSubtitle = "The seed phrase is never stored on the device and will be wiped out after importing your wallet. Remember, the order of the seed phrase is crucial."
         let buttonTitle = "Create wallet"
+        let providedViewButtonTitle = "Import wallet"
         let errorMessage = "Cannot load seed phrase"
         let errorViewButtonTitle = "Try again"
         let loadingTitle = "Loading seed phrase"
+        
+        let publisher = SeedUIAdapter.seedComposedWith(seedPublisher: seedPublisher)
+        publisher.load()
         
         let walletCreationView = WalletCreationComposerView(
             headerTitle: headerTitle,
@@ -86,10 +94,18 @@ final class iOSSwiftUINavigationAdapter: PublicKeyDelegate {
             errorMessage: errorMessage,
             errorViewButtonTitle: errorViewButtonTitle,
             loadingTitle: loadingTitle,
-            loadAgain: {},
+            loadAgain: { publisher.load() },
             action: {},
             viewModel: .init(model: seed, handler: { _ in })
         )
+        
+        let providedSeedComposerView = ProvidedSeedComposerView(headerTitle: headerTitle,
+                                                                headerSubtitle: providedViewSubtitle,
+                                                                buttonTitle: providedViewButtonTitle,
+                                                                action: {  },
+                                                                viewModel: .init(model: [],
+                                                                                 handler: { _ in }))
+        
         
         return OnboardingView(
             headerTitle: onboardingHeaderTitle,
@@ -100,7 +116,7 @@ final class iOSSwiftUINavigationAdapter: PublicKeyDelegate {
             },
             secondButtonTitle: onboardingImportWalletButtonTitle,
             secondButtonAction: {
-                // Push import wallet screen?
+                self.navigation.currentView = .userSeed(providedSeedComposerView)
             }
         )
     }
