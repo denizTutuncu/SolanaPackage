@@ -59,11 +59,11 @@ struct OnboardingView_Previews: PreviewProvider {
         var body: some View {
             VStack {
                 OnboardingView(headerTitle: "Welcome to Trea",
-                                   headerSubtitle: "TREA, Trusted Repository for Electronic Assets, to create your crypto wallet with top-tier security. This app is protected by industry-standard encryption, ensuring a secure connection with Solana.",
-                    firstButtonTitle: "Create new wallet",
-                                   firstButtonAction: { selection = "Create wallet tapped" },
-                                   secondButtonTitle: "Import wallet from seed",
-                                   secondButtonAction: { selection = "Import wallet tapped" })
+                               headerSubtitle: "TREA, Trusted Repository for Electronic Assets, to create your crypto wallet with top-tier security. This app is protected by industry-standard encryption, ensuring a secure connection with Solana.",
+                               firstButtonTitle: "Create new wallet",
+                               firstButtonAction: { selection = "Create wallet tapped" },
+                               secondButtonTitle: "Import wallet from seed",
+                               secondButtonAction: { selection = "Import wallet tapped" })
                 
                 Text("Last selection: " + selection).padding()
             }
