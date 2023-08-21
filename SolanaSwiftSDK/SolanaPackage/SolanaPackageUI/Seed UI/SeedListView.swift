@@ -31,40 +31,39 @@ struct SeedListView_Previews: PreviewProvider {
                 .previewDisplayName("Seed List Test View")
         }
     }
-}
-
-struct SeedListTestView: View {
-    @State var selection: [String] = []
     
-    var body: some View {
-        VStack {
-            
-            SeedListView(viewModel: .constant(.init(model: ["private",
-                                                            "digital",
-                                                            "coin",
-                                                            "seed",
-                                                            "key",
-                                                            "has",
-                                                            "very",
-                                                            "long",
-                                                            "secret",
-                                                            "pass",
-                                                            "phrase",
-                                                            "that",
-                                                            "will",
-                                                            "prevent",
-                                                            "animal",
-                                                            "weasel",
-                                                            "brain",
-                                                            "person",
-                                                            "like",
-                                                            "you",
-                                                            "obtain",
-                                                            "any",
-                                                            "large",
-                                                            "wealth"],
-                                                    handler: { _ in })))
-            
+    struct SeedListTestView: View {
+        @State var selection: [String] = []
+        
+        var body: some View {
+            VStack {
+                SeedListView(viewModel: .constant(.init(model: ["seed",
+                                                                "phrase",
+                                                                "important",
+                                                                "who",
+                                                                "has",
+                                                                "seed",
+                                                                "has",
+                                                                "access",
+                                                                "wallet",
+                                                                "secure",
+                                                                "crucial",
+                                                                "ownership",
+                                                                "must",
+                                                                "keep",
+                                                                "offline",
+                                                                "physical",
+                                                                "share",
+                                                                "with",
+                                                                "love",
+                                                                "ones",
+                                                                "teach",
+                                                                "them",
+                                                                "early",
+                                                                "crypto"],
+                                                        handler: { _ in })))
+                
+            }
         }
     }
 }
