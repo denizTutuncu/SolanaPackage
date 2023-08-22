@@ -166,16 +166,6 @@ Then the app should create a valid Solana account
 
 ![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/BalanceView.jpg?raw=true)
 
-To show a valid public Solana address balance, first you need to create a `RemoteBalanceLoader` with a network setting, chosen valid public address and a client. Then pass it to create `BalanceComposerView`. That's it!
-
-```
-!!! Not available !!!
-let remoteBalanceLoader = RemoteBalanceLoader(url: URL(string: SolanaClusterRPCEndpoints.devNet.rawValue),
-                                                  publicAddress: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-                                                  client: URLSessionHTTPClient(session: URLSession(configuration: .ephemeral)))
-BalanceComposerView(viewModel:  BalanceViewModel(remoteBalanceLoader: remoteBalanceLoader))
-```
-
 ### Get Balance
 ### Story: Customer requests to see their balance
 
