@@ -17,7 +17,7 @@
                BlueprintIdentifier = "2ED6160327E5AD3F00920274"
                BuildableName = "SolanaPackage.framework"
                BlueprintName = "SolanaPackage"
-               ReferencedContainer = "container:../SolanaPackage/SolanaPackage.xcodeproj">
+               ReferencedContainer = "container:SolanaPackage.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -36,7 +36,7 @@
             BlueprintIdentifier = "2ED6160327E5AD3F00920274"
             BuildableName = "SolanaPackage.framework"
             BlueprintName = "SolanaPackage"
-            ReferencedContainer = "container:../SolanaPackage/SolanaPackage.xcodeproj">
+            ReferencedContainer = "container:SolanaPackage.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
@@ -48,7 +48,7 @@
                BlueprintIdentifier = "2ED6164E27E7472800920274"
                BuildableName = "SolanaPackageAPIEndToEndTests.xctest"
                BlueprintName = "SolanaPackageAPIEndToEndTests"
-               ReferencedContainer = "container:../SolanaPackage/SolanaPackage.xcodeproj">
+               ReferencedContainer = "container:SolanaPackage.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -59,7 +59,7 @@
                BlueprintIdentifier = "2ED6160C27E5AD4000920274"
                BuildableName = "SolanaPackageTests.xctest"
                BlueprintName = "SolanaPackageTests"
-               ReferencedContainer = "container:../SolanaPackage/SolanaPackage.xcodeproj">
+               ReferencedContainer = "container:SolanaPackage.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -70,7 +70,7 @@
                BlueprintIdentifier = "2E43DA3D29DD58DA001E0550"
                BuildableName = "SolanaPackageCacheIntegrationTests.xctest"
                BlueprintName = "SolanaPackageCacheIntegrationTests"
-               ReferencedContainer = "container:../SolanaPackage/SolanaPackage.xcodeproj">
+               ReferencedContainer = "container:SolanaPackage.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -98,7 +98,7 @@
             BlueprintIdentifier = "2ED6160327E5AD3F00920274"
             BuildableName = "SolanaPackage.framework"
             BlueprintName = "SolanaPackage"
-            ReferencedContainer = "container:../SolanaPackage/SolanaPackage.xcodeproj">
+            ReferencedContainer = "container:SolanaPackage.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
