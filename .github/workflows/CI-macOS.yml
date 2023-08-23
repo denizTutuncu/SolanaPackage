@@ -22,7 +22,7 @@ jobs:
 
       - name: Install keychain
         run: |
-          security create-keychain -p mysecretpassword github-actions.keychain
+          security create-keychain -p ${{ secrets.P12_PASSWORD }} github-actions.keychain
           security default-keychain -d user -s github-actions.keychain
           security unlock-keychain -p ${{ secrets.P12_PASSWORD }} github-actions.keychain
           security set-keychain-settings -t 3600 -u github-actions.keychain
