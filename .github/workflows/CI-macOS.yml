@@ -8,17 +8,45 @@ jobs:
   build-and-test:
     runs-on: macos-13
 
-    timeout-minutes: 10
+    timeout-minutes: 20
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Select Xcode
-        run: sudo xcode-select -switch /Applications/Xcode_14.3.app
+      - name: Set up Xcode
+        run: sudo xcode-select -s /Applications/Xcode.app
 
-      - name: Xcode version
-        run: /usr/bin/xcodebuild -version
+      - name: Show Xcode version
+        run: xcodebuild -version
 
-      - name: Build and test
-        run: xcodebuild clean build test -project SolanaSwiftSDK/SolanaPackage/SolanaPackage.xcodeproj -scheme "CI_macOS" CODE_SIGN_IDENTITY="Apple Development: Deniz Tutuncu (VVBFBA275T)" CODE_SIGNING_REQUIRED=YES -sdk macosx -destination "platform=macOS" ONLY_ACTIVE_ARCH=YES
+      - name: Install keychain
+        run: |
+          security create-keychain -p mysecretpassword github-actions.keychain
+          security default-keychain -d user -s github-actions.keychain
+          security unlock-keychain -p mysecretpassword github-actions.keychain
+          security set-keychain-settings -t 3600 -u github-actions.keychain
+
+      - name: Add keychain to keychain list
+        run: security list-keychains -s github-actions.keychain
+
+      - name: Import certificate to keychain
+        run: |
+          security import /Users/deniztutuncu/Desktop/Certificates/SolanaPackage/SolanaPackageCertificates.p12 -k github-actions.keychain -P ${{ secrets.P12_PASSWORD }} -T /usr/bin/codesign
+
+      - name: Build and test with keychain
+        run: |
+          xcodebuild clean build test \
+            -project SolanaSwiftSDK/SolanaPackage/SolanaPackage.xcodeproj \
+            -scheme "CI_macOS" \
+            -sdk macosx \
+            -destination "platform=macOS" \
+            ONLY_ACTIVE_ARCH=YES \
+            CODE_SIGN_IDENTITY="Apple Development: Deniz Tutuncu (VVBFBA275T)" \
+            CODE_SIGNING_REQUIRED=YES \
+            CODE_SIGN_KEYCHAIN="github-actions.keychain"
+
+      - name: Remove keychain
+        run: |
+          security delete-keychain github-actions.keychain
 
