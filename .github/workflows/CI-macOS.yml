@@ -14,8 +14,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Xcode
-        run: sudo xcode-select -s /Applications/Xcode.app
+      - name: Select up Xcode
+        run: sudo xcode-select -s /Applications/Xcode_14.3.app
 
       - name: Show Xcode version
         run: xcodebuild -version
@@ -35,8 +35,8 @@ jobs:
 
       - name: Import certificate to keychain
         run: |
-          security import certificate.p12 -k github-actions.keychain -P ${{ secrets.P12_PASSWORD }} -T /usr/bin/codesign
-
+            security import /Users/deniztutuncu/Desktop/Certificates/SolanaPackage/SolanaPackageCertificates.p12 -k github-actions.keychain -P ${{ secrets.P12_PASSWORD }} -T /usr/bin/codesign
+            
       - name: Build and test with keychain
         run: |
           xcodebuild clean build test \
