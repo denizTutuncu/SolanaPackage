@@ -13,6 +13,9 @@ jobs:
   steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+      
+    - name: Debug Secret
+      run: echo "P12_CERTIFICATE value: ${{ secrets.P12_CERTIFICATE }}"
 
     - name: Install keychain certificate
       run: |
