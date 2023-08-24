@@ -20,19 +20,18 @@ jobs:
     - name: Show Xcode version
         run: xcodebuild -version
     
-    - name: Install keychain
+      - name: Install keychain certificate
         run: |
-        security create-keychain -p mysecretpassword github-actions.keychain
-        security default-keychain -d user -s github-actions.keychain
-        security unlock-keychain -p ${{ secrets.P12_PASSWORD }} github-actions.keychain
-        security set-keychain-settings -t 3600 -u github-actions.keychain
-    
-    - name: Add keychain to keychain list
+        gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.P12_CERTIFICATE }}" --output .github/deployment/SolanaPackageCertificates.p12 .github/deployment/SolanaPackageCertificates.p12.gpg
+        security create-keychain -p "" build.keychain
+        security import .github/deployment/MySolWalletDistribution.p12.gpg -t agg -k ~/Library/Keychains/build.keychain -P "${{ secrets.P12_CERTIFICATE }}" -A
+        security list-keychains -s ~/Library/Keychains/build.keychain
+        security default-keychain -s ~/Library/Keychains/build.keychain
+        security unlock-keychain -p "" ~/Library/Keychains/build.keychain
+        security set-key-partition-list -S apple-tool:,apple: -s -k "" ~/Library/Keychains/build.keychain
+        
+      - name: Add keychain to keychain list
         run: security list-keychains -s github-actions.keychain
-    
-    - name: Import certificate to keychain
-        run: |
-            security import /Users/deniztutuncu/Desktop/Certificates/SolanaPackage/SolanaPackageCertificates.p12 -k github-actions.keychain -P ${{ secrets.P12_PASSWORD }} -T /usr/bin/codesign
     
     - name: Build and test with keychain
         run: |
