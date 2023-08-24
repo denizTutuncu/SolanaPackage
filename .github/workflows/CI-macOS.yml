@@ -16,13 +16,13 @@ jobs:
         
       - name: Install keychain certificate
         run: |
-        gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.P12_CERTIFICATE }}" --output .github/deployment/SolanaPackageCertificates.p12 .github/deployment/SolanaPackageCertificates.p12.gpg
-        security create-keychain -p "" build.keychain
-        security import .github/deployment/MySolWalletDistribution.p12.gpg -t agg -k ~/Library/Keychains/build.keychain -P "${{ secrets.P12_CERTIFICATE }}" -A
-        security list-keychains -s ~/Library/Keychains/build.keychain
-        security default-keychain -s ~/Library/Keychains/build.keychain
-        security unlock-keychain -p "" ~/Library/Keychains/build.keychain
-        security set-key-partition-list -S apple-tool:,apple: -s -k "" ~/Library/Keychains/build.keychain
+          gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.P12_CERTIFICATE }}" --output .github/deployment/SolanaPackageCertificates.p12 .github/deployment/SolanaPackageCertificates.p12.gpg
+          security create-keychain -p "" build.keychain
+          security import .github/deployment/MySolWalletDistribution.p12.gpg -t agg -k ~/Library/Keychains/build.keychain -P "${{ secrets.P12_CERTIFICATE }}" -A
+          security list-keychains -s ~/Library/Keychains/build.keychain
+          security default-keychain -s ~/Library/Keychains/build.keychain
+          security unlock-keychain -p "" ~/Library/Keychains/build.keychain
+          security set-key-partition-list -S apple-tool:,apple: -s -k "" ~/Library/Keychains/build.keychain
         
       - name: Add keychain to keychain list
         run: security list-keychains -s github-actions.keychain
@@ -48,5 +48,3 @@ jobs:
       - name: Remove keychain
         run: |
           security delete-keychain github-actions.keychain
-
-
