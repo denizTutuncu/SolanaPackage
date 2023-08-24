@@ -10,12 +10,12 @@ jobs:
     
     timeout-minutes: 20
     
-    steps:
-    - name: Checkout code
-        uses: actions/checkout@v2
-        
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
     - name: Install keychain certificate
-        run: |
+      run: |
         gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.P12_CERTIFICATE }}" --output .github/deployment/SolanaPackageCertificates.p12 .github/deployment/SolanaPackageCertificates.p12.gpg
         security create-keychain -p "" build.keychain
         security import .github/deployment/MySolWalletDistribution.p12.gpg -t agg -k ~/Library/Keychains/build.keychain -P "${{ secrets.P12_CERTIFICATE }}" -A
@@ -23,29 +23,28 @@ jobs:
         security default-keychain -s ~/Library/Keychains/build.keychain
         security unlock-keychain -p "" ~/Library/Keychains/build.keychain
         security set-key-partition-list -S apple-tool:,apple: -s -k "" ~/Library/Keychains/build.keychain
-        
-    - name: Add keychain to keychain list
-        run: security list-keychains -s github-actions.keychain
-    
-    - name: Select up Xcode
-        run: sudo xcode-select -s /Applications/Xcode_14.3.app
-    
-    - name: Show Xcode version
-        run: xcodebuild -version
-    
-    - name: Build and test with keychain
-        run: |
-        xcodebuild clean build test \
-            -workspace SolanaSwiftSDK/MySolWallet/MySolWallet.xcworkspace \
-            -scheme "CI_iOS" \
-            -sdk iphonesimulator \
-            -destination "platform=iOS Simulator,name=iPhone 14 Pro Max,OS=16.4" \
-            ONLY_ACTIVE_ARCH=YES \
-            CODE_SIGN_IDENTITY="Apple Development: Deniz Tutuncu (VVBFBA275T)" \
-            CODE_SIGNING_REQUIRED=YES \
-            CODE_SIGN_KEYCHAIN="github-actions.keychain"
-    
-    - name: Remove keychain
-        run: |
-        security delete-keychain github-actions.keychain
 
+    - name: Add keychain to keychain list
+      run: security list-keychains -s github-actions.keychain
+
+    - name: Select up Xcode
+      run: sudo xcode-select -s /Applications/Xcode_14.3.app
+
+    - name: Show Xcode version
+      run: xcodebuild -version
+
+    - name: Build and test with keychain
+      run: |
+        xcodebuild clean build test \
+          -workspace SolanaSwiftSDK/MySolWallet/MySolWallet.xcworkspace \
+          -scheme "CI_iOS" \
+          -sdk iphonesimulator \
+          -destination "platform=iOS Simulator,name=iPhone 14 Pro Max,OS=16.4" \
+          ONLY_ACTIVE_ARCH=YES \
+          CODE_SIGN_IDENTITY="Apple Development: Deniz Tutuncu (VVBFBA275T)" \
+          CODE_SIGNING_REQUIRED=YES \
+          CODE_SIGN_KEYCHAIN="github-actions.keychain"
+
+    - name: Remove keychain
+      run: |
+        security delete-keychain github-actions.keychain
