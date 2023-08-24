@@ -14,11 +14,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         
+     - name: Debug Secret
+      run: echo "P12_CERTIFICATE value: ${{ secrets.P12_CERTIFICATE }}"
+        
+      - name: Install provisioning profile
+      run: |
+        gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.P12_CERTIFICATE }}" --output .github/deployment/SolanaKeychainMacOSApp.mobileprovision .github/deployment/SolanaKeychainMacOSApp.provisionprofile.gpg
+        mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+        cp .github/deployment/SolanaKeychainMacOSApp.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
+        
       - name: Install keychain certificate
         run: |
-          gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.P12_CERTIFICATE }}" --output .github/deployment/SolanaPackageCertificates.p12 .github/deployment/SolanaPackageCertificates.p12.gpg
+          gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.P12_CERTIFICATE }}" --output .github/deployment/AppleDevelopmentCertificate.p12 .github/deployment/AppleDevelopmentCertificate.p12.gpg
           security create-keychain -p "" build.keychain
-          security import .github/deployment/MySolWalletDistribution.p12.gpg -t agg -k ~/Library/Keychains/build.keychain -P "${{ secrets.P12_CERTIFICATE }}" -A
+          security import .github/deployment/AppleDevelopmentCertificate.p12.gpg -t agg -k ~/Library/Keychains/build.keychain -P "${{ secrets.P12_CERTIFICATE }}" -A
           security list-keychains -s ~/Library/Keychains/build.keychain
           security default-keychain -s ~/Library/Keychains/build.keychain
           security unlock-keychain -p "" ~/Library/Keychains/build.keychain
