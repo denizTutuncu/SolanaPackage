@@ -13,12 +13,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Select up Xcode
-        run: sudo xcode-select -s /Applications/Xcode_14.3.app
-
-      - name: Show Xcode version
-        run: xcodebuild -version
         
       - name: Install keychain certificate
         run: |
@@ -32,6 +26,12 @@ jobs:
         
       - name: Add keychain to keychain list
         run: security list-keychains -s github-actions.keychain
+        
+      - name: Select up Xcode
+        run: sudo xcode-select -s /Applications/Xcode_14.3.app
+
+      - name: Show Xcode version
+        run: xcodebuild -version
 
       - name: Build and test with keychain
         run: |

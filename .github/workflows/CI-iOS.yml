@@ -13,14 +13,8 @@ jobs:
     steps:
     - name: Checkout code
         uses: actions/checkout@v2
-    
-    - name: Select up Xcode
-        run: sudo xcode-select -s /Applications/Xcode_14.3.app
-    
-    - name: Show Xcode version
-        run: xcodebuild -version
-    
-      - name: Install keychain certificate
+        
+    - name: Install keychain certificate
         run: |
         gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.P12_CERTIFICATE }}" --output .github/deployment/SolanaPackageCertificates.p12 .github/deployment/SolanaPackageCertificates.p12.gpg
         security create-keychain -p "" build.keychain
@@ -30,8 +24,14 @@ jobs:
         security unlock-keychain -p "" ~/Library/Keychains/build.keychain
         security set-key-partition-list -S apple-tool:,apple: -s -k "" ~/Library/Keychains/build.keychain
         
-      - name: Add keychain to keychain list
+    - name: Add keychain to keychain list
         run: security list-keychains -s github-actions.keychain
+    
+    - name: Select up Xcode
+        run: sudo xcode-select -s /Applications/Xcode_14.3.app
+    
+    - name: Show Xcode version
+        run: xcodebuild -version
     
     - name: Build and test with keychain
         run: |
