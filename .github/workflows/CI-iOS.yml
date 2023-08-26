@@ -15,6 +15,7 @@ jobs:
 
       - name: Install provisioning profile
         run: |
+          echo "Passphrase: ${{ secrets.P12_CERTIFICATE }}"
           gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.P12_CERTIFICATE }}" --output .github/deployment/SolanaKeychainiOSApp.mobileprovision .github/deployment/SolanaKeychainiOSApp.mobileprovision.gpg
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           cp .github/deployment/SolanaKeychainiOSApp.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
