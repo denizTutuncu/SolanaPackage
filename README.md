@@ -307,8 +307,12 @@ Given the customer has connectivity
 
 Contributions are always welcome.
 
-GitHub Actions script is set up to automate the build and testing process of the project when changes are made to specific branches. The script specifies that the build-and-test job should run when a push and/or a pull request event occurs on the `main` branch.
+A GitHub Actions script is set up to automate the build and testing process of the project when changes are made to specific branches. The script specifies that the build-and-test job should run when a push and/or a pull request event occurs on the main branch.
 
-Developers should first clone the project and then create a new development branch to make changes. Pushing changes to the development branch and opening a pull request `PR` onto `main` will trigger GitHub Actions.
+Developers should first clone the project and then create a new development branch to make changes. Pushing changes to the development branch and opening a pull request (PR) onto main will trigger GitHub Actions.
 
-The script runs two separate Xcode commands to build and test the project on macOS and iOS. The steps include checking out the code, selecting the appropriate version of Xcode, and specifying the build and test settings for each platform. The code is built using the "CI_macOS" and "CI_iOS" schemes, and tests are run with specific destination settings.
+For Continuous Integration, 2 different scripts run to build and test the project on macOS and iOS. The steps include checking out the code, installing necessary profiles and certificates, selecting the appropriate version of Xcode, and specifying the build and test settings for each platform. The code is built using the "CI_macOS" and "CI_iOS" schemes, and tests are run with specific destination settings.
+
+For Continuous Deployment, the "Deploy" script runs after any changes on the main branch, triggering a build, archive, and deployment on App Store Connect.
+
+`A special note of gratitude extends to the Essential Developer Community and Caio Zullo for their invaluable contributions.`
