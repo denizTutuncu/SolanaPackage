@@ -13,15 +13,15 @@ jobs:
 
       - name: Install provisioning profile
         run: |
-          gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.P12_CERTIFICATE }}" --output .github/deployment/MySolWalletApp.mobileprovision .github/deployment/MySolWalletApp.mobileprovision.gpg
+          gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.PROVISIONING_PROFILE }}" --output .github/deployment/MySolWalletApp.mobileprovision .github/deployment/MySolWalletApp.mobileprovision.gpg
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           cp .github/deployment/MySolWalletApp.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
 
       - name: Install keychain certificate
         run: |
-          gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.P12_CERTIFICATE }}" --output .github/deployment/MySolWalletDistribution.p12 .github/deployment/MySolWalletDistribution.p12.gpg
+          gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.DISTRIBUTION_CERTIFICATE }}" --output .github/deployment/MySolWalletDistribution.p12 .github/deployment/MySolWalletDistribution.p12.gpg
           security create-keychain -p "" build.keychain
-          security import .github/deployment/MySolWalletDistribution.p12.gpg -t agg -k ~/Library/Keychains/build.keychain -P "${{ secrets.CERTIFICATE_PASSWORD }}" -A
+          security import .github/deployment/MySolWalletDistribution.p12.gpg -t agg -k ~/Library/Keychains/build.keychain -P "${{ secrets.KEYCHAIN_PASSWORD }}" -A
           security list-keychains -s ~/Library/Keychains/build.keychain
           security default-keychain -s ~/Library/Keychains/build.keychain
           security unlock-keychain -p "" ~/Library/Keychains/build.keychain

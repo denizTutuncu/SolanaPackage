@@ -315,4 +315,4 @@ For Continuous Integration, 2 different scripts run to build and test the projec
 
 For Continuous Deployment, the "Deploy" script runs after any changes on the main branch, triggering a build, archive, and deployment on App Store Connect.
 
-`A special note of gratitude extends to the Essential Developer Community and Caio Zullo for their invaluable contributions.`
+`A heartfelt expression of gratitude goes out to the Essential Developer Community and Caio Zullo for their priceless mentoring and guidance.`
