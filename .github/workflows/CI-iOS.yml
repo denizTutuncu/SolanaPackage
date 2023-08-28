@@ -23,7 +23,7 @@ jobs:
         run: |
           gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.APPLEDEVELOPMENT_CERTIFICATE }}" --output .github/deployment/AppleDevelopmentCertificate.p12 .github/deployment/AppleDevelopmentCertificate.p12.gpg
           security create-keychain -p "" build.keychain
-          security import .github/deployment/AppleDevelopmentCertificate.p12.gpg -t agg -k ~/Library/Keychains/build.keychain -P "${{ secrets.KEYCHAIN_PASSWORD }}" -A
+          security import .github/deployment/AppleDevelopmentCertificate.p12 -t agg -k ~/Library/Keychains/build.keychain -P "${{ secrets.KEYCHAIN_PASSWORD }}" -A
           security list-keychains -s ~/Library/Keychains/build.keychain
           security default-keychain -s ~/Library/Keychains/build.keychain
           security unlock-keychain -p "" ~/Library/Keychains/build.keychain
