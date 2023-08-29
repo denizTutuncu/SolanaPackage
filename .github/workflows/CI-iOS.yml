@@ -29,6 +29,9 @@ jobs:
           security unlock-keychain -p "" ~/Library/Keychains/build.keychain
           security set-key-partition-list -S apple-tool:,apple: -s -k "" ~/Library/Keychains/build.keychain
 
+      - name: Debug Xcode path
+        run: xcode-select -p
+
       - name: Select up Xcode
         run: sudo xcode-select -switch /Applications/Xcode_14.3.app
 
