@@ -15,9 +15,9 @@ jobs:
         
       - name: Install provisioning profile
         run: |
-          gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.PROVISIONING_PROFILE }}" --output .github/deployment/SolanaKeychainMacOSApp.mobileprovision .github/deployment/SolanaKeychainMacOSApp.provisionprofile.gpg
+          gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.PROVISIONING_PROFILE }}" --output .github/deployment/SolanaKeychainMacOSApp.provisionprofile .github/deployment/SolanaKeychainMacOSApp.provisionprofile.gpg
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-          cp .github/deployment/SolanaKeychainMacOSApp.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
+          cp .github/deployment/SolanaKeychainMacOSApp.provisionprofile ~/Library/MobileDevice/Provisioning\ Profiles/
         
       - name: Install keychain certificate
         run: |
