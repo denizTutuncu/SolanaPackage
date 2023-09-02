@@ -40,6 +40,7 @@ jobs:
           xcodebuild clean build test \
             -project SolanaSwiftSDK/SolanaPackage/SolanaPackage.xcodeproj \
             -scheme "CI_macOS" \
+            -allowProvisioningUpdates
             -sdk macosx \
             -destination "platform=macOS" \
             ONLY_ACTIVE_ARCH=YES \
