@@ -18,6 +18,15 @@ jobs:
           gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.PROVISIONING_PROFILE }}" --output .github/deployment/SolanaKeychainMacOSApp.provisionprofile .github/deployment/SolanaKeychainMacOSApp.provisionprofile.gpg
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           cp .github/deployment/SolanaKeychainMacOSApp.provisionprofile ~/Library/MobileDevice/Provisioning\ Profiles/
+          
+      - name: Set Device Identifier
+        run: |
+          CI_MACOS_DEVICE_ID="${{ secrets.CI_MACOS_DEVICE_ID }}"
+          echo "CI Machine Device Identifier: $CI_MACOS_DEVICE_ID"
+
+          # Use $CI_DEVICE_IDENTIFIER to update the provisioning profile
+          # Add the device to the provisioning profile
+          xcodebuild -exportProvisioningProfile "$CI_MACOS_DEVICE_ID" -destination "platform=macOS"
         
       - name: Install keychain certificate
         run: |
@@ -35,15 +44,6 @@ jobs:
       - name: Show Xcode version
         run: xcodebuild -version
         
-      - name: Set Device Identifier
-        run: |
-          CI_MACOS_DEVICE_ID="${{ secrets.CI_MACOS_DEVICE_ID }}"
-          echo "CI Machine Device Identifier: $CI_MACOS_DEVICE_ID"
-
-          # Use $CI_DEVICE_IDENTIFIER to update the provisioning profile
-          # Add the device to the provisioning profile
-          xcodebuild -exportProvisioningProfile "$CI_MACOS_DEVICE_ID" -destination "platform=macOS"
-
       - name: Build and test with keychain
         run: |
           xcodebuild clean build test \
