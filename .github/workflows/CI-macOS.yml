@@ -37,14 +37,11 @@ jobs:
         
       - name: Build and test with keychain
         run: |
-          # Use a predefined static device ID from GitHub secrets
-          DEVICE_ID="${{ secrets.CI_MACOS_DEVICE_ID }}"
-
           xcodebuild clean build test \
             -project SolanaSwiftSDK/SolanaPackage/SolanaPackage.xcodeproj \
             -scheme "CI_macOS" \
             -sdk macosx \
-            -destination "platform=macOS,id=$DEVICE_ID" \
+            -destination "platform=macOS" \
             ONLY_ACTIVE_ARCH=YES \
             CODE_SIGN_IDENTITY="Apple Development: Deniz Tutuncu (VVBFBA275T)" \
             CODE_SIGNING_REQUIRED=YES \
