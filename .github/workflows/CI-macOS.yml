@@ -19,15 +19,6 @@ jobs:
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           cp .github/deployment/SolanaKeychainMacOSApp.provisionprofile ~/Library/MobileDevice/Provisioning\ Profiles/
           
-      - name: Set Device Identifier
-        run: |
-          CI_MACOS_DEVICE_ID="${{ secrets.CI_MACOS_DEVICE_ID }}"
-          echo "CI Machine Device Identifier: $CI_MACOS_DEVICE_ID"
-
-          # Use $CI_DEVICE_IDENTIFIER to update the provisioning profile
-          # Add the device to the provisioning profile
-          xcodebuild -exportProvisioningProfile "$CI_MACOS_DEVICE_ID" -destination "platform=macOS" -allowProvisioningDeviceRegistration
-        
       - name: Install keychain certificate
         run: |
           gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.APPLEDEVELOPMENT_CERTIFICATE }}" --output .github/deployment/AppleDevelopmentCertificate.p12 .github/deployment/AppleDevelopmentCertificate.p12.gpg
@@ -55,6 +46,8 @@ jobs:
             CODE_SIGN_IDENTITY="Apple Development: Deniz Tutuncu (VVBFBA275T)" \
             CODE_SIGNING_REQUIRED=YES \
             CODE_SIGN_KEYCHAIN="build.keychain"
+            -allowProvisioningDeviceRegistration
+            -exportProvisioningProfile "$CI_MACOS_DEVICE_ID"
             
       - name: Remove keychain
         run: |
