@@ -26,7 +26,7 @@ jobs:
 
           # Use $CI_DEVICE_IDENTIFIER to update the provisioning profile
           # Add the device to the provisioning profile
-          xcodebuild -exportProvisioningProfile "$CI_MACOS_DEVICE_ID" -destination "platform=macOS"
+          xcodebuild -exportProvisioningProfile "$CI_MACOS_DEVICE_ID" -destination "platform=macOS" -allowProvisioningDeviceRegistration
         
       - name: Install keychain certificate
         run: |
