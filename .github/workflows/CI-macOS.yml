@@ -37,12 +37,12 @@ jobs:
         
       - name: Set Device Identifier
         run: |
-          CI_DEVICE_IDENTIFIER="${{ secrets.CI_DEVICE_IDENTIFIER }}"
-          echo "CI Machine Device Identifier: $CI_DEVICE_IDENTIFIER"
+          CI_MACOS_DEVICE_ID="${{ secrets.CI_MACOS_DEVICE_ID }}"
+          echo "CI Machine Device Identifier: $CI_MACOS_DEVICE_ID"
 
           # Use $CI_DEVICE_IDENTIFIER to update the provisioning profile
           # Add the device to the provisioning profile
-          xcodebuild -exportProvisioningProfile "$CI_DEVICE_IDENTIFIER" -destination "platform=macOS"
+          xcodebuild -exportProvisioningProfile "$CI_MACOS_DEVICE_ID" -destination "platform=macOS"
 
       - name: Build and test with keychain
         run: |
