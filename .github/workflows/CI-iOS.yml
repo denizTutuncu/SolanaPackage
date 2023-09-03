@@ -40,6 +40,7 @@ jobs:
           xcodebuild clean build test \
             -workspace SolanaSwiftSDK/MySolWallet/MySolWallet.xcworkspace \
             -scheme "CI_iOS" \
+            -allowProvisioningUpdates \
             -sdk iphonesimulator \
             -destination "platform=iOS Simulator,name=iPhone 14,OS=16.2" \
             ONLY_ACTIVE_ARCH=YES \
