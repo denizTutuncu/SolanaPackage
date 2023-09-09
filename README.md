@@ -1,10 +1,10 @@
 # Solana Swift SDK 
 
 ## Solana Package Framework & Solana Package UI Framework & TREA iOS App
-#### The Solana Swift SDK is a collection of Swift modules that enables developers to interact with the Solana Blockchain in their iOS, macOS, tvOS, and watchOS apps. The SDK contains two main modules:
+#### The Solana Swift SDK is a collection of Swift modules that enable developers to interact with any blockchain, beginning with Solana, within their macOS, iOS, watchOS, and tvOS applications. Currently, the SDK comprises two primary modules, with plans for expansion to include a third module:
 
 #### Core Module:
-This module contains the core models required to interact with the Solana Blockchain, with a networking layer that communicates with the blockchain and a data persistent layer that uses Core Data for domain models and Keychain for critical information such as private key and wallet details. These models include Wallet, Balance and Transaction models. The Core module provides functionalities like creating a wallet, querying balance, and sending/receiving SOL via the networking layer, while utilizing Core Data to persist domain models and Keychain to securely store critical information.
+This module contains the core models required to interact with any Blockchain, starting with Solana. It includes a networking layer that communicates with any blockchain and a data persistent layer that uses file-based storage for codable models such as public keys and keychain storage for critical information such as private keys. These public models currently include Public Keys but are open for extensions, such as wallet details like balance and transaction models. The Core module provides functionalities like creating a wallet (public and private key) from a seed phrase, querying balance and transactions, and receiving/sending SOL.
 
 Additionally, Presentation modules support localization for four different languages: English, Portuguese, Greek, and Turkish. However, these modules are designed to be easily extensible, allowing new languages to be added with ease. This enables a wider range of users to interact with the Solana Blockchain using this module in their preferred language.
 
