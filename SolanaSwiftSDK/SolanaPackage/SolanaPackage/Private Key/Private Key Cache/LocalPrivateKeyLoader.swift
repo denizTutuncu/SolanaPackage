@@ -32,7 +32,7 @@ extension LocalPrivateKeyLoader: PrivateKeyCache {
             throw InvalidPrivateKey()
         }
         
-        try store.insert(publicKey: publicKey, privateKey: privateKey)
+        try store.store(publicKey: publicKey, privateKey: privateKey)
     }
 }
 
@@ -42,7 +42,7 @@ extension LocalPrivateKeyLoader {
             throw InvalidPublicKey()
         }
         
-        if let cache = try store.privateKey(for: publicKey),  PrivateKeyCachePolicy.validate(privateKey: cache) {
+        if let cache = try store.read(for: publicKey),  PrivateKeyCachePolicy.validate(privateKey: cache) {
             return cache
         }
         
@@ -55,6 +55,6 @@ extension LocalPrivateKeyLoader {
         guard let publicKey = publicKey else {
             return
         }
-        try store.deletePrivateKey(for: publicKey)
+        try store.deleteKey(for: publicKey)
     }
 }

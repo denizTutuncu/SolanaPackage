@@ -7,27 +7,55 @@
 
 import SwiftUI
 import SolanaPackage
+import Combine
 
 @main
 struct MySolWalletApp: App {
     let appStore = MainAppStore()
-    
     @StateObject var navigationStore = MainAppNavigationStore()
-    
+
     var body: some Scene {
         WindowGroup {
-            MainAppNavigationView(store: navigationStore)
-                .onAppear{ startBank() }
+            MainAppInitializer(appStore: appStore, navigationStore: navigationStore)
         }
     }
-    
-    private func startBank() {
-        let adapter = iOSSwiftUINavigationAdapter(navigation: navigationStore,
-                                                  publicKeyPublisher:  appStore.makeLocalPublicKeyPublisher(),
-                                                  seedPublisher: appStore.makeLocalSeedPublisher())
-        
-        appStore.mainApp = MainApp.start(publickeys: [],
-                                         seed: [],
-                                         delegate: adapter)
+}
+
+struct MainAppInitializer: View {
+    let appStore: MainAppStore
+    let navigationStore: MainAppNavigationStore
+
+    var body: some View {
+        MainAppNavigationView(store: navigationStore)
+            .onAppear {
+                initializeMainApp()
+            }
     }
-}   
+
+    private func initializeMainApp() {
+        var cancellables: [AnyCancellable] = []
+
+        let publicKeyPublisher = appStore.makeLocalPublicKeyPublisher()
+        let seedPublisher = appStore.makeLocalSeedPublisher()
+
+        let combinedPublisher = Publishers.CombineLatest(publicKeyPublisher, seedPublisher)
+
+        combinedPublisher
+            .sink(receiveCompletion: { completion in
+                // Handle completion if needed
+            }, receiveValue: { (publicKeys, seeds) in
+                let adapter = iOSSwiftUINavigationAdapter(
+                    navigation: self.navigationStore,
+                    publicKeyPublisher: Just(publicKeys).setFailureType(to: Error.self).eraseToAnyPublisher(),
+                    seedPublisher: Just(seeds).setFailureType(to: Error.self).eraseToAnyPublisher()
+                )
+
+                self.appStore.mainApp = MainApp.start(
+                    publickeys: publicKeys,
+                    seed: seeds,
+                    delegate: adapter
+                )
+            })
+            .store(in: &cancellables)
+    }
+}

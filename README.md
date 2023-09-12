@@ -1,10 +1,10 @@
 # Solana Swift SDK 
 
 ## Solana Package Framework & Solana Package UI Framework & TREA iOS App
-#### The Solana Swift SDK is a collection of Swift modules that enables developers to interact with the Solana Blockchain in their iOS, macOS, tvOS, and watchOS apps. The SDK contains two main modules:
+#### The Solana Swift SDK is a collection of Swift modules that enable developers to interact with any blockchain, beginning with Solana, within their macOS, iOS, watchOS, and tvOS applications. Currently, the SDK comprises two primary modules, with plans for expansion to include a third module:
 
 #### Core Module:
-This module contains the core models required to interact with the Solana Blockchain, with a networking layer that communicates with the blockchain and a data persistent layer that uses Core Data for domain models and Keychain for critical information such as private key and wallet details. These models include Wallet, Balance and Transaction models. The Core module provides functionalities like creating a wallet, querying balance, and sending/receiving SOL via the networking layer, while utilizing Core Data to persist domain models and Keychain to securely store critical information.
+This module contains the core models required to interact with any Blockchain, starting with Solana. It includes a networking layer that communicates with any blockchain and a data persistent layer that uses file-based storage for codable models such as public keys and keychain storage for critical information such as private keys. These public models currently include Public Keys but are open for extensions, such as wallet details like balance and transaction models. The Core module provides functionalities like creating a wallet (public and private key) from a seed phrase, querying balance and transactions, and receiving/sending SOL.
 
 Additionally, Presentation modules support localization for four different languages: English, Portuguese, Greek, and Turkish. However, these modules are designed to be easily extensible, allowing new languages to be added with ease. This enables a wider range of users to interact with the Solana Blockchain using this module in their preferred language.
 
@@ -25,7 +25,9 @@ The SDK is open-source and hosted on Github, developers can use the SDK to build
  
 ## iOS App Flow
 
-![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Diagrams/iOSAppFlow.jpg?raw=true)
+![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/TREA.gif?raw=true)
+
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Diagrams/iOSAppFlow.drawio.png?raw=true)
 
 ```
 1- Create Wallet & Receive Sol (in progress)
@@ -36,9 +38,11 @@ The SDK is open-source and hosted on Github, developers can use the SDK to build
 
 ----------------
 
-### Prototype
+### Prototype & Prototyp's Flowchart
 
 ![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/PROTOTYPEIOS_AdobeCreativeCloudExpress.gif)
+
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Diagrams/PrototypeFlowchart.drawio.png?raw=true)
 
 ----------------
 
@@ -161,16 +165,6 @@ Then the app should create a valid Solana account
 ![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/WalletBalanceView.jpg?raw=true)
 
 ![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/BalanceView.jpg?raw=true)
-
-To show a valid public Solana address balance, first you need to create a `RemoteBalanceLoader` with a network setting, chosen valid public address and a client. Then pass it to create `BalanceComposerView`. That's it!
-
-```
-!!! Not available !!!
-let remoteBalanceLoader = RemoteBalanceLoader(url: URL(string: SolanaClusterRPCEndpoints.devNet.rawValue),
-                                                  publicAddress: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-                                                  client: URLSessionHTTPClient(session: URLSession(configuration: .ephemeral)))
-BalanceComposerView(viewModel:  BalanceViewModel(remoteBalanceLoader: remoteBalanceLoader))
-```
 
 ### Get Balance
 ### Story: Customer requests to see their balance
@@ -313,8 +307,12 @@ Given the customer has connectivity
 
 Contributions are always welcome.
 
-GitHub Actions script is set up to automate the build and testing process of the project when changes are made to specific branches. The script specifies that the build-and-test job should run when a push and/or a pull request event occurs on the `main` branch.
+A GitHub Actions script is set up to automate the build and testing process of the project when changes are made to specific branches. The script specifies that the build-and-test job should run when a push and/or a pull request event occurs on the main branch.
 
-Developers should first clone the project and then create a new development branch to make changes. Pushing changes to the development branch and opening a pull request `PR` onto `main` will trigger GitHub Actions.
+Developers should first clone the project and then create a new development branch to make changes. Pushing changes to the development branch and opening a pull request (PR) onto main will trigger GitHub Actions.
 
-The script runs two separate Xcode commands to build and test the project on macOS and iOS. The steps include checking out the code, selecting the appropriate version of Xcode, and specifying the build and test settings for each platform. The code is built using the "CI_macOS" and "CI_iOS" schemes, and tests are run with specific destination settings.
+For Continuous Integration, 2 different scripts run to build and test the project on macOS and iOS. The steps include checking out the code, installing necessary profiles and certificates, selecting the appropriate version of Xcode, and specifying the build and test settings for each platform. The code is built using the "CI_macOS" and "CI_iOS" schemes, and tests are run with specific destination settings.
+
+For Continuous Deployment, the "Deploy" script runs after any changes on the main branch, triggering a build, archive, and deployment on App Store Connect.
+
+`A heartfelt expression of gratitude goes out to the Essential Developer Community and Caio Zullo for their priceless mentoring and guidance.`

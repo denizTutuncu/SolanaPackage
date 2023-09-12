@@ -13,7 +13,7 @@ import SolanaPackageUI
 public final class SeedUIAdapter {
     
     private init() {}
-    public typealias SeedStorePublisher = ViewModelPublisher<[String], [PresentableSeed]>
+    public typealias SeedStorePublisher = ViewModelPublisher<[String], [String]>
     private static var cancellable: AnyCancellable?
     
     public static func seedComposedWith(seedPublisher: AnyPublisher<[String], Error>) -> SeedStorePublisher {
