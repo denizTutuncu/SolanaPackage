@@ -56,7 +56,7 @@ public struct WalletListUIComposerView: View {
                         publickeyLoading = true ; tryAgain()
                     })
                 } else {
-                    WalletListView(viewModel: viewModel, selection: selection)
+                    PublicKeyListView(viewModel: viewModel, selection: selection)
                 }
             }
         }

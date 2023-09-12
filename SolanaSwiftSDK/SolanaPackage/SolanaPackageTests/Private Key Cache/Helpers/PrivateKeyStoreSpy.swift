@@ -22,7 +22,7 @@ class PrivateKeyStoreSpy: PrivateKeyStore {
     private var insertionResult: Result<Void, Error>?
     private var privateKeyResult: Result<String?, Error>?
 
-    func deletePrivateKey(for publicKey: PublicKey) throws {
+    func deleteKey(for publicKey: PublicKey) throws {
         receivedMessages.append(.deleteCached(publicKey))
         try deletionResult?.get()
     }
@@ -35,7 +35,7 @@ class PrivateKeyStoreSpy: PrivateKeyStore {
         deletionResult = .success(())
     }
     
-    func insert(publicKey: PublicKey, privateKey: PrivateKey) throws {
+    func store(publicKey: PublicKey, privateKey: PrivateKey) throws {
         receivedMessages.append(.insert(publicKey,privateKey))
         try insertionResult?.get()
     }
@@ -48,7 +48,7 @@ class PrivateKeyStoreSpy: PrivateKeyStore {
         insertionResult = .success(())
     }
     
-    func privateKey(for publicKey: PublicKey) throws -> PrivateKey? {
+    func read(for publicKey: PublicKey) throws -> PrivateKey? {
         receivedMessages.append(.privateKey(publicKey))
         return try privateKeyResult?.get()
     }

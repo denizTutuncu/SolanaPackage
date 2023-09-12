@@ -17,7 +17,7 @@ extension NullStore: PublicKeyStore {
 }
 
 extension NullStore: PrivateKeyStore {
-    func insert(publicKey: PublicKey, privateKey: PrivateKey) throws {}
-    func privateKey(for publicKey: PublicKey) throws -> PrivateKey? { return .none }
-    func deletePrivateKey(for publicKey: PublicKey) throws {}
+    func store(publicKey: PublicKey, privateKey: PrivateKey) throws {}
+    func read(for publicKey: PublicKey) throws -> PrivateKey? { return .none }
+    func deleteKey(for publicKey: PublicKey) throws {}
 }

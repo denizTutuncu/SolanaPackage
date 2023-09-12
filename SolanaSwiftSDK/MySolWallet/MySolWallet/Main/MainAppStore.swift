@@ -22,6 +22,10 @@ class MainAppStore {
     //MARK: - Logger
     private lazy var logger = Logger(subsystem: "com.deniztutuncu.MySolWallet", category: "main")
     
+    private func handleError(_ error: Error) {
+          logger.fault("Failed to instantiate with error: \(error.localizedDescription)")
+      }
+    
     //MARK: - Scheduler
     private lazy var scheduler: AnyDispatchQueueScheduler = DispatchQueue(
         label: "com.denizTutuncu.infra.queue",
@@ -47,10 +51,10 @@ class MainAppStore {
     //MARK: - Wallet Creator & Local Wallet Creator
     public lazy var walletCreator: WalletCreator = {
         do {
-            return try DummyWalletCreator(seed: [])
+            return try DummyWalletCreator(seed: try localSeedLoader.load())
         } catch {
             assertionFailure("Failed to instantiate Wallet Creator with error: \(error.localizedDescription)")
-            logger.fault("Failed to instantiate  allet Creator store with error: \(error.localizedDescription)")
+            handleError(error)
             return NullCreator()
         }
     }()
@@ -61,7 +65,7 @@ class MainAppStore {
     
     //MARK: - Private Key Store & Local Private Key Loader
     private lazy var privateKeyStore: PrivateKeyStore = {
-        return KeychainPrivateKeyStore(network: "com.deniztutuncu.MySolWallet")
+        return KeychainPrivateKeyStore()
     }()
     
     private lazy var localPrivateKeyLoader: LocalPrivateKeyLoader = {
@@ -91,7 +95,7 @@ class MainAppStore {
             return try CodablePublicKeyStore(storeURL: URL(string:  "com.deniztutuncu.MySolWallet")!)
         } catch {
             assertionFailure("Failed to instantiate Codable store with error: \(error.localizedDescription)")
-            logger.fault("Failed to instantiate Codable store with error: \(error.localizedDescription)")
+            handleError(error)
             return NullStore()
         }
     }()
@@ -105,41 +109,41 @@ class MainAppStore {
     }
     
     //MARK: - Paginated
-    public func makeLocalPublicKeyLoaderWithLocalFallback() -> AnyPublisher<Paginated<PublicKey>, Error> {
-        makeLocalPublicKeyLoader()
-            .caching(to: localPublicKeyLoader)
-            .fallback(to: localPublicKeyLoader.getPublisher)
-            .map(makeFirstPage)
-            .subscribe(on: scheduler)
-            .eraseToAnyPublisher()
-    }
+//    public func makeLocalPublicKeyLoaderWithLocalFallback() -> AnyPublisher<Paginated<PublicKey>, Error> {
+//        makeLocalPublicKeyLoader()
+//            .caching(to: localPublicKeyLoader)
+//            .fallback(to: localPublicKeyLoader.getPublisher)
+//            .map(makeFirstPage)
+//            .subscribe(on: scheduler)
+//            .eraseToAnyPublisher()
+//    }
+//
+//    private func makeLocalLoadMoreLoader(last: PublicKey?) -> AnyPublisher<Paginated<PublicKey>, Error> {
+//        localPublicKeyLoader.getPublisher()
+//            .zip(makeLocalPublicKeyLoader(after: last))
+//            .map { (cachedItems, newItems) in
+//                (cachedItems + newItems, newItems.last)
+//            }
+//            .map(makePage)
+//            .caching(to: localPublicKeyLoader)
+//            .subscribe(on: scheduler)
+//            .eraseToAnyPublisher()
+//    }
     
-    private func makeLocalLoadMoreLoader(last: PublicKey?) -> AnyPublisher<Paginated<PublicKey>, Error> {
-        localPublicKeyLoader.getPublisher()
-            .zip(makeLocalPublicKeyLoader(after: last))
-            .map { (cachedItems, newItems) in
-                (cachedItems + newItems, newItems.last)
-            }
-            .map(makePage)
-            .caching(to: localPublicKeyLoader)
-            .subscribe(on: scheduler)
-            .eraseToAnyPublisher()
-    }
-    
-    private func makeLocalPublicKeyLoader(after: PublicKey? = nil) -> AnyPublisher<[PublicKey], Error> {
-        return makeLocalPublicKeyPublisher()
-            .tryMap(PublicKeyItemsMapper.map)
-            .eraseToAnyPublisher()
-    }
+//    public func makeLocalPublicKeyLoader(after: PublicKey? = nil) -> AnyPublisher<[PublicKey], Error> {
+//        return makeLocalPublicKeyPublisher()
+//            .tryMap(PublicKeyItemsMapper.map)
+//            .eraseToAnyPublisher()
+//    }
     
     //MARK: First Page
-    private func makeFirstPage(items: [PublicKey]) -> Paginated<PublicKey> {
-        makePage(items: items, last: items.last)
-    }
-    
-    private func makePage(items: [PublicKey], last: PublicKey?) -> Paginated<PublicKey> {
-        Paginated(items: items, loadMorePublisher: last.map { last in
-            { self.makeLocalLoadMoreLoader(last: last) }
-        })
-    }
+//    private func makeFirstPage(items: [PublicKey]) -> Paginated<PublicKey> {
+//        makePage(items: items, last: items.last)
+//    }
+//
+//    private func makePage(items: [PublicKey], last: PublicKey?) -> Paginated<PublicKey> {
+//        Paginated(items: items, loadMorePublisher: last.map { last in
+//            { self.makeLocalLoadMoreLoader(last: last) }
+//        })
+//    }
 }
