@@ -1,5 +1,9 @@
 # Solana Swift SDK 
 
+[![CI-macOS](https://github.com/denizTutuncu/SolanaPackage/actions/workflows/CI-macOS.yml/badge.svg?event=pull_request)](https://github.com/denizTutuncu/SolanaPackage/actions/workflows/CI-macOS.yml)
+
+[![CI-iOS](https://github.com/denizTutuncu/SolanaPackage/actions/workflows/CI-iOS.yml/badge.svg?event=pull_request)](https://github.com/denizTutuncu/SolanaPackage/actions/workflows/CI-iOS.yml)
+
 ## Solana Package Framework & Solana Package UI Framework & TREA iOS App
 #### The Solana Swift SDK is a collection of Swift modules that enable developers to interact with any blockchain, beginning with Solana, within their macOS, iOS, watchOS, and tvOS applications. Currently, the SDK comprises two primary modules, with plans for expansion to include a third module:
 

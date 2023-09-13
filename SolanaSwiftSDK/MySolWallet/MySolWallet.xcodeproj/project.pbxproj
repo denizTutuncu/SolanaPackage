@@ -57,6 +57,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2E06DA182AB149C700105784 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2E0900F429ADA75700865E30 /* SeedStoreMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedStoreMapper.swift; sourceTree = "<group>"; };
 		2E0900F629ADAE1F00865E30 /* PublicKeyStoreMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicKeyStoreMapper.swift; sourceTree = "<group>"; };
 		2E0900FB29ADB16D00865E30 /* TransactionStoreMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionStoreMapper.swift; sourceTree = "<group>"; };
@@ -144,6 +145,7 @@
 		2E42948028483FDD00817480 /* MySolWallet */ = {
 			isa = PBXGroup;
 			children = (
+				2E06DA182AB149C700105784 /* Info.plist */,
 				2E5631BB2A96D94700DFFE38 /* MySolWallet.entitlements */,
 				2E09010129B00AD800865E30 /* Composers */,
 				2E0900F329ADA72D00865E30 /* Mappers */,
@@ -482,6 +484,7 @@
 				DEVELOPMENT_TEAM = 9DGMQB3935;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MySolWallet/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Tr4ea;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -517,6 +520,7 @@
 				DEVELOPMENT_TEAM = 9DGMQB3935;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MySolWallet/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Tr4ea;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
