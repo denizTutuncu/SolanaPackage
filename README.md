@@ -21,13 +21,15 @@ The SDK is written in Swift and is intended to be used in Swift apps.
 
 The SDK is open-source and hosted on Github, developers can use the SDK to build their own apss to connect with decentralized apps (dApps) on Solana Blockchain. Contributions are always welcome. Please find the details at the end on how to contribute.
 
-----------------
- 
-## iOS App Flow
+```TREA``` is avaiable on Test Flight.
+
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/TreaTestFlight.jpg?raw=true)
 
 ![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/TREA.gif?raw=true)
 
-![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Diagrams/iOSAppFlow.drawio.png?raw=true)
+----------------
+
+### Prototype & Prototyp's Flowchart
 
 ```
 1- Create Wallet & Receive Sol (in progress)
@@ -36,11 +38,13 @@ The SDK is open-source and hosted on Github, developers can use the SDK to build
 4- Send Sol (in the future)
 ```
 
-----------------
-
-### Prototype & Prototyp's Flowchart
-
 ![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/PROTOTYPEIOS_AdobeCreativeCloudExpress.gif)
+
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Diagrams/iOSAppFlow.drawio.png?raw=true)
+
+----------------
+ 
+## iOS App Flow
 
 ![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Diagrams/PrototypeFlowchart.drawio.png?raw=true)
 
