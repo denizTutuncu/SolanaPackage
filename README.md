@@ -5,7 +5,10 @@
 [![CI-iOS](https://github.com/denizTutuncu/SolanaPackage/actions/workflows/CI-iOS.yml/badge.svg?event=pull_request)](https://github.com/denizTutuncu/SolanaPackage/actions/workflows/CI-iOS.yml)
 
 ## Solana Package Framework & Solana Package UI Framework & TREA iOS App
-#### The Solana Swift SDK is a collection of Swift modules that enable developers to interact with any blockchain, beginning with Solana, within their macOS, iOS, watchOS, and tvOS applications. Currently, the SDK comprises two primary modules, with plans for expansion to include a third module:
+#### 
+The SolanaPackage repository includes a workspace named MySolWallet. Inside this workspace, there are two projects: Solana Package and MySolWallet projects. The Solana Package project has two framework targets: Solana Package, which contains code that works across different platforms, and SolanaPackageUI, which is specifically for iOS and includes iOS-specific code like the user interface (UI). Additionally, there are some test targets.
+
+In this project, I use both vertical and horizontal slicing. Vertical slicing separates the features, while horizontal slicing is used for each individual feature.
 
 #### Core Module:
 This module contains the core models required to interact with any Blockchain, starting with Solana. It includes a networking layer that communicates with any blockchain and a data persistent layer that uses file-based storage for codable models such as public keys and keychain storage for critical information such as private keys. These public models currently include Public Keys but are open for extensions, such as wallet details like balance and transaction models. The Core module provides functionalities like creating a wallet (public and private key) from a seed phrase, querying balance and transactions, and receiving/sending SOL.
