@@ -44,7 +44,7 @@ public struct OnboardingView: View {
     public var body: some View {
         VStack {
             HeaderView(title: headerTitle, subtitle: headerSubtitle)
-            CustomImageView(imageName: imageBundle, bundle: bundle)
+            CustomImageView(imageName: imageBundle, bundleName: bundle)
             RoundedButton(title: firstButtonTitle, action: firstButtonAction)
             RoundedButton(title: secondButtonTitle, action: secondButtonAction)
         }
