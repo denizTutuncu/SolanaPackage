@@ -77,6 +77,10 @@ final class iOSSwiftUINavigationAdapter: PublicKeyDelegate {
         
         let headerTitle = SeedPresenter.title
         let headerSubtitle = SeedPresenter.subtitle
+        
+        let imageBundle = "CreationOptionsBackground"
+        let bundle = "com.deniztutuncu.SolanaPackageUI"
+        
         let providedViewSubtitle = "The seed phrase is never stored on the device and will be wiped out after importing your wallet. Remember, the order of the seed phrase is crucial."
         let buttonTitle = "Create wallet"
         let providedViewButtonTitle = "Import wallet"
@@ -109,7 +113,8 @@ final class iOSSwiftUINavigationAdapter: PublicKeyDelegate {
         
         return OnboardingView(
             headerTitle: onboardingHeaderTitle,
-            headerSubtitle: onboardingHeaderSubtitle,
+            headerSubtitle: onboardingHeaderSubtitle, 
+            imageBundle: imageBundle, bundle: bundle,
             firstButtonTitle: onboardingCreateWalletButtonTitle,
             firstButtonAction: {
                 self.navigation.currentView = .seed(walletCreationView)

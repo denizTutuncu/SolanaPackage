@@ -115,14 +115,14 @@
 			path = Mappers;
 			sourceTree = "<group>";
 		};
-		2E09010129B00AD800865E30 /* Composers */ = {
+		2E09010129B00AD800865E30 /* Adapters */ = {
 			isa = PBXGroup;
 			children = (
 				2E09010229B00AED00865E30 /* SeedUIAdapter.swift */,
 				2E09010C29B3104500865E30 /* PublicKeyUIAdapter.swift */,
 				2E917D1329EFD93200B578FA /* TransactionUIAdapter.swift */,
 			);
-			path = Composers;
+			path = Adapters;
 			sourceTree = "<group>";
 		};
 		2E42947528483FDD00817480 = {
@@ -149,7 +149,7 @@
 			children = (
 				2E06DA182AB149C700105784 /* Info.plist */,
 				2E5631BB2A96D94700DFFE38 /* MySolWallet.entitlements */,
-				2E09010129B00AD800865E30 /* Composers */,
+				2E09010129B00AD800865E30 /* Adapters */,
 				2E0900F329ADA72D00865E30 /* Mappers */,
 				2EF68C89299F5A6200969DE5 /* Main */,
 				2EF68C84299F595E00969DE5 /* Navigation */,

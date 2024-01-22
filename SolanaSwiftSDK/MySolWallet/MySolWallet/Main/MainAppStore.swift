@@ -9,6 +9,7 @@ import Foundation
 import SolanaPackage
 import Combine
 import os
+import SolanaSwift
 
 class MainAppStore {
     typealias PublicKey = String
@@ -51,7 +52,7 @@ class MainAppStore {
     //MARK: - Wallet Creator & Local Wallet Creator
     public lazy var walletCreator: WalletCreator = {
         do {
-            return try DummyWalletCreator(seed: try localSeedLoader.load())
+            return try MainWalletCreator(seed: try localSeedLoader.load(), loader: localSeedLoader)
         } catch {
             assertionFailure("Failed to instantiate Wallet Creator with error: \(error.localizedDescription)")
             handleError(error)
