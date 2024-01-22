@@ -12,6 +12,7 @@
 		2E0900FC29ADB16D00865E30 /* TransactionStoreMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0900FB29ADB16D00865E30 /* TransactionStoreMapper.swift */; };
 		2E09010329B00AED00865E30 /* SeedUIAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09010229B00AED00865E30 /* SeedUIAdapter.swift */; };
 		2E09010D29B3104500865E30 /* PublicKeyUIAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09010C29B3104500865E30 /* PublicKeyUIAdapter.swift */; };
+		2E1DBE892B5DE95500970E48 /* SolanaSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2E1DBE882B5DE95500970E48 /* SolanaSwift */; };
 		2E42948228483FDD00817480 /* MySolWalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42948128483FDD00817480 /* MySolWalletApp.swift */; };
 		2E42948628483FDF00817480 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E42948528483FDE00817480 /* Assets.xcassets */; };
 		2E42948928483FDF00817480 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E42948828483FDF00817480 /* Preview Assets.xcassets */; };
@@ -88,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E1DBE892B5DE95500970E48 /* SolanaSwift in Frameworks */,
 				2E4294AE2848406B00817480 /* SolanaPackage.framework in Frameworks */,
 				2E4294B02848406B00817480 /* SolanaPackageUI.framework in Frameworks */,
 			);
@@ -230,6 +232,9 @@
 			dependencies = (
 			);
 			name = MySolWallet;
+			packageProductDependencies = (
+				2E1DBE882B5DE95500970E48 /* SolanaSwift */,
+			);
 			productName = MySolWallet;
 			productReference = 2E42947E28483FDD00817480 /* MySolWallet.app */;
 			productType = "com.apple.product-type.application";
@@ -280,6 +285,9 @@
 				Base,
 			);
 			mainGroup = 2E42947528483FDD00817480;
+			packageReferences = (
+				2E1DBE872B5DE95500970E48 /* XCRemoteSwiftPackageReference "solana-swift" */,
+			);
 			productRefGroup = 2E42947F28483FDD00817480 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -630,6 +638,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2E1DBE872B5DE95500970E48 /* XCRemoteSwiftPackageReference "solana-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/p2p-org/solana-swift";
+			requirement = {
+				kind = exactVersion;
+				version = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2E1DBE882B5DE95500970E48 /* SolanaSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2E1DBE872B5DE95500970E48 /* XCRemoteSwiftPackageReference "solana-swift" */;
+			productName = SolanaSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2E42947628483FDD00817480 /* Project object */;
 }
