@@ -24,7 +24,7 @@
 		2E4899B329F4A738004734B9 /* NullStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4899B229F4A738004734B9 /* NullStore.swift */; };
 		2E80F38B29A200DC00A4053C /* MainAppNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F38A29A200DC00A4053C /* MainAppNavigationView.swift */; };
 		2E917D1429EFD93200B578FA /* TransactionUIAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E917D1329EFD93200B578FA /* TransactionUIAdapter.swift */; };
-		2E9FF53429F87036002989EF /* WalletCreationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9FF53329F87036002989EF /* WalletCreationHelpers.swift */; };
+		2E9FF53429F87036002989EF /* MainWalletCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9FF53329F87036002989EF /* MainWalletCreator.swift */; };
 		2E9FF53629F88A6D002989EF /* NullCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9FF53529F88A6D002989EF /* NullCreator.swift */; };
 		2E9FF53F29FF24C0002989EF /* MainAppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9FF53E29FF24C0002989EF /* MainAppStore.swift */; };
 		2EAEF0EC297A5C1C00091A49 /* CombineHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAEF0EB297A5C1C00091A49 /* CombineHelpers.swift */; };
@@ -76,7 +76,7 @@
 		2E5631BB2A96D94700DFFE38 /* MySolWallet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MySolWallet.entitlements; sourceTree = "<group>"; };
 		2E80F38A29A200DC00A4053C /* MainAppNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppNavigationView.swift; sourceTree = "<group>"; };
 		2E917D1329EFD93200B578FA /* TransactionUIAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionUIAdapter.swift; sourceTree = "<group>"; };
-		2E9FF53329F87036002989EF /* WalletCreationHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCreationHelpers.swift; sourceTree = "<group>"; };
+		2E9FF53329F87036002989EF /* MainWalletCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWalletCreator.swift; sourceTree = "<group>"; };
 		2E9FF53529F88A6D002989EF /* NullCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullCreator.swift; sourceTree = "<group>"; };
 		2E9FF53E29FF24C0002989EF /* MainAppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppStore.swift; sourceTree = "<group>"; };
 		2EAEF0EB297A5C1C00091A49 /* CombineHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineHelpers.swift; sourceTree = "<group>"; };
@@ -210,7 +210,7 @@
 				2E9FF53529F88A6D002989EF /* NullCreator.swift */,
 				2EAEF0EB297A5C1C00091A49 /* CombineHelpers.swift */,
 				2EF75C2029CBC89D001E3DA7 /* SeedBankHelpers.swift */,
-				2E9FF53329F87036002989EF /* WalletCreationHelpers.swift */,
+				2E9FF53329F87036002989EF /* MainWalletCreator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -325,7 +325,7 @@
 				2E917D1429EFD93200B578FA /* TransactionUIAdapter.swift in Sources */,
 				2E42948228483FDD00817480 /* MySolWalletApp.swift in Sources */,
 				2E0900F729ADAE1F00865E30 /* PublicKeyStoreMapper.swift in Sources */,
-				2E9FF53429F87036002989EF /* WalletCreationHelpers.swift in Sources */,
+				2E9FF53429F87036002989EF /* MainWalletCreator.swift in Sources */,
 				2EF68C8D299F5CB100969DE5 /* iOSSwiftUINavigationAdapter.swift in Sources */,
 				2E9FF53F29FF24C0002989EF /* MainAppStore.swift in Sources */,
 				2E0900F529ADA75700865E30 /* SeedStoreMapper.swift in Sources */,
