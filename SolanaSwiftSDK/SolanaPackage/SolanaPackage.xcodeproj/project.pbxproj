@@ -29,6 +29,7 @@
 		2E0CBFAC27F1A8C0006E6892 /* BalanceEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0CBFAB27F1A8C0006E6892 /* BalanceEndpoint.swift */; };
 		2E0CBFDE27F282DD006E6892 /* SolanaPackageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E0CBFD527F282DC006E6892 /* SolanaPackageUI.framework */; };
 		2E17ECB929F1FD8F00206B28 /* PrivateKeyCahcePolicyUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17ECB829F1FD8F00206B28 /* PrivateKeyCahcePolicyUseCaseTests.swift */; };
+		2E1DBE8B2B5E2A2800970E48 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1DBE8A2B5E2A2800970E48 /* CustomImageView.swift */; };
 		2E2CC5AA296EB9680063C23C /* BalanceEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5A9296EB9680063C23C /* BalanceEndpointTests.swift */; };
 		2E2CC5BE296EC2460063C23C /* Shared.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E2CC5C0296EC2460063C23C /* Shared.strings */; };
 		2E2CC5C7296EC45C0063C23C /* BalancePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5C6296EC45C0063C23C /* BalancePresenter.swift */; };
@@ -251,6 +252,7 @@
 		2E0CBFDD27F282DD006E6892 /* SolanaPackageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SolanaPackageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E0CBFE427F282DD006E6892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E17ECB829F1FD8F00206B28 /* PrivateKeyCahcePolicyUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateKeyCahcePolicyUseCaseTests.swift; sourceTree = "<group>"; };
+		2E1DBE8A2B5E2A2800970E48 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		2E2CC5A9296EB9680063C23C /* BalanceEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceEndpointTests.swift; sourceTree = "<group>"; };
 		2E2CC5BF296EC2460063C23C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Shared.strings; sourceTree = "<group>"; };
 		2E2CC5C1296EC24E0063C23C /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Shared.strings; sourceTree = "<group>"; };
@@ -824,6 +826,7 @@
 				2E0900B729A8E4C300865E30 /* RoundedButton.swift */,
 				2E09010A29B05AA800865E30 /* ToogleView.swift */,
 				2E4294B82848484900817480 /* ErrorView.swift */,
+				2E1DBE8A2B5E2A2800970E48 /* CustomImageView.swift */,
 			);
 			path = "Shared UI";
 			sourceTree = "<group>";
@@ -1437,6 +1440,7 @@
 				2E61A06D2A9172A0007E0756 /* ProvidedSingleSeedCellView.swift in Sources */,
 				2E09010B29B05AA800865E30 /* ToogleView.swift in Sources */,
 				2E917D0C29EFB2EC00B578FA /* TransactionListUIComposerView.swift in Sources */,
+				2E1DBE8B2B5E2A2800970E48 /* CustomImageView.swift in Sources */,
 				2E603DAF29ECB56D002A7DCA /* PresentableSeed.swift in Sources */,
 				2E4294B92848484900817480 /* ErrorView.swift in Sources */,
 				2E61A0692A9170E5007E0756 /* ProvidedSeedListView.swift in Sources */,

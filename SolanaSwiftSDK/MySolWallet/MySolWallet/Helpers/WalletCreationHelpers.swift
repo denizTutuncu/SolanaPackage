@@ -7,13 +7,15 @@
 
 import Foundation
 import SolanaPackage
+import SolanaSwift
 
-public final class DummyWalletCreator: WalletCreator {
-    public init(seed: [String]) throws {
+public final class MainWalletCreator: WalletCreator {
+    public init(seed: [String], loader: SeedPhraseLoader) throws {
         guard !seed.isEmpty else {
             throw CreatorError.emptySeed
         }
         self.seed = seed
+        self.loader = loader
     }
     
     enum CreatorError: Swift.Error {
@@ -21,13 +23,14 @@ public final class DummyWalletCreator: WalletCreator {
     }
     
     private let seed: [String]
+    private let loader: SeedPhraseLoader
     
-    public func create() throws -> (String, String)? {
-        try self.createWallet()
+    public func create() async throws -> (String, String)? {
+        try await self.createWallet()
     }
     
-    private func createWallet() throws -> (String,String)? {
-        // make the conversion AKA wallet creation via accessing 3rd party
-        return (self.seed[0], self.seed[1])
+    private func createWallet() async throws -> (String,String)? {
+        let keyPair = try await KeyPair(phrase: try loader.load(), network: .mainnetBeta)
+        return (keyPair.publicKey.base58EncodedString, keyPair.secretKey.base64EncodedString())
     }
 }
