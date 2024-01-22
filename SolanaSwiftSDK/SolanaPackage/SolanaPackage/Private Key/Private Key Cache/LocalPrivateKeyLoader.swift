@@ -13,7 +13,7 @@ public final class LocalPrivateKeyLoader {
     }
     
     public typealias PublicKey = String
-    public typealias PrivateKey = String
+    public typealias PrivateKey = Data
     
     private let store: PrivateKeyStore
 }
