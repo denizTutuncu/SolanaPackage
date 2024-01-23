@@ -132,7 +132,7 @@ extension PrivateKeyStoreSpecs where Self: XCTestCase {
 
 extension PrivateKeyStoreSpecs where Self: XCTestCase {
     @discardableResult
-    func insert(_ publicKey: String, _ privateKey: String, to sut: PrivateKeyStore) -> Error? {
+    func insert(_ publicKey: String, _ privateKey: Data, to sut: PrivateKeyStore) -> Error? {
         do {
             try sut.store(publicKey: publicKey, privateKey: privateKey)
             return nil
@@ -163,14 +163,14 @@ extension PrivateKeyStoreSpecs where Self: XCTestCase {
     
     
     //MARK: - Private Key
-    func expect(_ publicKey: String, _ sut: PrivateKeyStore, toRetrieveTwice expectedResult: Result<String?, Error>, file: StaticString = #filePath, line: UInt = #line) {
+    func expect(_ publicKey: String, _ sut: PrivateKeyStore, toRetrieveTwice expectedResult: Result<Data?, Error>, file: StaticString = #filePath, line: UInt = #line) {
         expect(publicKey, sut, toRetrieve: expectedResult, file: file, line: line)
         expect(publicKey, sut, toRetrieve: expectedResult, file: file, line: line)
     }
     
     func expect(_ publicKey: String,
                 _ sut: PrivateKeyStore,
-                toRetrieve expectedResult: Result<String?, Error>,
+                toRetrieve expectedResult: Result<Data?, Error>,
                 file: StaticString = #filePath, line: UInt = #line)
     {
         let retrievedResult = Result { try sut.read(for: publicKey) }
