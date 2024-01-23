@@ -17,6 +17,6 @@ public final class PrivateKeyCachePolicy {
     }
     
     public static func validate(publicKey: String) -> Bool {
-        publicKeyCount.contains(publicKey.count) ? true : false
+        	publicKeyCount.contains(publicKey.count) ? true : false
     }
 }
