@@ -19,7 +19,7 @@ class PrivateKeyCahcePolicyUseCaseTests: XCTestCase {
     }
     
     func test_policy_validatePrivateKey_expectsFalse_withinvalidPublicKey() {
-        let empty = ""
+        let empty = "".data(using: .utf8)!
         
         let result = PrivateKeyCachePolicy.validate(privateKey: empty)
         
@@ -31,7 +31,7 @@ class PrivateKeyCahcePolicyUseCaseTests: XCTestCase {
         
         let result = PrivateKeyCachePolicy.validate(publicKey: uniquePublicKey)
         
-        XCTAssertEqual(result, true, "Expected result False, got \(result) instead")
+        XCTAssertEqual(result, true, "Expected result True, got \(result) instead")
     }
     
     func test_policy_validatePublicKey_expectsFalse_withInvalidPublicKey() {
