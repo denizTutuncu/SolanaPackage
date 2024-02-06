@@ -116,8 +116,7 @@ final class iOSSwiftUINavigationAdapter: SeedDelegate, PublicKeyDelegate {
                                                                 headerSubtitle: providedViewSubtitle,
                                                                 buttonTitle: providedViewButtonTitle,
                                                                 action: { self.navigation.currentView = .walletList(self.makeWalletListView()) },
-                                                                viewModel: .init(model: seedUIpublisher.onResourceLoad ?? [],
-                                                                                 handler: { _ in }))
+                                                                viewModel: .init(handler: { providedSeed in }))
 
         return OnboardingView(
             headerTitle: onboardingHeaderTitle,
