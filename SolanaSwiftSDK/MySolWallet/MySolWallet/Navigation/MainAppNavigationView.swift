@@ -11,7 +11,7 @@ import SolanaPackageUI
 class MainAppNavigationStore: ObservableObject {
     enum CurrentView {
         case creation(OnboardingView)
-        case walletList(WalletListUIComposerView)
+        case walletList(CombinedWalletListView)
         case seed(WalletCreationComposerView)
         case userSeed(ProvidedSeedComposerView)
     }
