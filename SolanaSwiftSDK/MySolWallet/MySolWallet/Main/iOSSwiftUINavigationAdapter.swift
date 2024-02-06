@@ -100,7 +100,7 @@ final class iOSSwiftUINavigationAdapter: SeedDelegate, PublicKeyDelegate {
         let publicKeyPublisher = PublicKeyUIAdapter.publicKeyComposedWith(publicKeyPublisher: publicKeyPublisher)
         publicKeyPublisher.load()
         
-        let walletCreationView = WalletCreationComposerView(
+        let walletCreationView = WalletCreationView(
             headerTitle: headerTitle,
             headerSubtitle: headerSubtitle,
             buttonTitle: buttonTitle,

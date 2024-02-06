@@ -12,7 +12,7 @@ class MainAppNavigationStore: ObservableObject {
     enum CurrentView {
         case creation(OnboardingView)
         case walletList(CombinedWalletListView)
-        case seed(WalletCreationComposerView)
+        case seed(WalletCreationView)
         case userSeed(ProvidedSeedComposerView)
     }
     
