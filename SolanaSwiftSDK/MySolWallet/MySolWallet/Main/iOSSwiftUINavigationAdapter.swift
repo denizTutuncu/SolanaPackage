@@ -102,7 +102,7 @@ final class iOSSwiftUINavigationAdapter: SeedDelegate, PublicKeyDelegate {
             errorViewButtonTitle: errorViewButtonTitle,
             loadingTitle: loadingTitle,
             loadAgain: { seedUIpublisher.load() },
-            action: {},
+            action: { self.navigation.currentView = .walletList(self.makeWalletListView()) },
             viewModel: .init(model: seedUIpublisher.onResourceLoad ?? [], handler: { _ in })
         )
         
