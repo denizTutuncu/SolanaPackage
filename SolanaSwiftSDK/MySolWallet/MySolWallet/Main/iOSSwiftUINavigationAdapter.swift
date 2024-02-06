@@ -109,7 +109,7 @@ final class iOSSwiftUINavigationAdapter: SeedDelegate, PublicKeyDelegate {
             loadingTitle: loadingTitle,
             loadAgain: { seedUIpublisher.load() },
             action: {},
-            viewModel: .init(model: seed, handler: { _ in })
+            viewModel: .init(model: seedUIpublisher.onResourceLoad ?? [], handler: { _ in })
         )
         
         let providedSeedComposerView = ProvidedSeedComposerView(headerTitle: headerTitle,
