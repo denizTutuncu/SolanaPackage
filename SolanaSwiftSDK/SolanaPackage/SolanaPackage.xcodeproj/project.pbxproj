@@ -586,8 +586,9 @@
 		2E0CBFD627F282DC006E6892 /* SolanaPackageUI */ = {
 			isa = PBXGroup;
 			children = (
-				2E0CBFD827F282DC006E6892 /* Info.plist */,
 				2E954B9F28487C02002D2FF3 /* Assets.xcassets */,
+				2E0CBFD827F282DC006E6892 /* Info.plist */,
+				2E1DBE932B72DB7600970E48 /* Top Level UI */,
 				2E80F39129A5815300A4053C /* Shared UI */,
 				2E4294B32848463700817480 /* Balance UI */,
 				2E0900B629A8E19B00865E30 /* Public Key & Wallet UI */,
@@ -614,6 +615,14 @@
 				2E1DBE902B72D91A00970E48 /* GenericView.swift */,
 			);
 			path = "Generic View";
+			sourceTree = "<group>";
+		};
+		2E1DBE932B72DB7600970E48 /* Top Level UI */ = {
+			isa = PBXGroup;
+			children = (
+				2E9FF53729FC7742002989EF /* OnboardingView.swift */,
+			);
+			path = "Top Level UI";
 			sourceTree = "<group>";
 		};
 		2E2CC5AB296EBCE00063C23C /* Shared API Infra */ = {
@@ -834,7 +843,6 @@
 			isa = PBXGroup;
 			children = (
 				2E1DBE922B72DA8B00970E48 /* Generic View */,
-				2E9FF53729FC7742002989EF /* OnboardingView.swift */,
 				2E0363162970ECCF00CB2567 /* LoadingView.swift */,
 				2E80F39229A5815B00A4053C /* HeaderView.swift */,
 				2E0900B729A8E4C300865E30 /* RoundedButton.swift */,
