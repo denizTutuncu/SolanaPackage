@@ -46,7 +46,7 @@ final class iOSSwiftUINavigationAdapter: SeedDelegate, PublicKeyDelegate {
         }
     }
     
-    private func makeWalletListView() -> WalletListUIComposerView {
+    private func makeWalletListView() -> CombinedWalletListView {
         let headerTitle = WalletPresenter.title
         let headerSubtitle = WalletPresenter.subtitle
         let loadingTitle = "Downloading wallets"
@@ -56,7 +56,7 @@ final class iOSSwiftUINavigationAdapter: SeedDelegate, PublicKeyDelegate {
         let publisher = PublicKeyUIAdapter.publicKeyComposedWith(publicKeyPublisher: publicKeyPublisher)
         publisher.load()
         
-        return WalletListUIComposerView(
+        return CombinedWalletListView(
             headerTitle: headerTitle,
             headerSubtitle: headerSubtitle,
             errorMessage: errorMessage,
