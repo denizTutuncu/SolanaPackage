@@ -146,7 +146,7 @@
 		2EFADE8729A77BAF009BDC11 /* PublicKeyDelegateSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFADE8629A77BAF009BDC11 /* PublicKeyDelegateSpy.swift */; };
 		2EFADE8929A7935F009BDC11 /* Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFADE8829A7935F009BDC11 /* Assertions.swift */; };
 		2EFADE8C29A847AD009BDC11 /* SingleSeedCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFADE8B29A847AD009BDC11 /* SingleSeedCellView.swift */; };
-		2EFADE8E29A84953009BDC11 /* WalletCreationComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFADE8D29A84953009BDC11 /* WalletCreationComposerView.swift */; };
+		2EFADE8E29A84953009BDC11 /* WalletCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFADE8D29A84953009BDC11 /* WalletCreationView.swift */; };
 		2EFADE9129A89359009BDC11 /* SingleTransactionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFADE9029A89359009BDC11 /* SingleTransactionCellView.swift */; };
 		2EFADE9329A89736009BDC11 /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFADE9229A89736009BDC11 /* TransactionListView.swift */; };
 		2EFADE9529A897C2009BDC11 /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFADE9429A897C2009BDC11 /* TransactionViewModel.swift */; };
@@ -386,7 +386,7 @@
 		2EFADE8629A77BAF009BDC11 /* PublicKeyDelegateSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicKeyDelegateSpy.swift; sourceTree = "<group>"; };
 		2EFADE8829A7935F009BDC11 /* Assertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assertions.swift; sourceTree = "<group>"; };
 		2EFADE8B29A847AD009BDC11 /* SingleSeedCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSeedCellView.swift; sourceTree = "<group>"; };
-		2EFADE8D29A84953009BDC11 /* WalletCreationComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCreationComposerView.swift; sourceTree = "<group>"; };
+		2EFADE8D29A84953009BDC11 /* WalletCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletCreationView.swift; sourceTree = "<group>"; };
 		2EFADE9029A89359009BDC11 /* SingleTransactionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTransactionCellView.swift; sourceTree = "<group>"; };
 		2EFADE9229A89736009BDC11 /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
 		2EFADE9429A897C2009BDC11 /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
@@ -1150,7 +1150,7 @@
 				2EFADE8B29A847AD009BDC11 /* SingleSeedCellView.swift */,
 				2E3ECB0B29EF4C0C00038407 /* SeedListView.swift */,
 				2E917D0F29EFBF0F00B578FA /* SeedListUIComposerView.swift */,
-				2EFADE8D29A84953009BDC11 /* WalletCreationComposerView.swift */,
+				2EFADE8D29A84953009BDC11 /* WalletCreationView.swift */,
 				2E61A06C2A9172A0007E0756 /* ProvidedSingleSeedCellView.swift */,
 				2E61A0682A9170E5007E0756 /* ProvidedSeedListView.swift */,
 				2E61A06E2A91839D007E0756 /* ProvidedSeedComposerView.swift */,
@@ -1456,7 +1456,7 @@
 				2E03632229710EE900CB2567 /* BalanceView.swift in Sources */,
 				2EFADE9329A89736009BDC11 /* TransactionListView.swift in Sources */,
 				2E603DAD29ECB554002A7DCA /* PresentablePublicKey.swift in Sources */,
-				2EFADE8E29A84953009BDC11 /* WalletCreationComposerView.swift in Sources */,
+				2EFADE8E29A84953009BDC11 /* WalletCreationView.swift in Sources */,
 				2E917D1029EFBF0F00B578FA /* SeedListUIComposerView.swift in Sources */,
 				2E1DBE8F2B72D88E00970E48 /* AnyViewProtocol.swift in Sources */,
 				2E3ECB0C29EF4C0C00038407 /* SeedListView.swift in Sources */,
