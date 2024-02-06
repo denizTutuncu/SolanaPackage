@@ -49,7 +49,7 @@ final class iOSSwiftUINavigationAdapter: SeedDelegate, PublicKeyDelegate {
     private func makeWalletListView() -> WalletListUIComposerView {
         let headerTitle = WalletPresenter.title
         let headerSubtitle = WalletPresenter.subtitle
-        let loadingTitle = "Downloading wallets."
+        let loadingTitle = "Downloading wallets"
         let errorMessage = "Cannot load wallets"
         let errorViewButtonTitle = "Try again"
         
