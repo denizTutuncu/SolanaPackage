@@ -87,12 +87,6 @@ final class iOSSwiftUINavigationAdapter: SeedDelegate, PublicKeyDelegate {
         let errorMessage = "Cannot load seed phrase"
         let errorViewButtonTitle = "Try again"
         let loadingTitle = "Loading seed phrase"
-        
-        let walletListViewHeaderTitle = ""
-        let walletListViewHeaderSubtitle = ""
-        let walletListViewErrorMessage = ""
-        let walletListViewErrorViewButtonTitle = ""
-        let walletListViewLoadingTitle = ""
 
         let seedUIpublisher = SeedUIAdapter.seedComposedWith(seedPublisher: seedPublisher)
         seedUIpublisher.load()
