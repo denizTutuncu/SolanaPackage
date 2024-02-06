@@ -15,18 +15,20 @@ public final class MainApp {
     
     public typealias PublicKey = String
     public typealias Seed = String
-
+    
     private let flow: Any
     
-    public static func start<Delegate: PublicKeyDelegate>(
+    public static func start<PKDelegate: PublicKeyDelegate, SDelegate: SeedDelegate>(
         publickeys: [PublicKey],
         seed: [Seed],
-        delegate: Delegate
+        pkDelegate: PKDelegate,
+        sDelegate: SDelegate
     ) -> MainApp {
         
         let flow = AppStartFlow(publickeys: publickeys,
                                 seed: seed,
-                                delegate: delegate)
+                                pkDelegate: pkDelegate,
+                                sDelegate: sDelegate)
         flow.start()
         return MainApp(flow: flow)
     }

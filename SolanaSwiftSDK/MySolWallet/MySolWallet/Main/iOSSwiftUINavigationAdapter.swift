@@ -10,7 +10,7 @@ import Combine
 import SolanaPackage
 import SolanaPackageUI
 
-final class iOSSwiftUINavigationAdapter: PublicKeyDelegate {
+final class iOSSwiftUINavigationAdapter: SeedDelegate, PublicKeyDelegate {
     
     init(navigation: MainAppNavigationStore,
          publicKeyPublisher: AnyPublisher<[PublicKey], Error>,
