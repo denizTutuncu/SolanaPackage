@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct WalletUIComposerView: View {
+public struct CombinedWalletView: View {
     public let publicKey: String
     public let network: String
     public let currency: String
@@ -70,7 +70,7 @@ struct WalletTestView: View {
     
     var body: some View {
         VStack {
-            WalletUIComposerView(publicKey: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
+            CombinedWalletView(publicKey: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
                                  network: "Solana Mainnet",
                                  currency: "lamports",
                                  balanceLabelTitle: "Balance:",
