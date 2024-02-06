@@ -22,7 +22,7 @@ struct SingleTransactionCellView: View {
                         .foregroundColor(.primary)
                     Spacer()
                 }
-             
+                
                 HStack {
                     Rectangle()
                         .stroke(Color.secondary, lineWidth: 2.5)
@@ -66,7 +66,7 @@ struct SingleTransactionCellView: View {
                                 .font(.headline)
                                 .foregroundColor(.primary)
                         )
-            
+                    
                     Text("\(tx.amount) \(tx.currencyName)")
                         .font(.headline)
                         .minimumScaleFactor(0.3)
@@ -86,7 +86,7 @@ struct SingleTransactionCellView: View {
                                 .font(.subheadline)
                                 .foregroundColor(.primary)
                         )
-            
+                    
                     Text(tx.signature)
                         .font(.caption)
                         .minimumScaleFactor(0.3)
@@ -98,18 +98,18 @@ struct SingleTransactionCellView: View {
             }.padding()
         })
     }
-    
-    struct SingleTransactionCellView_Previews: PreviewProvider {
-        static var previews: some View {
-            SingleTransactionCellView(tx: PresentableTransaction(date: "Feb 23, 2023",
-                                                                from: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
-                                                                to: "3xcawfQtZVjRLLcxgcxT7yYUuynPlasdyqw640276bAD",
-                                                                amount: "10000000000.00",
-                                                                currencyName: "lamports",
-                                                                           signature: "5U3XaN8ab9mFWH47spgpE53jfFvCLeADBLdRDzfMt3yAsPDZBs3yWaSL58w6E83pquutbJA8CpsAGXAWmbNaCWaN"),
-                                      selection: { })
-            .previewLayout(.sizeThatFits)
-            .previewDisplayName("Single Seed Cell View")
-        }
+}
+
+struct SingleTransactionCellView_Previews: PreviewProvider {
+    static var previews: some View {
+        SingleTransactionCellView(tx: PresentableTransaction(date: "Feb 23, 2023",
+                                                             from: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
+                                                             to: "3xcawfQtZVjRLLcxgcxT7yYUuynPlasdyqw640276bAD",
+                                                             amount: "10000000000.00",
+                                                             currencyName: "lamports",
+                                                             signature: "5U3XaN8ab9mFWH47spgpE53jfFvCLeADBLdRDzfMt3yAsPDZBs3yWaSL58w6E83pquutbJA8CpsAGXAWmbNaCWaN"),
+                                  selection: { })
+        .previewLayout(.sizeThatFits)
+        .previewDisplayName("Single Seed Cell View")
     }
 }
