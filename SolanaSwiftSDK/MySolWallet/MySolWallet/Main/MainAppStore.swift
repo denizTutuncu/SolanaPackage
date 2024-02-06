@@ -108,43 +108,4 @@ class MainAppStore {
     public func makeLocalPublicKeyPublisher() ->  AnyPublisher<[String], Error> {
         return localPublicKeyLoader.getPublisher()
     }
-    
-    //MARK: - Paginated
-//    public func makeLocalPublicKeyLoaderWithLocalFallback() -> AnyPublisher<Paginated<PublicKey>, Error> {
-//        makeLocalPublicKeyLoader()
-//            .caching(to: localPublicKeyLoader)
-//            .fallback(to: localPublicKeyLoader.getPublisher)
-//            .map(makeFirstPage)
-//            .subscribe(on: scheduler)
-//            .eraseToAnyPublisher()
-//    }
-//
-//    private func makeLocalLoadMoreLoader(last: PublicKey?) -> AnyPublisher<Paginated<PublicKey>, Error> {
-//        localPublicKeyLoader.getPublisher()
-//            .zip(makeLocalPublicKeyLoader(after: last))
-//            .map { (cachedItems, newItems) in
-//                (cachedItems + newItems, newItems.last)
-//            }
-//            .map(makePage)
-//            .caching(to: localPublicKeyLoader)
-//            .subscribe(on: scheduler)
-//            .eraseToAnyPublisher()
-//    }
-    
-//    public func makeLocalPublicKeyLoader(after: PublicKey? = nil) -> AnyPublisher<[PublicKey], Error> {
-//        return makeLocalPublicKeyPublisher()
-//            .tryMap(PublicKeyItemsMapper.map)
-//            .eraseToAnyPublisher()
-//    }
-    
-    //MARK: First Page
-//    private func makeFirstPage(items: [PublicKey]) -> Paginated<PublicKey> {
-//        makePage(items: items, last: items.last)
-//    }
-//
-//    private func makePage(items: [PublicKey], last: PublicKey?) -> Paginated<PublicKey> {
-//        Paginated(items: items, loadMorePublisher: last.map { last in
-//            { self.makeLocalLoadMoreLoader(last: last) }
-//        })
-//    }
 }
