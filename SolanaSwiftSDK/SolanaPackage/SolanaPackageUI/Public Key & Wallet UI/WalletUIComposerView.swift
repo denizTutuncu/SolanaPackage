@@ -71,7 +71,7 @@ struct WalletTestView: View {
     var body: some View {
         VStack {
             WalletUIComposerView(publicKey: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
-                                 network: "Solana",
+                                 network: "Solana Mainnet",
                                  currency: "lamports",
                                  balanceLabelTitle: "Balance:",
                                  balanceLoadingTitle: "Loading balance",
