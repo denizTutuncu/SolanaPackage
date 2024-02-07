@@ -81,7 +81,7 @@ final class iOSSwiftUINavigationAdapter: SeedDelegate, PublicKeyDelegate {
         let imageBundle = "CreationOptionsBackground"
         let bundleForImage = "com.deniztutuncu.SolanaPackageUI"
         
-        let providedViewSubtitle = "The seed phrase is never stored on the device and will be wiped out after importing your wallet. Remember, the order of the seed phrase is crucial."
+        let providedViewSubtitle = "The seed phrase is never stored on the device and will be wiped out after importing your wallet. Input your 24-word seed phrase to import your wallet. Remember, the order of the seed phrase is crucial."
         let buttonTitle = "Create wallet"
         let providedViewButtonTitle = "Import wallet"
         let errorMessage = "Cannot load seed phrase"
