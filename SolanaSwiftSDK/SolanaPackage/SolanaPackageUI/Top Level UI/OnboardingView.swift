@@ -66,7 +66,7 @@ struct OnboardingView_Previews: PreviewProvider {
         var body: some View {
             VStack {
                 OnboardingView(headerTitle: "Welcome to Trea",
-                               headerSubtitle: "TREA, Trusted Repository for Electronic Assets, to create your crypto wallet with top-tier security. This app is protected by industry-standard encryption, ensuring a secure connection with Solana.", 
+                               headerSubtitle: "Create your crypto wallet with top-tier security. This app is protected by industry-standard encryption, ensuring a secure connection with Solana.", 
                                imageBundle: "CreationOptionsBackground",
                                bundle: "com.deniztutuncu.SolanaPackageUI",
                                firstButtonTitle: "Create new wallet",
