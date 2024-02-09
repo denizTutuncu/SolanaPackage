@@ -59,7 +59,7 @@ class BalanceAPIEndToEndTests: XCTestCase {
     }
     
     private func createBalance() -> Double {
-        return 8064529400.0
+        return 9027449400.0
     }
     
     private func baseURL() -> URL {
