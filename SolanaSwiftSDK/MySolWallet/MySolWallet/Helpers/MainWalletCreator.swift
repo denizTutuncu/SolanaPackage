@@ -30,7 +30,7 @@ public final class MainWalletCreator: WalletCreator {
     }
     
     private func createWallet() async throws -> (String,String)? {
-        let keyPair = try await KeyPair(phrase: try loader.load(), network: .mainnetBeta)
+        let keyPair = try await KeyPair(phrase: try loader.load(), network: .devnet)
         return (keyPair.publicKey.base58EncodedString, keyPair.secretKey.base64EncodedString())
     }
 }
