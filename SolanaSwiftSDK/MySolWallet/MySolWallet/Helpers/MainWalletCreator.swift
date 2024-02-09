@@ -11,17 +11,10 @@ import SolanaSwift
 
 public final class MainWalletCreator: WalletCreator {
     public init(seed: [String], loader: SeedPhraseLoader) throws {
-        guard !seed.isEmpty else {
-            throw CreatorError.emptySeed
-        }
         self.seed = seed
         self.loader = loader
     }
-    
-    enum CreatorError: Swift.Error {
-        case emptySeed
-    }
-    
+ 
     private let seed: [String]
     private let loader: SeedPhraseLoader
     
