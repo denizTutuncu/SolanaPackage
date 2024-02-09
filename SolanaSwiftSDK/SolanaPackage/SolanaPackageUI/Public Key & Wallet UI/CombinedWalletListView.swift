@@ -68,7 +68,7 @@ struct WalletListUIComposerView_Previews: PreviewProvider {
         Group {
             WalletListUIComposerTestView()
                 .previewLayout(.sizeThatFits)
-                .previewDisplayName("Wallet List UI Composer Test View")
+                .previewDisplayName("Combined Wallet List Test View")
         }
     }
 }
