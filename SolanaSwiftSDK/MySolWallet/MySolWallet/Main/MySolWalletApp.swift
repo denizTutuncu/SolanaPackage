@@ -37,6 +37,7 @@ struct MainAppInitializer: View {
 
         let publicKeyPublisher = appStore.makeLocalPublicKeyPublisher()
         let seedPublisher = appStore.makeLocalSeedPublisher()
+        let balancePublisher = appStore.makeRemoteBalancePublisher(address: "Dummy Account Address")
 
         let combinedPublisher = Publishers.CombineLatest(publicKeyPublisher, seedPublisher)
 
@@ -52,8 +53,9 @@ struct MainAppInitializer: View {
 
                 self.appStore.mainApp = MainApp.start(
                     publickeys: publicKeys,
-                    seed: seeds,
-                    delegate: adapter
+                    seed: seeds, 
+                    pkDelegate: adapter,
+                    sDelegate: adapter
                 )
             })
             .store(in: &cancellables)

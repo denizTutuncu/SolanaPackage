@@ -9,7 +9,7 @@ import Foundation
 
 public protocol PrivateKeyStore {
     typealias PublicKey = String
-    typealias PrivateKey = String
+    typealias PrivateKey = Data
 
     func store(publicKey: PublicKey, privateKey: PrivateKey) throws
     func read(for publicKey: PublicKey) throws -> PrivateKey?

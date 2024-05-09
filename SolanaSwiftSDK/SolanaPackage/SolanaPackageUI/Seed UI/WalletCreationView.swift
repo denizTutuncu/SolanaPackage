@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct WalletCreationComposerView: View {
+public struct WalletCreationView: View {
     
     public init(headerTitle: String,
                 headerSubtitle: String,
@@ -71,7 +71,7 @@ struct WalletCreationComposerView_Previews: PreviewProvider {
         
         var body: some View {
             VStack {
-                WalletCreationComposerView(
+                WalletCreationView(
                     headerTitle: "Seed Phrase",
                     headerSubtitle: "The seed phrase is never stored on the device. You will only see it once, and it is only shown during setup. The order of the seed phrase is crucial, so ensure that you toggle each button corresponding to each phrase to maintain the correct order. Please ensure that you keep your seed phrase physically secure.",
                     buttonTitle: "Create wallet",

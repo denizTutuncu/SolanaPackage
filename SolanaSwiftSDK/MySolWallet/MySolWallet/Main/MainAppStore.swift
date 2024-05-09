@@ -9,6 +9,7 @@ import Foundation
 import SolanaPackage
 import Combine
 import os
+import SolanaSwift
 
 class MainAppStore {
     typealias PublicKey = String
@@ -51,7 +52,7 @@ class MainAppStore {
     //MARK: - Wallet Creator & Local Wallet Creator
     public lazy var walletCreator: WalletCreator = {
         do {
-            return try DummyWalletCreator(seed: try localSeedLoader.load())
+            return try MainWalletCreator(seed: try localSeedLoader.load(), loader: localSeedLoader)
         } catch {
             assertionFailure("Failed to instantiate Wallet Creator with error: \(error.localizedDescription)")
             handleError(error)
@@ -81,8 +82,8 @@ class MainAppStore {
         URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
     }()
     
-    public func makeRemoteBalancePublisher(address: String, baseURL: URL) -> AnyPublisher<Balance, Error> {
-        let request = try? BalanceEndpoint.get(walletAddress: address).url(baseURL: baseURL)
+    public func makeRemoteBalancePublisher(address: String) -> AnyPublisher<Balance, Error> {
+        let request = try? BalanceEndpoint.get(walletAddress: address).url(baseURL: networkURL)
         return httpClient
             .getPublisher(urlRequest: request!)
             .tryMap(BalanceItemMapper.map)
@@ -107,43 +108,4 @@ class MainAppStore {
     public func makeLocalPublicKeyPublisher() ->  AnyPublisher<[String], Error> {
         return localPublicKeyLoader.getPublisher()
     }
-    
-    //MARK: - Paginated
-//    public func makeLocalPublicKeyLoaderWithLocalFallback() -> AnyPublisher<Paginated<PublicKey>, Error> {
-//        makeLocalPublicKeyLoader()
-//            .caching(to: localPublicKeyLoader)
-//            .fallback(to: localPublicKeyLoader.getPublisher)
-//            .map(makeFirstPage)
-//            .subscribe(on: scheduler)
-//            .eraseToAnyPublisher()
-//    }
-//
-//    private func makeLocalLoadMoreLoader(last: PublicKey?) -> AnyPublisher<Paginated<PublicKey>, Error> {
-//        localPublicKeyLoader.getPublisher()
-//            .zip(makeLocalPublicKeyLoader(after: last))
-//            .map { (cachedItems, newItems) in
-//                (cachedItems + newItems, newItems.last)
-//            }
-//            .map(makePage)
-//            .caching(to: localPublicKeyLoader)
-//            .subscribe(on: scheduler)
-//            .eraseToAnyPublisher()
-//    }
-    
-//    public func makeLocalPublicKeyLoader(after: PublicKey? = nil) -> AnyPublisher<[PublicKey], Error> {
-//        return makeLocalPublicKeyPublisher()
-//            .tryMap(PublicKeyItemsMapper.map)
-//            .eraseToAnyPublisher()
-//    }
-    
-    //MARK: First Page
-//    private func makeFirstPage(items: [PublicKey]) -> Paginated<PublicKey> {
-//        makePage(items: items, last: items.last)
-//    }
-//
-//    private func makePage(items: [PublicKey], last: PublicKey?) -> Paginated<PublicKey> {
-//        Paginated(items: items, loadMorePublisher: last.map { last in
-//            { self.makeLocalLoadMoreLoader(last: last) }
-//        })
-//    }
 }

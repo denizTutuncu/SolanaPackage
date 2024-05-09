@@ -57,16 +57,16 @@ func uniquePublicKey() -> String {
     return "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi"
 }
 
-func uniquePrivateKey() -> String {
-    return "aBcDeFgHiJkLmNoPqRsTuVwXyZ0123456789AbCdEfGhIjKlMnOpQrStUvWxYzDs"
+func uniquePrivateKey() -> Data {
+    return "aBcDeFgHiJkLmNoPqRsTuVwXyZ0123456789AbCdEfGhIjKlMnOpQrStUvWxYzDs".data(using: .utf8)!
 }
 
 func anotherUniquePublicKey() -> String {
     return "3xcawfQtZVjRLLcxgcxT7yYUuynPlasdyqw640276bAD"
 }
 
-func anotherUniquePrivateKey() -> String {
-    "cVcEeGgLpOkLmNoPqRsTuVwXyZ0123456789AbCdEfGhIjKlMnOpQrSgUpQpLvOq"
+func anotherUniquePrivateKey() -> Data {
+    return "cVcEeGgLpOkLmNoPqRsTuVwXyZ0123456789AbCdEfGhIjKlMnOpQrSgUpQpLvOq".data(using: .utf8)!
 }
 
 func uniquePublicKeys() -> [String] {

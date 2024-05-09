@@ -9,14 +9,14 @@ import Foundation
 
 public final class PrivateKeyCachePolicy {
     private init() {}
-    static private let privateKeyCount = 64
-    static private let publicKeyCount = 44
+    static private let privateKeyByte = 64
+    static private let publicKeyCount = (43...44)
     
-    public static func validate(privateKey: String) -> Bool {
-        privateKey.count == PrivateKeyCachePolicy.privateKeyCount ? true : false
+    public static func validate(privateKey: Data) -> Bool {
+        privateKey.count == privateKeyByte ? true : false
     }
     
     public static func validate(publicKey: String) -> Bool {
-        publicKey.count == PrivateKeyCachePolicy.publicKeyCount ? true : false
+        	publicKeyCount.contains(publicKey.count) ? true : false
     }
 }

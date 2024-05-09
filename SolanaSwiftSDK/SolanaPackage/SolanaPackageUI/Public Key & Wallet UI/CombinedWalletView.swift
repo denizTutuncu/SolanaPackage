@@ -7,26 +7,64 @@
 
 import SwiftUI
 
-public struct WalletUIComposerView: View {
-    public let publicKey: String
-    public let network: String
-    public let currency: String
-    public let balanceLabelTitle: String
-    public let balanceLoadingTitle: String
-    public let balanceErrorMessage: String
-    public let balanceErrorButtonTitle: String
-    public let transactionListTitle: String
-    public let transactionListSubtitle: String
-    public let transactionLoadingTitle: String
-    public let transactionErrorMessage: String
-    public let transactionErrorButtonTitle: String
-    public let transactionSelection: (String) -> Void
-    public let tryLoadBalance: (String?) -> Void
-    public let tryLoadTransactions: () -> Void
+public struct CombinedWalletView: View {
     
-    @State public var balanceLoading: Bool
-    @State public var balanceViewModel: BalanceViewModel
-    @State public var transactionViewModel: TransactionViewModel
+    public init(publicKey: String,
+                network: String,
+                currency: String,
+                balanceLabelTitle: String,
+                balanceLoadingTitle: String,
+                balanceErrorMessage: String,
+                balanceErrorButtonTitle: String,
+                transactionListTitle: String,
+                transactionListSubtitle: String,
+                transactionLoadingTitle: String,
+                transactionErrorMessage: String,
+                transactionErrorButtonTitle: String,
+                transactionSelection: @escaping (String) -> Void,
+                tryLoadBalance: @escaping (String?) -> Void,
+                tryLoadTransactions: @escaping () -> Void,
+                balanceViewModel: BalanceViewModel,
+                transactionViewModel: TransactionViewModel
+    ) {
+        self.publicKey = publicKey
+        self.network = network
+        self.currency = currency
+        self.balanceLabelTitle =  balanceLabelTitle
+        self.balanceLoadingTitle = balanceLoadingTitle
+        self.balanceErrorMessage = balanceErrorMessage
+        self.balanceErrorButtonTitle = balanceErrorButtonTitle
+        self.transactionListTitle = transactionListTitle
+        self.transactionListSubtitle = transactionListSubtitle
+        self.transactionLoadingTitle = transactionLoadingTitle
+        self.transactionErrorMessage = transactionErrorMessage
+        self.transactionErrorButtonTitle = transactionErrorButtonTitle
+        self.transactionSelection = transactionSelection
+        self.tryLoadBalance = tryLoadBalance
+        self.tryLoadTransactions = tryLoadTransactions
+        self._balanceViewModel = State(initialValue: balanceViewModel)
+        self._transactionViewModel = State(initialValue: transactionViewModel)
+    }
+    
+    private let publicKey: String
+    private let network: String
+    private let currency: String
+    private let balanceLabelTitle: String
+    private let balanceLoadingTitle: String
+    private let balanceErrorMessage: String
+    private let balanceErrorButtonTitle: String
+    private let transactionListTitle: String
+    private let transactionListSubtitle: String
+    private let transactionLoadingTitle: String
+    private let transactionErrorMessage: String
+    private let transactionErrorButtonTitle: String
+    
+    private let transactionSelection: (String) -> Void
+    private let tryLoadBalance: (String?) -> Void
+    private let tryLoadTransactions: () -> Void
+    
+    @State private var balanceViewModel: BalanceViewModel
+    @State private var transactionViewModel: TransactionViewModel
     
     public var body: some View {
         VStack {
@@ -38,9 +76,8 @@ public struct WalletUIComposerView: View {
                               errorMessage: balanceErrorMessage,
                               errorButtonTitle: balanceErrorButtonTitle,
                               loadingTitle: balanceLoadingTitle,
-                              tryAgain: { tryLoadBalance(publicKey); balanceLoading = true },
-                              viewModel:  balanceViewModel,
-                              loading: $balanceLoading)
+                              tryAgain: { tryLoadBalance(publicKey) },
+                              viewModel:  balanceViewModel)
             
             HeaderView(title: transactionListTitle, subtitle: transactionListSubtitle)
             
@@ -70,8 +107,8 @@ struct WalletTestView: View {
     
     var body: some View {
         VStack {
-            WalletUIComposerView(publicKey: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
-                                 network: "Solana",
+            CombinedWalletView(publicKey: "4nNfoAztZVjRLLcxgcxT7yYUuyn6UgMJdduART94TrKi",
+                                 network: "Solana Mainnet",
                                  currency: "lamports",
                                  balanceLabelTitle: "Balance:",
                                  balanceLoadingTitle: "Loading balance",
@@ -85,7 +122,6 @@ struct WalletTestView: View {
                                  transactionSelection: { selection = $0 },
                                  tryLoadBalance: { selection = $0 ?? "" },
                                  tryLoadTransactions: { },
-                                 balanceLoading: false,
                                  balanceViewModel: .init(model: PresentableBalance(value: "10000000000.0000")),
                                  transactionViewModel: .init(model: [
                                     PresentableTransaction(date: "Feb 23, 2023",
