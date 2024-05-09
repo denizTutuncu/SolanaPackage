@@ -11,12 +11,8 @@ public protocol WalletCreator {
     func create() async throws -> (String,String)?
 }
 
-public protocol WalletCreationLoader {
-    func load() async throws -> (String,String)?
-}
-
-extension LocalWalletCreationLoader: WalletCreationLoader {
-    public func load() async throws -> (String, String)? {
+extension LocalWalletCreationLoader: WalletCreator {
+    public func create() async throws -> (String, String)? {
         try await creator.create()
     }
 }

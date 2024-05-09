@@ -316,14 +316,28 @@ Given the customer has connectivity
 
 ## Contribution
 
-Contributions are always welcome.
+### Viewing the Project
 
-A GitHub Actions script is set up to automate the build and testing process of the project when changes are made to specific branches. The script specifies that the build-and-test job should run when a push and/or a pull request event occurs on the main branch.
+This project is available for viewing directly on GitHub. Please note, the software and its contents are restricted for viewing only and may not be cloned, downloaded, or used in any form outside of the GitHub interface.
 
-Developers should first clone the project and then create a new development branch to make changes. Pushing changes to the development branch and opening a pull request (PR) onto main will trigger GitHub Actions.
+### License
 
-For Continuous Integration, 2 different scripts run to build and test the project on macOS and iOS. The steps include checking out the code, installing necessary profiles and certificates, selecting the appropriate version of Xcode, and specifying the build and test settings for each platform. The code is built using the "CI_macOS" and "CI_iOS" schemes, and tests are run with specific destination settings.
+This repository is governed by a custom license that restricts use, cloning, downloading, and redistribution. Modifications to the software are permitted only by collaborators who have been explicitly authorized in writing by Deniz Tutuncu. For full license details, see the [LICENSE.md](LICENSE.md) file.
 
-For Continuous Deployment, the "Deploy" script runs after any changes on the main branch, triggering a build, archive, and deployment on App Store Connect.
+### Automated Processes
 
-`A heartfelt expression of gratitude goes out to the Essential Developer Community and Caio Zullo for their priceless mentoring and guidance.`
+#### GitHub Actions
+GitHub Actions are configured to automate the build and testing process for this project. These actions are triggered by activities performed by authorized collaborators:
+- **Build and Test**: Automated scripts run for both macOS and iOS platforms when changes are made by authorized collaborators to specific branches. The process includes checking out the code, installing necessary profiles and certificates, and selecting the appropriate version of Xcode.
+- **Continuous Integration**: The project employs two scripts, `CI_macOS` and `CI_iOS`, to build the software and run tests under specified destination settings.
+- **Continuous Deployment**: The `Deploy` script is responsible for automated deployment on App Store Connect following changes to the main branch by authorized collaborators.
+
+#### Contribution Guidelines
+
+Due to the restrictive licensing of this repository, contributions in the form of code modifications are not accepted unless the contributor is an authorized collaborator. For those authorized, changes should be committed to a designated development branch and submitted via pull request (PR) for review.
+
+### Continuous Integration and Deployment
+
+Detailed processes for Continuous Integration (CI) and Continuous Deployment (CD) are designed to ensure the highest standards of quality and functionality, exclusively managed by the project's maintainers.
+
+For any inquiries or to request authorization for collaboration, please contact Deniz Tutuncu directly.

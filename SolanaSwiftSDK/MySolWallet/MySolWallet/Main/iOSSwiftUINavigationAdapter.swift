@@ -24,6 +24,9 @@ final class iOSSwiftUINavigationAdapter: SeedDelegate, PublicKeyDelegate {
     typealias PublicKey = String
     typealias Seed = String
     
+    typealias Balance = SolanaPackage.Balance
+    typealias Transaction = SolanaPackage.DomainTransaction
+    
     private let navigation: MainAppNavigationStore
     private let publicKeyPublisher: AnyPublisher<[PublicKey], Error>
     private let seedPublisher: AnyPublisher<[Seed], Error>
@@ -44,6 +47,48 @@ final class iOSSwiftUINavigationAdapter: SeedDelegate, PublicKeyDelegate {
                 navigation.currentView = .creation(onboardingView)
             }
         }
+    }
+    
+    // MARK: - Is this the right approach?
+    func didCompleteWith(balance: Balance) {
+        //Navigation here w/ Balance
+    }
+    
+    private func makeCombinedWalletView(publicKey: String) -> CombinedWalletView {
+        let networkTitle = WalletPresenter.network
+        let currencyTitle = WalletPresenter.currency
+        
+        let balanceLabelTitle = ""
+        let balanceLoadingTitle = ""
+        let balanceErrorMessage = ""
+        let balanceErrorButtonTitle = ""
+        
+        let transactionListTitle = ""
+        let transactionListSubtitle = ""
+        let transactionLoadingTitle = ""
+        let transactionErrorMessage = ""
+        let transactionErrorButtonTitle = ""
+        
+        let publisher = PublicKeyUIAdapter.publicKeyComposedWith(publicKeyPublisher: publicKeyPublisher)
+        publisher.load()
+        
+        return CombinedWalletView(publicKey: publicKey,
+                                  network: networkTitle,
+                                  currency: currencyTitle,
+                                  balanceLabelTitle: balanceLabelTitle,
+                                  balanceLoadingTitle: balanceLoadingTitle,
+                                  balanceErrorMessage: balanceErrorMessage,
+                                  balanceErrorButtonTitle: balanceErrorButtonTitle,
+                                  transactionListTitle: transactionListTitle,
+                                  transactionListSubtitle: transactionListSubtitle,
+                                  transactionLoadingTitle: transactionLoadingTitle,
+                                  transactionErrorMessage: transactionErrorMessage,
+                                  transactionErrorButtonTitle: transactionErrorButtonTitle,
+                                  transactionSelection: { transaction in },
+                                  tryLoadBalance: { publicKey in },
+                                  tryLoadTransactions: { publisher.load() },
+                                  balanceViewModel: .init(model: PresentableBalance(value: "Dummines has no balance.")),
+                                  transactionViewModel: .init(model: []))
     }
     
     private func makeWalletListView() -> CombinedWalletListView {

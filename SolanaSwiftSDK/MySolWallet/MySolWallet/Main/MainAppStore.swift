@@ -82,8 +82,8 @@ class MainAppStore {
         URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
     }()
     
-    public func makeRemoteBalancePublisher(address: String, baseURL: URL) -> AnyPublisher<Balance, Error> {
-        let request = try? BalanceEndpoint.get(walletAddress: address).url(baseURL: baseURL)
+    public func makeRemoteBalancePublisher(address: String) -> AnyPublisher<Balance, Error> {
+        let request = try? BalanceEndpoint.get(walletAddress: address).url(baseURL: networkURL)
         return httpClient
             .getPublisher(urlRequest: request!)
             .tryMap(BalanceItemMapper.map)

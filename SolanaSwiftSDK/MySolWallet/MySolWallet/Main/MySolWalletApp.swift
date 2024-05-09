@@ -37,6 +37,7 @@ struct MainAppInitializer: View {
 
         let publicKeyPublisher = appStore.makeLocalPublicKeyPublisher()
         let seedPublisher = appStore.makeLocalSeedPublisher()
+        let balancePublisher = appStore.makeRemoteBalancePublisher(address: "Dummy Account Address")
 
         let combinedPublisher = Publishers.CombineLatest(publicKeyPublisher, seedPublisher)
 
