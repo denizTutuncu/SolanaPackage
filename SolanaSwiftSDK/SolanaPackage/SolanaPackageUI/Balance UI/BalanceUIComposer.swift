@@ -16,10 +16,9 @@ struct BalanceUIComposer: View {
     let tryAgain: () -> Void
     
     @State var viewModel: BalanceViewModel
-    @Binding var loading: Bool
     
     var body: some View {
-        if loading {
+        if viewModel.isModelEmpty {
             LoadingView(title: loadingTitle)
             Spacer()
         } else {
@@ -69,8 +68,7 @@ struct BalanceUIComposerTestView: View {
                               errorButtonTitle: "",
                               loadingTitle: "Loading balance.",
                               tryAgain: {} ,
-                              viewModel: .init(model: PresentableBalance(value: "")),
-                              loading: .constant(true))
+                              viewModel: .init(model: PresentableBalance(value: "")))
             
             BalanceUIComposer(title: "",
                               currencyName: "",
@@ -78,8 +76,7 @@ struct BalanceUIComposerTestView: View {
                               errorButtonTitle: "Try again",
                               loadingTitle: "Loading balance.",
                               tryAgain: {} ,
-                              viewModel: .init(model: PresentableBalance(value: "")),
-                              loading: .constant(false))
+                              viewModel: .init(model: PresentableBalance(value: "")))
             
             BalanceUIComposer(title: "Balance:",
                               currencyName: "lamports",
@@ -87,8 +84,7 @@ struct BalanceUIComposerTestView: View {
                               errorButtonTitle: "Try again",
                               loadingTitle: "Loading balance.",
                               tryAgain: {},
-                              viewModel: .init(model: PresentableBalance(value: "10000000000.0000")),
-                              loading: .constant(false))
+                              viewModel: .init(model: PresentableBalance(value: "10000000000.0000")))
             
         }
     }

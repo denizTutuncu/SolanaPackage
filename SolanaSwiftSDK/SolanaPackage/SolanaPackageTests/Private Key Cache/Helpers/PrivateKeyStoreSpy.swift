@@ -12,7 +12,7 @@ class PrivateKeyStoreSpy: PrivateKeyStore {
    
     enum ReceivedMessage: Equatable {
         case deleteCached(String)
-        case insert(String,String)
+        case insert(String,Data)
         case privateKey(String)
     }
     
@@ -20,7 +20,7 @@ class PrivateKeyStoreSpy: PrivateKeyStore {
     
     private var deletionResult: Result<Void, Error>?
     private var insertionResult: Result<Void, Error>?
-    private var privateKeyResult: Result<String?, Error>?
+    private var privateKeyResult: Result<Data?, Error>?
 
     func deleteKey(for publicKey: PublicKey) throws {
         receivedMessages.append(.deleteCached(publicKey))
@@ -61,7 +61,7 @@ class PrivateKeyStoreSpy: PrivateKeyStore {
         privateKeyResult = .failure(error)
     }
     
-    func complete(with privateKey: String) {
+    func complete(with privateKey: Data) {
         privateKeyResult = .success(privateKey)
     }
 

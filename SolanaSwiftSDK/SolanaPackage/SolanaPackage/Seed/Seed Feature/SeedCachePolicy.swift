@@ -34,7 +34,7 @@ final public class SeedCachePolicy {
         
         return randomItems
     }
-
+    
     public static func validateSeedPhrase(seed: [String]) -> Bool {
         guard (seed.count == 24) else { return false }
         return true
@@ -55,4 +55,5 @@ final public class SeedCachePolicy {
         }
         return true
     }
+    
 }

@@ -11,6 +11,8 @@ public struct OnboardingView: View {
     
     public init(headerTitle: String,
                 headerSubtitle: String,
+                imageBundle: String,
+                bundle: String,
                 firstButtonTitle: String,
                 firstButtonAction: @escaping () -> Void,
                 secondButtonTitle: String,
@@ -18,6 +20,8 @@ public struct OnboardingView: View {
     ) {
         self.headerTitle = headerTitle
         self.headerSubtitle = headerSubtitle
+        self.imageBundle = imageBundle
+        self.bundle = bundle
         self.firstButtonTitle = firstButtonTitle
         self.firstButtonAction = firstButtonAction
         self.secondButtonTitle = secondButtonTitle
@@ -28,6 +32,9 @@ public struct OnboardingView: View {
     private let headerTitle: String
     private let headerSubtitle: String
     
+    private let imageBundle: String
+    private let bundle: String
+    
     private let firstButtonTitle: String
     private let firstButtonAction: () -> Void
     
@@ -37,7 +44,7 @@ public struct OnboardingView: View {
     public var body: some View {
         VStack {
             HeaderView(title: headerTitle, subtitle: headerSubtitle)
-            Spacer()
+            CustomImageView(imageName: imageBundle, bundleName: bundle)
             RoundedButton(title: firstButtonTitle, action: firstButtonAction)
             RoundedButton(title: secondButtonTitle, action: secondButtonAction)
         }
@@ -59,7 +66,9 @@ struct OnboardingView_Previews: PreviewProvider {
         var body: some View {
             VStack {
                 OnboardingView(headerTitle: "Welcome to Trea",
-                               headerSubtitle: "TREA, Trusted Repository for Electronic Assets, to create your crypto wallet with top-tier security. This app is protected by industry-standard encryption, ensuring a secure connection with Solana.",
+                               headerSubtitle: "Create your crypto wallet with top-tier security. This app is protected by industry-standard encryption, ensuring a secure connection with Solana.", 
+                               imageBundle: "CreationOptionsBackground",
+                               bundle: "com.deniztutuncu.SolanaPackageUI",
                                firstButtonTitle: "Create new wallet",
                                firstButtonAction: { selection = "Create wallet tapped" },
                                secondButtonTitle: "Import wallet from seed",

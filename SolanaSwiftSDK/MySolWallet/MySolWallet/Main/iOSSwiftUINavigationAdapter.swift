@@ -10,7 +10,7 @@ import Combine
 import SolanaPackage
 import SolanaPackageUI
 
-final class iOSSwiftUINavigationAdapter: PublicKeyDelegate {
+final class iOSSwiftUINavigationAdapter: SeedDelegate, PublicKeyDelegate {
     
     init(navigation: MainAppNavigationStore,
          publicKeyPublisher: AnyPublisher<[PublicKey], Error>,
@@ -23,6 +23,9 @@ final class iOSSwiftUINavigationAdapter: PublicKeyDelegate {
     
     typealias PublicKey = String
     typealias Seed = String
+    
+    typealias Balance = SolanaPackage.Balance
+    typealias Transaction = SolanaPackage.DomainTransaction
     
     private let navigation: MainAppNavigationStore
     private let publicKeyPublisher: AnyPublisher<[PublicKey], Error>
@@ -46,70 +49,141 @@ final class iOSSwiftUINavigationAdapter: PublicKeyDelegate {
         }
     }
     
-    private func makeWalletListView() -> WalletListUIComposerView {
+    // MARK: - Is this the right approach?
+    func didCompleteWith(balance: Balance) {
+        //Navigation here w/ Balance
+    }
+    
+    private func makeCombinedWalletView(publicKey: String) -> CombinedWalletView {
+        let networkTitle = WalletPresenter.network
+        let currencyTitle = WalletPresenter.currency
+        
+        let balanceLabelTitle = ""
+        let balanceLoadingTitle = ""
+        let balanceErrorMessage = ""
+        let balanceErrorButtonTitle = ""
+        
+        let transactionListTitle = ""
+        let transactionListSubtitle = ""
+        let transactionLoadingTitle = ""
+        let transactionErrorMessage = ""
+        let transactionErrorButtonTitle = ""
+        
+        let publisher = PublicKeyUIAdapter.publicKeyComposedWith(publicKeyPublisher: publicKeyPublisher)
+        publisher.load()
+        
+        return CombinedWalletView(publicKey: publicKey,
+                                  network: networkTitle,
+                                  currency: currencyTitle,
+                                  balanceLabelTitle: balanceLabelTitle,
+                                  balanceLoadingTitle: balanceLoadingTitle,
+                                  balanceErrorMessage: balanceErrorMessage,
+                                  balanceErrorButtonTitle: balanceErrorButtonTitle,
+                                  transactionListTitle: transactionListTitle,
+                                  transactionListSubtitle: transactionListSubtitle,
+                                  transactionLoadingTitle: transactionLoadingTitle,
+                                  transactionErrorMessage: transactionErrorMessage,
+                                  transactionErrorButtonTitle: transactionErrorButtonTitle,
+                                  transactionSelection: { transaction in },
+                                  tryLoadBalance: { publicKey in },
+                                  tryLoadTransactions: { publisher.load() },
+                                  balanceViewModel: .init(model: PresentableBalance(value: "Dummines has no balance.")),
+                                  transactionViewModel: .init(model: []))
+    }
+    
+    private func makeWalletListView() -> CombinedWalletListView {
         let headerTitle = WalletPresenter.title
         let headerSubtitle = WalletPresenter.subtitle
-        let loadingTitle = "Downloading wallets."
+        let loadingTitle = "Downloading wallets"
         let errorMessage = "Cannot load wallets"
         let errorViewButtonTitle = "Try again"
         
         let publisher = PublicKeyUIAdapter.publicKeyComposedWith(publicKeyPublisher: publicKeyPublisher)
         publisher.load()
         
-        return WalletListUIComposerView(
+        return CombinedWalletListView(
             headerTitle: headerTitle,
             headerSubtitle: headerSubtitle,
             errorMessage: errorMessage,
             errorViewButtonTitle: errorViewButtonTitle,
             loadingTitle: loadingTitle,
             tryAgain: { publisher.load() },
-            selection: { _ in },
+            selection: { publicKey in },
             viewModel: .init(model: publisher.onResourceLoad ?? []),
             publickeyLoading: publisher.onLoadingState
         )
     }
     
     private func makeOnboardingView(seed: [Seed]) -> OnboardingView {
-        let onboardingHeaderTitle = "Welcome to Trea"
-        let onboardingHeaderSubtitle = "TREA, Trusted Repository for Electronic Assets, to create your crypto wallet with top-tier security. This app is protected by industry-standard encryption, ensuring a secure connection with Solana."
+        let onboardingHeaderTitle = "Welcome to TREA"
+        let onboardingHeaderSubtitle = "Create your crypto wallet with top-tier security. This app is protected by industry-standard encryption, ensuring a secure connection with Solana."
         let onboardingCreateWalletButtonTitle = "Create new wallet"
         let onboardingImportWalletButtonTitle = "Import wallet from seed"
         
         let headerTitle = SeedPresenter.title
         let headerSubtitle = SeedPresenter.subtitle
-        let providedViewSubtitle = "The seed phrase is never stored on the device and will be wiped out after importing your wallet. Remember, the order of the seed phrase is crucial."
+        
+        let imageBundle = "CreationOptionsBackground"
+        let bundleForImage = "com.deniztutuncu.SolanaPackageUI"
+        
+        let providedViewSubtitle = "The seed phrase is never stored on the device and will be wiped out after importing your wallet. Input your 24-word seed phrase to import your wallet. Remember, the order of the seed phrase is crucial."
         let buttonTitle = "Create wallet"
         let providedViewButtonTitle = "Import wallet"
         let errorMessage = "Cannot load seed phrase"
         let errorViewButtonTitle = "Try again"
         let loadingTitle = "Loading seed phrase"
+
+        let seedUIpublisher = SeedUIAdapter.seedComposedWith(seedPublisher: seedPublisher)
+        seedUIpublisher.load()
         
-        let publisher = SeedUIAdapter.seedComposedWith(seedPublisher: seedPublisher)
-        publisher.load()
+        let publicKeyPublisher = PublicKeyUIAdapter.publicKeyComposedWith(publicKeyPublisher: publicKeyPublisher)
+        publicKeyPublisher.load()
         
-        let walletCreationView = WalletCreationComposerView(
+        let walletCreationView = WalletCreationView(
             headerTitle: headerTitle,
             headerSubtitle: headerSubtitle,
             buttonTitle: buttonTitle,
             errorMessage: errorMessage,
             errorViewButtonTitle: errorViewButtonTitle,
             loadingTitle: loadingTitle,
-            loadAgain: { publisher.load() },
-            action: {},
-            viewModel: .init(model: seed, handler: { _ in })
+            loadAgain: { seedUIpublisher.load() },
+            action: { self.navigation.currentView = .walletList(self.makeWalletListView()) },
+            viewModel: .init(model: seedUIpublisher.onResourceLoad ?? [], handler: { _ in })
         )
         
         let providedSeedComposerView = ProvidedSeedComposerView(headerTitle: headerTitle,
                                                                 headerSubtitle: providedViewSubtitle,
                                                                 buttonTitle: providedViewButtonTitle,
-                                                                action: {  },
-                                                                viewModel: .init(model: [],
-                                                                                 handler: { _ in }))
-        
-        
+                                                                action: { self.navigation.currentView = .walletList(self.makeWalletListView()) },
+                                                                viewModel: .init(model: ["",
+                                                                                         "",
+                                                                                         "",
+                                                                                         "",
+                                                                                         "",
+                                                                                         "",
+                                                                                         "",
+                                                                                         "",
+                                                                                         "",
+                                                                                         "",
+                                                                                         "",
+                                                                                         "",
+                                                                                         "",
+                                                                                         "",
+                                                                                         "",
+                                                                                         "",
+                                                                                         "",
+                                                                                         "",
+                                                                                         "",
+                                                                                         "",
+                                                                                         "",
+                                                                                         "",
+                                                                                         "",
+                                                                                         ""],handler: { providedSeed in }))
+
         return OnboardingView(
             headerTitle: onboardingHeaderTitle,
-            headerSubtitle: onboardingHeaderSubtitle,
+            headerSubtitle: onboardingHeaderSubtitle, 
+            imageBundle: imageBundle, bundle: bundleForImage,
             firstButtonTitle: onboardingCreateWalletButtonTitle,
             firstButtonAction: {
                 self.navigation.currentView = .seed(walletCreationView)

@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol PrivateKeyCache {
-    func save(_ publicKey: String, privateKey: String) throws
+    func save(_ publicKey: String, privateKey: Data) throws
 }

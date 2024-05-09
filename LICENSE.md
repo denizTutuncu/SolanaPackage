@@ -1,4 +1,4 @@
-License
+# Custom License
 
 Copyright (c) 2022 Deniz Tutuncu
 

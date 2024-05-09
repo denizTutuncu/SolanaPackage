@@ -9,5 +9,8 @@ import Foundation
 
 public protocol PublicKeyDelegate {
     func didCompleteWith(keys: [String])
+}
+
+public protocol SeedDelegate {
     func didCompleteWith(seed: [String])
 }

@@ -8,16 +8,12 @@
 import Foundation
 
 public protocol WalletCreator {
-    func create() throws -> (String,String)?
+    func create() async throws -> (String,String)?
 }
 
-public protocol WalletCreationLoader {
-    func load() throws -> (String,String)?
-}
-
-extension LocalWalletCreationLoader: WalletCreationLoader {
-    public func load() throws -> (String, String)? {
-        try creator.create()
+extension LocalWalletCreationLoader: WalletCreator {
+    public func create() async throws -> (String, String)? {
+        try await creator.create()
     }
 }
 

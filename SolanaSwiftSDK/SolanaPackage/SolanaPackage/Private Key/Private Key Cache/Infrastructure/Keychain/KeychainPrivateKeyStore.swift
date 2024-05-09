@@ -28,14 +28,13 @@ extension KeychainPrivateKeyStore: PrivateKeyStore {
     }
     
     public func store(publicKey: PublicKey, privateKey: PrivateKey) throws {
-        let passwordData = privateKey.data(using: .utf8)!
         
         let queryToAdd = [
             kSecClass: kSecClassGenericPassword,
             kSecAttrAccessible: kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly,
             kSecUseDataProtectionKeychain: true,
             kSecAttrAccount: publicKey,
-            kSecValueData: passwordData
+            kSecValueData: privateKey
         ] as [String: Any]
         
         let status = SecItemAdd(queryToAdd as CFDictionary, nil)
@@ -60,10 +59,10 @@ extension KeychainPrivateKeyStore: PrivateKeyStore {
         switch SecItemCopyMatching(query as CFDictionary, &item) {
         case errSecSuccess:
             guard let existingItem = item as? [String: Any],
-                  let passwordData = existingItem[kSecValueData as String] as? Data else {
+                  let privateKeyData = existingItem[kSecValueData as String] as? Data else {
                 return nil
             }
-            return String(data: passwordData, encoding: .utf8)
+            return privateKeyData
         case errSecItemNotFound:
             return nil
         case let status:

@@ -7,15 +7,17 @@
 
 import Foundation
 
-public final class AppStartFlow<Delegate: PublicKeyDelegate>{
+public final class AppStartFlow<PKDelegate: PublicKeyDelegate, SDelegate: SeedDelegate>{
     
     public init(publickeys: [PublicKey],
                 seed: [Seed],
-                delegate: Delegate
+                pkDelegate: PKDelegate,
+                sDelegate: SDelegate
     ) {
         self.publickeys = publickeys
         self.seed = seed
-        self.delegate = delegate
+        self.pkDelegate = pkDelegate
+        self.sDelegate = sDelegate
     }
     
     public typealias PublicKey = String
@@ -23,7 +25,8 @@ public final class AppStartFlow<Delegate: PublicKeyDelegate>{
     
     private let publickeys: [PublicKey]
     private let seed: [Seed]
-    private let delegate: Delegate
+    private let pkDelegate: PublicKeyDelegate
+    private let sDelegate: SeedDelegate
   
     public func start() {
         delegateHandlingPublickeys(at: publickeys.startIndex)
@@ -31,9 +34,9 @@ public final class AppStartFlow<Delegate: PublicKeyDelegate>{
     
     private func delegateHandlingPublickeys(at index: Int) {
         if index < publickeys.endIndex {
-            delegate.didCompleteWith(keys: publickeys)
+            pkDelegate.didCompleteWith(keys: publickeys)
         } else {
-            delegate.didCompleteWith(seed: seed)
+            sDelegate.didCompleteWith(seed: seed)
         }
     }
         

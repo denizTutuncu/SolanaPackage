@@ -8,13 +8,6 @@
 import Foundation
 
 public struct DomainTransaction {
-    public let date: String
-    public let from: String
-    public let to: String
-    public let amount: String
-    public let currencyName: String
-    public let signature: String
-    
     public init(date: String, from: String, to: String, amount: String, currencyName: String, signature: String) {
         self.date = date
         self.from = from
@@ -23,4 +16,10 @@ public struct DomainTransaction {
         self.currencyName = currencyName
         self.signature = signature
     }
+    public let date: String
+    public let from: String
+    public let to: String
+    public let amount: String
+    public let currencyName: String
+    public let signature: String
 }

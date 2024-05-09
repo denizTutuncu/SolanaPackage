@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct WalletListUIComposerView: View {
+public struct CombinedWalletListView: View {
     
     public init(headerTitle: String,
                 headerSubtitle: String,
@@ -68,7 +68,7 @@ struct WalletListUIComposerView_Previews: PreviewProvider {
         Group {
             WalletListUIComposerTestView()
                 .previewLayout(.sizeThatFits)
-                .previewDisplayName("Wallet List UI Composer Test View")
+                .previewDisplayName("Combined Wallet List Test View")
         }
     }
 }
@@ -78,7 +78,7 @@ struct WalletListUIComposerTestView: View {
     
     var body: some View {
         VStack {
-            WalletListUIComposerView(headerTitle: "Wallets",
+            CombinedWalletListView(headerTitle: "Wallets",
                                      headerSubtitle: "Keychain is a secure storage area on your device that uses encryption to keep your keys and other sensitive information safe. It's an important tool for protecting your personal data from unauthorized access.",
                                      errorMessage: "Cannot load wallets",
                                      errorViewButtonTitle: "Try again",
@@ -88,7 +88,7 @@ struct WalletListUIComposerTestView: View {
                                      viewModel: .init(),
                                      publickeyLoading: true)
             
-            WalletListUIComposerView(headerTitle: "Wallets",
+            CombinedWalletListView(headerTitle: "Wallets",
                                      headerSubtitle: "Keychain is a secure storage area on your device that uses encryption to keep your keys and other sensitive information safe. It's an important tool for protecting your personal data from unauthorized access.",
                                      errorMessage: "Cannot load wallets",
                                      errorViewButtonTitle: "Try again",
@@ -99,7 +99,7 @@ struct WalletListUIComposerTestView: View {
                                      publickeyLoading: false)
             
             
-            WalletListUIComposerView(headerTitle: "Wallets",
+            CombinedWalletListView(headerTitle: "Wallets",
                                      headerSubtitle: "Keychain is a secure storage area on your device that uses encryption to keep your keys and other sensitive information safe. It's an important tool for protecting your personal data from unauthorized access.",
                                      errorMessage: "",
                                      errorViewButtonTitle: "",
