@@ -18,19 +18,15 @@ public final class LocalSeedLoader {
 }
 
 extension LocalSeedLoader: SeedPhraseLoader {
-    public func load() throws -> Seed {
+    public func load() throws -> [String] {
         let bank = try store.loadSeed()
-        
-        if SeedCachePolicy.validateBank(seedBank: bank) {
-            let seedPhrase = SeedCachePolicy.getRandomSeedPhrase(from: bank)
-            
-            if SeedCachePolicy.validateSeedPhrase(seed: seedPhrase) && SeedCachePolicy.hasUniqueItems(seedPhrase) && SeedCachePolicy.singleSeedCount(in: seedPhrase) {
-                return seedPhrase.toModels()
-            }
-        }
-        return []
+        guard SeedCachePolicy.validateBank(seedBank: bank) else { return [] }
+
+        let seedPhrase = SeedCachePolicy.getRandomSeedPhrase(from: bank)
+        guard SeedCachePolicy.validateSeedPhrase(seed: seedPhrase) else { return [] }
+
+        return seedPhrase
     }
-    
 }
 
 private extension Array where Element == String {

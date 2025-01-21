@@ -22,7 +22,7 @@ struct LoadingView: View {
         VStack {
             ProgressView(title, value: currentProgress, total: total)
                 .padding()
-                .progressViewStyle(LinearProgressViewStyle(tint: Color.primary))
+                .progressViewStyle(LinearProgressViewStyle(tint: Color.blue))
                 .foregroundColor(Color.primary)
                 .shadow(color: .primary, radius: 0.5)
         }

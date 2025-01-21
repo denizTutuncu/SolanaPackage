@@ -9,7 +9,9 @@ import SwiftUI
 
 struct HeaderView: View {
     let title: String?
+    let titleTextColor: Color?
     let subtitle: String?
+    let subtitleTextColor: Color?
     
     var body: some View {
         HStack {
@@ -18,14 +20,14 @@ struct HeaderView: View {
                     Text(subtitle!)
                         .font(.headline)
                         .fontWeight(.bold)
-                        .foregroundColor(Color.blue)
+                        .foregroundColor(subtitleTextColor)
                         .minimumScaleFactor(0.8)
                     
                     Text(title!)
                         .font(.largeTitle)
                         .fontWeight(.medium)
                         .minimumScaleFactor(0.8)
-                        .foregroundColor(.primary)
+                        .foregroundColor(titleTextColor)
                 }
                 .padding(.top)
                 
@@ -39,7 +41,10 @@ struct HeaderView: View {
 
 struct QuestionHeader_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderView(title: "A title", subtitle: "A subtitle")
+        HeaderView(title: "A title",
+                   titleTextColor: .blue,
+                   subtitle: "A subtitle",
+                   subtitleTextColor: .blue)
             .previewLayout(.sizeThatFits)
             .previewDisplayName("Header View")
         

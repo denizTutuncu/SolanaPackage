@@ -27,6 +27,5 @@ struct GenericView<T>: View, AnyViewProtocol where T: View {
 
 #Preview {
     GenericView(data: Text("Hello, Generic View!"))
-        .previewLayout(.sizeThatFits)
         .padding()
 }

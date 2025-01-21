@@ -11,6 +11,6 @@ import SolanaPackage
 class NullCreator {}
 
 extension NullCreator: WalletCreator {
-    func create() throws -> (String, String)? { return .none }
+    func create() throws -> (WalletCreator.PublicKey, WalletCreator.PrivateKey)? { return .none }
 }
 

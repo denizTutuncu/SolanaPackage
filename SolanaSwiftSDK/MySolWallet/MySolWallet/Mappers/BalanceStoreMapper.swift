@@ -15,9 +15,11 @@ public class BalanceStoreMapper {
         case invalidBalance
     }
     
-    public static func map(_ domainBalance: [Double]) throws -> [Balance] {
-        guard !domainBalance.isEmpty else { throw BalanceStoreError.invalidBalance }
-        return domainBalance.map { Balance(amount: $0) }
+    public static func map(_ domainBalance: Balance?) throws -> PresentableBalance {
+        guard let domainBalance = domainBalance else {
+            throw BalanceStoreError.invalidBalance
+        }
+        return PresentableBalance(value: String(domainBalance.amount))
     }
 }
 

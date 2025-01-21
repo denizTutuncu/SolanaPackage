@@ -7,27 +7,53 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct CustomImageView: View {
-    init(imageName: String, bundleName: String) {
-        self.imageName = imageName
-        self.bundleName = bundleName
-    }
     private let imageName: String
     private let bundleName: String
+    private let animationType: Animation?
+    
+    @State private var rotationAngle: Double = 0
+
+    init(imageName: String, bundleName: String, animationType: Animation? = nil) {
+        self.imageName = imageName
+        self.bundleName = bundleName
+        self.animationType = animationType
+    }
+
     var body: some View {
         VStack {
             Image(imageName,
                   bundle: Bundle(identifier: bundleName))
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .padding()
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .padding()
+                .rotationEffect(Angle(degrees: rotationAngle)) // Apply rotation effect
+                .onAppear {
+                    if let animation = animationType {
+                        withAnimation(animation.repeatForever(autoreverses: false)) {
+                            rotationAngle = -360
+                        }
+                    }
+                }
         }
     }
 }
 
 #Preview {
-    CustomImageView(imageName:"CreationOptionsBackground",
-                    bundleName: "com.deniztutuncu.SolanaPackageUI")
+    VStack(spacing: 20) {
+        // Instance with animation
+        CustomImageView(
+            imageName: "CreationOptionsBackground",
+            bundleName: "com.deniztutuncu.SolanaPackageUI",
+            animationType: .linear(duration: 2.0)
+        )
+        .frame(width: 200, height: 200)
+        
+        // Instance without animation
+        CustomImageView(
+            imageName: "CreationOptionsBackground",
+            bundleName: "com.deniztutuncu.SolanaPackageUI"
+        )
+        .frame(width: 200, height: 200)
+    }
 }

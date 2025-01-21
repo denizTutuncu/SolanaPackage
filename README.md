@@ -4,7 +4,7 @@
 
 [![CI-iOS](https://github.com/denizTutuncu/SolanaPackage/actions/workflows/CI-iOS.yml/badge.svg?event=pull_request)](https://github.com/denizTutuncu/SolanaPackage/actions/workflows/CI-iOS.yml)
 
-## Solana Package Framework & Solana Package UI Framework & TREA iOS App
+## Solana Package Framework & Solana Package UI Framework & Blue Giant Labs iOS App
 #### 
 The SolanaPackage repository includes a workspace named MySolWallet. Inside this workspace, there are two projects: Solana Package and MySolWallet projects. The Solana Package project has two framework targets: Solana Package, which contains code that works across different platforms, and SolanaPackageUI, which is specifically for iOS and includes iOS-specific code like the user interface (UI). Additionally, there are some test targets.
 
@@ -20,23 +20,25 @@ This module is an iOS SwiftUI module that provides a set of components to build 
 
 #### App:
 
-The repo also includes an iOS app called ```TREA``` that demonstrates how to use the Core and UI modules to interact with the Solana Blockchain. The app showcases the functionalities of creating a wallet, sending/receiving SOL, viewing transaction history, and more.
+The repo also includes an iOS app called ```BGL``` that demonstrates how to use the Core and UI modules to interact with the Solana Blockchain. The app showcases the functionalities of creating a wallet, sending/receiving SOL, viewing transaction history, and more.
 
-TREA, Trusted Repository for Electronic Assets, to create your crypto wallet with top-tier security. This app is protected by industry-standard encryption, ensuring a secure connection with Solana.
+BGL, Blue Giant Labs, creates your crypto wallet with top-tier security. This app is protected by industry-standard encryption, ensuring a secure connection with Solana.
 
 The SDK is written in Swift and is intended to be used in Swift apps.
 
 The SDK is open-source and hosted on Github, developers can use the SDK to build their own apss to connect with decentralized apps (dApps) on Solana Blockchain. Contributions are always welcome. Please find the details at the end on how to contribute.
 
-```TREA``` is avaiable on Test Flight.
+```BGL ``` is avaiable on Test Flight.
 
 ![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/TreaTestFlight.jpg?raw=true)
 
-![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/TREA.gif?raw=true)
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/BGLAppSS.jpg?raw=true)
+
+![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/BGL.gif?raw=true)
 
 ----------------
 
-### Prototype & Prototyp's Flowchart
+### Inital Prototype & Prototype's Flowchart
 
 ```
 1- Create Wallet & Receive Sol (in progress)
@@ -63,7 +65,7 @@ The SDK is open-source and hosted on Github, developers can use the SDK to build
 
 ----------------
 
-### TREA iOS App Design
+### Blue Giant Labs iOS App Design
 
 ![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Diagrams/iOSSDKDesign.drawio.png?raw=true)
 

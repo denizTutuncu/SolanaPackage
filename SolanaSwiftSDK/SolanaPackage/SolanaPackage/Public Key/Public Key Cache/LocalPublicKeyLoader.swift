@@ -8,17 +8,19 @@
 import Foundation
 
 public final class LocalPublicKeyLoader {
-    private let store: PublicKeyStore
-    private let currentDate: () -> Date
+    public typealias PublicKey = String
     
     public init(store: PublicKeyStore, currentDate: @escaping () -> Date) {
         self.store = store
         self.currentDate = currentDate
     }
+
+    private let store: PublicKeyStore
+    private let currentDate: () -> Date
 }
 
 extension LocalPublicKeyLoader: PublicKeyCache {
-    public func save(_ publicKeys: [String]) throws {
+    public func save(_ publicKeys: [PublicKey]) throws {
         if !PublicKeyCachePolicy.isEmpty(publicKeys) {
             let validKeys = PublicKeyCachePolicy.getValidPublicKeys(from: publicKeys)
             
@@ -30,7 +32,7 @@ extension LocalPublicKeyLoader: PublicKeyCache {
 }
 
 extension LocalPublicKeyLoader {
-    public func load() throws -> [String] {
+    public func load() throws -> [PublicKey] {
         if let cache = try store.retrieve() {
             return cache.publicKeys
         }
@@ -39,7 +41,7 @@ extension LocalPublicKeyLoader {
 }
 
 extension LocalPublicKeyLoader {
-    public func delete(_ publicKeys: [String]) throws {
+    public func delete(_ publicKeys: [PublicKey]) throws {
         try store.deleteCached(publicKeys)
     }
 }

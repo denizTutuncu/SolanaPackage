@@ -10,8 +10,8 @@ import SolanaPackage
 import SolanaPackageUI
 
 public class PublicKeyStoreMapper {
-    public static func map(_ publicKeys: [String]) -> [String] {
+    public static func map(_ publicKeys: [String]) -> [PresentablePublicKey] {
         guard !publicKeys.isEmpty else { return [] }
-        return publicKeys.map { $0 }
+        return publicKeys.map { PresentablePublicKey(value:  $0) }
     }
 }
