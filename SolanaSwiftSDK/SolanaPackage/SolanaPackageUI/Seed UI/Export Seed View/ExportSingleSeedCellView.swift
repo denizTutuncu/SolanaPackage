@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct ExportSingleSeedCellView: View {
     let index: Int
     @Binding var model: PresentableSeed

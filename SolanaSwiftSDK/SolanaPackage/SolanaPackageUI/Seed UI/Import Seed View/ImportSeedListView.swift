@@ -8,24 +8,22 @@
 import SwiftUI
 
 struct ImportSeedListView: View {
-    @State private var viewModel: SeedListViewModel
-    
+    @ObservedObject private var viewModel: SeedListViewModel
+
     init(viewModel: SeedListViewModel) {
-        self.viewModel =  viewModel
+        _viewModel = ObservedObject(wrappedValue: viewModel)
     }
-    
+
     var body: some View {
-        VStack {
-            List {
-                ForEach(viewModel.model.indices, id: \.self) { index in
-                    ImportSingleSeedCellView(index: (index + 1),
-                                               model: $viewModel.model[index])
+        List {
+            ForEach(viewModel.model.indices, id: \..self) { index in
+                ImportSingleSeedCellView(index: index, model: $viewModel.model[index])
                     .listRowSeparatorTint(.primary)
-                }
             }
         }
     }
 }
+
 
 struct ProvidedSeedListView_Previews: PreviewProvider {
     static var previews: some View {

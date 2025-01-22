@@ -22,7 +22,7 @@ struct ImportSingleSeedCellView: View {
                 .stroke(isValueEmpty ? Color.red : Color.blue, lineWidth: 2.5)
                 .frame(width: 29.0, height: 29.0)
                 .overlay(
-                    Text("\(index)")
+                    Text("\(index + 1)")
                         .font(.system(size: 21, weight: .bold))
                         .minimumScaleFactor(0.5)
                         .lineLimit(1)
@@ -30,11 +30,11 @@ struct ImportSingleSeedCellView: View {
                 )
 
             // TextField for seed input
-            TextField("seed \(index)", text: Binding<String>(
+            TextField("seed \(index + 1)", text: Binding<String>(
                 get: { model.value },
                 set: { newValue in
                     model.value = newValue.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-                    model.isSafe = !model.value.isEmpty // Automatically update `isSafe`
+                    model.isSafe = !model.value.isEmpty
                 }
             ))
             .font(.system(size: 21, weight: .bold))
@@ -46,7 +46,7 @@ struct ImportSingleSeedCellView: View {
 
             // Toggle that reflects `isSafe`
             Toggle("", isOn: Binding<Bool>(
-                get: { !isValueEmpty },
+                get: { model.isSafe },
                 set: { newValue in
                     model.isSafe = newValue
                     if !newValue {
@@ -60,7 +60,6 @@ struct ImportSingleSeedCellView: View {
         .padding()
     }
 }
-
 
 struct ImportSingleSeedCellView_Previews: PreviewProvider {
     static var previews: some View {

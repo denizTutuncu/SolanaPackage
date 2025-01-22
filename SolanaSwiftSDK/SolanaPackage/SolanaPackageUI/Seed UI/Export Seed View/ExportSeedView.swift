@@ -55,13 +55,13 @@ public struct ExportSeedView: View {
                        subtitleTextColor: headerSubtitleTextColor)
             
             ExportSeedListComposerView(buttonTitle: buttonTitle,
-                                   errorMessage: errorMessage,
-                                   errorViewButtonTitle: errorViewButtonTitle,
-                                   loadingTitle: loadingTitle,
-                                   errorAction: loadAgain,
-                                   action: action,
-                                   loading: viewModel.model.isEmpty,
-                                   viewModel: $viewModel)
+                                       errorMessage: errorMessage,
+                                       errorViewButtonTitle: errorViewButtonTitle,
+                                       loadingTitle: loadingTitle,
+                                       errorAction: loadAgain,
+                                       action: action,
+                                       loading: viewModel.model.isEmpty,
+                                       viewModel: viewModel)
         }
     }
 }
@@ -116,7 +116,7 @@ struct WalletCreationComposerView_Previews: PreviewProvider {
                                               PresentableSeed(value: "early"),
                                               PresentableSeed(value: "crypto")]))
                 
-                                Text("Create wallet tapped: \(tapped.description)")
+                Text("Create wallet tapped: \(tapped.description)")
             }
         }
     }

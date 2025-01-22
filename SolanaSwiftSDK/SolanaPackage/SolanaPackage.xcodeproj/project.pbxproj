@@ -38,6 +38,7 @@
 		2E2CC5C7296EC45C0063C23C /* BalancePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5C6296EC45C0063C23C /* BalancePresenter.swift */; };
 		2E2CC5C9296EC4D90063C23C /* BalancePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5C8296EC4D90063C23C /* BalancePresenterTests.swift */; };
 		2E3951E2283DF5120079852F /* BalanceItemMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3951E1283DF5120079852F /* BalanceItemMapperTests.swift */; };
+		2E3C6FE82D40B27C007413ED /* ImportSeedListComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3C6FE72D40B27C007413ED /* ImportSeedListComposerView.swift */; };
 		2E3ECB0629EE5DF500038407 /* PresentableBalanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3ECB0529EE5DF500038407 /* PresentableBalanceViewModel.swift */; };
 		2E3ECB0829EE5E2000038407 /* PresentableBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3ECB0729EE5E2000038407 /* PresentableBalance.swift */; };
 		2E3ECB0A29EE5FEB00038407 /* PresentableTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3ECB0929EE5FEB00038407 /* PresentableTransaction.swift */; };
@@ -272,6 +273,7 @@
 		2E2CC5C6296EC45C0063C23C /* BalancePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancePresenter.swift; sourceTree = "<group>"; };
 		2E2CC5C8296EC4D90063C23C /* BalancePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancePresenterTests.swift; sourceTree = "<group>"; };
 		2E3951E1283DF5120079852F /* BalanceItemMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceItemMapperTests.swift; sourceTree = "<group>"; };
+		2E3C6FE72D40B27C007413ED /* ImportSeedListComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportSeedListComposerView.swift; sourceTree = "<group>"; };
 		2E3ECB0529EE5DF500038407 /* PresentableBalanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableBalanceViewModel.swift; sourceTree = "<group>"; };
 		2E3ECB0729EE5E2000038407 /* PresentableBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableBalance.swift; sourceTree = "<group>"; };
 		2E3ECB0929EE5FEB00038407 /* PresentableTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableTransaction.swift; sourceTree = "<group>"; };
@@ -886,6 +888,7 @@
 				2E61A06C2A9172A0007E0756 /* ImportSingleSeedCellView.swift */,
 				2E61A0682A9170E5007E0756 /* ImportSeedListView.swift */,
 				2E61A06E2A91839D007E0756 /* ImportSeedView.swift */,
+				2E3C6FE72D40B27C007413ED /* ImportSeedListComposerView.swift */,
 			);
 			path = "Import Seed View";
 			sourceTree = "<group>";
@@ -1656,6 +1659,7 @@
 				2E0900BA29A8E60600865E30 /* SeedListViewModel.swift in Sources */,
 				2EFADE9129A89359009BDC11 /* SingleTransactionCellView.swift in Sources */,
 				2E917D0A29EFB0A000B578FA /* TransactionListErrorComposerView.swift in Sources */,
+				2E3C6FE82D40B27C007413ED /* ImportSeedListComposerView.swift in Sources */,
 				2E603DA929ECB2F0002A7DCA /* BalanceView.swift in Sources */,
 				2E3ECB0829EE5E2000038407 /* PresentableBalance.swift in Sources */,
 				2E0900BF29AC9D3800865E30 /* PresentablePublicKeyViewModel.swift in Sources */,

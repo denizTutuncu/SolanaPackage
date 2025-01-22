@@ -1,20 +1,21 @@
 //
-//  ExportSeedListComposerView.swift
+//  ImportSeedListComposerView.swift
 //  SolanaPackageUI
 //
-//  Created by Deniz Tutuncu on 4/18/23.
+//  Created by Deniz Tutuncu on 1/21/25.
 //
 
+// ImportSeedListComposerView.swift
 import SwiftUI
 
-struct ExportSeedListComposerView: View {
+struct ImportSeedListComposerView: View {
     let buttonTitle: String
     let errorMessage: String
     let errorViewButtonTitle: String
     let loadingTitle: String
     let errorAction: () -> Void
     let action: () -> Void
-
+    
     @State var loading = true
     @ObservedObject var viewModel: SeedListViewModel
 
@@ -29,7 +30,7 @@ struct ExportSeedListComposerView: View {
                       onHide: errorAction)
         } else {
             VStack {
-                ExportSeedListView(viewModel: viewModel)
+                ImportSeedListView(viewModel: viewModel)
                 RoundedButton(
                     title: buttonTitle,
                     isEnabled: viewModel.canSubmit,
@@ -40,21 +41,20 @@ struct ExportSeedListComposerView: View {
     }
 }
 
-
-struct SeedUIComposerView_Previews: PreviewProvider {
+struct ImportSeedListComposerView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            SeedUIComposerTestView()
+            ImportSeedListComposerTestView()
                 .previewLayout(.sizeThatFits)
-                .previewDisplayName("Seed Loading List Composer Test View")
+                .previewDisplayName("Import Seed List Composer Test View")
         }
     }
     
-    struct SeedUIComposerTestView: View {
+    struct ImportSeedListComposerTestView: View {
         
         var body: some View {
             VStack {
-                ExportSeedListComposerView(buttonTitle: "",
+                ImportSeedListComposerView(buttonTitle: "",
                                        errorMessage: "",
                                        errorViewButtonTitle: "",
                                        loadingTitle: "Loading seed phrase",
@@ -62,7 +62,7 @@ struct SeedUIComposerView_Previews: PreviewProvider {
                                        action: { },
                                        loading: true,
                                        viewModel: .init(model: []))
-                ExportSeedListComposerView(buttonTitle: "",
+                ImportSeedListComposerView(buttonTitle: "",
                                        errorMessage: "Cannot load seed phrase",
                                        errorViewButtonTitle: "Try again",
                                        loadingTitle: "Loading seed phrase",
@@ -71,7 +71,7 @@ struct SeedUIComposerView_Previews: PreviewProvider {
                                        loading: false,
                                        viewModel: .init())
                 
-                ExportSeedListComposerView(buttonTitle: "Create wallet",
+                ImportSeedListComposerView(buttonTitle: "Create wallet",
                                        errorMessage: "",
                                        errorViewButtonTitle: "",
                                        loadingTitle: "",

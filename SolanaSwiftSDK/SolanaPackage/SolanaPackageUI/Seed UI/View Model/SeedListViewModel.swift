@@ -13,15 +13,20 @@ public final class SeedListViewModel: ObservableObject {
         self.isLoading = isLoading
         self.errorMessage = errorMessage
     }
-    
-    @Published var model: [PresentableSeed]
+
+    @Published var model: [PresentableSeed] {
+        didSet {
+            // Trigger an update to `canSubmit` whenever the model changes
+            objectWillChange.send()
+        }
+    }
     @Published var isLoading: Bool
     @Published var errorMessage: String?
 
     public var canSubmit: Bool {
         model.allSatisfy { $0.isSafe }
     }
-    
+
     public func updateModel(_ seeds: [String]) {
         self.model = seeds.map { PresentableSeed(value: $0) }
         self.isLoading = false
@@ -37,9 +42,8 @@ public final class SeedListViewModel: ObservableObject {
         self.isLoading = true
         self.errorMessage = nil
     }
-    
+
     public func updateSeed(at index: Int, with seed: PresentableSeed) {
-        model[index] = seed // Update the specific seed
-        model = model       // Reassign the array to trigger updates
+        model[index] = seed
     }
 }
