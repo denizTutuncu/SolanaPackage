@@ -5,5 +5,16 @@
   Created by Deniz Tutuncu on 2/27/23.
   
 */
-"SEED_LIST_TITLE" = "Frase Semente";
-"SEED_LIST_SUBTITLE" = "A frase inicial nunca é armazenada no dispositivo. Você o verá apenas uma vez e será exibido apenas durante a configuração. A ordem da frase inicial é crucial, portanto, certifique-se de alternar cada botão correspondente a cada frase para manter a ordem correta. Certifique-se de manter sua frase-semente fisicamente segura.";
+"IMPORT_SEED_VIEW_TITLE" = "Frase Semente";
+"IMPORT_SEED_VIEW_SUBTITLE" = "A frase inicial nunca é armazenada no dispositivo. Você o verá apenas uma vez e será exibido apenas durante a configuração. A ordem da frase inicial é crucial, portanto, certifique-se de alternar cada botão correspondente a cada frase para manter a ordem correta. Certifique-se de manter sua frase-semente fisicamente segura.";
+"IMPORT_SEED_VIEW_BUTTON_TITLE" = "Importar carteira do seed";
+"IMPORT_SEED_VIEW_ERROR_MESSAGE" = "Não é possível carregar a frase inicial";
+"IMPORT_SEED_VIEW_ERROR_BUTTON_TITLE" = "Tente novamente";
+"IMPORT_SEED_VIEW_LOADING_TITLE" = "Carregando frase-semente...";
+
+"IMPORT_SEED_VIEW_TITLE" = "Frase-semente exportada";
+"IMPORT_SEED_VIEW_SUBTITLE" = "A frase inicial exportada nunca é armazenada no dispositivo. Você o verá apenas uma vez e só será mostrado durante a configuração. A ordem da frase-semente é crucial, portanto, certifique-se de alternar cada botão correspondente a cada frase para manter a ordem correta. Certifique-se de manter sua frase-semente fisicamente segura.";
+"EXPORT_SEED_VIEW_BUTTON_TITLE" = "Criar nova carteira";
+"EXPORT_SEED_VIEW_ERROR_MESSAGE" = "Não é possível exportar a frase inicial";
+"EXPORT_SEED_VIEW_ERROR_BUTTON_TITLE" = "Tente exportar novamente";
+"EXPORT_SEED_VIEW_LOADING_TITLE" = "Exportando frase-semente...";

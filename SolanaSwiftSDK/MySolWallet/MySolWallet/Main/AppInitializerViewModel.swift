@@ -184,40 +184,48 @@ class AppInitializerViewModel: ObservableObject {
                                       loadAgain: @escaping () -> Void,
                                       action: @escaping () -> Void
     ) -> ExportSeedView {
-        let seedTitle = SeedPresenter.title
-        let seedSubtitle = SeedPresenter.subtitle
+        let exportSeedViewTitle = SeedPresenter.exportSeedViewTitle
+        let exportSeedViewSubtitle = SeedPresenter.exportSeedViewSubtitle
+        let exportSeedViewButtonTitle = SeedPresenter.exportSeedViewButtonTitle
+        let exportSeedViewErrorMessage = SeedPresenter.exportSeedViewErrorMessage
+        let exportSeedViewErrorButtonTitle = SeedPresenter.exportSeedViewErrorButtonTitle
+        let exportSeedViewLoadingTitle = SeedPresenter.exportSeedViewLoadingTitle
         
         return ExportSeedView(
-            headerTitle: seedTitle,
+            headerTitle: exportSeedViewTitle,
             headerTitleTextColor: .primary,
-            headerSubtitle: seedSubtitle,
+            headerSubtitle: exportSeedViewSubtitle,
             headerSubtitleTextColor: .blue,
-            buttonTitle: "Create New Wallet",
-            errorMessage: "Cannot load seed phras",
-            errorViewButtonTitle: "Try again",
-            loadingTitle: "Loading Seed Phrase...",
+            buttonTitle: exportSeedViewButtonTitle,
+            errorMessage: exportSeedViewErrorMessage,
+            errorViewButtonTitle: exportSeedViewErrorButtonTitle,
+            loadingTitle: exportSeedViewLoadingTitle,
             loadAgain: loadAgain,
             action: action,
-            viewModel: .init(model: seed, isLoading: seed.isEmpty, errorMessage: "Cannot load seed")
+            viewModel: .init(model: seed, isLoading: seed.isEmpty, errorMessage: exportSeedViewErrorMessage)
         )
     }
     
     private func createImportSeedView(with seed: [PresentableSeed], loadAgain: @escaping () -> Void, action: @escaping () -> Void) -> ImportSeedView {
-        let seedTitle = SeedPresenter.title
-        let seedSubtitle = SeedPresenter.subtitle
+        let importSeedViewTitle = SeedPresenter.importSeedViewTitle
+        let importSeedViewSubtitle = SeedPresenter.importSeedViewSubtitle
+        let importSeedViewButtonTitle = SeedPresenter.importSeedViewButtonTitle
+        let importSeedViewErrorMessage = SeedPresenter.importSeedViewErrorMessage
+        let importSeedViewErrorButtonTitle = SeedPresenter.importSeedViewErrorButtonTitle
+        let importSeedViewLoadingTitle = SeedPresenter.importSeedViewLoadingTitle
         
         return ImportSeedView(
-            headerTitle: seedTitle,
+            headerTitle: importSeedViewTitle,
             headerTitleTextColor: .primary,
-            headerSubtitle: seedSubtitle,
+            headerSubtitle: importSeedViewSubtitle,
             headerSubtitleTextColor: .blue,
-            buttonTitle: "Import Wallet From Seed",
-            errorMessage: "Cannot load seed phrase",
-            errorViewButtonTitle: "Try again",
-            loadingTitle: "Loading Seed Phrase...",
+            buttonTitle: importSeedViewButtonTitle,
+            errorMessage: importSeedViewErrorMessage,
+            errorViewButtonTitle: importSeedViewErrorButtonTitle,
+            loadingTitle: importSeedViewLoadingTitle,
             loadAgain: loadAgain,
             action: action,
-            viewModel: .init(model: seed, isLoading: seed.isEmpty, errorMessage: "Cannot load seed")
+            viewModel: .init(model: seed, isLoading: seed.isEmpty, errorMessage: importSeedViewErrorMessage)
         )
     }
 }

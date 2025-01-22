@@ -13,7 +13,7 @@ class SeedPresenterTests: XCTestCase {
     func test_title_isLocalized() {
         let tableName = "Seed"
         let key = "SEED_LIST_TITLE"
-        XCTAssertEqual(SeedPresenter.title, localized(table: tableName, key: key))
+        XCTAssertEqual(SeedPresenter.importSeedViewTitle, localized(table: tableName, key: key))
     }
     
     func test_currencyName_isLocalized() {

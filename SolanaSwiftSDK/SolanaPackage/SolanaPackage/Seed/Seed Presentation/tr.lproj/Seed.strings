@@ -5,5 +5,16 @@
   Created by Deniz Tutuncu on 2/27/23.
   
 */
-"SEED_LIST_TITLE" = "Tohum Cümlesi";
-"SEED_LIST_SUBTITLE" = "Tohum cümlesi asla cihazda saklanmaz. Yalnızca bir kez görürsünüz ve yalnızca kurulum sırasında gösterilir. Tohum cümlesinin sırası çok önemlidir, bu nedenle doğru sırayı korumak için her bir düğmeyi her bir tümceye karşılık gelen geçiş yaptığınızdan emin olun. Lütfen tohum cümlesini fiziksel olarak güvende tuttuğunuzdan emin olun.";
+"IMPORT_SEED_VIEW_TITLE" = "Tohum Cümlesi";
+"IMPORT_SEED_VIEW_SUBTITLE" = "Tohum cümlesi asla cihazda saklanmaz. Yalnızca bir kez görürsünüz ve yalnızca kurulum sırasında gösterilir. Tohum cümlesinin sırası çok önemlidir, bu nedenle doğru sırayı korumak için her bir düğmeyi her bir tümceye karşılık gelen geçiş yaptığınızdan emin olun. Lütfen tohum cümlesini fiziksel olarak güvende tuttuğunuzdan emin olun.";
+"IMPORT_SEED_VIEW_BUTTON_TITLE" = "Cüzdanı Tohumdan İçe Aktar";
+"IMPORT_SEED_VIEW_ERROR_MESSAGE" = "Cüzdan olusturmak için gereken tohum cümleniz yüklenemiyor";
+"IMPORT_SEED_VIEW_ERROR_BUTTON_TITLE" = "Tekrar deneyin";
+"IMPORT_SEED_VIEW_LOADING_TITLE" = "Tohum Cümleniz Yükleniyor...";
+
+"EXPORT_SEED_VIEW_TITLE" = "İhraç Edilen Tohum Cümleniz";
+"EXPORT_SEED_VIEW_SUBTITLE" = "Dışa aktarılan tohum cümlesi hiçbir zaman cihazda saklanmaz. Yalnızca bir kez göreceksiniz ve yalnızca kurulum sırasında gösterilir. Temel ifadenin sırası çok önemlidir, bu nedenle doğru sırayı korumak için her bir ifadeye karşılık gelen her düğmeyi değiştirdiğinizden emin olun. Lütfen tohum ifadenizi fiziksel olarak güvende tuttuğunuzdan emin olun.";
+"EXPORT_SEED_VIEW_BUTTON_TITLE" = "Yeni Cüzdan Oluştur";
+"EXPORT_SEED_VIEW_ERROR_MESSAGE" = "Tohum cümleniz dışa aktarılamıyor";
+"EXPORT_SEED_VIEW_ERROR_BUTTON_TITLE" = "Tekrar dışa aktarmayı deneyin";
+"EXPORT_SEED_VIEW_LOADING_TITLE" = "Tohum Cümleniz Dışa Aktarılıyor...";
