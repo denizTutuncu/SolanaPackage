@@ -115,7 +115,7 @@ class AppInitializerViewModel: ObservableObject {
             firstButtonTitle: "Create Wallet",
             firstButtonAction: {
                 self.navigationStore.currentView = .exportSeed(
-                    self.createExportSeedView(with: seed)
+                    self.createExportSeedView(with: seed, loadAgain: { }, action: { })
                 )
             },
             secondButtonTitle: "Import Wallet"
@@ -144,7 +144,9 @@ class AppInitializerViewModel: ObservableObject {
                                                  PresentableSeed(value: ""),
                                                  PresentableSeed(value: ""),
                                                  PresentableSeed(value: ""),
-                                                 PresentableSeed(value: "")])
+                                                 PresentableSeed(value: "")],
+                                          loadAgain: { },
+                                          action: { })
             )
         }
     }
@@ -178,30 +180,43 @@ class AppInitializerViewModel: ObservableObject {
         )
     }
     
-    private func createExportSeedView(with seed: [PresentableSeed]) -> ExportSeedView {
-        ExportSeedView(
-            headerTitle: "Seed Phrase",
+    private func createExportSeedView(with seed: [PresentableSeed],
+                                      loadAgain: @escaping () -> Void,
+                                      action: @escaping () -> Void
+    ) -> ExportSeedView {
+        let seedTitle = SeedPresenter.title
+        let seedSubtitle = SeedPresenter.subtitle
+        
+        return ExportSeedView(
+            headerTitle: seedTitle,
             headerTitleTextColor: .primary,
-            headerSubtitle: "The seed phrase is never stored on the device. You will only see it once, and it is only shown during setup. Please ensure that you keep your seed phrase physically secure.",
+            headerSubtitle: seedSubtitle,
             headerSubtitleTextColor: .blue,
-            buttonTitle: "Create new wallet",
-            errorMessage: "",
-            errorViewButtonTitle: "",
-            loadingTitle: "",
-            loadAgain: { },
-            action: { },
+            buttonTitle: "Create New Wallet",
+            errorMessage: "Cannot load seed phras",
+            errorViewButtonTitle: "Try again",
+            loadingTitle: "Loading Seed Phrase...",
+            loadAgain: loadAgain,
+            action: action,
             viewModel: .init(model: seed, isLoading: seed.isEmpty, errorMessage: "Cannot load seed")
         )
     }
     
-    private func createImportSeedView(with seed: [PresentableSeed]) -> ImportSeedView {
-        ImportSeedView(
-            headerTitle: "Seed Phrase",
+    private func createImportSeedView(with seed: [PresentableSeed], loadAgain: @escaping () -> Void, action: @escaping () -> Void) -> ImportSeedView {
+        let seedTitle = SeedPresenter.title
+        let seedSubtitle = SeedPresenter.subtitle
+        
+        return ImportSeedView(
+            headerTitle: seedTitle,
             headerTitleTextColor: .primary,
-            headerSubtitle: "The seed phrase is never stored on the device. You will only see it once, and it is only shown during setup. Please ensure that you keep your seed phrase physically secure.",
+            headerSubtitle: seedSubtitle,
             headerSubtitleTextColor: .blue,
-            buttonTitle: "Import wallet",
-            action: { },
+            buttonTitle: "Import Wallet From Seed",
+            errorMessage: "Cannot load seed phrase",
+            errorViewButtonTitle: "Try again",
+            loadingTitle: "Loading Seed Phrase...",
+            loadAgain: loadAgain,
+            action: action,
             viewModel: .init(model: seed, isLoading: seed.isEmpty, errorMessage: "Cannot load seed")
         )
     }

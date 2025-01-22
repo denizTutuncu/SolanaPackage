@@ -60,8 +60,10 @@ public struct ImportSeedView: View {
                 loadingTitle: loadingTitle,
                 errorAction: loadAgain,
                 action: action,
+//                loading: viewModel.isLoading,
                 viewModel: viewModel
             )
+            Spacer()
         }
     }
 }

@@ -887,8 +887,8 @@
 			children = (
 				2E61A06C2A9172A0007E0756 /* ImportSingleSeedCellView.swift */,
 				2E61A0682A9170E5007E0756 /* ImportSeedListView.swift */,
-				2E61A06E2A91839D007E0756 /* ImportSeedView.swift */,
 				2E3C6FE72D40B27C007413ED /* ImportSeedListComposerView.swift */,
+				2E61A06E2A91839D007E0756 /* ImportSeedView.swift */,
 			);
 			path = "Import Seed View";
 			sourceTree = "<group>";

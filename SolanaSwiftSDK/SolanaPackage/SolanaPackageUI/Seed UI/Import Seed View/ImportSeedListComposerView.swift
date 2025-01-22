@@ -16,11 +16,11 @@ struct ImportSeedListComposerView: View {
     let errorAction: () -> Void
     let action: () -> Void
     
-    @State var loading = true
+//    @State var loading = true
     @ObservedObject var viewModel: SeedListViewModel
-
+    
     var body: some View {
-        if loading {
+        if viewModel.isLoading {
             VStack {
                 LoadingView(title: loadingTitle)
             }
@@ -55,53 +55,55 @@ struct ImportSeedListComposerView_Previews: PreviewProvider {
         var body: some View {
             VStack {
                 ImportSeedListComposerView(buttonTitle: "",
-                                       errorMessage: "",
-                                       errorViewButtonTitle: "",
-                                       loadingTitle: "Loading seed phrase",
-                                       errorAction: { },
-                                       action: { },
-                                       loading: true,
-                                       viewModel: .init(model: []))
+                                           errorMessage: "",
+                                           errorViewButtonTitle: "",
+                                           loadingTitle: "Loading seed phrase",
+                                           errorAction: { },
+                                           action: { },
+//                                           loading: true,
+                                           viewModel: .init(model: [], isLoading: true))
                 ImportSeedListComposerView(buttonTitle: "",
-                                       errorMessage: "Cannot load seed phrase",
-                                       errorViewButtonTitle: "Try again",
-                                       loadingTitle: "Loading seed phrase",
-                                       errorAction: { },
-                                       action: { },
-                                       loading: false,
-                                       viewModel: .init())
+                                           errorMessage: "Cannot load seed phrase",
+                                           errorViewButtonTitle: "Try again",
+                                           loadingTitle: "Loading seed phrase",
+                                           errorAction: { },
+                                           action: { },
+//                                           loading: false,
+                                           viewModel: .init())
                 
                 ImportSeedListComposerView(buttonTitle: "Create wallet",
-                                       errorMessage: "",
-                                       errorViewButtonTitle: "",
-                                       loadingTitle: "",
-                                       errorAction: { },
-                                       action: { },
-                                       loading: false,
-                                       viewModel: .init(model: [PresentableSeed(value: "seed"),
-                                                                          PresentableSeed(value: "phrase"),
-                                                                          PresentableSeed(value: "important"),
-                                                                          PresentableSeed(value: "who"),
-                                                                          PresentableSeed(value: "has"),
-                                                                          PresentableSeed(value: "seed"),
-                                                                          PresentableSeed(value: "has"),
-                                                                          PresentableSeed(value: "access"),
-                                                                          PresentableSeed(value: "wallet"),
-                                                                          PresentableSeed(value: "secure"),
-                                                                          PresentableSeed(value: "crucial"),
-                                                                          PresentableSeed(value: "ownership"),
-                                                                          PresentableSeed(value: "must"),
-                                                                          PresentableSeed(value: "wkeepho"),
-                                                                          PresentableSeed(value: "offline"),
-                                                                          PresentableSeed(value: "physical"),
-                                                                          PresentableSeed(value: "share"),
-                                                                          PresentableSeed(value: "with"),
-                                                                          PresentableSeed(value: "love"),
-                                                                          PresentableSeed(value: "ones"),
-                                                                          PresentableSeed(value: "teach"),
-                                                                          PresentableSeed(value: "them"),
-                                                                          PresentableSeed(value: "early"),
-                                                                          PresentableSeed(value: "crypto")]))
+                                           errorMessage: "",
+                                           errorViewButtonTitle: "",
+                                           loadingTitle: "",
+                                           errorAction: { },
+                                           action: { },
+//                                           loading: false,
+                                           viewModel: .init(model: [PresentableSeed(value: "seed"),
+                                                                    PresentableSeed(value: "phrase"),
+                                                                    PresentableSeed(value: "important"),
+                                                                    PresentableSeed(value: "who"),
+                                                                    PresentableSeed(value: "has"),
+                                                                    PresentableSeed(value: "seed"),
+                                                                    PresentableSeed(value: "has"),
+                                                                    PresentableSeed(value: "access"),
+                                                                    PresentableSeed(value: "wallet"),
+                                                                    PresentableSeed(value: "secure"),
+                                                                    PresentableSeed(value: "crucial"),
+                                                                    PresentableSeed(value: "ownership"),
+                                                                    PresentableSeed(value: "must"),
+                                                                    PresentableSeed(value: "wkeepho"),
+                                                                    PresentableSeed(value: "offline"),
+                                                                    PresentableSeed(value: "physical"),
+                                                                    PresentableSeed(value: "share"),
+                                                                    PresentableSeed(value: "with"),
+                                                                    PresentableSeed(value: "love"),
+                                                                    PresentableSeed(value: "ones"),
+                                                                    PresentableSeed(value: "teach"),
+                                                                    PresentableSeed(value: "them"),
+                                                                    PresentableSeed(value: "early"),
+                                                                    PresentableSeed(value: "crypto"),
+                                                                   ],
+                                                            isLoading: false))
                 
             }
         }
