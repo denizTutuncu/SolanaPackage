@@ -5,4 +5,11 @@
   Created by Deniz Tutuncu on 2/22/23.
   
 */
-"WALLET_TITLE" = "Cüzdan";
+"WALLET_VIEW_CURRENCY_NAME" = "lamports";
+"WALLET_VIEW_NETWORK_NAME" = "Solana";
+
+"WALLET_LIST_VIEW_TITLE" = "Cüzdanlar";
+"WALLET_LIST_VIEW_SUBTITLE" = "Anahtarlık, cihazınızda gizli anahtarlarınızı ve diğer hassas bilgilerinizi güvende tutmak için şifreleme kullanan güvenli bir depolama alanıdır. Kişisel verilerinizi yetkisiz erişime karşı korumak için önemli bir araçtır.";
+"WALLET_LIST_VIEW_ERROR_MESSAGE" = "Cüzdanlarınız yüklenemiyor";
+"WALLET_LIST_VIEW_ERROR_BUTTON_TITLE" = "Cüzdanlarınızı tekrar yüklemeyi deneyin";
+"WALLET_LIST_VIEW_LOADING_TITLE" = "Cüzdanlarınız yükleniyor";

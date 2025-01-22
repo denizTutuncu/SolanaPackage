@@ -11,11 +11,11 @@ import SolanaPackage
 class WalletPresenterTests: XCTestCase {
     
     func test_title_isLocalized() {
-        XCTAssertEqual(WalletPresenter.title, localized(table: "Wallet", key: "WALLET_TITLE"))
+        XCTAssertEqual(WalletPresenter.walletListViewTitle, localized(table: "Wallet", key: "WALLET_TITLE"))
     }
     
     func test_subtitle_isLocalized() {
-        XCTAssertEqual(WalletPresenter.subtitle, localized(table: "WalletListSubtitle", key:"WALLETLIST_SUBTITLE"))
+        XCTAssertEqual(WalletPresenter.walletListViewSubtitle, localized(table: "WalletListSubtitle", key:"WALLETLIST_SUBTITLE"))
     }
     
     func test_currencyName_isLocalized() {

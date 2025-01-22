@@ -85,21 +85,27 @@ class AppInitializerViewModel: ObservableObject {
         with transactions: [PresentableTransaction],
         balance: PresentableBalance
     ) -> WalletListView {
-        WalletListView(
-            headerTitle: "Wallets",
+        let title = WalletPresenter.walletListViewTitle
+        let subtitle = WalletPresenter.walletListViewSubtitle
+        let walletListViewErrorMessage = WalletPresenter.walletListViewErrorMessage
+        let walletListErrorButtonTitle = WalletPresenter.walletListErrorButtonTitle
+        let walletListViewLoadingTitle = WalletPresenter.walletListViewLoadingTitle
+        
+        return WalletListView(
+            headerTitle: title,
             headerTitleTextColor: .primary,
-            headerSubtitle: "Manage your wallets securely",
+            headerSubtitle: subtitle,
             headerSubtitleTextColor: .blue,
-            errorMessage: "Cannot load wallets",
-            errorViewButtonTitle: "Try again",
-            loadingTitle: "Loading wallets",
+            errorMessage: walletListViewErrorMessage,
+            errorViewButtonTitle: walletListErrorButtonTitle,
+            loadingTitle: walletListViewLoadingTitle,
             tryAgain: { self.initializeApp() },
             selection: { publicKey in
                 self.navigationStore.currentView = .walletDetail(
                     self.createWalletDetailView(for: PresentablePublicKey(value: publicKey), with: balance, with: transactions)
                 )
             },
-            viewModel: .init(model: publicKeys, isLoading: publicKeys.isEmpty, errorMessage: "Cannot load wallets")
+            viewModel: .init(model: publicKeys, isLoading: publicKeys.isEmpty, errorMessage: walletListViewErrorMessage)
         )
     }
     
@@ -192,7 +198,7 @@ class AppInitializerViewModel: ObservableObject {
         let exportSeedViewLoadingTitle = SeedPresenter.exportSeedViewLoadingTitle
         
         return ExportSeedView(
-            headerTitle: exportSeedViewTitle,
+            viewModel: .init(model: seed, isLoading: seed.isEmpty), headerTitle: exportSeedViewTitle,
             headerTitleTextColor: .primary,
             headerSubtitle: exportSeedViewSubtitle,
             headerSubtitleTextColor: .blue,
@@ -201,8 +207,7 @@ class AppInitializerViewModel: ObservableObject {
             errorViewButtonTitle: exportSeedViewErrorButtonTitle,
             loadingTitle: exportSeedViewLoadingTitle,
             loadAgain: loadAgain,
-            action: action,
-            viewModel: .init(model: seed, isLoading: seed.isEmpty, errorMessage: exportSeedViewErrorMessage)
+            action: action
         )
     }
     
@@ -215,7 +220,7 @@ class AppInitializerViewModel: ObservableObject {
         let importSeedViewLoadingTitle = SeedPresenter.importSeedViewLoadingTitle
         
         return ImportSeedView(
-            headerTitle: importSeedViewTitle,
+            viewModel: .init(model: seed, isLoading: seed.isEmpty), headerTitle: importSeedViewTitle,
             headerTitleTextColor: .primary,
             headerSubtitle: importSeedViewSubtitle,
             headerSubtitleTextColor: .blue,
@@ -224,8 +229,7 @@ class AppInitializerViewModel: ObservableObject {
             errorViewButtonTitle: importSeedViewErrorButtonTitle,
             loadingTitle: importSeedViewLoadingTitle,
             loadAgain: loadAgain,
-            action: action,
-            viewModel: .init(model: seed, isLoading: seed.isEmpty, errorMessage: importSeedViewErrorMessage)
+            action: action
         )
     }
 }

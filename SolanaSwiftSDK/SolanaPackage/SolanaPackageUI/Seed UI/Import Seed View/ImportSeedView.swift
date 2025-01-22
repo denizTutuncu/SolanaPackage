@@ -8,8 +8,10 @@
 import SwiftUI
 
 public struct ImportSeedView: View {
-    
-    public init(headerTitle: String,
+    @ObservedObject var viewModel: ImportSeedViewModel
+
+    public init(viewModel: ImportSeedViewModel,
+                headerTitle: String,
                 headerTitleTextColor: Color,
                 headerSubtitle: String,
                 headerSubtitleTextColor: Color,
@@ -18,9 +20,8 @@ public struct ImportSeedView: View {
                 errorViewButtonTitle: String,
                 loadingTitle: String,
                 loadAgain: @escaping () -> Void,
-                action: @escaping () -> Void,
-                viewModel: SeedListViewModel)
-    {
+                action: @escaping () -> Void) {
+        self.viewModel = viewModel
         self.headerTitle = headerTitle
         self.headerTitleTextColor = headerTitleTextColor
         self.headerSubtitle = headerSubtitle
@@ -31,9 +32,8 @@ public struct ImportSeedView: View {
         self.loadingTitle = loadingTitle
         self.loadAgain = loadAgain
         self.action = action
-        self._viewModel = State(initialValue: viewModel)
     }
-    
+
     private let headerTitle: String
     private let headerTitleTextColor: Color
     private let headerSubtitle: String
@@ -44,82 +44,59 @@ public struct ImportSeedView: View {
     private let loadingTitle: String
     private let loadAgain: () -> Void
     private let action: () -> Void
-    
-    @State private var viewModel: SeedListViewModel
-    
+
     public var body: some View {
         VStack {
             HeaderView(title: headerTitle,
                        titleTextColor: headerTitleTextColor,
                        subtitle: headerSubtitle,
                        subtitleTextColor: headerSubtitleTextColor)
-            ImportSeedListComposerView(
-                buttonTitle: buttonTitle,
-                errorMessage: errorMessage,
-                errorViewButtonTitle: errorViewButtonTitle,
-                loadingTitle: loadingTitle,
-                errorAction: loadAgain,
-                action: action,
-//                loading: viewModel.isLoading,
-                viewModel: viewModel
-            )
-            Spacer()
-        }
-    }
-}
 
-struct ProvidedSeedComposerView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            ProvidedSeedComposerTestView()
-                .previewLayout(.sizeThatFits)
-                .previewDisplayName("Wallet Creation Import Seed Test View")
-        }
-    }
-    
-    struct ProvidedSeedComposerTestView: View {
-        @State var tapped = false
-        
-        var body: some View {
-            VStack {
-                ImportSeedView(headerTitle: "Seed Phrase",
-                               headerTitleTextColor: .primary,
-                               headerSubtitle: "The seed phrase is never stored on the device and will be wiped out after importing your wallet. Remember, the order of the seed phrase is crucial.",
-                               headerSubtitleTextColor: .blue,
-                               buttonTitle: "Import wallet",
-                               errorMessage: "Cannot load seed phrase",
-                               errorViewButtonTitle: "Try again",
-                               loadingTitle: "Loading seed phrase",
-                               loadAgain: { tapped.toggle() },
-                               action: { tapped.toggle() },
-                               viewModel: .init(model: [PresentableSeed(value: "seed"),
-                                                        PresentableSeed(value: "phrase"),
-                                                        PresentableSeed(value: "important"),
-                                                        PresentableSeed(value: ""),
-                                                        PresentableSeed(value: ""),
-                                                        PresentableSeed(value: ""),
-                                                        PresentableSeed(value: ""),
-                                                        PresentableSeed(value: ""),
-                                                        PresentableSeed(value: ""),
-                                                        PresentableSeed(value: ""),
-                                                        PresentableSeed(value: ""),
-                                                        PresentableSeed(value: ""),
-                                                        PresentableSeed(value: ""),
-                                                        PresentableSeed(value: ""),
-                                                        PresentableSeed(value: ""),
-                                                        PresentableSeed(value: ""),
-                                                        PresentableSeed(value: ""),
-                                                        PresentableSeed(value: ""),
-                                                        PresentableSeed(value: ""),
-                                                        PresentableSeed(value: ""),
-                                                        PresentableSeed(value: ""),
-                                                        PresentableSeed(value: ""),
-                                                        PresentableSeed(value: ""),
-                                                        PresentableSeed(value: "")]))
-                
-                Text("Import wallet tapped: \(tapped.description)")
+            if viewModel.isLoading {
+                LoadingView(title: loadingTitle)
+            } else if viewModel.model.isEmpty {
+                ErrorView(
+                    message: errorMessage,
+                    buttonTitle: errorViewButtonTitle,
+                    onHide: loadAgain
+                )
+            } else {
+                List {
+                    ForEach(viewModel.model.indices, id: \..self) { index in
+                        ImportSingleSeedCellView(
+                            index: index,
+                            value: $viewModel.model[index].value,
+                            onValueChange: { newValue in
+                                viewModel.model[index].value = newValue
+                            }
+                        )
+                    }
+                }
+                RoundedButton(title: buttonTitle, isEnabled: viewModel.canSubmit, action: action)
             }
         }
     }
 }
 
+struct ImportSeedView_Previews: PreviewProvider {
+    static var previews: some View {
+        ImportSeedView(
+            viewModel: ImportSeedViewModel(model: [
+                PresentableSeed(value: "seed"),
+                PresentableSeed(value: "phrase"),
+                PresentableSeed(value: "important"),
+                PresentableSeed(value: "")
+            ]),
+            headerTitle: "Import Seed Phrase",
+            headerTitleTextColor: .primary,
+            headerSubtitle: "Enter your seed phrase to import your wallet.",
+            headerSubtitleTextColor: .blue,
+            buttonTitle: "Import Wallet",
+            errorMessage: "Cannot import the seed phrase at this time.",
+            errorViewButtonTitle: "Try Again",
+            loadingTitle: "Loading Seed Phrase...",
+            loadAgain: {},
+            action: {}
+        )
+    }
+}

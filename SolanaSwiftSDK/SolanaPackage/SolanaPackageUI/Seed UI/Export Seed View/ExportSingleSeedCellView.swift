@@ -17,7 +17,7 @@ struct ExportSingleSeedCellView: View {
                 .stroke(model.isSafe ? .blue : .red, lineWidth: 2.5)
                 .frame(width: 29.0, height: 29.0)
                 .overlay(
-                    Text("\(index)")
+                    Text("\(index + 1)")
                         .font(.system(size: 21, weight: .bold))
                         .minimumScaleFactor(0.5)
                         .lineLimit(1)
@@ -35,9 +35,7 @@ struct ExportSingleSeedCellView: View {
             Toggle("", isOn: Binding(
                 get: { model.isSafe },
                 set: { newValue in
-                    var updatedModel = model
-                    updatedModel.isSafe = newValue
-                    model = updatedModel
+                    model.isSafe = newValue
                 }
             ))
         }
@@ -45,16 +43,13 @@ struct ExportSingleSeedCellView: View {
     }
 }
 
-struct SingleSeedCellView_Previews: PreviewProvider {
-    
+struct ExportSingleSeedCellView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            ExportSingleSeedCellView(index: 1,
-                               model: .constant(PresentableSeed(value: "seed"))
-            )
-            .previewLayout(.sizeThatFits)
-            .previewDisplayName("Export Single Seed Cell View")
-            
-        }
+        ExportSingleSeedCellView(
+            index: 0,
+            model: .constant(PresentableSeed(value: "example", isSafe: true))
+        )
+        .previewLayout(.sizeThatFits)
+        .previewDisplayName("Export Single Seed Cell View")
     }
 }

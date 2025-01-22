@@ -8,32 +8,59 @@
 import Foundation
 
 public final class WalletPresenter {
-    public static var title: String {
-        return NSLocalizedString("WALLET_TITLE",
+    
+    //MARK: - WALLET VIEW
+    public static var currency: String {
+        NSLocalizedString("WALLET_VIEW_CURRENCY_NAME",
+                                 tableName: "Wallet",
+                                 bundle: Bundle(for: WalletPresenter.self),
+                                 comment: "Currency name for the wallet view")
+    }
+    
+    public static var network: String {
+        NSLocalizedString("WALLET_VIEW_NETWORK_NAME",
+                                 tableName: "Wallet",
+                                 bundle: Bundle(for: WalletPresenter.self),
+                                 comment: "Network name for the wallet view")
+    }
+    
+    //MARK: - WALLET LIST VIEW
+    public static var walletListViewTitle: String {
+        return NSLocalizedString("WALLET_LIST_VIEW_TITLE",
                                  tableName: "Wallet",
                                  bundle: Bundle(for: WalletPresenter.self),
                                  comment: "Title for the wallet list view")
     }
     
-    public static var subtitle: String {
-        return NSLocalizedString("WALLETLIST_SUBTITLE",
-                                 tableName: "WalletListSubtitle",
+    public static var walletListViewSubtitle: String {
+        return NSLocalizedString("WALLET_LIST_VIEW_SUBTITLE",
+                                 tableName: "Wallet",
                                  bundle: Bundle(for: WalletPresenter.self),
-                                 comment: "Subtitle for the wallet list view")
+                                 comment: "Subtitle for tthe wallet list view")
     }
     
-    public static var currency: String {
-        NSLocalizedString("CURRENCY_NAME",
-                                 tableName: "CurrencyName",
+    public static var walletListViewErrorMessage: String {
+        NSLocalizedString("WALLET_LIST_VIEW_ERROR_MESSAGE",
+                                 tableName: "Wallet",
                                  bundle: Bundle(for: WalletPresenter.self),
-                                 comment: "Name for the currency")
+                                 comment: "Error message for the wallet list view")
     }
     
-    public static var network: String {
-        NSLocalizedString("NETWORK_NAME",
-                                 tableName: "NetworkName",
+    
+    public static var walletListErrorButtonTitle: String {
+        NSLocalizedString("WALLET_LIST_VIEW_ERROR_BUTTON_TITLE",
+                                 tableName: "Wallet",
                                  bundle: Bundle(for: WalletPresenter.self),
-                                 comment: "Name for the network")
+                                 comment: "Error button title for the wallet list view")
     }
+    
+    public static var walletListViewLoadingTitle: String {
+        NSLocalizedString("WALLET_LIST_VIEW_LOADING_TITLE",
+                                 tableName: "Wallet",
+                                 bundle: Bundle(for: WalletPresenter.self),
+                                 comment: "Loading title for the wallet list view")
+    }
+    
+    
     
 }

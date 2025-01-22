@@ -1,8 +1,0 @@
-/* 
-  WalletListSubtitle.strings
-  SolanaPackage
-
-  Created by Deniz Tutuncu on 4/25/23.
-  
-*/
-"WALLETLIST_SUBTITLE" = "Anahtarlık, cihazınızda özel anahtarlarınızı ve diğer hassas bilgilerinizi güvende tutmak için şifreleme kullanan güvenli bir depolama alanıdır. Kişisel verilerinizi yetkisiz erişimden korumak için önemli bir araçtır.";

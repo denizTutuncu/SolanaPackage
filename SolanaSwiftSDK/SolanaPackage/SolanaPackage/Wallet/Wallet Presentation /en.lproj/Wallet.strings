@@ -5,4 +5,12 @@
   Created by Deniz Tutuncu on 2/22/23.
   
 */
-"WALLET_TITLE" = "Wallets";
+"WALLET_VIEW_CURRENCY_NAME" = "lamports";
+"WALLET_VIEW_NETWORK_NAME" = "Solana";
+
+"WALLET_LIST_VIEW_TITLE" = "Wallets";
+"WALLET_LIST_VIEW_SUBTITLE" = "Keychain is a secure storage area on your device that uses encryption to keep your private keys and other sensitive information safe. It's an important tool for protecting your personal data from unauthorized access.";
+"WALLET_LIST_VIEW_ERROR_MESSAGE" = "Cannot load wallets";
+"WALLET_LIST_VIEW_ERROR_BUTTON_TITLE" = "Try to load wallets again";
+"WALLET_LIST_VIEW_LOADING_TITLE" = "Loading wallets";
+

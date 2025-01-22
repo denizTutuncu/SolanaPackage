@@ -7,20 +7,14 @@
 
 import Foundation
 
-public struct PresentableSeed {
-    
-    public init(id: UUID = UUID(), value: String) {
+public struct PresentableSeed: Identifiable {
+    public init(id: UUID = UUID(), value: String, isSafe: Bool = false) {
         self.id = id
         self.value = value
+        self.isSafe = isSafe
     }
-    
+
     public let id: UUID
     public var value: String
-    
-    var isSafe = false
-    
-    public mutating func toggleSelection() -> PresentableSeed {
-        isSafe.toggle()
-        return self
-    }
+    public var isSafe: Bool
 }

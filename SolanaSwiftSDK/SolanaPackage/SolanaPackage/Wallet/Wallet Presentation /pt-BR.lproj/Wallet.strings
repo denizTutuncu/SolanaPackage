@@ -5,4 +5,11 @@
   Created by Deniz Tutuncu on 2/22/23.
   
 */
-"WALLET_TITLE" = "Carteira";
+"WALLET_VIEW_CURRENCY_NAME" = "lamports";
+"WALLET_VIEW_NETWORK_NAME" = "Solana";
+
+"WALLET_LIST_VIEW_TITLE" = "Carteiras";
+"WALLET_LIST_VIEW_SUBTITLE" = "Keychain é uma área de armazenamento segura em seu dispositivo que usa criptografia para manter suas chaves privadas e outras informações confidenciais seguras. É uma ferramenta importante para proteger seus dados pessoais contra acesso não autorizado.";
+"WALLET_LIST_VIEW_ERROR_MESSAGE" = "Não é possível carregar carteiras";
+"WALLET_LIST_VIEW_ERROR_BUTTON_TITLE" = "Tente carregar as carteiras novamente";
+"WALLET_LIST_VIEW_LOADING_TITLE" = "Carregando carteiras";

@@ -5,5 +5,11 @@
   Created by Deniz Tutuncu on 2/22/23.
   
 */
-"WALLET_TITLE" = "πορτοφόλι";
+"WALLET_VIEW_CURRENCY_NAME" = "lamports";
+"WALLET_VIEW_NETWORK_NAME" = "Solana";
 
+"WALLET_LIST_VIEW_TITLE" = "Πορτοφόλια";
+"WALLET_LIST_VIEW_SUBTITLE" = "Το Keychain είναι ένας ασφαλής χώρος αποθήκευσης στη συσκευή σας που χρησιμοποιεί κρυπτογράφηση για να διατηρεί ασφαλή τα ιδιωτικά σας κλειδιά και άλλες ευαίσθητες πληροφορίες. Είναι ένα σημαντικό εργαλείο για την προστασία των προσωπικών σας δεδομένων από μη εξουσιοδοτημένη πρόσβαση.";
+"WALLET_LIST_VIEW_ERROR_MESSAGE" = "Δεν είναι δυνατή η φόρτωση πορτοφολιών";
+"WALLET_LIST_VIEW_ERROR_BUTTON_TITLE" = "Προσπαθήστε να φορτώσετε ξανά πορτοφόλια";
+"WALLET_LIST_VIEW_LOADING_TITLE" = "Φόρτωση πορτοφολιών";

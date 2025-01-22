@@ -9,15 +9,15 @@ import SwiftUI
 
 struct ImportSingleSeedCellView: View {
     let index: Int
-    @Binding var model: PresentableSeed
+    @Binding var value: String
+    var onValueChange: (String) -> Void
 
     private var isValueEmpty: Bool {
-        model.value.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        value.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
 
     var body: some View {
         HStack {
-            // Circle color changes dynamically based on `isValueEmpty`
             Circle()
                 .stroke(isValueEmpty ? Color.red : Color.blue, lineWidth: 2.5)
                 .frame(width: 29.0, height: 29.0)
@@ -29,33 +29,23 @@ struct ImportSingleSeedCellView: View {
                         .foregroundColor(.primary)
                 )
 
-            // TextField for seed input
-            TextField("seed \(index + 1)", text: Binding<String>(
-                get: { model.value },
+            TextField("Seed \(index + 1)", text: Binding(
+                get: { value },
                 set: { newValue in
-                    model.value = newValue.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-                    model.isSafe = !model.value.isEmpty
+                    let lowercasedValue = newValue.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+                    value = lowercasedValue
+                    onValueChange(lowercasedValue)
                 }
             ))
             .font(.system(size: 21, weight: .bold))
-            .minimumScaleFactor(0.5)
-            .lineLimit(1)
-            .foregroundColor(.primary)
+            .autocapitalization(.none)
+            .disableAutocorrection(true)
+            .textInputAutocapitalization(.never)
 
             Spacer()
 
-            // Toggle that reflects `isSafe`
-            Toggle("", isOn: Binding<Bool>(
-                get: { model.isSafe },
-                set: { newValue in
-                    model.isSafe = newValue
-                    if !newValue {
-                        model.value = ""
-                    }
-                }
-            ))
-            .disabled(isValueEmpty)
-            .contrast(1.0)
+            Toggle("", isOn: .constant(!isValueEmpty))
+                .disabled(true)
         }
         .padding()
     }
@@ -63,21 +53,33 @@ struct ImportSingleSeedCellView: View {
 
 struct ImportSingleSeedCellView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            ImportSingleSeedCellTestView()
-                .previewLayout(.sizeThatFits)
-                .previewDisplayName("Import Single Seed Cell View")
-        }
+        ImportSingleSeedCellTestView()
+            .previewLayout(.sizeThatFits)
+            .previewDisplayName("Import Single Seed Cell View")
     }
 }
 
 struct ImportSingleSeedCellTestView: View {
+    @State private var value1 = ""
+    @State private var value2 = "VALUE"
+
     var body: some View {
         VStack {
-            ImportSingleSeedCellView(index: 1,
-                                       model: .constant(PresentableSeed(value: "")))
-            ImportSingleSeedCellView(index: 1,
-                                       model: .constant(PresentableSeed(value: "value")))
+            ImportSingleSeedCellView(
+                index: 0,
+                value: $value1,
+                onValueChange: { newValue in
+                    value1 = newValue
+                }
+            )
+            ImportSingleSeedCellView(
+                index: 1,
+                value: $value2,
+                onValueChange: { newValue in
+                    value2 = newValue
+                }
+            )
         }
+        .padding()
     }
 }
