@@ -25,7 +25,7 @@ class ViewFactory {
             },
             secondButtonTitle: "Import Wallet",
             secondButtonAction: {
-                coordinator.navigateToImportSeed()
+                coordinator.navigateToImportSeed(seeds: seeds)
             }
         )
     }
@@ -48,7 +48,7 @@ class ViewFactory {
         )
     }
 
-    static func makeImportSeedView(coordinator: NavigationCoordinator) -> ImportSeedView {
+    static func makeImportSeedView(seeds: [PresentableSeed],coordinator: NavigationCoordinator) -> ImportSeedView {
         let emptySeed = [
             PresentableSeed(),
             PresentableSeed(),
@@ -88,7 +88,7 @@ class ViewFactory {
             loadAgain: { print("Load again button triggered") },
             action: { print("Action button triggered") },
             backButtonTitle: "Back",
-            backAction: {coordinator.navigateToOnboarding(with: emptySeed) }
+            backAction: { coordinator.navigateToOnboarding(with: seeds) }
         )
     }
 

@@ -64,8 +64,8 @@ class AppStore {
         }
     }()
     
-    public lazy var localWalletCreator: LocalWalletLoader = {
-        LocalWalletLoader(creator: walletCreator)
+    public lazy var localWalletCreator: LocalWalletCreator = {
+        LocalWalletCreator(creator: walletCreator)
     }()
     
     //MARK: - Private Key Store & Local Private Key Loader
@@ -156,5 +156,9 @@ class AppStore {
                 TransactionStoreMapper.map(domainTransactions)
             }
             .eraseToAnyPublisher()
+    }
+    
+    public func createWallet(from seed: Seed) -> AnyPublisher<Void, Error> {
+        
     }
 }

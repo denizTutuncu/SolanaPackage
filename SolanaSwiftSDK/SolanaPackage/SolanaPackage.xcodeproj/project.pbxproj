@@ -108,7 +108,7 @@
 		2E917D0C29EFB2EC00B578FA /* TransactionListUIComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E917D0B29EFB2EC00B578FA /* TransactionListUIComposerView.swift */; };
 		2E917D1629F091C100B578FA /* CodablePublicKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E917D1529F091C100B578FA /* CodablePublicKeyStore.swift */; };
 		2E917D1829F09EA700B578FA /* CodablePublicKeyStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E917D1729F09EA700B578FA /* CodablePublicKeyStoreTests.swift */; };
-		2E933C9C2D3F38B700436469 /* LocalWalletLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E933C9B2D3F38B700436469 /* LocalWalletLoader.swift */; };
+		2E933C9C2D3F38B700436469 /* LocalWalletCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E933C9B2D3F38B700436469 /* LocalWalletCreator.swift */; };
 		2E954BA22848852F002D2FF3 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E954BA12848852F002D2FF3 /* Balance.swift */; };
 		2E9FF53229F864FD002989EF /* WalletCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9FF53129F864FD002989EF /* WalletCreator.swift */; };
 		2E9FF53829FC7742002989EF /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9FF53729FC7742002989EF /* OnboardingView.swift */; };
@@ -334,7 +334,7 @@
 		2E917D0B29EFB2EC00B578FA /* TransactionListUIComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListUIComposerView.swift; sourceTree = "<group>"; };
 		2E917D1529F091C100B578FA /* CodablePublicKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodablePublicKeyStore.swift; sourceTree = "<group>"; };
 		2E917D1729F09EA700B578FA /* CodablePublicKeyStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodablePublicKeyStoreTests.swift; sourceTree = "<group>"; };
-		2E933C9B2D3F38B700436469 /* LocalWalletLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocalWalletLoader.swift; path = SolanaPackage/Wallet/LocalWalletLoader.swift; sourceTree = SOURCE_ROOT; };
+		2E933C9B2D3F38B700436469 /* LocalWalletCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocalWalletCreator.swift; path = SolanaPackage/Wallet/LocalWalletCreator.swift; sourceTree = SOURCE_ROOT; };
 		2E954B9F28487C02002D2FF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E954BA12848852F002D2FF3 /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
 		2E9FF53129F864FD002989EF /* WalletCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WalletCreator.swift; path = "SolanaPackage/Wallet/Wallet Presentation /WalletCreator.swift"; sourceTree = SOURCE_ROOT; };
@@ -793,7 +793,7 @@
 			isa = PBXGroup;
 			children = (
 				2E9FF53129F864FD002989EF /* WalletCreator.swift */,
-				2E933C9B2D3F38B700436469 /* LocalWalletLoader.swift */,
+				2E933C9B2D3F38B700436469 /* LocalWalletCreator.swift */,
 			);
 			path = "Wallet Feature";
 			sourceTree = "<group>";
@@ -1686,7 +1686,7 @@
 				2ED6162627E5AECE00920274 /* HTTPClient.swift in Sources */,
 				2ED7BA5029C089890037B5B7 /* SeedCachePolicy.swift in Sources */,
 				2E0900C229AD6A3E00865E30 /* TransactionPresenter.swift in Sources */,
-				2E933C9C2D3F38B700436469 /* LocalWalletLoader.swift in Sources */,
+				2E933C9C2D3F38B700436469 /* LocalWalletCreator.swift in Sources */,
 				2EDA9D242989D7E5004793D3 /* ViewModelPublisher.swift in Sources */,
 				2E6E555E2D37419200F473B2 /* TransactionEndpoint.swift in Sources */,
 				2E9FF53229F864FD002989EF /* WalletCreator.swift in Sources */,
