@@ -25,7 +25,7 @@ class ViewFactory {
             },
             secondButtonTitle: "Import Wallet",
             secondButtonAction: {
-                coordinator.navigateToImportSeed(seeds: seeds)
+                coordinator.navigateToImportSeed()
             }
         )
     }
@@ -48,9 +48,35 @@ class ViewFactory {
         )
     }
 
-    static func makeImportSeedView(seeds: [PresentableSeed], coordinator: NavigationCoordinator) -> ImportSeedView {
-        ImportSeedView(
-            viewModel: .init(model: seeds, isLoading: false),
+    static func makeImportSeedView(coordinator: NavigationCoordinator) -> ImportSeedView {
+        let emptySeed = [
+            PresentableSeed(),
+            PresentableSeed(),
+            PresentableSeed(),
+            PresentableSeed(),
+            PresentableSeed(),
+            PresentableSeed(),
+            PresentableSeed(),
+            PresentableSeed(),
+            PresentableSeed(),
+            PresentableSeed(),
+            PresentableSeed(),
+            PresentableSeed(),
+            PresentableSeed(),
+            PresentableSeed(),
+            PresentableSeed(),
+            PresentableSeed(),
+            PresentableSeed(),
+            PresentableSeed(),
+            PresentableSeed(),
+            PresentableSeed(),
+            PresentableSeed(),
+            PresentableSeed(),
+            PresentableSeed(),
+            PresentableSeed(),
+        ]
+        return ImportSeedView(
+            viewModel: .init(model: emptySeed, isLoading: false),
             headerTitle: SeedPresenter.importSeedViewTitle,
             headerTitleTextColor: .primary,
             headerSubtitle: SeedPresenter.importSeedViewSubtitle,
@@ -62,7 +88,7 @@ class ViewFactory {
             loadAgain: { print("Load again button triggered") },
             action: { print("Action button triggered") },
             backButtonTitle: "Back",
-            backAction: {coordinator.navigateToOnboarding(with: seeds) }
+            backAction: {coordinator.navigateToOnboarding(with: emptySeed) }
         )
     }
 

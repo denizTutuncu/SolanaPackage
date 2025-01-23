@@ -42,9 +42,9 @@ class NavigationCoordinator {
         )
     }
 
-    func navigateToImportSeed(seeds: [PresentableSeed]) {
+    func navigateToImportSeed() {
         navigationStore.currentView = .importSeed(
-            ViewFactory.makeImportSeedView(seeds: seeds, coordinator: self)
+            ViewFactory.makeImportSeedView(coordinator: self)
         )
     }
 }
