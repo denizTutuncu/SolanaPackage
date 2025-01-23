@@ -17,7 +17,7 @@ public class SeedViewModel: ObservableObject {
     }
 
     public var canSubmit: Bool {
-        model.allSatisfy { !$0.value.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
+        model.allSatisfy { !$0.value.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && $0.isSafe }
     }
 
     public func setLoading() {

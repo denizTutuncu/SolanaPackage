@@ -8,7 +8,6 @@
 import SwiftUI
 
 public struct ImportSeedView: View {
-    @ObservedObject var viewModel: ImportSeedViewModel
 
     public init(viewModel: ImportSeedViewModel,
                 headerTitle: String,
@@ -44,6 +43,8 @@ public struct ImportSeedView: View {
     private let loadingTitle: String
     private let loadAgain: () -> Void
     private let action: () -> Void
+    
+    @ObservedObject var viewModel: ImportSeedViewModel
 
     public var body: some View {
         VStack {
@@ -95,8 +96,8 @@ struct ImportSeedView_Previews: PreviewProvider {
             errorMessage: "Cannot import the seed phrase at this time.",
             errorViewButtonTitle: "Try Again",
             loadingTitle: "Loading Seed Phrase...",
-            loadAgain: {},
-            action: {}
+            loadAgain: { print("Load again button triggered") },
+            action: { print("Action button triggered") }
         )
     }
 }
