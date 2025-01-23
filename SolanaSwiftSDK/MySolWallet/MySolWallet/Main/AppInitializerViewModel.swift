@@ -152,7 +152,9 @@ class AppInitializerViewModel: ObservableObject {
                                                  PresentableSeed(value: ""),
                                                  PresentableSeed(value: "")],
                                           loadAgain: { },
-                                          action: { })
+                                          action: { },
+                                          backAction: { }
+                                         )
             )
         }
     }
@@ -207,11 +209,17 @@ class AppInitializerViewModel: ObservableObject {
             errorViewButtonTitle: exportSeedViewErrorButtonTitle,
             loadingTitle: exportSeedViewLoadingTitle,
             loadAgain: loadAgain,
-            action: action
+            action: action,
+            backButtonTitle: "Back",
+            backAction: { }
         )
     }
     
-    private func createImportSeedView(with seed: [PresentableSeed], loadAgain: @escaping () -> Void, action: @escaping () -> Void) -> ImportSeedView {
+    private func createImportSeedView(with seed: [PresentableSeed],
+                                      loadAgain: @escaping () -> Void,
+                                      action: @escaping () -> Void,
+                                      backAction: @escaping () -> Void
+    ) -> ImportSeedView {
         let importSeedViewTitle = SeedPresenter.importSeedViewTitle
         let importSeedViewSubtitle = SeedPresenter.importSeedViewSubtitle
         let importSeedViewButtonTitle = SeedPresenter.importSeedViewButtonTitle
@@ -229,7 +237,9 @@ class AppInitializerViewModel: ObservableObject {
             errorViewButtonTitle: importSeedViewErrorButtonTitle,
             loadingTitle: importSeedViewLoadingTitle,
             loadAgain: loadAgain,
-            action: action
+            action: action,
+            backButtonTitle: "Back",
+            backAction: backAction
         )
     }
 }

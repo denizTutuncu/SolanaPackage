@@ -19,7 +19,10 @@ public struct ImportSeedView: View {
                 errorViewButtonTitle: String,
                 loadingTitle: String,
                 loadAgain: @escaping () -> Void,
-                action: @escaping () -> Void) {
+                action: @escaping () -> Void,
+                backButtonTitle: String,
+                backAction: @escaping () -> Void
+    ) {
         self.viewModel = viewModel
         self.headerTitle = headerTitle
         self.headerTitleTextColor = headerTitleTextColor
@@ -31,6 +34,8 @@ public struct ImportSeedView: View {
         self.loadingTitle = loadingTitle
         self.loadAgain = loadAgain
         self.action = action
+        self.backButtonTitle = backButtonTitle
+        self.backAction = backAction
     }
 
     private let headerTitle: String
@@ -43,6 +48,8 @@ public struct ImportSeedView: View {
     private let loadingTitle: String
     private let loadAgain: () -> Void
     private let action: () -> Void
+    private let backButtonTitle: String
+    private let backAction: () -> Void
     
     @ObservedObject var viewModel: ImportSeedViewModel
 
@@ -73,7 +80,10 @@ public struct ImportSeedView: View {
                         )
                     }
                 }
-                RoundedButton(title: buttonTitle, isEnabled: viewModel.canSubmit, action: action)
+                VStack {
+                    RoundedButton(title: buttonTitle, isEnabled: viewModel.canSubmit, action: action)
+                    RoundedButton(title: backButtonTitle, isEnabled: true, action: backAction)
+                }
             }
         }
     }
@@ -97,7 +107,9 @@ struct ImportSeedView_Previews: PreviewProvider {
             errorViewButtonTitle: "Try Again",
             loadingTitle: "Loading Seed Phrase...",
             loadAgain: { print("Load again button triggered") },
-            action: { print("Action button triggered") }
+            action: { print("Action button triggered") },
+            backButtonTitle: "Back",
+            backAction: { print("Back action button triggered") }
         )
     }
 }

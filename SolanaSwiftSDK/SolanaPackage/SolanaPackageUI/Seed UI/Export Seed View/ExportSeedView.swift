@@ -18,7 +18,10 @@ public struct ExportSeedView: View {
                 errorViewButtonTitle: String,
                 loadingTitle: String,
                 loadAgain: @escaping () -> Void,
-                action: @escaping () -> Void) {
+                action: @escaping () -> Void,
+                backButtonTitle: String,
+                backAction: @escaping () -> Void
+    ) {
         self.viewModel = viewModel
         self.headerTitle = headerTitle
         self.headerTitleTextColor = headerTitleTextColor
@@ -30,9 +33,10 @@ public struct ExportSeedView: View {
         self.loadingTitle = loadingTitle
         self.loadAgain = loadAgain
         self.action = action
+        self.backButtonTitle = backButtonTitle
+        self.backAction = backAction
     }
     
-    @ObservedObject var viewModel: ExportSeedViewModel
     private let headerTitle: String
     private let headerTitleTextColor: Color
     private let headerSubtitle: String
@@ -43,6 +47,10 @@ public struct ExportSeedView: View {
     private let loadingTitle: String
     private let loadAgain: () -> Void
     private let action: () -> Void
+    private let backButtonTitle: String
+    private let backAction: () -> Void
+    
+    @ObservedObject var viewModel: ExportSeedViewModel
 
     public var body: some View {
         VStack {
@@ -71,7 +79,10 @@ public struct ExportSeedView: View {
                         )
                     }
                 }
-                RoundedButton(title: buttonTitle, isEnabled: viewModel.canSubmit, action: action)
+                VStack {
+                    RoundedButton(title: buttonTitle, isEnabled: viewModel.canSubmit, action: action)
+                    RoundedButton(title: backButtonTitle, isEnabled: true, action: backAction)
+                }
             }
         }
     }
@@ -94,8 +105,10 @@ struct ExportSeedView_Previews: PreviewProvider {
             errorMessage: "Cannot export the seed phrase at this time.",
             errorViewButtonTitle: "Try Again",
             loadingTitle: "Loading Seed Phrase...",
-            loadAgain: {},
-            action: {}
+            loadAgain: { print("Load again button triggered") },
+            action: { print("Action button triggered") },
+            backButtonTitle: "Back",
+            backAction: { print("Back action button triggered") }
         )
     }
 }
