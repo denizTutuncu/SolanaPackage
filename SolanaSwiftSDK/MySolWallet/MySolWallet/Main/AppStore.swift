@@ -67,7 +67,7 @@ class AppStore {
     public lazy var localWalletCreator: LocalWalletCreator = {
         LocalWalletCreator(creator: walletCreator)
     }()
-    
+        
     //MARK: - Private Key Store & Local Private Key Loader
     private lazy var privateKeyStore: PrivateKeyStore = {
         return KeychainPrivateKeyStore()

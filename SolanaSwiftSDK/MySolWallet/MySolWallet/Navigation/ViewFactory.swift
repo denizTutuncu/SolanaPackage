@@ -41,8 +41,12 @@ class ViewFactory {
             errorMessage: SeedPresenter.exportSeedViewErrorMessage,
             errorViewButtonTitle: SeedPresenter.exportSeedViewErrorButtonTitle,
             loadingTitle: SeedPresenter.exportSeedViewLoadingTitle,
-            loadAgain: { print("Load again button triggered") },
-            action: { coordinator.navigateToOnboarding(with: seeds) },
+            loadAgain: {
+                // Mark: - Export seed
+            },
+            action: {
+                // Mark: - Create wallet from seed
+            },
             backButtonTitle: "Back",
             backAction: { coordinator.navigateToOnboarding(with: seeds) }
         )
@@ -85,8 +89,12 @@ class ViewFactory {
             errorMessage: SeedPresenter.importSeedViewErrorMessage,
             errorViewButtonTitle: SeedPresenter.importSeedViewErrorButtonTitle,
             loadingTitle: SeedPresenter.importSeedViewLoadingTitle,
-            loadAgain: { print("Load again button triggered") },
-            action: { print("Action button triggered") },
+            loadAgain: {
+                // Mark: - Import seed
+            },
+            action: {
+                // Mark: - Create wallet from seed
+            },
             backButtonTitle: "Back",
             backAction: { coordinator.navigateToOnboarding(with: seeds) }
         )
@@ -104,7 +112,9 @@ class ViewFactory {
             errorMessage: WalletPresenter.walletListViewErrorMessage,
             errorViewButtonTitle: WalletPresenter.walletListErrorButtonTitle,
             loadingTitle: WalletPresenter.walletListViewLoadingTitle,
-            tryAgain: { coordinator.navigateToOnboarding(with: []) },
+            tryAgain: {
+                // Mark: - Load public keys
+            },
             selection: { publicKey in
                 coordinator.navigateToWalletDetail(
                     publicKey: PresentablePublicKey(value: publicKey),
@@ -135,7 +145,9 @@ class ViewFactory {
             transactionErrorButtonTitle: "Try again",
             transactionSelection: { transactionID in },
             tryLoadBalance: { balanceValue in },
-            tryLoadTransactions: { print("Try load transactions button triggered") },
+            tryLoadTransactions: {
+                // Mark: - Load transactions 
+            },
             balanceViewModel: .init(model: balance, isLoading: false, errorMessage: nil),
             transactionListViewModel: .init(model: transactions, isLoading: transactions.isEmpty, errorMessage: "Cannot load transactions")
         )
