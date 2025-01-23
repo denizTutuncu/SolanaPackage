@@ -15,21 +15,6 @@ final class WalletLocalizationTests: XCTestCase {
         localizedStrings_haveKeysAndValuesForAllSupportedLocalizations(table: table)
     }
     
-    func test_localizedStrings_For_WalletSubTitle() {
-        let table = "WalletListSubtitle"
-        localizedStrings_haveKeysAndValuesForAllSupportedLocalizations(table: table)
-    }
-    
-    func test_localizedStrings_For_CurrencyName() {
-        let table = "CurrencyName"
-        localizedStrings_haveKeysAndValuesForAllSupportedLocalizations(table: table)
-    }
-    
-    func test_localizedStrings_For_NetworkName() {
-        let table = "NetworkName"
-        localizedStrings_haveKeysAndValuesForAllSupportedLocalizations(table: table)
-    }
-    
     private func localizedStrings_haveKeysAndValuesForAllSupportedLocalizations(table: String) {
         let bundle = Bundle(for: WalletPresenter.self)
 

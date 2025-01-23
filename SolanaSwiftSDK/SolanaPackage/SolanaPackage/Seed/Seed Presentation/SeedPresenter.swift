@@ -28,28 +28,28 @@ public final class SeedPresenter {
         NSLocalizedString("IMPORT_SEED_VIEW_BUTTON_TITLE",
                                  tableName: "Seed",
                                  bundle: Bundle(for: SeedPresenter.self),
-                                 comment: "Subtitle for the import seed view")
+                                 comment: "Button title for the import seed view")
     }
     
     public static var importSeedViewErrorMessage: String {
         NSLocalizedString("IMPORT_SEED_VIEW_ERROR_MESSAGE",
                                  tableName: "Seed",
                                  bundle: Bundle(for: SeedPresenter.self),
-                                 comment: "Subtitle for the import seed view")
+                                 comment: "Error mesage for the import seed view")
     }
     
     public static var importSeedViewErrorButtonTitle: String {
         NSLocalizedString("IMPORT_SEED_VIEW_ERROR_BUTTON_TITLE",
                                  tableName: "Seed",
                                  bundle: Bundle(for: SeedPresenter.self),
-                                 comment: "Subtitle for the import seed view")
+                                 comment: "Error button title for the import seed view")
     }
     
     public static var importSeedViewLoadingTitle: String {
         NSLocalizedString("IMPORT_SEED_VIEW_LOADING_TITLE",
                                  tableName: "Seed",
                                  bundle: Bundle(for: SeedPresenter.self),
-                                 comment: "Subtitle for the import seed view")
+                                 comment: "Loading title for the import seed view")
     }
     
     // MARK: - Export Seed View
@@ -71,14 +71,14 @@ public final class SeedPresenter {
         NSLocalizedString("EXPORT_SEED_VIEW_BUTTON_TITLE",
                                  tableName: "Seed",
                                  bundle: Bundle(for: SeedPresenter.self),
-                                 comment: "Subtitle for the export seed view")
+                                 comment: "Button title for the export seed view")
     }
     
     public static var exportSeedViewErrorMessage: String {
         NSLocalizedString("EXPORT_SEED_VIEW_ERROR_MESSAGE",
                                  tableName: "Seed",
                                  bundle: Bundle(for: SeedPresenter.self),
-                                 comment: "Subtitle for the export seed view")
+                                 comment: "Error message for the export seed view")
     }
     
     public static var exportSeedViewErrorButtonTitle: String {
@@ -86,14 +86,13 @@ public final class SeedPresenter {
                                  tableName: "Seed",
                                  bundle: Bundle(for: SeedPresenter.self),
          
-                          comment: "Subtitle for the export seed view")
+                          comment: "Error button title for the export seed view")
     }
+    
     public static var exportSeedViewLoadingTitle: String {
         NSLocalizedString("EXPORT_SEED_VIEW_LOADING_TITLE",
                                  tableName: "Seed",
                                  bundle: Bundle(for: SeedPresenter.self),
-                                 comment: "Subtitle for the export seed view")
+                                 comment: "Loading title for the export seed view")
     }
-    
-    
 }

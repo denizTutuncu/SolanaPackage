@@ -10,7 +10,7 @@ import SolanaPackage
 
 final class SeedLocalizationTests: XCTestCase {
     
-    func test_localizedStrings_For_Transactions() {
+    func test_localizedStrings_For_Seed() {
         let table = "Seed"
         localizedStrings_haveKeysAndValuesForAllSupportedLocalizations(table: table)
     }
