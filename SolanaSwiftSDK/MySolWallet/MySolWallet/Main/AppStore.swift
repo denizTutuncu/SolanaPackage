@@ -158,7 +158,7 @@ class AppStore {
             .eraseToAnyPublisher()
     }
     
-    public func createWallet(from seed: Seed) -> AnyPublisher<Void, Error> {
-        
-    }
+//    public func createWallet(from seed: Seed) -> AnyPublisher<Void, Error> {
+//        
+//    }
 }

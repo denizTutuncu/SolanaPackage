@@ -30,7 +30,6 @@
 		2E1DBE8B2B5E2A2800970E48 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1DBE8A2B5E2A2800970E48 /* CustomImageView.swift */; };
 		2E1DBE8F2B72D88E00970E48 /* AnyViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1DBE8E2B72D88E00970E48 /* AnyViewProtocol.swift */; };
 		2E1DBE912B72D91A00970E48 /* GenericView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1DBE902B72D91A00970E48 /* GenericView.swift */; };
-		2E1DBE952B72ECDA00970E48 /* SeedDelegateSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1DBE942B72ECDA00970E48 /* SeedDelegateSpy.swift */; };
 		2E2CC5AA296EB9680063C23C /* BalanceEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5A9296EB9680063C23C /* BalanceEndpointTests.swift */; };
 		2E2CC5BE296EC2460063C23C /* Shared.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E2CC5C0296EC2460063C23C /* Shared.strings */; };
 		2E2CC5C7296EC45C0063C23C /* BalancePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5C6296EC45C0063C23C /* BalancePresenter.swift */; };
@@ -145,9 +144,6 @@
 		2EF75C1A29C3BEFA001E3DA7 /* HardcodedSeedStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF75C1929C3BEFA001E3DA7 /* HardcodedSeedStoreTests.swift */; };
 		2EF75C1C29C3CD4C001E3DA7 /* SeedBankStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF75C1B29C3CD4C001E3DA7 /* SeedBankStoreSpecs.swift */; };
 		2EF75C1F29C3CE00001E3DA7 /* XCTestCase+SeedBankStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF75C1E29C3CE00001E3DA7 /* XCTestCase+SeedBankStoreSpecs.swift */; };
-		2EFADE8429A77AA5009BDC11 /* AppStartFlowTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFADE8329A77AA5009BDC11 /* AppStartFlowTest.swift */; };
-		2EFADE8729A77BAF009BDC11 /* PublicKeyDelegateSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFADE8629A77BAF009BDC11 /* PublicKeyDelegateSpy.swift */; };
-		2EFADE8929A7935F009BDC11 /* Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFADE8829A7935F009BDC11 /* Assertions.swift */; };
 		2EFADE8C29A847AD009BDC11 /* ExportSingleSeedCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFADE8B29A847AD009BDC11 /* ExportSingleSeedCellView.swift */; };
 		2EFADE8E29A84953009BDC11 /* ExportSeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFADE8D29A84953009BDC11 /* ExportSeedView.swift */; };
 		2EFADE9129A89359009BDC11 /* SingleTransactionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFADE9029A89359009BDC11 /* SingleTransactionCellView.swift */; };
@@ -254,7 +250,6 @@
 		2E1DBE8A2B5E2A2800970E48 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		2E1DBE8E2B72D88E00970E48 /* AnyViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyViewProtocol.swift; sourceTree = "<group>"; };
 		2E1DBE902B72D91A00970E48 /* GenericView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericView.swift; sourceTree = "<group>"; };
-		2E1DBE942B72ECDA00970E48 /* SeedDelegateSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedDelegateSpy.swift; sourceTree = "<group>"; };
 		2E2CC5A9296EB9680063C23C /* BalanceEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceEndpointTests.swift; sourceTree = "<group>"; };
 		2E2CC5BF296EC2460063C23C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Shared.strings; sourceTree = "<group>"; };
 		2E2CC5C1296EC24E0063C23C /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Shared.strings; sourceTree = "<group>"; };
@@ -378,9 +373,6 @@
 		2EF75C1929C3BEFA001E3DA7 /* HardcodedSeedStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardcodedSeedStoreTests.swift; sourceTree = "<group>"; };
 		2EF75C1B29C3CD4C001E3DA7 /* SeedBankStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedBankStoreSpecs.swift; sourceTree = "<group>"; };
 		2EF75C1E29C3CE00001E3DA7 /* XCTestCase+SeedBankStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+SeedBankStoreSpecs.swift"; sourceTree = "<group>"; };
-		2EFADE8329A77AA5009BDC11 /* AppStartFlowTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStartFlowTest.swift; sourceTree = "<group>"; };
-		2EFADE8629A77BAF009BDC11 /* PublicKeyDelegateSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicKeyDelegateSpy.swift; sourceTree = "<group>"; };
-		2EFADE8829A7935F009BDC11 /* Assertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assertions.swift; sourceTree = "<group>"; };
 		2EFADE8B29A847AD009BDC11 /* ExportSingleSeedCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportSingleSeedCellView.swift; sourceTree = "<group>"; };
 		2EFADE8D29A84953009BDC11 /* ExportSeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportSeedView.swift; sourceTree = "<group>"; };
 		2EFADE9029A89359009BDC11 /* SingleTransactionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTransactionCellView.swift; sourceTree = "<group>"; };
@@ -1129,7 +1121,6 @@
 				2EDD970429E5CDC200BC9373 /* Private Key Cache */,
 				2E43DA5A29DE2F4C001E0550 /* Public Key Cache */,
 				2E0900DB29AD9ECC00865E30 /* Presentations */,
-				2EFADE8229A77A94009BDC11 /* Flow */,
 				2EF79042299DB887002658E4 /* Publisher API */,
 				2E2CC5AB296EBCE00063C23C /* Shared API Infra */,
 				2EE08998284769D5007AFC0F /* Balance API */,
@@ -1278,25 +1269,6 @@
 				2ED7BA4F29C089890037B5B7 /* SeedCachePolicy.swift */,
 			);
 			path = "Seed Feature";
-			sourceTree = "<group>";
-		};
-		2EFADE8229A77A94009BDC11 /* Flow */ = {
-			isa = PBXGroup;
-			children = (
-				2EFADE8329A77AA5009BDC11 /* AppStartFlowTest.swift */,
-				2EFADE8529A77B99009BDC11 /* Helpers */,
-			);
-			path = Flow;
-			sourceTree = "<group>";
-		};
-		2EFADE8529A77B99009BDC11 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				2EFADE8629A77BAF009BDC11 /* PublicKeyDelegateSpy.swift */,
-				2E1DBE942B72ECDA00970E48 /* SeedDelegateSpy.swift */,
-				2EFADE8829A7935F009BDC11 /* Assertions.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		2EFADE8A29A84796009BDC11 /* Seed UI */ = {
@@ -1714,9 +1686,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E1DBE952B72ECDA00970E48 /* SeedDelegateSpy.swift in Sources */,
 				2E43DA6829DE34FE001E0550 /* CachePublicKeyUseCaseTests.swift in Sources */,
-				2EFADE8429A77AA5009BDC11 /* AppStartFlowTest.swift in Sources */,
 				2E43DA5E29DE2FAA001E0550 /* PublicKeyStoreSpecs.swift in Sources */,
 				2E43DA6A29DE3540001E0550 /* PublicKeyStoreSpy.swift in Sources */,
 				2E80F3BB29A6215000A4053C /* WalletPresenterTests.swift in Sources */,
@@ -1728,7 +1698,6 @@
 				2EEA72DE29F1F64C00509705 /* PublicKeyCahcePolicyUseCaseTests.swift in Sources */,
 				2E43DA6429DE340A001E0550 /* XCTestCase+FailableInsertPublicKeyStoreSpecs.swift in Sources */,
 				2E43DA6629DE3457001E0550 /* XCTestCase+FailableDeletePublicKeyStoreSpecs.swift in Sources */,
-				2EFADE8729A77BAF009BDC11 /* PublicKeyDelegateSpy.swift in Sources */,
 				2E917D1829F09EA700B578FA /* CodablePublicKeyStoreTests.swift in Sources */,
 				2E80F3AF29A5A1A700A4053C /* XCTestCase+FailableRetrievePrivateKeyStoreSpecs.swift in Sources */,
 				2E80F3E529A6462700A4053C /* KeychainPrivateKeyStoreTests.swift in Sources */,
@@ -1751,7 +1720,6 @@
 				2E43DA6229DE33CC001E0550 /* XCTestCase+FailableRetrievePublicKeyStoreSpecs.swift in Sources */,
 				2EEA72DC29F1EC2A00509705 /* ValidatePublicKeyCacheUseCaseTests.swift in Sources */,
 				2E0900EC29ADA45A00865E30 /* SeedPresenterTests.swift in Sources */,
-				2EFADE8929A7935F009BDC11 /* Assertions.swift in Sources */,
 				2E2CC5C9296EC4D90063C23C /* BalancePresenterTests.swift in Sources */,
 				2E17ECB929F1FD8F00206B28 /* PrivateKeyCahcePolicyUseCaseTests.swift in Sources */,
 				2E43DA3329DABC98001E0550 /* SeedCahcePolicyUseCaseTests.swift in Sources */,

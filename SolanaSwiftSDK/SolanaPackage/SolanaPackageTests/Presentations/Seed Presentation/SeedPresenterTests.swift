@@ -10,16 +10,16 @@ import SolanaPackage
 
 class SeedPresenterTests: XCTestCase {
     
-    func test_title_isLocalized() {
+    func test_import_title_isLocalized() {
         let tableName = "Seed"
-        let key = "SEED_LIST_TITLE"
+        let key = "IMPORT_SEED_VIEW_TITLE"
         XCTAssertEqual(SeedPresenter.importSeedViewTitle, localized(table: tableName, key: key))
     }
     
-    func test_currencyName_isLocalized() {
+    func test_import_subtitle_isLocalized() {
         let tableName = "Seed"
-        let key = "SEED_LIST_SUBTITLE"
-        XCTAssertEqual(SeedPresenter.subtitle, localized(table: tableName, key: key))
+        let key = "IMPORT_SEED_VIEW_SUBTITLE"
+        XCTAssertEqual(SeedPresenter.importSeedViewSubtitle, localized(table: tableName, key: key))
     }
     
     // MARK: - Helpers

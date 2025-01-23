@@ -9,22 +9,22 @@ import Foundation
 
 public final class WalletPresenter {
     
-    //MARK: - WALLET VIEW
-    public static var currency: String {
+    // MARK: - WALLET VIEW
+    public static var currencyName: String {
         NSLocalizedString("WALLET_VIEW_CURRENCY_NAME",
                                  tableName: "Wallet",
                                  bundle: Bundle(for: WalletPresenter.self),
                                  comment: "Currency name for the wallet view")
     }
     
-    public static var network: String {
+    public static var networkName: String {
         NSLocalizedString("WALLET_VIEW_NETWORK_NAME",
                                  tableName: "Wallet",
                                  bundle: Bundle(for: WalletPresenter.self),
                                  comment: "Network name for the wallet view")
     }
     
-    //MARK: - WALLET LIST VIEW
+    // MARK: - WALLET LIST VIEW
     public static var walletListViewTitle: String {
         return NSLocalizedString("WALLET_LIST_VIEW_TITLE",
                                  tableName: "Wallet",
@@ -60,7 +60,4 @@ public final class WalletPresenter {
                                  bundle: Bundle(for: WalletPresenter.self),
                                  comment: "Loading title for the wallet list view")
     }
-    
-    
-    
 }

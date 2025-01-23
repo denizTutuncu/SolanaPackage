@@ -132,8 +132,8 @@ class ViewFactory {
                                      coordinator: NavigationCoordinator) -> WalletDetailView {
         WalletDetailView(
             publicKey: publicKey.value,
-            network: WalletPresenter.network,
-            currency: WalletPresenter.currency,
+            network: WalletPresenter.networkName,
+            currency: WalletPresenter.currencyName,
             balanceLabelTitle: "Balance:",
             balanceLoadingTitle: "Loading balance...",
             balanceErrorMessage: "Cannot load balance",
@@ -146,7 +146,7 @@ class ViewFactory {
             transactionSelection: { transactionID in },
             tryLoadBalance: { balanceValue in },
             tryLoadTransactions: {
-                // Mark: - Load transactions 
+                // Mark: - Load transactions
             },
             balanceViewModel: .init(model: balance, isLoading: false, errorMessage: nil),
             transactionListViewModel: .init(model: transactions, isLoading: transactions.isEmpty, errorMessage: "Cannot load transactions")
