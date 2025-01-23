@@ -13,6 +13,8 @@
 		2E09010329B00AED00865E30 /* SeedPublisherAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09010229B00AED00865E30 /* SeedPublisherAdapter.swift */; };
 		2E09010D29B3104500865E30 /* PublicKeyPublisherAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09010C29B3104500865E30 /* PublicKeyPublisherAdapter.swift */; };
 		2E1DBE892B5DE95500970E48 /* SolanaSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2E1DBE882B5DE95500970E48 /* SolanaSwift */; };
+		2E3C6FF42D41D509007413ED /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3C6FF32D41D509007413ED /* ViewFactory.swift */; };
+		2E3C6FF62D41D548007413ED /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3C6FF52D41D548007413ED /* NavigationCoordinator.swift */; };
 		2E42948228483FDD00817480 /* MySolWalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42948128483FDD00817480 /* MySolWalletApp.swift */; };
 		2E42948628483FDF00817480 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E42948528483FDE00817480 /* Assets.xcassets */; };
 		2E42948928483FDF00817480 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E42948828483FDF00817480 /* Preview Assets.xcassets */; };
@@ -67,6 +69,8 @@
 		2E0900FB29ADB16D00865E30 /* TransactionStoreMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionStoreMapper.swift; sourceTree = "<group>"; };
 		2E09010229B00AED00865E30 /* SeedPublisherAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedPublisherAdapter.swift; sourceTree = "<group>"; };
 		2E09010C29B3104500865E30 /* PublicKeyPublisherAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicKeyPublisherAdapter.swift; sourceTree = "<group>"; };
+		2E3C6FF32D41D509007413ED /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
+		2E3C6FF52D41D548007413ED /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
 		2E42947E28483FDD00817480 /* MySolWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySolWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E42948128483FDD00817480 /* MySolWalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySolWalletApp.swift; sourceTree = "<group>"; };
 		2E42948528483FDE00817480 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -197,6 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				2E80F38A29A200DC00A4053C /* AppNavigationView.swift */,
+				2E3C6FF32D41D509007413ED /* ViewFactory.swift */,
+				2E3C6FF52D41D548007413ED /* NavigationCoordinator.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -346,8 +352,10 @@
 				2E09010D29B3104500865E30 /* PublicKeyPublisherAdapter.swift in Sources */,
 				2EAEF0EC297A5C1C00091A49 /* CombineHelpers.swift in Sources */,
 				2E9FF53629F88A6D002989EF /* NullCreator.swift in Sources */,
+				2E3C6FF42D41D509007413ED /* ViewFactory.swift in Sources */,
 				2E09010329B00AED00865E30 /* SeedPublisherAdapter.swift in Sources */,
 				2E0900FC29ADB16D00865E30 /* TransactionStoreMapper.swift in Sources */,
+				2E3C6FF62D41D548007413ED /* NavigationCoordinator.swift in Sources */,
 				2E4899B329F4A738004734B9 /* NullStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
