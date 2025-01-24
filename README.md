@@ -22,13 +22,13 @@ This module is an iOS SwiftUI module that provides a set of components to build 
 
 The repo also includes an iOS app called ```BGL``` that demonstrates how to use the Core and UI modules to interact with the Solana Blockchain. The app showcases the functionalities of creating a wallet, sending/receiving SOL, viewing transaction history, and more.
 
-BGL, Blue Giant Labs, creates your crypto wallet with top-tier security. This app is protected by industry-standard encryption, ensuring a secure connection with Solana.
+BGL, Blue Giant Labs, creates your crypto Solana wallet with top-tier security. This app is protected by industry-standard encryption, ensuring a secure connection with Solana.
 
 The SDK is written in Swift and is intended to be used in Swift apps.
 
 The SDK is open-source and hosted on Github, developers can use the SDK to build their own apss to connect with decentralized apps (dApps) on Solana Blockchain. Contributions are always welcome. Please find the details at the end on how to contribute.
 
-```BGL ``` is avaiable on Test Flight.
+```BGL``` is avaiable on Test Flight.
 
 ![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/TreaTestFlight.jpg?raw=true)
 
@@ -106,30 +106,100 @@ Then the app should create a valid Solana account
 
 ### Core Model
 #### Seed
-| Property      | Type                |
-|---------------|---------------------|
-| `seed`        | `[String]`          |
+| Property      | Type                   |
+|---------------|------------------------|
+| `seed`        | `[String]`             |
 
+#### Public Key
+| Property      | Type                   |
+|---------------|------------------------|
+| `value`       | `String`               |
+
+#### Private Key
+| Property      | Type                   |
+|---------------|------------------------|
+| `value`       | `String`               |
+
+#### Balance
+| Property      | Type                   |
+|---------------|------------------------|
+| `id`          | `String`               |
+| `value`       | `String`               |
+
+#### Transaction
+| Property      | Type                   |
+|---------------|------------------------|
+| `id`          | `String`               |
+| `date`        | `Date`                 |
+| `from`        | `String`               |
+| `to`          | `String`               |
+| `amount`      | `String`               |
+| `currencyName`| `String`               |
+| `signature`   | `String`               |
+
+
+#### Asset
+| Property      | Type                   |
+|---------------|------------------------|
+| `id`          | `String`               |
+| `name`        | `String`               |
 
 #### Wallet
-| Property      | Type                  |
-|---------------|-----------------------|
-| `id`          | `String`              |
-| `publicKey`   | `String`              |
-| `balance`     | `String`              |
+| Property      | Type                   |
+|---------------|------------------------|
+| `id`          | `String`               |
+| `publicKey`   | `String`               |
+| `balance`     | `String`               |
 
-### UI Model
-#### Seed
-| Property      | Type                |
-|---------------|---------------------|
-| `seed`        | `[String]`          |
+### UI View Model
+#### Seed VM
+| Property      | Type                   |
+|---------------|------------------------|
+| `seed`        | `PresentableSeed`      |
+| `error`       | `Error`                |
+| `isLoading`   | `Bool`                 |
 
-#### Wallet UI Model
-| Property      | Type                  |
-|---------------|-----------------------|
-| `wallet`      | `Wallet`              |
-| `error`       | `Error`               |
-| `isLoading`   | `Bool`                |
+#### Public Key VM
+| Property      | Type                   |
+|---------------|------------------------|
+| `publicKey`   | `PresentablePublicKey` |
+| `error`       | `Error`                |
+| `isLoading`   | `Bool`                 |
+
+#### Private Key VM
+| Property      | Type                   |
+|---------------|------------------------|
+| `privateKey`  | `PresentablePrivateKey`|
+| `error`       | `Error`                |
+| `isLoading`   | `Bool`                 |
+
+#### Balance VM
+| Property      | Type                   |
+|---------------|------------------------|
+| `balance`     | `PresentableBalance`   |
+| `error`       | `Error`                |
+| `isLoading`   | `Bool`                 |
+
+#### Transaction
+| Property      | Type                    |
+|---------------|-------------------------|
+| `transaction` | `PresentableTransaction`|
+| `error`       | `Error`                 |
+| `isLoading`   | `Bool`                  |
+
+#### Asset VM
+| Property      | Type                   |
+|---------------|------------------------|
+| `asset`       | `PresentableAsset`     |
+| `error`       | `Error`                |
+| `isLoading`   | `Bool`                 |
+
+#### Wallet VM
+| Property      | Type                   |
+|---------------|------------------------|
+| `wallet`      | `PresentableWallet`    |
+| `error`       | `Error`                |
+| `isLoading`   | `Bool`                 |
 
 ----------------
 

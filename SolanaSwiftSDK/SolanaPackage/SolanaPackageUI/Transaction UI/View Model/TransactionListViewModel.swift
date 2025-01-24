@@ -8,7 +8,7 @@
 import Foundation
 
 public final class TransactionListViewModel: ObservableObject {
-    public init(model: [PresentableTransaction] = [], isLoading: Bool = true, errorMessage: String? = nil) {
+    public init(model: [PresentableTransaction] = [], isLoading: Bool = false, errorMessage: String? = nil) {
         self.model = model
         self.isLoading = isLoading
         self.errorMessage = errorMessage

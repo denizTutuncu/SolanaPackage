@@ -8,8 +8,8 @@
 import Foundation
 
 extension LocalWalletCreator: WalletCreator {
-    public func create(from seed: WalletCreator.Seed) async throws -> (WalletCreator.PublicKey, WalletCreator.PrivateKey)? {
-        try await creator.create(from: seed)
+    public func create() async throws -> (WalletCreator.PublicKey, WalletCreator.PrivateKey)? {
+        try await creator.create()
     }
 }
 

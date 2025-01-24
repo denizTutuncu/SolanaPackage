@@ -8,9 +8,8 @@
 import Foundation
 
 public protocol WalletCreator {
-    typealias Seed = [String]
     typealias PublicKey = String
     typealias PrivateKey = String
 
-    func create(from seed: Seed) async throws -> (PublicKey,PrivateKey)?
+    func create() async throws -> (PublicKey,PrivateKey)?
 }

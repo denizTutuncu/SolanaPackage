@@ -103,8 +103,6 @@
 		2E80F3E529A6462700A4053C /* KeychainPrivateKeyStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3E429A6462700A4053C /* KeychainPrivateKeyStoreTests.swift */; };
 		2E80F3E729A64DCF00A4053C /* KeychainPrivateKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3E629A64DCF00A4053C /* KeychainPrivateKeyStore.swift */; };
 		2E80F3EB29A66E2400A4053C /* WalletDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F3EA29A66E2400A4053C /* WalletDetailView.swift */; };
-		2E917D0A29EFB0A000B578FA /* TransactionListErrorComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E917D0929EFB0A000B578FA /* TransactionListErrorComposerView.swift */; };
-		2E917D0C29EFB2EC00B578FA /* TransactionListUIComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E917D0B29EFB2EC00B578FA /* TransactionListUIComposerView.swift */; };
 		2E917D1629F091C100B578FA /* CodablePublicKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E917D1529F091C100B578FA /* CodablePublicKeyStore.swift */; };
 		2E917D1829F09EA700B578FA /* CodablePublicKeyStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E917D1729F09EA700B578FA /* CodablePublicKeyStoreTests.swift */; };
 		2E933C9C2D3F38B700436469 /* LocalWalletCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E933C9B2D3F38B700436469 /* LocalWalletCreator.swift */; };
@@ -325,8 +323,6 @@
 		2E80F3E429A6462700A4053C /* KeychainPrivateKeyStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPrivateKeyStoreTests.swift; sourceTree = "<group>"; };
 		2E80F3E629A64DCF00A4053C /* KeychainPrivateKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPrivateKeyStore.swift; sourceTree = "<group>"; };
 		2E80F3EA29A66E2400A4053C /* WalletDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletDetailView.swift; sourceTree = "<group>"; };
-		2E917D0929EFB0A000B578FA /* TransactionListErrorComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListErrorComposerView.swift; sourceTree = "<group>"; };
-		2E917D0B29EFB2EC00B578FA /* TransactionListUIComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListUIComposerView.swift; sourceTree = "<group>"; };
 		2E917D1529F091C100B578FA /* CodablePublicKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodablePublicKeyStore.swift; sourceTree = "<group>"; };
 		2E917D1729F09EA700B578FA /* CodablePublicKeyStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodablePublicKeyStoreTests.swift; sourceTree = "<group>"; };
 		2E933C9B2D3F38B700436469 /* LocalWalletCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocalWalletCreator.swift; path = SolanaPackage/Wallet/LocalWalletCreator.swift; sourceTree = SOURCE_ROOT; };
@@ -574,7 +570,7 @@
 				2E0CBFD827F282DC006E6892 /* Info.plist */,
 				2E954B9F28487C02002D2FF3 /* Assets.xcassets */,
 				2E6E554F2D34F95A00F473B2 /* Asset UI */,
-				2E6E55652D37949900F473B2 /* Wallet UI */,
+				2E6E55652D37949900F473B2 /* Wallet List UI */,
 				2E1DBE932B72DB7600970E48 /* Onboarding UI */,
 				2E80F39129A5815300A4053C /* Shared UI */,
 				2E4294B32848463700817480 /* Balance UI */,
@@ -830,13 +826,13 @@
 			path = "Transaction API";
 			sourceTree = "<group>";
 		};
-		2E6E55652D37949900F473B2 /* Wallet UI */ = {
+		2E6E55652D37949900F473B2 /* Wallet List UI */ = {
 			isa = PBXGroup;
 			children = (
 				2E9FF53C29FE0ABC002989EF /* WalletListView.swift */,
 				2E80F3EA29A66E2400A4053C /* WalletDetailView.swift */,
 			);
-			path = "Wallet UI";
+			path = "Wallet List UI";
 			sourceTree = "<group>";
 		};
 		2E6E55662D379B7700F473B2 /* Model */ = {
@@ -921,8 +917,6 @@
 			children = (
 				2EFADE9029A89359009BDC11 /* SingleTransactionCellView.swift */,
 				2EFADE9229A89736009BDC11 /* TransactionListView.swift */,
-				2E917D0929EFB0A000B578FA /* TransactionListErrorComposerView.swift */,
-				2E917D0B29EFB2EC00B578FA /* TransactionListUIComposerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1580,7 +1574,6 @@
 				2E1DBE8F2B72D88E00970E48 /* AnyViewProtocol.swift in Sources */,
 				2E61A06D2A9172A0007E0756 /* ImportSingleSeedCellView.swift in Sources */,
 				2E09010B29B05AA800865E30 /* ToogleView.swift in Sources */,
-				2E917D0C29EFB2EC00B578FA /* TransactionListUIComposerView.swift in Sources */,
 				2E1DBE8B2B5E2A2800970E48 /* CustomImageView.swift in Sources */,
 				2E3C6FEE2D41A1E3007413ED /* ExportSeedViewModel.swift in Sources */,
 				2E603DAF29ECB56D002A7DCA /* PresentableSeed.swift in Sources */,
@@ -1602,7 +1595,6 @@
 				2E3ECB0629EE5DF500038407 /* PresentableBalanceViewModel.swift in Sources */,
 				2E3C6FEC2D41A1D3007413ED /* ImportSeedViewModel.swift in Sources */,
 				2EFADE9129A89359009BDC11 /* SingleTransactionCellView.swift in Sources */,
-				2E917D0A29EFB0A000B578FA /* TransactionListErrorComposerView.swift in Sources */,
 				2E603DA929ECB2F0002A7DCA /* BalanceView.swift in Sources */,
 				2E3ECB0829EE5E2000038407 /* PresentableBalance.swift in Sources */,
 				2E0900BF29AC9D3800865E30 /* PresentablePublicKeyViewModel.swift in Sources */,
