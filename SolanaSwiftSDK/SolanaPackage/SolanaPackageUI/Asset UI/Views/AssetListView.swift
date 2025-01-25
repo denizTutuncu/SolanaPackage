@@ -17,7 +17,7 @@ public struct AssetListView: View {
                 loadingTitle: String,
                 tryAgain: @escaping () -> Void,
                 selection: @escaping (String) -> Void,
-                viewModel: PresentableAssetViewModel) {
+                viewModel: PresentableAssetListViewModel) {
         self.headerTitle = headerTitle
         self.headerTitleTextColor = headerTitleTextColor
         self.headerSubtitle = headerSubtitle
@@ -40,7 +40,7 @@ public struct AssetListView: View {
     private let tryAgain: () -> Void
     private let selection: (String) -> Void
 
-    @ObservedObject private var viewModel: PresentableAssetViewModel
+    @ObservedObject private var viewModel: PresentableAssetListViewModel
 
     public var body: some View {
         VStack {
@@ -96,16 +96,16 @@ struct AssetListView_Previews: PreviewProvider {
                     tryAgain: { },
                     selection: { selection = $0 },
                     viewModel: .init(model: [
-                        PresentableAsset(name: "BTC", price: "104841.11", imageURL: "An Image URL"),
-                        PresentableAsset(name: "SOL", price: "256.20", imageURL: "An Image URL"),
-                        PresentableAsset(name: "RAY", price: "7.83", imageURL: "An Image URL"),
-                        PresentableAsset(name: "SHDW", price: "0.36", imageURL: "An Image URL"),
-                        PresentableAsset(name: "HNT", price: "4.08", imageURL: "An Image URL"),
-                        PresentableAsset(name: "JUP", price: "0.85", imageURL: "An Image URL"),
-                        PresentableAsset(name: "ZEUS", price: "0.58", imageURL: "An Image URL"),
-                        PresentableAsset(name: "BONK", price: "0.00003", imageURL: "An Image URL"),
-                        PresentableAsset(name: "GOBI", price: "0.00043", imageURL: "An Image URL"),
-                        PresentableAsset(name: "GLooM", price: "0.000047", imageURL: "An Image URL")
+                        PresentableAsset(name: "BTC", prices: [104841.11], imageURL: "An Image URL"),
+                        PresentableAsset(name: "SOL", prices: [256.20], imageURL: "An Image URL"),
+                        PresentableAsset(name: "RAY", prices: [7.83], imageURL: "An Image URL"),
+                        PresentableAsset(name: "SHDW", prices: [0.36], imageURL: "An Image URL"),
+                        PresentableAsset(name: "HNT", prices: [4.08], imageURL: "An Image URL"),
+                        PresentableAsset(name: "JUP", prices: [0.85], imageURL: "An Image URL"),
+                        PresentableAsset(name: "ZEUS", prices: [0.58], imageURL: "An Image URL"),
+                        PresentableAsset(name: "BONK", prices: [0.00003], imageURL: "An Image URL"),
+                        PresentableAsset(name: "GOBI", prices: [0.00043], imageURL: "An Image URL"),
+                        PresentableAsset(name: "GLooM", prices: [0.000047], imageURL: "An Image URL")
                     ],
                     isLoading: false))
 

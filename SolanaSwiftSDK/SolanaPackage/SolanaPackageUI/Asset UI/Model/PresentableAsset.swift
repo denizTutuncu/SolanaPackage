@@ -8,16 +8,16 @@
 import Foundation
 
 public struct PresentableAsset: Hashable {
-    public init(id: UUID = UUID(), name: String, price: String, imageURL: String) {
+    public init(id: UUID = UUID(), name: String, prices: [Double], imageURL: String) {
         self.id = id
         self.name = name
-        self.price = price
+        self.prices = prices
         self.imageURL = imageURL
     }
     
     public let id: UUID
     public let name: String
-    public let price: String
+    public let prices: [Double]
     public let imageURL: String
     
     public var isSelected = false

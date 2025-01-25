@@ -75,7 +75,7 @@
 		2E6E55512D34F97E00F473B2 /* SingleAssetSelectionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E55502D34F97E00F473B2 /* SingleAssetSelectionCellView.swift */; };
 		2E6E55532D34FD9300F473B2 /* PresentableAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E55522D34FD9300F473B2 /* PresentableAsset.swift */; };
 		2E6E55552D3506D000F473B2 /* AssetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E55542D3506D000F473B2 /* AssetListView.swift */; };
-		2E6E55572D35070A00F473B2 /* PresentableAssetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E55562D35070A00F473B2 /* PresentableAssetViewModel.swift */; };
+		2E6E55572D35070A00F473B2 /* PresentableAssetListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E55562D35070A00F473B2 /* PresentableAssetListViewModel.swift */; };
 		2E6E55592D372D9000F473B2 /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E55582D372D9000F473B2 /* TransactionListViewModel.swift */; };
 		2E6E555E2D37419200F473B2 /* TransactionEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E555D2D37419200F473B2 /* TransactionEndpoint.swift */; };
 		2E6E55602D37429300F473B2 /* TransactionItemMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E555F2D37429300F473B2 /* TransactionItemMapper.swift */; };
@@ -138,6 +138,8 @@
 		2EE04BD42D4450BF00CE58FD /* PortfolioChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE04BD32D4450BF00CE58FD /* PortfolioChartView.swift */; };
 		2EE04BD72D44510A00CE58FD /* Portfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE04BD62D44510A00CE58FD /* Portfolio.swift */; };
 		2EE04BDC2D4453C900CE58FD /* PortfolioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE04BDB2D4453C900CE58FD /* PortfolioViewModel.swift */; };
+		2EE04BE22D459C8700CE58FD /* AssetPriceChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE04BE12D459C8700CE58FD /* AssetPriceChartView.swift */; };
+		2EE04BE42D45A8CB00CE58FD /* PresentableAssetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE04BE32D45A8CB00CE58FD /* PresentableAssetViewModel.swift */; };
 		2EE089762846DF76007AFC0F /* Balance.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2EE089782846DF76007AFC0F /* Balance.strings */; };
 		2EE0898028473BAF007AFC0F /* BalanceLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0897F28473BAF007AFC0F /* BalanceLocalizationTests.swift */; };
 		2EE0899B28476AC6007AFC0F /* SharedLocalizationTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0899A28476AC6007AFC0F /* SharedLocalizationTestHelpers.swift */; };
@@ -300,7 +302,7 @@
 		2E6E55502D34F97E00F473B2 /* SingleAssetSelectionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAssetSelectionCellView.swift; sourceTree = "<group>"; };
 		2E6E55522D34FD9300F473B2 /* PresentableAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableAsset.swift; sourceTree = "<group>"; };
 		2E6E55542D3506D000F473B2 /* AssetListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetListView.swift; sourceTree = "<group>"; };
-		2E6E55562D35070A00F473B2 /* PresentableAssetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableAssetViewModel.swift; sourceTree = "<group>"; };
+		2E6E55562D35070A00F473B2 /* PresentableAssetListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableAssetListViewModel.swift; sourceTree = "<group>"; };
 		2E6E55582D372D9000F473B2 /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
 		2E6E555D2D37419200F473B2 /* TransactionEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionEndpoint.swift; sourceTree = "<group>"; };
 		2E6E555F2D37429300F473B2 /* TransactionItemMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionItemMapper.swift; sourceTree = "<group>"; };
@@ -369,6 +371,8 @@
 		2EE04BD32D4450BF00CE58FD /* PortfolioChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioChartView.swift; sourceTree = "<group>"; };
 		2EE04BD62D44510A00CE58FD /* Portfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portfolio.swift; sourceTree = "<group>"; };
 		2EE04BDB2D4453C900CE58FD /* PortfolioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewModel.swift; sourceTree = "<group>"; };
+		2EE04BE12D459C8700CE58FD /* AssetPriceChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetPriceChartView.swift; sourceTree = "<group>"; };
+		2EE04BE32D45A8CB00CE58FD /* PresentableAssetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableAssetViewModel.swift; sourceTree = "<group>"; };
 		2EE089772846DF76007AFC0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Balance.strings; sourceTree = "<group>"; };
 		2EE089792846E03E007AFC0F /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Balance.strings; sourceTree = "<group>"; };
 		2EE0897A2846E090007AFC0F /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Balance.strings"; sourceTree = "<group>"; };
@@ -1329,7 +1333,8 @@
 		2EE04BDE2D445FF700CE58FD /* View Model */ = {
 			isa = PBXGroup;
 			children = (
-				2E6E55562D35070A00F473B2 /* PresentableAssetViewModel.swift */,
+				2E6E55562D35070A00F473B2 /* PresentableAssetListViewModel.swift */,
+				2EE04BE32D45A8CB00CE58FD /* PresentableAssetViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -1339,6 +1344,7 @@
 			children = (
 				2E6E55502D34F97E00F473B2 /* SingleAssetSelectionCellView.swift */,
 				2E6E55542D3506D000F473B2 /* AssetListView.swift */,
+				2EE04BE12D459C8700CE58FD /* AssetPriceChartView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1711,12 +1717,13 @@
 				2EFADE9329A89736009BDC11 /* TransactionListView.swift in Sources */,
 				2EE04BD72D44510A00CE58FD /* Portfolio.swift in Sources */,
 				2E603DAD29ECB554002A7DCA /* PresentablePublicKey.swift in Sources */,
-				2E6E55572D35070A00F473B2 /* PresentableAssetViewModel.swift in Sources */,
+				2E6E55572D35070A00F473B2 /* PresentableAssetListViewModel.swift in Sources */,
 				2EFADE8E29A84953009BDC11 /* ExportSeedView.swift in Sources */,
 				2E1DBE8F2B72D88E00970E48 /* AnyViewProtocol.swift in Sources */,
 				2E61A06D2A9172A0007E0756 /* ImportSingleSeedCellView.swift in Sources */,
 				2E09010B29B05AA800865E30 /* ToogleView.swift in Sources */,
 				2E1DBE8B2B5E2A2800970E48 /* CustomImageView.swift in Sources */,
+				2EE04BE42D45A8CB00CE58FD /* PresentableAssetViewModel.swift in Sources */,
 				2E3C6FEE2D41A1E3007413ED /* ExportSeedViewModel.swift in Sources */,
 				2E603DAF29ECB56D002A7DCA /* PresentableSeed.swift in Sources */,
 				2E4294B92848484900817480 /* ErrorView.swift in Sources */,
@@ -1731,6 +1738,7 @@
 				2E9FF53829FC7742002989EF /* OnboardingView.swift in Sources */,
 				2E0900B829A8E4C300865E30 /* RoundedButton.swift in Sources */,
 				2E80F38E29A579D900A4053C /* SinglePublicKeySelectionCellView.swift in Sources */,
+				2EE04BE22D459C8700CE58FD /* AssetPriceChartView.swift in Sources */,
 				2E6E55512D34F97E00F473B2 /* SingleAssetSelectionCellView.swift in Sources */,
 				2E80F39029A5805E00A4053C /* PublicKeyListView.swift in Sources */,
 				2E80F3EB29A66E2400A4053C /* WalletDetailView.swift in Sources */,

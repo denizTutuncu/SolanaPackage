@@ -70,29 +70,43 @@ public struct PortfolioChartView: View {
     }
 }
 
-#Preview {
-    let sampleViewModel = PortfolioViewModel(model: [
-        Portfolio(date: Date().addingTimeInterval(-11 * 24 * 60 * 60), value: 7500),
-        Portfolio(date: Date().addingTimeInterval(-10 * 24 * 60 * 60), value: 8500),
-        Portfolio(date: Date().addingTimeInterval(-9 * 24 * 60 * 60), value: 9000),
-        Portfolio(date: Date().addingTimeInterval(-8 * 24 * 60 * 60), value: 10000),
-        Portfolio(date: Date().addingTimeInterval(-7 * 24 * 60 * 60), value: 9000),
-        Portfolio(date: Date().addingTimeInterval(-6 * 24 * 60 * 60), value: 10000),
-        Portfolio(date: Date().addingTimeInterval(-5 * 24 * 60 * 60), value: 10500),
-        Portfolio(date: Date().addingTimeInterval(-4 * 24 * 60 * 60), value: 8250),
-        Portfolio(date: Date().addingTimeInterval(-3 * 24 * 60 * 60), value: 10750),
-        Portfolio(date: Date().addingTimeInterval(-2 * 24 * 60 * 60), value: 9500),
-        Portfolio(date: Date().addingTimeInterval(-1 * 24 * 60 * 60), value: 15500),
-        Portfolio(date: Date(), value: 14500)
-    ], isLoading: false)
-
-    PortfolioChartView(title: "Portfolio Performance",
-                       titleTextColor: .primary,
-                       subtitle: "Monitor Your Portfolio Progress Daily",
-                       subtitleTextColor: .blue,
-                       errorMessage: "Unable to load portfolio data at this time.",
-                       errorViewButtonTitle: "Retry",
-                       loadingTitle: "Loading Portfolio...",
-                       loadAgain: { print("Retry button tapped") },
-                       viewModel: sampleViewModel)
+struct PortfolioChartView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            PortfolioChartTestView()
+                .previewLayout(.sizeThatFits)
+                .previewDisplayName("Portfolio Chart Test View")
+        }
+    }
+    
+    struct PortfolioChartTestView: View {
+        let sampleViewModel = PortfolioViewModel(model: [
+            Portfolio(date: Date().addingTimeInterval(-11 * 24 * 60 * 60), value: 7500),
+            Portfolio(date: Date().addingTimeInterval(-10 * 24 * 60 * 60), value: 8500),
+            Portfolio(date: Date().addingTimeInterval(-9 * 24 * 60 * 60), value: 9000),
+            Portfolio(date: Date().addingTimeInterval(-8 * 24 * 60 * 60), value: 10000),
+            Portfolio(date: Date().addingTimeInterval(-7 * 24 * 60 * 60), value: 9000),
+            Portfolio(date: Date().addingTimeInterval(-6 * 24 * 60 * 60), value: 10000),
+            Portfolio(date: Date().addingTimeInterval(-5 * 24 * 60 * 60), value: 10500),
+            Portfolio(date: Date().addingTimeInterval(-4 * 24 * 60 * 60), value: 8250),
+            Portfolio(date: Date().addingTimeInterval(-3 * 24 * 60 * 60), value: 10750),
+            Portfolio(date: Date().addingTimeInterval(-2 * 24 * 60 * 60), value: 9500),
+            Portfolio(date: Date().addingTimeInterval(-1 * 24 * 60 * 60), value: 15500),
+            Portfolio(date: Date(), value: 14500)
+        ], isLoading: false)
+        
+        var body: some View {
+            VStack {
+                PortfolioChartView(title: "Portfolio Performance",
+                                   titleTextColor: .primary,
+                                   subtitle: "Monitor Your Portfolio Progress Daily",
+                                   subtitleTextColor: .blue,
+                                   errorMessage: "Unable to load portfolio data at this time.",
+                                   errorViewButtonTitle: "Retry",
+                                   loadingTitle: "Loading Portfolio...",
+                                   loadAgain: { print("Retry button tapped") },
+                                   viewModel: sampleViewModel)
+            }
+        }
+    }
 }
