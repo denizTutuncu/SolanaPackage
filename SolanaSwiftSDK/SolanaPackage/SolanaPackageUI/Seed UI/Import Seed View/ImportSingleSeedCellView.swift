@@ -61,7 +61,7 @@ struct ImportSingleSeedCellView_Previews: PreviewProvider {
 
 struct ImportSingleSeedCellTestView: View {
     @State private var value1 = ""
-    @State private var value2 = "VALUE"
+    @State private var value2 = "Value"
 
     var body: some View {
         VStack {

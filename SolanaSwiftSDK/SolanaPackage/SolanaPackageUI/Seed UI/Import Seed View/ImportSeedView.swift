@@ -111,5 +111,7 @@ struct ImportSeedView_Previews: PreviewProvider {
             backButtonTitle: "Back",
             backAction: { print("Back action button triggered") }
         )
+        .previewLayout(.sizeThatFits)
+        .previewDisplayName("Import Seed Test View")
     }
 }

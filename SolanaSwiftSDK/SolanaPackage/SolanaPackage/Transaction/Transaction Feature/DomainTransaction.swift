@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct DomainTransaction {
+public struct DomainTransaction: Hashable {
     public init(date: String, from: String, to: String, amount: String, currencyName: String, signature: String) {
         self.date = date
         self.from = from

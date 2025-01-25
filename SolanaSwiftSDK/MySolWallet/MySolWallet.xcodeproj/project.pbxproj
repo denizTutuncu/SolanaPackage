@@ -34,6 +34,7 @@
 		2E9FF53629F88A6D002989EF /* NullCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9FF53529F88A6D002989EF /* NullCreator.swift */; };
 		2E9FF53F29FF24C0002989EF /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9FF53E29FF24C0002989EF /* AppStore.swift */; };
 		2EAEF0EC297A5C1C00091A49 /* CombineHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAEF0EB297A5C1C00091A49 /* CombineHelpers.swift */; };
+		2EE04BD12D437F0E00CE58FD /* NavigationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE04BD02D437F0E00CE58FD /* NavigationHandler.swift */; };
 		2EF75C2129CBC89D001E3DA7 /* SeedBankHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF75C2029CBC89D001E3DA7 /* SeedBankHelpers.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		2E9FF53529F88A6D002989EF /* NullCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullCreator.swift; sourceTree = "<group>"; };
 		2E9FF53E29FF24C0002989EF /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 		2EAEF0EB297A5C1C00091A49 /* CombineHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineHelpers.swift; sourceTree = "<group>"; };
+		2EE04BD02D437F0E00CE58FD /* NavigationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHandler.swift; sourceTree = "<group>"; };
 		2EF75C2029CBC89D001E3DA7 /* SeedBankHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedBankHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -203,6 +205,7 @@
 				2E80F38A29A200DC00A4053C /* AppNavigationView.swift */,
 				2E3C6FF32D41D509007413ED /* ViewFactory.swift */,
 				2E3C6FF52D41D548007413ED /* NavigationCoordinator.swift */,
+				2EE04BD02D437F0E00CE58FD /* NavigationHandler.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				2E9FF53429F87036002989EF /* SolanaWalletCreator.swift in Sources */,
 				2E9FF53F29FF24C0002989EF /* AppStore.swift in Sources */,
 				2E7E4AE42B7B025A0057B344 /* BalancePublisherAdapter.swift in Sources */,
+				2EE04BD12D437F0E00CE58FD /* NavigationHandler.swift in Sources */,
 				2E0900F529ADA75700865E30 /* SeedStoreMapper.swift in Sources */,
 				2EF75C2129CBC89D001E3DA7 /* SeedBankHelpers.swift in Sources */,
 				2E80F38B29A200DC00A4053C /* AppNavigationView.swift in Sources */,

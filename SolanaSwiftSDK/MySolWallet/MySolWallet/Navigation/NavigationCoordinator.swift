@@ -8,7 +8,10 @@
 import Foundation
 import SolanaPackageUI
 
+//OnboardingNavigation & WalletNavigation
+
 class NavigationCoordinator {
+    
     private let navigationStore: AppNavigationStore
 
     init(navigationStore: AppNavigationStore) {

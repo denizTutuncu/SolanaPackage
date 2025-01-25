@@ -30,8 +30,6 @@ The SDK is open-source and hosted on Github, developers can use the SDK to build
 
 ```BGL``` is avaiable on Test Flight.
 
-![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/TreaTestFlight.jpg?raw=true)
-
 ![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/BGLAppSS.jpg?raw=true)
 
 ![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/BGL.gif?raw=true)
@@ -209,35 +207,37 @@ Then the app should create a valid Solana account
 
 ----------------
 
-#### Seed Phrase screen
+#### Export and Import Seed Phrase screens
 
-![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/SeedListGIF_AdobeExpress.gif?raw=true)
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/ExportSeedListScreen.jpg?raw=true)
 
-![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/SeedListScreen.jpg?raw=true)
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/ImportSeedListScreen.jpg?raw=true)
 
 ----------------
 
 #### Wallet List screen
 
-![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/WalletListGIF_AdobeExpress.gif?raw=true)
-
 ![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/WalletListScreen.jpg?raw=true)
 
 ----------------
 
-#### Wallet screen
+#### Wallet Detail screen
 
-![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/WalletViewGIF_AdobeExpress.gif?raw=true)
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/WalletDetailScreen.jpg?raw=true)
 
-![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/WalletScreen.jpg?raw=true)
+#### Asset List screen
+
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/SolanaAssetList.jpg?raw=true)
+
+#### Asset List screen
+
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/SolanaAssetList.jpg?raw=true)
 
 ----------------
 
-#### Transaction List screen
+#### Portfolio screen
 
-![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/TransactionListGIF_AdobeExpress.gif?raw=true)
-
-![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/TXsScreen.jpg?raw=true)
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/Portfolio.jpg?raw=true)
 
 #### Transaction Detail screen
 

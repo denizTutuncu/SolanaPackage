@@ -6,7 +6,7 @@
   
 */
 "IMPORT_SEED_VIEW_TITLE" = "Tohum Cümlesi";
-"IMPORT_SEED_VIEW_SUBTITLE" = "Tohum cümlesi asla cihazda saklanmaz. Yalnızca bir kez görürsünüz ve yalnızca kurulum sırasında gösterilir. Tohum cümlesinin sırası çok önemlidir, bu nedenle doğru sırayı korumak için her bir düğmeyi her bir tümceye karşılık gelen geçiş yaptığınızdan emin olun. Lütfen tohum cümlesini fiziksel olarak güvende tuttuğunuzdan emin olun.";
+"IMPORT_SEED_VIEW_SUBTITLE" = "Tohum cümlesi asla cihazda saklanmaz. Yalnızca bir kez görürsünüz ve yalnızca kurulum sırasında gösterilir. Tohum cümlesinin sırası çok önemlidir, bu nedenle doğru sırayı sağladığınızdan emin olun.";
 "IMPORT_SEED_VIEW_BUTTON_TITLE" = "Cüzdanı Tohumdan İçe Aktar";
 "IMPORT_SEED_VIEW_ERROR_MESSAGE" = "Cüzdan olusturmak için gereken tohum cümleniz yüklenemiyor";
 "IMPORT_SEED_VIEW_ERROR_BUTTON_TITLE" = "Tekrar deneyin";

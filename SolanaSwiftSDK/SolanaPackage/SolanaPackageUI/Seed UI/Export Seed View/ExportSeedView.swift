@@ -110,5 +110,7 @@ struct ExportSeedView_Previews: PreviewProvider {
             backButtonTitle: "Back",
             backAction: { print("Back action button triggered") }
         )
+        .previewLayout(.sizeThatFits)
+        .previewDisplayName("Export Seed Test View")
     }
 }

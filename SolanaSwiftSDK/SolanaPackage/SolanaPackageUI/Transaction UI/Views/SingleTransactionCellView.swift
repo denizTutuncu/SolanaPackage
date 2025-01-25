@@ -110,6 +110,6 @@ struct SingleTransactionCellView_Previews: PreviewProvider {
                                                              signature: "5U3XaN8ab9mFWH47spgpE53jfFvCLeADBLdRDzfMt3yAsPDZBs3yWaSL58w6E83pquutbJA8CpsAGXAWmbNaCWaN"),
                                   selection: { })
         .previewLayout(.sizeThatFits)
-        .previewDisplayName("Single Seed Cell View")
+        .previewDisplayName("Single Seed Cell Test View")
     }
 }

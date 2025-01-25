@@ -6,7 +6,7 @@
   
 */
 "IMPORT_SEED_VIEW_TITLE" = "Import Your Seed Phrase";
-"IMPORT_SEED_VIEW_SUBTITLE" = "Your seed phrase is never stored on the device. You will only provide it once, and it is only shown during setup. The order of the seed phrase is crucial, so ensure that you toggle each button corresponding to each phrase to maintain the correct order. Please ensure that you keep your seed phrase physically secure.";
+"IMPORT_SEED_VIEW_SUBTITLE" = "Your seed phrase is never stored on the device. You will only provide it once, and it is only shown during setup. The order of the seed phrase is crucial, so ensure that you provide the correct order.";
 "IMPORT_SEED_VIEW_BUTTON_TITLE" = "Import Wallet From Seed";
 "IMPORT_SEED_VIEW_ERROR_MESSAGE" = "Cannot import seed phrase";
 "IMPORT_SEED_VIEW_ERROR_BUTTON_TITLE" = "Try to import again";
