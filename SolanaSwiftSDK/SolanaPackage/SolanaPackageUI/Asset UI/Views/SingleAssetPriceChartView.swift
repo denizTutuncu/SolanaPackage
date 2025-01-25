@@ -1,5 +1,5 @@
 //
-//  AssetPriceChartView.swift
+//  SingleAssetPriceChartView.swift
 //  SolanaPackageUI
 //
 //  Created by Deniz Tutuncu on 1/25/25.
@@ -8,7 +8,7 @@
 import SwiftUI
 import Charts
 
-public struct AssetPriceChartView: View {
+public struct SingleAssetPriceChartView: View {
     public init(title: String,
                 titleTextColor: Color,
                 subtitle: String,
@@ -84,7 +84,7 @@ struct AssetPriceChartView_Previews: PreviewProvider {
         
         var body: some View {
             VStack {
-                AssetPriceChartView(title: "Solana",
+                SingleAssetPriceChartView(title: "Solana",
                                     titleTextColor: .primary,
                                     subtitle: "Daily Price Chart",
                                     subtitleTextColor: .blue,
