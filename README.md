@@ -5,7 +5,7 @@
 [![CI-iOS](https://github.com/denizTutuncu/SolanaPackage/actions/workflows/CI-iOS.yml/badge.svg?event=pull_request)](https://github.com/denizTutuncu/SolanaPackage/actions/workflows/CI-iOS.yml)
 
 ## Solana Package Framework & Solana Package UI Framework & Blue Giant Labs iOS App
-#### 
+
 The SolanaPackage repository includes a workspace named MySolWallet. Inside this workspace, there are two projects: Solana Package and MySolWallet projects. The Solana Package project has two framework targets: Solana Package, which contains code that works across different platforms, and SolanaPackageUI, which is specifically for iOS and includes iOS-specific code like the user interface (UI). Additionally, there are some test targets.
 
 In this project, I use both vertical and horizontal slicing. Vertical slicing separates the features, while horizontal slicing is used for each individual feature.
@@ -18,11 +18,23 @@ Additionally, Presentation modules support localization for four different langu
 #### UI Module: 
 This module is an iOS SwiftUI module that provides a set of components to build user interfaces for interacting with the Solana Blockchain. These components include views for displaying wallet details such as balance and transaction history, forms for sending and receiving SOL, and more. The UI module is designed to be easily integrated into existing iOS apps. Furthermore, this module can also be moved into a macOS framework, which can be easily integrated into existing iOS, macOS, tvOS, and watchOS apps.
 
-#### App:
+#### Blue Giant Labs iOS Application:
 
 The repo also includes an iOS app called ```BGL``` that demonstrates how to use the Core and UI modules to interact with the Solana Blockchain. The app showcases the functionalities of creating a wallet, sending/receiving SOL, viewing transaction history, and more.
 
-BGL, Blue Giant Labs, creates your crypto Solana wallet with top-tier security. This app is protected by industry-standard encryption, ensuring a secure connection with Solana.
+BGL, Blue Giant Labs, creates your crypto Solana wallet with top-tier security. This app is protected by industry-standard encryption for private keys, ensuring a secure connection with Solana. 
+
+```
+1- Export or Import Seed Phrase
+1- Create Public and Private Key, a Wallet, from the seed phrase
+2- Display balance
+3- Display past transactions
+4- Send & Receive Sol 
+5- Monitor Assets under Solana
+6- Monitor Single Solana Asset Details
+7- Monitor Portfolio Progress
+8- Activate Neptune Line on a Single Solana Asset
+```
 
 The SDK is written in Swift and is intended to be used in Swift apps.
 
@@ -38,38 +50,13 @@ The SDK is open-source and hosted on Github, developers can use the SDK to build
 
 ### Inital Prototype & Prototype's Flowchart
 
-```
-1- Create Wallet & Receive Sol (in progress)
-2- Display balance (under maintenance)
-3- Display past transactions (in progress)
-4- Send Sol (in the future)
-```
-
 ![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/PROTOTYPEIOS_AdobeCreativeCloudExpress.gif)
 
 ![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Diagrams/iOSAppFlow.drawio.png?raw=true)
 
 ----------------
- 
-## iOS App Flow
 
-![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Diagrams/PrototypeFlowchart.drawio.png?raw=true)
-
-----------------
-
-### Architecture
-
-![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Diagrams/architecture.drawio.png?raw=true)
-
-----------------
-
-### Blue Giant Labs iOS App Design
-
-![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Diagrams/iOSSDKDesign.drawio.png?raw=true)
-
-----------------
-
-## Create Wallet BDD Specs (in progress)
+## Create Wallet BDD Specs (Under Maintenance)
 
 ### Create Wallet / Receive Sol
 ### Story: Customer requests to create a solana wallet
@@ -412,4 +399,4 @@ Due to the restrictive licensing of this repository, contributions in the form o
 
 Detailed processes for Continuous Integration (CI) and Continuous Deployment (CD) are designed to ensure the highest standards of quality and functionality, exclusively managed by the project's maintainers.
 
-For any inquiries or to request authorization for collaboration, please contact Deniz Tutuncu directly.
+For any inquiries or to request authorization for collaboration, please contact Deniz Tutuncu or Blue Giant Labs LLC directly.
