@@ -43,8 +43,6 @@ public struct ReceiveSOLView: View {
                 subtitle: headerSubtitle,
                 subtitleTextColor: headerSubtitleTextColor
             )
-
-            Spacer()
             
             VStack {
                 
@@ -72,8 +70,6 @@ public struct ReceiveSOLView: View {
                 }
                 
             }
-
-            Spacer()
 
             Button(action: backButtonAction) {
                 Text(backButtonTitle)

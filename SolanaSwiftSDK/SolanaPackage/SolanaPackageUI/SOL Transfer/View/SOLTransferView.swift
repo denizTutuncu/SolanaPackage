@@ -13,7 +13,11 @@ public struct SolTransferView: View {
         headerTitleTextColor: Color,
         headerSubtitle: String,
         headerSubtitleTextColor: Color,
+        recipientTextFieldPlaceholder: String,
+        amountTextFieldPlaceholder: String,
+        cancelButtonTitle: String,
         cancelButtonAction: @escaping () -> Void,
+        sendSOLButtonTitle: String,
         sendSOLButtonAction: @escaping () -> Void,
         viewModel: SendSOLViewModel
     ) {
@@ -21,7 +25,11 @@ public struct SolTransferView: View {
         self.headerTitleTextColor = headerTitleTextColor
         self.headerSubtitle = headerSubtitle
         self.headerSubtitleTextColor = headerSubtitleTextColor
+        self.recipientTextFieldPlaceholder = recipientTextFieldPlaceholder
+        self.amountTextFieldPlaceholder = amountTextFieldPlaceholder
+        self.cancelButtonTitle = cancelButtonTitle
         self.cancelButtonAction = cancelButtonAction
+        self.sendSOLButtonTitle = sendSOLButtonTitle
         self.sendSOLButtonAction = sendSOLButtonAction
         _viewModel = StateObject(wrappedValue: viewModel)
     }
@@ -30,7 +38,11 @@ public struct SolTransferView: View {
     public let headerTitleTextColor: Color
     public let headerSubtitle: String
     public let headerSubtitleTextColor: Color
+    public let recipientTextFieldPlaceholder: String
+    public let amountTextFieldPlaceholder: String
+    public let cancelButtonTitle: String
     public let cancelButtonAction: () -> Void
+    public let sendSOLButtonTitle: String
     public let sendSOLButtonAction: () -> Void
     
     @StateObject private var viewModel: SendSOLViewModel
@@ -45,7 +57,7 @@ public struct SolTransferView: View {
             )
 
             VStack(spacing: 20) {
-                TextField("Recipient Public Key", text: Binding(
+                TextField(recipientTextFieldPlaceholder, text: Binding(
                     get: { viewModel.model.recipientPublicKey },
                     set: { viewModel.updateRecipientPublicKey($0) }
                 ))
@@ -56,7 +68,7 @@ public struct SolTransferView: View {
                 .disableAutocorrection(true)
                 .padding(.horizontal)
 
-                TextField("Amount (SOL)", text: Binding(
+                TextField(amountTextFieldPlaceholder, text: Binding(
                     get: { viewModel.model.amount },
                     set: { viewModel.updateAmount($0) }
                 ))
@@ -74,7 +86,7 @@ public struct SolTransferView: View {
 
             HStack(spacing: 16) {
                 Button(action: cancelButtonAction) {
-                    Text("Cancel")
+                    Text(cancelButtonTitle)
                         .fontWeight(.bold)
                         .frame(maxWidth: .infinity)
                         .padding()
@@ -88,7 +100,7 @@ public struct SolTransferView: View {
                     sendSol()
                     viewModel.setOffLoading()
                 }) {
-                    Text("Send")
+                    Text(sendSOLButtonTitle)
                         .fontWeight(.bold)
                         .frame(maxWidth: .infinity)
                         .padding()
@@ -104,16 +116,13 @@ public struct SolTransferView: View {
 
     public func sendSol() {
         guard !viewModel.model.recipientPublicKey.isEmpty else {
-            print("Recipient public key cannot be empty.")
             return
         }
 
         guard let amount = Double(viewModel.model.amount), amount > 0 else {
-            print("Please enter a valid amount greater than 0.")
             return
         }
 
-        print("Sending \(amount) SOL to \(viewModel.model.recipientPublicKey)")
         sendSOLButtonAction()
     }
     
@@ -124,16 +133,20 @@ public struct SolTransferView: View {
 
 struct SolTransferView_Previews: PreviewProvider {
     static var previews: some View {
-        SolTransferView(headerTitle: "Send SOL",
+        SolTransferView(headerTitle: "Send",
                         headerTitleTextColor: .primary,
                         headerSubtitle: "Transfer securely",
                         headerSubtitleTextColor: .blue,
+                        recipientTextFieldPlaceholder: "Recipient Public Key",
+                        amountTextFieldPlaceholder: "Amount",
+                        cancelButtonTitle: "Cancel",
                         cancelButtonAction: {  print("Cancel button tapped") },
+                        sendSOLButtonTitle: "Send",
                         sendSOLButtonAction: {  print("SendSOL button tapped") },
                         viewModel: SendSOLViewModel(model: SendSOLModel(recipientPublicKey: "", amount: ""))
       
         )
         .previewLayout(.sizeThatFits)
-        .previewDisplayName("Sol Transfer Test View")
+        .previewDisplayName("Transfer Test View")
     }
 }
