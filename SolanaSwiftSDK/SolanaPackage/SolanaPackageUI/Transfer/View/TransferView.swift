@@ -1,5 +1,5 @@
 //
-//  SOLTransferView.swift
+//  TransferView.swift
 //  SolanaPackageUI
 //
 //  Created by Deniz Tutuncu on 1/25/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct SolTransferView: View {
+public struct TransferView: View {
     public init(
         headerTitle: String,
         headerTitleTextColor: Color,
@@ -19,7 +19,7 @@ public struct SolTransferView: View {
         cancelButtonAction: @escaping () -> Void,
         sendSOLButtonTitle: String,
         sendSOLButtonAction: @escaping () -> Void,
-        viewModel: SendSOLViewModel
+        viewModel: TransferViewModel
     ) {
         self.headerTitle = headerTitle
         self.headerTitleTextColor = headerTitleTextColor
@@ -45,7 +45,7 @@ public struct SolTransferView: View {
     public let sendSOLButtonTitle: String
     public let sendSOLButtonAction: () -> Void
     
-    @StateObject private var viewModel: SendSOLViewModel
+    @StateObject private var viewModel: TransferViewModel
 
     public var body: some View {
         VStack {
@@ -133,7 +133,7 @@ public struct SolTransferView: View {
 
 struct SolTransferView_Previews: PreviewProvider {
     static var previews: some View {
-        SolTransferView(headerTitle: "Send",
+        TransferView(headerTitle: "Send",
                         headerTitleTextColor: .primary,
                         headerSubtitle: "Transfer securely",
                         headerSubtitleTextColor: .blue,
@@ -143,7 +143,7 @@ struct SolTransferView_Previews: PreviewProvider {
                         cancelButtonAction: {  print("Cancel button tapped") },
                         sendSOLButtonTitle: "Send",
                         sendSOLButtonAction: {  print("SendSOL button tapped") },
-                        viewModel: SendSOLViewModel(model: SendSOLModel(recipientPublicKey: "", amount: ""))
+                        viewModel: TransferViewModel(model: TransferModel(recipientPublicKey: "", amount: ""))
       
         )
         .previewLayout(.sizeThatFits)
