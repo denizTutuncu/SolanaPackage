@@ -1,4 +1,5 @@
 {
+  "originHash" : "7499012ef6dca1611d7a8f1e30b709f486e272ca4aaccb60a8bc1a6549a2a203",
   "pins" : [
     {
       "identity" : "secp256k1.swift",
@@ -14,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/p2p-org/solana-swift",
       "state" : {
-        "revision" : "ab9a29e291a2adb1f4dfecea09b9c516c9fba970",
-        "version" : "4.0.0"
+        "revision" : "010a3e3a4cb583ccc3150a04d4270ad37d784ee8",
+        "version" : "5.0.0"
       }
     },
     {
@@ -37,5 +38,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
