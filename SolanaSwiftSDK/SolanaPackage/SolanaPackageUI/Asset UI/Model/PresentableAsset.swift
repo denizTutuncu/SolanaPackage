@@ -8,16 +8,16 @@
 import Foundation
 
 public struct PresentableAsset: Hashable {
-    public init(id: UUID = UUID(), name: String, prices: [Double], imageURL: String) {
+    public init(id: UUID = UUID(), name: String, assetPrices: [AssetPrice], imageURL: String) {
         self.id = id
         self.name = name
-        self.prices = prices
+        self.assetPrices = assetPrices
         self.imageURL = imageURL
     }
     
     public let id: UUID
     public let name: String
-    public let prices: [Double]
+    public let assetPrices: [AssetPrice]
     public let imageURL: String
     
     public var isSelected = false
@@ -25,4 +25,15 @@ public struct PresentableAsset: Hashable {
     mutating func toggleSelection() {
         isSelected.toggle()
     }
+}
+
+public struct AssetPrice: Hashable {
+    public init(id: UUID = UUID(), date: Date, price: Double) {
+        self.id = id
+        self.price = price
+        self.date = date
+    }
+    public let id: UUID
+    public let date: Date
+    public let price: Double
 }

@@ -49,20 +49,20 @@ public struct SingleAssetPriceChartView: View {
             
             if viewModel.isLoading {
                 LoadingView(title: loadingTitle)
-            } else if viewModel.model.prices.isEmpty {
+            } else if viewModel.model.assetPrices.isEmpty {
                 ErrorView(message: errorMessage,
                           buttonTitle: errorViewButtonTitle,
                           onHide: loadAgain)
             } else {
-                Chart(viewModel.model.prices.indices, id: \ .self) { index in
+                Chart(viewModel.model.assetPrices.indices, id: \.self) { index in
                     LineMark(
-                        x: .value("Index", index),
-                        y: .value("Price", viewModel.model.prices[index])
+                        x: .value("Date", viewModel.model.assetPrices[index].date),
+                        y: .value("Price", viewModel.model.assetPrices[index].price)
                     )
                     .symbol(Circle())
                     .interpolationMethod(.catmullRom)
                 }
-                .chartYScale(domain: (viewModel.model.prices.min()! - 10)...(viewModel.model.prices.max()! + 10))
+                .chartYScale(domain: viewModel.priceRange ?? 0...1)
                 .frame(height: 300)
                 .padding()
             }
@@ -80,33 +80,35 @@ struct AssetPriceChartView_Previews: PreviewProvider {
     }
     
     struct AssetPriceChartTestView: View {
-        @State var selection: String = "none"
         
         var body: some View {
             VStack {
                 SingleAssetPriceChartView(title: "Solana",
-                                    titleTextColor: .primary,
-                                    subtitle: "Daily Price Chart",
-                                    subtitleTextColor: .blue,
-                                    errorMessage: "Cannot load asset price chart",
-                                    errorViewButtonTitle: "Retry",
-                                    loadingTitle: "Loading asset price chart...",
-                                    loadAgain: { print("Load again button tapped")},
-                                    viewModel: PresentableAssetViewModel(model: PresentableAsset(name: "SOL",
-                                                                                                 prices: [185.50,
-                                                                                                          175.25,
-                                                                                                          169.75,
-                                                                                                          172.68,
-                                                                                                          179.98,
-                                                                                                          195.25,
-                                                                                                          202.20,
-                                                                                                          212.12,
-                                                                                                          230.38,
-                                                                                                          240.50,
-                                                                                                          258.58],
-                                                                                                 imageURL: "An Image URL"),
-                                                                         isLoading: false
-                                    ))
+                                          titleTextColor: .primary,
+                                          subtitle: "Daily Price Chart",
+                                          subtitleTextColor: .blue,
+                                          errorMessage: "Cannot load asset price chart",
+                                          errorViewButtonTitle: "Retry",
+                                          loadingTitle: "Loading asset price chart...",
+                                          loadAgain: { print("Load again button tapped")},
+                                          viewModel: PresentableAssetViewModel(model: PresentableAsset(name: "SOL",
+                                                                                                       assetPrices: [
+                                                                                                        AssetPrice(date: Date().addingTimeInterval(-11 * 24 * 60 * 60), price: 180),
+                                                                                                        AssetPrice(date: Date().addingTimeInterval(-10 * 24 * 60 * 60), price: 175),
+                                                                                                        AssetPrice(date: Date().addingTimeInterval(-9 * 24 * 60 * 60), price: 160),
+                                                                                                        AssetPrice(date: Date().addingTimeInterval(-8 * 24 * 60 * 60), price: 175),
+                                                                                                        AssetPrice(date: Date().addingTimeInterval(-7 * 24 * 60 * 60), price: 190),
+                                                                                                        AssetPrice(date: Date().addingTimeInterval(-6 * 24 * 60 * 60), price: 180),
+                                                                                                        AssetPrice(date: Date().addingTimeInterval(-5 * 24 * 60 * 60), price: 175),
+                                                                                                        AssetPrice(date: Date().addingTimeInterval(-4 * 24 * 60 * 60), price: 170),
+                                                                                                        AssetPrice(date: Date().addingTimeInterval(-3 * 24 * 60 * 60), price: 180),
+                                                                                                        AssetPrice(date: Date().addingTimeInterval(-2 * 24 * 60 * 60), price: 190),
+                                                                                                        AssetPrice(date: Date().addingTimeInterval(-1 * 24 * 60 * 60), price: 220),
+                                                                                                        AssetPrice(date: Date(), price: 250)
+                                                                                                       ],
+                                                                                                       imageURL: "An Image URL"),
+                                                                               isLoading: false
+                                          ))
             }
         }
     }

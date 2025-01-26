@@ -96,16 +96,16 @@ struct AssetListView_Previews: PreviewProvider {
                     tryAgain: { },
                     selection: { selection = $0 },
                     viewModel: .init(model: [
-                        PresentableAsset(name: "BTC", prices: [104841.11], imageURL: "An Image URL"),
-                        PresentableAsset(name: "SOL", prices: [256.20], imageURL: "An Image URL"),
-                        PresentableAsset(name: "RAY", prices: [7.83], imageURL: "An Image URL"),
-                        PresentableAsset(name: "SHDW", prices: [0.36], imageURL: "An Image URL"),
-                        PresentableAsset(name: "HNT", prices: [4.08], imageURL: "An Image URL"),
-                        PresentableAsset(name: "JUP", prices: [0.85], imageURL: "An Image URL"),
-                        PresentableAsset(name: "ZEUS", prices: [0.58], imageURL: "An Image URL"),
-                        PresentableAsset(name: "BONK", prices: [0.00003], imageURL: "An Image URL"),
-                        PresentableAsset(name: "GOBI", prices: [0.00043], imageURL: "An Image URL"),
-                        PresentableAsset(name: "GLooM", prices: [0.000047], imageURL: "An Image URL")
+                        PresentableAsset(name: "BTC", assetPrices: [AssetPrice(date: Date(), price: 14500)], imageURL: "An Image URL"),
+                        PresentableAsset(name: "SOL", assetPrices: [AssetPrice(date: Date(), price: 256.20)], imageURL: "An Image URL"),
+                        PresentableAsset(name: "RAY", assetPrices: [AssetPrice(date: Date(), price: 7.83)], imageURL: "An Image URL"),
+                        PresentableAsset(name: "SHDW", assetPrices: [AssetPrice(date: Date(), price: 0.36)], imageURL: "An Image URL"),
+                        PresentableAsset(name: "HNT", assetPrices: [AssetPrice(date: Date(), price: 24.08)], imageURL: "An Image URL"),
+                        PresentableAsset(name: "JUP", assetPrices: [AssetPrice(date: Date(), price: 0.85)], imageURL: "An Image URL"),
+                        PresentableAsset(name: "ZEUS", assetPrices: [AssetPrice(date: Date(), price: 0.58)], imageURL: "An Image URL"),
+                        PresentableAsset(name: "BONK", assetPrices: [AssetPrice(date: Date(), price: 0.00003)], imageURL: "An Image URL"),
+                        PresentableAsset(name: "GOBI", assetPrices: [AssetPrice(date: Date(), price: 0.00043)], imageURL: "An Image URL"),
+                        PresentableAsset(name: "GLooM", assetPrices: [AssetPrice(date: Date(), price: 0.000047)], imageURL: "An Image URL")
                     ],
                     isLoading: false))
 
@@ -114,3 +114,4 @@ struct AssetListView_Previews: PreviewProvider {
         }
     }
 }
+
