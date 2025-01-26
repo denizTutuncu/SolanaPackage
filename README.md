@@ -1,4 +1,6 @@
-# Solana Swift SDK 
+# Solana Swift SDK & Blue Giant Labs iOS App
+
+Check us out at https://www.bluegiant.pro/ to learn more about Blue Giant Labs. 🔵
 
 [![CI-macOS](https://github.com/denizTutuncu/SolanaPackage/actions/workflows/CI-macOS.yml/badge.svg?event=pull_request)](https://github.com/denizTutuncu/SolanaPackage/actions/workflows/CI-macOS.yml)
 
@@ -43,9 +45,65 @@ The SDK is open-source and hosted on Github, developers can use the SDK to build
 
 ```BGL``` is avaiable on Test Flight.
 
-![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/BGLAppSS.jpg?raw=true)
-
 ![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/BGL.gif?raw=true)
+
+----------------
+
+#### Onboarding Screen
+
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/OnboardingScreen.jpg?raw=true)
+
+----------------
+
+#### Export and Import Seed Phrase Screens
+
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/ExportSeedListScreen.jpg?raw=true)
+
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/ImportSeedListScreen.jpg?raw=true)
+
+----------------
+
+#### Wallet List Screen
+
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/WalletListScreen.jpg?raw=true)
+
+----------------
+
+#### Wallet Detail Screen
+
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/WalletDetailScreen.jpg?raw=true)
+
+----------------
+
+#### Asset List View
+
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/SolanaAssetList.jpg?raw=true)
+
+----------------
+
+#### Single Asset Price Chart View
+
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/SingleAssetPriceChart.jpg?raw=true)
+
+----------------
+
+#### Portfolio Chart View
+
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/Portfolio.jpg?raw=true)
+
+----------------
+
+#### Balance View
+
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/BalanceView.jpg?raw=true)
+
+----------------
+
+#### Transactions Screen & Transaction Detail View
+
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/TXsScreen.jpg?raw=true)
+
+![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/TXAPI.jpg?raw=true)
 
 ----------------
 
@@ -121,6 +179,14 @@ Then the app should create a valid Solana account
 |---------------|------------------------|
 | `id`          | `String`               |
 | `name`        | `String`               |
+| `assetPrices` | `[AssetPrice]`         |
+
+#### Asset Price
+| Property      | Type                   |
+|---------------|------------------------|
+| `id`          | `String`               |
+| `date`        | `Date`                 |
+| `price`       | `[Double]`             |
 
 #### Wallet
 | Property      | Type                   |
@@ -181,53 +247,7 @@ Then the app should create a valid Solana account
 
 ----------------
 
-#### Onboarding screen
-
-![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/CreationOptions.jpg?raw=true)
-
-----------------
-
-#### Export and Import Seed Phrase screens
-
-![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/ExportSeedListScreen.jpg?raw=true)
-
-![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/ImportSeedListScreen.jpg?raw=true)
-
-----------------
-
-#### Wallet List screen
-
-![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/WalletListScreen.jpg?raw=true)
-
-----------------
-
-#### Wallet Detail screen
-
-![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/WalletDetailScreen.jpg?raw=true)
-
-#### Asset List screen
-
-![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/SolanaAssetList.jpg?raw=true)
-
-#### Asset List screen
-
-![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/SolanaAssetList.jpg?raw=true)
-
-----------------
-
-#### Portfolio screen
-
-![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/Portfolio.jpg?raw=true)
-
-#### Transaction Detail screen
-
-![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/TXAPI.jpg?raw=true)
-
 ## Get Balance BDD Specs (Under Maintenance)
-
-![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/WalletBalanceView.jpg?raw=true)
-
-![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/BalanceView.jpg?raw=true)
 
 ### Get Balance
 ### Story: Customer requests to see their balance
