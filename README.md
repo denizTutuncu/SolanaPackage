@@ -49,14 +49,6 @@ The SDK is open-source and hosted on Github, developers can use the SDK to build
 
 ----------------
 
-### Inital Prototype & Prototype's Flowchart
-
-![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/PROTOTYPEIOS_AdobeCreativeCloudExpress.gif)
-
-![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Diagrams/iOSAppFlow.drawio.png?raw=true)
-
-----------------
-
 ## Create Wallet BDD Specs (Under Maintenance)
 
 ### Create Wallet / Receive Sol
