@@ -26,6 +26,7 @@ The repo also includes an iOS app called ```BGL``` that demonstrates how to use 
 
 BGL, Blue Giant Labs, creates your crypto Solana wallet with top-tier security. This app is protected by industry-standard encryption for private keys, ensuring a secure connection with Solana. 
 
+```
 1- Export/Import Seed Phrase: Safely handle the export or import of a seed phrase to ensure wallet recovery and secure access.
 2- Generate Public and Private Key Pair: Derive a wallet with its corresponding public and private keys from the seed phrase.
 3- Display Public Keys: List all associated public keys for the wallet.
@@ -36,6 +37,7 @@ BGL, Blue Giant Labs, creates your crypto Solana wallet with top-tier security. 
 8- View Single Asset Details: Monitor detailed information about a specific Solana asset.
 9- Activate Neptune Line: Enable and utilize the Neptune Line feature for analysis on a specific Solana asset.
 10- Track Portfolio Progress: Monitor the performance and growth of the portfolio associated with a specific public key.
+```
 
 The SDK is written in Swift and is intended to be used in Swift apps.
 
