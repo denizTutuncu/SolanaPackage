@@ -73,7 +73,7 @@ struct WalletListView_Previews: PreviewProvider {
         Group {
             WalletListTestView()
                 .previewLayout(.sizeThatFits)
-                .previewDisplayName("Combined Wallet List Test View")
+                .previewDisplayName("Wallet List Test View")
         }
     }
 }

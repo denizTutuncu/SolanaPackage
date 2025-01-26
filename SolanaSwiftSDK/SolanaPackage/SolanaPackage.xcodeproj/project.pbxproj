@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -140,6 +140,11 @@
 		2EE04BDC2D4453C900CE58FD /* PortfolioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE04BDB2D4453C900CE58FD /* PortfolioViewModel.swift */; };
 		2EE04BE22D459C8700CE58FD /* SingleAssetPriceChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE04BE12D459C8700CE58FD /* SingleAssetPriceChartView.swift */; };
 		2EE04BE42D45A8CB00CE58FD /* PresentableAssetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE04BE32D45A8CB00CE58FD /* PresentableAssetViewModel.swift */; };
+		2EE04BE72D45D8B200CE58FD /* SOLTransferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE04BE62D45D8B200CE58FD /* SOLTransferView.swift */; };
+		2EE04BF02D45D9DF00CE58FD /* SendSOLViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE04BEF2D45D9DF00CE58FD /* SendSOLViewModel.swift */; };
+		2EE04BF62D45E5BC00CE58FD /* ReceiveSOLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE04BF52D45E5BC00CE58FD /* ReceiveSOLModel.swift */; };
+		2EE04BF82D45E61800CE58FD /* ReceiveSOLViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE04BF72D45E61800CE58FD /* ReceiveSOLViewModel.swift */; };
+		2EE04BFA2D45E6CB00CE58FD /* ReceiveSOLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE04BF92D45E6CB00CE58FD /* ReceiveSOLView.swift */; };
 		2EE089762846DF76007AFC0F /* Balance.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2EE089782846DF76007AFC0F /* Balance.strings */; };
 		2EE0898028473BAF007AFC0F /* BalanceLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0897F28473BAF007AFC0F /* BalanceLocalizationTests.swift */; };
 		2EE0899B28476AC6007AFC0F /* SharedLocalizationTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE0899A28476AC6007AFC0F /* SharedLocalizationTestHelpers.swift */; };
@@ -373,6 +378,11 @@
 		2EE04BDB2D4453C900CE58FD /* PortfolioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewModel.swift; sourceTree = "<group>"; };
 		2EE04BE12D459C8700CE58FD /* SingleAssetPriceChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAssetPriceChartView.swift; sourceTree = "<group>"; };
 		2EE04BE32D45A8CB00CE58FD /* PresentableAssetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableAssetViewModel.swift; sourceTree = "<group>"; };
+		2EE04BE62D45D8B200CE58FD /* SOLTransferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOLTransferView.swift; sourceTree = "<group>"; };
+		2EE04BEF2D45D9DF00CE58FD /* SendSOLViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendSOLViewModel.swift; sourceTree = "<group>"; };
+		2EE04BF52D45E5BC00CE58FD /* ReceiveSOLModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveSOLModel.swift; sourceTree = "<group>"; };
+		2EE04BF72D45E61800CE58FD /* ReceiveSOLViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveSOLViewModel.swift; sourceTree = "<group>"; };
+		2EE04BF92D45E6CB00CE58FD /* ReceiveSOLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveSOLView.swift; sourceTree = "<group>"; };
 		2EE089772846DF76007AFC0F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Balance.strings; sourceTree = "<group>"; };
 		2EE089792846E03E007AFC0F /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Balance.strings; sourceTree = "<group>"; };
 		2EE0897A2846E090007AFC0F /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Balance.strings"; sourceTree = "<group>"; };
@@ -392,6 +402,10 @@
 		2EFADE9029A89359009BDC11 /* SingleTransactionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTransactionCellView.swift; sourceTree = "<group>"; };
 		2EFADE9229A89736009BDC11 /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		2EE04BE82D45D96800CE58FD /* Model */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Model; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		2E0CBFD227F282DC006E6892 /* Frameworks */ = {
@@ -587,6 +601,8 @@
 			children = (
 				2E0CBFD827F282DC006E6892 /* Info.plist */,
 				2E954B9F28487C02002D2FF3 /* Assets.xcassets */,
+				2EE04BF12D45E57D00CE58FD /* Receive SOL */,
+				2EE04BE52D45D88B00CE58FD /* SOL Transfer */,
 				2EE04BD52D4450E800CE58FD /* Portfolio */,
 				2E6E554F2D34F95A00F473B2 /* Asset UI */,
 				2E6E55652D37949900F473B2 /* Wallet List UI */,
@@ -1358,6 +1374,66 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		2EE04BE52D45D88B00CE58FD /* SOL Transfer */ = {
+			isa = PBXGroup;
+			children = (
+				2EE04BEA2D45D97400CE58FD /* View */,
+				2EE04BE92D45D96E00CE58FD /* View Model */,
+				2EE04BE82D45D96800CE58FD /* Model */,
+			);
+			path = "SOL Transfer";
+			sourceTree = "<group>";
+		};
+		2EE04BE92D45D96E00CE58FD /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				2EE04BEF2D45D9DF00CE58FD /* SendSOLViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		2EE04BEA2D45D97400CE58FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2EE04BE62D45D8B200CE58FD /* SOLTransferView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2EE04BF12D45E57D00CE58FD /* Receive SOL */ = {
+			isa = PBXGroup;
+			children = (
+				2EE04BF42D45E5A200CE58FD /* View */,
+				2EE04BF32D45E59D00CE58FD /* View Model */,
+				2EE04BF22D45E59800CE58FD /* Model */,
+			);
+			path = "Receive SOL";
+			sourceTree = "<group>";
+		};
+		2EE04BF22D45E59800CE58FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2EE04BF52D45E5BC00CE58FD /* ReceiveSOLModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2EE04BF32D45E59D00CE58FD /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				2EE04BF72D45E61800CE58FD /* ReceiveSOLViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		2EE04BF42D45E5A200CE58FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2EE04BF92D45E6CB00CE58FD /* ReceiveSOLView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		2EE0896C2846D975007AFC0F /* Balance Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -1466,6 +1542,9 @@
 			);
 			dependencies = (
 				2E5186DA27F28C75001AB355 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				2EE04BE82D45D96800CE58FD /* Model */,
 			);
 			name = SolanaPackageUI;
 			productName = SolanaPackageUI;
@@ -1716,12 +1795,14 @@
 				2E6E55592D372D9000F473B2 /* TransactionListViewModel.swift in Sources */,
 				2EFADE9329A89736009BDC11 /* TransactionListView.swift in Sources */,
 				2EE04BD72D44510A00CE58FD /* Portfolio.swift in Sources */,
+				2EE04BF62D45E5BC00CE58FD /* ReceiveSOLModel.swift in Sources */,
 				2E603DAD29ECB554002A7DCA /* PresentablePublicKey.swift in Sources */,
 				2E6E55572D35070A00F473B2 /* PresentableAssetListViewModel.swift in Sources */,
 				2EFADE8E29A84953009BDC11 /* ExportSeedView.swift in Sources */,
 				2E1DBE8F2B72D88E00970E48 /* AnyViewProtocol.swift in Sources */,
 				2E61A06D2A9172A0007E0756 /* ImportSingleSeedCellView.swift in Sources */,
 				2E09010B29B05AA800865E30 /* ToogleView.swift in Sources */,
+				2EE04BE72D45D8B200CE58FD /* SOLTransferView.swift in Sources */,
 				2E1DBE8B2B5E2A2800970E48 /* CustomImageView.swift in Sources */,
 				2EE04BE42D45A8CB00CE58FD /* PresentableAssetViewModel.swift in Sources */,
 				2E3C6FEE2D41A1E3007413ED /* ExportSeedViewModel.swift in Sources */,
@@ -1735,6 +1816,7 @@
 				2E80F39329A5815B00A4053C /* HeaderView.swift in Sources */,
 				2EFADE8C29A847AD009BDC11 /* ExportSingleSeedCellView.swift in Sources */,
 				2E1DBE912B72D91A00970E48 /* GenericView.swift in Sources */,
+				2EE04BF02D45D9DF00CE58FD /* SendSOLViewModel.swift in Sources */,
 				2E9FF53829FC7742002989EF /* OnboardingView.swift in Sources */,
 				2E0900B829A8E4C300865E30 /* RoundedButton.swift in Sources */,
 				2E80F38E29A579D900A4053C /* SinglePublicKeySelectionCellView.swift in Sources */,
@@ -1744,7 +1826,9 @@
 				2E80F3EB29A66E2400A4053C /* WalletDetailView.swift in Sources */,
 				2E6E55532D34FD9300F473B2 /* PresentableAsset.swift in Sources */,
 				2EE04BDC2D4453C900CE58FD /* PortfolioViewModel.swift in Sources */,
+				2EE04BFA2D45E6CB00CE58FD /* ReceiveSOLView.swift in Sources */,
 				2E3ECB0629EE5DF500038407 /* PresentableBalanceViewModel.swift in Sources */,
+				2EE04BF82D45E61800CE58FD /* ReceiveSOLViewModel.swift in Sources */,
 				2E3C6FEC2D41A1D3007413ED /* ImportSeedViewModel.swift in Sources */,
 				2EFADE9129A89359009BDC11 /* SingleTransactionCellView.swift in Sources */,
 				2E603DA929ECB2F0002A7DCA /* BalanceView.swift in Sources */,
