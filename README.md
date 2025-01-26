@@ -45,8 +45,6 @@ The SDK is open-source and hosted on Github, developers can use the SDK to build
 
 ```BGL``` is avaiable on Test Flight.
 
-![Alt Text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/GIFs/BGL.gif?raw=true)
-
 ![Alt text](https://github.com/denizTutuncu/SolanaPackage/blob/main/SolanaSwiftSDK/Media/Screens/BGLiOSAppScreens.drawio.jpg?raw=true)
 
 ----------------
