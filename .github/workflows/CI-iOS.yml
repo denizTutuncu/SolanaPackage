@@ -30,7 +30,7 @@ jobs:
           security set-key-partition-list -S apple-tool:,apple: -s -k "" ~/Library/Keychains/build.keychain
 
       - name: Select up Xcode
-        run: sudo xcode-select -switch /Applications/Xcode_16.2.app/Contents/Developer
+        run: sudo xcode-select -switch /Applications/Xcode_15.3.app/Contents/Developer
 
       - name: Show Xcode version
         run: xcodebuild -version
@@ -42,7 +42,7 @@ jobs:
             -scheme "CI_iOS" \
             -allowProvisioningUpdates \
             -sdk iphonesimulator \
-            -destination "platform=iOS Simulator,name=iPhone 16,OS=18.2" \
+            -destination "platform=iOS Simulator,name=iPhone 15,OS=16.4" \
             ONLY_ACTIVE_ARCH=YES \
             CODE_SIGN_IDENTITY="Apple Development: Deniz Tutuncu (VVBFBA275T)" \
             CODE_SIGNING_REQUIRED=YES \
