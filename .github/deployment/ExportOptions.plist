@@ -9,7 +9,7 @@
 	<key>provisioningProfiles</key>
 	<dict>
 		<key>com.deniztutuncu.MySolWallet</key>
-		<string>TREA (Production)</string>
+		<string>BGL (Production)</string>
 	</dict>
 	<key>signingCertificate</key>
 	<string>Apple Distribution</string>
