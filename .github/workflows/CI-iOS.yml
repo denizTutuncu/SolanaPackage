@@ -30,7 +30,7 @@ jobs:
           security set-key-partition-list -S apple-tool:,apple: -s -k "" ~/Library/Keychains/build.keychain
 
       - name: Select up Xcode
-        run: sudo xcode-select -switch /Applications/Xcode_16.2.app/Contents/Developer
+        run: sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
 
       - name: Show Xcode version
         run: xcodebuild -version
