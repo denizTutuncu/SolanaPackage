@@ -1,5 +1,5 @@
 //
-//  OnboardingView.swift
+//  WalletSetupView.swift
 //  SolanaPackageUI
 //
 //  Created by Deniz Tutuncu on 4/28/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct OnboardingView: View {
+public struct WalletSetupView: View {
     
     public init(headerTitle: String,
                 headerTitleTextColor: Color,
@@ -69,7 +69,7 @@ struct OnboardingView_Previews: PreviewProvider {
         Group {
             OnboardingTestView()
                 .previewLayout(.sizeThatFits)
-                .previewDisplayName("Onboarding Test View")
+                .previewDisplayName("Wallet Setup Test View")
         }
     }
     
@@ -79,9 +79,9 @@ struct OnboardingView_Previews: PreviewProvider {
         var body: some View {
             VStack {
                 ZStack {
-                    OnboardingView(headerTitle: "Welcome to Blue Giant Labs",
+                    WalletSetupView(headerTitle: "Welcome to Blue Giant Labs",
                                    headerTitleTextColor: .white,
-                                   headerSubtitle: "Create your crypto wallet with top-tier security. This app is protected by industry-standard encryption, ensuring a secure connection with Solana.",
+                                   headerSubtitle: "Providing head-to-head Solana asset comparisons to help users make informed choices in the volatile crypto market.",
                                    headerSubtitleTextColor: .blue,
                                    backgroundImageName: "OnboardingBackground",
                                    logoImageName: "OnboardingAppLogo",

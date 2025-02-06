@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 public final class PresentableBalanceViewModel: ObservableObject {
     public init(model: PresentableBalance = PresentableBalance(value: "0.000"), isLoading: Bool = false, errorMessage: String? = nil) {
         self.model = model

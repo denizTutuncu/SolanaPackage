@@ -10,8 +10,8 @@ import SolanaPackage
 import SolanaPackageUI
 
 class ViewFactory {
-    static func makeOnboardingView(seeds: [PresentableSeed], coordinator: NavigationCoordinator) -> OnboardingView {
-        OnboardingView(
+    static func makeOnboardingView(seeds: [PresentableSeed], coordinator: NavigationCoordinator) -> WalletSetupView {
+        WalletSetupView(
             headerTitle: "Welcome to Blue Giant Labs",
             headerTitleTextColor: .white,
             headerSubtitle: "Providing head-to-head asset comparisons to help users make informed choices in the volatile Solana market.",

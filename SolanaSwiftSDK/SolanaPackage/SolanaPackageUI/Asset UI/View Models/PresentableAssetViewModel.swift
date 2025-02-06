@@ -27,10 +27,11 @@ public class PresentableAssetViewModel: ObservableObject {
 
 extension PresentableAssetViewModel {
     var priceRange: ClosedRange<Double>? {
-        guard let minPrice = model.assetPrices.min(by: { $0.price < $1.price })?.price,
-              let maxPrice = model.assetPrices.max(by: { $0.price < $1.price })?.price else {
+        guard let minPrice = model.assetDailyData.min(by: { $0.low < $1.low })?.low,
+              let maxPrice = model.assetDailyData.max(by: { $0.high < $1.high })?.high else {
             return nil
         }
         return (minPrice - 10)...(maxPrice + 10)
     }
 }
+
