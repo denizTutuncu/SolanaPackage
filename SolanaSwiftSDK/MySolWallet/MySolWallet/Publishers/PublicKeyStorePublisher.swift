@@ -1,5 +1,5 @@
 //
-//  PublicKeyPublisherAdapter.swift
+//  PublicKeyStorePublisher.swift
 //  MySolWallet
 //
 //  Created by Deniz Tutuncu on 3/3/23.
@@ -10,16 +10,16 @@ import Combine
 import SolanaPackage
 import SolanaPackageUI
  
-public final class PublicKeyPublisherAdapter {
+public final class PublicKeyStorePublisher {
     
     private init() {}
     public typealias PublicKeyViewModelPublisher = ViewModelPublisher<[String], [PresentablePublicKey]>
     private static var cancellable: AnyCancellable?
 
-    public static func publicKeyComposedWith(publicKeyPublisher: AnyPublisher<[String], Error>) -> PublicKeyViewModelPublisher {
+    public static func bindToPublicKeyPublisher(_ publicKeyPublisher: AnyPublisher<[String], Error>) -> PublicKeyViewModelPublisher {
         var publicKeyStorePublisher = PublicKeyViewModelPublisher(resource: nil, mapper: PublicKeyStoreMapper.map)
         
-        PublicKeyPublisherAdapter.cancellable = publicKeyPublisher
+        PublicKeyStorePublisher.cancellable = publicKeyPublisher
             .dispatchOnMainQueue()
             .sink(receiveCompletion: { completion in
                 publicKeyStorePublisher = PublicKeyViewModelPublisher(resource: [], mapper: PublicKeyStoreMapper.map)

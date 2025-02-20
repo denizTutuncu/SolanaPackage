@@ -14,7 +14,7 @@ class ViewFactory {
         WalletSetupView(
             headerTitle: "Welcome to Blue Giant Labs",
             headerTitleTextColor: .white,
-            headerSubtitle: "Providing head-to-head asset comparisons to help users make informed choices in the volatile Solana market.",
+            headerSubtitle: "Providing head-to-head Solana asset comparisons to help users make informed choices in the volatile crypto market.",
             headerSubtitleTextColor: .blue,
             backgroundImageName: "OnboardingBackground",
             logoImageName: "OnboardingAppLogo",
