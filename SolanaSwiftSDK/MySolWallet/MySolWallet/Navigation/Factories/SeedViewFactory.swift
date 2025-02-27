@@ -39,10 +39,13 @@ final class SeedViewFactory {
             loadingTitle: SeedPresenter.exportSeedViewLoadingTitle,
             loadAgain: {
                 print("🔄 Reloading seed...")
-                self.seedStore.bind(to: self.appStore.fetchPresentableSeeds()) // ✅ Ensure re-fetching works
+                self.seedStore.bind(to: self.appStore.fetchPresentableSeeds())
             },
             action: {
                 print("🔑 Creating keys from seed...")
+                Task {
+                    await self.appStore.generateWalletFromSeed()
+                }
                 self.navigation.navigate(to: .walletDetail)
             },
             backButtonTitle: "Back",
@@ -94,6 +97,9 @@ final class SeedViewFactory {
                 // TODO: Implement reload logic
             },
             action: {
+                Task {
+                    await self.appStore.generateWalletFromSeed()
+                }
                 self.navigation.navigate(to: .walletDetail)
             },
             backButtonTitle: "Back",

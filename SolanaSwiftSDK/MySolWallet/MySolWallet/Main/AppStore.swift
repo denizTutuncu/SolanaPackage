@@ -73,7 +73,7 @@ class AppStore: ObservableObject {
         // ✅ Initialize walletCreator safely and log errors later
         var walletError: Error?
         do {
-            self.walletCreator = try SolanaWalletCreator(loader: localSeedLoader)
+            self.walletCreator = try SolanaWalletCreator(seed: localSeedLoader.load())
         } catch {
             walletError = error
             self.walletCreator = NullCreator()
@@ -169,5 +169,32 @@ class AppStore: ObservableObject {
             .catch { _ in Just([]).setFailureType(to: Error.self) }
             .eraseToAnyPublisher()
     }
+    
+    public func generateWalletFromSeed() async {
+        do {
+            let seedPhrase = try localSeedLoader.load()
+            let walletCreator = try SolanaWalletCreator(seed: seedPhrase)
+
+            if let (publicKey, privateKey) = try await walletCreator.create() {
+                print("✅ Wallet Created: PublicKey: \(publicKey)")
+
+                try localPrivateKeyLoader.save(publicKey, privateKey: privateKey)
+                try localPublicKeyLoader.save([publicKey])
+
+                await MainActor.run {
+                    [weak self] in
+                    guard let self = self else { return }
+                    self.selectedPublicKey = publicKey
+                    self.presentablePublicKeys.append(PresentablePublicKey(value: publicKey))
+                }
+            }
+        } catch {
+            print("❌ Failed to generate wallet: \(error.localizedDescription)")
+        }
+    }
 }
+
+
+
+
 

@@ -10,18 +10,18 @@ import SolanaPackage
 import SolanaSwift
 
 public final class SolanaWalletCreator: WalletCreator {
-    public init(loader: SeedPhraseLoader) throws {
-        self.loader = loader
+    public init(seed: [String]) throws {
+        self.seed = seed
     }
  
-    private let loader: SeedPhraseLoader
+    private let seed: [String]
     
-    public func create() async throws -> (String, String)? {
+    public func create() async throws -> (String, Data)? {
         try await self.createWallet()
     }
     
-    private func createWallet() async throws -> (String,String)? {
-        let keyPair = try await KeyPair(phrase: try loader.load(), network: .devnet)
-        return (keyPair.publicKey.base58EncodedString, keyPair.secretKey.base64EncodedString())
+    private func createWallet() async throws -> (String,Data)? {
+        let keyPair = try await KeyPair(phrase: seed, network: .devnet)
+        return (keyPair.publicKey.base58EncodedString, keyPair.secretKey)
     }
 }
