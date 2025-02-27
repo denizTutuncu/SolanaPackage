@@ -21,12 +21,15 @@ final class SeedViewFactory {
     }
     
     func makeExportSeedView() -> ExportSeedView {
-        let seedCount = seedStore.seedViewModelPublisher.resourceViewModel?.count ?? 0
-        print("📌 Creating ExportSeedView with \(seedCount) seeds") // ✅ Debugging
+        let seedModel = seedStore.seedViewModelPublisher.resourceViewModel ?? []
         
+        print("📌 Creating ExportSeedView with \(seedModel.count) seeds") // ✅ Debugging
+        print("📌 Creating ExportSeedView with \(seedModel.map { $0.value }) seeds") // ✅ Debugging
+
+
         return ExportSeedView(
             viewModel: ExportSeedViewModel(
-                model: seedStore.seedViewModelPublisher.resourceViewModel ?? [],
+                model: seedModel,
                 isLoading: seedStore.seedViewModelPublisher.isLoading
             ),
             headerTitle: SeedPresenter.exportSeedViewTitle,
@@ -43,47 +46,51 @@ final class SeedViewFactory {
             },
             action: {
                 print("🔑 Creating keys from seed...")
+                let seedValues = seedModel.map { $0.value } // ✅ Store and pass the same seed
                 Task {
-                    await self.appStore.generateWalletFromSeed()
+                    await self.appStore.generateWallet(from: seedValues)
                 }
                 self.navigation.navigate(to: .walletDetail)
             },
+            actionButtonBackgroundColor: .blue,
             backButtonTitle: "Back",
-            backAction: { self.navigation.navigate(to: .onboarding) }
+            backAction: { self.navigation.navigate(to: .onboarding) },
+            backButtonBackgroundColor: .gray
         )
     }
     
-    
     func makeImportSeedView() -> ImportSeedView {
-        ImportSeedView(
-            viewModel: ImportSeedViewModel(
-                model: [PresentableSeed(),
-                        PresentableSeed(),
-                        PresentableSeed(),
-                        PresentableSeed(),
-                        PresentableSeed(),
-                        PresentableSeed(),
-                        PresentableSeed(),
-                        PresentableSeed(),
-                        PresentableSeed(),
-                        PresentableSeed(),
-                        PresentableSeed(),
-                        PresentableSeed(),
-                        PresentableSeed(),
-                        PresentableSeed(),
-                        PresentableSeed(),
-                        PresentableSeed(),
-                        PresentableSeed(),
-                        PresentableSeed(),
-                        PresentableSeed(),
-                        PresentableSeed(),
-                        PresentableSeed(),
-                        PresentableSeed(),
-                        PresentableSeed(),
-                        PresentableSeed(),
-                       ],
-                isLoading: seedStore.seedViewModelPublisher.isLoading
-            ),
+        let vm = ImportSeedViewModel(
+            model: [PresentableSeed(),
+                    PresentableSeed(),
+                    PresentableSeed(),
+                    PresentableSeed(),
+                    PresentableSeed(),
+                    PresentableSeed(),
+                    PresentableSeed(),
+                    PresentableSeed(),
+                    PresentableSeed(),
+                    PresentableSeed(),
+                    PresentableSeed(),
+                    PresentableSeed(),
+                    PresentableSeed(),
+                    PresentableSeed(),
+                    PresentableSeed(),
+                    PresentableSeed(),
+                    PresentableSeed(),
+                    PresentableSeed(),
+                    PresentableSeed(),
+                    PresentableSeed(),
+                    PresentableSeed(),
+                    PresentableSeed(),
+                    PresentableSeed(),
+                    PresentableSeed(),
+                   ],
+            isLoading: seedStore.seedViewModelPublisher.isLoading
+        )
+        
+        return ImportSeedView(
+            viewModel: vm,
             headerTitle: SeedPresenter.importSeedViewTitle,
             headerTitleTextColor: .primary,
             headerSubtitle: SeedPresenter.importSeedViewSubtitle,
@@ -98,12 +105,14 @@ final class SeedViewFactory {
             },
             action: {
                 Task {
-                    await self.appStore.generateWalletFromSeed()
+                    await self.appStore.generateWallet(from: vm.model.map { $0.value})
                 }
                 self.navigation.navigate(to: .walletDetail)
             },
+            actionButtonBackgroundColor: .blue,
             backButtonTitle: "Back",
-            backAction: { self.navigation.navigate(to: .onboarding) }
+            backAction: { self.navigation.navigate(to: .onboarding) },
+            backButtonBackgroundColor: .gray
         )
     }
 }

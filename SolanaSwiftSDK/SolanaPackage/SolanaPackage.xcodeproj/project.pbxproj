@@ -28,8 +28,6 @@
 		2E0CBFDE27F282DD006E6892 /* SolanaPackageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E0CBFD527F282DC006E6892 /* SolanaPackageUI.framework */; };
 		2E17ECB929F1FD8F00206B28 /* PrivateKeyCahcePolicyUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17ECB829F1FD8F00206B28 /* PrivateKeyCahcePolicyUseCaseTests.swift */; };
 		2E1DBE8B2B5E2A2800970E48 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1DBE8A2B5E2A2800970E48 /* CustomImageView.swift */; };
-		2E1DBE8F2B72D88E00970E48 /* AnyViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1DBE8E2B72D88E00970E48 /* AnyViewProtocol.swift */; };
-		2E1DBE912B72D91A00970E48 /* GenericView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E1DBE902B72D91A00970E48 /* GenericView.swift */; };
 		2E2CC5AA296EB9680063C23C /* BalanceEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5A9296EB9680063C23C /* BalanceEndpointTests.swift */; };
 		2E2CC5BE296EC2460063C23C /* Shared.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E2CC5C0296EC2460063C23C /* Shared.strings */; };
 		2E2CC5C7296EC45C0063C23C /* BalancePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E2CC5C6296EC45C0063C23C /* BalancePresenter.swift */; };
@@ -261,8 +259,6 @@
 		2E0CBFE427F282DD006E6892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E17ECB829F1FD8F00206B28 /* PrivateKeyCahcePolicyUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateKeyCahcePolicyUseCaseTests.swift; sourceTree = "<group>"; };
 		2E1DBE8A2B5E2A2800970E48 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
-		2E1DBE8E2B72D88E00970E48 /* AnyViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyViewProtocol.swift; sourceTree = "<group>"; };
-		2E1DBE902B72D91A00970E48 /* GenericView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericView.swift; sourceTree = "<group>"; };
 		2E2CC5A9296EB9680063C23C /* BalanceEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceEndpointTests.swift; sourceTree = "<group>"; };
 		2E2CC5BF296EC2460063C23C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Shared.strings; sourceTree = "<group>"; };
 		2E2CC5C1296EC24E0063C23C /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Shared.strings; sourceTree = "<group>"; };
@@ -628,15 +624,6 @@
 			path = SolanaPackageUITests;
 			sourceTree = "<group>";
 		};
-		2E1DBE922B72DA8B00970E48 /* Generic View */ = {
-			isa = PBXGroup;
-			children = (
-				2E1DBE8E2B72D88E00970E48 /* AnyViewProtocol.swift */,
-				2E1DBE902B72D91A00970E48 /* GenericView.swift */,
-			);
-			path = "Generic View";
-			sourceTree = "<group>";
-		};
 		2E1DBE932B72DB7600970E48 /* Wallet Setup UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -991,7 +978,6 @@
 		2E80F39129A5815300A4053C /* Shared UI */ = {
 			isa = PBXGroup;
 			children = (
-				2E1DBE922B72DA8B00970E48 /* Generic View */,
 				2E0363162970ECCF00CB2567 /* LoadingView.swift */,
 				2E80F39229A5815B00A4053C /* HeaderView.swift */,
 				2E0900B729A8E4C300865E30 /* RoundedButton.swift */,
@@ -1803,7 +1789,6 @@
 				2E6E55572D35070A00F473B2 /* PresentableAssetListViewModel.swift in Sources */,
 				2EFADE8E29A84953009BDC11 /* ExportSeedView.swift in Sources */,
 				2EE04C162D545A0800CE58FD /* AssetDailyData.swift in Sources */,
-				2E1DBE8F2B72D88E00970E48 /* AnyViewProtocol.swift in Sources */,
 				2E61A06D2A9172A0007E0756 /* ImportSingleSeedCellView.swift in Sources */,
 				2E09010B29B05AA800865E30 /* ToogleView.swift in Sources */,
 				2EE04BE72D45D8B200CE58FD /* TransferView.swift in Sources */,
@@ -1819,7 +1804,6 @@
 				2E3C6FEA2D41A1C0007413ED /* SeedViewModel.swift in Sources */,
 				2E80F39329A5815B00A4053C /* HeaderView.swift in Sources */,
 				2EFADE8C29A847AD009BDC11 /* ExportSingleSeedCellView.swift in Sources */,
-				2E1DBE912B72D91A00970E48 /* GenericView.swift in Sources */,
 				2EE04BF02D45D9DF00CE58FD /* TransferViewModel.swift in Sources */,
 				2E9FF53829FC7742002989EF /* WalletSetupView.swift in Sources */,
 				2E0900B829A8E4C300865E30 /* RoundedButton.swift in Sources */,

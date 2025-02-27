@@ -85,12 +85,6 @@ class AppStore: ObservableObject {
         }
 
         setupBindings()
-        
-        fetchPresentableSeeds()
-            .sink(receiveCompletion: { _ in }, receiveValue: { seeds in
-                print("🎯 Initial Seeds Loaded: \(seeds)")
-            })
-            .store(in: &cancellables)
     }
 
     // MARK: - Bindings for UI Updates
@@ -170,9 +164,15 @@ class AppStore: ObservableObject {
             .eraseToAnyPublisher()
     }
     
-    public func generateWalletFromSeed() async {
+    public func generateWallet(from seedPhrase: [String]?) async {
+        guard let seedPhrase = seedPhrase else {
+            print("❌ No seed phrase provided!")
+            return
+        }
+
+        print("🎯 Generated Seed Loaded: \(seedPhrase)")
+
         do {
-            let seedPhrase = try localSeedLoader.load()
             let walletCreator = try SolanaWalletCreator(seed: seedPhrase)
 
             if let (publicKey, privateKey) = try await walletCreator.create() {
@@ -182,8 +182,6 @@ class AppStore: ObservableObject {
                 try localPublicKeyLoader.save([publicKey])
 
                 await MainActor.run {
-                    [weak self] in
-                    guard let self = self else { return }
                     self.selectedPublicKey = publicKey
                     self.presentablePublicKeys.append(PresentablePublicKey(value: publicKey))
                 }

@@ -27,7 +27,7 @@ struct CustomImageView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .padding()
-                .rotationEffect(Angle(degrees: rotationAngle)) // Apply rotation effect
+                .rotationEffect(Angle(degrees: rotationAngle))
                 .onAppear {
                     if let animation = animationType {
                         withAnimation(animation.repeatForever(autoreverses: false)) {

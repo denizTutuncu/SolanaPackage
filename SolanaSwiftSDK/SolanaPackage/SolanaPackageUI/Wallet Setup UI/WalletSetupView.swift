@@ -18,8 +18,10 @@ public struct WalletSetupView: View {
                 bundle: String,
                 firstButtonTitle: String,
                 firstButtonAction: @escaping () -> Void,
+                firstButtonBackgroundColor: Color,
                 secondButtonTitle: String,
-                secondButtonAction: @escaping () -> Void
+                secondButtonAction: @escaping () -> Void,
+                secondButtonBackgroundColor: Color
     ) {
         self.headerTitle = headerTitle
         self.headerTitleTextColor = headerTitleTextColor
@@ -30,8 +32,10 @@ public struct WalletSetupView: View {
         self.bundle = bundle
         self.firstButtonTitle = firstButtonTitle
         self.firstButtonAction = firstButtonAction
+        self.firstButtonBackgroundColor = firstButtonBackgroundColor
         self.secondButtonTitle = secondButtonTitle
         self.secondButtonAction = secondButtonAction
+        self.secondButtonBackgroundColor = secondButtonBackgroundColor
     }
     
     private let headerTitle: String
@@ -43,9 +47,11 @@ public struct WalletSetupView: View {
     private let bundle: String
     private let firstButtonTitle: String
     private let firstButtonAction: () -> Void
+    private let firstButtonBackgroundColor: Color
     private let secondButtonTitle: String
     private let secondButtonAction: () -> Void
-    
+    private let secondButtonBackgroundColor: Color
+
     public var body: some View {
         ZStack {
             Image(backgroundImageName, bundle: Bundle(identifier: bundle))
@@ -56,9 +62,11 @@ public struct WalletSetupView: View {
                            titleTextColor: headerTitleTextColor,
                            subtitle: headerSubtitle,
                            subtitleTextColor: headerSubtitleTextColor)
+                Spacer()
                 CustomImageView(imageName: logoImageName, bundleName: bundle, animationType: .linear(duration: 2.5))
-                RoundedButton(title: firstButtonTitle, action: firstButtonAction)
-                RoundedButton(title: secondButtonTitle, action: secondButtonAction)
+                Spacer()
+                RoundedButton(title: firstButtonTitle, action: firstButtonAction, backgroundColor: firstButtonBackgroundColor)
+                RoundedButton(title: secondButtonTitle, action: secondButtonAction, backgroundColor: secondButtonBackgroundColor)
             }
         }
     }
@@ -88,8 +96,10 @@ struct OnboardingView_Previews: PreviewProvider {
                                    bundle: "com.deniztutuncu.SolanaPackageUI",
                                    firstButtonTitle: "Create new wallet",
                                    firstButtonAction: { selection = "Create wallet tapped" },
+                                   firstButtonBackgroundColor: .blue,
                                    secondButtonTitle: "Import wallet from seed",
-                                   secondButtonAction: { selection = "Import wallet tapped" })
+                                   secondButtonAction: { selection = "Import wallet tapped" },
+                                    secondButtonBackgroundColor: .blue)
                 }
                 
 //                Text("Last selection: " + selection).padding()

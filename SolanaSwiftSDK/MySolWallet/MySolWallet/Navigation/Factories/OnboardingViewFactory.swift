@@ -20,17 +20,19 @@ final class OnboardingViewFactory {
     
     func makeOnboardingView() -> WalletSetupView {
         WalletSetupView(
-            headerTitle: "Welcome to Blue Giant Labs",
+            headerTitle: "Welcome to Blue Giant",
             headerTitleTextColor: .white,
-            headerSubtitle: "Providing head-to-head Solana asset comparisons to help users make informed choices in the volatile crypto market.",
+            headerSubtitle: "Providing head-to-head Solana asset comparisons to help you make informed choices in the volatile crypto market.",
             headerSubtitleTextColor: .blue,
             backgroundImageName: "OnboardingBackground",
             logoImageName: "OnboardingAppLogo",
             bundle: "com.deniztutuncu.SolanaPackageUI",
             firstButtonTitle: "Create Wallet",
             firstButtonAction: { self.navigation.navigate(to: .exportSeed) },
+            firstButtonBackgroundColor: .blue,
             secondButtonTitle: "Import Wallet",
-            secondButtonAction: { self.navigation.navigate(to: .importSeed) }
+            secondButtonAction: { self.navigation.navigate(to: .importSeed) },
+            secondButtonBackgroundColor: .gray
         )
     }
 }

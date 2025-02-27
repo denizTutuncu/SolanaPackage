@@ -20,8 +20,15 @@ public final class SolanaWalletCreator: WalletCreator {
         try await self.createWallet()
     }
     
-    private func createWallet() async throws -> (String,Data)? {
-        let keyPair = try await KeyPair(phrase: seed, network: .devnet)
+    private func createWallet() async throws -> (String, Data)? {
+        print("Provided seed phrase to the creator is \(seed)")
+
+        // ✅ Normalize the seed phrase
+        let normalizedSeed = seed.map { $0.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) }
+        print("Normalized seed phrase to the creator is \(normalizedSeed)")
+        
+        let keyPair = try await KeyPair(phrase: normalizedSeed, network: .devnet)
         return (keyPair.publicKey.base58EncodedString, keyPair.secretKey)
     }
+
 }

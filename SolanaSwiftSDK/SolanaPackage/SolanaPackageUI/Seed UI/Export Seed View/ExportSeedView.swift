@@ -19,8 +19,10 @@ public struct ExportSeedView: View {
                 loadingTitle: String,
                 loadAgain: @escaping () -> Void,
                 action: @escaping () -> Void,
+                actionButtonBackgroundColor: Color,
                 backButtonTitle: String,
-                backAction: @escaping () -> Void
+                backAction: @escaping () -> Void,
+                backButtonBackgroundColor: Color
     ) {
         self.viewModel = viewModel
         self.headerTitle = headerTitle
@@ -33,8 +35,10 @@ public struct ExportSeedView: View {
         self.loadingTitle = loadingTitle
         self.loadAgain = loadAgain
         self.action = action
+        self.actionButtonBackgroundColor = actionButtonBackgroundColor
         self.backButtonTitle = backButtonTitle
         self.backAction = backAction
+        self.backButtonBackgroundColor = backButtonBackgroundColor
     }
     
     private let headerTitle: String
@@ -47,9 +51,11 @@ public struct ExportSeedView: View {
     private let loadingTitle: String
     private let loadAgain: () -> Void
     private let action: () -> Void
+    private let actionButtonBackgroundColor: Color
     private let backButtonTitle: String
     private let backAction: () -> Void
-    
+    private let backButtonBackgroundColor: Color
+
     @ObservedObject var viewModel: ExportSeedViewModel
 
     public var body: some View {
@@ -80,8 +86,14 @@ public struct ExportSeedView: View {
                     }
                 }
                 VStack {
-                    RoundedButton(title: buttonTitle, isEnabled: viewModel.canSubmit, action: action)
-                    RoundedButton(title: backButtonTitle, isEnabled: true, action: backAction)
+                    RoundedButton(title: buttonTitle,
+                                  isEnabled: viewModel.canSubmit,
+                                  action: action,
+                                  backgroundColor: actionButtonBackgroundColor)
+                    RoundedButton(title: backButtonTitle,
+                                  isEnabled: true,
+                                  action: backAction,
+                                  backgroundColor: backButtonBackgroundColor)
                 }
             }
         }
@@ -107,8 +119,10 @@ struct ExportSeedView_Previews: PreviewProvider {
             loadingTitle: "Loading Seed Phrase...",
             loadAgain: { print("Load again button triggered") },
             action: { print("Action button triggered") },
+            actionButtonBackgroundColor: .blue,
             backButtonTitle: "Back",
-            backAction: { print("Back action button triggered") }
+            backAction: { print("Back action button triggered") },
+            backButtonBackgroundColor: .gray
         )
         .previewLayout(.sizeThatFits)
         .previewDisplayName("Export Seed Test View")
