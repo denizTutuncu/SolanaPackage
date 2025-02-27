@@ -6,47 +6,50 @@
 //
 
 import SwiftUI
-import SolanaPackageUI
-
-class AppNavigationStore: ObservableObject {
-    enum CurrentView {
-        case onboarding(WalletSetupView)
-        case walletList(WalletListView)
-        case walletDetail(WalletDetailView)
-        case exportSeed(ExportSeedView)
-        case importSeed(ImportSeedView)
-    }
-    
-    @Published var currentView: CurrentView?
-    
-    var view: AnyView {
-        switch currentView {
-        case let .onboarding(view): return AnyView(view)
-        case let .walletList(view): return AnyView(view)
-        case let .walletDetail(view): return AnyView(view)
-        case let .exportSeed(view): return AnyView(view)
-        case let .importSeed(view): return AnyView(view)
-        case .none: return AnyView(EmptyView())
-        }
-    }
-}
+import SwiftUI
 
 struct AppNavigationView: View {
-    @ObservedObject var store: AppNavigationStore
-    
-    var body: some View {
-        store.view
-            .transition(
-                AnyTransition
-                    .opacity
-                    .combined(with: .move(edge: .trailing))
-            )
-            .id(UUID())
-    }
-}
+    @ObservedObject var coordinator: NavigationCoordinator
+    @ObservedObject var seedStore: SeedStorePublisher
+    @ObservedObject var publicKeyStore: PublicKeyStorePublisher
+    @ObservedObject var transactionStore: TransactionStorePublisher
+    @ObservedObject var balanceStore: BalanceStorePublisher
+    @ObservedObject var appStore: AppStore
 
-struct AppNavigationView_Previews: PreviewProvider {
-    static var previews: some View {
-        AppNavigationView(store: AppNavigationStore())
+    private let onboardingFactory: OnboardingViewFactory
+    private let walletFactory: WalletViewFactory
+    private let seedFactory: SeedViewFactory
+
+    init(coordinator: NavigationCoordinator,
+         seedStore: SeedStorePublisher,
+         publicKeyStore: PublicKeyStorePublisher,
+         transactionStore: TransactionStorePublisher,
+         balanceStore: BalanceStorePublisher,
+         appStore: AppStore) {
+        self.coordinator = coordinator
+        self.seedStore = seedStore
+        self.publicKeyStore = publicKeyStore
+        self.transactionStore = transactionStore
+        self.balanceStore = balanceStore
+        self.appStore = appStore
+        self.onboardingFactory = OnboardingViewFactory(navigation: coordinator, seedStore: seedStore)
+        self.walletFactory = WalletViewFactory(navigation: coordinator, publicKeyStore: publicKeyStore, transactionStore: transactionStore, balanceStore: balanceStore)
+        self.seedFactory = SeedViewFactory(navigation: coordinator, seedStore: seedStore, appStore: appStore)
+    }
+    
+    @ViewBuilder
+    var body: some View {
+        switch coordinator.currentRoute {
+        case .onboarding:
+            onboardingFactory.makeOnboardingView()
+        case .walletList:
+            walletFactory.makeWalletListView()
+        case .exportSeed:
+            seedFactory.makeExportSeedView()
+        case .importSeed:
+            seedFactory.makeImportSeedView()
+        case .walletDetail:
+            walletFactory.makeWalletDetailView()
+        }
     }
 }

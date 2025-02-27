@@ -10,22 +10,24 @@ import Combine
 import SolanaPackage
 import SolanaPackageUI
 
-public final class BalanceStorePublisher {
-    
-    private init() {}
-    public typealias BalanceViewModelPublisher = ViewModelPublisher<Balance, PresentableBalance>
-    private static var cancellable: AnyCancellable?
-    
-    public static func bindToBalancePublisher(_ balancePublisher: AnyPublisher<Balance, Error>) -> BalanceViewModelPublisher {
-        var balanceViewModelPublisher = BalanceViewModelPublisher(resource: Balance(amount: 0), mapper: BalanceStoreMapper.map)
-        
-        BalanceStorePublisher.cancellable = balancePublisher
-            .dispatchOnMainQueue()
+public final class BalanceStorePublisher: ObservableObject {
+    public typealias BalanceViewModelPublisher = ViewModelPublisher<PresentableBalance, PresentableBalance>
+
+    @Published public private(set) var balanceViewModelPublisher = BalanceViewModelPublisher(mapper: { $0 })
+
+    private var cancellable: AnyCancellable?
+
+    public func bind(to publisher: AnyPublisher<PresentableBalance, Error>) {
+        cancellable = publisher
+            .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { _ in },
-                  receiveValue: { balance in
-                balanceViewModelPublisher = BalanceViewModelPublisher(resource: balance, mapper: BalanceStoreMapper.map)
+                  receiveValue: { [weak self] balance in
+                self?.balanceViewModelPublisher = BalanceViewModelPublisher(mapper: { $0 })
+                self?.balanceViewModelPublisher.bind(
+                    to: Just(balance)
+                        .setFailureType(to: Error.self)
+                        .eraseToAnyPublisher()
+                )
             })
-        
-        return balanceViewModelPublisher
     }
 }

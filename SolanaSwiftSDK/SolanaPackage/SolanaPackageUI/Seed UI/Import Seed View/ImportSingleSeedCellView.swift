@@ -12,14 +12,14 @@ struct ImportSingleSeedCellView: View {
     @Binding var value: String
     var onValueChange: (String) -> Void
 
-    private var isValueEmpty: Bool {
-        value.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    private var isValueValid: Bool {
+        value.trimmingCharacters(in: .whitespacesAndNewlines).count >= 3
     }
 
     var body: some View {
         HStack {
             Circle()
-                .stroke(isValueEmpty ? Color.red : Color.blue, lineWidth: 2.5)
+                .stroke(isValueValid ? Color.blue : Color.red, lineWidth: 2.5)
                 .frame(width: 29.0, height: 29.0)
                 .overlay(
                     Text("\(index + 1)")
@@ -44,7 +44,7 @@ struct ImportSingleSeedCellView: View {
 
             Spacer()
 
-            Toggle("", isOn: .constant(!isValueEmpty))
+            Toggle("", isOn: .constant(isValueValid))
                 .disabled(true)
         }
         .padding()

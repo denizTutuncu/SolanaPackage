@@ -10,25 +10,24 @@ import Combine
 import SolanaPackage
 import SolanaPackageUI
 
-public final class TransactionStorePublisher {
+public final class TransactionStorePublisher: ObservableObject {
+    public typealias TransactionViewModelPublisher = ViewModelPublisher<[PresentableTransaction], [PresentableTransaction]> // ✅ Corrected type
     
-    private init() {}
-    public typealias TransactionViewModelPublisher = ViewModelPublisher<[DomainTransaction], [PresentableTransaction]>
-    private static var cancellable: AnyCancellable?
-
-    public static func bindToTransactionPublisher(_ transactionPublisher: AnyPublisher<[DomainTransaction], Error>) -> TransactionViewModelPublisher {
-        var transactionViewModelPublisher = TransactionViewModelPublisher(resource: [], mapper: TransactionStoreMapper.map)
-        
-        TransactionStorePublisher.cancellable = transactionPublisher
-            .dispatchOnMainQueue()
-            .sink(receiveCompletion: { completion in
-                transactionViewModelPublisher = TransactionViewModelPublisher(resource: [], mapper: TransactionStoreMapper.map)
-            },
-                  receiveValue: { transactions in
-                transactionViewModelPublisher = TransactionViewModelPublisher(resource: transactions, mapper: TransactionStoreMapper.map)
+    @Published public private(set) var transactionViewModelPublisher = TransactionViewModelPublisher(mapper: { $0 }) // ✅ Direct mapping
+    
+    private var cancellable: AnyCancellable?
+    
+    public func bind(to publisher: AnyPublisher<[PresentableTransaction], Error>) { // ✅ Updated expected type
+        cancellable = publisher
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { _ in },
+                  receiveValue: { [weak self] transactions in
+                self?.transactionViewModelPublisher = TransactionViewModelPublisher(mapper: { $0 })
+                self?.transactionViewModelPublisher.bind(
+                    to: Just(transactions)
+                        .setFailureType(to: Error.self)
+                        .eraseToAnyPublisher()
+                )
             })
-        
-        return transactionViewModelPublisher
     }
 }
-

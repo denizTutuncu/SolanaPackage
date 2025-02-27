@@ -18,7 +18,7 @@ struct HeaderView: View {
             if (title != nil), (subtitle != nil) {
                 VStack(alignment: .leading, spacing: 16.0) {
                     Text(subtitle!)
-                        .font(.headline)
+                        .font(.footnote)
                         .fontWeight(.bold)
                         .foregroundColor(subtitleTextColor)
                         .minimumScaleFactor(0.8)

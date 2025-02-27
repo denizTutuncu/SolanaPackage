@@ -6,15 +6,32 @@
 //
 
 import SwiftUI
+import SolanaPackage
+import SolanaPackageUI
+import Combine
 
 @main
 struct MySolWalletApp: App {
-    private let appStore = AppStore()
-    private let navigationStore = AppNavigationStore()
-    
+    @StateObject private var appStore = AppStore()
+    @StateObject private var navigationCoordinator = NavigationCoordinator()
+    @StateObject private var seedStore = SeedStorePublisher()
+    @StateObject private var publicKeyStore = PublicKeyStorePublisher()
+    @StateObject private var transactionStore = TransactionStorePublisher()
+    @StateObject private var balanceStore = BalanceStorePublisher()
+
     var body: some Scene {
         WindowGroup {
-            AppInitializer(appStore: appStore, navigationStore: navigationStore)
+            AppNavigationView(
+                coordinator: navigationCoordinator,
+                seedStore: seedStore,
+                publicKeyStore: publicKeyStore,
+                transactionStore: transactionStore,
+                balanceStore: balanceStore,
+                appStore: appStore
+            )
+            .onAppear {
+                seedStore.bind(to: appStore.fetchPresentableSeeds())
+            }
         }
     }
 }
