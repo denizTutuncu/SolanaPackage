@@ -83,7 +83,7 @@ class LoadSeedBankFromCacheUseCaseTests: XCTestCase {
         store.completeRetrievalSuccessfully(with: bank)
         let seed = try? sut.load()
 
-        XCTAssertEqual(seed?.count, 24, "Seed count must be 24.")
+        XCTAssertEqual(seed?.count, 12, "Seed count must be 12.")
         XCTAssertEqual(store.receivedMessages, [.retrieve])
     }
     
@@ -96,12 +96,12 @@ class LoadSeedBankFromCacheUseCaseTests: XCTestCase {
         
         let seed = try? sut.load()
         
-        XCTAssertEqual(seed?.count, 24, "Seed count must be 24.")
+        XCTAssertEqual(seed?.count, 12, "Seed count must be 12.")
         XCTAssertEqual(store.receivedMessages, [.retrieve])
         
         let newSeed = try? sut.load()
         
-        XCTAssertEqual(newSeed?.count, 24, "Seed count must be 24.")
+        XCTAssertEqual(newSeed?.count, 12, "Seed count must be 12.")
         XCTAssertEqual(store.receivedMessages, [.retrieve, .retrieve])
         
         XCTAssertNotEqual(seed, newSeed)

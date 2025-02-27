@@ -61,30 +61,9 @@ final class SeedViewFactory {
     
     func makeImportSeedView() -> ImportSeedView {
         let vm = ImportSeedViewModel(
-            model: [PresentableSeed(),
-                    PresentableSeed(),
-                    PresentableSeed(),
-                    PresentableSeed(),
-                    PresentableSeed(),
-                    PresentableSeed(),
-                    PresentableSeed(),
-                    PresentableSeed(),
-                    PresentableSeed(),
-                    PresentableSeed(),
-                    PresentableSeed(),
-                    PresentableSeed(),
-                    PresentableSeed(),
-                    PresentableSeed(),
-                    PresentableSeed(),
-                    PresentableSeed(),
-                    PresentableSeed(),
-                    PresentableSeed(),
-                    PresentableSeed(),
-                    PresentableSeed(),
-                    PresentableSeed(),
-                    PresentableSeed(),
-                    PresentableSeed(),
-                    PresentableSeed(),
+            model: [PresentableSeed(), PresentableSeed(), PresentableSeed(), PresentableSeed(),
+                    PresentableSeed(), PresentableSeed(), PresentableSeed(), PresentableSeed(),
+                    PresentableSeed(), PresentableSeed(), PresentableSeed(), PresentableSeed()
                    ],
             isLoading: seedStore.seedViewModelPublisher.isLoading
         )

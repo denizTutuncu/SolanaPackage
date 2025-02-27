@@ -83,9 +83,9 @@ func invalidPublicKeys() -> [String] {
 
 func seedPhrase() -> [String] {
     let local = [
-        "access", "account", "agent", "blue", "brain", "citizen", "code", "coin",
-        "craft", "diamond", "eight", "energy", "farm", "flower", "fly", "galaxy",
-        "genius", "hotel", "object", "ocean", "push", "rose", "tornado", "zone",
+        "access", "account", "agent", "blue",
+        "brain", "citizen", "code", "coin",
+        "craft", "diamond", "eight", "energy"
     ]
     return local
 }

@@ -6,36 +6,55 @@
 //
 
 import XCTest
+import Combine
 import SolanaPackage
 
-class PublisherViewModelTests: XCTestCase {
+final class PublisherViewModelTests: XCTestCase {
     
+    private var cancellables = Set<AnyCancellable>()
+
     func test_SUTNotNil() {
-        let sut = sut()
+        let sut = makeSUT()
         XCTAssertNotNil(sut)
     }
     
-    func test_SUTLoadingTrueWhenSUTInitilazed() {
-        let sut = sut()
+    func test_SUTLoadingTrueWhenSUTInitialized() {
+        let sut = makeSUT()
         
-        XCTAssertTrue(sut.onLoadingState)
-        XCTAssertEqual(sut.onResourceLoad, nil)
+        XCTAssertTrue(sut.isLoading)
+        XCTAssertNil(sut.resourceViewModel)
     }
     
-    
-    func test_SUTLoadingFalseWhenSUTReturns() {
-        let sut = sut()
+    func test_SUTLoadingFalseWhenSUTReceivesData() {
+        let sut = makeSUT()
+        let publisher = Just("Test Resource")
+            .setFailureType(to: Error.self)
+            .eraseToAnyPublisher()
         
-        sut.load()
-        XCTAssertFalse(sut.onLoadingState)
-        XCTAssertEqual(sut.onResourceLoad, 13)
+        let expectation = XCTestExpectation(description: "Resource loads successfully")
+        
+        var receivedLoadingStates = [Bool]()
+        
+        sut.$isLoading
+            .sink { isLoading in
+                receivedLoadingStates.append(isLoading)
+                if !isLoading {
+                    XCTAssertEqual(sut.resourceViewModel, 13)
+                    expectation.fulfill()
+                }
+            }
+            .store(in: &cancellables)
+        
+        sut.bind(to: publisher)
+        
+        wait(for: [expectation], timeout: 1.0)
+        
+        XCTAssertTrue(receivedLoadingStates.contains(true))
+        XCTAssertTrue(receivedLoadingStates.contains(false))
     }
     
-    private func sut() -> ViewModelPublisher<String, Int> {
-        let resource = "Test Resource"
-        let mapper: (String) throws -> Int = { string in
-            return string.count
-        }
-        return ViewModelPublisher(resource: resource, mapper: mapper)
+    private func makeSUT() -> ViewModelPublisher<String, Int> {
+        let mapper: (String) throws -> Int = { $0.count }
+        return ViewModelPublisher(mapper: mapper)
     }
 }
