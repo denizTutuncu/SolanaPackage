@@ -10,10 +10,8 @@
 		2E0900F529ADA75700865E30 /* SeedStoreMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0900F429ADA75700865E30 /* SeedStoreMapper.swift */; };
 		2E0900F729ADAE1F00865E30 /* PublicKeyStoreMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0900F629ADAE1F00865E30 /* PublicKeyStoreMapper.swift */; };
 		2E0900FC29ADB16D00865E30 /* TransactionStoreMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0900FB29ADB16D00865E30 /* TransactionStoreMapper.swift */; };
-		2E09010329B00AED00865E30 /* SeedPublisherAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09010229B00AED00865E30 /* SeedPublisherAdapter.swift */; };
-		2E09010D29B3104500865E30 /* PublicKeyPublisherAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09010C29B3104500865E30 /* PublicKeyPublisherAdapter.swift */; };
-		2E1DBE892B5DE95500970E48 /* SolanaSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2E1DBE882B5DE95500970E48 /* SolanaSwift */; };
-		2E3C6FF42D41D509007413ED /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3C6FF32D41D509007413ED /* ViewFactory.swift */; };
+		2E09010329B00AED00865E30 /* SeedStorePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09010229B00AED00865E30 /* SeedStorePublisher.swift */; };
+		2E09010D29B3104500865E30 /* PublicKeyStorePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09010C29B3104500865E30 /* PublicKeyStorePublisher.swift */; };
 		2E3C6FF62D41D548007413ED /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3C6FF52D41D548007413ED /* NavigationCoordinator.swift */; };
 		2E42948228483FDD00817480 /* MySolWalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E42948128483FDD00817480 /* MySolWalletApp.swift */; };
 		2E42948628483FDF00817480 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E42948528483FDE00817480 /* Assets.xcassets */; };
@@ -24,17 +22,18 @@
 		2E4294B02848406B00817480 /* SolanaPackageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4294AD2848406B00817480 /* SolanaPackageUI.framework */; };
 		2E4294B12848406B00817480 /* SolanaPackageUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4294AD2848406B00817480 /* SolanaPackageUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2E4899B329F4A738004734B9 /* NullStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4899B229F4A738004734B9 /* NullStore.swift */; };
-		2E6E555B2D373C8A00F473B2 /* AppInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6E555A2D373C8A00F473B2 /* AppInitializer.swift */; };
-		2E7E4AE42B7B025A0057B344 /* BalancePublisherAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E4AE32B7B025A0057B344 /* BalancePublisherAdapter.swift */; };
+		2E7E4AE42B7B025A0057B344 /* BalanceStorePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E4AE32B7B025A0057B344 /* BalanceStorePublisher.swift */; };
 		2E7E4AE62B7B02B60057B344 /* BalanceStoreMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7E4AE52B7B02B60057B344 /* BalanceStoreMapper.swift */; };
 		2E80F38B29A200DC00A4053C /* AppNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E80F38A29A200DC00A4053C /* AppNavigationView.swift */; };
-		2E917D1429EFD93200B578FA /* TransactionPublisherAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E917D1329EFD93200B578FA /* TransactionPublisherAdapter.swift */; };
-		2E933C982D3F280E00436469 /* AppInitializerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E933C972D3F280E00436469 /* AppInitializerViewModel.swift */; };
+		2E917D1429EFD93200B578FA /* TransactionStorePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E917D1329EFD93200B578FA /* TransactionStorePublisher.swift */; };
+		2E9897062D6FF4A5008E06D5 /* OnboardingViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9897052D6FF4A5008E06D5 /* OnboardingViewFactory.swift */; };
+		2E9897092D6FF81B008E06D5 /* WalletViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9897082D6FF81B008E06D5 /* WalletViewFactory.swift */; };
+		2E98970B2D6FF8CB008E06D5 /* SeedViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E98970A2D6FF8CB008E06D5 /* SeedViewFactory.swift */; };
 		2E9FF53429F87036002989EF /* SolanaWalletCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9FF53329F87036002989EF /* SolanaWalletCreator.swift */; };
 		2E9FF53629F88A6D002989EF /* NullCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9FF53529F88A6D002989EF /* NullCreator.swift */; };
 		2E9FF53F29FF24C0002989EF /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9FF53E29FF24C0002989EF /* AppStore.swift */; };
 		2EAEF0EC297A5C1C00091A49 /* CombineHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EAEF0EB297A5C1C00091A49 /* CombineHelpers.swift */; };
-		2EE04BD12D437F0E00CE58FD /* NavigationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE04BD02D437F0E00CE58FD /* NavigationHandler.swift */; };
+		2EE04C142D47190200CE58FD /* SolanaSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2EE04C132D47190200CE58FD /* SolanaSwift */; };
 		2EF75C2129CBC89D001E3DA7 /* SeedBankHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF75C2029CBC89D001E3DA7 /* SeedBankHelpers.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,9 +67,8 @@
 		2E0900F429ADA75700865E30 /* SeedStoreMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedStoreMapper.swift; sourceTree = "<group>"; };
 		2E0900F629ADAE1F00865E30 /* PublicKeyStoreMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicKeyStoreMapper.swift; sourceTree = "<group>"; };
 		2E0900FB29ADB16D00865E30 /* TransactionStoreMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionStoreMapper.swift; sourceTree = "<group>"; };
-		2E09010229B00AED00865E30 /* SeedPublisherAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedPublisherAdapter.swift; sourceTree = "<group>"; };
-		2E09010C29B3104500865E30 /* PublicKeyPublisherAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicKeyPublisherAdapter.swift; sourceTree = "<group>"; };
-		2E3C6FF32D41D509007413ED /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
+		2E09010229B00AED00865E30 /* SeedStorePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedStorePublisher.swift; sourceTree = "<group>"; };
+		2E09010C29B3104500865E30 /* PublicKeyStorePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicKeyStorePublisher.swift; sourceTree = "<group>"; };
 		2E3C6FF52D41D548007413ED /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
 		2E42947E28483FDD00817480 /* MySolWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MySolWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E42948128483FDD00817480 /* MySolWalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySolWalletApp.swift; sourceTree = "<group>"; };
@@ -82,17 +80,17 @@
 		2E4294AD2848406B00817480 /* SolanaPackageUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SolanaPackageUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E4899B229F4A738004734B9 /* NullStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullStore.swift; sourceTree = "<group>"; };
 		2E5631BB2A96D94700DFFE38 /* MySolWallet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MySolWallet.entitlements; sourceTree = "<group>"; };
-		2E6E555A2D373C8A00F473B2 /* AppInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInitializer.swift; sourceTree = "<group>"; };
-		2E7E4AE32B7B025A0057B344 /* BalancePublisherAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancePublisherAdapter.swift; sourceTree = "<group>"; };
+		2E7E4AE32B7B025A0057B344 /* BalanceStorePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceStorePublisher.swift; sourceTree = "<group>"; };
 		2E7E4AE52B7B02B60057B344 /* BalanceStoreMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceStoreMapper.swift; sourceTree = "<group>"; };
 		2E80F38A29A200DC00A4053C /* AppNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationView.swift; sourceTree = "<group>"; };
-		2E917D1329EFD93200B578FA /* TransactionPublisherAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPublisherAdapter.swift; sourceTree = "<group>"; };
-		2E933C972D3F280E00436469 /* AppInitializerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInitializerViewModel.swift; sourceTree = "<group>"; };
+		2E917D1329EFD93200B578FA /* TransactionStorePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionStorePublisher.swift; sourceTree = "<group>"; };
+		2E9897052D6FF4A5008E06D5 /* OnboardingViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewFactory.swift; sourceTree = "<group>"; };
+		2E9897082D6FF81B008E06D5 /* WalletViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewFactory.swift; sourceTree = "<group>"; };
+		2E98970A2D6FF8CB008E06D5 /* SeedViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedViewFactory.swift; sourceTree = "<group>"; };
 		2E9FF53329F87036002989EF /* SolanaWalletCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolanaWalletCreator.swift; sourceTree = "<group>"; };
 		2E9FF53529F88A6D002989EF /* NullCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullCreator.swift; sourceTree = "<group>"; };
 		2E9FF53E29FF24C0002989EF /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 		2EAEF0EB297A5C1C00091A49 /* CombineHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineHelpers.swift; sourceTree = "<group>"; };
-		2EE04BD02D437F0E00CE58FD /* NavigationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHandler.swift; sourceTree = "<group>"; };
 		2EF75C2029CBC89D001E3DA7 /* SeedBankHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedBankHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E1DBE892B5DE95500970E48 /* SolanaSwift in Frameworks */,
+				2EE04C142D47190200CE58FD /* SolanaSwift in Frameworks */,
 				2E4294AE2848406B00817480 /* SolanaPackage.framework in Frameworks */,
 				2E4294B02848406B00817480 /* SolanaPackageUI.framework in Frameworks */,
 			);
@@ -128,15 +126,15 @@
 			path = Mappers;
 			sourceTree = "<group>";
 		};
-		2E09010129B00AD800865E30 /* Adapters */ = {
+		2E09010129B00AD800865E30 /* Publishers */ = {
 			isa = PBXGroup;
 			children = (
-				2E09010229B00AED00865E30 /* SeedPublisherAdapter.swift */,
-				2E09010C29B3104500865E30 /* PublicKeyPublisherAdapter.swift */,
-				2E917D1329EFD93200B578FA /* TransactionPublisherAdapter.swift */,
-				2E7E4AE32B7B025A0057B344 /* BalancePublisherAdapter.swift */,
+				2E09010229B00AED00865E30 /* SeedStorePublisher.swift */,
+				2E09010C29B3104500865E30 /* PublicKeyStorePublisher.swift */,
+				2E917D1329EFD93200B578FA /* TransactionStorePublisher.swift */,
+				2E7E4AE32B7B025A0057B344 /* BalanceStorePublisher.swift */,
 			);
-			path = Adapters;
+			path = Publishers;
 			sourceTree = "<group>";
 		};
 		2E42947528483FDD00817480 = {
@@ -163,7 +161,7 @@
 			children = (
 				2E06DA182AB149C700105784 /* Info.plist */,
 				2E5631BB2A96D94700DFFE38 /* MySolWallet.entitlements */,
-				2E09010129B00AD800865E30 /* Adapters */,
+				2E09010129B00AD800865E30 /* Publishers */,
 				2E0900F329ADA72D00865E30 /* Mappers */,
 				2EF68C89299F5A6200969DE5 /* Main */,
 				2EF68C84299F595E00969DE5 /* Navigation */,
@@ -199,13 +197,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2E9897072D6FF80E008E06D5 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				2E9897052D6FF4A5008E06D5 /* OnboardingViewFactory.swift */,
+				2E9897082D6FF81B008E06D5 /* WalletViewFactory.swift */,
+				2E98970A2D6FF8CB008E06D5 /* SeedViewFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
 		2EF68C84299F595E00969DE5 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				2E80F38A29A200DC00A4053C /* AppNavigationView.swift */,
-				2E3C6FF32D41D509007413ED /* ViewFactory.swift */,
 				2E3C6FF52D41D548007413ED /* NavigationCoordinator.swift */,
-				2EE04BD02D437F0E00CE58FD /* NavigationHandler.swift */,
+				2E80F38A29A200DC00A4053C /* AppNavigationView.swift */,
+				2E9897072D6FF80E008E06D5 /* Factories */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -215,8 +222,6 @@
 			children = (
 				2E9FF53E29FF24C0002989EF /* AppStore.swift */,
 				2E42948128483FDD00817480 /* MySolWalletApp.swift */,
-				2E6E555A2D373C8A00F473B2 /* AppInitializer.swift */,
-				2E933C972D3F280E00436469 /* AppInitializerViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -251,7 +256,7 @@
 			);
 			name = MySolWallet;
 			packageProductDependencies = (
-				2E1DBE882B5DE95500970E48 /* SolanaSwift */,
+				2EE04C132D47190200CE58FD /* SolanaSwift */,
 			);
 			productName = MySolWallet;
 			productReference = 2E42947E28483FDD00817480 /* MySolWallet.app */;
@@ -304,7 +309,7 @@
 			);
 			mainGroup = 2E42947528483FDD00817480;
 			packageReferences = (
-				2E1DBE872B5DE95500970E48 /* XCRemoteSwiftPackageReference "solana-swift" */,
+				2EE04C122D4718FC00CE58FD /* XCRemoteSwiftPackageReference "solana-swift" */,
 			);
 			productRefGroup = 2E42947F28483FDD00817480 /* Products */;
 			projectDirPath = "";
@@ -340,27 +345,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E917D1429EFD93200B578FA /* TransactionPublisherAdapter.swift in Sources */,
-				2E933C982D3F280E00436469 /* AppInitializerViewModel.swift in Sources */,
+				2E917D1429EFD93200B578FA /* TransactionStorePublisher.swift in Sources */,
 				2E42948228483FDD00817480 /* MySolWalletApp.swift in Sources */,
 				2E7E4AE62B7B02B60057B344 /* BalanceStoreMapper.swift in Sources */,
 				2E0900F729ADAE1F00865E30 /* PublicKeyStoreMapper.swift in Sources */,
-				2E6E555B2D373C8A00F473B2 /* AppInitializer.swift in Sources */,
 				2E9FF53429F87036002989EF /* SolanaWalletCreator.swift in Sources */,
 				2E9FF53F29FF24C0002989EF /* AppStore.swift in Sources */,
-				2E7E4AE42B7B025A0057B344 /* BalancePublisherAdapter.swift in Sources */,
-				2EE04BD12D437F0E00CE58FD /* NavigationHandler.swift in Sources */,
+				2E7E4AE42B7B025A0057B344 /* BalanceStorePublisher.swift in Sources */,
 				2E0900F529ADA75700865E30 /* SeedStoreMapper.swift in Sources */,
 				2EF75C2129CBC89D001E3DA7 /* SeedBankHelpers.swift in Sources */,
+				2E98970B2D6FF8CB008E06D5 /* SeedViewFactory.swift in Sources */,
 				2E80F38B29A200DC00A4053C /* AppNavigationView.swift in Sources */,
-				2E09010D29B3104500865E30 /* PublicKeyPublisherAdapter.swift in Sources */,
+				2E09010D29B3104500865E30 /* PublicKeyStorePublisher.swift in Sources */,
 				2EAEF0EC297A5C1C00091A49 /* CombineHelpers.swift in Sources */,
 				2E9FF53629F88A6D002989EF /* NullCreator.swift in Sources */,
-				2E3C6FF42D41D509007413ED /* ViewFactory.swift in Sources */,
-				2E09010329B00AED00865E30 /* SeedPublisherAdapter.swift in Sources */,
+				2E09010329B00AED00865E30 /* SeedStorePublisher.swift in Sources */,
 				2E0900FC29ADB16D00865E30 /* TransactionStoreMapper.swift in Sources */,
 				2E3C6FF62D41D548007413ED /* NavigationCoordinator.swift in Sources */,
+				2E9897062D6FF4A5008E06D5 /* OnboardingViewFactory.swift in Sources */,
 				2E4899B329F4A738004734B9 /* NullStore.swift in Sources */,
+				2E9897092D6FF81B008E06D5 /* WalletViewFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,20 +670,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2E1DBE872B5DE95500970E48 /* XCRemoteSwiftPackageReference "solana-swift" */ = {
+		2EE04C122D4718FC00CE58FD /* XCRemoteSwiftPackageReference "solana-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/p2p-org/solana-swift";
 			requirement = {
-				kind = exactVersion;
-				version = 4.0.0;
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2E1DBE882B5DE95500970E48 /* SolanaSwift */ = {
+		2EE04C132D47190200CE58FD /* SolanaSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 2E1DBE872B5DE95500970E48 /* XCRemoteSwiftPackageReference "solana-swift" */;
+			package = 2EE04C122D4718FC00CE58FD /* XCRemoteSwiftPackageReference "solana-swift" */;
 			productName = SolanaSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

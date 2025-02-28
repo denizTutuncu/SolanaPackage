@@ -9,7 +9,7 @@ import Foundation
 
 public protocol WalletCreator {
     typealias PublicKey = String
-    typealias PrivateKey = String
+    typealias PrivateKey = Data
 
     func create() async throws -> (PublicKey,PrivateKey)?
 }

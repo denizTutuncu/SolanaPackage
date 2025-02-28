@@ -96,16 +96,16 @@ struct AssetListView_Previews: PreviewProvider {
                     tryAgain: { },
                     selection: { selection = $0 },
                     viewModel: .init(model: [
-                        PresentableAsset(name: "BTC", assetPrices: [AssetPrice(date: Date(), price: 14500)], imageURL: "An Image URL"),
-                        PresentableAsset(name: "SOL", assetPrices: [AssetPrice(date: Date(), price: 256.20)], imageURL: "An Image URL"),
-                        PresentableAsset(name: "RAY", assetPrices: [AssetPrice(date: Date(), price: 7.83)], imageURL: "An Image URL"),
-                        PresentableAsset(name: "SHDW", assetPrices: [AssetPrice(date: Date(), price: 0.36)], imageURL: "An Image URL"),
-                        PresentableAsset(name: "HNT", assetPrices: [AssetPrice(date: Date(), price: 24.08)], imageURL: "An Image URL"),
-                        PresentableAsset(name: "JUP", assetPrices: [AssetPrice(date: Date(), price: 0.85)], imageURL: "An Image URL"),
-                        PresentableAsset(name: "ZEUS", assetPrices: [AssetPrice(date: Date(), price: 0.58)], imageURL: "An Image URL"),
-                        PresentableAsset(name: "BONK", assetPrices: [AssetPrice(date: Date(), price: 0.00003)], imageURL: "An Image URL"),
-                        PresentableAsset(name: "GOBI", assetPrices: [AssetPrice(date: Date(), price: 0.00043)], imageURL: "An Image URL"),
-                        PresentableAsset(name: "GLooM", assetPrices: [AssetPrice(date: Date(), price: 0.000047)], imageURL: "An Image URL")
+                        PresentableAsset(name: "WBTC", assetDailyData: [AssetDailyData(date: Date(), open: 100005.75, high: 111111.11, low: 95750.75, close: 105650.25)], imageURL: "An Image URL"),
+                        PresentableAsset(name: "SOL", assetDailyData: [AssetDailyData(date: Date(), open: 235.75, high: 255.55, low: 233.46, close: 252.52)], imageURL: "An Image URL"),
+                        PresentableAsset(name: "RAY", assetDailyData: [AssetDailyData(date: Date(), open: 7.55, high: 8.12, low: 7.19, close: 7.25)], imageURL: "An Image URL"),
+                        PresentableAsset(name: "SHDW", assetDailyData: [AssetDailyData(date: Date(), open: 0.35, high: 0.41, low: 0.31, close: 0.40)], imageURL: "An Image URL"),
+                        PresentableAsset(name: "HNT", assetDailyData: [AssetDailyData(date: Date(), open: 4.05, high: 4.55, low: 4.01, close: 4.35)], imageURL: "An Image URL"),
+                        PresentableAsset(name: "JUP", assetDailyData: [AssetDailyData(date: Date(), open: 0.83, high: 0.87, low: 0.80, close: 0.85)], imageURL: "An Image URL"),
+                        PresentableAsset(name: "ZEUS", assetDailyData: [AssetDailyData(date: Date(), open: 0.55, high: 0.61, low: 0.51, close: 0.58)], imageURL: "An Image URL"),
+                        PresentableAsset(name: "BONK", assetDailyData: [AssetDailyData(date: Date(), open: 0.000035, high: 0.000053, low: 0.000029, close: 0.00003)], imageURL: "An Image URL"),
+                        PresentableAsset(name: "GOBI", assetDailyData: [AssetDailyData(date: Date(), open: 0.00041, high: 0.00056, low: 0.00034, close: 0.00043)], imageURL: "An Image URL"),
+                        PresentableAsset(name: "GLooM", assetDailyData: [AssetDailyData(date: Date(), open: 0.000041, high: 0.000057, low: 0.000034, close: 0.000047)], imageURL: "An Image URL")
                     ],
                     isLoading: false))
 

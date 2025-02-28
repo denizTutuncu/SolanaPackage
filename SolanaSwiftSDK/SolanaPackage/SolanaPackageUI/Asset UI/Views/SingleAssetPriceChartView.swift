@@ -49,18 +49,31 @@ public struct SingleAssetPriceChartView: View {
             
             if viewModel.isLoading {
                 LoadingView(title: loadingTitle)
-            } else if viewModel.model.assetPrices.isEmpty {
+            } else if viewModel.model.assetDailyData.isEmpty {
                 ErrorView(message: errorMessage,
                           buttonTitle: errorViewButtonTitle,
                           onHide: loadAgain)
             } else {
-                Chart(viewModel.model.assetPrices.indices, id: \.self) { index in
-                    LineMark(
-                        x: .value("Date", viewModel.model.assetPrices[index].date),
-                        y: .value("Price", viewModel.model.assetPrices[index].price)
+                Chart(viewModel.model.assetDailyData.indices, id: \.self) { index in
+                    let data = viewModel.model.assetDailyData[index]
+                    
+                    RuleMark(
+                        x: .value("Date", data.date),
+                        yStart: .value("Low", data.low),
+                        yEnd: .value("High", data.high)
                     )
-                    .symbol(Circle())
-                    .interpolationMethod(.catmullRom)
+                    .lineStyle(StrokeStyle(lineWidth: 1))
+                    .foregroundStyle(data.close > data.open ? .green : .red)
+                    
+                    // Body: Open to Close
+                    RectangleMark(
+                        x: .value("Date", data.date),
+                        yStart: .value("Open", data.open),
+                        yEnd: .value("Close", data.close)
+                    )
+                    .foregroundStyle(data.close > data.open ? .green : .red)
+                    .cornerRadius(1)
+                    .opacity(0.8)
                 }
                 .chartYScale(domain: viewModel.priceRange ?? 0...1)
                 .frame(height: 300)
@@ -75,7 +88,7 @@ struct AssetPriceChartView_Previews: PreviewProvider {
         Group {
             AssetPriceChartTestView()
                 .previewLayout(.sizeThatFits)
-                .previewDisplayName("Asset Price Chart Test View")
+                .previewDisplayName("Single Asset Price Chart Test View")
         }
     }
     
@@ -90,22 +103,22 @@ struct AssetPriceChartView_Previews: PreviewProvider {
                                           errorMessage: "Cannot load asset price chart",
                                           errorViewButtonTitle: "Retry",
                                           loadingTitle: "Loading asset price chart...",
-                                          loadAgain: { print("Load again button tapped")},
+                                          loadAgain: { print("Load again button tapped") },
                                           viewModel: PresentableAssetViewModel(model: PresentableAsset(name: "SOL",
-                                                                                                       assetPrices: [
-                                                                                                        AssetPrice(date: Date().addingTimeInterval(-11 * 24 * 60 * 60), price: 180),
-                                                                                                        AssetPrice(date: Date().addingTimeInterval(-10 * 24 * 60 * 60), price: 175),
-                                                                                                        AssetPrice(date: Date().addingTimeInterval(-9 * 24 * 60 * 60), price: 160),
-                                                                                                        AssetPrice(date: Date().addingTimeInterval(-8 * 24 * 60 * 60), price: 175),
-                                                                                                        AssetPrice(date: Date().addingTimeInterval(-7 * 24 * 60 * 60), price: 190),
-                                                                                                        AssetPrice(date: Date().addingTimeInterval(-6 * 24 * 60 * 60), price: 180),
-                                                                                                        AssetPrice(date: Date().addingTimeInterval(-5 * 24 * 60 * 60), price: 175),
-                                                                                                        AssetPrice(date: Date().addingTimeInterval(-4 * 24 * 60 * 60), price: 170),
-                                                                                                        AssetPrice(date: Date().addingTimeInterval(-3 * 24 * 60 * 60), price: 180),
-                                                                                                        AssetPrice(date: Date().addingTimeInterval(-2 * 24 * 60 * 60), price: 190),
-                                                                                                        AssetPrice(date: Date().addingTimeInterval(-1 * 24 * 60 * 60), price: 220),
-                                                                                                        AssetPrice(date: Date(), price: 250)
-                                                                                                       ],
+                                                                                                       assetDailyData: [
+                                                                                                        AssetDailyData(date: Date().addingTimeInterval(-11 * 24 * 60 * 60), open: 175, high: 185, low: 170, close: 180),
+                                                                                                        AssetDailyData(date: Date().addingTimeInterval(-10 * 24 * 60 * 60), open: 180, high: 185, low: 165, close: 175),
+                                                                                                        AssetDailyData(date: Date().addingTimeInterval(-9 * 24 * 60 * 60), open: 175, high: 180, low: 150, close: 160),
+                                                                                                        AssetDailyData(date: Date().addingTimeInterval(-8 * 24 * 60 * 60), open: 160, high: 180, low: 155, close: 175),
+                                                                                                        AssetDailyData(date: Date().addingTimeInterval(-7 * 24 * 60 * 60), open: 175, high: 195, low: 170, close: 190),
+                                                                                                        AssetDailyData(date: Date().addingTimeInterval(-6 * 24 * 60 * 60), open: 190, high: 200, low: 185, close: 195),
+                                                                                                        AssetDailyData(date: Date().addingTimeInterval(-5 * 24 * 60 * 60), open: 195, high: 205, low: 190, close: 200),
+                                                                                                        AssetDailyData(date: Date().addingTimeInterval(-4 * 24 * 60 * 60), open: 200, high: 210, low: 195, close: 205),
+                                                                                                        AssetDailyData(date: Date().addingTimeInterval(-3 * 24 * 60 * 60), open: 205, high: 215, low: 200, close: 210),
+                                                                                                        AssetDailyData(date: Date().addingTimeInterval(-2 * 24 * 60 * 60), open: 210, high: 220, low: 205, close: 215),
+                                                                                                        AssetDailyData(date: Date().addingTimeInterval(-1 * 24 * 60 * 60), open: 215, high: 225, low: 210, close: 220),
+                                                                                                        AssetDailyData(date: Date(), open: 220, high: 260, low: 215, close: 250)
+                                                                                                    ],
                                                                                                        imageURL: "An Image URL"),
                                                                                isLoading: false
                                           ))

@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: macos-13
+    runs-on: macos-latest
     timeout-minutes: 20
 
     steps:
@@ -30,7 +30,7 @@ jobs:
           security set-key-partition-list -S apple-tool:,apple: -s -k "" ~/Library/Keychains/build.keychain
         
       - name: Select up Xcode
-        run: sudo xcode-select -switch /Applications/Xcode_14.3.app
+        run: sudo xcode-select -switch /Applications/Xcode.app
 
       - name: Show Xcode version
         run: xcodebuild -version

@@ -22,7 +22,7 @@ final public class SeedCachePolicy {
         
         var mutableBank = bank
         var randomItems = [String]()
-        let numberOfItemsToGet = min(24, mutableBank.count)
+        let numberOfItemsToGet = min(12, mutableBank.count)
         
         while randomItems.count < numberOfItemsToGet {
             let randomIndex = Int.random(in: 0..<mutableBank.count)
@@ -36,7 +36,7 @@ final public class SeedCachePolicy {
     }
     
     public static func validateSeedPhrase(seed: [String]) -> Bool {
-        guard (seed.count == 24) else { return false }
+        guard (seed.count == 12) else { return false }
         return true
     }
     

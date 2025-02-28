@@ -10,14 +10,9 @@ import SolanaPackage
 import SolanaPackageUI
 
 public class BalanceStoreMapper {
-    
-    private enum BalanceStoreError: Swift.Error {
-        case invalidBalance
-    }
-    
-    public static func map(_ domainBalance: Balance?) throws -> PresentableBalance {
+    public static func map(_ domainBalance: Balance?) -> PresentableBalance? {
         guard let domainBalance = domainBalance else {
-            throw BalanceStoreError.invalidBalance
+            return nil
         }
         return PresentableBalance(value: String(domainBalance.amount))
     }

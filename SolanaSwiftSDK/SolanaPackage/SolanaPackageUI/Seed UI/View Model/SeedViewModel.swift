@@ -8,7 +8,7 @@
 import Foundation
 
 public class SeedViewModel: ObservableObject {
-    @Published var model: [PresentableSeed]
+    @Published public var model: [PresentableSeed]
     @Published var isLoading: Bool
 
     public init(model: [PresentableSeed] = [], isLoading: Bool = false) {

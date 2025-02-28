@@ -34,7 +34,7 @@ class SeedCahcePolicyUseCaseTests: XCTestCase {
     
     func test_SeedCachePolicy_GetRandomSeedPhrase_ReturnsValidSeedPhrase() {
         let result = SeedCachePolicy.getRandomSeedPhrase(from: seedBank())
-        XCTAssertEqual(result.count, 24, "Expected result 24 seed, got \(result) instead")
+        XCTAssertEqual(result.count, 12, "Expected result 24 seed, got \(result) instead")
     }
     
     func test_SeedCachePolicy_validateSeedPhrase_ReturnsFalse_WithInvalidSeedPhrase() {
