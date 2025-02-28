@@ -10,25 +10,19 @@ import SolanaPackage
 import SolanaSwift
 
 public final class SolanaWalletCreator: WalletCreator {
-    public init(seed: [String]) throws {
+    public init(seed: [String]) {
         self.seed = seed
     }
  
     private let seed: [String]
     
-    public func create() async throws -> (String, Data)? {
+    public func create() async throws -> (WalletCreator.PublicKey, WalletCreator.PrivateKey)? {
         try await self.createWallet()
     }
     
     private func createWallet() async throws -> (String, Data)? {
-        print("Provided seed phrase to the creator is \(seed)")
-
-        // ✅ Normalize the seed phrase
-        let normalizedSeed = seed.map { $0.lowercased().trimmingCharacters(in: .whitespacesAndNewlines) }
-        print("Normalized seed phrase to the creator is \(normalizedSeed)")
-        
-        let keyPair = try await KeyPair(phrase: normalizedSeed, network: .devnet)
+        guard !seed.isEmpty else { throw NSError(domain: "Invalid seed phrase", code: 0, userInfo: nil)}
+        let keyPair = try await KeyPair(phrase: seed, network: .devnet)
         return (keyPair.publicKey.base58EncodedString, keyPair.secretKey)
     }
-
 }

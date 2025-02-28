@@ -6,20 +6,8 @@
 //
 
 import SwiftUI
-import SwiftUI
 
 struct AppNavigationView: View {
-    @ObservedObject var coordinator: NavigationCoordinator
-    @ObservedObject var seedStore: SeedStorePublisher
-    @ObservedObject var publicKeyStore: PublicKeyStorePublisher
-    @ObservedObject var transactionStore: TransactionStorePublisher
-    @ObservedObject var balanceStore: BalanceStorePublisher
-    @ObservedObject var appStore: AppStore
-
-    private let onboardingFactory: OnboardingViewFactory
-    private let walletFactory: WalletViewFactory
-    private let seedFactory: SeedViewFactory
-
     init(coordinator: NavigationCoordinator,
          seedStore: SeedStorePublisher,
          publicKeyStore: PublicKeyStorePublisher,
@@ -37,6 +25,17 @@ struct AppNavigationView: View {
         self.seedFactory = SeedViewFactory(navigation: coordinator, seedStore: seedStore, appStore: appStore)
     }
     
+    @ObservedObject var coordinator: NavigationCoordinator
+    @ObservedObject var seedStore: SeedStorePublisher
+    @ObservedObject var publicKeyStore: PublicKeyStorePublisher
+    @ObservedObject var transactionStore: TransactionStorePublisher
+    @ObservedObject var balanceStore: BalanceStorePublisher
+    @ObservedObject var appStore: AppStore
+
+    private let onboardingFactory: OnboardingViewFactory
+    private let walletFactory: WalletViewFactory
+    private let seedFactory: SeedViewFactory
+
     @ViewBuilder
     var body: some View {
         switch coordinator.currentRoute {

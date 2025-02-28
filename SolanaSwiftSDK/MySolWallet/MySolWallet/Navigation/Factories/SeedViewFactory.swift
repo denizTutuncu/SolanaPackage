@@ -23,9 +23,8 @@ final class SeedViewFactory {
     func makeExportSeedView() -> ExportSeedView {
         let seedModel = seedStore.seedViewModelPublisher.resourceViewModel ?? []
         
-        print("📌 Creating ExportSeedView with \(seedModel.count) seeds") // ✅ Debugging
-        print("📌 Creating ExportSeedView with \(seedModel.map { $0.value }) seeds") // ✅ Debugging
-
+        print("📌 Creating ExportSeedView with \(seedModel.count) seeds")
+        print("📌 Creating ExportSeedView with \(seedModel.map { $0.value }) seeds")
 
         return ExportSeedView(
             viewModel: ExportSeedViewModel(

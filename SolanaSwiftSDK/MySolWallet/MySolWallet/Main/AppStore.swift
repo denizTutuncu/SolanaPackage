@@ -30,7 +30,6 @@ class AppStore: ObservableObject {
         logger.fault("Error: \(error.localizedDescription)")
     }
 
-    // MARK: - Published State Variables
     @Published var selectedPublicKey: PublicKey?
     @Published var presentablePublicKeys: [PresentablePublicKey] = []
     @Published var presentableBalance: PresentableBalance?
@@ -38,7 +37,6 @@ class AppStore: ObservableObject {
 
     private var cancellables = Set<AnyCancellable>()
 
-    // MARK: - Dependencies
     private let networkURL: URL
     private let httpClient: HTTPClient
     private let localSeedLoader: LocalSeedLoader
@@ -46,7 +44,6 @@ class AppStore: ObservableObject {
     private let localPublicKeyLoader: LocalPublicKeyLoader
     private let walletCreator: WalletCreator
 
-    // MARK: - Initializer (Dependency Injection)
     init(
         networkURL: URL = URL(string: "https://api.devnet.solana.com")!,
         httpClient: HTTPClient = URLSessionHTTPClient(session: URLSession(configuration: .ephemeral)),
@@ -70,7 +67,6 @@ class AppStore: ObservableObject {
         self.localPrivateKeyLoader = localPrivateKeyLoader
         self.localPublicKeyLoader = localPublicKeyLoader
 
-        // ✅ Initialize walletCreator safely and log errors later
         var walletError: Error?
         do {
             self.walletCreator = try SolanaWalletCreator(seed: localSeedLoader.load())
@@ -79,7 +75,6 @@ class AppStore: ObservableObject {
             self.walletCreator = NullCreator()
         }
 
-        // ✅ Now it's safe to log errors after all properties are initialized
         if let error = walletError {
             handleError(error)
         }
@@ -166,17 +161,13 @@ class AppStore: ObservableObject {
     
     public func generateWallet(from seedPhrase: [String]?) async {
         guard let seedPhrase = seedPhrase else {
-            print("❌ No seed phrase provided!")
             return
         }
-
-        print("🎯 Generated Seed Loaded: \(seedPhrase)")
-
+        
         do {
-            let walletCreator = try SolanaWalletCreator(seed: seedPhrase)
+            let walletCreator = SolanaWalletCreator(seed: seedPhrase)
 
             if let (publicKey, privateKey) = try await walletCreator.create() {
-                print("✅ Wallet Created: PublicKey: \(publicKey)")
 
                 try localPrivateKeyLoader.save(publicKey, privateKey: privateKey)
                 try localPublicKeyLoader.save([publicKey])
@@ -191,8 +182,3 @@ class AppStore: ObservableObject {
         }
     }
 }
-
-
-
-
-
